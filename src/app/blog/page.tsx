@@ -42,10 +42,9 @@ export default function BlogPage() {
       <Hero
         title="Home Improvement Blog"
         subtitle="Tips, guides, and expert advice for Massachusetts homeowners"
-        backgroundImage={IMAGES.hero}
         badge="Resources"
         showCTA={false}
-        size="small"
+        size="inner"
       />
 
       {/* Tags */}

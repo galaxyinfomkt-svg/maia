@@ -91,7 +91,7 @@ export default async function CityPage({ params }: CityPageProps) {
         title={`Professional Construction Services in ${city.name}, Massachusetts`}
         subtitle={`Expert siding, door & windows installation just ${city.distance} miles from our Marlborough office. Serving ${city.zip} and surrounding areas in ${city.county} County.`}
         badge={`Serving ${city.name}, ${city.county} County`}
-        size="default"
+        size="inner"
       />
 
       {/* Breadcrumbs */}

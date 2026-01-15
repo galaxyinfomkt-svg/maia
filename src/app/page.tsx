@@ -1,4 +1,4 @@
-import { HeroWithForm, ServicesSection, Testimonials, CityGrid, CTASection, WhyChooseUs } from '@/components/sections';
+import { HeroWithForm, ServicesSection, Testimonials, CityGrid, CTASection, WhyChooseUs, BeforeAfter } from '@/components/sections';
 import { JsonLd } from '@/components/seo';
 import { cities } from '@/lib/cities';
 import { SITE_NAME, PHONE, ADDRESS, LOGO_URL, SITE_URL } from '@/lib/constants';
@@ -78,6 +78,12 @@ export default function HomePage() {
       <ServicesSection
         title="Our Services"
         subtitle="Professional installation and repair services for your home"
+      />
+
+      {/* Before & After Gallery */}
+      <BeforeAfter
+        title="Our Transformations"
+        subtitle="See the difference quality craftsmanship makes - drag to compare before and after"
       />
 
       {/* Testimonials */}

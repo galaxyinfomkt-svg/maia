@@ -36,10 +36,9 @@ export default function ContactPage() {
       <Hero
         title="Contact Us"
         subtitle="Get in touch for a free estimate on your home improvement project"
-        backgroundImage={IMAGES.hero}
         badge="Get In Touch"
         showCTA={false}
-        size="small"
+        size="inner"
       />
 
       <section className="py-24 bg-white">

@@ -71,9 +71,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
       <Hero
         title={`Professional ${service.name} Services`}
         subtitle={service.shortDescription}
-        backgroundImage={service.image}
         badge={`${service.icon} ${service.name}`}
-        size="default"
+        size="inner"
       />
 
       {/* Service Details */}

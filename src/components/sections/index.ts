@@ -5,3 +5,4 @@ export { default as Testimonials } from './Testimonials';
 export { default as CityGrid } from './CityGrid';
 export { default as CTASection } from './CTASection';
 export { default as WhyChooseUs } from './WhyChooseUs';
+export { default as BeforeAfter } from './BeforeAfter';

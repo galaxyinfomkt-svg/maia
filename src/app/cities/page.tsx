@@ -38,10 +38,9 @@ export default function CitiesPage() {
       <Hero
         title="Cities We Serve"
         subtitle={`Professional construction services in ${cities.length}+ Massachusetts communities`}
-        backgroundImage={IMAGES.hero}
         badge="Service Area"
         showCTA={false}
-        size="small"
+        size="inner"
       />
 
       {/* Stats */}

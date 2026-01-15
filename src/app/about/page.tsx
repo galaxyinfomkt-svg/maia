@@ -46,10 +46,9 @@ export default function AboutPage() {
       <Hero
         title="About Maia Construction"
         subtitle="Your trusted partner for quality home improvement in Massachusetts"
-        backgroundImage={IMAGES.hero}
         badge="Our Story"
         showCTA={false}
-        size="small"
+        size="inner"
       />
 
       {/* Our Story Section */}

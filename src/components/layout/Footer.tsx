@@ -2,24 +2,27 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { LOGO_URL, SITE_NAME, PHONE, PHONE_LINK, ADDRESS, BUSINESS_HOURS, SOCIAL_LINKS } from '@/lib/constants';
 import { services } from '@/lib/services';
+import { cities } from '@/lib/cities';
 
 const quickLinks = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
-  { label: 'Services', href: '/services' },
-  { label: 'Cities We Serve', href: '/cities' },
   { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },
 ];
+
+// Get featured cities (closest ones)
+const featuredCities = cities.slice(0, 12);
 
 export default function Footer() {
   return (
     <footer className="bg-slate-900 text-white">
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+        {/* Top Section - Logo & Contact */}
+        <div className="grid lg:grid-cols-4 gap-8 pb-12 mb-12 border-b border-white/10">
           {/* Company Info */}
-          <div>
+          <div className="lg:col-span-1">
             <Link href="/" className="flex items-center space-x-3 mb-6">
               <div className="relative w-12 h-12">
                 <Image
@@ -31,11 +34,11 @@ export default function Footer() {
               </div>
               <span className="text-xl font-bold">{SITE_NAME}</span>
             </Link>
-            <p className="text-gray-400 mb-6">
+            <p className="text-gray-400 mb-6 text-sm">
               Professional siding, door, and window installation serving Massachusetts.
               Quality craftsmanship with over a decade of experience.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-3">
               <a href={SOCIAL_LINKS.facebook} className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-amber-400 hover:text-slate-900 transition-colors">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.77,7.46H14.5v-1.9c0-.9.6-1.1,1-1.1h3V.5h-4.33C10.24.5,9.5,3.44,9.5,5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4Z"/></svg>
               </a>
@@ -48,13 +51,40 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Contact Info */}
+          <div className="lg:col-span-1">
+            <h3 className="text-lg font-bold mb-6 text-amber-400">Contact Us</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start space-x-3">
+                <svg className="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                </svg>
+                <span className="text-gray-400 text-sm">{ADDRESS.full}</span>
+              </li>
+              <li>
+                <a href={PHONE_LINK} className="flex items-center space-x-3 text-white hover:text-amber-400 transition-colors font-semibold">
+                  <svg className="w-5 h-5 text-amber-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                  </svg>
+                  <span>{PHONE}</span>
+                </a>
+              </li>
+              <li className="pt-4">
+                <h4 className="font-semibold mb-2 text-sm">Business Hours</h4>
+                <p className="text-gray-400 text-sm">Mon-Fri: {BUSINESS_HOURS.weekdays}</p>
+                <p className="text-gray-400 text-sm">Sat: {BUSINESS_HOURS.saturday}</p>
+                <p className="text-gray-400 text-sm">Sun: {BUSINESS_HOURS.sunday}</p>
+              </li>
+            </ul>
+          </div>
+
           {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-bold mb-6">Quick Links</h3>
+          <div className="lg:col-span-1">
+            <h3 className="text-lg font-bold mb-6 text-amber-400">Quick Links</h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-gray-400 hover:text-amber-400 transition-colors">
+                  <Link href={link.href} className="text-gray-400 hover:text-amber-400 transition-colors text-sm">
                     {link.label}
                   </Link>
                 </li>
@@ -62,43 +92,82 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* CTA */}
+          <div className="lg:col-span-1">
+            <h3 className="text-lg font-bold mb-6 text-amber-400">Get a Free Quote</h3>
+            <p className="text-gray-400 text-sm mb-4">
+              Ready to transform your home? Contact us today for a free estimate.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-amber-400 to-yellow-300 text-slate-900 rounded-full font-bold text-sm hover:shadow-lg transition-all"
+            >
+              Request Quote
+              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+
+        {/* Services & Cities Section - Aligned in Grid */}
+        <div className="grid lg:grid-cols-5 gap-8">
+          {/* Services - Each service with its cities */}
+          {services.map((service) => (
+            <div key={service.slug}>
+              <h3 className="text-sm font-bold mb-4 text-amber-400 uppercase tracking-wider flex items-center">
+                <span className="mr-2">{service.icon}</span>
+                {service.name}
+              </h3>
+              <ul className="space-y-2">
+                {featuredCities.slice(0, 8).map((city) => (
+                  <li key={`${service.slug}-${city.slug}`}>
+                    <Link
+                      href={`/services/${service.slug}/${city.slug}`}
+                      className="text-gray-400 hover:text-white transition-colors text-xs"
+                    >
+                      {city.name}
+                    </Link>
+                  </li>
+                ))}
+                <li>
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="text-amber-400 hover:text-amber-300 transition-colors text-xs font-semibold"
+                  >
+                    View All →
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          ))}
+
+          {/* All Cities Column */}
           <div>
-            <h3 className="text-lg font-bold mb-6">Our Services</h3>
-            <ul className="space-y-3">
-              {services.map((service) => (
-                <li key={service.slug}>
-                  <Link href={`/services/${service.slug}`} className="text-gray-400 hover:text-amber-400 transition-colors">
-                    {service.name}
+            <h3 className="text-sm font-bold mb-4 text-amber-400 uppercase tracking-wider flex items-center">
+              <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+              </svg>
+              More Cities
+            </h3>
+            <ul className="space-y-2">
+              {cities.slice(12, 20).map((city) => (
+                <li key={city.slug}>
+                  <Link
+                    href={`/cities/${city.slug}`}
+                    className="text-gray-400 hover:text-white transition-colors text-xs"
+                  >
+                    {city.name}
                   </Link>
                 </li>
               ))}
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-bold mb-6">Contact Us</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start space-x-3">
-                <svg className="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                </svg>
-                <span className="text-gray-400">{ADDRESS.full}</span>
-              </li>
               <li>
-                <a href={PHONE_LINK} className="flex items-center space-x-3 text-gray-400 hover:text-amber-400 transition-colors">
-                  <svg className="w-5 h-5 text-amber-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                  </svg>
-                  <span>{PHONE}</span>
-                </a>
-              </li>
-              <li className="pt-4 border-t border-white/10">
-                <h4 className="font-semibold mb-2">Business Hours</h4>
-                <p className="text-gray-400 text-sm">Mon-Fri: {BUSINESS_HOURS.weekdays}</p>
-                <p className="text-gray-400 text-sm">Saturday: {BUSINESS_HOURS.saturday}</p>
-                <p className="text-gray-400 text-sm">Sunday: {BUSINESS_HOURS.sunday}</p>
+                <Link
+                  href="/cities"
+                  className="text-amber-400 hover:text-amber-300 transition-colors text-xs font-semibold"
+                >
+                  100+ Cities →
+                </Link>
               </li>
             </ul>
           </div>
@@ -106,15 +175,16 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10">
+      <div className="border-t border-white/10 bg-slate-950">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400 text-sm">
-              &copy; {new Date().getFullYear()} {SITE_NAME}. All rights reserved.
+            <p className="text-gray-500 text-sm">
+              © {new Date().getFullYear()} {SITE_NAME}. All rights reserved. Licensed & Insured.
             </p>
-            <div className="flex space-x-6 text-sm text-gray-400">
+            <div className="flex space-x-6 text-sm text-gray-500">
               <Link href="/privacy" className="hover:text-amber-400 transition-colors">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-amber-400 transition-colors">Terms of Service</Link>
+              <Link href="/sitemap.xml" className="hover:text-amber-400 transition-colors">Sitemap</Link>
             </div>
           </div>
         </div>

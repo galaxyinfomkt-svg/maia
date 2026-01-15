@@ -37,10 +37,9 @@ export default function ServicesPage() {
       <Hero
         title="Our Services"
         subtitle="Professional home improvement services tailored to your needs"
-        backgroundImage={IMAGES.hero}
         badge="What We Offer"
         showCTA={false}
-        size="small"
+        size="inner"
       />
 
       {/* Services Grid */}
