@@ -1,0 +1,17 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/about/page": "/about",
+  "/blog/[slug]/page": "/blog/[slug]",
+  "/blog/page": "/blog",
+  "/cities/[slug]/page": "/cities/[slug]",
+  "/cities/page": "/cities",
+  "/contact/page": "/contact",
+  "/favicon.ico/route": "/favicon.ico",
+  "/page": "/",
+  "/robots.txt/route": "/robots.txt",
+  "/services/[service]/[city]/page": "/services/[service]/[city]",
+  "/services/[service]/page": "/services/[service]",
+  "/services/page": "/services",
+  "/sitemap.xml/route": "/sitemap.xml"
+}
