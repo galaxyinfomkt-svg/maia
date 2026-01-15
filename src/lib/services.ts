@@ -63,7 +63,7 @@ export const services: Service[] = [
     icon: '🚪',
     shortDescription: 'Custom door installation for enhanced security and style.',
     fullDescription: 'Enhance your home\'s security, energy efficiency, and curb appeal with professional door installation from Maia Construction. We install entry doors, storm doors, patio doors, and interior doors in a variety of materials including fiberglass, steel, and wood. Every installation includes proper weatherstripping and hardware.',
-    image: IMAGES.hero,
+    image: IMAGES.doors,
     features: [
       'Entry door installation',
       'Storm door installation',
@@ -90,7 +90,7 @@ export const services: Service[] = [
     icon: '🔨',
     shortDescription: 'Full-service construction and renovation for your entire project.',
     fullDescription: 'Maia Construction provides comprehensive general contracting services for home renovations, additions, and remodeling projects throughout Massachusetts. From initial planning to final inspection, we manage every aspect of your construction project with licensed professionals, quality materials, and clear communication.',
-    image: IMAGES.hero,
+    image: IMAGES.generalContractor,
     features: [
       'Home additions',
       'Kitchen remodeling',

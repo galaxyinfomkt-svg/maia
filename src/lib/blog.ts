@@ -12,7 +12,7 @@ export const blogPosts: BlogPostMeta[] = [
     description: 'A comprehensive guide to selecting the best siding material for New England weather conditions. Compare vinyl, fiber cement, and wood options.',
     date: '2024-12-15',
     author: 'Maia Construction',
-    image: 'https://storage.googleapis.com/msgsndr/b8spY0hvhFRzHHxsdJlZ/media/68b9ef0b12b656a7091a9bab.jpeg',
+    image: '/images/before-after/siding-after-framingham-ma.webp',
     tags: ['Siding', 'Home Improvement', 'Massachusetts'],
   },
   {
@@ -21,7 +21,7 @@ export const blogPosts: BlogPostMeta[] = [
     description: 'Learn how energy-efficient windows can reduce your heating bills by up to 30%. Covers U-factor, SHGC ratings, and best brands.',
     date: '2024-12-10',
     author: 'Maia Construction',
-    image: 'https://storage.googleapis.com/msgsndr/b8spY0hvhFRzHHxsdJlZ/media/68b9ee4857df8a993dff5806.jpeg',
+    image: '/images/windows/window-installation-massachusetts-1.webp',
     tags: ['Windows', 'Energy Efficiency', 'Home Improvement'],
   },
   {
@@ -30,7 +30,7 @@ export const blogPosts: BlogPostMeta[] = [
     description: 'Your front door makes the first impression. Discover how to choose a door that enhances your home\'s style and security.',
     date: '2024-12-05',
     author: 'Maia Construction',
-    image: 'https://storage.googleapis.com/msgsndr/b8spY0hvhFRzHHxsdJlZ/media/68bb92a147f24d34a4cb2441.jpeg',
+    image: '/images/doors/door-installation-massachusetts-1.webp',
     tags: ['Doors', 'Curb Appeal', 'Home Value'],
   },
 ];

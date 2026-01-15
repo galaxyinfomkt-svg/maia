@@ -14,12 +14,36 @@ export const ADDRESS = {
 };
 
 export const IMAGES = {
-  hero: 'https://storage.googleapis.com/msgsndr/b8spY0hvhFRzHHxsdJlZ/media/68bb92a147f24d34a4cb2441.jpeg',
-  siding: 'https://storage.googleapis.com/msgsndr/b8spY0hvhFRzHHxsdJlZ/media/68b9ef0b12b656a7091a9bab.jpeg',
-  windows: 'https://storage.googleapis.com/msgsndr/b8spY0hvhFRzHHxsdJlZ/media/68b9ee4857df8a993dff5806.jpeg',
-  wood: 'https://storage.googleapis.com/msgsndr/b8spY0hvhFRzHHxsdJlZ/media/68bb8b0cb20028428edc255a.jpeg',
-  engineered: 'https://storage.googleapis.com/msgsndr/b8spY0hvhFRzHHxsdJlZ/media/68bb8b8e52c9caae94da8dd1.jpeg',
+  // Hero e imagens principais
+  hero: '/images/general-contractor/home-renovation-massachusetts-1.png',
   logo: 'https://storage.googleapis.com/msgsndr/b8spY0hvhFRzHHxsdJlZ/media/69165fb4890fad61b2da1dc3.png',
+
+  // Siding
+  siding: '/images/before-after/siding-after-framingham-ma.webp',
+  sidingBefore: '/images/before-after/siding-before-framingham-ma.webp',
+  sidingAfter: '/images/before-after/siding-after-framingham-ma.webp',
+
+  // Windows
+  windows: '/images/windows/window-installation-massachusetts-1.webp',
+  windows2: '/images/windows/window-installation-massachusetts-2.webp',
+  windows3: '/images/windows/window-installation-massachusetts-3.webp',
+  windows4: '/images/windows/window-installation-massachusetts-4.webp',
+
+  // Doors
+  doors: '/images/doors/door-installation-massachusetts-1.webp',
+  doors2: '/images/doors/door-installation-massachusetts-2.webp',
+  doors3: '/images/doors/door-installation-massachusetts-3.webp',
+  doors4: '/images/doors/door-installation-massachusetts-4.webp',
+
+  // General Contractor
+  generalContractor: '/images/general-contractor/home-renovation-massachusetts-1.png',
+  generalContractor2: '/images/general-contractor/home-renovation-massachusetts-2.png',
+  generalContractor3: '/images/general-contractor/home-renovation-massachusetts-3.jpeg',
+  generalContractor4: '/images/general-contractor/home-renovation-massachusetts-4.jpeg',
+
+  // Before/After
+  exteriorBefore: '/images/before-after/exterior-before-worcester-ma.webp',
+  exteriorAfter: '/images/before-after/exterior-after-worcester-ma.webp',
 };
 
 export const LOGO_URL = IMAGES.logo;

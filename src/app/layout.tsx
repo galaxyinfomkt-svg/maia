@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { Header, Footer } from '@/components/layout';
 import FloatingCTA from '@/components/FloatingCTA';
-import { SITE_NAME, SITE_URL, PHONE } from '@/lib/constants';
+import { SITE_NAME, SITE_URL, PHONE, ADDRESS } from '@/lib/constants';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -49,6 +49,13 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
+  },
+  other: {
+    // Geo meta tags for local SEO
+    'geo.region': 'US-MA',
+    'geo.placename': ADDRESS.city,
+    'geo.position': `${ADDRESS.lat};${ADDRESS.lng}`,
+    'ICBM': `${ADDRESS.lat}, ${ADDRESS.lng}`,
   },
 };
 
