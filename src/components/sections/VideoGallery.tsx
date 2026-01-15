@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 interface Video {
   id: string;
@@ -11,12 +12,12 @@ interface Video {
 const videos: Video[] = [
   {
     id: '1',
-    title: 'Projeto de Reforma Completa',
+    title: 'Complete Home Renovation',
     youtubeId: 'Yp0dvERMbVY',
   },
   {
     id: '2',
-    title: 'Transformação Exterior',
+    title: 'Exterior Transformation',
     youtubeId: 'g4BVzOZGLRo',
   },
 ];
@@ -60,14 +61,18 @@ export default function VideoGallery({
                   className="absolute inset-0 w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
+                  loading="lazy"
                 />
               ) : (
                 <>
-                  {/* Thumbnail */}
-                  <img
-                    src={`https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`}
+                  {/* Thumbnail - Optimized with Next/Image */}
+                  <Image
+                    src={`https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`}
                     alt={video.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
                   />
 
                   {/* Overlay */}

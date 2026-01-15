@@ -91,7 +91,9 @@ export default function BeforeAfter({
                   src={currentProject.afterImage}
                   alt={`${currentProject.title} - After`}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 66vw"
                   className="object-cover"
+                  priority
                 />
                 <div className="absolute top-4 right-4 px-4 py-2 bg-green-500 text-white rounded-full text-sm font-bold">
                   AFTER
@@ -107,7 +109,9 @@ export default function BeforeAfter({
                   src={currentProject.beforeImage}
                   alt={`${currentProject.title} - Before`}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 66vw"
                   className="object-cover"
+                  priority
                 />
                 <div className="absolute top-4 left-4 px-4 py-2 bg-red-500 text-white rounded-full text-sm font-bold">
                   BEFORE
@@ -166,7 +170,9 @@ export default function BeforeAfter({
                     src={project.afterImage}
                     alt={project.title}
                     fill
+                    sizes="80px"
                     className="object-cover"
+                    loading="lazy"
                   />
                 </div>
                 <div>

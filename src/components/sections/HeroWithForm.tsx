@@ -32,9 +32,10 @@ export default function HeroWithForm({
           src={backgroundImage}
           alt=""
           fill
+          sizes="100vw"
           className="object-cover"
           priority
-          quality={85}
+          quality={75}
         />
       </div>
 

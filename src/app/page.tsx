@@ -1,7 +1,16 @@
-import { HeroWithForm, ServicesSection, Testimonials, CityGrid, CTASection, WhyChooseUs, BeforeAfter, VideoGallery } from '@/components/sections';
+import dynamic from 'next/dynamic';
+import { HeroWithForm, ServicesSection, Testimonials, CityGrid, CTASection, WhyChooseUs } from '@/components/sections';
 import { JsonLd } from '@/components/seo';
 import { cities } from '@/lib/cities';
 import { SITE_NAME, PHONE, ADDRESS, LOGO_URL, SITE_URL } from '@/lib/constants';
+
+// Lazy load heavy client components
+const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'), {
+  loading: () => <div className="py-24 bg-slate-900" />,
+});
+const VideoGallery = dynamic(() => import('@/components/sections/VideoGallery'), {
+  loading: () => <div className="py-24 bg-white" />,
+});
 
 export default function HomePage() {
   const featuredCities = cities.slice(0, 12);
