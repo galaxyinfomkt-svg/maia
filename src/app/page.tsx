@@ -1,4 +1,4 @@
-import { HeroWithForm, ServicesSection, Testimonials, CityGrid, CTASection, WhyChooseUs, BeforeAfter } from '@/components/sections';
+import { HeroWithForm, ServicesSection, Testimonials, CityGrid, CTASection, WhyChooseUs, BeforeAfter, VideoGallery } from '@/components/sections';
 import { JsonLd } from '@/components/seo';
 import { cities } from '@/lib/cities';
 import { SITE_NAME, PHONE, ADDRESS, LOGO_URL, SITE_URL } from '@/lib/constants';
@@ -84,6 +84,12 @@ export default function HomePage() {
       <BeforeAfter
         title="Our Transformations"
         subtitle="See the difference quality craftsmanship makes - drag to compare before and after"
+      />
+
+      {/* Video Gallery */}
+      <VideoGallery
+        title="Our Projects in Action"
+        subtitle="Watch our team transform homes across Massachusetts"
       />
 
       {/* Testimonials */}

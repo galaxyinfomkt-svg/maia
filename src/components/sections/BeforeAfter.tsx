@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
-import { IMAGES } from '@/lib/constants';
 
 interface BeforeAfterProject {
   id: string;
@@ -19,24 +18,16 @@ const projects: BeforeAfterProject[] = [
     id: '1',
     title: 'Vinyl Siding Transformation',
     location: 'Framingham, MA',
-    beforeImage: IMAGES.wood,
-    afterImage: IMAGES.siding,
+    beforeImage: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://storage.googleapis.com/msgsndr/b8spY0hvhFRzHHxsdJlZ/media/68b9ef0b12b656a7091a9bab.jpeg',
+    afterImage: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://storage.googleapis.com/msgsndr/b8spY0hvhFRzHHxsdJlZ/media/68b9ee4857df8a993dff5806.jpeg',
     service: 'Siding',
   },
   {
     id: '2',
-    title: 'Window Replacement',
-    location: 'Worcester, MA',
-    beforeImage: IMAGES.engineered,
-    afterImage: IMAGES.windows,
-    service: 'Windows',
-  },
-  {
-    id: '3',
     title: 'Complete Exterior Renovation',
-    location: 'Natick, MA',
-    beforeImage: IMAGES.hero,
-    afterImage: IMAGES.siding,
+    location: 'Worcester, MA',
+    beforeImage: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://storage.googleapis.com/msgsndr/b8spY0hvhFRzHHxsdJlZ/media/68bb8b0cb20028428edc255a.jpeg',
+    afterImage: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://storage.googleapis.com/msgsndr/b8spY0hvhFRzHHxsdJlZ/media/68bb8b8e52c9caae94da8dd1.jpeg',
     service: 'General Contractor',
   },
 ];
