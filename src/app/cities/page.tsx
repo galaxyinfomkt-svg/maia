@@ -1,9 +1,11 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Hero, CTASection } from '@/components/sections';
 import { cities, getCitiesByCounty } from '@/lib/cities';
+import { services } from '@/lib/services';
 import { JsonLd } from '@/components/seo';
-import { SITE_NAME, IMAGES } from '@/lib/constants';
+import { SITE_NAME } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Cities We Serve',
@@ -67,8 +69,82 @@ export default function CitiesPage() {
         </div>
       </section>
 
-      {/* Cities by County */}
+      {/* Services with Cities */}
       <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">Our Services by Location</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-6" />
+            <p className="text-xl text-gray-600">
+              Find our services available in your city
+            </p>
+          </div>
+
+          <div className="space-y-16">
+            {services.map((service) => (
+              <div key={service.slug} className="bg-gradient-to-br from-slate-50 to-white rounded-2xl p-8 border border-slate-200">
+                <div className="flex flex-col lg:flex-row gap-8">
+                  {/* Service Info */}
+                  <div className="lg:w-1/3">
+                    <div className="relative h-48 rounded-xl overflow-hidden mb-4">
+                      <Image
+                        src={service.image}
+                        alt={service.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="text-3xl">{service.icon}</span>
+                      <h3 className="text-2xl font-bold text-slate-900">{service.name}</h3>
+                    </div>
+                    <p className="text-gray-600 mb-4">{service.shortDescription}</p>
+                    <Link
+                      href={`/services/${service.slug}`}
+                      className="inline-flex items-center text-amber-500 font-semibold hover:text-amber-600 transition-colors"
+                    >
+                      Learn More
+                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  </div>
+
+                  {/* Cities Grid */}
+                  <div className="lg:w-2/3">
+                    <h4 className="text-lg font-semibold text-slate-900 mb-4">
+                      {service.name} available in {cities.length}+ cities:
+                    </h4>
+                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2">
+                      {cities.slice(0, 20).map((city) => (
+                        <Link
+                          key={`${service.slug}-${city.slug}`}
+                          href={`/services/${service.slug}/${city.slug}`}
+                          className="px-3 py-2 text-sm text-gray-600 hover:text-amber-500 hover:bg-amber-50 rounded-lg transition-all"
+                        >
+                          {city.name}
+                        </Link>
+                      ))}
+                    </div>
+                    <Link
+                      href={`/services/${service.slug}`}
+                      className="inline-flex items-center mt-4 px-4 py-2 bg-slate-900 text-white rounded-full text-sm font-semibold hover:bg-slate-800 transition-colors"
+                    >
+                      View all {cities.length}+ locations
+                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Cities by County */}
+      <section className="py-24 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-900 mb-4">Browse by County</h2>
@@ -121,7 +197,7 @@ export default function CitiesPage() {
       </section>
 
       {/* All Cities Alphabetical */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-900 mb-4">All Cities A-Z</h2>

@@ -111,31 +111,34 @@ export default function Footer() {
         </div>
 
         {/* Services & Cities Section - Aligned in Grid */}
-        <div className="grid lg:grid-cols-5 gap-8">
+        <div className="grid lg:grid-cols-5 gap-10">
           {/* Services - Each service with its cities */}
           {services.map((service) => (
             <div key={service.slug}>
-              <h3 className="text-sm font-bold mb-4 text-amber-400 uppercase tracking-wider flex items-center">
-                <span className="mr-2">{service.icon}</span>
+              <h3 className="text-base font-bold mb-5 text-amber-400 flex items-center">
+                <span className="mr-2 text-lg">{service.icon}</span>
                 {service.name}
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 {featuredCities.slice(0, 8).map((city) => (
                   <li key={`${service.slug}-${city.slug}`}>
                     <Link
                       href={`/services/${service.slug}/${city.slug}`}
-                      className="text-gray-400 hover:text-white transition-colors text-xs"
+                      className="text-gray-300 hover:text-white transition-colors text-sm"
                     >
                       {city.name}
                     </Link>
                   </li>
                 ))}
-                <li>
+                <li className="pt-1">
                   <Link
                     href={`/services/${service.slug}`}
-                    className="text-amber-400 hover:text-amber-300 transition-colors text-xs font-semibold"
+                    className="text-amber-400 hover:text-amber-300 transition-colors text-sm font-semibold inline-flex items-center"
                   >
-                    View All →
+                    View All
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
                   </Link>
                 </li>
               </ul>
@@ -144,29 +147,32 @@ export default function Footer() {
 
           {/* All Cities Column */}
           <div>
-            <h3 className="text-sm font-bold mb-4 text-amber-400 uppercase tracking-wider flex items-center">
-              <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <h3 className="text-base font-bold mb-5 text-amber-400 flex items-center">
+              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
               </svg>
               More Cities
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {cities.slice(12, 20).map((city) => (
                 <li key={city.slug}>
                   <Link
                     href={`/cities/${city.slug}`}
-                    className="text-gray-400 hover:text-white transition-colors text-xs"
+                    className="text-gray-300 hover:text-white transition-colors text-sm"
                   >
                     {city.name}
                   </Link>
                 </li>
               ))}
-              <li>
+              <li className="pt-1">
                 <Link
                   href="/cities"
-                  className="text-amber-400 hover:text-amber-300 transition-colors text-xs font-semibold"
+                  className="text-amber-400 hover:text-amber-300 transition-colors text-sm font-semibold inline-flex items-center"
                 >
-                  100+ Cities →
+                  100+ Cities
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </Link>
               </li>
             </ul>
