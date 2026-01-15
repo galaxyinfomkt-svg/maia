@@ -1,0 +1,7 @@
+export { default as Hero } from './Hero';
+export { default as HeroWithForm } from './HeroWithForm';
+export { default as ServicesSection } from './ServicesSection';
+export { default as Testimonials } from './Testimonials';
+export { default as CityGrid } from './CityGrid';
+export { default as CTASection } from './CTASection';
+export { default as WhyChooseUs } from './WhyChooseUs';
