@@ -115,8 +115,8 @@ export default function CitiesPage() {
                     <h4 className="text-lg font-semibold text-slate-900 mb-4">
                       {service.name} available in {cities.length}+ cities:
                     </h4>
-                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2">
-                      {cities.slice(0, 20).map((city) => (
+                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2 max-h-80 overflow-y-auto pr-2">
+                      {cities.map((city) => (
                         <Link
                           key={`${service.slug}-${city.slug}`}
                           href={`/services/${service.slug}/${city.slug}`}
@@ -126,15 +126,6 @@ export default function CitiesPage() {
                         </Link>
                       ))}
                     </div>
-                    <Link
-                      href={`/services/${service.slug}`}
-                      className="inline-flex items-center mt-4 px-4 py-2 bg-slate-900 text-white rounded-full text-sm font-semibold hover:bg-slate-800 transition-colors"
-                    >
-                      View all {cities.length}+ locations
-                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </Link>
                   </div>
                 </div>
               </div>

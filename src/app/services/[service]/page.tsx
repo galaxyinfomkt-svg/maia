@@ -42,10 +42,10 @@ function getServiceGallery(serviceSlug: string): string[] {
   switch (serviceSlug) {
     case 'siding':
       return [
-        IMAGES.siding,
-        IMAGES.sidingBefore,
-        IMAGES.sidingAfter,
-        IMAGES.exteriorAfter,
+        '/images/before-after/siding-after-framingham-ma.webp',
+        '/images/before-after/siding-before-framingham-ma.webp',
+        '/images/before-after/exterior-after-worcester-ma.webp',
+        '/images/before-after/exterior-before-worcester-ma.webp',
       ];
     case 'windows':
       return [
