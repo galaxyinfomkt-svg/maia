@@ -51,7 +51,18 @@ export default function Header() {
             </div>
 
             {/* Desktop CTA */}
-            <div className="hidden lg:flex items-center space-x-4">
+            <div className="hidden lg:flex items-center space-x-3">
+              <a
+                href="https://g.page/r/CaC0u5sFaCEdEBM/review"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center px-4 py-2 bg-white/10 border border-amber-400/50 text-amber-400 rounded-full font-semibold text-sm hover:bg-amber-400 hover:text-slate-900 transition-all"
+              >
+                <svg className="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                </svg>
+                Reviews
+              </a>
               <a
                 href={PHONE_LINK}
                 className="flex items-center px-6 py-2.5 bg-gradient-to-r from-amber-400 to-yellow-300 text-slate-900 rounded-full font-bold text-sm hover:shadow-lg hover:scale-105 transition-all"

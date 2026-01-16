@@ -7,7 +7,33 @@ import { ContactForm } from '@/components/forms';
 import { JsonLd, Breadcrumbs } from '@/components/seo';
 import { services, getServiceBySlug } from '@/lib/services';
 import { cities, getCityBySlug, getNearbyCities } from '@/lib/cities';
-import { SITE_NAME, PHONE, ADDRESS, LOGO_URL } from '@/lib/constants';
+import { SITE_NAME, PHONE, ADDRESS, LOGO_URL, IMAGES } from '@/lib/constants';
+
+// Get different images based on service type
+function getServiceImages(serviceSlug: string): string[] {
+  switch (serviceSlug) {
+    case 'siding':
+      return [
+        '/images/before-after/siding-after-framingham-ma.webp',
+        '/images/before-after/exterior-after-worcester-ma.webp',
+        '/images/before-after/siding-before-framingham-ma.webp',
+        '/images/before-after/exterior-before-worcester-ma.webp',
+      ];
+    case 'windows':
+      return [IMAGES.windows, IMAGES.windows2, IMAGES.windows3, IMAGES.windows4];
+    case 'doors':
+      return [IMAGES.doors, IMAGES.doors2, IMAGES.doors3, IMAGES.doors4];
+    case 'general-contractor':
+      return [
+        IMAGES.generalContractor,
+        IMAGES.generalContractor2,
+        IMAGES.generalContractor3,
+        IMAGES.generalContractor4,
+      ];
+    default:
+      return [IMAGES.hero, IMAGES.siding, IMAGES.windows, IMAGES.doors];
+  }
+}
 
 interface ServiceCityPageProps {
   params: Promise<{ service: string; city: string }>;
@@ -214,7 +240,7 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
                   {service.name} Projects in {city.county} County
                 </h3>
                 <div className="grid grid-cols-2 gap-4">
-                  {[service.image, service.image].map((img, index) => (
+                  {getServiceImages(serviceSlug).slice(0, 4).map((img, index) => (
                     <div key={index} className="relative h-48 rounded-xl overflow-hidden shadow-lg">
                       <Image
                         src={img}

@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import { HeroWithForm, ServicesSection, Testimonials, CityGrid, CTASection, WhyChooseUs } from '@/components/sections';
+import { HeroWithForm, ServicesSection, CityGrid, CTASection, WhyChooseUs } from '@/components/sections';
 import { JsonLd } from '@/components/seo';
 import { cities } from '@/lib/cities';
 import { SITE_NAME, PHONE, ADDRESS, LOGO_URL, SITE_URL } from '@/lib/constants';
@@ -46,15 +46,9 @@ export default function HomePage() {
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '08:00',
-        closes: '18:00',
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: 'Saturday',
-        opens: '09:00',
-        closes: '15:00',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        opens: '07:00',
+        closes: '19:00',
       },
     ],
     aggregateRating: {
@@ -103,9 +97,6 @@ export default function HomePage() {
         title="Our Projects in Action"
         subtitle="Watch our team transform homes across Massachusetts"
       />
-
-      {/* Testimonials */}
-      <Testimonials />
 
       {/* Customer Reviews Widget */}
       <ReviewWidget />

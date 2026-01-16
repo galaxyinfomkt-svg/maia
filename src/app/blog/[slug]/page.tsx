@@ -255,6 +255,492 @@ const blogContent: Record<string, React.ReactNode> = {
       </ul>
     </>
   ),
+  'hiring-general-contractor-massachusetts': (
+    <>
+      <p className="lead">
+        Hiring the right general contractor can make or break your home improvement project.
+        In Massachusetts, where building codes are strict and weather conditions demanding,
+        choosing a qualified professional is essential for success.
+      </p>
+
+      <h2>Why Choosing the Right Contractor Matters</h2>
+      <p>
+        A quality general contractor brings expertise, project management skills, and a network
+        of reliable subcontractors to your project. The wrong choice can lead to cost overruns,
+        delays, and subpar work that costs even more to fix.
+      </p>
+
+      <h2>10 Essential Questions to Ask</h2>
+
+      <h3>1. Are you licensed and insured in Massachusetts?</h3>
+      <p>
+        Massachusetts requires contractors to hold proper licenses for certain types of work.
+        Always verify their license with the state and confirm they carry both liability
+        insurance and workers&apos; compensation coverage.
+      </p>
+
+      <h3>2. How long have you been in business?</h3>
+      <p>
+        Experience matters. A contractor who has been operating successfully for several years
+        has proven they can deliver quality work and maintain client satisfaction.
+      </p>
+
+      <h3>3. Can you provide local references?</h3>
+      <p>
+        Ask for references from recent projects similar to yours. Follow up with those
+        homeowners to learn about their experience with the contractor.
+      </p>
+
+      <h3>4. Do you pull permits for the work?</h3>
+      <p>
+        Reputable contractors handle all necessary permits. Work done without proper permits
+        can create problems when you sell your home or file an insurance claim.
+      </p>
+
+      <h3>5. Who will be on-site daily?</h3>
+      <p>
+        Know who your point of contact will be during the project. Will the contractor
+        be present, or will a project manager oversee the work?
+      </p>
+
+      <h3>6. What is your timeline for this project?</h3>
+      <p>
+        Get a realistic timeline with milestones. Be wary of contractors who promise
+        unusually fast completion times.
+      </p>
+
+      <h3>7. How do you handle change orders?</h3>
+      <p>
+        Changes happen. Understand their process for handling modifications to the original
+        scope of work and how additional costs will be communicated.
+      </p>
+
+      <h3>8. What is your payment schedule?</h3>
+      <p>
+        Never pay the full amount upfront. A typical schedule includes a deposit, progress
+        payments, and final payment upon completion.
+      </p>
+
+      <h3>9. Do you offer warranties on your work?</h3>
+      <p>
+        Ask about warranties for both labor and materials. Get the warranty terms in writing
+        as part of your contract.
+      </p>
+
+      <h3>10. Can I see a detailed written estimate?</h3>
+      <p>
+        A professional contractor provides a detailed, itemized estimate that breaks down
+        costs for materials, labor, and any other expenses.
+      </p>
+
+      <h2>Red Flags to Watch For</h2>
+      <ul>
+        <li>Requesting full payment upfront</li>
+        <li>No physical business address</li>
+        <li>Pressure to sign immediately</li>
+        <li>Unwillingness to provide references</li>
+        <li>Significantly lower bids than competitors</li>
+      </ul>
+    </>
+  ),
+  'winter-home-preparation-guide': (
+    <>
+      <p className="lead">
+        Massachusetts winters are notorious for their harsh conditions. Preparing your home
+        before the cold sets in can prevent costly damage and keep your family comfortable
+        all season long.
+      </p>
+
+      <h2>Why Winter Preparation Matters</h2>
+      <p>
+        New England winters bring freezing temperatures, heavy snow, ice storms, and strong
+        winds. Without proper preparation, you could face frozen pipes, ice dams, heat loss,
+        and structural damage that costs thousands to repair.
+      </p>
+
+      <h2>Exterior Preparation Checklist</h2>
+
+      <h3>Inspect and Clean Gutters</h3>
+      <p>
+        Clogged gutters can lead to ice dams that damage your roof and siding. Clean all
+        debris and ensure downspouts direct water away from your foundation.
+      </p>
+
+      <h3>Check Your Roof</h3>
+      <p>
+        Look for missing, damaged, or curling shingles. Address any issues before snow
+        accumulates. Check flashing around chimneys and vents for gaps.
+      </p>
+
+      <h3>Seal Gaps and Cracks</h3>
+      <p>
+        Inspect the exterior for gaps around windows, doors, pipes, and cables. Use
+        weatherstripping and caulk to seal any openings where cold air can enter.
+      </p>
+
+      <h3>Service Your Heating System</h3>
+      <p>
+        Have your furnace or heating system inspected and serviced before winter. Replace
+        filters and ensure everything is working efficiently.
+      </p>
+
+      <h3>Protect Outdoor Plumbing</h3>
+      <ul>
+        <li>Disconnect and drain garden hoses</li>
+        <li>Shut off exterior faucets from inside</li>
+        <li>Insulate exposed pipes in unheated areas</li>
+        <li>Know where your main water shutoff is located</li>
+      </ul>
+
+      <h2>Window and Door Maintenance</h2>
+      <p>
+        Windows and doors are major sources of heat loss. Check for:
+      </p>
+      <ul>
+        <li>Drafts around frames and seals</li>
+        <li>Cracked or damaged weatherstripping</li>
+        <li>Condensation between panes (indicates seal failure)</li>
+        <li>Proper operation of locks and latches</li>
+      </ul>
+
+      <h2>Siding Inspection</h2>
+      <p>
+        Your siding protects your home from the elements. Before winter:
+      </p>
+      <ul>
+        <li>Look for cracks, holes, or loose panels</li>
+        <li>Check for signs of moisture damage or rot</li>
+        <li>Ensure all seams are properly sealed</li>
+        <li>Clean mold or mildew that could worsen in cold, damp conditions</li>
+      </ul>
+
+      <h2>Emergency Preparation</h2>
+      <p>
+        Be ready for power outages and severe weather:
+      </p>
+      <ul>
+        <li>Stock emergency supplies (flashlights, batteries, water)</li>
+        <li>Have a backup heating source if possible</li>
+        <li>Keep snow removal equipment accessible</li>
+        <li>Know how to safely use a generator</li>
+      </ul>
+    </>
+  ),
+  'home-renovation-roi': (
+    <>
+      <p className="lead">
+        Smart home renovations can significantly increase your property value while improving
+        your daily living experience. But not all improvements are created equal when it comes
+        to return on investment.
+      </p>
+
+      <h2>Understanding ROI in Home Improvement</h2>
+      <p>
+        Return on investment for home renovations measures how much of your project cost
+        you can recoup when selling your home. While personal enjoyment matters, knowing
+        which projects offer the best financial returns helps you make informed decisions.
+      </p>
+
+      <h2>Top ROI Home Improvements for 2025</h2>
+
+      <h3>1. Siding Replacement (75-85% ROI)</h3>
+      <p>
+        New siding dramatically improves curb appeal and protects your home from the elements.
+        Fiber cement and vinyl siding consistently rank among the best investments for
+        Massachusetts homeowners.
+      </p>
+
+      <h3>2. Window Replacement (70-80% ROI)</h3>
+      <p>
+        Energy-efficient windows reduce utility costs and appeal to buyers. ENERGY STAR
+        certified windows can recoup a significant portion of their cost at resale while
+        providing immediate comfort and savings.
+      </p>
+
+      <h3>3. Entry Door Replacement (75-90% ROI)</h3>
+      <p>
+        A new front door offers one of the highest returns of any home improvement. Steel
+        doors provide the best ROI, combining security, energy efficiency, and curb appeal.
+      </p>
+
+      <h3>4. Garage Door Replacement (90-100% ROI)</h3>
+      <p>
+        Often overlooked, garage door replacement consistently tops ROI lists. A new garage
+        door instantly updates your home&apos;s appearance and improves functionality.
+      </p>
+
+      <h2>Factors Affecting ROI in Massachusetts</h2>
+      <ul>
+        <li><strong>Local market conditions:</strong> Boston metro areas may see higher returns</li>
+        <li><strong>Quality of work:</strong> Professional installation matters</li>
+        <li><strong>Material choices:</strong> Mid-range options often outperform luxury</li>
+        <li><strong>Energy efficiency:</strong> Increasingly important to buyers</li>
+      </ul>
+
+      <h2>Improvements That May Not Pay Off</h2>
+      <p>
+        Some projects, while enjoyable, rarely recoup their costs:
+      </p>
+      <ul>
+        <li>Swimming pools (especially in New England)</li>
+        <li>Over-the-top customizations</li>
+        <li>High-end upgrades in modest neighborhoods</li>
+        <li>Combining bedrooms</li>
+      </ul>
+
+      <h2>Making Smart Decisions</h2>
+      <p>
+        The best renovation decisions balance personal enjoyment with financial return.
+        Focus on improvements that enhance your daily life while maintaining or increasing
+        your home&apos;s value.
+      </p>
+    </>
+  ),
+  'vinyl-vs-fiber-cement-siding': (
+    <>
+      <p className="lead">
+        Choosing between vinyl and fiber cement siding is one of the biggest decisions
+        you&apos;ll make for your home&apos;s exterior. Both options have loyal supporters,
+        and understanding their differences helps you make the right choice for your situation.
+      </p>
+
+      <h2>Vinyl Siding: The Popular Choice</h2>
+      <p>
+        Vinyl siding has been America&apos;s most popular siding choice for decades, and for
+        good reason. It offers an excellent balance of affordability, durability, and low maintenance.
+      </p>
+
+      <h3>Vinyl Advantages</h3>
+      <ul>
+        <li><strong>Cost-effective:</strong> Generally 20-30% less expensive than fiber cement</li>
+        <li><strong>Low maintenance:</strong> Never needs painting; cleans easily</li>
+        <li><strong>Color throughout:</strong> Scratches don&apos;t show because color is integrated</li>
+        <li><strong>Moisture resistant:</strong> Won&apos;t rot or absorb water</li>
+        <li><strong>Wide variety:</strong> Available in numerous colors and styles</li>
+      </ul>
+
+      <h3>Vinyl Considerations</h3>
+      <ul>
+        <li>Can crack in extreme cold</li>
+        <li>May fade over time with UV exposure</li>
+        <li>Less fire resistant than fiber cement</li>
+        <li>Can warp if installed incorrectly</li>
+      </ul>
+
+      <h2>Fiber Cement Siding: The Premium Option</h2>
+      <p>
+        Fiber cement siding, with James Hardie being the most recognized brand, offers
+        exceptional durability and a more authentic wood-like appearance.
+      </p>
+
+      <h3>Fiber Cement Advantages</h3>
+      <ul>
+        <li><strong>Exceptional durability:</strong> Can last 50+ years with proper maintenance</li>
+        <li><strong>Fire resistant:</strong> Non-combustible material</li>
+        <li><strong>Pest resistant:</strong> Won&apos;t attract termites or woodpeckers</li>
+        <li><strong>Authentic appearance:</strong> Closely mimics real wood grain</li>
+        <li><strong>Holds paint well:</strong> Factory finishes last 15+ years</li>
+      </ul>
+
+      <h3>Fiber Cement Considerations</h3>
+      <ul>
+        <li>Higher upfront cost</li>
+        <li>Heavier material requiring more labor to install</li>
+        <li>Requires repainting every 10-15 years</li>
+        <li>Can absorb moisture if not properly sealed</li>
+      </ul>
+
+      <h2>Cost Comparison</h2>
+      <p>
+        For a typical Massachusetts home:
+      </p>
+      <ul>
+        <li><strong>Vinyl:</strong> $6-$12 per square foot installed</li>
+        <li><strong>Fiber Cement:</strong> $10-$18 per square foot installed</li>
+      </ul>
+
+      <h2>Which Is Right for You?</h2>
+      <p>
+        <strong>Choose vinyl if:</strong> Budget is a primary concern, you want minimal maintenance,
+        or you plan to sell within 10-15 years.
+      </p>
+      <p>
+        <strong>Choose fiber cement if:</strong> You want maximum durability, authentic wood appearance,
+        superior fire protection, or plan to stay in your home long-term.
+      </p>
+    </>
+  ),
+  'signs-need-new-windows': (
+    <>
+      <p className="lead">
+        Your windows work hard every day, protecting your home from the elements while letting
+        in natural light. But even quality windows don&apos;t last forever. Here are seven signs
+        that it&apos;s time to consider replacement.
+      </p>
+
+      <h2>1. Drafts and Air Leaks</h2>
+      <p>
+        If you feel cold air coming through closed windows, the seals have likely failed.
+        Hold a candle or lighter near the window frame on a windy day—if the flame flickers,
+        you have air infiltration that&apos;s costing you money on heating bills.
+      </p>
+
+      <h2>2. Condensation Between Panes</h2>
+      <p>
+        Fog or moisture between double or triple-pane glass indicates seal failure. Once the
+        insulating gas escapes, the window loses much of its energy efficiency. This damage
+        is irreversible without full window replacement.
+      </p>
+
+      <h2>3. Difficulty Opening or Closing</h2>
+      <p>
+        Windows that stick, won&apos;t stay open, or are hard to operate have likely warped or
+        shifted. This could be due to moisture damage, settling, or worn hardware. Beyond
+        inconvenience, this affects your home&apos;s security and ventilation.
+      </p>
+
+      <h2>4. Visible Damage or Decay</h2>
+      <p>
+        Obvious signs like rotting wood frames, chipping paint, or water stains indicate
+        serious problems. Water damage can spread to surrounding walls and cause mold growth
+        if not addressed promptly.
+      </p>
+
+      <h2>5. Increasing Energy Bills</h2>
+      <p>
+        If your heating and cooling costs keep rising despite steady usage, inefficient windows
+        could be the culprit. Windows account for 25-30% of residential heating and cooling
+        energy use. Modern ENERGY STAR windows can significantly reduce these costs.
+      </p>
+
+      <h2>6. Outside Noise Intrusion</h2>
+      <p>
+        Quality windows should provide sound insulation. If you&apos;re hearing more traffic,
+        airplanes, or neighborhood noise than before, your windows are no longer providing
+        adequate sound dampening.
+      </p>
+
+      <h2>7. Single-Pane or Older Windows</h2>
+      <p>
+        If your home still has single-pane windows or windows that are 20+ years old, they&apos;re
+        likely well past their effective lifespan. Technology has advanced significantly,
+        and modern windows offer dramatically better performance.
+      </p>
+
+      <h2>The Cost of Waiting</h2>
+      <p>
+        Delaying window replacement often costs more in the long run through:
+      </p>
+      <ul>
+        <li>Higher energy bills every month</li>
+        <li>Water damage to walls and framing</li>
+        <li>Reduced home comfort</li>
+        <li>Lower home value</li>
+      </ul>
+
+      <h2>When to Act</h2>
+      <p>
+        If you&apos;re experiencing multiple signs from this list, it&apos;s time to get a professional
+        assessment. A qualified contractor can evaluate your windows and help you understand
+        your options.
+      </p>
+    </>
+  ),
+  'exterior-renovation-timeline': (
+    <>
+      <p className="lead">
+        Planning an exterior renovation but unsure what to expect? Understanding the typical
+        timeline helps you prepare, set realistic expectations, and minimize disruption to
+        your daily life.
+      </p>
+
+      <h2>Factors Affecting Timeline</h2>
+      <p>
+        Several variables influence how long your project will take:
+      </p>
+      <ul>
+        <li>Size of your home</li>
+        <li>Scope of work (single project vs. multiple improvements)</li>
+        <li>Weather conditions</li>
+        <li>Permit requirements</li>
+        <li>Material availability</li>
+        <li>Existing conditions and unforeseen issues</li>
+      </ul>
+
+      <h2>Siding Replacement Timeline</h2>
+      <p>
+        For an average-sized Massachusetts home (1,500-2,500 sq ft):
+      </p>
+      <ul>
+        <li><strong>Consultation and estimate:</strong> 1-2 days</li>
+        <li><strong>Material ordering:</strong> 1-3 weeks</li>
+        <li><strong>Permits (if required):</strong> 1-2 weeks</li>
+        <li><strong>Installation:</strong> 5-10 days</li>
+        <li><strong>Final inspection:</strong> 1-2 days</li>
+      </ul>
+      <p>
+        <strong>Total typical timeline:</strong> 3-6 weeks from contract to completion
+      </p>
+
+      <h2>Window Replacement Timeline</h2>
+      <p>
+        Window replacement is often faster than homeowners expect:
+      </p>
+      <ul>
+        <li><strong>Measurement and ordering:</strong> 2-4 weeks</li>
+        <li><strong>Installation:</strong> 1-3 days for most homes</li>
+        <li><strong>Finishing touches:</strong> Same day or next day</li>
+      </ul>
+      <p>
+        <strong>Total typical timeline:</strong> 3-5 weeks from order to installation
+      </p>
+
+      <h2>Door Installation Timeline</h2>
+      <p>
+        Entry door replacement is typically the quickest exterior upgrade:
+      </p>
+      <ul>
+        <li><strong>Selection and ordering:</strong> 1-3 weeks</li>
+        <li><strong>Installation:</strong> 4-8 hours</li>
+      </ul>
+      <p>
+        <strong>Total typical timeline:</strong> 2-4 weeks
+      </p>
+
+      <h2>Complete Exterior Renovation</h2>
+      <p>
+        If you&apos;re doing siding, windows, and doors together:
+      </p>
+      <ul>
+        <li><strong>Planning and design:</strong> 1-2 weeks</li>
+        <li><strong>Material ordering:</strong> 2-4 weeks</li>
+        <li><strong>Installation:</strong> 2-4 weeks</li>
+      </ul>
+      <p>
+        <strong>Total typical timeline:</strong> 5-10 weeks
+      </p>
+
+      <h2>Best Time of Year for Exterior Work</h2>
+      <p>
+        In Massachusetts, the optimal seasons are:
+      </p>
+      <ul>
+        <li><strong>Spring (April-June):</strong> Mild temperatures, less rain than fall</li>
+        <li><strong>Fall (September-November):</strong> Stable weather before winter</li>
+        <li><strong>Summer:</strong> Good weather but higher demand may affect scheduling</li>
+        <li><strong>Winter:</strong> Limited exterior work possible, but indoor prep can be done</li>
+      </ul>
+
+      <h2>How to Minimize Delays</h2>
+      <ul>
+        <li>Make decisions promptly when asked</li>
+        <li>Clear the work area before installers arrive</li>
+        <li>Plan for material lead times</li>
+        <li>Be flexible with scheduling</li>
+        <li>Book contractors well in advance, especially for spring and fall</li>
+      </ul>
+    </>
+  ),
 };
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {

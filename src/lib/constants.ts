@@ -51,13 +51,14 @@ export const IMAGES = {
 export const LOGO_URL = IMAGES.logo;
 
 export const SOCIAL_LINKS = {
-  facebook: '#',
-  instagram: '#',
-  linkedin: '#',
+  facebook: 'https://www.facebook.com/maiaconstruction/',
+  instagram: 'https://www.instagram.com/maia.construction',
+  youtube: 'https://www.youtube.com/@maiaconstruction581',
+  google: 'https://share.google/bvgv6CUO3FUPCMGB2',
 };
 
 export const BUSINESS_HOURS = {
-  weekdays: '8:00 AM - 6:00 PM',
-  saturday: '9:00 AM - 3:00 PM',
+  weekdays: '7:00 AM - 7:00 PM',
+  saturday: '7:00 AM - 7:00 PM',
   sunday: 'Closed',
 };
