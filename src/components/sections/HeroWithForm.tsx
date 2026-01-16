@@ -22,7 +22,7 @@ export default function HeroWithForm({
   return (
     <section
       className={cn(
-        'relative min-h-screen flex items-center pt-24 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900',
+        'relative min-h-[85vh] flex items-center pt-20 pb-12 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900',
         className
       )}
     >
@@ -53,12 +53,12 @@ export default function HeroWithForm({
               </Badge>
             )}
 
-            <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold leading-tight">
+            <h1 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight">
               {title}
             </h1>
 
             {subtitle && (
-              <p className="text-xl md:text-2xl text-white/90 font-light leading-relaxed">
+              <p className="text-lg md:text-xl text-white/90 font-light leading-relaxed">
                 {subtitle}
               </p>
             )}

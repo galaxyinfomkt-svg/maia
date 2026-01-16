@@ -32,10 +32,10 @@ export default function Hero({
     <section
       className={cn(
         'relative overflow-hidden flex items-center',
-        size === 'large' && 'min-h-screen pt-24',
-        size === 'default' && 'min-h-[70vh] pt-24',
-        size === 'small' && 'min-h-[40vh] pt-24',
-        size === 'inner' && 'min-h-[35vh] pt-20',
+        size === 'large' && 'min-h-[80vh] pt-20',
+        size === 'default' && 'min-h-[50vh] pt-20',
+        size === 'small' && 'min-h-[35vh] pt-20',
+        size === 'inner' && 'min-h-[28vh] pt-20',
         className
       )}
     >
@@ -81,8 +81,8 @@ export default function Hero({
           <h1 className={cn(
             'font-bold text-white leading-tight',
             isInnerPage
-              ? 'text-3xl md:text-4xl lg:text-5xl mb-4'
-              : 'text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-6'
+              ? 'text-2xl md:text-3xl lg:text-4xl mb-3'
+              : 'text-3xl md:text-4xl lg:text-5xl mb-4'
           )}>
             {title}
           </h1>
@@ -91,8 +91,8 @@ export default function Hero({
             <p className={cn(
               'text-white/90 font-light leading-relaxed',
               isInnerPage
-                ? 'text-lg md:text-xl mb-6'
-                : 'text-xl md:text-2xl mb-8'
+                ? 'text-base md:text-lg mb-4'
+                : 'text-lg md:text-xl mb-6'
             )}>
               {subtitle}
             </p>
