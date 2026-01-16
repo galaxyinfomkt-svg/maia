@@ -11,6 +11,9 @@ const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'), {
 const VideoGallery = dynamic(() => import('@/components/sections/VideoGallery'), {
   loading: () => <div className="py-24 bg-white" />,
 });
+const ReviewWidget = dynamic(() => import('@/components/sections/ReviewWidget'), {
+  loading: () => <div className="py-24 bg-white" />,
+});
 
 export default function HomePage() {
   const featuredCities = cities.slice(0, 12);
@@ -103,6 +106,9 @@ export default function HomePage() {
 
       {/* Testimonials */}
       <Testimonials />
+
+      {/* Customer Reviews Widget */}
+      <ReviewWidget />
 
       {/* Cities We Serve */}
       <CityGrid

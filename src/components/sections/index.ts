@@ -7,3 +7,4 @@ export { default as CTASection } from './CTASection';
 export { default as WhyChooseUs } from './WhyChooseUs';
 export { default as BeforeAfter } from './BeforeAfter';
 export { default as VideoGallery } from './VideoGallery';
+export { default as ReviewWidget } from './ReviewWidget';
