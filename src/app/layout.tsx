@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import { Header, Footer } from '@/components/layout';
+import { Header, Footer, TopBar } from '@/components/layout';
 import FloatingCTA from '@/components/FloatingCTA';
+import ChatWidget from '@/components/ChatWidget';
 import { SITE_NAME, SITE_URL, PHONE, ADDRESS } from '@/lib/constants';
 
 const inter = Inter({
@@ -67,10 +68,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} font-sans antialiased`}>
+        <TopBar />
         <Header />
         <main>{children}</main>
         <Footer />
         <FloatingCTA />
+        <ChatWidget />
       </body>
     </html>
   );
