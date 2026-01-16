@@ -244,7 +244,7 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
                     <div key={index} className="relative h-48 rounded-xl overflow-hidden shadow-lg">
                       <Image
                         src={img}
-                        alt={`${service.name} project in ${city.name}`}
+                        alt={`${service.name} installation project in ${city.name}, ${city.county} County MA - Maia Construction`}
                         fill
                         className="object-cover"
                       />

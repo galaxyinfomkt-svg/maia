@@ -86,7 +86,7 @@ export default function AboutPage() {
               <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src={IMAGES.hero}
-                  alt="Maia Construction Team"
+                  alt="Maia Construction team completing a siding installation project in Massachusetts"
                   fill
                   className="object-cover"
                 />

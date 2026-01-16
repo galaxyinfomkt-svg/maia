@@ -53,7 +53,7 @@ export default function Hero({
           {backgroundImage && (
             <Image
               src={backgroundImage}
-              alt=""
+              alt="Massachusetts home exterior renovation - premium siding, windows and doors installation"
               fill
               className="object-cover"
               priority

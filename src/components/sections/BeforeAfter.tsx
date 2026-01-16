@@ -89,7 +89,7 @@ export default function BeforeAfter({
               <div className="absolute inset-0">
                 <Image
                   src={currentProject.afterImage}
-                  alt={`${currentProject.title} - After`}
+                  alt={`${currentProject.title} completed project in ${currentProject.location} - After renovation by Maia Construction`}
                   fill
                   sizes="(max-width: 1024px) 100vw, 66vw"
                   className="object-cover"
@@ -107,7 +107,7 @@ export default function BeforeAfter({
               >
                 <Image
                   src={currentProject.beforeImage}
-                  alt={`${currentProject.title} - Before`}
+                  alt={`${currentProject.title} in ${currentProject.location} - Before renovation, original condition`}
                   fill
                   sizes="(max-width: 1024px) 100vw, 66vw"
                   className="object-cover"
@@ -168,7 +168,7 @@ export default function BeforeAfter({
                 <div className="relative w-20 h-16 rounded-lg overflow-hidden flex-shrink-0">
                   <Image
                     src={project.afterImage}
-                    alt={project.title}
+                    alt={`${project.title} thumbnail - ${project.service} project in ${project.location}`}
                     fill
                     sizes="80px"
                     className="object-cover"

@@ -36,10 +36,10 @@ export default function ContactForm({
       {isHero && (
         <div className="text-center mb-4">
           <h2 className="text-2xl font-bold mb-2 text-white">
-            Get Your Free Estimate
+            Get Your FREE Estimate Today
           </h2>
           <p className="text-white/80 text-sm">
-            Fill out the form and we&apos;ll contact you within 24 hours
+            No obligation • Response within 24 hours • 5-star rated service
           </p>
         </div>
       )}

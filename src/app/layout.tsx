@@ -4,7 +4,7 @@ import './globals.css';
 import { Header, Footer, TopBar } from '@/components/layout';
 import FloatingCTA from '@/components/FloatingCTA';
 import ChatWidget from '@/components/ChatWidget';
-import { SITE_NAME, SITE_URL, PHONE, ADDRESS } from '@/lib/constants';
+import { SITE_NAME, SITE_URL, PHONE, ADDRESS, HIC_NUMBER } from '@/lib/constants';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -13,16 +13,23 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: `${SITE_NAME} | Expert Siding, Door & Windows Installation in Massachusetts`,
-    template: `%s | ${SITE_NAME}`,
+    default: `${SITE_NAME} | #1 Siding & Window Installation in Massachusetts | Free Estimates`,
+    template: `%s | ${SITE_NAME} - MA Licensed Contractor`,
   },
-  description: `Professional siding, door, and windows installation services in Massachusetts. Licensed & insured contractor serving 100+ cities. Call ${PHONE} for a free estimate!`,
+  description: `Transform your home with New England's trusted siding, window & door experts. MA HIC #${HIC_NUMBER}. 10+ years experience, 5-star rated, serving 100+ MA cities. Call ${PHONE} for FREE estimate!`,
   keywords: [
     'siding installation Massachusetts',
-    'window replacement MA',
-    'door installation contractor',
+    'siding contractor Boston MA',
+    'vinyl siding installation Worcester',
+    'fiber cement siding Massachusetts',
+    'window replacement Massachusetts',
+    'energy efficient windows MA',
+    'door installation contractor MA',
+    'entry door replacement Boston',
     'home improvement Massachusetts',
-    'general contractor Marlborough',
+    'general contractor Marlborough MA',
+    'exterior renovation New England',
+    'James Hardie siding installer MA',
   ],
   authors: [{ name: SITE_NAME }],
   creator: SITE_NAME,
@@ -32,13 +39,13 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: `${SITE_NAME} | Expert Home Improvement in Massachusetts`,
-    description: 'Professional siding, door, and windows installation services throughout Massachusetts.',
+    title: `${SITE_NAME} | Premium Siding, Windows & Doors in Massachusetts`,
+    description: 'New England\'s trusted home exterior specialists. Premium siding, energy-efficient windows & doors. 5-star rated, licensed & insured. Free estimates!',
   },
   twitter: {
     card: 'summary_large_image',
-    title: SITE_NAME,
-    description: 'Professional siding, door, and windows installation services in Massachusetts.',
+    title: `${SITE_NAME} | MA's Top-Rated Siding & Window Contractor`,
+    description: 'Transform your home with quality siding, windows & doors. Serving 100+ Massachusetts cities. Licensed & insured. Call for free estimate!',
   },
   robots: {
     index: true,

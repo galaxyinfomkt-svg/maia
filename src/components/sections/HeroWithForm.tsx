@@ -30,7 +30,7 @@ export default function HeroWithForm({
       <div className="absolute inset-0 opacity-30">
         <Image
           src={backgroundImage}
-          alt=""
+          alt="Professional siding and window installation services in Massachusetts - Maia Construction"
           fill
           sizes="100vw"
           className="object-cover"

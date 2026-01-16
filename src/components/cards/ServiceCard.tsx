@@ -19,7 +19,7 @@ export default function ServiceCard({ service, citySlug }: ServiceCardProps) {
         <div className="relative h-48 overflow-hidden">
           <Image
             src={service.image}
-            alt={service.name}
+            alt={`Professional ${service.name.toLowerCase()} installation services in Massachusetts - Maia Construction`}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
             className="object-cover group-hover:scale-110 transition-transform duration-500"

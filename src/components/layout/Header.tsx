@@ -37,7 +37,7 @@ export default function Header() {
               <div className="relative w-32 h-16 sm:w-40 sm:h-20 lg:w-48 lg:h-24">
                 <Image
                   src={LOGO_URL}
-                  alt={SITE_NAME}
+                  alt={`${SITE_NAME} - Licensed Siding, Windows and Doors Contractor in Massachusetts`}
                   fill
                   className="object-contain"
                   priority

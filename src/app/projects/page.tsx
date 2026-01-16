@@ -190,7 +190,7 @@ export default function ProjectsPage() {
                 <div className="relative h-56">
                   <Image
                     src={project.image}
-                    alt={project.title}
+                    alt={`${project.title} in ${project.location} - ${project.service} project by Maia Construction`}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -246,7 +246,7 @@ export default function ProjectsPage() {
               >
                 <Image
                   src={service.image}
-                  alt={service.name}
+                  alt={`${service.name} installation services in Massachusetts - professional ${service.name.toLowerCase()} contractor`}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />

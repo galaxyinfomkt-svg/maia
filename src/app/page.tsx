@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic';
 import { HeroWithForm, ServicesSection, CityGrid, CTASection, WhyChooseUs } from '@/components/sections';
 import { JsonLd } from '@/components/seo';
 import { cities } from '@/lib/cities';
-import { SITE_NAME, PHONE, ADDRESS, LOGO_URL, SITE_URL } from '@/lib/constants';
+import { SITE_NAME, PHONE, ADDRESS, LOGO_URL, SITE_URL, HIC_NUMBER } from '@/lib/constants';
 
 // Lazy load heavy client components
 const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'), {
@@ -64,17 +64,17 @@ export default function HomePage() {
 
       {/* Hero Section with Form */}
       <HeroWithForm
-        badge="Award-Winning Construction Services"
+        badge={`MA Licensed Contractor • HIC #${HIC_NUMBER} • 5-Star Rated`}
         title={
           <>
-            Expert{' '}
+            Transform Your Home with{' '}
             <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 bg-clip-text text-transparent">
-              Siding, Door & Windows Installation
+              Premium Siding, Windows & Doors
             </span>{' '}
-            in Massachusetts
+            Built for New England Weather
           </>
         }
-        subtitle="Quality, Precision, and Durability in Every Project. Founded by Marcos, serving 100+ communities across New England."
+        subtitle="High-durability exterior solutions with lifetime warranty protection. Transparent pricing, award-winning service, and expert installation by certified craftsmen. Serving 100+ Massachusetts communities."
       />
 
       {/* Why Choose Us */}
@@ -82,8 +82,8 @@ export default function HomePage() {
 
       {/* Services Section */}
       <ServicesSection
-        title="Our Services"
-        subtitle="Professional installation and repair services for your home"
+        title="Expert Home Exterior Services"
+        subtitle="From vinyl siding to energy-efficient windows — we deliver quality craftsmanship that withstands harsh New England winters"
       />
 
       {/* Before & After Gallery */}
@@ -103,16 +103,16 @@ export default function HomePage() {
 
       {/* Cities We Serve */}
       <CityGrid
-        title="Cities We Serve"
-        subtitle="Professional construction services throughout Massachusetts"
+        title="Serving 100+ Massachusetts Communities"
+        subtitle="From Boston to Worcester, Framingham to Springfield — we're your local exterior renovation experts"
         cities={featuredCities}
         limit={12}
       />
 
       {/* CTA Section */}
       <CTASection
-        title="Ready to Transform Your Home?"
-        subtitle="Get your free estimate today! Professional service, quality materials, and expert installation."
+        title="Get Your FREE Estimate Today"
+        subtitle="No obligation, no pressure. Speak with a certified expert about your project and get transparent pricing within 24 hours."
       />
     </>
   );

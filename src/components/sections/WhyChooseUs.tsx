@@ -1,3 +1,5 @@
+import { HIC_NUMBER } from '@/lib/constants';
+
 interface WhyChooseUsProps {
   cityName?: string;
 }
@@ -5,33 +7,33 @@ interface WhyChooseUsProps {
 const reasons = [
   {
     icon: '🏆',
-    title: 'Expert Craftsmanship',
-    description: 'Over a decade of experience delivering quality construction services throughout Massachusetts.',
+    title: '10+ Years of Excellence',
+    description: 'Over a decade transforming Massachusetts homes. 500+ projects completed with expert precision and attention to detail.',
   },
   {
     icon: '📋',
-    title: 'Licensed & Insured',
-    description: 'Fully licensed and insured contractors. Your home is protected throughout the entire project.',
+    title: 'MA Licensed (HIC #' + HIC_NUMBER + ')',
+    description: 'Fully licensed, bonded, and insured. Your investment is protected from start to finish with our comprehensive coverage.',
   },
   {
     icon: '⭐',
-    title: '5-Star Rated',
-    description: 'Consistently rated 5 stars by our customers. We\'re proud of our reputation for excellence.',
+    title: '5.0 Star Google Rating',
+    description: 'Consistently rated 5 stars across 47+ verified reviews. Our customers\' satisfaction speaks louder than any advertisement.',
   },
   {
     icon: '💰',
-    title: 'Competitive Pricing',
-    description: 'Quality workmanship at fair prices. We provide detailed quotes with no hidden fees.',
+    title: 'Transparent, Fair Pricing',
+    description: 'No surprises, no hidden fees. Get detailed written quotes upfront — we honor our prices and never upsell.',
   },
   {
     icon: '🔧',
-    title: 'Quality Materials',
-    description: 'We use only premium materials from trusted manufacturers with comprehensive warranties.',
+    title: 'Premium Materials Only',
+    description: 'We partner with top brands: James Hardie, CertainTeed, Andersen, Therma-Tru. 25-50 year manufacturer warranties included.',
   },
   {
     icon: '🤝',
-    title: 'Customer Focused',
-    description: 'Your satisfaction is our priority. We communicate clearly and deliver on our promises.',
+    title: 'Local & Responsive',
+    description: 'Marlborough-based family business. We answer calls personally, respond same-day, and treat your home like our own.',
   },
 ];
 

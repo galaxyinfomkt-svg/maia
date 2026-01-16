@@ -27,7 +27,7 @@ export default function Footer() {
               <div className="relative w-12 h-12">
                 <Image
                   src={LOGO_URL}
-                  alt={SITE_NAME}
+                  alt={`${SITE_NAME} logo - Massachusetts home improvement contractor`}
                   fill
                   className="object-contain"
                 />

@@ -89,7 +89,7 @@ export default function CitiesPage() {
                     <div className="relative h-48 rounded-xl overflow-hidden mb-4">
                       <Image
                         src={service.image}
-                        alt={service.name}
+                        alt={`${service.name} services available in 100+ Massachusetts cities - professional installation`}
                         fill
                         className="object-cover"
                       />

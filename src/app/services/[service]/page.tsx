@@ -7,7 +7,7 @@ import { ContactForm } from '@/components/forms';
 import { JsonLd } from '@/components/seo';
 import { services, getServiceBySlug } from '@/lib/services';
 import { cities, getCitiesByCounty } from '@/lib/cities';
-import { SITE_NAME, PHONE, IMAGES } from '@/lib/constants';
+import { SITE_NAME, PHONE, IMAGES, HIC_NUMBER } from '@/lib/constants';
 
 interface ServicePageProps {
   params: Promise<{ service: string }>;
@@ -19,21 +19,87 @@ export async function generateStaticParams() {
   }));
 }
 
+// SEO metadata by service type
+const serviceMetadata: Record<string, { title: string; description: string; keywords: string[] }> = {
+  siding: {
+    title: 'Siding Installation Massachusetts | Vinyl & Fiber Cement Experts',
+    description: `Premium siding installation in MA. Vinyl, James Hardie fiber cement & insulated options. 25-50 year warranties. MA HIC #${HIC_NUMBER}. FREE estimate: ${PHONE}`,
+    keywords: [
+      'siding installation Massachusetts',
+      'vinyl siding contractor MA',
+      'James Hardie siding installer',
+      'fiber cement siding Boston',
+      'siding replacement Worcester',
+      'best siding company Massachusetts',
+      'insulated siding installation',
+      'siding contractor near me',
+    ],
+  },
+  windows: {
+    title: 'Window Replacement Massachusetts | ENERGY STAR Certified',
+    description: `Save up to 30% on energy bills with ENERGY STAR windows. Double & triple-pane, Low-E glass. MA HIC #${HIC_NUMBER}. FREE estimate: ${PHONE}`,
+    keywords: [
+      'window replacement Massachusetts',
+      'energy efficient windows MA',
+      'window installation Boston',
+      'replacement windows Worcester',
+      'double pane windows Massachusetts',
+      'window contractor near me',
+      'ENERGY STAR windows MA',
+      'best window company Massachusetts',
+    ],
+  },
+  doors: {
+    title: 'Door Installation Massachusetts | Entry, Storm & Patio Doors',
+    description: `Premium door installation - fiberglass, steel & wood. Entry doors, storm doors, patio doors. 90%+ ROI. MA HIC #${HIC_NUMBER}. FREE estimate: ${PHONE}`,
+    keywords: [
+      'door installation Massachusetts',
+      'entry door replacement MA',
+      'front door installation Boston',
+      'storm door installation Worcester',
+      'patio door replacement MA',
+      'door contractor near me',
+      'fiberglass door installer',
+      'best door company Massachusetts',
+    ],
+  },
+  'general-contractor': {
+    title: 'General Contractor Massachusetts | Licensed Home Renovations',
+    description: `MA HIC #${HIC_NUMBER} licensed general contractor. Exterior renovations, remodeling, additions. 5-year warranty. FREE estimate: ${PHONE}`,
+    keywords: [
+      'general contractor Massachusetts',
+      'home renovation contractor MA',
+      'licensed contractor Boston',
+      'home remodeling Worcester',
+      'exterior renovation MA',
+      'contractor near me Massachusetts',
+      'home improvement contractor',
+      'best general contractor MA',
+    ],
+  },
+};
+
 export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
   const { service: serviceSlug } = await params;
   const service = getServiceBySlug(serviceSlug);
 
   if (!service) return {};
 
-  return {
-    title: `${service.name} Services`,
+  const meta = serviceMetadata[serviceSlug] || {
+    title: `${service.name} Services Massachusetts`,
     description: `Professional ${service.name.toLowerCase()} services in Massachusetts. ${service.shortDescription} Call ${PHONE} for a free estimate.`,
-    keywords: [
-      `${service.name.toLowerCase()} installation`,
-      `${service.name.toLowerCase()} Massachusetts`,
-      `${service.name.toLowerCase()} contractor`,
-      `best ${service.name.toLowerCase()} company MA`,
-    ],
+    keywords: [`${service.name.toLowerCase()} Massachusetts`],
+  };
+
+  return {
+    title: meta.title,
+    description: meta.description,
+    keywords: meta.keywords,
+    openGraph: {
+      title: meta.title,
+      description: meta.description,
+      type: 'website',
+    },
   };
 }
 

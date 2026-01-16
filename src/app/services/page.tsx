@@ -7,8 +7,16 @@ import { services } from '@/lib/services';
 import { SITE_NAME, IMAGES } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Our Services',
-  description: `${SITE_NAME} offers professional siding, door, window installation, and general contracting services throughout Massachusetts. Quality workmanship guaranteed.`,
+  title: 'Home Exterior Services | Siding, Windows, Doors Installation MA',
+  description: `Professional siding, windows, and doors installation in Massachusetts. Energy-efficient upgrades, premium materials, lifetime warranties. MA HIC licensed. FREE estimates.`,
+  keywords: [
+    'siding installation Massachusetts',
+    'window replacement MA',
+    'door installation Boston',
+    'home exterior services',
+    'energy efficient windows MA',
+    'vinyl siding contractor',
+  ],
 };
 
 export default function ServicesPage() {
@@ -35,9 +43,9 @@ export default function ServicesPage() {
       <JsonLd data={servicesSchema} />
 
       <Hero
-        title="Our Services"
-        subtitle="Professional home improvement services tailored to your needs"
-        badge="What We Offer"
+        title="Expert Home Exterior Services"
+        subtitle="Transform your home with premium siding, energy-efficient windows, and secure doors — backed by industry-leading warranties"
+        badge="MA Licensed & Insured"
         showCTA={false}
         size="inner"
       />
@@ -58,7 +66,7 @@ export default function ServicesPage() {
                   <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
                     <Image
                       src={service.image}
-                      alt={service.name}
+                      alt={`Professional ${service.name.toLowerCase()} installation in Massachusetts - expert contractors`}
                       fill
                       className="object-cover"
                     />
@@ -105,7 +113,7 @@ export default function ServicesPage() {
                     href={`/services/${service.slug}`}
                     className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-amber-400 to-yellow-300 text-slate-900 rounded-full font-bold hover:shadow-xl hover:scale-105 transition-all"
                   >
-                    Learn More About {service.name}
+                    Get FREE {service.name} Estimate
                     <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>

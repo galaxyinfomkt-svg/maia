@@ -15,7 +15,7 @@ export default function BlogCard({ post }: BlogCardProps) {
           <div className="relative h-48 overflow-hidden">
             <Image
               src={post.image}
-              alt={post.title}
+              alt={`${post.title} - Home improvement tips from Maia Construction Massachusetts`}
               fill
               className="object-cover group-hover:scale-110 transition-transform duration-500"
             />
