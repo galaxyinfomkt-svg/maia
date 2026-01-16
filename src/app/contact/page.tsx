@@ -5,8 +5,14 @@ import { JsonLd } from '@/components/seo';
 import { SITE_NAME, PHONE, PHONE_LINK, ADDRESS, BUSINESS_HOURS, IMAGES, LOGO_URL } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
-  description: `Contact ${SITE_NAME} for a free estimate on siding, door, and window installation in Massachusetts. Call ${PHONE} or fill out our form.`,
+  title: 'Contact Us | FREE Estimate - Same Day Response | Maia Construction',
+  description: `Get your FREE home improvement estimate! Call ${PHONE} or fill out our form. MA HIC licensed, 5-star rated. Siding, windows, doors in 100+ MA cities. Response within 24 hours guaranteed.`,
+  keywords: [
+    'free estimate siding Massachusetts',
+    'contact window contractor MA',
+    'home improvement quote Boston',
+    'siding contractor phone number',
+  ],
 };
 
 export default function ContactPage() {

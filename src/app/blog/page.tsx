@@ -6,8 +6,16 @@ import { getAllPosts, getAllTags } from '@/lib/blog';
 import { SITE_NAME, IMAGES } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Blog',
-  description: `Home improvement tips, guides, and advice from ${SITE_NAME}. Learn about siding, windows, doors, and more.`,
+  title: 'Home Improvement Blog | Expert Tips for Massachusetts Homeowners',
+  description: `Expert home improvement guides from MA licensed contractors. Learn about siding installation, window replacement, door upgrades, energy savings & ROI. Free advice from ${SITE_NAME}.`,
+  keywords: [
+    'home improvement tips Massachusetts',
+    'siding guide New England',
+    'window replacement advice',
+    'best siding for Massachusetts',
+    'energy efficient home upgrades',
+    'home renovation ROI',
+  ],
 };
 
 export default function BlogPage() {

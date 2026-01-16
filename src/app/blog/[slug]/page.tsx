@@ -893,6 +893,34 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   </div>
                 </div>
 
+                {/* Related Services */}
+                <div className="bg-white rounded-2xl p-6 border border-slate-200">
+                  <h3 className="text-xl font-bold text-slate-900 mb-4">Our Services</h3>
+                  <div className="space-y-3">
+                    <Link href="/services/siding" className="flex items-center gap-3 p-3 rounded-lg hover:bg-amber-50 transition-colors group">
+                      <span className="text-2xl">🏠</span>
+                      <div>
+                        <p className="font-semibold text-slate-900 group-hover:text-amber-500">Siding Installation</p>
+                        <p className="text-xs text-gray-500">Vinyl & Fiber Cement</p>
+                      </div>
+                    </Link>
+                    <Link href="/services/windows" className="flex items-center gap-3 p-3 rounded-lg hover:bg-amber-50 transition-colors group">
+                      <span className="text-2xl">🪟</span>
+                      <div>
+                        <p className="font-semibold text-slate-900 group-hover:text-amber-500">Window Replacement</p>
+                        <p className="text-xs text-gray-500">ENERGY STAR Certified</p>
+                      </div>
+                    </Link>
+                    <Link href="/services/doors" className="flex items-center gap-3 p-3 rounded-lg hover:bg-amber-50 transition-colors group">
+                      <span className="text-2xl">🚪</span>
+                      <div>
+                        <p className="font-semibold text-slate-900 group-hover:text-amber-500">Door Installation</p>
+                        <p className="text-xs text-gray-500">Entry, Storm & Patio</p>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+
                 {/* Contact Card */}
                 <div className="bg-slate-900 rounded-2xl p-6 text-white">
                   <h3 className="text-xl font-bold mb-4">Need Help?</h3>
