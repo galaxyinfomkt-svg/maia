@@ -2,8 +2,6 @@
 const nextConfig = {
   reactStrictMode: true,
 
-  output: "standalone", // ⚡ importante para Vercel
-
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "images.leadconnectorhq.com" },
