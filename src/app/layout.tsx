@@ -4,7 +4,8 @@ import './globals.css';
 import { Header, Footer, TopBar } from '@/components/layout';
 import FloatingCTA from '@/components/FloatingCTA';
 import ChatWidget from '@/components/ChatWidget';
-import { SITE_NAME, SITE_URL, PHONE, ADDRESS, HIC_NUMBER } from '@/lib/constants';
+import Analytics from '@/components/Analytics';
+import { SITE_NAME, SITE_URL, PHONE, ADDRESS, HIC_NUMBER, LOGO_URL } from '@/lib/constants';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -41,11 +42,20 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: `${SITE_NAME} | Premium Siding, Windows & Doors in Massachusetts`,
     description: 'New England\'s trusted home exterior specialists. Premium siding, energy-efficient windows & doors. 5-star rated, licensed & insured. Free estimates!',
+    images: [
+      {
+        url: LOGO_URL,
+        width: 400,
+        height: 400,
+        alt: `${SITE_NAME} - Massachusetts Siding, Windows & Doors Contractor`,
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: `${SITE_NAME} | MA's Top-Rated Siding & Window Contractor`,
     description: 'Transform your home with quality siding, windows & doors. Serving 100+ Massachusetts cities. Licensed & insured. Call for free estimate!',
+    images: [LOGO_URL],
   },
   robots: {
     index: true,
@@ -75,9 +85,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} font-sans antialiased`}>
+        {/* Skip to main content link for accessibility */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-amber-400 focus:text-slate-900 focus:rounded-lg focus:font-semibold"
+        >
+          Skip to main content
+        </a>
+        <Analytics />
         <TopBar />
         <Header />
-        <main>{children}</main>
+        <main id="main-content" role="main" aria-label="Main content">
+          {children}
+        </main>
         <Footer />
         <FloatingCTA />
         <ChatWidget />

@@ -741,6 +741,708 @@ const blogContent: Record<string, React.ReactNode> = {
       </ul>
     </>
   ),
+
+  'mass-save-rebates-windows-doors': (
+    <>
+      <p className="lead">
+        Massachusetts homeowners can save thousands of dollars on energy-efficient windows and doors
+        through the Mass Save program. This comprehensive guide explains how to take advantage of
+        these valuable rebates in 2025.
+      </p>
+
+      <h2>What is Mass Save?</h2>
+      <p>
+        Mass Save is a collaborative of Massachusetts&apos; gas and electric utilities and energy
+        efficiency service providers. The program offers rebates, incentives, and no-cost energy
+        assessments to help residents reduce energy usage and costs.
+      </p>
+
+      <h2>Window Rebates Available in 2025</h2>
+      <p>
+        Massachusetts residents can receive substantial rebates on ENERGY STAR certified windows:
+      </p>
+      <ul>
+        <li><strong>Standard rebate:</strong> $75 per window (up to 10 windows)</li>
+        <li><strong>Triple-pane bonus:</strong> Additional $25 per window</li>
+        <li><strong>Income-eligible households:</strong> Up to 100% of costs covered</li>
+        <li><strong>Maximum rebate:</strong> $750-$1,000 for most homeowners</li>
+      </ul>
+
+      <h2>Door Rebates</h2>
+      <p>
+        Energy-efficient doors also qualify for Mass Save incentives:
+      </p>
+      <ul>
+        <li><strong>ENERGY STAR entry doors:</strong> $50-$100 rebate per door</li>
+        <li><strong>Storm doors:</strong> May qualify when combined with other upgrades</li>
+        <li><strong>Sliding patio doors:</strong> $75-$150 rebate</li>
+      </ul>
+
+      <h2>How to Qualify</h2>
+      <ol>
+        <li><strong>Schedule a Home Energy Assessment:</strong> Free no-cost assessment from Mass Save</li>
+        <li><strong>Choose qualifying products:</strong> Must be ENERGY STAR certified</li>
+        <li><strong>Use approved contractors:</strong> Work with Mass Save partner contractors</li>
+        <li><strong>Submit documentation:</strong> Keep receipts and submit rebate forms</li>
+      </ol>
+
+      <h2>Federal Tax Credits</h2>
+      <p>
+        In addition to Mass Save rebates, you may also qualify for federal energy tax credits:
+      </p>
+      <ul>
+        <li>30% of costs up to $600 for windows</li>
+        <li>30% of costs up to $500 for doors</li>
+        <li>Maximum annual credit: $1,200 for windows and doors combined</li>
+      </ul>
+
+      <h2>Maximize Your Savings</h2>
+      <p>
+        At Maia Construction, we help homeowners navigate both Mass Save rebates and federal tax
+        credits. Our team handles the paperwork and ensures your installations meet all requirements
+        for maximum savings.
+      </p>
+    </>
+  ),
+
+  'best-siding-colors-new-england-homes': (
+    <>
+      <p className="lead">
+        Choosing the right siding color for your Massachusetts home can dramatically boost curb
+        appeal and property value. Whether you own a classic Colonial, Cape Cod, or Victorian,
+        the right color choice makes all the difference.
+      </p>
+
+      <h2>Understanding New England Architectural Styles</h2>
+      <p>
+        Massachusetts is home to diverse architectural styles, each with color traditions that
+        honor their heritage while allowing for modern expression.
+      </p>
+
+      <h3>Colonial Homes</h3>
+      <p>
+        Classic Colonial homes look stunning in:
+      </p>
+      <ul>
+        <li><strong>Classic white:</strong> Timeless and clean, pairs with any trim color</li>
+        <li><strong>Slate gray:</strong> Modern twist on tradition</li>
+        <li><strong>Navy blue:</strong> Bold yet historically appropriate</li>
+        <li><strong>Sage green:</strong> Complements New England landscapes</li>
+      </ul>
+
+      <h3>Cape Cod Style</h3>
+      <p>
+        Cape Cod homes traditionally feature:
+      </p>
+      <ul>
+        <li><strong>Weathered gray:</strong> Coastal classic that ages beautifully</li>
+        <li><strong>Soft blue:</strong> Reflects the ocean and sky</li>
+        <li><strong>Warm white:</strong> Clean and inviting</li>
+        <li><strong>Natural cedar tones:</strong> Authentic coastal feel</li>
+      </ul>
+
+      <h3>Victorian Homes</h3>
+      <p>
+        Victorians allow for more colorful expressions:
+      </p>
+      <ul>
+        <li><strong>Deep burgundy:</strong> Rich and historic</li>
+        <li><strong>Forest green:</strong> Natural elegance</li>
+        <li><strong>Multi-color schemes:</strong> Traditional &quot;painted ladies&quot; approach</li>
+      </ul>
+
+      <h2>Color Trends for 2025</h2>
+      <ul>
+        <li><strong>Warm neutrals:</strong> Greige, taupe, and warm beige</li>
+        <li><strong>Dark and dramatic:</strong> Charcoal, black, and deep navy</li>
+        <li><strong>Earth tones:</strong> Terracotta, olive, and rust accents</li>
+        <li><strong>Blue-greens:</strong> Teal and eucalyptus continue trending</li>
+      </ul>
+
+      <h2>Factors to Consider</h2>
+      <ul>
+        <li><strong>Neighborhood context:</strong> Complement surrounding homes</li>
+        <li><strong>Roof color:</strong> Ensure siding harmonizes with existing roof</li>
+        <li><strong>Landscaping:</strong> Consider how colors interact with gardens</li>
+        <li><strong>Sun exposure:</strong> Dark colors may fade faster on south-facing walls</li>
+        <li><strong>HOA requirements:</strong> Check for any color restrictions</li>
+      </ul>
+
+      <h2>Free Color Consultation</h2>
+      <p>
+        Maia Construction offers free color consultations with every siding project. We&apos;ll
+        help you choose colors that enhance your home&apos;s architecture and boost its value.
+      </p>
+    </>
+  ),
+
+  'storm-doors-vs-screen-doors': (
+    <>
+      <p className="lead">
+        Choosing between a storm door and a screen door depends on your priorities: energy
+        efficiency, ventilation, or both. This guide helps Massachusetts homeowners make the
+        right choice for their homes.
+      </p>
+
+      <h2>What&apos;s the Difference?</h2>
+
+      <h3>Storm Doors</h3>
+      <p>
+        Storm doors are designed primarily for protection and energy efficiency:
+      </p>
+      <ul>
+        <li>Full glass panel or glass/screen combination</li>
+        <li>Provide insulation against cold and heat</li>
+        <li>Protect main entry door from weather</li>
+        <li>Typically have interchangeable glass and screen panels</li>
+      </ul>
+
+      <h3>Screen Doors</h3>
+      <p>
+        Screen doors focus on ventilation and insect protection:
+      </p>
+      <ul>
+        <li>Mesh screen allows airflow</li>
+        <li>Keeps insects and debris out</li>
+        <li>Lighter construction than storm doors</li>
+        <li>Less protection from weather</li>
+      </ul>
+
+      <h2>Best Choice for Massachusetts Homes</h2>
+      <p>
+        Given Massachusetts&apos; cold winters and variable weather, storm doors offer the best
+        year-round value. However, the best modern storm doors combine both functions.
+      </p>
+
+      <h3>Full-View Storm Doors</h3>
+      <ul>
+        <li><strong>Pros:</strong> Maximum light, showcases entry door</li>
+        <li><strong>Cons:</strong> Less ventilation</li>
+        <li><strong>Best for:</strong> Homes with attractive entry doors</li>
+      </ul>
+
+      <h3>Retractable Screen Storm Doors</h3>
+      <ul>
+        <li><strong>Pros:</strong> Best of both worlds - protection and ventilation</li>
+        <li><strong>Cons:</strong> Higher cost</li>
+        <li><strong>Best for:</strong> Most Massachusetts homes</li>
+      </ul>
+
+      <h3>Traditional Storm Doors</h3>
+      <ul>
+        <li><strong>Pros:</strong> Maximum insulation, affordable</li>
+        <li><strong>Cons:</strong> Requires manual panel changes</li>
+        <li><strong>Best for:</strong> Budget-conscious homeowners</li>
+      </ul>
+
+      <h2>Energy Savings</h2>
+      <p>
+        A quality storm door can reduce energy loss through your entry door by up to 50%.
+        In Massachusetts, this can translate to $100-200 in annual heating savings.
+      </p>
+
+      <h2>Cost Comparison</h2>
+      <ul>
+        <li><strong>Basic screen door:</strong> $100-$300 installed</li>
+        <li><strong>Standard storm door:</strong> $300-$600 installed</li>
+        <li><strong>Premium retractable screen storm door:</strong> $600-$1,200 installed</li>
+      </ul>
+
+      <h2>Our Recommendation</h2>
+      <p>
+        For Massachusetts homes, we recommend a mid-range storm door with retractable screen
+        functionality. This gives you energy protection in winter and ventilation in summer.
+        Contact Maia Construction for a free consultation.
+      </p>
+    </>
+  ),
+
+  'siding-contractors-boston-metro': (
+    <>
+      <p className="lead">
+        Finding a reliable siding contractor in the Boston metro area can be challenging.
+        With so many options available, how do you choose the right one for your home?
+        This guide helps you make an informed decision.
+      </p>
+
+      <h2>Why Location Matters for Siding Contractors</h2>
+      <p>
+        Hiring a local contractor in the Boston metro area offers several advantages:
+      </p>
+      <ul>
+        <li><strong>Knowledge of local codes:</strong> Familiar with Boston, Cambridge, and surrounding area building requirements</li>
+        <li><strong>Weather expertise:</strong> Understanding of New England&apos;s unique climate challenges</li>
+        <li><strong>Quick response:</strong> Available for follow-up service and warranty work</li>
+        <li><strong>Local reputation:</strong> Easier to verify references and see completed work</li>
+      </ul>
+
+      <h2>What to Look for in a Siding Contractor</h2>
+
+      <h3>1. Proper Licensing</h3>
+      <p>
+        In Massachusetts, contractors must hold a valid Home Improvement Contractor (HIC) license.
+        Always verify the license number through the state&apos;s official database.
+      </p>
+
+      <h3>2. Insurance Coverage</h3>
+      <ul>
+        <li>General liability insurance (minimum $1 million)</li>
+        <li>Workers&apos; compensation insurance</li>
+        <li>Ask for certificates of insurance</li>
+      </ul>
+
+      <h3>3. Experience and Specialization</h3>
+      <p>
+        Look for contractors with specific experience in your siding type:
+      </p>
+      <ul>
+        <li>Vinyl siding specialists</li>
+        <li>James Hardie certified installers</li>
+        <li>Cedar and wood siding experts</li>
+      </ul>
+
+      <h3>4. Written Estimates and Contracts</h3>
+      <p>
+        A professional contractor should provide:
+      </p>
+      <ul>
+        <li>Detailed written estimate</li>
+        <li>Clear scope of work</li>
+        <li>Material specifications</li>
+        <li>Timeline and payment schedule</li>
+        <li>Warranty information</li>
+      </ul>
+
+      <h2>Red Flags to Avoid</h2>
+      <ul>
+        <li>No physical business address</li>
+        <li>Requesting full payment upfront</li>
+        <li>Pressure to sign immediately</li>
+        <li>No written contract</li>
+        <li>Significantly lower prices than competitors</li>
+        <li>No references or portfolio</li>
+      </ul>
+
+      <h2>Questions to Ask</h2>
+      <ol>
+        <li>How long have you been installing siding in the Boston area?</li>
+        <li>Can you provide local references I can contact?</li>
+        <li>Who will be doing the actual installation?</li>
+        <li>What warranty do you offer on labor?</li>
+        <li>How do you handle unexpected issues during installation?</li>
+      </ol>
+    </>
+  ),
+
+  'window-replacement-cost-massachusetts': (
+    <>
+      <p className="lead">
+        Understanding window replacement costs in Massachusetts helps you budget effectively
+        and avoid overpaying. Here&apos;s a comprehensive 2025 pricing guide based on current
+        market rates.
+      </p>
+
+      <h2>Average Window Replacement Costs in MA</h2>
+      <p>
+        Window replacement costs vary based on several factors. Here are typical ranges:
+      </p>
+
+      <h3>By Window Type</h3>
+      <ul>
+        <li><strong>Double-hung windows:</strong> $400-$800 per window installed</li>
+        <li><strong>Casement windows:</strong> $450-$900 per window installed</li>
+        <li><strong>Bay windows:</strong> $1,500-$3,500 installed</li>
+        <li><strong>Bow windows:</strong> $2,000-$4,000 installed</li>
+        <li><strong>Picture windows:</strong> $400-$1,200 installed</li>
+        <li><strong>Sliding windows:</strong> $350-$700 per window installed</li>
+      </ul>
+
+      <h3>By Material</h3>
+      <ul>
+        <li><strong>Vinyl:</strong> $300-$600 per window</li>
+        <li><strong>Wood:</strong> $600-$1,200 per window</li>
+        <li><strong>Fiberglass:</strong> $500-$900 per window</li>
+        <li><strong>Aluminum:</strong> $400-$700 per window</li>
+        <li><strong>Composite:</strong> $500-$800 per window</li>
+      </ul>
+
+      <h2>Factors Affecting Cost</h2>
+
+      <h3>1. Window Size</h3>
+      <p>
+        Standard sizes cost less than custom dimensions. Oversized windows require
+        more materials and labor.
+      </p>
+
+      <h3>2. Glass Options</h3>
+      <ul>
+        <li><strong>Double-pane:</strong> Standard, included in base price</li>
+        <li><strong>Triple-pane:</strong> Add $100-$200 per window</li>
+        <li><strong>Low-E coating:</strong> Add $25-$50 per window</li>
+        <li><strong>Argon gas fill:</strong> Add $30-$50 per window</li>
+      </ul>
+
+      <h3>3. Installation Complexity</h3>
+      <ul>
+        <li>Second-floor access</li>
+        <li>Frame damage requiring repair</li>
+        <li>Custom trim work</li>
+        <li>Removal of storms or old frames</li>
+      </ul>
+
+      <h2>Whole-House Replacement Costs</h2>
+      <p>
+        For a typical Massachusetts home with 15-20 windows:
+      </p>
+      <ul>
+        <li><strong>Budget vinyl:</strong> $6,000-$10,000</li>
+        <li><strong>Mid-range vinyl:</strong> $10,000-$15,000</li>
+        <li><strong>Premium vinyl/fiberglass:</strong> $15,000-$25,000</li>
+        <li><strong>Wood windows:</strong> $20,000-$35,000</li>
+      </ul>
+
+      <h2>Ways to Save Money</h2>
+      <ul>
+        <li>Mass Save rebates (up to $750)</li>
+        <li>Federal tax credits (up to $600)</li>
+        <li>Off-season installation discounts</li>
+        <li>Multi-window package deals</li>
+        <li>Financing options with promotional rates</li>
+      </ul>
+
+      <h2>Get an Accurate Quote</h2>
+      <p>
+        Prices vary significantly between contractors. We recommend getting at least
+        3 written estimates from licensed Massachusetts contractors. At Maia Construction,
+        we provide free, no-obligation estimates with transparent pricing.
+      </p>
+    </>
+  ),
+
+  'james-hardie-siding-installation': (
+    <>
+      <p className="lead">
+        James Hardie fiber cement siding is considered the gold standard for home exteriors.
+        But is it worth the higher investment for Massachusetts homeowners? Let&apos;s examine
+        the facts.
+      </p>
+
+      <h2>What is James Hardie Siding?</h2>
+      <p>
+        James Hardie siding is made from fiber cement - a composite of cement, sand, and
+        cellulose fibers. It&apos;s engineered specifically for different climate zones, with
+        the HZ5 formulation designed for cold, wet climates like Massachusetts.
+      </p>
+
+      <h2>James Hardie vs. Vinyl Siding</h2>
+
+      <h3>Durability</h3>
+      <ul>
+        <li><strong>James Hardie:</strong> 50+ year lifespan, doesn&apos;t warp, crack, or melt</li>
+        <li><strong>Vinyl:</strong> 20-30 year lifespan, can crack in extreme cold</li>
+      </ul>
+
+      <h3>Appearance</h3>
+      <ul>
+        <li><strong>James Hardie:</strong> Deep wood-grain texture, holds paint better</li>
+        <li><strong>Vinyl:</strong> Less authentic appearance, color fades over time</li>
+      </ul>
+
+      <h3>Fire Resistance</h3>
+      <ul>
+        <li><strong>James Hardie:</strong> Non-combustible, highest fire rating</li>
+        <li><strong>Vinyl:</strong> Can melt and contribute to fire spread</li>
+      </ul>
+
+      <h3>Cost Comparison</h3>
+      <ul>
+        <li><strong>James Hardie:</strong> $10-$15 per sq ft installed</li>
+        <li><strong>Vinyl:</strong> $5-$9 per sq ft installed</li>
+      </ul>
+
+      <h2>Why James Hardie Excels in Massachusetts</h2>
+
+      <h3>HZ5 Climate Zone Engineering</h3>
+      <p>
+        The HZ5 formula is specifically designed for freeze-thaw cycles and moisture
+        resistance - exactly what New England homes need.
+      </p>
+
+      <h3>ColorPlus Technology</h3>
+      <p>
+        Factory-applied finish that&apos;s baked on, providing:
+      </p>
+      <ul>
+        <li>Better color consistency</li>
+        <li>15-year color warranty</li>
+        <li>Resistance to fading, chipping, and cracking</li>
+      </ul>
+
+      <h2>Installation Requirements</h2>
+      <p>
+        James Hardie requires certified installers due to:
+      </p>
+      <ul>
+        <li>Specific cutting and fastening requirements</li>
+        <li>Proper flashing and moisture management</li>
+        <li>Warranty compliance requirements</li>
+      </ul>
+
+      <h2>Return on Investment</h2>
+      <p>
+        According to Remodeling Magazine&apos;s Cost vs. Value Report:
+      </p>
+      <ul>
+        <li>James Hardie siding replacement recovers approximately 90% of cost at resale</li>
+        <li>Vinyl siding recovers approximately 68% of cost</li>
+      </ul>
+
+      <h2>Our Verdict</h2>
+      <p>
+        For Massachusetts homeowners planning to stay in their home long-term, James Hardie
+        is worth the investment. The superior durability, appearance, and warranty make it
+        the better long-term value despite the higher upfront cost.
+      </p>
+    </>
+  ),
+
+  'patio-door-options-guide': (
+    <>
+      <p className="lead">
+        Choosing the right patio door affects your home&apos;s aesthetics, energy efficiency,
+        and indoor-outdoor flow. Here&apos;s how sliding, French, and bi-fold doors compare
+        for Massachusetts homes.
+      </p>
+
+      <h2>Sliding Patio Doors</h2>
+
+      <h3>How They Work</h3>
+      <p>
+        One or more panels slide horizontally on a track. Most common configuration is
+        one fixed panel and one sliding panel.
+      </p>
+
+      <h3>Pros</h3>
+      <ul>
+        <li>Space-efficient - don&apos;t swing into room</li>
+        <li>Large glass area for views and light</li>
+        <li>Most affordable option</li>
+        <li>Easy operation</li>
+        <li>Good for smaller spaces</li>
+      </ul>
+
+      <h3>Cons</h3>
+      <ul>
+        <li>Only half the opening is accessible</li>
+        <li>Track can collect debris</li>
+        <li>Less traditional appearance</li>
+      </ul>
+
+      <h3>Cost</h3>
+      <p>$1,500-$4,000 installed</p>
+
+      <h2>French Patio Doors</h2>
+
+      <h3>How They Work</h3>
+      <p>
+        Two hinged doors that swing open from the center. Can swing inward or outward.
+      </p>
+
+      <h3>Pros</h3>
+      <ul>
+        <li>Classic, elegant appearance</li>
+        <li>Full opening access</li>
+        <li>Better for traditional home styles</li>
+        <li>Easier to maintain and clean</li>
+        <li>Better ventilation</li>
+      </ul>
+
+      <h3>Cons</h3>
+      <ul>
+        <li>Requires swing space</li>
+        <li>Higher cost</li>
+        <li>More maintenance on hinges and seals</li>
+      </ul>
+
+      <h3>Cost</h3>
+      <p>$2,500-$6,000 installed</p>
+
+      <h2>Bi-Fold Patio Doors</h2>
+
+      <h3>How They Work</h3>
+      <p>
+        Multiple panels fold accordion-style to one or both sides, creating a wide
+        open space.
+      </p>
+
+      <h3>Pros</h3>
+      <ul>
+        <li>Maximum opening - up to 90% of frame</li>
+        <li>Modern, dramatic appearance</li>
+        <li>Seamless indoor-outdoor living</li>
+        <li>Great for entertaining</li>
+      </ul>
+
+      <h3>Cons</h3>
+      <ul>
+        <li>Most expensive option</li>
+        <li>Complex mechanism requires more maintenance</li>
+        <li>Stacked panels take up space when open</li>
+        <li>May not suit traditional homes</li>
+      </ul>
+
+      <h3>Cost</h3>
+      <p>$5,000-$15,000+ installed</p>
+
+      <h2>Best Choice for Massachusetts</h2>
+
+      <h3>For Energy Efficiency</h3>
+      <p>
+        French doors typically offer the best seal against New England weather when
+        properly installed with quality weatherstripping.
+      </p>
+
+      <h3>For Small Spaces</h3>
+      <p>
+        Sliding doors are ideal when you can&apos;t sacrifice floor space for swing clearance.
+      </p>
+
+      <h3>For Modern Homes</h3>
+      <p>
+        Bi-fold doors create a stunning feature, perfect for homes with outdoor
+        living spaces and summer entertaining.
+      </p>
+
+      <h2>Get Expert Advice</h2>
+      <p>
+        Not sure which option is right for your home? Contact Maia Construction for
+        a free consultation. We&apos;ll assess your space, discuss your priorities, and
+        recommend the best patio door solution.
+      </p>
+    </>
+  ),
+
+  'home-exterior-maintenance-checklist': (
+    <>
+      <p className="lead">
+        Regular maintenance extends the life of your siding, windows, and doors while
+        preventing costly repairs. Use this seasonal checklist to protect your
+        Massachusetts home.
+      </p>
+
+      <h2>Spring Maintenance (March-May)</h2>
+
+      <h3>Siding</h3>
+      <ul>
+        <li>Inspect for winter damage - cracks, warping, loose panels</li>
+        <li>Clean with gentle pressure wash (max 1500 PSI for vinyl)</li>
+        <li>Check caulking around trim and windows</li>
+        <li>Look for signs of pest damage or nesting</li>
+        <li>Touch up paint on fiber cement siding if needed</li>
+      </ul>
+
+      <h3>Windows</h3>
+      <ul>
+        <li>Clean glass inside and out</li>
+        <li>Check weatherstripping for damage</li>
+        <li>Test window operation - they should open and close smoothly</li>
+        <li>Inspect screens for tears or damage</li>
+        <li>Clear weep holes of debris</li>
+      </ul>
+
+      <h3>Doors</h3>
+      <ul>
+        <li>Inspect weatherstripping and door sweeps</li>
+        <li>Lubricate hinges and locks</li>
+        <li>Check threshold for gaps</li>
+        <li>Clean and inspect storm doors</li>
+      </ul>
+
+      <h2>Summer Maintenance (June-August)</h2>
+
+      <h3>Siding</h3>
+      <ul>
+        <li>Trim vegetation away from siding (6-inch minimum gap)</li>
+        <li>Check for fading or discoloration</li>
+        <li>Inspect for mold or mildew growth</li>
+      </ul>
+
+      <h3>Windows</h3>
+      <ul>
+        <li>Install or check window screens</li>
+        <li>Verify AC units aren&apos;t damaging window frames</li>
+        <li>Check for condensation between glass panes (sign of seal failure)</li>
+      </ul>
+
+      <h3>Doors</h3>
+      <ul>
+        <li>Switch storm door panels to screens if applicable</li>
+        <li>Check for wood rot on door frames</li>
+        <li>Verify door locks and hardware function properly</li>
+      </ul>
+
+      <h2>Fall Maintenance (September-November)</h2>
+
+      <h3>Siding</h3>
+      <ul>
+        <li>Final cleaning before winter</li>
+        <li>Re-caulk any gaps or cracks</li>
+        <li>Clear gutters and downspouts near siding</li>
+        <li>Check for animal entry points</li>
+      </ul>
+
+      <h3>Windows</h3>
+      <ul>
+        <li>Switch from screens to storm windows</li>
+        <li>Add window insulation film if needed</li>
+        <li>Check for drafts with incense or candle test</li>
+        <li>Ensure all windows lock properly</li>
+      </ul>
+
+      <h3>Doors</h3>
+      <ul>
+        <li>Replace worn weatherstripping</li>
+        <li>Install storm door glass panels</li>
+        <li>Check door bottom seal</li>
+        <li>Verify exterior doors close tightly</li>
+      </ul>
+
+      <h2>Winter Maintenance (December-February)</h2>
+
+      <h3>Siding</h3>
+      <ul>
+        <li>Carefully remove ice dams near siding</li>
+        <li>Keep snow cleared from foundation line</li>
+        <li>Watch for ice damage after storms</li>
+      </ul>
+
+      <h3>Windows</h3>
+      <ul>
+        <li>Monitor for excessive interior condensation</li>
+        <li>Check for ice forming on interior glass (sign of poor insulation)</li>
+        <li>Keep snow from blocking egress windows</li>
+      </ul>
+
+      <h3>Doors</h3>
+      <ul>
+        <li>Keep entry areas clear of snow and ice</li>
+        <li>Check for drafts around door frames</li>
+        <li>Ensure locks work in cold weather</li>
+      </ul>
+
+      <h2>When to Call a Professional</h2>
+      <p>
+        Contact Maia Construction if you notice:
+      </p>
+      <ul>
+        <li>Visible damage to siding, windows, or doors</li>
+        <li>Significant drafts or energy bill increases</li>
+        <li>Water damage or staining</li>
+        <li>Difficulty operating windows or doors</li>
+        <li>Foggy or cloudy window glass</li>
+      </ul>
+    </>
+  ),
 };
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
@@ -791,9 +1493,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <div className="max-w-4xl">
             <div className="flex flex-wrap gap-2 mb-4">
               {post.tags.map((tag) => (
-                <span key={tag} className="px-3 py-1 bg-amber-400 text-slate-900 rounded-full text-sm font-semibold">
+                <Link
+                  key={tag}
+                  href={`/blog/tag/${tag.toLowerCase().replace(/\s+/g, '-')}`}
+                  className="px-3 py-1 bg-amber-400 text-slate-900 rounded-full text-sm font-semibold hover:bg-amber-300 transition-colors"
+                >
                   {tag}
-                </span>
+                </Link>
               ))}
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{post.title}</h1>

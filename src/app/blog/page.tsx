@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { Hero } from '@/components/sections';
 import { BlogCard } from '@/components/cards';
 import { JsonLd } from '@/components/seo';
@@ -61,12 +62,13 @@ export default function BlogPage() {
           <div className="flex flex-wrap items-center gap-3">
             <span className="font-semibold text-slate-700">Topics:</span>
             {tags.map((tag) => (
-              <span
+              <Link
                 key={tag}
-                className="px-4 py-1 bg-white border border-slate-200 rounded-full text-sm text-slate-600 hover:border-amber-400 hover:text-amber-500 transition-colors cursor-pointer"
+                href={`/blog/tag/${tag.toLowerCase().replace(/\s+/g, '-')}`}
+                className="px-4 py-1 bg-white border border-slate-200 rounded-full text-sm text-slate-600 hover:border-amber-400 hover:text-amber-500 transition-colors"
               >
                 {tag}
-              </span>
+              </Link>
             ))}
           </div>
         </div>
