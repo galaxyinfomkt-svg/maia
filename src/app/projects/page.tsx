@@ -7,16 +7,15 @@ import { SITE_NAME, IMAGES } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Our Projects',
-  description: `View our portfolio of completed siding, window, door, and home improvement projects across Massachusetts. Before & after transformations by ${SITE_NAME}.`,
+  description: `View our portfolio of completed siding, window, door, and home improvement projects across Massachusetts. Quality craftsmanship by ${SITE_NAME}.`,
 };
 
 const projects = [
   {
     id: '1',
-    title: 'Vinyl Siding Transformation',
+    title: 'Vinyl Siding Installation',
     location: 'Framingham, MA',
-    beforeImage: '/images/before-after/siding-before-framingham-ma.webp',
-    afterImage: '/images/before-after/siding-after-framingham-ma.webp',
+    image: '/images/before-after/siding-after-framingham-ma.webp',
     service: 'Siding',
     description: 'Complete vinyl siding replacement with insulation upgrade. This project dramatically improved the home\'s curb appeal and energy efficiency.',
   },
@@ -24,8 +23,7 @@ const projects = [
     id: '2',
     title: 'Complete Exterior Renovation',
     location: 'Worcester, MA',
-    beforeImage: '/images/before-after/exterior-before-worcester-ma.webp',
-    afterImage: '/images/before-after/exterior-after-worcester-ma.webp',
+    image: '/images/before-after/exterior-after-worcester-ma.webp',
     service: 'General Contractor',
     description: 'Full exterior renovation including siding, trim, and landscaping. Transformed an outdated home into a modern masterpiece.',
   },
@@ -33,37 +31,81 @@ const projects = [
     id: '3',
     title: 'Window Installation',
     location: 'Natick, MA',
-    beforeImage: IMAGES.windows,
-    afterImage: IMAGES.windows2,
+    image: IMAGES.windows,
     service: 'Windows',
     description: 'Energy-efficient window replacement throughout the home. New double-pane windows with Low-E coating for maximum insulation.',
   },
   {
     id: '4',
-    title: 'Entry Door Upgrade',
+    title: 'Window Replacement',
+    location: 'Sudbury, MA',
+    image: IMAGES.windows2,
+    service: 'Windows',
+    description: 'Full house window replacement with modern vinyl frames and energy-efficient glass.',
+  },
+  {
+    id: '5',
+    title: 'Entry Door Installation',
     location: 'Marlborough, MA',
-    beforeImage: IMAGES.doors,
-    afterImage: IMAGES.doors2,
+    image: IMAGES.doors,
     service: 'Doors',
     description: 'Premium fiberglass entry door installation with sidelights. Enhanced security and curb appeal with a beautiful new entrance.',
   },
   {
-    id: '5',
-    title: 'Home Renovation',
+    id: '6',
+    title: 'Door Upgrade',
     location: 'Hudson, MA',
-    beforeImage: IMAGES.generalContractor,
-    afterImage: IMAGES.generalContractor2,
+    image: IMAGES.doors2,
+    service: 'Doors',
+    description: 'Custom door installation with decorative glass and premium hardware.',
+  },
+  {
+    id: '7',
+    title: 'Home Renovation',
+    location: 'Westborough, MA',
+    image: IMAGES.generalContractor,
     service: 'General Contractor',
     description: 'Comprehensive home renovation including siding, windows, and doors. A complete exterior makeover.',
   },
   {
-    id: '6',
+    id: '8',
+    title: 'Exterior Remodel',
+    location: 'Northborough, MA',
+    image: IMAGES.generalContractor2,
+    service: 'General Contractor',
+    description: 'Complete exterior remodeling with new siding, trim work, and updated landscaping.',
+  },
+  {
+    id: '9',
     title: 'Window & Door Package',
-    location: 'Sudbury, MA',
-    beforeImage: IMAGES.windows3,
-    afterImage: IMAGES.doors3,
-    service: 'Windows & Doors',
-    description: 'Complete window and door replacement package. New energy-efficient windows and a stunning entry door.',
+    location: 'Shrewsbury, MA',
+    image: IMAGES.windows3,
+    service: 'Windows',
+    description: 'Complete window and door replacement package. New energy-efficient windows throughout.',
+  },
+  {
+    id: '10',
+    title: 'Storm Door Installation',
+    location: 'Grafton, MA',
+    image: IMAGES.doors3,
+    service: 'Doors',
+    description: 'Quality storm door installation for enhanced protection and energy efficiency.',
+  },
+  {
+    id: '11',
+    title: 'Bay Window Installation',
+    location: 'Concord, MA',
+    image: IMAGES.windows4,
+    service: 'Windows',
+    description: 'Beautiful bay window installation creating more natural light and space.',
+  },
+  {
+    id: '12',
+    title: 'Patio Door Installation',
+    location: 'Lexington, MA',
+    image: IMAGES.doors4,
+    service: 'Doors',
+    description: 'Sliding patio door installation with energy-efficient glass and smooth operation.',
   },
 ];
 
@@ -97,7 +139,7 @@ export default function ProjectsPage() {
 
       <Hero
         title="Our Projects"
-        subtitle="See the quality of our work through our completed transformations"
+        subtitle="See the quality of our work through our completed projects"
         badge="Portfolio"
         showCTA={false}
         size="inner"
@@ -131,60 +173,45 @@ export default function ProjectsPage() {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Before & After Transformations</h2>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">Our Recent Work</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-6" />
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Every project tells a story of transformation. See how we&apos;ve helped Massachusetts homeowners improve their homes.
+              Every project tells a story of quality craftsmanship. See how we&apos;ve helped Massachusetts homeowners improve their homes.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {projects.map((project) => (
               <div
                 key={project.id}
                 className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
               >
-                {/* Before/After Images */}
-                <div className="relative">
-                  <div className="grid grid-cols-2">
-                    <div className="relative h-48">
-                      <Image
-                        src={project.beforeImage}
-                        alt={`${project.title} - Before`}
-                        fill
-                        className="object-cover"
-                      />
-                      <div className="absolute top-2 left-2 px-2 py-1 bg-red-500 text-white text-xs font-bold rounded">
-                        BEFORE
-                      </div>
-                    </div>
-                    <div className="relative h-48">
-                      <Image
-                        src={project.afterImage}
-                        alt={`${project.title} - After`}
-                        fill
-                        className="object-cover"
-                      />
-                      <div className="absolute top-2 right-2 px-2 py-1 bg-green-500 text-white text-xs font-bold rounded">
-                        AFTER
-                      </div>
-                    </div>
-                  </div>
+                {/* Project Image */}
+                <div className="relative h-56">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                   {/* Service Badge */}
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 px-4 py-2 bg-amber-400 text-slate-900 rounded-full text-sm font-bold shadow-lg">
+                  <div className="absolute top-3 left-3 px-3 py-1 bg-amber-400 text-slate-900 rounded-full text-xs font-bold shadow-lg">
                     {project.service}
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-6 pt-8">
-                  <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-amber-500 transition-colors">
+                <div className="p-5">
+                  <h3 className="text-lg font-bold text-slate-900 mb-1 group-hover:text-amber-500 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-amber-500 font-semibold text-sm mb-3">
+                  <p className="text-amber-500 font-semibold text-sm mb-2 flex items-center">
+                    <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                    </svg>
                     {project.location}
                   </p>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-gray-600 text-sm line-clamp-2">
                     {project.description}
                   </p>
                 </div>
