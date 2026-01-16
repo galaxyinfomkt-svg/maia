@@ -54,13 +54,13 @@ export default function ReviewWidget() {
           </a>
         </div>
 
-        <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-6">
+        <div className="max-w-7xl mx-auto bg-white rounded-2xl shadow-lg p-4 md:p-8">
           <iframe
             className="lc_reviews_widget"
             src="https://reputationhub.site/reputation/widgets/review_widget/b8spY0hvhFRzHHxsdJlZ"
             frameBorder="0"
             scrolling="no"
-            style={{ minWidth: '100%', width: '100%', minHeight: '500px' }}
+            style={{ minWidth: '100%', width: '100%', minHeight: '600px' }}
             title="Customer Reviews"
           />
         </div>

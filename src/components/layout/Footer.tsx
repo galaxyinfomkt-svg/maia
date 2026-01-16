@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { LOGO_URL, SITE_NAME, PHONE, PHONE_LINK, ADDRESS, BUSINESS_HOURS, SOCIAL_LINKS } from '@/lib/constants';
+import { LOGO_URL, SITE_NAME, PHONE, PHONE_LINK, ADDRESS, BUSINESS_HOURS, SOCIAL_LINKS, HIC_NUMBER } from '@/lib/constants';
 import { services } from '@/lib/services';
 import { cities } from '@/lib/cities';
 
@@ -205,7 +205,7 @@ export default function Footer() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-500 text-sm">
-              © {new Date().getFullYear()} {SITE_NAME}. All rights reserved. Licensed & Insured.
+              © {new Date().getFullYear()} {SITE_NAME}. All rights reserved. Licensed & Insured. MA HIC #{HIC_NUMBER}
             </p>
             <div className="flex space-x-6 text-sm text-gray-500">
               <Link href="/privacy" className="hover:text-amber-400 transition-colors">Privacy Policy</Link>
