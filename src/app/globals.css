@@ -72,3 +72,31 @@ html {
 .prose a:hover {
   color: #d97706;
 }
+
+/* Shimmer animation for buttons */
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Pulse glow animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(251, 191, 36, 0.8);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
