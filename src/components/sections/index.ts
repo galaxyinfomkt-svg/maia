@@ -8,3 +8,5 @@ export { default as WhyChooseUs } from './WhyChooseUs';
 export { default as BeforeAfter } from './BeforeAfter';
 export { default as VideoGallery } from './VideoGallery';
 export { default as ReviewWidget } from './ReviewWidget';
+export { default as ReviewsHighlight } from './ReviewsHighlight';
+export { default as FAQ } from './FAQ';

@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import { HeroWithForm, ServicesSection, CityGrid, CTASection, WhyChooseUs } from '@/components/sections';
+import { HeroWithForm, ServicesSection, CityGrid, CTASection, WhyChooseUs, ReviewsHighlight } from '@/components/sections';
 import { JsonLd } from '@/components/seo';
 import { cities } from '@/lib/cities';
 import { SITE_NAME, PHONE, ADDRESS, LOGO_URL, SITE_URL, HIC_NUMBER } from '@/lib/constants';
@@ -11,7 +11,7 @@ const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'), {
 const VideoGallery = dynamic(() => import('@/components/sections/VideoGallery'), {
   loading: () => <div className="py-24 bg-white" />,
 });
-const ReviewWidget = dynamic(() => import('@/components/sections/ReviewWidget'), {
+const FAQ = dynamic(() => import('@/components/sections/FAQ'), {
   loading: () => <div className="py-24 bg-white" />,
 });
 
@@ -98,8 +98,11 @@ export default function HomePage() {
         subtitle="Watch our team transform homes across Massachusetts"
       />
 
-      {/* Customer Reviews Widget */}
-      <ReviewWidget />
+      {/* Customer Reviews - Text Highlights */}
+      <ReviewsHighlight />
+
+      {/* FAQ Section */}
+      <FAQ />
 
       {/* Cities We Serve */}
       <CityGrid

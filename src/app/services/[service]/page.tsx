@@ -103,6 +103,82 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   };
 }
 
+// Service-specific FAQs
+const serviceFAQs: Record<string, { question: string; answer: string }[]> = {
+  siding: [
+    {
+      question: 'How long does vinyl siding last in Massachusetts?',
+      answer: 'Quality vinyl siding typically lasts 30-50 years in Massachusetts when properly installed. James Hardie fiber cement siding can last 50+ years. We use premium materials designed to withstand New England\'s harsh winters, humid summers, and coastal salt air.',
+    },
+    {
+      question: 'What type of siding is best for New England weather?',
+      answer: 'For Massachusetts homes, we recommend insulated vinyl siding or James Hardie fiber cement. Both withstand temperature extremes (-20°F to 100°F), resist moisture damage, and won\'t crack or warp. Insulated siding also provides up to 20% energy savings.',
+    },
+    {
+      question: 'How much does new siding cost in Massachusetts?',
+      answer: 'Siding costs vary by material: vinyl runs $6-12 per sq ft installed, while premium James Hardie fiber cement costs $9-15 per sq ft. A typical 2,000 sq ft home ranges from $12,000-30,000. We provide free, detailed written estimates with no hidden fees.',
+    },
+    {
+      question: 'Can you install siding over existing siding?',
+      answer: 'In some cases, yes. However, we typically recommend full tear-off to inspect sheathing for moisture damage and ensure proper moisture barrier installation. This approach provides better long-term results and maintains manufacturer warranties.',
+    },
+  ],
+  windows: [
+    {
+      question: 'How much can I save on energy bills with new windows?',
+      answer: 'ENERGY STAR certified windows can reduce heating and cooling costs by 12-33%. Most Massachusetts homeowners save $100-400 annually. Our double and triple-pane windows with Low-E coatings provide maximum insulation for New England winters.',
+    },
+    {
+      question: 'What\'s the difference between double and triple-pane windows?',
+      answer: 'Double-pane windows have two glass layers with insulating argon gas between them. Triple-pane adds a third layer for 20-30% better insulation. Triple-pane costs about 10-15% more but offers superior energy efficiency and noise reduction — ideal for Massachusetts winters.',
+    },
+    {
+      question: 'How long does window replacement take?',
+      answer: 'Most window replacements take 1-3 days depending on the number of windows. A typical home with 10-15 windows takes 2 days. We work efficiently while ensuring proper installation, flashing, and weatherstripping.',
+    },
+    {
+      question: 'Are your windows ENERGY STAR certified?',
+      answer: 'Yes! All our windows are ENERGY STAR certified for the Northern climate zone, meeting strict efficiency requirements for Massachusetts. Many of our windows qualify for Mass Save rebates and federal energy tax credits.',
+    },
+  ],
+  doors: [
+    {
+      question: 'What\'s the best entry door material for Massachusetts?',
+      answer: 'For Massachusetts homes, we recommend fiberglass entry doors. They won\'t crack, warp, or rot like wood, provide excellent insulation (R-value up to 7.0), and resist New England\'s temperature swings. Steel doors offer maximum security but may dent.',
+    },
+    {
+      question: 'How much does a new entry door cost?',
+      answer: 'Entry door costs range from $1,500-5,000+ installed depending on material and features. Basic fiberglass starts around $1,500, while premium Therma-Tru or ProVia doors with sidelights can reach $4,000-6,000. All our doors include professional installation.',
+    },
+    {
+      question: 'Do you install storm doors?',
+      answer: 'Yes! Storm doors add an extra layer of protection and can reduce energy loss by 50%. We install retractable screen storm doors, full-view glass doors, and traditional models. Storm doors typically cost $400-1,200 installed.',
+    },
+    {
+      question: 'Can you install smart locks with new doors?',
+      answer: 'Absolutely! We install smart locks, keypad locks, and multi-point locking systems with all door installations. Smart home integration options are available with Schlage, Yale, and August smart lock systems.',
+    },
+  ],
+  'general-contractor': [
+    {
+      question: 'What types of projects do you handle?',
+      answer: 'We specialize in exterior renovations including complete siding replacements, window and door packages, deck construction, and structural repairs. We also handle interior projects like kitchen remodels, bathroom renovations, and basement finishing.',
+    },
+    {
+      question: 'Are you licensed for general contracting in Massachusetts?',
+      answer: `Yes! Maia Construction holds Massachusetts Home Improvement Contractor license #${HIC_NUMBER}. We\'re fully licensed, bonded, and insured for all residential construction work throughout the state.`,
+    },
+    {
+      question: 'How do you handle permits and inspections?',
+      answer: 'We manage all permit applications and inspections as part of our service. Our team coordinates with local building departments, schedules required inspections, and ensures all work meets Massachusetts building codes.',
+    },
+    {
+      question: 'What warranty do you offer on general contracting work?',
+      answer: 'All our work includes a 5-year workmanship warranty plus manufacturer warranties on materials (25-50 years). We use fixed-price contracts with detailed project timelines, so you know exactly what to expect.',
+    },
+  ],
+};
+
 // Get gallery images based on service
 function getServiceGallery(serviceSlug: string): string[] {
   switch (serviceSlug) {
@@ -167,9 +243,24 @@ export default async function ServicePage({ params }: ServicePageProps) {
     serviceType: service.name,
   };
 
+  // FAQ Schema for SEO
+  const faqSchema = serviceFAQs[serviceSlug] ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: serviceFAQs[serviceSlug].map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  } : null;
+
   return (
     <>
       <JsonLd data={serviceSchema} />
+      {faqSchema && <JsonLd data={faqSchema} />}
 
       <Hero
         title={`Professional ${service.name} Services`}
@@ -269,8 +360,64 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
       <Testimonials />
 
+      {/* Service-Specific FAQ Section */}
+      {serviceFAQs[serviceSlug] && (
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-slate-900 mb-4">
+                {service.name} FAQs
+              </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-6" />
+              <p className="text-xl text-gray-600">
+                Common questions about {service.name.toLowerCase()} installation in Massachusetts
+              </p>
+            </div>
+
+            <div className="max-w-4xl mx-auto space-y-4">
+              {serviceFAQs[serviceSlug].map((faq, index) => (
+                <details
+                  key={index}
+                  className="bg-slate-50 rounded-xl overflow-hidden border border-slate-200 group"
+                >
+                  <summary className="px-6 py-5 cursor-pointer hover:bg-slate-100 transition-colors flex items-center justify-between">
+                    <h3 className="text-lg font-bold text-slate-900 pr-4">
+                      {faq.question}
+                    </h3>
+                    <svg
+                      className="w-5 h-5 text-amber-500 flex-shrink-0 transition-transform group-open:rotate-180"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <p className="px-6 pb-5 text-gray-600 leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+
+            <div className="text-center mt-12">
+              <p className="text-gray-600 mb-4">Have more questions about {service.name.toLowerCase()}?</p>
+              <a
+                href={`tel:${PHONE.replace(/[^0-9]/g, '')}`}
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-amber-400 to-yellow-300 text-slate-900 rounded-full font-bold hover:shadow-lg transition-all"
+              >
+                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                </svg>
+                Call {PHONE} — Free Consultation
+              </a>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ALL Cities for this Service - By County */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-900 mb-4">
