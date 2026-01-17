@@ -1,8 +1,8 @@
 import dynamic from 'next/dynamic';
 import { HeroWithForm, ServicesSection, CityGrid, CTASection, WhyChooseUs, ReviewsHighlight } from '@/components/sections';
-import { JsonLd } from '@/components/seo';
+import { JsonLd, organizationSchema } from '@/components/seo';
 import { cities } from '@/lib/cities';
-import { SITE_NAME, PHONE, ADDRESS, LOGO_URL, SITE_URL, HIC_NUMBER } from '@/lib/constants';
+import { HIC_NUMBER } from '@/lib/constants';
 
 // Lazy load heavy client components
 const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'), {
@@ -18,49 +18,9 @@ const FAQ = dynamic(() => import('@/components/sections/FAQ'), {
 export default function HomePage() {
   const featuredCities = cities.slice(0, 12);
 
-  const localBusinessSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'HomeAndConstructionBusiness',
-    name: SITE_NAME,
-    image: LOGO_URL,
-    telephone: PHONE,
-    url: SITE_URL,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: ADDRESS.street,
-      addressLocality: ADDRESS.city,
-      addressRegion: ADDRESS.state,
-      postalCode: ADDRESS.zip,
-      addressCountry: 'US',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: ADDRESS.lat,
-      longitude: ADDRESS.lng,
-    },
-    areaServed: {
-      '@type': 'State',
-      name: 'Massachusetts',
-    },
-    priceRange: '$$',
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-        opens: '07:00',
-        closes: '19:00',
-      },
-    ],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5',
-      reviewCount: '47',
-    },
-  };
-
   return (
     <>
-      <JsonLd data={localBusinessSchema} />
+      <JsonLd data={organizationSchema} />
 
       {/* Hero Section with Form */}
       <HeroWithForm

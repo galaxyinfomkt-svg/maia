@@ -1,10 +1,42 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function ChatWidget() {
+  const [shouldLoad, setShouldLoad] = useState(false);
+
   useEffect(() => {
-    // Load the chat widget script
+    // Delay loading chat widget for better Core Web Vitals
+    // Load after 5 seconds of page load or on user interaction
+    const timer = setTimeout(() => {
+      setShouldLoad(true);
+    }, 5000);
+
+    // Also load on user interaction (scroll, click, touch)
+    const handleInteraction = () => {
+      setShouldLoad(true);
+      // Remove listeners after first interaction
+      window.removeEventListener('scroll', handleInteraction);
+      window.removeEventListener('click', handleInteraction);
+      window.removeEventListener('touchstart', handleInteraction);
+    };
+
+    window.addEventListener('scroll', handleInteraction, { passive: true });
+    window.addEventListener('click', handleInteraction);
+    window.addEventListener('touchstart', handleInteraction, { passive: true });
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('scroll', handleInteraction);
+      window.removeEventListener('click', handleInteraction);
+      window.removeEventListener('touchstart', handleInteraction);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!shouldLoad) return;
+
+    // Load the chat widget script only when needed
     const script = document.createElement('script');
     script.src = 'https://widgets.leadconnectorhq.com/loader.js';
     script.setAttribute('data-resources-url', 'https://widgets.leadconnectorhq.com/chat-widget/loader.js');
@@ -18,7 +50,7 @@ export default function ChatWidget() {
         document.body.removeChild(script);
       }
     };
-  }, []);
+  }, [shouldLoad]);
 
   return null;
 }
