@@ -18,6 +18,11 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME} - Licensed MA Contractor (HIC #${HIC_NUMBER})`,
   },
   description: `Massachusetts' trusted siding, window & door contractor. 5-star rated, 100+ projects completed. Licensed (HIC #${HIC_NUMBER}) & insured. Get your FREE quote today - call ${PHONE}!`,
+  icons: {
+    icon: LOGO_URL,
+    shortcut: LOGO_URL,
+    apple: LOGO_URL,
+  },
   keywords: [
     'siding installation Massachusetts',
     'siding contractor Boston MA',
