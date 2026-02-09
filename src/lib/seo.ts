@@ -4,17 +4,17 @@ import { City } from '@/types';
 import { SITE_NAME, SITE_URL, PHONE, ADDRESS, LOGO_URL } from './constants';
 
 export function generateServiceMetadata(service: Service): Metadata {
-  const title = `${service.name} Services`;
-  const description = `Professional ${service.name.toLowerCase()} installation and repair in Massachusetts. ${service.shortDescription} Call ${PHONE} for a free estimate.`;
+  const title = `${service.name} Installation MA | 5-Star | Free Estimate`;
+  const description = `5.0-star rated ${service.name.toLowerCase()} contractor in Massachusetts. ${service.shortDescription} Licensed HIC #204634. FREE estimate: ${PHONE}`;
 
   return {
     title,
     description,
     keywords: [
-      `${service.name.toLowerCase()} installation`,
-      `${service.name.toLowerCase()} Massachusetts`,
-      `${service.name.toLowerCase()} contractor`,
-      `best ${service.name.toLowerCase()} company MA`,
+      `${service.name.toLowerCase()} installation Massachusetts`,
+      `${service.name.toLowerCase()} contractor MA`,
+      `best ${service.name.toLowerCase()} company Massachusetts`,
+      `${service.name.toLowerCase()} near me MA`,
     ],
     openGraph: {
       title: `${title} | ${SITE_NAME}`,
@@ -25,18 +25,19 @@ export function generateServiceMetadata(service: Service): Metadata {
 }
 
 export function generateCityMetadata(city: City): Metadata {
-  const title = `Construction Services in ${city.name}, MA`;
-  const description = `Professional siding, door, and window installation in ${city.name}, Massachusetts. Licensed contractor serving ${city.county} County. Call ${PHONE}!`;
+  const title = `Siding, Windows & Doors ${city.name} MA | 5-Star | Free Quote`;
+  const description = `5.0-star rated contractor in ${city.name}, MA. Siding, windows & doors. 500+ projects in ${city.county} County. Licensed HIC #204634. FREE estimate: ${PHONE}`;
 
   return {
     title,
     description,
     keywords: [
-      `contractor ${city.name}`,
+      `contractor ${city.name} MA`,
       `siding ${city.name} MA`,
-      `windows ${city.name}`,
-      `doors ${city.name}`,
+      `windows ${city.name} MA`,
+      `doors ${city.name} MA`,
       `home improvement ${city.name}`,
+      `best contractor ${city.name}`,
     ],
     openGraph: {
       title: `${title} | ${SITE_NAME}`,
@@ -49,8 +50,8 @@ export function generateCityMetadata(city: City): Metadata {
 }
 
 export function generateServiceCityMetadata(service: Service, city: City): Metadata {
-  const title = `${service.name} Contractor in ${city.name}, MA`;
-  const description = `Professional ${service.name.toLowerCase()} installation in ${city.name}, Massachusetts. Licensed contractor serving ${city.county} County. Call ${PHONE} for free estimate!`;
+  const title = `${service.name} ${city.name} MA | 5-Star Rated | Free Estimate`;
+  const description = `#1 ${service.name.toLowerCase()} contractor in ${city.name}, MA. 5.0 stars, 500+ projects in ${city.county} County. Licensed HIC #204634. FREE estimate: ${PHONE}`;
 
   return {
     title,
@@ -61,6 +62,7 @@ export function generateServiceCityMetadata(service: Service, city: City): Metad
       `${service.name.toLowerCase()} contractor ${city.name}`,
       `best ${service.name.toLowerCase()} ${city.name}`,
       `${city.zip} ${service.name.toLowerCase()}`,
+      `${service.name.toLowerCase()} company ${city.name} MA`,
     ],
     openGraph: {
       title: `${title} | ${SITE_NAME}`,
@@ -83,7 +85,7 @@ export function generateLocalBusinessSchema(city?: City) {
     url: SITE_URL,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: ADDRESS.street,
+      ...(ADDRESS.street ? { streetAddress: ADDRESS.street } : {}),
       addressLocality: city?.name || ADDRESS.city,
       addressRegion: 'MA',
       postalCode: city?.zip || ADDRESS.zip,
@@ -104,18 +106,19 @@ export function generateLocalBusinessSchema(city?: City) {
           name: 'Massachusetts',
         },
     priceRange: '$$',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      bestRating: '5',
+      worstRating: '1',
+      reviewCount: '47',
+    },
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '08:00',
-        closes: '18:00',
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: 'Saturday',
-        opens: '09:00',
-        closes: '15:00',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        opens: '07:00',
+        closes: '19:00',
       },
     ],
   };

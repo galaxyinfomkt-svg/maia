@@ -5,13 +5,14 @@ import { JsonLd } from '@/components/seo';
 import { SITE_NAME, PHONE, PHONE_LINK, ADDRESS, BUSINESS_HOURS, IMAGES, LOGO_URL } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | FREE Estimate - Same Day Response | Maia Construction',
-  description: `Get your FREE home improvement estimate! Call ${PHONE} or fill out our form. MA HIC licensed, 5-star rated. Siding, windows, doors in 100+ MA cities. Response within 24 hours guaranteed.`,
+  title: 'FREE Estimate | Same-Day Response | 5-Star Rated',
+  description: `Get your FREE home improvement estimate today! Call ${PHONE} or fill out our form. 5.0-star rated, MA HIC licensed. Siding, windows, doors. Response within 24 hours.`,
   keywords: [
-    'free estimate siding Massachusetts',
+    'free estimate contractor Massachusetts',
+    'free estimate siding MA',
     'contact window contractor MA',
     'home improvement quote Boston',
-    'siding contractor phone number',
+    'free quote contractor near me',
   ],
 };
 

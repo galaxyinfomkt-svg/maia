@@ -6,8 +6,8 @@ import { JsonLd } from '@/components/seo';
 import { SITE_NAME, IMAGES } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Our Projects',
-  description: `View our portfolio of completed siding, window, door, and home improvement projects across Massachusetts. Quality craftsmanship by ${SITE_NAME}.`,
+  title: 'Our Projects | 500+ Completed | Before & After Gallery',
+  description: `See our 500+ completed projects: siding, windows & doors across Massachusetts. Before & after gallery. 5.0-star quality craftsmanship by ${SITE_NAME}.`,
 };
 
 const projects = [

@@ -61,8 +61,8 @@ export async function generateMetadata({ params }: ServiceCityPageProps): Promis
 
   if (!service || !city) return {};
 
-  const title = `${service.name} Contractor in ${city.name}, MA`;
-  const description = `Professional ${service.name.toLowerCase()} installation and repair in ${city.name}, Massachusetts. Licensed contractor serving ${city.county} County. Call ${PHONE} for a free estimate!`;
+  const title = `${service.name} ${city.name} MA | 5-Star Rated | Free Estimate`;
+  const description = `#1 ${service.name.toLowerCase()} contractor in ${city.name}, MA. 5.0 stars, 500+ projects in ${city.county} County. Licensed HIC #204634. FREE estimate: ${PHONE}`;
 
   return {
     title,
@@ -73,6 +73,7 @@ export async function generateMetadata({ params }: ServiceCityPageProps): Promis
       `${service.name.toLowerCase()} contractor ${city.name}`,
       `best ${service.name.toLowerCase()} ${city.name}`,
       `${city.zip} ${service.name.toLowerCase()}`,
+      `${service.name.toLowerCase()} company ${city.name} MA`,
     ],
     openGraph: {
       title,
@@ -114,6 +115,13 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
       name: city.name,
     },
     priceRange: '$$',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      bestRating: '5',
+      worstRating: '1',
+      reviewCount: '47',
+    },
   };
 
   const serviceSchema = {
@@ -149,6 +157,44 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
       <JsonLd data={localBusinessSchema} />
       <JsonLd data={serviceSchema} />
       <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={{
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: `Do you provide ${service.name.toLowerCase()} services in all of ${city.name}?`,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `Yes! We proudly serve all neighborhoods throughout ${city.name}, ${city.county} County, including ${city.zip} and surrounding zip codes. We're just ${city.distance} miles from your location.`,
+            },
+          },
+          {
+            '@type': 'Question',
+            name: `How quickly can you start a ${service.name.toLowerCase()} project in ${city.name}?`,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `We typically provide free estimates within 24-48 hours for ${city.name} residents. Project start times vary by season, but we always work with your schedule.`,
+            },
+          },
+          {
+            '@type': 'Question',
+            name: `Are you licensed and insured to work in ${city.name}?`,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `Absolutely. Maia Construction is fully licensed and insured to provide ${service.name.toLowerCase()} services throughout ${city.county} County, including ${city.name}.`,
+            },
+          },
+          {
+            '@type': 'Question',
+            name: `What warranty do you offer on ${service.name.toLowerCase()} work in ${city.name}?`,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `All our ${service.name.toLowerCase()} installations in ${city.name} come with comprehensive warranties on both materials and workmanship. We stand behind every project.`,
+            },
+          },
+        ],
+      }} />
 
       <Hero
         title={`${service.name} Installation in ${city.name}, Massachusetts`}

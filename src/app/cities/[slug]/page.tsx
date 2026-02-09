@@ -24,19 +24,20 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
 
   if (!city) return {};
 
-  const title = `Siding, Door & Windows Installation in ${city.name}, MA`;
-  const description = `Professional construction services in ${city.name}, Massachusetts. Licensed & insured contractor serving ${city.county} County. Call ${PHONE} for a free estimate!`;
+  const title = `Siding, Windows & Doors ${city.name} MA | 5-Star | Free Quote`;
+  const description = `5.0-star rated contractor in ${city.name}, MA. Siding, windows & doors. 500+ projects in ${city.county} County. Licensed HIC #204634. FREE estimate: ${PHONE}`;
 
   return {
     title,
     description,
     keywords: [
-      `contractor ${city.name}`,
+      `contractor ${city.name} MA`,
       `siding installation ${city.name} MA`,
-      `window replacement ${city.name}`,
-      `door installation ${city.name}`,
-      `home improvement ${city.name}`,
+      `window replacement ${city.name} MA`,
+      `door installation ${city.name} MA`,
+      `home improvement ${city.name} Massachusetts`,
       `${city.zip} contractor`,
+      `best contractor ${city.name}`,
     ],
     openGraph: {
       title,

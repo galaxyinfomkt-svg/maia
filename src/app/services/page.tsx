@@ -7,15 +7,15 @@ import { services } from '@/lib/services';
 import { SITE_NAME, IMAGES } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Home Exterior Services | Siding, Windows, Doors Installation MA',
-  description: `Professional siding, windows, and doors installation in Massachusetts. Energy-efficient upgrades, premium materials, lifetime warranties. MA HIC licensed. FREE estimates.`,
+  title: 'Our Services | Siding, Windows & Doors MA | 5-Star Rated',
+  description: `5.0-star rated: siding, windows & doors installation in Massachusetts. ENERGY STAR windows, James Hardie siding, premium doors. 25-50yr warranties. FREE estimates.`,
   keywords: [
     'siding installation Massachusetts',
     'window replacement MA',
     'door installation Boston',
-    'home exterior services',
+    'home exterior services MA',
     'energy efficient windows MA',
-    'vinyl siding contractor',
+    'vinyl siding contractor Massachusetts',
   ],
 };
 

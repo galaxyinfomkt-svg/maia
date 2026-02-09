@@ -14,10 +14,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: `${SITE_NAME} | Siding, Windows & Doors in Massachusetts | Free Quote in 24h`,
-    template: `%s | ${SITE_NAME} - Licensed MA Contractor (HIC #${HIC_NUMBER})`,
+    default: `#1 Siding & Window Contractor MA | 5-Star | ${SITE_NAME}`,
+    template: `%s | ${SITE_NAME}`,
   },
-  description: `Massachusetts' trusted siding, window & door contractor. 5-star rated, 100+ projects completed. Licensed (HIC #${HIC_NUMBER}) & insured. Get your FREE quote today - call ${PHONE}!`,
+  description: `5.0-star rated MA siding, window & door contractor. 500+ projects, 25-50yr warranties. Licensed HIC #${HIC_NUMBER} & insured. FREE estimate today: ${PHONE}`,
   icons: {
     icon: LOGO_URL,
     shortcut: LOGO_URL,
@@ -45,21 +45,21 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: `${SITE_NAME} | Premium Siding, Windows & Doors in Massachusetts`,
-    description: 'New England\'s trusted home exterior specialists. Premium siding, energy-efficient windows & doors. 5-star rated, licensed & insured. Free estimates!',
+    title: `${SITE_NAME} | 5-Star Siding, Windows & Doors in MA`,
+    description: '5.0-star rated home exterior specialists in Massachusetts. Premium siding, ENERGY STAR windows & doors. Licensed HIC #204634. Free estimates!',
     images: [
       {
         url: LOGO_URL,
         width: 400,
         height: 400,
-        alt: `${SITE_NAME} - Massachusetts Siding, Windows & Doors Contractor`,
+        alt: `${SITE_NAME} - 5-Star Rated Massachusetts Home Exterior Contractor`,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${SITE_NAME} | MA's Top-Rated Siding & Window Contractor`,
-    description: 'Transform your home with quality siding, windows & doors. Serving 100+ Massachusetts cities. Licensed & insured. Call for free estimate!',
+    title: `${SITE_NAME} | 5-Star Siding & Window Contractor MA`,
+    description: '5.0-star rated siding, window & door contractor. Serving 100+ Massachusetts cities. Licensed & insured. Call for FREE estimate!',
     images: [LOGO_URL],
   },
   robots: {

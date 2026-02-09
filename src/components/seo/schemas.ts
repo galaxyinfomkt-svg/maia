@@ -19,7 +19,7 @@ export const organizationSchema = {
   email: 'contact@maiaconstruction.com',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: ADDRESS.street,
+    ...(ADDRESS.street ? { streetAddress: ADDRESS.street } : {}),
     addressLocality: ADDRESS.city,
     addressRegion: ADDRESS.state,
     postalCode: ADDRESS.zip,

@@ -23,8 +23,8 @@ export async function generateStaticParams() {
 // SEO metadata by service type
 const serviceMetadata: Record<string, { title: string; description: string; keywords: string[] }> = {
   siding: {
-    title: 'Siding Installation Massachusetts | Vinyl & Fiber Cement Experts',
-    description: `Premium siding installation in MA. Vinyl, James Hardie fiber cement & insulated options. 25-50 year warranties. MA HIC #${HIC_NUMBER}. FREE estimate: ${PHONE}`,
+    title: 'Siding Installation MA | 500+ Homes | 5-Star | Free Quote',
+    description: `5.0-star siding contractor in MA. Vinyl & James Hardie fiber cement. 25-50yr warranties, 500+ projects. Licensed HIC #${HIC_NUMBER}. FREE estimate: ${PHONE}`,
     keywords: [
       'siding installation Massachusetts',
       'vinyl siding contractor MA',
@@ -37,8 +37,8 @@ const serviceMetadata: Record<string, { title: string; description: string; keyw
     ],
   },
   windows: {
-    title: 'Window Replacement Massachusetts | ENERGY STAR Certified',
-    description: `Save up to 30% on energy bills with ENERGY STAR windows. Double & triple-pane, Low-E glass. MA HIC #${HIC_NUMBER}. FREE estimate: ${PHONE}`,
+    title: 'Window Replacement MA | ENERGY STAR | Save 30% on Bills',
+    description: `5.0-star window contractor in MA. ENERGY STAR certified, double & triple-pane. Save up to 30% on energy bills. Licensed HIC #${HIC_NUMBER}. FREE estimate: ${PHONE}`,
     keywords: [
       'window replacement Massachusetts',
       'energy efficient windows MA',
@@ -51,8 +51,8 @@ const serviceMetadata: Record<string, { title: string; description: string; keyw
     ],
   },
   doors: {
-    title: 'Door Installation Massachusetts | Entry, Storm & Patio Doors',
-    description: `Premium door installation - fiberglass, steel & wood. Entry doors, storm doors, patio doors. 90%+ ROI. MA HIC #${HIC_NUMBER}. FREE estimate: ${PHONE}`,
+    title: 'Door Installation MA | Entry, Storm & Patio | 90%+ ROI',
+    description: `5.0-star door contractor in MA. Fiberglass, steel & wood entry doors. Storm & patio doors. 90%+ ROI at resale. Licensed HIC #${HIC_NUMBER}. FREE estimate: ${PHONE}`,
     keywords: [
       'door installation Massachusetts',
       'entry door replacement MA',
@@ -65,8 +65,8 @@ const serviceMetadata: Record<string, { title: string; description: string; keyw
     ],
   },
   'general-contractor': {
-    title: 'General Contractor Massachusetts | Licensed Home Renovations',
-    description: `MA HIC #${HIC_NUMBER} licensed general contractor. Exterior renovations, remodeling, additions. 5-year warranty. FREE estimate: ${PHONE}`,
+    title: 'General Contractor MA | Licensed HIC #204634 | Free Quote',
+    description: `5.0-star licensed general contractor in MA. Exterior renovations, remodeling, additions. 5-year warranty, 500+ projects. FREE estimate: ${PHONE}`,
     keywords: [
       'general contractor Massachusetts',
       'home renovation contractor MA',
@@ -245,6 +245,13 @@ export default async function ServicePage({ params }: ServicePageProps) {
       '@type': 'HomeAndConstructionBusiness',
       name: SITE_NAME,
       telephone: PHONE,
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '5.0',
+        bestRating: '5',
+        worstRating: '1',
+        reviewCount: '47',
+      },
     },
     areaServed: {
       '@type': 'State',

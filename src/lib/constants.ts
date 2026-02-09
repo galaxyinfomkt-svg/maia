@@ -7,7 +7,7 @@ export const EMAIL_LINK = 'mailto:contact@maiaconstruction.com';
 export const HIC_NUMBER = '204634'; // MA Home Improvement Contractor License
 
 export const ADDRESS = {
-  street: '123 Main Street',
+  street: '',
   city: 'Marlborough',
   state: 'MA',
   zip: '01752',

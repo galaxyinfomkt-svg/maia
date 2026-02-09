@@ -5,14 +5,14 @@ import { JsonLd } from '@/components/seo';
 import { SITE_NAME, IMAGES, PHONE, ADDRESS, LOGO_URL } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'About Maia Construction | MA Licensed Contractor Since 2015',
-  description: `Meet Maia Construction - Marlborough-based family business with 10+ years experience, 500+ completed projects, and 5.0 star rating. MA HIC licensed. Trusted by 100+ Massachusetts communities.`,
+  title: 'About Us | 10+ Years | 500+ Projects | 5-Star Rated',
+  description: `Maia Construction: Marlborough-based family business. 10+ years, 500+ projects, 5.0-star rating. MA HIC licensed. Trusted by 100+ Massachusetts communities.`,
   keywords: [
     'about Maia Construction',
     'Massachusetts contractor history',
     'family owned contractor MA',
     'Marlborough home improvement company',
-    'trusted siding contractor Massachusetts',
+    'trusted contractor Massachusetts',
   ],
 };
 

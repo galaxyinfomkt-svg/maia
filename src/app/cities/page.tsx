@@ -8,14 +8,14 @@ import { JsonLd } from '@/components/seo';
 import { SITE_NAME } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Service Areas | 100+ Massachusetts Cities | Siding, Windows, Doors',
-  description: `Serving 100+ MA cities: Boston, Worcester, Framingham, Natick, Marlborough & more. Same-day estimates, local expertise in 5 counties. Find siding, window & door services in your city.`,
+  title: '100+ MA Cities Served | 5-Star Contractor | Free Estimates',
+  description: `Serving 100+ Massachusetts cities: Boston, Worcester, Framingham, Natick, Marlborough & more. 5.0-star rated, same-day estimates, 5 counties. Find services in your city.`,
   keywords: [
+    'contractor near me Massachusetts',
     'siding installation Boston',
     'window replacement Worcester',
     'door contractor Framingham',
     'home improvement Natick MA',
-    'siding contractor near me Massachusetts',
     'Middlesex County contractor',
     'Worcester County home improvement',
   ],
