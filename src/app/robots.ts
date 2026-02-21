@@ -19,6 +19,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/admin/', '/_next/'],
       },
     ],
-    sitemap: 'https://www.maiaconstruction.com/sitemap.xml',
+    sitemap: 'https://maiaconstruction.com/sitemap.xml',
   };
 }

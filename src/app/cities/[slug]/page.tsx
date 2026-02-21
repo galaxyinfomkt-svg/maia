@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
       description,
     },
     alternates: {
-      canonical: `https://www.maiaconstruction.com/cities/${city.slug}`,
+      canonical: `https://maiaconstruction.com/cities/${city.slug}`,
     },
     // Noindex distant cities to avoid thin content penalty — focus authority on nearby areas
     ...(city.distance > 50 ? { robots: { index: false, follow: true } } : {}),

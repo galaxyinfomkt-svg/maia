@@ -3,7 +3,7 @@ import { cities } from '@/lib/cities';
 import { services } from '@/lib/services';
 import { getAllPosts, getAllTags } from '@/lib/blog';
 
-const BASE_URL = 'https://www.maiaconstruction.com';
+const BASE_URL = 'https://maiaconstruction.com';
 
 // Only include nearby cities (within 50 miles) in sitemap to avoid thin content penalty
 const PRIMARY_CITIES = cities.filter((city) => city.distance <= 50);

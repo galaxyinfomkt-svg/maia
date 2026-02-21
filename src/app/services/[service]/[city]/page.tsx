@@ -81,7 +81,7 @@ export async function generateMetadata({ params }: ServiceCityPageProps): Promis
       images: [{ url: service.image }],
     },
     alternates: {
-      canonical: `https://www.maiaconstruction.com/services/${service.slug}/${city.slug}`,
+      canonical: `https://maiaconstruction.com/services/${service.slug}/${city.slug}`,
     },
     // Noindex distant cities to avoid thin content penalty — focus authority on nearby areas
     ...(city.distance > 50 ? { robots: { index: false, follow: true } } : {}),
@@ -147,10 +147,10 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.maiaconstruction.com' },
-      { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.maiaconstruction.com/services' },
-      { '@type': 'ListItem', position: 3, name: service.name, item: `https://www.maiaconstruction.com/services/${service.slug}` },
-      { '@type': 'ListItem', position: 4, name: city.name, item: `https://www.maiaconstruction.com/services/${service.slug}/${city.slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://maiaconstruction.com' },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://maiaconstruction.com/services' },
+      { '@type': 'ListItem', position: 3, name: service.name, item: `https://maiaconstruction.com/services/${service.slug}` },
+      { '@type': 'ListItem', position: 4, name: city.name, item: `https://maiaconstruction.com/services/${service.slug}/${city.slug}` },
     ],
   };
 
