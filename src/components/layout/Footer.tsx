@@ -213,6 +213,14 @@ export default function Footer() {
               <Link href="/sitemap.xml" className="hover:text-amber-400 transition-colors">Sitemap</Link>
             </div>
           </div>
+          <div className="mt-4 text-center">
+            <p className="text-gray-600 text-xs">
+              Website by{' '}
+              <a href="http://galaxyinfo.us/" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 transition-colors">
+                Galaxy It & Marketing
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
