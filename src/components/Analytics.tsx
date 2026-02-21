@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import Script from 'next/script';
 
 // Google Analytics 4 Measurement ID - Replace with your actual ID
@@ -121,6 +122,23 @@ export function trackQuoteRequest() {
 }
 
 export default function Analytics() {
+  // Global click tracking for phone links and CTA buttons
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      // Track phone link clicks
+      if (target.closest('a[href^="tel:"]')) {
+        trackPhoneCall();
+      }
+      // Track CTA clicks to contact page
+      if (target.closest('a[href="/contact"]')) {
+        trackQuoteRequest();
+      }
+    };
+    document.addEventListener('click', handler);
+    return () => document.removeEventListener('click', handler);
+  }, []);
+
   return (
     <>
       <GoogleAnalytics />

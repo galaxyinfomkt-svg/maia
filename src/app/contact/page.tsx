@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { Hero } from '@/components/sections';
 import { ContactForm } from '@/components/forms';
 import { JsonLd } from '@/components/seo';
-import { SITE_NAME, PHONE, PHONE_LINK, ADDRESS, BUSINESS_HOURS, IMAGES, LOGO_URL } from '@/lib/constants';
+import { SITE_NAME, PHONE, PHONE_LINK, ADDRESS, BUSINESS_HOURS, IMAGES, LOGO_URL, HIC_NUMBER } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Get Your FREE Estimate Today | Same-Day Response | Call Now',
@@ -36,9 +36,46 @@ export default function ContactPage() {
     },
   };
 
+  const contactFaqs = [
+    {
+      q: 'How long does a typical project take?',
+      a: 'Project timelines vary based on scope. Siding installation typically takes 3-7 days, window replacement 1-3 days, and door installation usually completed in a single day.',
+    },
+    {
+      q: 'Do you offer free estimates?',
+      a: 'Yes! We provide free, no-obligation estimates for all projects. Contact us to schedule a convenient time for your consultation.',
+    },
+    {
+      q: 'Are you licensed and insured?',
+      a: `Absolutely. Maia Construction is fully licensed (MA HIC #${HIC_NUMBER}) and insured to work throughout Massachusetts. We carry comprehensive liability and workers' compensation insurance.`,
+    },
+    {
+      q: 'What warranty do you offer?',
+      a: 'We stand behind our work with a comprehensive warranty on both materials and labor. Specific warranty terms vary by product and are detailed in your contract.',
+    },
+    {
+      q: 'Do you handle permits?',
+      a: 'Yes, we handle all necessary permits and inspections as part of our service. This ensures your project meets all local building codes.',
+    },
+  ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: contactFaqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <>
       <JsonLd data={contactSchema} />
+      <JsonLd data={faqSchema} />
 
       <Hero
         title="Contact Us"
@@ -144,28 +181,7 @@ export default function ContactPage() {
           </div>
 
           <div className="max-w-3xl mx-auto space-y-6">
-            {[
-              {
-                q: 'How long does a typical project take?',
-                a: 'Project timelines vary based on scope. Siding installation typically takes 3-7 days, window replacement 1-3 days, and door installation usually completed in a single day.',
-              },
-              {
-                q: 'Do you offer free estimates?',
-                a: 'Yes! We provide free, no-obligation estimates for all projects. Contact us to schedule a convenient time for your consultation.',
-              },
-              {
-                q: 'Are you licensed and insured?',
-                a: 'Absolutely. Maia Construction is fully licensed and insured to work throughout Massachusetts. We carry comprehensive liability and workers\' compensation insurance.',
-              },
-              {
-                q: 'What warranty do you offer?',
-                a: 'We stand behind our work with a comprehensive warranty on both materials and labor. Specific warranty terms vary by product and are detailed in your contract.',
-              },
-              {
-                q: 'Do you handle permits?',
-                a: 'Yes, we handle all necessary permits and inspections as part of our service. This ensures your project meets all local building codes.',
-              },
-            ].map((faq, index) => (
+            {contactFaqs.map((faq, index) => (
               <details key={index} className="bg-white p-6 rounded-xl shadow-md group">
                 <summary className="font-bold text-lg text-slate-900 cursor-pointer hover:text-amber-500 transition-colors flex items-center justify-between">
                   {faq.q}

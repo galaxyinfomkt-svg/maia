@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { PHONE, PHONE_LINK } from '@/lib/constants';
+import { trackPhoneCall } from '@/components/Analytics';
 
 export default function FloatingCTA() {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,6 +19,7 @@ export default function FloatingCTA() {
   return (
     <a
       href={PHONE_LINK}
+      onClick={trackPhoneCall}
       aria-label="Call for free estimate"
       className={cn(
         'fixed bottom-6 right-6 z-40 flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-amber-400 to-yellow-300 text-slate-900 rounded-full font-bold shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300',

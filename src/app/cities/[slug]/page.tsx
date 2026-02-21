@@ -86,9 +86,46 @@ export default async function CityPage({ params }: CityPageProps) {
     },
   };
 
+  const cityFaqs = [
+    {
+      q: `Do you serve all of ${city.name}, Massachusetts?`,
+      a: `Yes! We proudly serve all neighborhoods throughout ${city.name}, ${city.county} County, including ${city.zip} and surrounding zip codes. We're just ${city.distance} miles from your location.`,
+    },
+    {
+      q: `How quickly can you start a project in ${city.name}?`,
+      a: `We typically provide free estimates within 24-48 hours for ${city.name} residents. Project start times vary by season, but we always work with your schedule to find convenient dates.`,
+    },
+    {
+      q: `Are you licensed and insured to work in ${city.name}?`,
+      a: `Absolutely. Maia Construction is fully licensed and insured to provide siding, door, and window installation services throughout ${city.county} County, including ${city.name}.`,
+    },
+    {
+      q: `What makes your services different in ${city.name}?`,
+      a: `We understand ${city.name}'s specific climate challenges and architectural styles. Our materials and techniques are specifically chosen for optimal performance in ${city.county} County's weather conditions.`,
+    },
+    {
+      q: `Do you offer warranties on work done in ${city.name}?`,
+      a: `Yes! All our installations in ${city.name} come with comprehensive warranties on both materials and workmanship. We stand behind every project.`,
+    },
+  ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: cityFaqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <>
       <JsonLd data={localBusinessSchema} />
+      <JsonLd data={faqSchema} />
 
       <Hero
         title={`Professional Construction Services in ${city.name}, Massachusetts`}
@@ -267,28 +304,7 @@ export default async function CityPage({ params }: CityPageProps) {
           </div>
 
           <div className="max-w-3xl mx-auto space-y-6">
-            {[
-              {
-                q: `Do you serve all of ${city.name}, Massachusetts?`,
-                a: `Yes! We proudly serve all neighborhoods throughout ${city.name}, ${city.county} County, including ${city.zip} and surrounding zip codes. We're just ${city.distance} miles from your location.`,
-              },
-              {
-                q: `How quickly can you start a project in ${city.name}?`,
-                a: `We typically provide free estimates within 24-48 hours for ${city.name} residents. Project start times vary by season, but we always work with your schedule to find convenient dates.`,
-              },
-              {
-                q: `Are you licensed and insured to work in ${city.name}?`,
-                a: `Absolutely. Maia Construction is fully licensed and insured to provide siding, door, and window installation services throughout ${city.county} County, including ${city.name}.`,
-              },
-              {
-                q: `What makes your services different in ${city.name}?`,
-                a: `We understand ${city.name}'s specific climate challenges and architectural styles. Our materials and techniques are specifically chosen for optimal performance in ${city.county} County's weather conditions.`,
-              },
-              {
-                q: `Do you offer warranties on work done in ${city.name}?`,
-                a: `Yes! All our installations in ${city.name} come with comprehensive warranties on both materials and workmanship. We stand behind every project.`,
-              },
-            ].map((faq, index) => (
+            {cityFaqs.map((faq, index) => (
               <details key={index} className="bg-white p-6 rounded-xl shadow-md group">
                 <summary className="font-bold text-lg text-slate-900 cursor-pointer hover:text-amber-500 transition-colors flex items-center justify-between">
                   {faq.q}
