@@ -3,7 +3,10 @@ import { cities } from '@/lib/cities';
 import { services } from '@/lib/services';
 import { getAllPosts, getAllTags } from '@/lib/blog';
 
-const BASE_URL = 'https://maiaconstruction.com';
+const BASE_URL = 'https://www.maiaconstruction.com';
+
+// Only include nearby cities (within 50 miles) in sitemap to avoid thin content penalty
+const PRIMARY_CITIES = cities.filter((city) => city.distance <= 50);
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date();
@@ -56,23 +59,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.95,
   }));
 
-  // City pages - high priority for local SEO
-  const cityPages: MetadataRoute.Sitemap = cities.map((city) => ({
+  // City pages - only primary cities (within 50 miles) for quality signals
+  const cityPages: MetadataRoute.Sitemap = PRIMARY_CITIES.map((city) => ({
     url: `${BASE_URL}/cities/${city.slug}`,
     lastModified: currentDate,
     changeFrequency: 'weekly',
-    priority: 0.8,
+    priority: city.distance <= 20 ? 0.9 : 0.8,
   }));
 
-  // Service + City combination pages (main local SEO pages)
+  // Service + City combo pages - only primary cities to avoid thin content penalty
   const serviceCityPages: MetadataRoute.Sitemap = [];
   for (const service of services) {
-    for (const city of cities) {
+    for (const city of PRIMARY_CITIES) {
       serviceCityPages.push({
         url: `${BASE_URL}/services/${service.slug}/${city.slug}`,
         lastModified: currentDate,
         changeFrequency: 'weekly',
-        priority: 0.85,
+        priority: city.distance <= 20 ? 0.9 : 0.85,
       });
     }
   }

@@ -81,8 +81,10 @@ export async function generateMetadata({ params }: ServiceCityPageProps): Promis
       images: [{ url: service.image }],
     },
     alternates: {
-      canonical: `https://maiaconstruction.com/services/${service.slug}/${city.slug}`,
+      canonical: `https://www.maiaconstruction.com/services/${service.slug}/${city.slug}`,
     },
+    // Noindex distant cities to avoid thin content penalty — focus authority on nearby areas
+    ...(city.distance > 50 ? { robots: { index: false, follow: true } } : {}),
   };
 }
 

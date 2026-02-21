@@ -103,6 +103,9 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
       description: meta.description,
       type: 'website',
     },
+    alternates: {
+      canonical: `https://www.maiaconstruction.com/services/${serviceSlug}`,
+    },
   };
 }
 
