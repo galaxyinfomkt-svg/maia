@@ -6,6 +6,9 @@ import { SITE_NAME, SITE_URL, PHONE, PHONE_LINK, EMAIL, EMAIL_LINK, ADDRESS, HIC
 export const metadata: Metadata = {
   title: 'Terms of Service',
   description: `${SITE_NAME} terms of service. Review the terms and conditions for using our website and home improvement services in Massachusetts.`,
+  alternates: {
+    canonical: `${SITE_URL}/terms`,
+  },
 };
 
 export default function TermsPage() {

@@ -6,6 +6,9 @@ import { SITE_NAME, SITE_URL, PHONE, PHONE_LINK, EMAIL, EMAIL_LINK, ADDRESS } fr
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description: `${SITE_NAME} privacy policy. Learn how we collect, use, and protect your personal information when you use our website or services in Massachusetts.`,
+  alternates: {
+    canonical: `${SITE_URL}/privacy`,
+  },
 };
 
 export default function PrivacyPage() {

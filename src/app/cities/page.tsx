@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     'Middlesex County contractor',
     'Worcester County home improvement',
   ],
+  alternates: {
+    canonical: 'https://maiaconstruction.com/cities',
+  },
 };
 
 export default function CitiesPage() {

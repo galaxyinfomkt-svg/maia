@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     'energy efficient windows MA',
     'vinyl siding contractor Massachusetts',
   ],
+  alternates: {
+    canonical: 'https://maiaconstruction.com/services',
+  },
 };
 
 export default function ServicesPage() {

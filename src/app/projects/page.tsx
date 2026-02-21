@@ -8,6 +8,9 @@ import { SITE_NAME, IMAGES } from '@/lib/constants';
 export const metadata: Metadata = {
   title: '500+ Projects Completed | Before & After Photos | MA Contractor',
   description: `See 500+ real before & after transformations — siding, windows & doors across Massachusetts. ★5.0 rated craftsmanship. View our portfolio and get inspired for your home!`,
+  alternates: {
+    canonical: 'https://maiaconstruction.com/projects',
+  },
 };
 
 const projects = [

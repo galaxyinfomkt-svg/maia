@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     'energy efficient home upgrades',
     'home renovation ROI',
   ],
+  alternates: {
+    canonical: 'https://maiaconstruction.com/blog',
+  },
 };
 
 export default function BlogPage() {

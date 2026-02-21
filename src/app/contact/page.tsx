@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     'home improvement quote Boston',
     'free quote contractor near me',
   ],
+  alternates: {
+    canonical: 'https://maiaconstruction.com/contact',
+  },
 };
 
 export default function ContactPage() {
