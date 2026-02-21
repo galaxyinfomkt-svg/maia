@@ -24,8 +24,8 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
 
   if (!city) return {};
 
-  const title = `Siding, Windows & Doors ${city.name} MA | 5-Star | Free Quote`;
-  const description = `5.0-star rated contractor in ${city.name}, MA. Siding, windows & doors. 500+ projects in ${city.county} County. Licensed HIC #204634. FREE estimate: ${PHONE}`;
+  const title = `#1 Contractor in ${city.name}, MA (2026) | Siding, Windows & Doors | 5.0★`;
+  const description = `${city.name}'s top-rated contractor ★5.0. Expert siding, window & door installation. 500+ projects in ${city.county} County. Licensed HIC #204634. Call ${PHONE} — FREE estimate!`;
 
   return {
     title,

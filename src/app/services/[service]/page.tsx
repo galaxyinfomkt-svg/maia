@@ -23,8 +23,8 @@ export async function generateStaticParams() {
 // SEO metadata by service type
 const serviceMetadata: Record<string, { title: string; description: string; keywords: string[] }> = {
   siding: {
-    title: 'Siding Installation MA | 500+ Homes | 5-Star | Free Quote',
-    description: `5.0-star siding contractor in MA. Vinyl & James Hardie fiber cement. 25-50yr warranties, 500+ projects. Licensed HIC #${HIC_NUMBER}. FREE estimate: ${PHONE}`,
+    title: '#1 Siding Contractor MA (2026) | 500+ Homes | 25-50yr Warranty',
+    description: `Top-rated siding contractor in Massachusetts ★5.0. Vinyl & James Hardie fiber cement. 500+ homes, 25-50yr warranties. Licensed HIC #${HIC_NUMBER}. Call ${PHONE} — FREE estimate!`,
     keywords: [
       'siding installation Massachusetts',
       'vinyl siding contractor MA',
@@ -32,13 +32,14 @@ const serviceMetadata: Record<string, { title: string; description: string; keyw
       'fiber cement siding Boston',
       'siding replacement Worcester',
       'best siding company Massachusetts',
-      'insulated siding installation',
+      'insulated siding installation MA',
       'siding contractor near me',
+      'siding cost Massachusetts',
     ],
   },
   windows: {
-    title: 'Window Replacement MA | ENERGY STAR | Save 30% on Bills',
-    description: `5.0-star window contractor in MA. ENERGY STAR certified, double & triple-pane. Save up to 30% on energy bills. Licensed HIC #${HIC_NUMBER}. FREE estimate: ${PHONE}`,
+    title: 'Window Replacement MA (2026) | ENERGY STAR | Save 30% on Bills',
+    description: `ENERGY STAR window contractor in MA ★5.0. Double & triple-pane windows — cut energy bills by 30%. 500+ installs, lifetime warranty. Licensed HIC #${HIC_NUMBER}. Call ${PHONE} — FREE estimate!`,
     keywords: [
       'window replacement Massachusetts',
       'energy efficient windows MA',
@@ -48,11 +49,12 @@ const serviceMetadata: Record<string, { title: string; description: string; keyw
       'window contractor near me',
       'ENERGY STAR windows MA',
       'best window company Massachusetts',
+      'triple pane windows MA',
     ],
   },
   doors: {
-    title: 'Door Installation MA | Entry, Storm & Patio | 90%+ ROI',
-    description: `5.0-star door contractor in MA. Fiberglass, steel & wood entry doors. Storm & patio doors. 90%+ ROI at resale. Licensed HIC #${HIC_NUMBER}. FREE estimate: ${PHONE}`,
+    title: 'Door Installation MA (2026) | Entry, Storm & Patio | 90%+ ROI',
+    description: `Premium door contractor in MA ★5.0. Fiberglass, steel & wood entry doors. Storm & patio doors — 90%+ ROI at resale. Licensed HIC #${HIC_NUMBER}. Call ${PHONE} — FREE estimate!`,
     keywords: [
       'door installation Massachusetts',
       'entry door replacement MA',
@@ -60,13 +62,13 @@ const serviceMetadata: Record<string, { title: string; description: string; keyw
       'storm door installation Worcester',
       'patio door replacement MA',
       'door contractor near me',
-      'fiberglass door installer',
+      'fiberglass door installer MA',
       'best door company Massachusetts',
     ],
   },
   'general-contractor': {
-    title: 'General Contractor MA | Licensed HIC #204634 | Free Quote',
-    description: `5.0-star licensed general contractor in MA. Exterior renovations, remodeling, additions. 5-year warranty, 500+ projects. FREE estimate: ${PHONE}`,
+    title: 'Licensed General Contractor MA (2026) | HIC #204634 | 500+ Projects',
+    description: `MA licensed general contractor ★5.0. Exterior renovations, remodeling & additions. 500+ projects, 5-year workmanship warranty. HIC #${HIC_NUMBER}. Call ${PHONE} — FREE estimate!`,
     keywords: [
       'general contractor Massachusetts',
       'home renovation contractor MA',
@@ -74,7 +76,7 @@ const serviceMetadata: Record<string, { title: string; description: string; keyw
       'home remodeling Worcester',
       'exterior renovation MA',
       'contractor near me Massachusetts',
-      'home improvement contractor',
+      'home improvement contractor MA',
       'best general contractor MA',
     ],
   },

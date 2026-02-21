@@ -61,8 +61,8 @@ export async function generateMetadata({ params }: ServiceCityPageProps): Promis
 
   if (!service || !city) return {};
 
-  const title = `${service.name} ${city.name} MA | 5-Star Rated | Free Estimate`;
-  const description = `#1 ${service.name.toLowerCase()} contractor in ${city.name}, MA. 5.0 stars, 500+ projects in ${city.county} County. Licensed HIC #204634. FREE estimate: ${PHONE}`;
+  const title = `${service.name} in ${city.name}, MA (2026) | 5.0★ Rated | FREE Estimate`;
+  const description = `#1 ${service.name.toLowerCase()} contractor in ${city.name}, Massachusetts ★5.0. 500+ projects in ${city.county} County. Licensed HIC #204634 & insured. Call ${PHONE} — FREE estimate today!`;
 
   return {
     title,

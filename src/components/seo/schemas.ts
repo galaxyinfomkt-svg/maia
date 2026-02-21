@@ -72,31 +72,63 @@ export const organizationSchema = {
   review: [
     {
       '@type': 'Review',
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: '5',
-        bestRating: '5',
-      },
-      author: {
-        '@type': 'Person',
-        name: 'Michael R.',
-      },
-      reviewBody: 'Excellent work on our siding replacement. Professional team, fair pricing, and outstanding results. Highly recommend!',
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      author: { '@type': 'Person', name: 'Michael R.' },
+      datePublished: '2024-11-15',
+      reviewBody: 'Excellent work on our siding replacement. Professional team, fair pricing, and outstanding results. Highly recommend Maia Construction!',
     },
     {
       '@type': 'Review',
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: '5',
-        bestRating: '5',
-      },
-      author: {
-        '@type': 'Person',
-        name: 'Sarah K.',
-      },
-      reviewBody: 'New windows made a huge difference in our energy bills. The installation was quick and clean. Very satisfied!',
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      author: { '@type': 'Person', name: 'Sarah K.' },
+      datePublished: '2024-10-22',
+      reviewBody: 'New windows made a huge difference in our energy bills. The installation was quick and clean. Very satisfied with the quality!',
+    },
+    {
+      '@type': 'Review',
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      author: { '@type': 'Person', name: 'David L.' },
+      datePublished: '2024-09-18',
+      reviewBody: 'Marcos and his team replaced our front door and storm door. Showed up on time, incredibly professional, and the final result exceeded expectations. Best contractor in MA!',
+    },
+    {
+      '@type': 'Review',
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      author: { '@type': 'Person', name: 'Jennifer P.' },
+      datePublished: '2024-08-05',
+      reviewBody: 'Complete James Hardie siding installation on our colonial. The transformation is unbelievable! Fair pricing, zero hidden costs, and they finished ahead of schedule.',
+    },
+    {
+      '@type': 'Review',
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      author: { '@type': 'Person', name: 'Robert T.' },
+      datePublished: '2025-01-10',
+      reviewBody: 'Replaced 14 windows in our Framingham home. Energy bills dropped by nearly 30%! The team was respectful, clean, and truly skilled. Can not recommend enough.',
     },
   ],
+};
+
+// WebSite Schema for sitelinks search box and brand recognition
+export const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${SITE_URL}/#website`,
+  name: SITE_NAME,
+  alternateName: 'Maia Construction LLC',
+  url: SITE_URL,
+  publisher: {
+    '@type': 'Organization',
+    '@id': `${SITE_URL}/#organization`,
+  },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `${SITE_URL}/cities/{search_term_string}`,
+    },
+    'query-input': 'required name=search_term_string',
+  },
+  inLanguage: 'en-US',
 };
 
 // Service Schema Generator

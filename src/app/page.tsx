@@ -1,8 +1,17 @@
+import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { HeroWithForm, ServicesSection, CityGrid, CTASection, WhyChooseUs, ReviewsHighlight } from '@/components/sections';
-import { JsonLd, organizationSchema } from '@/components/seo';
+import { JsonLd, organizationSchema, websiteSchema } from '@/components/seo';
 import { cities } from '@/lib/cities';
-import { HIC_NUMBER } from '@/lib/constants';
+import { SITE_NAME, HIC_NUMBER, PHONE, SITE_URL } from '@/lib/constants';
+
+export const metadata: Metadata = {
+  title: `#1 Siding & Window Contractor MA (2026) | 5.0★ 500+ Projects | ${SITE_NAME}`,
+  description: `Massachusetts' top-rated exterior contractor ★5.0. 500+ homes transformed, 25-50yr warranties. James Hardie siding, ENERGY STAR windows, premium doors. Licensed HIC #${HIC_NUMBER}. Call ${PHONE} — FREE estimate!`,
+  alternates: {
+    canonical: SITE_URL,
+  },
+};
 
 // Lazy load heavy client components
 const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'), {
@@ -21,6 +30,7 @@ export default function HomePage() {
   return (
     <>
       <JsonLd data={organizationSchema} />
+      <JsonLd data={websiteSchema} />
 
       {/* Hero Section with Form */}
       <HeroWithForm

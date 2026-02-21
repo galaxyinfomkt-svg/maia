@@ -7,8 +7,8 @@ import { services } from '@/lib/services';
 import { SITE_NAME, IMAGES } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Our Services | Siding, Windows & Doors MA | 5-Star Rated',
-  description: `5.0-star rated: siding, windows & doors installation in Massachusetts. ENERGY STAR windows, James Hardie siding, premium doors. 25-50yr warranties. FREE estimates.`,
+  title: 'Siding, Windows & Doors MA (2026) | 25-50yr Warranty | Free Quote',
+  description: `Massachusetts' top exterior services ★5.0 — siding, ENERGY STAR windows & premium doors. James Hardie certified. 25-50yr warranties, 500+ projects. Get your FREE estimate today!`,
   keywords: [
     'siding installation Massachusetts',
     'window replacement MA',

@@ -8,8 +8,8 @@ import { JsonLd } from '@/components/seo';
 import { SITE_NAME } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: '100+ MA Cities Served | 5-Star Contractor | Free Estimates',
-  description: `Serving 100+ Massachusetts cities: Boston, Worcester, Framingham, Natick, Marlborough & more. 5.0-star rated, same-day estimates, 5 counties. Find services in your city.`,
+  title: 'Serving 100+ Massachusetts Cities (2026) | 5.0★ | Free Estimates',
+  description: `Find us near you! Serving 100+ MA cities — Boston, Worcester, Framingham, Natick, Marlborough & more. ★5.0 rated, same-day estimates across 5 counties. Call for FREE quote!`,
   keywords: [
     'contractor near me Massachusetts',
     'siding installation Boston',
