@@ -12,10 +12,12 @@ interface CityPageProps {
   params: Promise<{ slug: string }>;
 }
 
+// Only pre-render nearby cities at build time (Vercel free tier optimization)
+// Distant cities get generated on-demand when first visited
 export async function generateStaticParams() {
-  return cities.map((city) => ({
-    slug: city.slug,
-  }));
+  return cities
+    .filter((city) => city.distance <= 15)
+    .map((city) => ({ slug: city.slug }));
 }
 
 export async function generateMetadata({ params }: CityPageProps): Promise<Metadata> {

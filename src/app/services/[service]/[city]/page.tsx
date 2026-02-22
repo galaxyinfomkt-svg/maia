@@ -39,11 +39,14 @@ interface ServiceCityPageProps {
   params: Promise<{ service: string; city: string }>;
 }
 
+// Only pre-render nearby city+service combos at build time (Vercel free tier optimization)
+// Distant cities get generated on-demand when first visited
 export async function generateStaticParams() {
   const params: { service: string; city: string }[] = [];
+  const nearbyCities = cities.filter((city) => city.distance <= 15);
 
   for (const service of services) {
-    for (const city of cities) {
+    for (const city of nearbyCities) {
       params.push({
         service: service.slug,
         city: city.slug,

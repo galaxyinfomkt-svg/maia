@@ -45,6 +45,16 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   };
 }
 
+// Reusable blog image component for inline images
+function BlogImg({ src, alt, caption }: { src: string; alt: string; caption?: string }) {
+  return (
+    <figure className="my-8 -mx-4 md:mx-0">
+      <Image src={src} alt={alt} width={800} height={450} className="rounded-xl w-full object-cover" />
+      {caption && <figcaption className="text-sm text-gray-500 mt-3 text-center italic">{caption}</figcaption>}
+    </figure>
+  );
+}
+
 // Blog post content - in a real app, this would come from MDX files
 const blogContent: Record<string, React.ReactNode> = {
   'choosing-right-siding-massachusetts': (
@@ -54,6 +64,8 @@ const blogContent: Record<string, React.ReactNode> = {
         you&apos;ll make as a homeowner. The siding you select needs to withstand harsh New England winters,
         humid summers, and everything in between while keeping your home beautiful and energy-efficient.
       </p>
+
+      <BlogImg src="/images/before-after/siding-after-framingham-ma.webp" alt="New siding installation on Massachusetts home by Maia Construction" caption="Freshly installed siding on a home in Framingham, MA — transforming curb appeal and weather protection" />
 
       <h2>Understanding Massachusetts Climate Challenges</h2>
       <p>
@@ -88,6 +100,8 @@ const blogContent: Record<string, React.ReactNode> = {
         <li>May fade over time</li>
         <li>Less eco-friendly than some alternatives</li>
       </ul>
+
+      <BlogImg src="/images/before-after/exterior-after-worcester-ma.webp" alt="Fiber cement siding installation in Worcester MA" caption="Exterior renovation with premium siding in Worcester, MA" />
 
       <h3>2. Fiber Cement Siding (James Hardie)</h3>
       <p>
@@ -141,6 +155,8 @@ const blogContent: Record<string, React.ReactNode> = {
         home&apos;s comfort, upgrading to energy-efficient windows is one of the smartest investments
         you can make.
       </p>
+
+      <BlogImg src="/images/windows/window-installation-massachusetts-1.webp" alt="ENERGY STAR window installation in Massachusetts" caption="Professional window installation by Maia Construction — ENERGY STAR certified for maximum efficiency" />
 
       <h2>Why Energy-Efficient Windows Matter</h2>
       <p>
@@ -196,6 +212,8 @@ const blogContent: Record<string, React.ReactNode> = {
         visitors see and plays a crucial role in both curb appeal and home security.
         Choosing the right front door can dramatically transform your home&apos;s appearance.
       </p>
+
+      <BlogImg src="/images/doors/door-installation-massachusetts-1.webp" alt="Beautiful entry door installation in Massachusetts" caption="A stunning entry door installation that transformed this home's curb appeal" />
 
       <h2>The Impact of Your Front Door</h2>
       <p>
@@ -262,6 +280,8 @@ const blogContent: Record<string, React.ReactNode> = {
         In Massachusetts, where building codes are strict and weather conditions demanding,
         choosing a qualified professional is essential for success.
       </p>
+
+      <BlogImg src="/images/general-contractor/home-renovation-massachusetts-2.png" alt="Professional contractor team working on home renovation" caption="The Maia Construction team at work on a full exterior renovation project" />
 
       <h2>Why Choosing the Right Contractor Matters</h2>
       <p>
@@ -351,6 +371,8 @@ const blogContent: Record<string, React.ReactNode> = {
         all season long.
       </p>
 
+      <BlogImg src="/images/general-contractor/home-renovation-massachusetts-3.jpeg" alt="Massachusetts home prepared for winter weather" caption="Proper winter preparation protects your biggest investment from New England's harsh weather" />
+
       <h2>Why Winter Preparation Matters</h2>
       <p>
         New England winters bring freezing temperatures, heavy snow, ice storms, and strong
@@ -434,6 +456,8 @@ const blogContent: Record<string, React.ReactNode> = {
         to return on investment.
       </p>
 
+      <BlogImg src="/images/before-after/siding-before-framingham-ma.webp" alt="Home before exterior renovation in Massachusetts" caption="Before renovation — see how upgrading siding, windows, and doors transforms your home's value" />
+
       <h2>Understanding ROI in Home Improvement</h2>
       <p>
         Return on investment for home renovations measures how much of your project cost
@@ -503,6 +527,8 @@ const blogContent: Record<string, React.ReactNode> = {
         you&apos;ll make for your home&apos;s exterior. Both options have loyal supporters,
         and understanding their differences helps you make the right choice for your situation.
       </p>
+
+      <BlogImg src="/images/before-after/exterior-after-worcester-ma.webp" alt="Vinyl and fiber cement siding comparison on Massachusetts homes" caption="Side-by-side comparison: both vinyl and fiber cement deliver excellent results for MA homes" />
 
       <h2>Vinyl Siding: The Popular Choice</h2>
       <p>
@@ -577,6 +603,8 @@ const blogContent: Record<string, React.ReactNode> = {
         in natural light. But even quality windows don&apos;t last forever. Here are seven signs
         that it&apos;s time to consider replacement.
       </p>
+
+      <BlogImg src="/images/windows/window-installation-massachusetts-2.webp" alt="Old windows being replaced with new energy-efficient windows" caption="Old windows vs. new — proper window replacement improves comfort and reduces energy bills" />
 
       <h2>1. Drafts and Air Leaks</h2>
       <p>
@@ -653,6 +681,8 @@ const blogContent: Record<string, React.ReactNode> = {
         timeline helps you prepare, set realistic expectations, and minimize disruption to
         your daily life.
       </p>
+
+      <BlogImg src="/images/before-after/exterior-before-worcester-ma.webp" alt="Exterior renovation project in progress in Massachusetts" caption="An exterior renovation project timeline depends on scope, weather, and materials" />
 
       <h2>Factors Affecting Timeline</h2>
       <p>
@@ -750,6 +780,8 @@ const blogContent: Record<string, React.ReactNode> = {
         these valuable rebates in 2025.
       </p>
 
+      <BlogImg src="/images/windows/window-installation-massachusetts-3.webp" alt="Energy efficient window installation qualifying for Mass Save rebates" caption="ENERGY STAR windows like these qualify for Mass Save rebates — saving you thousands" />
+
       <h2>What is Mass Save?</h2>
       <p>
         Mass Save is a collaborative of Massachusetts&apos; gas and electric utilities and energy
@@ -812,6 +844,8 @@ const blogContent: Record<string, React.ReactNode> = {
         appeal and property value. Whether you own a classic Colonial, Cape Cod, or Victorian,
         the right color choice makes all the difference.
       </p>
+
+      <BlogImg src="/images/before-after/siding-after-framingham-ma.webp" alt="Beautiful siding color choice on New England colonial home" caption="The right siding color transforms your home — this Framingham colonial chose a timeless palette" />
 
       <h2>Understanding New England Architectural Styles</h2>
       <p>
@@ -883,6 +917,8 @@ const blogContent: Record<string, React.ReactNode> = {
         efficiency, ventilation, or both. This guide helps Massachusetts homeowners make the
         right choice for their homes.
       </p>
+
+      <BlogImg src="/images/doors/door-installation-massachusetts-2.webp" alt="Storm door installation on Massachusetts home" caption="Storm doors add protection and energy savings — a must for New England homes" />
 
       <h2>What&apos;s the Difference?</h2>
 
@@ -976,6 +1012,8 @@ const blogContent: Record<string, React.ReactNode> = {
         <li><strong>Local reputation:</strong> Easier to verify references and see completed work</li>
       </ul>
 
+      <BlogImg src="/images/before-after/siding-after-framingham-ma.webp" alt="Professional siding installation by licensed contractor in Boston area" caption="Quality results from a licensed, insured siding contractor — Framingham, MA project" />
+
       <h2>What to Look for in a Siding Contractor</h2>
 
       <h3>1. Proper Licensing</h3>
@@ -1041,6 +1079,8 @@ const blogContent: Record<string, React.ReactNode> = {
         and avoid overpaying. Here&apos;s a comprehensive 2025 pricing guide based on current
         market rates.
       </p>
+
+      <BlogImg src="/images/windows/window-installation-massachusetts-4.webp" alt="Window replacement project showing cost factors in Massachusetts" caption="Window replacement costs vary by type, material, and installation complexity" />
 
       <h2>Average Window Replacement Costs in MA</h2>
       <p>
@@ -1126,6 +1166,8 @@ const blogContent: Record<string, React.ReactNode> = {
         But is it worth the higher investment for Massachusetts homeowners? Let&apos;s examine
         the facts.
       </p>
+
+      <BlogImg src="/images/before-after/exterior-after-worcester-ma.webp" alt="James Hardie fiber cement siding installed on Massachusetts home" caption="James Hardie fiber cement siding — built to withstand New England's toughest weather" />
 
       <h2>What is James Hardie Siding?</h2>
       <p>
@@ -1213,6 +1255,8 @@ const blogContent: Record<string, React.ReactNode> = {
         and indoor-outdoor flow. Here&apos;s how sliding, French, and bi-fold doors compare
         for Massachusetts homes.
       </p>
+
+      <BlogImg src="/images/doors/door-installation-massachusetts-3.webp" alt="Patio door options for Massachusetts homes" caption="Choosing the right patio door transforms your living space and connection to the outdoors" />
 
       <h2>Sliding Patio Doors</h2>
 
@@ -1329,6 +1373,8 @@ const blogContent: Record<string, React.ReactNode> = {
         preventing costly repairs. Use this seasonal checklist to protect your
         Massachusetts home.
       </p>
+
+      <BlogImg src="/images/general-contractor/home-renovation-massachusetts-1.png" alt="Home exterior maintenance checklist for Massachusetts homeowners" caption="Regular exterior maintenance keeps your home protected and looking great year-round" />
 
       <h2>Spring Maintenance (March-May)</h2>
 
