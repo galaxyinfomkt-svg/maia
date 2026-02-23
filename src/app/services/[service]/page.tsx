@@ -288,6 +288,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
         title={`Professional ${service.name} Services`}
         subtitle={service.shortDescription}
         badge={`${service.icon} ${service.name}`}
+        backgroundImage={service.image}
         size="inner"
       />
 

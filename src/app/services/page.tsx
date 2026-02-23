@@ -49,6 +49,7 @@ export default function ServicesPage() {
         title="Expert Home Exterior Services"
         subtitle="Transform your home with premium siding, energy-efficient windows, and secure doors — backed by industry-leading warranties"
         badge="MA Licensed & Insured"
+        backgroundImage={IMAGES.generalContractor2}
         showCTA={false}
         size="inner"
       />

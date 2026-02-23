@@ -202,6 +202,7 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
         title={`${service.name} Installation in ${city.name}, Massachusetts`}
         subtitle={`Professional ${service.name.toLowerCase()} services just ${city.distance} miles from our Marlborough office. Serving ${city.zip} and surrounding ${city.county} County areas.`}
         badge={`${service.icon} ${city.name}, MA`}
+        backgroundImage={service.image}
         size="inner"
       />
 
