@@ -17,10 +17,12 @@ interface NavigationProps {
   className?: string;
   onItemClick?: () => void;
   vertical?: boolean;
+  variant?: 'dark' | 'light';
 }
 
-export default function Navigation({ className, onItemClick, vertical = false }: NavigationProps) {
+export default function Navigation({ className, onItemClick, vertical = false, variant = 'dark' }: NavigationProps) {
   const pathname = usePathname();
+  const isLight = variant === 'light';
 
   return (
     <nav className={cn(
@@ -40,8 +42,12 @@ export default function Navigation({ className, onItemClick, vertical = false }:
               'px-4 py-2 rounded-lg font-medium transition-colors duration-200',
               vertical ? 'text-lg' : 'text-sm',
               isActive
-                ? 'text-amber-400 bg-amber-400/10'
-                : 'text-white hover:text-amber-400 hover:bg-white/5'
+                ? isLight
+                  ? 'text-amber-600 bg-amber-50'
+                  : 'text-amber-400 bg-amber-400/10'
+                : isLight
+                  ? 'text-slate-700 hover:text-amber-600 hover:bg-slate-50'
+                  : 'text-white hover:text-amber-400 hover:bg-white/5'
             )}
           >
             {item.label}
