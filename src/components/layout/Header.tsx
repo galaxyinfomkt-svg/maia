@@ -36,11 +36,11 @@ export default function Header() {
             <Link href="/" className="flex items-center">
               <div className="relative w-32 h-16 sm:w-40 sm:h-20 lg:w-48 lg:h-24">
                 <Image
-                  src={IMAGES.logoLarge}
+                  src={IMAGES.logoHeader}
                   alt={`${SITE_NAME} - Licensed Siding, Windows and Doors Contractor in Massachusetts`}
-                  fill
-                  sizes="(max-width: 640px) 128px, (max-width: 1024px) 160px, 192px"
-                  className="object-contain"
+                  width={112}
+                  height={112}
+                  className="object-contain w-full h-full"
                   priority
                 />
               </div>

@@ -21,6 +21,7 @@ export const IMAGES = {
   hero: '/images/general-contractor/home-renovation-massachusetts-1.webp',
   logo: '/images/logo-200.webp',
   logoLarge: '/images/logo-400.webp',
+  logoHeader: '/images/logo-112.webp',
   logoPng: '/images/logo-200.png',
 
   // Siding
