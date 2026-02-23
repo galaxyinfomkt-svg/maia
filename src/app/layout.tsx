@@ -10,6 +10,7 @@ import { SITE_NAME, SITE_URL, PHONE, ADDRESS, HIC_NUMBER, LOGO_URL } from '@/lib
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -19,9 +20,9 @@ export const metadata: Metadata = {
   },
   description: `Massachusetts' #1 rated siding, window & door contractor ★5.0. 500+ projects completed, 25-50yr warranties. Licensed HIC #${HIC_NUMBER} & fully insured. Call ${PHONE} for your FREE estimate today!`,
   icons: {
-    icon: LOGO_URL,
-    shortcut: LOGO_URL,
-    apple: LOGO_URL,
+    icon: '/images/logo-200.png',
+    shortcut: '/images/logo-200.png',
+    apple: '/images/logo-200.png',
   },
   keywords: [
     'siding installation Massachusetts',
@@ -89,6 +90,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://api.leadconnectorhq.com" />
+        <link rel="preconnect" href="https://widgets.leadconnectorhq.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://connect.facebook.net" />
+      </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         {/* Skip to main content link for accessibility */}
         <a

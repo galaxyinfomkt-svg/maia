@@ -44,9 +44,9 @@ export default function Hero({
         src={backgroundImage || IMAGES.hero}
         alt="Massachusetts home exterior renovation - premium siding, windows and doors installation"
         fill
+        sizes="100vw"
         className="object-cover"
         priority
-        quality={isInnerPage ? 75 : 85}
       />
       <div className={cn(
         'absolute inset-0',

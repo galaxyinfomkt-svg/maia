@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import Navigation from './Navigation';
 import MobileMenu from './MobileMenu';
-import { LOGO_URL, PHONE, PHONE_LINK, SITE_NAME } from '@/lib/constants';
+import { PHONE, PHONE_LINK, SITE_NAME, IMAGES } from '@/lib/constants';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,9 +36,10 @@ export default function Header() {
             <Link href="/" className="flex items-center">
               <div className="relative w-32 h-16 sm:w-40 sm:h-20 lg:w-48 lg:h-24">
                 <Image
-                  src={LOGO_URL}
+                  src={IMAGES.logoLarge}
                   alt={`${SITE_NAME} - Licensed Siding, Windows and Doors Contractor in Massachusetts`}
                   fill
+                  sizes="(max-width: 640px) 128px, (max-width: 1024px) 160px, 192px"
                   className="object-contain"
                   priority
                 />
@@ -56,6 +57,7 @@ export default function Header() {
                 href="https://g.page/r/CaC0u5sFaCEdEBM/review"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Leave a Google review"
                 className="flex items-center px-4 py-2 bg-white/10 border border-amber-400/50 text-amber-400 rounded-full font-semibold text-sm hover:bg-amber-400 hover:text-slate-900 transition-all"
               >
                 <svg className="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor">

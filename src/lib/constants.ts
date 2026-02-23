@@ -18,8 +18,10 @@ export const ADDRESS = {
 
 export const IMAGES = {
   // Hero e imagens principais
-  hero: '/images/general-contractor/home-renovation-massachusetts-1.png',
-  logo: 'https://storage.googleapis.com/msgsndr/b8spY0hvhFRzHHxsdJlZ/media/69165fb4890fad61b2da1dc3.png',
+  hero: '/images/general-contractor/home-renovation-massachusetts-1.webp',
+  logo: '/images/logo-200.webp',
+  logoLarge: '/images/logo-400.webp',
+  logoPng: '/images/logo-200.png',
 
   // Siding
   siding: '/images/before-after/siding-after-framingham-ma.webp',
@@ -39,17 +41,17 @@ export const IMAGES = {
   doors4: '/images/doors/door-installation-massachusetts-4.webp',
 
   // General Contractor
-  generalContractor: '/images/general-contractor/home-renovation-massachusetts-1.png',
-  generalContractor2: '/images/general-contractor/home-renovation-massachusetts-2.png',
-  generalContractor3: '/images/general-contractor/home-renovation-massachusetts-3.jpeg',
-  generalContractor4: '/images/general-contractor/home-renovation-massachusetts-4.jpeg',
+  generalContractor: '/images/general-contractor/home-renovation-massachusetts-1.webp',
+  generalContractor2: '/images/general-contractor/home-renovation-massachusetts-2.webp',
+  generalContractor3: '/images/general-contractor/home-renovation-massachusetts-3.webp',
+  generalContractor4: '/images/general-contractor/home-renovation-massachusetts-4.webp',
 
   // Before/After
   exteriorBefore: '/images/before-after/exterior-before-worcester-ma.webp',
   exteriorAfter: '/images/before-after/exterior-after-worcester-ma.webp',
 };
 
-export const LOGO_URL = IMAGES.logo;
+export const LOGO_URL = IMAGES.logoPng;
 
 export const SOCIAL_LINKS = {
   facebook: 'https://www.facebook.com/maiaconstruction/',
