@@ -93,6 +93,9 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://api.leadconnectorhq.com" />
         <link rel="preconnect" href="https://widgets.leadconnectorhq.com" />
+        <link rel="preconnect" href="https://backend.leadconnectorhq.com" />
+        <link rel="preconnect" href="https://link.msgsndr.com" />
+        <link rel="preconnect" href="https://stcdn.leadconnectorhq.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
       </head>
