@@ -100,7 +100,7 @@ export default function HeroWithForm({
           </div>
 
           {/* Right: Contact Form */}
-          <div className="hidden lg:block min-h-[540px]">
+          <div className="hidden lg:block h-[540px] overflow-hidden">
             <ContactForm />
           </div>
         </div>
