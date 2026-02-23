@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { Header, Footer, TopBar } from '@/components/layout';
 import FloatingCTA from '@/components/FloatingCTA';
-import ChatWidget from '@/components/ChatWidget';
 import Analytics from '@/components/Analytics';
 import { SITE_NAME, SITE_URL, PHONE, ADDRESS, HIC_NUMBER, LOGO_URL } from '@/lib/constants';
 
@@ -105,7 +104,6 @@ export default function RootLayout({
         </main>
         <Footer />
         <FloatingCTA />
-        <ChatWidget />
       </body>
     </html>
   );
