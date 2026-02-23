@@ -36,5 +36,11 @@
   },
   "engines": {
     "node": "20.x"
-  }
+  },
+  "browserslist": [
+    "chrome >= 90",
+    "firefox >= 90",
+    "safari >= 15",
+    "edge >= 90"
+  ]
 }
