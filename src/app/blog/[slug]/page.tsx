@@ -281,7 +281,7 @@ const blogContent: Record<string, React.ReactNode> = {
         choosing a qualified professional is essential for success.
       </p>
 
-      <BlogImg src="/images/general-contractor/home-renovation-massachusetts-2.png" alt="Professional contractor team working on home renovation" caption="The Maia Construction team at work on a full exterior renovation project" />
+      <BlogImg src="/images/general-contractor/home-renovation-massachusetts-2.webp" alt="Professional contractor team working on home renovation" caption="The Maia Construction team at work on a full exterior renovation project" />
 
       <h2>Why Choosing the Right Contractor Matters</h2>
       <p>
@@ -371,7 +371,7 @@ const blogContent: Record<string, React.ReactNode> = {
         all season long.
       </p>
 
-      <BlogImg src="/images/general-contractor/home-renovation-massachusetts-3.jpeg" alt="Massachusetts home prepared for winter weather" caption="Proper winter preparation protects your biggest investment from New England's harsh weather" />
+      <BlogImg src="/images/general-contractor/home-renovation-massachusetts-3.webp" alt="Massachusetts home prepared for winter weather" caption="Proper winter preparation protects your biggest investment from New England's harsh weather" />
 
       <h2>Why Winter Preparation Matters</h2>
       <p>
@@ -1374,7 +1374,7 @@ const blogContent: Record<string, React.ReactNode> = {
         Massachusetts home.
       </p>
 
-      <BlogImg src="/images/general-contractor/home-renovation-massachusetts-1.png" alt="Home exterior maintenance checklist for Massachusetts homeowners" caption="Regular exterior maintenance keeps your home protected and looking great year-round" />
+      <BlogImg src="/images/general-contractor/home-renovation-massachusetts-1.webp" alt="Home exterior maintenance checklist for Massachusetts homeowners" caption="Regular exterior maintenance keeps your home protected and looking great year-round" />
 
       <h2>Spring Maintenance (March-May)</h2>
 

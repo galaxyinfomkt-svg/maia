@@ -39,7 +39,7 @@ export const blogPosts: BlogPostMeta[] = [
     description: 'Protect your investment by asking the right questions. Learn what to look for in a licensed Massachusetts contractor.',
     date: '2024-12-20',
     author: 'Maia Construction',
-    image: '/images/general-contractor/home-renovation-massachusetts-2.png',
+    image: '/images/general-contractor/home-renovation-massachusetts-2.webp',
     tags: ['General Contractor', 'Home Improvement', 'Tips'],
   },
   {
@@ -48,7 +48,7 @@ export const blogPosts: BlogPostMeta[] = [
     description: 'Get your home ready for harsh New England winters. From insulation to weatherstripping, protect your home from the cold.',
     date: '2024-12-25',
     author: 'Maia Construction',
-    image: '/images/general-contractor/home-renovation-massachusetts-3.jpeg',
+    image: '/images/general-contractor/home-renovation-massachusetts-3.webp',
     tags: ['Home Maintenance', 'Winter', 'Massachusetts'],
   },
   {
@@ -57,7 +57,7 @@ export const blogPosts: BlogPostMeta[] = [
     description: 'Discover which home improvements offer the highest ROI. From siding replacement to window upgrades, make smart investments.',
     date: '2025-01-02',
     author: 'Maia Construction',
-    image: '/images/general-contractor/home-renovation-massachusetts-4.jpeg',
+    image: '/images/general-contractor/home-renovation-massachusetts-4.webp',
     tags: ['Home Value', 'ROI', 'Home Improvement'],
   },
   {
@@ -156,7 +156,7 @@ export const blogPosts: BlogPostMeta[] = [
     description: 'Keep your siding, windows, and doors in top condition with this seasonal maintenance guide. Prevent costly repairs with regular inspections.',
     date: '2025-01-20',
     author: 'Maia Construction',
-    image: '/images/general-contractor/home-renovation-massachusetts-1.png',
+    image: '/images/general-contractor/home-renovation-massachusetts-1.webp',
     tags: ['Home Maintenance', 'Tips', 'Massachusetts'],
   },
 ];
