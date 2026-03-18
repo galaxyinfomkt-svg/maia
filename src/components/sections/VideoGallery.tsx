@@ -68,7 +68,7 @@ export default function VideoGallery({
                   {/* Thumbnail - Optimized with Next/Image */}
                   <Image
                     src={`https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`}
-                    alt={video.title}
+                    alt={`${video.title} - Maia Construction home improvement project in Massachusetts`}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"

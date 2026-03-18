@@ -293,7 +293,7 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
                     <div key={index} className="relative h-48 rounded-xl overflow-hidden shadow-lg">
                       <Image
                         src={img}
-                        alt={`${service.name} installation project in ${city.name}, ${city.county} County MA - Maia Construction`}
+                        alt={`${service.name} installation project in ${city.name}, ${city.county} County Massachusetts - Maia Construction licensed contractor serving ${city.zip}`}
                         fill
                         className="object-cover"
                       />
@@ -430,6 +430,59 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
                 <p className="mt-4 text-gray-600">{faq.a}</p>
               </details>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AEO Block + Cross-linking */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="aeo-answer aeo-speakable bg-slate-50 p-8 rounded-2xl">
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">
+                {service.name} Contractor in {city.name}, MA
+              </h2>
+              <p className="text-gray-600 mb-4">
+                {SITE_NAME} is the #1 rated {service.name.toLowerCase()} contractor in {city.name}, Massachusetts.
+                With a 5.0-star Google rating, 500+ completed projects, and MA HIC #204634 license, we provide
+                professional {service.name.toLowerCase()} installation throughout {city.county} County.
+                Call {PHONE} for a free, no-obligation estimate.
+              </p>
+
+              {/* Cross-service backlinks */}
+              <h3 className="font-bold text-slate-900 mt-6 mb-3">Other Services in {city.name}</h3>
+              <div className="flex flex-wrap gap-2">
+                {services.filter(s => s.slug !== service.slug).map((otherService) => (
+                  <Link
+                    key={otherService.slug}
+                    href={`/services/${otherService.slug}/${city.slug}`}
+                    className="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm text-gray-600 hover:border-amber-400 hover:text-amber-600 transition-colors"
+                  >
+                    {otherService.icon} {otherService.name} in {city.name}
+                  </Link>
+                ))}
+              </div>
+
+              {/* Blog backlinks */}
+              <h3 className="font-bold text-slate-900 mt-6 mb-3">Helpful Resources</h3>
+              <div className="flex flex-wrap gap-2">
+                <Link href="/blog/how-to-choose-right-siding" className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-gray-600 hover:border-amber-400 hover:text-amber-600">
+                  Siding Guide
+                </Link>
+                <Link href="/blog/energy-efficient-windows-guide" className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-gray-600 hover:border-amber-400 hover:text-amber-600">
+                  Window Guide
+                </Link>
+                <Link href="/blog/window-replacement-cost-massachusetts" className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-gray-600 hover:border-amber-400 hover:text-amber-600">
+                  Cost Guide MA
+                </Link>
+                <Link href={`/cities/${city.slug}`} className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-gray-600 hover:border-amber-400 hover:text-amber-600">
+                  All Services in {city.name}
+                </Link>
+                <Link href="/about" className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-gray-600 hover:border-amber-400 hover:text-amber-600">
+                  About Us
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -94,6 +94,49 @@ export default function BlogPage() {
         </div>
       </section>
 
+      {/* Internal Backlinks - Related Services */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">
+            Explore Our Services
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-8" />
+          <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+            Ready to start your home improvement project? Learn more about our professional services.
+          </p>
+          <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <Link href="/services/siding" className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all text-center group">
+              <div className="text-4xl mb-3">🏠</div>
+              <h3 className="font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Siding Installation</h3>
+              <p className="text-sm text-gray-500 mt-2">Vinyl & James Hardie</p>
+            </Link>
+            <Link href="/services/windows" className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all text-center group">
+              <div className="text-4xl mb-3">🪟</div>
+              <h3 className="font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Window Replacement</h3>
+              <p className="text-sm text-gray-500 mt-2">ENERGY STAR certified</p>
+            </Link>
+            <Link href="/services/doors" className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all text-center group">
+              <div className="text-4xl mb-3">🚪</div>
+              <h3 className="font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Door Installation</h3>
+              <p className="text-sm text-gray-500 mt-2">Entry, patio & storm</p>
+            </Link>
+            <Link href="/services/general-contractor" className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all text-center group">
+              <div className="text-4xl mb-3">🔧</div>
+              <h3 className="font-bold text-slate-900 group-hover:text-amber-600 transition-colors">General Contractor</h3>
+              <p className="text-sm text-gray-500 mt-2">Full renovations</p>
+            </Link>
+          </div>
+          <div className="text-center mt-8 space-x-4">
+            <Link href="/contact" className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-amber-400 to-yellow-300 text-slate-900 rounded-full font-bold hover:shadow-xl transition-all">
+              Get Free Estimate
+            </Link>
+            <Link href="/cities" className="inline-flex items-center text-amber-600 font-semibold hover:text-amber-700">
+              View all cities we serve →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Newsletter CTA */}
       <section className="py-24 bg-slate-900">
         <div className="container mx-auto px-4 text-center">

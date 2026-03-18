@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { Hero } from '@/components/sections';
 import { ContactForm } from '@/components/forms';
 import { JsonLd } from '@/components/seo';
@@ -195,6 +196,46 @@ export default function ContactPage() {
                 <p className="mt-4 text-gray-600">{faq.a}</p>
               </details>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Internal Backlinks */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold text-slate-900 text-center mb-8">
+              Explore Our Services & Resources
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-slate-50 p-6 rounded-xl">
+                <h3 className="font-bold text-slate-900 mb-3">Our Services</h3>
+                <ul className="space-y-2">
+                  <li><Link href="/services/siding" className="text-sm text-gray-600 hover:text-amber-600">Siding Installation →</Link></li>
+                  <li><Link href="/services/windows" className="text-sm text-gray-600 hover:text-amber-600">Window Replacement →</Link></li>
+                  <li><Link href="/services/doors" className="text-sm text-gray-600 hover:text-amber-600">Door Installation →</Link></li>
+                  <li><Link href="/services/general-contractor" className="text-sm text-gray-600 hover:text-amber-600">General Contractor →</Link></li>
+                </ul>
+              </div>
+              <div className="bg-slate-50 p-6 rounded-xl">
+                <h3 className="font-bold text-slate-900 mb-3">Popular Cities</h3>
+                <ul className="space-y-2">
+                  <li><Link href="/cities/framingham" className="text-sm text-gray-600 hover:text-amber-600">Framingham, MA →</Link></li>
+                  <li><Link href="/cities/natick" className="text-sm text-gray-600 hover:text-amber-600">Natick, MA →</Link></li>
+                  <li><Link href="/cities/worcester" className="text-sm text-gray-600 hover:text-amber-600">Worcester, MA →</Link></li>
+                  <li><Link href="/cities/boston" className="text-sm text-gray-600 hover:text-amber-600">Boston, MA →</Link></li>
+                </ul>
+              </div>
+              <div className="bg-slate-50 p-6 rounded-xl">
+                <h3 className="font-bold text-slate-900 mb-3">Helpful Guides</h3>
+                <ul className="space-y-2">
+                  <li><Link href="/blog/how-to-choose-right-siding" className="text-sm text-gray-600 hover:text-amber-600">How to Choose Siding →</Link></li>
+                  <li><Link href="/blog/window-replacement-cost-massachusetts" className="text-sm text-gray-600 hover:text-amber-600">Window Costs MA 2026 →</Link></li>
+                  <li><Link href="/blog/energy-efficient-windows-guide" className="text-sm text-gray-600 hover:text-amber-600">Energy-Efficient Windows →</Link></li>
+                  <li><Link href="/about" className="text-sm text-gray-600 hover:text-amber-600">About {SITE_NAME} →</Link></li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>

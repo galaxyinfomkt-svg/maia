@@ -22,25 +22,25 @@ export default function HeroWithForm({
   return (
     <section
       className={cn(
-        'relative min-h-[85vh] flex items-center pt-20 pb-12 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900',
+        'relative min-h-[85vh] flex items-center pt-20 pb-12',
         className
       )}
     >
-      {/* Background Image */}
-      <div className="absolute inset-0 opacity-30">
+      {/* Background Image - full visibility, no blue tint */}
+      <div className="absolute inset-0">
         <Image
           src={backgroundImage}
-          alt="Professional siding and window installation services in Massachusetts - Maia Construction"
+          alt="Professional siding and window installation services in Marlborough, Massachusetts - Maia Construction licensed contractor"
           fill
           sizes="100vw"
           className="object-cover"
           priority
-          quality={75}
+          quality={85}
         />
       </div>
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/80 to-transparent" />
+      {/* Subtle dark gradient for text readability only - no color tint */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/20" />
 
       {/* Content */}
       <div className="relative z-10 w-full px-4 lg:px-8 py-20">

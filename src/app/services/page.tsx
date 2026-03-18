@@ -4,7 +4,8 @@ import Link from 'next/link';
 import { Hero, CTASection } from '@/components/sections';
 import { JsonLd } from '@/components/seo';
 import { services } from '@/lib/services';
-import { SITE_NAME, IMAGES } from '@/lib/constants';
+import { cities } from '@/lib/cities';
+import { SITE_NAME, IMAGES, SITE_URL, HIC_NUMBER, PHONE } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Siding, Windows & Doors MA (2026) | 25-50yr Warranty | Free Quote',
@@ -70,7 +71,7 @@ export default function ServicesPage() {
                   <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
                     <Image
                       src={service.image}
-                      alt={`Professional ${service.name.toLowerCase()} installation in Massachusetts - expert contractors`}
+                      alt={`Professional ${service.name.toLowerCase()} installation in Massachusetts by Maia Construction - licensed contractor serving Marlborough, Framingham, Worcester MA`}
                       fill
                       className="object-cover"
                     />
@@ -159,6 +160,81 @@ export default function ServicesPage() {
                 )}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AEO Answer Block for AI Search */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto aeo-answer">
+            <h2 className="text-3xl font-bold text-slate-900 mb-6">
+              Home Improvement Services in Massachusetts
+            </h2>
+            <p className="text-lg text-gray-600 mb-6">
+              <strong>{SITE_NAME}</strong> offers comprehensive home exterior services across Massachusetts.
+              As a licensed contractor (MA HIC #{HIC_NUMBER}) with a perfect 5.0-star rating, we specialize
+              in <Link href="/services/siding" className="text-amber-600 hover:underline font-semibold">siding installation</Link> (vinyl and James Hardie fiber cement),{' '}
+              <Link href="/services/windows" className="text-amber-600 hover:underline font-semibold">ENERGY STAR window replacement</Link>,{' '}
+              <Link href="/services/doors" className="text-amber-600 hover:underline font-semibold">premium door installation</Link>, and{' '}
+              <Link href="/services/general-contractor" className="text-amber-600 hover:underline font-semibold">general contracting</Link>.
+              Every project includes free estimates, transparent pricing, and 25-50 year manufacturer warranties.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Internal Backlinks - Services by City */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">
+            Find Our Services Near You
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-12" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((service) => (
+              <div key={service.slug} className="bg-white rounded-xl p-5 shadow-md">
+                <h3 className="font-bold text-lg text-slate-900 mb-3">
+                  <Link href={`/services/${service.slug}`} className="hover:text-amber-600">
+                    {service.name}
+                  </Link>
+                </h3>
+                <ul className="space-y-1.5">
+                  {cities.slice(0, 8).map((city) => (
+                    <li key={city.slug}>
+                      <Link
+                        href={`/services/${service.slug}/${city.slug}`}
+                        className="text-sm text-gray-500 hover:text-amber-600 transition-colors"
+                      >
+                        {service.name} in {city.name} →
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          {/* Blog Backlinks */}
+          <div className="mt-12 text-center">
+            <h3 className="text-xl font-bold text-slate-900 mb-4">Related Guides</h3>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link href="/blog/how-to-choose-right-siding" className="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm hover:border-amber-400 hover:text-amber-600 transition-colors">
+                How to Choose Siding
+              </Link>
+              <Link href="/blog/energy-efficient-windows-guide" className="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm hover:border-amber-400 hover:text-amber-600 transition-colors">
+                Energy-Efficient Windows Guide
+              </Link>
+              <Link href="/blog/vinyl-vs-fiber-cement-siding-comparison" className="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm hover:border-amber-400 hover:text-amber-600 transition-colors">
+                Vinyl vs. Fiber Cement
+              </Link>
+              <Link href="/blog/window-replacement-cost-massachusetts" className="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm hover:border-amber-400 hover:text-amber-600 transition-colors">
+                Window Costs MA 2026
+              </Link>
+              <Link href="/blog/sliding-vs-french-vs-bifold-patio-doors" className="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm hover:border-amber-400 hover:text-amber-600 transition-colors">
+                Patio Door Comparison
+              </Link>
+            </div>
           </div>
         </div>
       </section>

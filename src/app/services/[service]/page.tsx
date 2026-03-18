@@ -358,7 +358,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
               <div key={index} className="relative h-64 rounded-xl overflow-hidden shadow-lg group">
                 <Image
                   src={img}
-                  alt={`${service.name} project ${index + 1}`}
+                  alt={`${service.name} project ${index + 1} by Maia Construction in Massachusetts - licensed HIC #204634 contractor serving Marlborough, Framingham, Worcester MA`}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />

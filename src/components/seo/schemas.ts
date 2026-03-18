@@ -120,16 +120,54 @@ export const websiteSchema = {
     '@type': 'Organization',
     '@id': `${SITE_URL}/#organization`,
   },
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: {
-      '@type': 'EntryPoint',
-      urlTemplate: `${SITE_URL}/cities/{search_term_string}`,
+  potentialAction: [
+    {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${SITE_URL}/cities/{search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
     },
-    'query-input': 'required name=search_term_string',
-  },
+    {
+      '@type': 'ReadAction',
+      target: `${SITE_URL}`,
+    },
+  ],
   inLanguage: 'en-US',
+  about: {
+    '@type': 'Thing',
+    name: 'Home Improvement Contractor Services in Massachusetts',
+    description: 'Siding installation, window replacement, door installation, and general contracting services across Massachusetts.',
+  },
 };
+
+// Speakable schema for AI voice assistants
+export function createSpeakableSchema(page: {
+  name: string;
+  url: string;
+  description: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${SITE_URL}${page.url}/#webpage`,
+    name: page.name,
+    description: page.description,
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['.aeo-answer', '.aeo-speakable'],
+    },
+    isPartOf: {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+    },
+    about: {
+      '@type': 'HomeAndConstructionBusiness',
+      '@id': `${SITE_URL}/#organization`,
+    },
+  };
+}
 
 // Service Schema Generator
 export function createServiceSchema(service: {

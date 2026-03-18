@@ -42,17 +42,18 @@ export default function Hero({
       {/* Background */}
       <Image
         src={backgroundImage || IMAGES.hero}
-        alt="Massachusetts home exterior renovation - premium siding, windows and doors installation"
+        alt="Massachusetts home exterior renovation by Maia Construction - professional siding, windows and doors installation in Marlborough MA"
         fill
         sizes="100vw"
         className="object-cover"
         priority
       />
+      {/* Neutral dark overlay for text readability - no blue/color tint */}
       <div className={cn(
         'absolute inset-0',
         isInnerPage
-          ? 'bg-gradient-to-r from-slate-900/90 via-slate-900/80 to-slate-900/70'
-          : 'bg-gradient-to-r from-slate-900/95 via-slate-900/80 to-slate-900/60'
+          ? 'bg-gradient-to-r from-black/75 via-black/55 to-black/40'
+          : 'bg-gradient-to-r from-black/80 via-black/50 to-black/30'
       )} />
 
       {/* Content */}

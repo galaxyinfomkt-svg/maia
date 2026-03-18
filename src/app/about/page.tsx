@@ -1,8 +1,9 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Hero, CTASection } from '@/components/sections';
 import { JsonLd } from '@/components/seo';
-import { SITE_NAME, IMAGES, PHONE, ADDRESS, LOGO_URL } from '@/lib/constants';
+import { SITE_NAME, IMAGES, PHONE, ADDRESS, LOGO_URL, HIC_NUMBER, SITE_URL } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'About Us | 10+ Years Experience | 500+ Projects Done',
@@ -96,7 +97,7 @@ export default function AboutPage() {
               <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src={IMAGES.hero}
-                  alt="Maia Construction team completing a siding installation project in Massachusetts"
+                  alt="Maia Construction team completing a siding installation project in Marlborough Massachusetts - licensed contractor HIC #204634 serving 100+ MA cities"
                   fill
                   className="object-cover"
                 />
@@ -196,6 +197,47 @@ export default function AboutPage() {
                 <p className="text-white/80">{stat.label}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AEO About Block */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto aeo-answer aeo-speakable">
+            <h2 className="text-3xl font-bold text-slate-900 mb-6">
+              About {SITE_NAME} — Massachusetts Home Improvement Contractor
+            </h2>
+            <p className="text-lg text-gray-600 mb-4">
+              {SITE_NAME} is a family-owned home improvement company founded in 2015 by Marcos, based in
+              Marlborough, Massachusetts. Licensed under MA HIC #{HIC_NUMBER} and fully insured, we have
+              completed over 500 projects across 100+ Massachusetts cities. Our services include{' '}
+              <Link href="/services/siding" className="text-amber-600 hover:underline font-semibold">professional siding installation</Link>,{' '}
+              <Link href="/services/windows" className="text-amber-600 hover:underline font-semibold">energy-efficient window replacement</Link>,{' '}
+              <Link href="/services/doors" className="text-amber-600 hover:underline font-semibold">premium door installation</Link>, and{' '}
+              <Link href="/services/general-contractor" className="text-amber-600 hover:underline font-semibold">general contracting</Link>.
+            </p>
+            <p className="text-gray-600 mb-6">
+              We are certified installers for James Hardie, CertainTeed, and Alside, and all our window
+              installations meet ENERGY STAR standards. With a perfect 5.0-star Google rating and 47+ verified
+              reviews, we are committed to quality craftsmanship and customer satisfaction. Call{' '}
+              <a href="tel:+15088599880" className="text-amber-600 font-semibold">{PHONE}</a>{' '}
+              or <Link href="/contact" className="text-amber-600 hover:underline font-semibold">request a free estimate online</Link>.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/services" className="px-4 py-2 bg-amber-50 border border-amber-200 rounded-full text-sm text-amber-700 hover:bg-amber-100 transition-colors">
+                Our Services
+              </Link>
+              <Link href="/cities" className="px-4 py-2 bg-amber-50 border border-amber-200 rounded-full text-sm text-amber-700 hover:bg-amber-100 transition-colors">
+                Cities We Serve
+              </Link>
+              <Link href="/blog" className="px-4 py-2 bg-amber-50 border border-amber-200 rounded-full text-sm text-amber-700 hover:bg-amber-100 transition-colors">
+                Home Improvement Blog
+              </Link>
+              <Link href="/contact" className="px-4 py-2 bg-amber-50 border border-amber-200 rounded-full text-sm text-amber-700 hover:bg-amber-100 transition-colors">
+                Contact Us
+              </Link>
+            </div>
           </div>
         </div>
       </section>

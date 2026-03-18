@@ -27,7 +27,7 @@ export default function Footer() {
               <div className="relative w-12 h-12">
                 <Image
                   src={IMAGES.logo}
-                  alt={`${SITE_NAME} logo - Massachusetts home improvement contractor`}
+                  alt={`${SITE_NAME} logo - Licensed home improvement contractor in Marlborough Massachusetts - siding, windows, doors installation serving 100+ MA cities`}
                   fill
                   sizes="48px"
                   className="object-contain"
@@ -83,7 +83,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick Links - Enhanced with more internal backlinks */}
           <div className="lg:col-span-1">
             <h3 className="text-lg font-bold mb-6 text-amber-400">Quick Links</h3>
             <ul className="space-y-3">
@@ -94,6 +94,41 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link href="/services" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">
+                  Our Services
+                </Link>
+              </li>
+              <li>
+                <Link href="/cities" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">
+                  Cities We Serve
+                </Link>
+              </li>
+              <li>
+                <Link href="/projects" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">
+                  Our Projects
+                </Link>
+              </li>
+            </ul>
+
+            {/* Blog Links for additional backlinks */}
+            <h4 className="text-sm font-bold mt-6 mb-3 text-amber-400/80">Popular Guides</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/blog/how-to-choose-right-siding" className="text-gray-500 hover:text-amber-400 transition-colors text-xs">
+                  How to Choose Siding
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/window-replacement-cost-massachusetts" className="text-gray-500 hover:text-amber-400 transition-colors text-xs">
+                  Window Costs MA 2026
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/energy-efficient-windows-guide" className="text-gray-500 hover:text-amber-400 transition-colors text-xs">
+                  Energy-Efficient Windows
+                </Link>
+              </li>
             </ul>
           </div>
 

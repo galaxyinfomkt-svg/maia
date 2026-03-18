@@ -193,7 +193,7 @@ export default function ProjectsPage() {
                 <div className="relative h-56">
                   <Image
                     src={project.image}
-                    alt={`${project.title} in ${project.location} - ${project.service} project by Maia Construction`}
+                    alt={`${project.title} in ${project.location} - professional ${project.service.toLowerCase()} project by Maia Construction licensed Massachusetts contractor`}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -249,7 +249,7 @@ export default function ProjectsPage() {
               >
                 <Image
                   src={service.image}
-                  alt={`${service.name} installation services in Massachusetts - professional ${service.name.toLowerCase()} contractor`}
+                  alt={`${service.name} installation services in Marlborough Massachusetts - Maia Construction professional ${service.name.toLowerCase()} contractor serving 100+ MA cities`}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />

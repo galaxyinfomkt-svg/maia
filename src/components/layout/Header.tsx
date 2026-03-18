@@ -37,7 +37,7 @@ export default function Header() {
               <div className="relative w-32 h-16 sm:w-40 sm:h-20 lg:w-48 lg:h-24">
                 <Image
                   src={IMAGES.logoLarge}
-                  alt={`${SITE_NAME} - Licensed Siding, Windows and Doors Contractor in Massachusetts`}
+                  alt={`${SITE_NAME} logo - Licensed siding, windows and doors contractor in Marlborough Massachusetts - HIC #204634 - serving 100+ MA cities`}
                   fill
                   sizes="(max-width: 640px) 128px, (max-width: 1024px) 160px, 192px"
                   className="object-contain"

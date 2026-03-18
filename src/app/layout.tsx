@@ -93,6 +93,11 @@ export default function RootLayout({
       <head>
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
+        {/* AI Search Engine Discovery - llms.txt for AI crawlers */}
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Information" />
+        <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM Full Information" />
+        {/* Speakable meta for voice assistants and AI */}
+        <meta name="ai-content-declaration" content="This website contains factual business information about Maia Construction, a licensed Massachusetts home improvement contractor." />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         {/* Skip to main content link for accessibility */}

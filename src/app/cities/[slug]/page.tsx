@@ -317,6 +317,42 @@ export default async function CityPage({ params }: CityPageProps) {
         </div>
       </section>
 
+      {/* AEO Block + Blog Backlinks */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="aeo-answer aeo-speakable bg-slate-50 p-8 rounded-2xl">
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">
+                Home Improvement Contractor in {city.name}, Massachusetts
+              </h2>
+              <p className="text-gray-600 mb-4">
+                {SITE_NAME} is the top-rated home improvement contractor serving {city.name}, {city.county} County,
+                Massachusetts. With a 5.0-star Google rating and 500+ completed projects, we provide professional{' '}
+                <Link href={`/services/siding/${city.slug}`} className="text-amber-600 hover:underline">siding installation</Link>,{' '}
+                <Link href={`/services/windows/${city.slug}`} className="text-amber-600 hover:underline">window replacement</Link>,{' '}
+                <Link href={`/services/doors/${city.slug}`} className="text-amber-600 hover:underline">door installation</Link>, and{' '}
+                <Link href={`/services/general-contractor/${city.slug}`} className="text-amber-600 hover:underline">general contracting</Link>{' '}
+                services. Licensed MA HIC #204634. Call {PHONE} for a free estimate.
+              </p>
+              <div className="flex flex-wrap gap-2 mt-4">
+                <Link href="/blog/how-to-choose-right-siding" className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-gray-600 hover:border-amber-400 hover:text-amber-600">
+                  Siding Guide
+                </Link>
+                <Link href="/blog/energy-efficient-windows-guide" className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-gray-600 hover:border-amber-400 hover:text-amber-600">
+                  Window Guide
+                </Link>
+                <Link href="/blog/window-replacement-cost-massachusetts" className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-gray-600 hover:border-amber-400 hover:text-amber-600">
+                  Cost Guide
+                </Link>
+                <Link href="/about" className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-gray-600 hover:border-amber-400 hover:text-amber-600">
+                  About Us
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <CTASection cityName={city.name} />
     </>
   );
