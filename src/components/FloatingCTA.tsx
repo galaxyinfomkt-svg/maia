@@ -22,7 +22,7 @@ export default function FloatingCTA() {
       onClick={trackPhoneCall}
       aria-label="Call for free estimate"
       className={cn(
-        'fixed bottom-6 left-6 z-40 flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-amber-400 to-yellow-300 text-slate-900 rounded-full font-bold shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300',
+        'fixed bottom-6 left-6 z-40 flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-amber-400 to-yellow-300 text-slate-900 rounded-full font-bold text-sm shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300',
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
       )}
     >
