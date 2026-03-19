@@ -8,8 +8,8 @@ import { services } from '@/lib/services';
 import { SITE_NAME, HIC_NUMBER, PHONE, SITE_URL, PHONE_LINK } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: `#1 Siding & Window Contractor MA (2026) | 5.0★ 500+ Projects | ${SITE_NAME}`,
-  description: `Massachusetts' top-rated exterior contractor ★5.0. 500+ homes transformed, 25-50yr warranties. James Hardie siding, ENERGY STAR windows, premium doors. Licensed HIC #${HIC_NUMBER}. Call ${PHONE} — FREE estimate!`,
+  title: `Siding Contractor MA | Windows, Doors & Exterior | ${SITE_NAME}`,
+  description: `#1 siding & exterior contractor in Massachusetts. Expert siding, windows, doors installation. 47+ 5-star reviews. Licensed HIC #${HIC_NUMBER} & insured. FREE estimates. Call ${PHONE}`,
   alternates: {
     canonical: SITE_URL,
   },
@@ -25,6 +25,59 @@ const VideoGallery = dynamic(() => import('@/components/sections/VideoGallery'),
 const FAQ = dynamic(() => import('@/components/sections/FAQ'), {
   loading: () => <div className="py-24 bg-white" />,
 });
+
+// GeneralContractor Schema (like RS)
+const generalContractorSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'GeneralContractor',
+  '@id': `${SITE_URL}/#contractor`,
+  name: SITE_NAME,
+  url: SITE_URL,
+  telephone: PHONE,
+  knowsAbout: [
+    'Siding Installation',
+    'Vinyl Siding',
+    'James Hardie Fiber Cement Siding',
+    'Window Replacement',
+    'ENERGY STAR Windows',
+    'Door Installation',
+    'Entry Doors',
+    'Storm Doors',
+    'Patio Doors',
+    'General Contracting',
+    'Home Renovation',
+    'Exterior Remodeling',
+  ],
+};
+
+// HowTo Schema for the process
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to Get a Home Exterior Renovation in Massachusetts',
+  description: `Step-by-step process for getting professional siding, windows, or doors installed by ${SITE_NAME}.`,
+  estimatedCost: { '@type': 'MonetaryAmount', currency: 'USD', value: 'Free Estimate' },
+  step: [
+    { '@type': 'HowToStep', position: 1, name: 'Free Consultation', text: 'We visit your home to assess your needs and provide a detailed quote.' },
+    { '@type': 'HowToStep', position: 2, name: 'Material Selection', text: 'Choose from premium materials that fit your style and budget.' },
+    { '@type': 'HowToStep', position: 3, name: 'Expert Installation', text: 'Our skilled team completes the work with precision and care.' },
+    { '@type': 'HowToStep', position: 4, name: 'Final Walkthrough', text: 'We ensure everything meets your expectations before completion.' },
+  ],
+};
+
+// ImageGallery Schema
+const imageGallerySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ImageGallery',
+  name: `${SITE_NAME} Project Gallery`,
+  description: 'Before and after photos of siding, window, and door installations across Massachusetts.',
+  image: [
+    { '@type': 'ImageObject', name: 'Vinyl Siding Installation Framingham MA', contentUrl: `${SITE_URL}/images/before-after/siding-after-framingham-ma.webp`, description: 'Vinyl siding installation completed in Framingham, Massachusetts' },
+    { '@type': 'ImageObject', name: 'Exterior Renovation Worcester MA', contentUrl: `${SITE_URL}/images/before-after/exterior-after-worcester-ma.webp`, description: 'Complete exterior renovation in Worcester, Massachusetts' },
+    { '@type': 'ImageObject', name: 'Window Installation Massachusetts', contentUrl: `${SITE_URL}/images/windows/window-installation-massachusetts-1.webp`, description: 'Energy-efficient window installation in Massachusetts' },
+    { '@type': 'ImageObject', name: 'Door Installation Massachusetts', contentUrl: `${SITE_URL}/images/doors/door-installation-massachusetts-1.webp`, description: 'Premium entry door installation in Massachusetts' },
+  ],
+};
 
 // Speakable schema for AI/voice search
 const speakableSchema = {
@@ -52,6 +105,9 @@ export default function HomePage() {
       <JsonLd data={organizationSchema} />
       <JsonLd data={websiteSchema} />
       <JsonLd data={speakableSchema} />
+      <JsonLd data={generalContractorSchema} />
+      <JsonLd data={howToSchema} />
+      <JsonLd data={imageGallerySchema} />
 
       {/* Hero Section with Form */}
       <HeroWithForm

@@ -2,17 +2,32 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { SITE_NAME, PHONE, PHONE_LINK, ADDRESS, BUSINESS_HOURS, SOCIAL_LINKS, HIC_NUMBER, IMAGES } from '@/lib/constants';
 import { services } from '@/lib/services';
-import { cities } from '@/lib/cities';
+import { cities, getCitiesByCounty } from '@/lib/cities';
 
 const quickLinks = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
   { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },
+  { label: 'Our Services', href: '/services' },
+  { label: 'Cities We Serve', href: '/cities' },
+  { label: 'Our Projects', href: '/projects' },
+  { label: 'Reviews', href: '/reviews' },
+  { label: 'FAQ', href: '/faq' },
 ];
 
-// Get featured cities (closest ones)
+// Get first 20 cities (closest ones) for service columns
+const serviceCities = cities.slice(0, 20);
+
+// Featured cities for service columns (closest 12)
 const featuredCities = cities.slice(0, 12);
+
+// Counties for the mega-links section
+const countyOrder = ['Middlesex', 'Worcester', 'Norfolk', 'Essex', 'Suffolk', 'Plymouth', 'Bristol', 'Hampden', 'Hampshire', 'Barnstable', 'Franklin', 'Berkshire', 'Dukes', 'Nantucket'] as const;
+const citiesByCounty = countyOrder.map(county => ({
+  county,
+  cities: getCitiesByCounty(county),
+})).filter(group => group.cities.length > 0);
 
 export default function Footer() {
   return (
@@ -94,21 +109,6 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link href="/services" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">
-                  Our Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/cities" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">
-                  Cities We Serve
-                </Link>
-              </li>
-              <li>
-                <Link href="/projects" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">
-                  Our Projects
-                </Link>
-              </li>
             </ul>
 
             {/* Blog Links for additional backlinks */}
@@ -232,6 +232,63 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Massachusetts Service Areas - Mega Links by County */}
+      <div className="border-t border-white/10 pt-12 pb-8">
+        <div className="container mx-auto px-4">
+          <h3 className="text-lg font-bold text-amber-400 mb-6 text-center">
+            Massachusetts Service Areas — {cities.length}+ Cities
+          </h3>
+          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {citiesByCounty.slice(0, 10).map(({ county, cities: countyCities }) => (
+              <div key={county}>
+                <h4 className="text-sm font-semibold text-white/80 mb-2">{county} County</h4>
+                <ul className="space-y-0.5">
+                  {countyCities.map((city) => (
+                    <li key={city.slug}>
+                      <Link
+                        href={`/massachusetts/${city.slug}`}
+                        className="text-gray-400 hover:text-amber-400 transition-colors text-xs"
+                      >
+                        {city.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          {citiesByCounty.length > 10 && (
+            <div className="grid md:grid-cols-4 gap-6 mt-6">
+              {citiesByCounty.slice(10).map(({ county, cities: countyCities }) => (
+                <div key={county}>
+                  <h4 className="text-sm font-semibold text-white/80 mb-2">{county} County</h4>
+                  <ul className="space-y-0.5">
+                    {countyCities.map((city) => (
+                      <li key={city.slug}>
+                        <Link
+                          href={`/massachusetts/${city.slug}`}
+                          className="text-gray-400 hover:text-amber-400 transition-colors text-xs"
+                        >
+                          {city.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          )}
+          <div className="text-center mt-6">
+            <Link
+              href="/massachusetts"
+              className="text-amber-400 hover:text-amber-300 text-sm font-semibold"
+            >
+              View All Massachusetts Service Areas →
+            </Link>
           </div>
         </div>
       </div>

@@ -80,6 +80,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
+  // Massachusetts city pages (RS-style URL structure)
+  const maCityPages: MetadataRoute.Sitemap = PRIMARY_CITIES.map((city) => ({
+    url: `${BASE_URL}/massachusetts/${city.slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'weekly',
+    priority: city.distance <= 20 ? 0.85 : 0.8,
+  }));
+
+  // Massachusetts city+service pages (RS-style: /massachusetts/[city]/[service])
+  const maCityServicePages: MetadataRoute.Sitemap = [];
+  for (const service of services) {
+    for (const city of PRIMARY_CITIES) {
+      maCityServicePages.push({
+        url: `${BASE_URL}/massachusetts/${city.slug}/${service.slug}`,
+        lastModified: currentDate,
+        changeFrequency: 'weekly',
+        priority: city.distance <= 20 ? 0.9 : 0.85,
+      });
+    }
+  }
+
+  // Massachusetts hub page
+  const maHubPage: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/massachusetts`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
+  ];
+
   // Blog posts - good for informational queries
   const blogPosts = getAllPosts();
   const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
@@ -103,6 +134,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...servicePages,
     ...cityPages,
     ...serviceCityPages,
+    ...maHubPage,
+    ...maCityPages,
+    ...maCityServicePages,
     ...blogPages,
     ...tagPages,
   ];
