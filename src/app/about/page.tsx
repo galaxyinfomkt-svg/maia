@@ -6,8 +6,8 @@ import { JsonLd } from '@/components/seo';
 import { SITE_NAME, IMAGES, PHONE, ADDRESS, LOGO_URL, HIC_NUMBER, SITE_URL } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'About Us | 10+ Years Experience | 500+ Projects Done',
-  description: `Meet the team behind Massachusetts' top-rated contractor ★5.0. Family-owned since 2015, 500+ projects, 100+ cities served. MA HIC #204634 licensed & insured. See why homeowners trust us!`,
+  title: `About ${SITE_NAME} | Since 2015 | 500+ Projects | 5.0★ Google Rating`,
+  description: `Meet Massachusetts' #1 rated home improvement team. Family-owned since 2015, 500+ projects, 100+ cities. Licensed HIC #${HIC_NUMBER} & insured. 47+ 5-star Google reviews. Call ${PHONE}`,
   keywords: [
     'about Maia Construction',
     'Massachusetts contractor history',

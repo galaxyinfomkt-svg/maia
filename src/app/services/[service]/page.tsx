@@ -28,22 +28,22 @@ export async function generateStaticParams() {
 
 const serviceMetadata: Record<string, { title: string; description: string; keywords: string[] }> = {
   siding: {
-    title: `Professional Siding Services Massachusetts | #1 Rated Siding Contractor | ${SITE_NAME}`,
+    title: 'Siding Installation MA (2026) | 500+ Homes | 25-50yr Warranty | Free Quote',
     description: `#1 siding contractor in Massachusetts ★5.0. Vinyl & James Hardie fiber cement. 500+ homes, 25-50yr warranties. Licensed HIC #${HIC_NUMBER}. Call ${PHONE} — FREE estimate!`,
     keywords: ['siding installation Massachusetts', 'vinyl siding contractor MA', 'James Hardie siding installer', 'siding contractor near me'],
   },
   windows: {
-    title: `Professional Windows Services Massachusetts | #1 Rated Window Contractor | ${SITE_NAME}`,
+    title: 'Window Replacement MA (2026) | ENERGY STAR | Save 30% on Bills | Free Quote',
     description: `ENERGY STAR window contractor in MA ★5.0. Double & triple-pane windows — cut energy bills by 30%. Licensed HIC #${HIC_NUMBER}. Call ${PHONE} — FREE estimate!`,
     keywords: ['window replacement Massachusetts', 'energy efficient windows MA', 'window installation Boston', 'ENERGY STAR windows MA'],
   },
   doors: {
-    title: `Professional Door Installation Massachusetts | #1 Rated Door Contractor | ${SITE_NAME}`,
+    title: 'Door Installation MA (2026) | Entry, Storm & Patio | 90%+ ROI | Free Quote',
     description: `Premium door contractor in MA ★5.0. Fiberglass, steel & wood entry doors. Storm & patio doors — 90%+ ROI. Licensed HIC #${HIC_NUMBER}. Call ${PHONE} — FREE estimate!`,
     keywords: ['door installation Massachusetts', 'entry door replacement MA', 'storm door installation', 'door contractor near me'],
   },
   'general-contractor': {
-    title: `Licensed General Contractor Massachusetts | #1 Rated Contractor | ${SITE_NAME}`,
+    title: 'Licensed General Contractor MA (2026) | HIC #204634 | 500+ Projects',
     description: `MA licensed general contractor ★5.0. Exterior renovations, remodeling & additions. 500+ projects. HIC #${HIC_NUMBER}. Call ${PHONE} — FREE estimate!`,
     keywords: ['general contractor Massachusetts', 'home renovation contractor MA', 'licensed contractor Boston'],
   },

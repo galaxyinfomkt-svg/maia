@@ -4,8 +4,8 @@ import { City } from '@/types';
 import { SITE_NAME, SITE_URL, PHONE, ADDRESS, LOGO_URL } from './constants';
 
 export function generateServiceMetadata(service: Service): Metadata {
-  const title = `${service.name} Installation MA | 5-Star | Free Estimate`;
-  const description = `5.0-star rated ${service.name.toLowerCase()} contractor in Massachusetts. ${service.shortDescription} Licensed HIC #204634. FREE estimate: ${PHONE}`;
+  const title = `Professional ${service.name} Services Massachusetts | #1 Rated ${service.name} Contractor | Maia Construction`;
+  const description = `#1 ${service.name.toLowerCase()} contractor in Massachusetts ★5.0. 47+ reviews. ${service.shortDescription} Licensed HIC #204634 & insured. FREE estimates. Call ${PHONE}`;
 
   return {
     title,
@@ -25,8 +25,8 @@ export function generateServiceMetadata(service: Service): Metadata {
 }
 
 export function generateCityMetadata(city: City): Metadata {
-  const title = `Siding, Windows & Doors ${city.name} MA | 5-Star | Free Quote`;
-  const description = `5.0-star rated contractor in ${city.name}, MA. Siding, windows & doors. 500+ projects in ${city.county} County. Licensed HIC #204634. FREE estimate: ${PHONE}`;
+  const title = `Siding & Window Contractor ${city.name} MA | Expert Installation | Call Now | Maia Construction`;
+  const description = `#1 rated contractor in ${city.name}, MA ★5.0. Expert siding, windows & doors. 500+ projects in ${city.county} County. Licensed HIC #204634. FREE estimate. Call ${PHONE}`;
 
   return {
     title,

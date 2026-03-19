@@ -15,10 +15,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: `#1 Siding & Window Contractor MA (2026) | 5.0★ Rated | ${SITE_NAME}`,
+    default: `Siding Contractor MA | Windows, Doors & Exterior | ${SITE_NAME}`,
     template: `%s | ${SITE_NAME}`,
   },
-  description: `Massachusetts' #1 rated siding, window & door contractor ★5.0. 500+ projects completed, 25-50yr warranties. Licensed HIC #${HIC_NUMBER} & fully insured. Call ${PHONE} for your FREE estimate today!`,
+  description: `#1 siding & exterior contractor in Massachusetts. Expert siding, windows, doors installation. 47+ 5-star reviews. Licensed HIC #${HIC_NUMBER} & insured. FREE estimates. Call ${PHONE}`,
   icons: {
     icon: '/images/logo-200.png',
     shortcut: '/images/logo-200.png',

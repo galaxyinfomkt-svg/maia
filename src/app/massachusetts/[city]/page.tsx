@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: MACityPageProps): Promise<Met
       `best contractor ${city.name}`,
     ],
     openGraph: { title, description },
-    alternates: { canonical: `${SITE_URL}/massachusetts/${city.slug}` },
+    alternates: { canonical: `${SITE_URL}/cities/${city.slug}` },
     ...(city.distance > 50 ? { robots: { index: false, follow: true } } : {}),
   };
 }

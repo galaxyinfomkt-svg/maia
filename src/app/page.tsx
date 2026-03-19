@@ -8,7 +8,7 @@ import { services } from '@/lib/services';
 import { SITE_NAME, HIC_NUMBER, PHONE, SITE_URL, PHONE_LINK } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: `Siding Contractor MA | Windows, Doors & Exterior | ${SITE_NAME}`,
+  title: '#1 Siding & Window Contractor MA (2026) | 500+ Projects | Free Estimate',
   description: `#1 siding & exterior contractor in Massachusetts. Expert siding, windows, doors installation. 47+ 5-star reviews. Licensed HIC #${HIC_NUMBER} & insured. FREE estimates. Call ${PHONE}`,
   alternates: {
     canonical: SITE_URL,

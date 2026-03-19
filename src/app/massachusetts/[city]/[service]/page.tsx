@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: MACityServicePageProps): Prom
       images: [{ url: service.image }],
     },
     alternates: {
-      canonical: `${SITE_URL}/massachusetts/${city.slug}/${service.slug}`,
+      canonical: `${SITE_URL}/services/${service.slug}/${city.slug}`,
     },
     ...(city.distance > 50 ? { robots: { index: false, follow: true } } : {}),
   };
