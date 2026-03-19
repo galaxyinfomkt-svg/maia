@@ -1,32 +1,22 @@
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import Link from 'next/link';
-import { HeroWithForm, ServicesSection, CityGrid, CTASection, WhyChooseUs, ReviewsHighlight } from '@/components/sections';
+import { HeroWithForm, CTASection, WhyChooseUs, ReviewsHighlight } from '@/components/sections';
 import { JsonLd, organizationSchema, websiteSchema } from '@/components/seo';
-import { cities } from '@/lib/cities';
 import { services } from '@/lib/services';
-import { SITE_NAME, HIC_NUMBER, PHONE, SITE_URL, PHONE_LINK } from '@/lib/constants';
+import { SITE_NAME, HIC_NUMBER, PHONE, SITE_URL, PHONE_LINK, SOCIAL_LINKS, ADDRESS, BUSINESS_HOURS, EMAIL, REAL_PHOTOS } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: '#1 Siding & Window Contractor MA (2026) | 500+ Projects | Free Estimate',
+  title: `#1 Siding & Window Contractor MA (2026) | 500+ Projects | Free Estimate`,
   description: `#1 siding & exterior contractor in Massachusetts. Expert siding, windows, doors installation. 47+ 5-star reviews. Licensed HIC #${HIC_NUMBER} & insured. FREE estimates. Call ${PHONE}`,
-  alternates: {
-    canonical: SITE_URL,
-  },
+  alternates: { canonical: SITE_URL },
 };
 
-// Lazy load heavy client components
-const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'), {
-  loading: () => <div className="py-24 bg-slate-900" />,
-});
 const VideoGallery = dynamic(() => import('@/components/sections/VideoGallery'), {
   loading: () => <div className="py-24 bg-white" />,
 });
-const FAQ = dynamic(() => import('@/components/sections/FAQ'), {
-  loading: () => <div className="py-24 bg-white" />,
-});
 
-// GeneralContractor Schema (like RS)
 const generalContractorSchema = {
   '@context': 'https://schema.org',
   '@type': 'GeneralContractor',
@@ -34,23 +24,9 @@ const generalContractorSchema = {
   name: SITE_NAME,
   url: SITE_URL,
   telephone: PHONE,
-  knowsAbout: [
-    'Siding Installation',
-    'Vinyl Siding',
-    'James Hardie Fiber Cement Siding',
-    'Window Replacement',
-    'ENERGY STAR Windows',
-    'Door Installation',
-    'Entry Doors',
-    'Storm Doors',
-    'Patio Doors',
-    'General Contracting',
-    'Home Renovation',
-    'Exterior Remodeling',
-  ],
+  knowsAbout: ['Siding Installation', 'Vinyl Siding', 'James Hardie Fiber Cement Siding', 'Window Replacement', 'ENERGY STAR Windows', 'Door Installation', 'Entry Doors', 'Storm Doors', 'Patio Doors', 'General Contracting', 'Home Renovation', 'Exterior Remodeling'],
 };
 
-// HowTo Schema for the process
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
@@ -59,384 +35,304 @@ const howToSchema = {
   estimatedCost: { '@type': 'MonetaryAmount', currency: 'USD', value: 'Free Estimate' },
   step: [
     { '@type': 'HowToStep', position: 1, name: 'Free Consultation', text: 'We visit your home to assess your needs and provide a detailed quote.' },
-    { '@type': 'HowToStep', position: 2, name: 'Material Selection', text: 'Choose from premium materials that fit your style and budget.' },
+    { '@type': 'HowToStep', position: 2, name: 'Detailed Estimate', text: 'You receive a comprehensive written estimate with transparent pricing.' },
     { '@type': 'HowToStep', position: 3, name: 'Expert Installation', text: 'Our skilled team completes the work with precision and care.' },
     { '@type': 'HowToStep', position: 4, name: 'Final Walkthrough', text: 'We ensure everything meets your expectations before completion.' },
   ],
 };
 
-// ImageGallery Schema
-const imageGallerySchema = {
-  '@context': 'https://schema.org',
-  '@type': 'ImageGallery',
-  name: `${SITE_NAME} Project Gallery`,
-  description: 'Before and after photos of siding, window, and door installations across Massachusetts.',
-  image: [
-    { '@type': 'ImageObject', name: 'Vinyl Siding Installation Framingham MA', contentUrl: `${SITE_URL}/images/before-after/siding-after-framingham-ma.webp`, description: 'Vinyl siding installation completed in Framingham, Massachusetts' },
-    { '@type': 'ImageObject', name: 'Exterior Renovation Worcester MA', contentUrl: `${SITE_URL}/images/before-after/exterior-after-worcester-ma.webp`, description: 'Complete exterior renovation in Worcester, Massachusetts' },
-    { '@type': 'ImageObject', name: 'Window Installation Massachusetts', contentUrl: `${SITE_URL}/images/windows/window-installation-massachusetts-1.webp`, description: 'Energy-efficient window installation in Massachusetts' },
-    { '@type': 'ImageObject', name: 'Door Installation Massachusetts', contentUrl: `${SITE_URL}/images/doors/door-installation-massachusetts-1.webp`, description: 'Premium entry door installation in Massachusetts' },
-  ],
-};
-
-// Speakable schema for AI/voice search
-const speakableSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  '@id': `${SITE_URL}/#webpage`,
-  name: `${SITE_NAME} — #1 Siding & Window Contractor in Massachusetts`,
-  description: `Maia Construction is Massachusetts' top-rated siding, window, and door contractor with a 5.0-star rating and 500+ completed projects. Licensed HIC #${HIC_NUMBER}. Call ${PHONE} for a free estimate.`,
-  speakable: {
-    '@type': 'SpeakableSpecification',
-    cssSelector: ['.aeo-answer', '.aeo-speakable'],
-  },
-  mainEntity: {
-    '@type': 'HomeAndConstructionBusiness',
-    '@id': `${SITE_URL}/#organization`,
-  },
-};
-
 export default function HomePage() {
-  const featuredCities = cities.slice(0, 12);
-  const nearbyCities = cities.slice(0, 6);
-
   return (
     <>
       <JsonLd data={organizationSchema} />
       <JsonLd data={websiteSchema} />
-      <JsonLd data={speakableSchema} />
       <JsonLd data={generalContractorSchema} />
       <JsonLd data={howToSchema} />
-      <JsonLd data={imageGallerySchema} />
 
-      {/* Hero Section with Form */}
+      {/* ========== SECTION 1: HERO WITH FORM ========== */}
       <HeroWithForm
-        badge={`MA Licensed Contractor • HIC #${HIC_NUMBER} • 5-Star Rated`}
+        badge={`Serving 75+ MA Cities • 5-Star Rated • HIC #${HIC_NUMBER}`}
         title={
           <>
-            Transform Your Home with{' '}
+            Professional{' '}
             <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 bg-clip-text text-transparent">
-              Premium Siding, Windows & Doors
+              Siding, Windows & Doors
             </span>{' '}
-            Built for New England Weather
+            Contractor in Massachusetts
           </>
         }
-        subtitle="High-durability exterior solutions with lifetime warranty protection. Transparent pricing, award-winning service, and expert installation by certified craftsmen. Serving 100+ Massachusetts communities."
+        subtitle={`Expert siding installation, window replacement, door installation, and general contracting services. Licensed & insured contractor serving Marlborough and 75+ cities across Massachusetts.`}
       />
 
-      {/* AEO Answer Block - Direct answers for AI search engines */}
-      <section className="py-16 bg-gradient-to-b from-white to-slate-50">
+      {/* ========== SECTION 2: GOOGLE REVIEWS BAR ========== */}
+      <section className="py-4 bg-slate-900">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="aeo-answer aeo-speakable bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                Best Siding & Window Contractor in Massachusetts
+          <div className="flex flex-wrap items-center justify-center gap-4 text-white text-sm">
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+            <span className="text-amber-400">★★★★★</span>
+            <span className="font-semibold">5.0</span>
+            <span className="text-gray-400">(47 reviews)</span>
+            <a href={SOCIAL_LINKS.google} target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 font-semibold underline">
+              See Our Reviews
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== SECTION 3: OUR SERVICES (like RS - 4 cards with images) ========== */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">
+              Our <span className="text-amber-500">Services</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              From expert siding installation to energy-efficient windows and doors, we deliver quality craftsmanship on every project.
+            </p>
+            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mt-6" />
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {services.map((service, index) => (
+              <Link key={service.slug} href={`/services/${service.slug}`}
+                className={`group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all ${index === 0 ? 'ring-2 ring-amber-400' : 'border border-slate-200'}`}>
+                <div className="relative h-52 overflow-hidden">
+                  <Image src={REAL_PHOTOS[index % REAL_PHOTOS.length]} alt={`${service.name} services in Massachusetts by ${SITE_NAME}`}
+                    fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  {index === 0 && (
+                    <span className="absolute top-4 right-4 bg-amber-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full">Featured</span>
+                  )}
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-slate-900 group-hover:text-amber-500 transition-colors mb-2">{service.name}</h3>
+                  <p className="text-gray-600 text-sm mb-4">{service.shortDescription}</p>
+                  <span className="text-amber-500 font-semibold text-sm flex items-center">
+                    Learn More
+                    <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ========== SECTION 4: ABOUT MAIA CONSTRUCTION (like RS - text + photo) ========== */}
+      <section className="py-20 bg-slate-900 text-white">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div>
+              <h2 className="text-4xl font-bold mb-6">
+                About <span className="text-amber-400">{SITE_NAME}</span>
               </h2>
-              <p className="text-lg text-gray-700 mb-4">
-                <strong>Maia Construction</strong> is the #1 rated siding and window contractor in Massachusetts,
-                with a perfect 5.0-star Google rating from 47+ verified reviews. Founded in 2015 by Marcos and
-                based in Marlborough, MA, we specialize in{' '}
-                <Link href="/services/siding" className="text-amber-600 hover:text-amber-700 font-semibold underline">
-                  siding installation
-                </Link>,{' '}
-                <Link href="/services/windows" className="text-amber-600 hover:text-amber-700 font-semibold underline">
-                  window replacement
-                </Link>,{' '}
-                <Link href="/services/doors" className="text-amber-600 hover:text-amber-700 font-semibold underline">
-                  door installation
-                </Link>, and{' '}
-                <Link href="/services/general-contractor" className="text-amber-600 hover:text-amber-700 font-semibold underline">
-                  general contracting
-                </Link>{' '}
-                services across 100+ cities in Massachusetts.
-              </p>
-              <p className="text-gray-600 mb-6">
-                Licensed under MA HIC #{HIC_NUMBER}, fully insured, and certified by James Hardie, CertainTeed,
-                and Alside. We offer 25-50 year manufacturer warranties, 5-year workmanship guarantee, and
-                free no-obligation estimates. Serving communities from{' '}
-                <Link href="/cities/boston" className="text-amber-600 hover:underline">Boston</Link> to{' '}
-                <Link href="/cities/worcester" className="text-amber-600 hover:underline">Worcester</Link>,{' '}
-                <Link href="/cities/framingham" className="text-amber-600 hover:underline">Framingham</Link> to{' '}
-                <Link href="/cities/natick" className="text-amber-600 hover:underline">Natick</Link>.
-              </p>
-
-              {/* Quick Facts for AI parsing */}
-              <div className="grid md:grid-cols-4 gap-4 mb-6">
-                <div className="bg-amber-50 p-4 rounded-xl text-center">
-                  <p className="text-3xl font-bold text-amber-600">5.0★</p>
-                  <p className="text-sm text-gray-600">Google Rating</p>
+              <div className="space-y-5 text-gray-300 leading-relaxed">
+                <p>
+                  Founded by <strong className="text-amber-400">Marcos</strong>, {SITE_NAME} is a premier siding, window, and door contractor based in Marlborough, Massachusetts. With over a decade of hands-on experience in the construction industry, Marcos and his team have built a reputation for delivering exceptional craftsmanship, honest pricing, and reliable service to homeowners across the state.
+                </p>
+                <p>
+                  Under Marcos&apos;s leadership, our team specializes in <strong>exterior home improvement</strong> — the first line of defense for every Massachusetts home. From complete siding replacements to energy-efficient window upgrades, we ensure that every installation is precise, durable, and built to withstand New England&apos;s demanding climate for decades.
+                </p>
+                <p>
+                  Beyond our core services, we offer comprehensive general contracting including structural repairs, trim work, and full exterior renovations. Whether you&apos;re protecting your family from harsh winters, boosting your home&apos;s curb appeal, or increasing property value, Marcos and the {SITE_NAME} team have the expertise to get the job done right.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
+                <div className="text-center">
+                  <p className="text-3xl font-bold text-amber-400">75+</p>
+                  <p className="text-sm text-gray-400">Cities Served</p>
                 </div>
-                <div className="bg-amber-50 p-4 rounded-xl text-center">
-                  <p className="text-3xl font-bold text-amber-600">500+</p>
-                  <p className="text-sm text-gray-600">Projects Done</p>
+                <div className="text-center">
+                  <p className="text-3xl font-bold text-amber-400">47+</p>
+                  <p className="text-sm text-gray-400">5-Star Reviews</p>
                 </div>
-                <div className="bg-amber-50 p-4 rounded-xl text-center">
-                  <p className="text-3xl font-bold text-amber-600">10+</p>
-                  <p className="text-sm text-gray-600">Years Experience</p>
+                <div className="text-center">
+                  <p className="text-3xl font-bold text-amber-400">100%</p>
+                  <p className="text-sm text-gray-400">Licensed & Insured</p>
                 </div>
-                <div className="bg-amber-50 p-4 rounded-xl text-center">
-                  <p className="text-3xl font-bold text-amber-600">100+</p>
-                  <p className="text-sm text-gray-600">Cities Served</p>
+                <div className="text-center">
+                  <p className="text-3xl font-bold text-amber-400">24hr</p>
+                  <p className="text-sm text-gray-400">Response Time</p>
                 </div>
               </div>
-
-              <div className="flex flex-wrap gap-3">
-                <a
-                  href={PHONE_LINK}
-                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-amber-400 to-yellow-300 text-slate-900 rounded-full font-bold hover:shadow-xl transition-all"
-                >
-                  Call {PHONE}
-                </a>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center px-6 py-3 border-2 border-amber-400 text-amber-600 rounded-full font-bold hover:bg-amber-50 transition-all"
-                >
-                  Get Free Estimate
-                </Link>
+              <div className="mt-8 inline-flex items-center gap-3 bg-amber-400/10 border border-amber-400/30 rounded-xl px-6 py-3">
+                <svg className="w-6 h-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span className="text-amber-400 font-semibold">Trusted Contractor — Massachusetts Licensed HIC #{HIC_NUMBER}</span>
               </div>
+            </div>
+            <div className="relative h-[500px] rounded-2xl overflow-hidden">
+              <Image src={REAL_PHOTOS[4]} alt={`${SITE_NAME} team - professional siding and window contractors in Massachusetts`}
+                fill className="object-cover" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <WhyChooseUs />
-
-      {/* Services Section */}
-      <ServicesSection
-        title="Expert Home Exterior Services"
-        subtitle="From vinyl siding to energy-efficient windows — we deliver quality craftsmanship that withstands harsh New England winters"
-      />
-
-      {/* Internal Backlinks - Service + City Cross-Links */}
-      <section className="py-16 bg-slate-50">
+      {/* ========== SECTION 5: OUR PROCESS (like RS - 4 steps) ========== */}
+      <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">
-            Our Services Across Massachusetts
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-8" />
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            Find expert {SITE_NAME} services in your city. We provide professional installation with
-            free estimates and 25-50 year warranties.
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service) => (
-              <div key={service.slug} className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow">
-                <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
-                  <span className="text-2xl mr-2">{service.icon}</span>
-                  <Link href={`/services/${service.slug}`} className="hover:text-amber-600 transition-colors">
-                    {service.name}
-                  </Link>
-                </h3>
-                <ul className="space-y-2">
-                  {nearbyCities.map((city) => (
-                    <li key={`${service.slug}-${city.slug}`}>
-                      <Link
-                        href={`/services/${service.slug}/${city.slug}`}
-                        className="text-sm text-gray-600 hover:text-amber-600 transition-colors flex items-center"
-                      >
-                        <svg className="w-3 h-3 mr-2 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                        </svg>
-                        {service.name} in {city.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href={`/services/${service.slug}`}
-                  className="inline-flex items-center mt-4 text-sm font-semibold text-amber-600 hover:text-amber-700"
-                >
-                  View all {service.name} services
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">
+              Our <span className="text-amber-500">Process</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              From initial consultation to project completion, we make the home improvement process simple and stress-free.
+            </p>
+            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mt-6" />
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            {[
+              { step: '01', title: 'Free Consultation', desc: 'Call us or fill out our form. We discuss your project needs and schedule a site visit at your convenience.', icon: 'M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z' },
+              { step: '02', title: 'Detailed Estimate', desc: 'We provide a comprehensive written estimate with transparent pricing. No hidden fees, no surprises.', icon: 'M9 2a1 1 0 000 2h2a1 1 0 100-2H9z M4 5a2 2 0 012-2h8a2 2 0 012 2v6h-4a1 1 0 00-1 1v4H6a2 2 0 01-2-2V5z' },
+              { step: '03', title: 'Expert Installation', desc: 'Our skilled team executes your project with precision, keeping you informed every step of the way.', icon: 'M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z' },
+              { step: '04', title: 'Final Walkthrough', desc: 'We walk through the completed project together, ensuring everything meets your expectations.', icon: 'M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' },
+            ].map((item) => (
+              <div key={item.step} className="bg-white rounded-2xl p-8 shadow-lg text-center hover:shadow-xl transition-shadow">
+                <span className="text-4xl font-bold text-amber-400/30">{item.step}</span>
+                <div className="w-14 h-14 bg-amber-400/10 rounded-full flex items-center justify-center mx-auto my-4">
+                  <svg className="w-7 h-7 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path d={item.icon} />
                   </svg>
-                </Link>
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-3">{item.title}</h3>
+                <p className="text-gray-600 text-sm">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Before & After Gallery */}
-      <BeforeAfter
-        title="Our Transformations"
-        subtitle="See the difference quality craftsmanship makes - drag to compare before and after"
-      />
+      {/* ========== SECTION 6: WHY CHOOSE US (like RS - 4 cards) ========== */}
+      <WhyChooseUs />
 
-      {/* Video Gallery */}
+      {/* ========== SECTION 7: VIDEO GALLERY (like RS) ========== */}
       <VideoGallery
-        title="Our Projects in Action"
-        subtitle="Watch our team transform homes across Massachusetts"
+        title="See Our Work in Action"
+        subtitle="Watch our expert team tackle siding, windows, doors, and more across Massachusetts."
       />
 
-      {/* Customer Reviews - Text Highlights */}
+      {/* ========== SECTION 8: CUSTOMER REVIEWS (like RS) ========== */}
       <ReviewsHighlight />
 
-      {/* AEO - Common Questions Answered Directly (for AI snippets) */}
-      <section className="py-16 bg-white">
+      {/* ========== SECTION 9: CONTACT SECTION (like RS - form + contact info) ========== */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 text-center mb-8">
-              Common Questions About Home Improvement in Massachusetts
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">
+              Get Your <span className="text-amber-500">Free Estimate</span> Today
             </h2>
-
-            <div className="space-y-8 aeo-answer">
-              <div className="border-l-4 border-amber-400 pl-6">
-                <h3 className="text-xl font-bold text-slate-900 mb-2">
-                  How much does siding installation cost in Massachusetts?
-                </h3>
-                <p className="text-gray-600">
-                  In Massachusetts, vinyl siding installation costs $6-12 per square foot installed,
-                  while James Hardie fiber cement siding costs $9-15 per square foot. For a typical
-                  2,000 sq ft home, expect to pay $12,000-$30,000 depending on material choice.
-                  Maia Construction provides free detailed estimates with transparent pricing and no hidden fees.
-                  <Link href="/services/siding" className="text-amber-600 hover:underline ml-1">
-                    Learn more about our siding services →
-                  </Link>
-                </p>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Ready to start your project? Contact us for a free, no-obligation estimate. We respond within 24 hours.
+            </p>
+            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mt-6" />
+          </div>
+          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* Contact Info */}
+            <div className="space-y-8">
+              <div className="bg-slate-900 rounded-2xl p-8 text-white">
+                <h3 className="text-xl font-bold mb-6">Contact Us Directly</h3>
+                <div className="space-y-4">
+                  <a href={PHONE_LINK} className="flex items-center gap-3 text-white hover:text-amber-400 transition-colors">
+                    <svg className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg>
+                    <span className="font-semibold">{PHONE}</span>
+                  </a>
+                  <a href={`mailto:${EMAIL}`} className="flex items-center gap-3 text-white hover:text-amber-400 transition-colors">
+                    <svg className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>
+                    <span>{EMAIL}</span>
+                  </a>
+                  <div className="flex items-center gap-3">
+                    <svg className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" /></svg>
+                    <span className="text-gray-300">{ADDRESS.full}</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <svg className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" /></svg>
+                    <span className="text-gray-300">Mon-Sat: {BUSINESS_HOURS.weekdays}</span>
+                  </div>
+                </div>
               </div>
 
-              <div className="border-l-4 border-amber-400 pl-6">
-                <h3 className="text-xl font-bold text-slate-900 mb-2">
-                  What is the best siding for New England weather?
-                </h3>
-                <p className="text-gray-600">
-                  James Hardie fiber cement siding is considered the best choice for New England weather.
-                  It resists moisture damage, temperature extremes from -20°F to 100°F, and doesn&apos;t rot
-                  or attract pests. Vinyl siding is also excellent for Massachusetts homes, offering
-                  lifetime fade protection and minimal maintenance. Maia Construction is a certified
-                  installer for both options.
-                  <Link href="/blog/vinyl-vs-fiber-cement-siding-comparison" className="text-amber-600 hover:underline ml-1">
-                    Compare vinyl vs. fiber cement →
-                  </Link>
-                </p>
+              {/* Social + Trust */}
+              <div className="bg-white rounded-2xl p-8 border border-slate-200">
+                <h3 className="text-lg font-bold text-slate-900 mb-4">Follow Us</h3>
+                <div className="flex gap-3 mb-6">
+                  <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center hover:bg-amber-400 hover:text-white transition-colors text-slate-600">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.77,7.46H14.5v-1.9c0-.9.6-1.1,1-1.1h3V.5h-4.33C10.24.5,9.5,3.44,9.5,5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4Z"/></svg>
+                  </a>
+                  <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center hover:bg-amber-400 hover:text-white transition-colors text-slate-600">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2.16c3.2,0,3.58.01,4.85.07,1.17.05,1.97.24,2.44.41.61.24,1.05.52,1.51.98s.74.9.98,1.51c.17.47.36,1.27.41,2.44.06,1.27.07,1.65.07,4.85s-.01,3.58-.07,4.85c-.05,1.17-.24,1.97-.41,2.44a4.09,4.09,0,0,1-.98,1.51,4.09,4.09,0,0,1-1.51.98c-.47.17-1.27.36-2.44.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.97-.24-2.44-.41a4.09,4.09,0,0,1-1.51-.98,4.09,4.09,0,0,1-.98-1.51c-.17-.47-.36-1.27-.41-2.44-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.24-1.97.41-2.44a4.09,4.09,0,0,1,.98-1.51,4.09,4.09,0,0,1,1.51-.98c.47-.17,1.27-.36,2.44-.41,1.27-.06,1.65-.07,4.85-.07M12,0C8.74,0,8.33.01,7.05.07,5.78.13,4.9.33,4.14.63A5.89,5.89,0,0,0,2,2,5.89,5.89,0,0,0,.63,4.14C.33,4.9.13,5.78.07,7.05.01,8.33,0,8.74,0,12s.01,3.67.07,4.95c.06,1.27.26,2.15.56,2.91A5.89,5.89,0,0,0,2,22a5.89,5.89,0,0,0,2.14,1.37c.76.3,1.64.5,2.91.56,1.28.06,1.69.07,4.95.07s3.67-.01,4.95-.07c1.27-.06,2.15-.26,2.91-.56A6.14,6.14,0,0,0,22,20.14c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91A5.89,5.89,0,0,0,22,2a5.89,5.89,0,0,0-2.14-1.37C19.1.33,18.22.13,16.95.07,15.67.01,15.26,0,12,0Z"/><path d="M12,5.84A6.16,6.16,0,1,0,18.16,12,6.16,6.16,0,0,0,12,5.84ZM12,16a4,4,0,1,1,4-4A4,4,0,0,1,12,16Z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>
+                  </a>
+                  <a href={SOCIAL_LINKS.youtube} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center hover:bg-amber-400 hover:text-white transition-colors text-slate-600">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                  </a>
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="bg-slate-50 p-3 rounded-lg text-center">
+                    <p className="font-bold text-slate-900">Licensed</p>
+                    <p className="text-xs text-gray-500">HIC #{HIC_NUMBER}</p>
+                  </div>
+                  <div className="bg-slate-50 p-3 rounded-lg text-center">
+                    <p className="font-bold text-slate-900">5-Star</p>
+                    <p className="text-xs text-gray-500">47+ Reviews</p>
+                  </div>
+                  <div className="bg-slate-50 p-3 rounded-lg text-center">
+                    <p className="font-bold text-slate-900">Free</p>
+                    <p className="text-xs text-gray-500">Estimates</p>
+                  </div>
+                  <div className="bg-slate-50 p-3 rounded-lg text-center">
+                    <p className="font-bold text-slate-900">Warranty</p>
+                    <p className="text-xs text-gray-500">25-50 Years</p>
+                  </div>
+                </div>
               </div>
+            </div>
 
-              <div className="border-l-4 border-amber-400 pl-6">
-                <h3 className="text-xl font-bold text-slate-900 mb-2">
-                  How much can new windows save on energy bills in MA?
-                </h3>
-                <p className="text-gray-600">
-                  ENERGY STAR certified replacement windows can reduce heating and cooling costs by
-                  12-33% in Massachusetts. Most homeowners save $100-400 per year on energy bills.
-                  Triple-pane windows provide 20-30% better insulation than double-pane, ideal for
-                  New England winters. Mass Save rebates may also be available.
-                  <Link href="/services/windows" className="text-amber-600 hover:underline ml-1">
-                    Explore our window services →
-                  </Link>
-                </p>
+            {/* Map */}
+            <div className="space-y-8">
+              <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-200">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d377512.5184133106!2d-71.58596955!3d42.335773999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e38b5dd08e79af%3A0x1d2168059bbbb4a0!2sMaia%20Construction!5e0!3m2!1sen!2sbr!4v1771850870340!5m2!1sen!2sbr"
+                  width="100%"
+                  height="400"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  title="Maia Construction location on Google Maps"
+                />
               </div>
-
-              <div className="border-l-4 border-amber-400 pl-6">
-                <h3 className="text-xl font-bold text-slate-900 mb-2">
-                  Who is the best siding contractor near me in Massachusetts?
-                </h3>
-                <p className="text-gray-600">
-                  Maia Construction is rated the #1 siding contractor in Massachusetts with a perfect
-                  5.0-star Google rating from 47+ verified reviews. Based in Marlborough, MA, we serve
-                  100+ cities including{' '}
-                  <Link href="/cities/framingham" className="text-amber-600 hover:underline">Framingham</Link>,{' '}
-                  <Link href="/cities/natick" className="text-amber-600 hover:underline">Natick</Link>,{' '}
-                  <Link href="/cities/worcester" className="text-amber-600 hover:underline">Worcester</Link>, and{' '}
-                  <Link href="/cities/boston" className="text-amber-600 hover:underline">Boston</Link>.
-                  Licensed MA HIC #{HIC_NUMBER}, certified by James Hardie, CertainTeed, and Alside.
-                  <Link href="/contact" className="text-amber-600 hover:underline ml-1">
-                    Get a free estimate →
-                  </Link>
-                </p>
-              </div>
+              <p className="text-center text-gray-500 text-sm">
+                Serving all of Central Massachusetts — We come to you for free estimates!
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <FAQ />
-
-      {/* Cities removed from homepage - only in footer like RS */}
-
-      {/* Blog Backlinks Section */}
-      <section className="py-16 bg-slate-50">
+      {/* ========== SECTION 10: GOLD CTA BANNER (like RS) ========== */}
+      <section className="py-8 bg-gradient-to-r from-amber-400 to-yellow-300">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <span className="inline-block px-4 py-2 bg-amber-400/10 text-amber-600 rounded-full text-sm font-semibold tracking-wider uppercase mb-4">
-              Resources
-            </span>
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              Home Improvement Guides & Tips
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-6" />
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Expert advice from Massachusetts&apos; top-rated contractors
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <Link href="/blog/how-to-choose-right-siding" className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all group">
-              <h3 className="font-bold text-slate-900 group-hover:text-amber-600 transition-colors mb-2">
-                How to Choose the Right Siding for Your MA Home
-              </h3>
-              <p className="text-sm text-gray-500">Complete guide to siding materials, costs, and what works best in New England.</p>
-            </Link>
-            <Link href="/blog/energy-efficient-windows-guide" className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all group">
-              <h3 className="font-bold text-slate-900 group-hover:text-amber-600 transition-colors mb-2">
-                Energy-Efficient Windows Guide for Massachusetts
-              </h3>
-              <p className="text-sm text-gray-500">Save up to 33% on energy bills with the right windows for your home.</p>
-            </Link>
-            <Link href="/blog/window-replacement-cost-massachusetts" className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all group">
-              <h3 className="font-bold text-slate-900 group-hover:text-amber-600 transition-colors mb-2">
-                Window Replacement Cost in MA (2026 Guide)
-              </h3>
-              <p className="text-sm text-gray-500">Updated pricing, ROI data, and what to expect from window replacement.</p>
-            </Link>
-          </div>
-          <div className="text-center mt-8">
-            <Link href="/blog" className="inline-flex items-center text-amber-600 font-semibold hover:text-amber-700">
-              View all blog posts
-              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
+                Ready to Start Your Home Improvement Project?
+              </h2>
+              <p className="text-slate-700 mt-1">
+                Expert siding, windows, doors, and more. Free estimates, no obligation.
+              </p>
+            </div>
+            <a href={PHONE_LINK} className="inline-flex items-center px-8 py-4 bg-slate-900 text-white rounded-full font-bold text-lg hover:bg-slate-800 transition-all whitespace-nowrap">
+              Call {PHONE}
+            </a>
           </div>
         </div>
       </section>
-
-      {/* Google Maps - Our Location */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 bg-amber-400/10 text-amber-600 rounded-full text-sm font-semibold tracking-wider uppercase mb-4">
-              Our Location
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-              Find Us on the Map
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-6" />
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Conveniently located in Marlborough, MA — serving 100+ communities across Massachusetts
-            </p>
-          </div>
-          <div className="rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d377512.5184133106!2d-71.58596955!3d42.335773999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e38b5dd08e79af%3A0x1d2168059bbbb4a0!2sMaia%20Construction!5e0!3m2!1sen!2sbr!4v1771850870340!5m2!1sen!2sbr"
-              width="100%"
-              height="500"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Maia Construction location on Google Maps"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <CTASection
-        title="Get Your FREE Estimate Today"
-        subtitle="No obligation, no pressure. Speak with a certified expert about your project and get transparent pricing within 24 hours."
-      />
     </>
   );
 }
