@@ -1,12 +1,12 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { Hero, ServicesSection, Testimonials, CTASection, WhyChooseUs } from '@/components/sections';
+import { HeroWithForm, ServicesSection, Testimonials, CTASection, WhyChooseUs } from '@/components/sections';
 import { ContactForm } from '@/components/forms';
 import { JsonLd, Breadcrumbs } from '@/components/seo';
 import { cities, getCityBySlug, getNearbyCities } from '@/lib/cities';
 import { services } from '@/lib/services';
-import { SITE_NAME, PHONE, LOGO_URL } from '@/lib/constants';
+import { SITE_NAME, PHONE, LOGO_URL, REAL_PHOTOS, HIC_NUMBER } from '@/lib/constants';
 
 interface CityPageProps {
   params: Promise<{ slug: string }>;
@@ -125,11 +125,11 @@ export default async function CityPage({ params }: CityPageProps) {
       <JsonLd data={localBusinessSchema} />
       <JsonLd data={faqSchema} />
 
-      <Hero
-        title={`Professional Construction Services in ${city.name}, Massachusetts`}
+      <HeroWithForm
+        title={<>Professional <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 bg-clip-text text-transparent">Construction Services</span> in {city.name}, MA</>}
         subtitle={`Expert siding, door & windows installation just ${city.distance} miles from our Marlborough office. Serving ${city.zip} and surrounding areas in ${city.county} County.`}
-        badge={`Serving ${city.name}, ${city.county} County`}
-        size="inner"
+        badge={`${city.name}, MA • 5.0 Stars • Licensed HIC #${HIC_NUMBER}`}
+        backgroundImage={REAL_PHOTOS[Math.abs(city.slug.length + 3) % REAL_PHOTOS.length]}
       />
 
       {/* Breadcrumbs */}
