@@ -2,8 +2,18 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Hero, Testimonials, CTASection, WhyChooseUs } from '@/components/sections';
-import { ContactForm } from '@/components/forms';
+import { HeroWithForm, Testimonials, CTASection, WhyChooseUs, ServicesSection, ReviewsHighlight } from '@/components/sections';
+import dynamic from 'next/dynamic';
+
+const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'), {
+  loading: () => <div className="py-24 bg-slate-900" />,
+});
+const VideoGallery = dynamic(() => import('@/components/sections/VideoGallery'), {
+  loading: () => <div className="py-24 bg-white" />,
+});
+const FAQ = dynamic(() => import('@/components/sections/FAQ'), {
+  loading: () => <div className="py-24 bg-white" />,
+});
 import { JsonLd, Breadcrumbs } from '@/components/seo';
 import { services, getServiceBySlug } from '@/lib/services';
 import { cities, getCityBySlug, getNearbyCities } from '@/lib/cities';
@@ -239,12 +249,18 @@ export default async function MACityServicePage({ params }: MACityServicePagePro
       <JsonLd data={howToSchema} />
       <JsonLd data={faqSchema} />
 
-      <Hero
-        title={`${service.name} in ${city.name}, MA`}
-        subtitle={`Professional ${service.name.toLowerCase()} installation in ${city.name}. ${city.distance} miles from our office. Serving ${city.zip} and all of ${city.county} County.`}
-        badge={`${service.icon} ${city.name}, MA • 5.0★ • Licensed`}
+      <HeroWithForm
+        title={
+          <>
+            Expert {service.name} in{' '}
+            <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 bg-clip-text text-transparent">
+              {city.name}, Massachusetts
+            </span>
+          </>
+        }
+        subtitle={`Professional ${service.name.toLowerCase()} installation in ${city.name}. ${city.distance} miles from our office. Serving ${city.zip} and all of ${city.county} County. Licensed HIC #${HIC_NUMBER}. Call ${PHONE} for FREE estimate.`}
+        badge={`${service.icon} ${city.name}, MA • 5.0★ Rated • Licensed & Insured`}
         backgroundImage={service.image}
-        size="inner"
       />
 
       {/* Breadcrumbs */}
@@ -278,12 +294,11 @@ export default async function MACityServicePage({ params }: MACityServicePagePro
         </div>
       </section>
 
-      {/* Main Content - 2/3 + 1/3 Sidebar like RS */}
+      {/* Main Content */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-3 gap-12">
-            {/* Main Content 2/3 */}
-            <div className="lg:col-span-2">
+          <div className="max-w-5xl mx-auto">
+            <div>
               <h2 className="text-4xl font-bold text-slate-900 mb-6">
                 Professional {service.name} in {city.name}, MA
               </h2>
@@ -468,58 +483,30 @@ export default async function MACityServicePage({ params }: MACityServicePagePro
                 </div>
               </div>
             </div>
-
-            {/* Sidebar 1/3 */}
-            <div className="lg:col-span-1">
-              <div className="sticky top-24 space-y-8">
-                <ContactForm service={service.slug} city={city.slug} />
-
-                {/* Quick Info */}
-                <div className="bg-slate-900 rounded-2xl p-6 text-white">
-                  <h3 className="text-xl font-bold mb-4">Quick Facts</h3>
-                  <ul className="space-y-3">
-                    <li className="flex items-center space-x-3">
-                      <svg className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                      </svg>
-                      <span>Distance: {city.distance} miles</span>
-                    </li>
-                    <li className="flex items-center space-x-3">
-                      <svg className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-                      </svg>
-                      <span>County: {city.county}</span>
-                    </li>
-                    <li className="flex items-center space-x-3">
-                      <svg className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                      </svg>
-                      <span>ZIP: {city.zip}</span>
-                    </li>
-                    <li className="flex items-center space-x-3">
-                      <svg className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                      </svg>
-                      <span>Same-day estimates</span>
-                    </li>
-                  </ul>
-
-                  <a
-                    href={PHONE_LINK}
-                    className="mt-6 w-full inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-amber-400 to-yellow-300 text-slate-900 rounded-full font-bold hover:shadow-lg transition-all"
-                  >
-                    <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                    </svg>
-                    Call {PHONE}
-                  </a>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
+
+      {/* Services Section - like homepage */}
+      <ServicesSection
+        title={`Expert Home Exterior Services in ${city.name}`}
+        subtitle={`From vinyl siding to energy-efficient windows — quality craftsmanship for ${city.name} homeowners`}
+      />
+
+      {/* Before & After */}
+      <BeforeAfter
+        title={`Our ${service.name} Transformations`}
+        subtitle="See the difference quality craftsmanship makes"
+      />
+
+      {/* Video Gallery */}
+      <VideoGallery
+        title="Our Projects in Action"
+        subtitle={`Watch our team transform homes in ${city.name} and across Massachusetts`}
+      />
+
+      {/* Reviews */}
+      <ReviewsHighlight />
 
       {/* FAQ Section */}
       <section className="py-24 bg-slate-50">
