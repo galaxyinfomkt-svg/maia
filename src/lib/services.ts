@@ -6,7 +6,7 @@ export const services: Service[] = [
     id: 'siding',
     name: 'Siding',
     slug: 'siding',
-    icon: '🏠',
+    icon: '',
     shortDescription: 'Premium vinyl & fiber cement siding built for harsh New England winters.',
     fullDescription: `Transform your Massachusetts home with premium siding installation from Maia Construction. Our expert team specializes in vinyl siding, James Hardie fiber cement, wood, and engineered wood options — all designed to withstand brutal New England winters, coastal salt air, and humid summers.
 
@@ -37,7 +37,7 @@ Choose from endless color options, wood-grain textures, and architectural styles
     id: 'windows',
     name: 'Windows',
     slug: 'windows',
-    icon: '🪟',
+    icon: '',
     shortDescription: 'ENERGY STAR certified windows that slash heating costs up to 30%.',
     fullDescription: `Stop losing money through drafty windows. Massachusetts homeowners lose up to 30% of their heating and cooling costs through inefficient windows. Maia Construction installs ENERGY STAR certified replacement windows that pay for themselves through energy savings.
 
@@ -68,7 +68,7 @@ Every installation includes proper flashing, insulation, and weatherstripping to
     id: 'doors',
     name: 'Doors',
     slug: 'doors',
-    icon: '🚪',
+    icon: '',
     shortDescription: 'Secure, energy-efficient doors that boost curb appeal and home value.',
     fullDescription: `Your front door makes the first impression — and it's also your home's primary security barrier. Maia Construction installs premium entry doors, storm doors, and patio doors that combine stunning aesthetics with uncompromising security and energy efficiency.
 
@@ -99,7 +99,7 @@ Every door installation includes proper shimming, weatherstripping, and threshol
     id: 'general-contractor',
     name: 'General Contractor',
     slug: 'general-contractor',
-    icon: '🔨',
+    icon: '',
     shortDescription: 'Full-service renovations managed by MA licensed professionals.',
     fullDescription: `From concept to completion, Maia Construction provides comprehensive general contracting services for Massachusetts homeowners. Our MA HIC licensed team manages every aspect of your renovation — permits, subcontractors, inspections, and quality control — so you can focus on your daily life.
 

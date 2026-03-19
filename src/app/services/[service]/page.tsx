@@ -151,7 +151,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
       {/* Hero with Form - Same as Homepage */}
       <HeroWithForm
-        badge={`${service.icon} ${service.name} • MA Licensed HIC #${HIC_NUMBER} • 5-Star Rated`}
+        badge={`${service.name} • MA Licensed HIC #${HIC_NUMBER} • 5-Star Rated`}
         title={
           <>
             Professional{' '}

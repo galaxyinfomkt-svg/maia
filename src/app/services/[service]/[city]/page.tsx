@@ -133,7 +133,7 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
 
       {/* Hero with Form */}
       <HeroWithForm
-        badge={`📍 ${city.name}, MA • ${service.icon} ${service.name} • 5-Star Rated`}
+        badge={`${city.name}, MA • ${service.name} • 5-Star Rated`}
         title={
           <>
             Expert{' '}

@@ -4,8 +4,8 @@ import { SITE_NAME, PHONE, PHONE_LINK, ADDRESS, BUSINESS_HOURS, SOCIAL_LINKS, HI
 import { services } from '@/lib/services';
 import { cities } from '@/lib/cities';
 
-// Only nearby cities for the inline list (like RS uses ~75)
-const footerCities = cities.filter(c => c.distance <= 50);
+// Only closest 75 cities for inline list (like RS)
+const footerCities = cities.filter(c => c.distance <= 30).slice(0, 75);
 
 export default function Footer() {
   return (
@@ -53,9 +53,8 @@ export default function Footer() {
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.slug}>
-                  <Link href={`/services/${service.slug}`} className="text-gray-400 hover:text-white transition-colors text-sm flex items-center justify-center lg:justify-start gap-2">
-                    <span>{service.icon}</span>
-                    <span>{service.name}</span>
+                  <Link href={`/services/${service.slug}`} className="text-gray-400 hover:text-white transition-colors text-sm">
+                    {service.name}
                   </Link>
                 </li>
               ))}
