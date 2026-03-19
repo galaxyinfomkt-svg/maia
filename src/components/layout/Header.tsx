@@ -26,8 +26,8 @@ export default function Header() {
         className={cn(
           'sticky top-0 left-0 right-0 z-50 transition-all duration-300',
           isScrolled
-            ? 'bg-slate-900 shadow-lg py-2'
-            : 'bg-slate-900 py-3'
+            ? 'bg-white shadow-lg py-2'
+            : 'bg-white py-3'
         )}
       >
         <div className="container mx-auto px-4">
@@ -40,7 +40,7 @@ export default function Header() {
                   alt={`${SITE_NAME} logo - Licensed siding, windows and doors contractor in Marlborough Massachusetts - HIC #204634 - serving 100+ MA cities`}
                   fill
                   sizes="(max-width: 640px) 112px, (max-width: 1024px) 144px, 160px"
-                  className="object-contain brightness-0 invert"
+                  className="object-contain"
                   priority
                 />
               </div>
@@ -48,7 +48,7 @@ export default function Header() {
 
             {/* Desktop Navigation - centered */}
             <div className="hidden lg:block">
-              <Navigation variant="dark" />
+              <Navigation variant="light" />
             </div>
 
             {/* Desktop CTA */}
@@ -66,7 +66,7 @@ export default function Header() {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden p-2 text-white hover:text-amber-400 transition-colors"
+              className="lg:hidden p-2 text-slate-700 hover:text-amber-500 transition-colors"
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open menu"
             >
