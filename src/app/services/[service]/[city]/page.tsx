@@ -7,7 +7,7 @@ import { JsonLd, Breadcrumbs } from '@/components/seo';
 import { services, getServiceBySlug } from '@/lib/services';
 import { cities, getCityBySlug, getNearbyCities } from '@/lib/cities';
 import { SITE_NAME, PHONE, SITE_URL, PHONE_LINK, HIC_NUMBER, REAL_PHOTOS } from '@/lib/constants';
-import { getServiceContent, getUniqueFAQs, getUniqueMetaDescription, getUniqueTitle, getCityProfile } from '@/lib/content-engine';
+import { getServiceContent, getUniqueFAQs, getUniqueMetaDescription, getUniqueTitle, getCityProfile, getRichParagraphs, getServiceChecklist } from '@/lib/content-engine';
 
 const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'), {
   loading: () => <div className="py-24 bg-slate-900" />,
@@ -66,6 +66,8 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
   const content = getServiceContent(serviceSlug, city);
   const faqs = getUniqueFAQs(serviceSlug, city);
   const profile = getCityProfile(city);
+  const richText = getRichParagraphs(serviceSlug, city);
+  const checklist = getServiceChecklist(serviceSlug);
 
   const localBusinessSchema = {
     '@context': 'https://schema.org',
@@ -160,6 +162,55 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
 
       {/* Why Choose Us */}
       <WhyChooseUs cityName={city.name} />
+
+      {/* Rich Text Content — Expert Intro (like RS) */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-slate-900 mb-6">
+              Expert {service.name} Services in {city.name}, MA
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mb-8" />
+            <div className="prose prose-lg max-w-none text-gray-600 space-y-6">
+              <p>{richText.expertIntro}</p>
+              <p>{richText.trustedContractor}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Comprehensive Services Section */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-slate-900 mb-6">
+              Comprehensive {service.name} Services in {city.name}, MA
+            </h3>
+            <div className="prose prose-lg max-w-none text-gray-600 mb-8">
+              <p>{richText.comprehensiveServices}</p>
+            </div>
+
+            {/* What We Offer Checklist */}
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">What We Offer</h3>
+            <div className="grid md:grid-cols-2 gap-3 mb-8">
+              {checklist.map((item, i) => (
+                <div key={i} className="flex items-center space-x-3 p-3 bg-white rounded-lg border border-slate-200">
+                  <svg className="w-5 h-5 text-amber-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-gray-700 text-sm">{item}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Expert Solutions Box */}
+            <div className="bg-slate-900 p-8 rounded-2xl text-white">
+              <h3 className="text-xl font-bold mb-4 text-amber-400">Why {city.name} Trusts {SITE_NAME}</h3>
+              <p className="text-white/80 leading-relaxed">{richText.whyLocal}</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Unique City+Service Content */}
       <section className="py-16 bg-gradient-to-b from-white to-slate-50">

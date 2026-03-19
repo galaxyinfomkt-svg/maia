@@ -486,3 +486,39 @@ export function getUniqueTitle(serviceSlug: string, city: City): string {
 
   return variants[hash];
 }
+
+// ============================================================
+// RICH PARAGRAPHS — Long-form text like RS Development Group
+// ============================================================
+
+export function getRichParagraphs(serviceSlug: string, city: City): { expertIntro: string; trustedContractor: string; comprehensiveServices: string; whyLocal: string } {
+  const profile = getCityProfile(city);
+  const sn = serviceSlug === 'general-contractor' ? 'general contracting' :
+    serviceSlug === 'windows' ? 'window replacement' :
+    serviceSlug === 'doors' ? 'door installation' : 'siding installation';
+
+  const expertIntro = `${city.name} homeowners trust ${SITE_NAME} for professional ${sn} services. Whether you're updating the exterior of a ${profile.housingTypes[0].toLowerCase()} or renovating a ${profile.housingTypes[1].toLowerCase()}, quality ${sn} is essential for protecting your home, improving energy efficiency, and maintaining property value. Many homes in ${city.name} feature ${profile.avgHomeAge}-old construction that benefits significantly from modern materials and installation techniques. With housing stock dating from ${profile.foundedEra}, ${city.name}'s ${profile.localFlavor} creates unique demands that require a contractor who understands the area intimately.`;
+
+  const trustedContractor = `When it comes to ${sn} in ${city.name}, Massachusetts, choosing a local contractor makes all the difference. ${SITE_NAME} has been serving ${city.name} residents and the greater ${city.county} County area since 2015, building a reputation for exceptional craftsmanship, honest pricing, and reliable service. We understand the specific challenges that ${city.name} homeowners face — from ${profile.commonIssues[0]} to ${profile.commonIssues[1]}. Our team of skilled professionals brings over a decade of combined experience to every ${sn} project in ${city.name}. We don't cut corners, we don't use subcontractors, and we don't disappear after the job is done. Every project is managed by our team from start to finish, ensuring consistent quality and communication throughout.`;
+
+  const comprehensiveServices = `Our ${sn} services in ${city.name} are designed to address the specific needs of ${city.county} County homes. Massachusetts weather is demanding — temperatures swing from below zero in January to 95 degrees in July, with ice storms, nor'easters, and humidity in between. That's why we use only premium materials rated for the New England climate zone. Every installation includes proper moisture barriers, insulation integration, and weatherproofing details that protect your ${city.name} home for decades. We source materials from trusted manufacturers and back every project with comprehensive warranties. For ${city.name} homeowners, this means peace of mind knowing your investment is protected against whatever Massachusetts weather throws at it.`;
+
+  const whyLocal = `Being based in Marlborough, just ${city.distance} miles from ${city.name}, means we can respond quickly to consultations, start projects promptly, and be available for any follow-up needs. We've completed projects throughout ${city.name}'s neighborhoods including ${profile.neighborhoods.slice(0, 3).join(', ')}, and we understand the architectural styles, building codes, and homeowner expectations in ${city.county} County. Our 5.0-star Google rating from 47+ verified reviews reflects our commitment to every ${city.name} homeowner we serve. Licensed under MA HIC #${HIC_NUMBER}, fully insured, and certified by leading manufacturers — we're the contractor ${city.name} trusts.`;
+
+  return { expertIntro, trustedContractor, comprehensiveServices, whyLocal };
+}
+
+export function getServiceChecklist(serviceSlug: string): string[] {
+  switch (serviceSlug) {
+    case 'siding':
+      return ['Vinyl siding installation (CertainTeed, Alside)', 'James Hardie fiber cement siding', 'Insulated siding for energy savings', 'Wood and engineered wood options', 'Complete tear-off and replacement', 'Trim, soffit, and fascia work', 'Housewrap and moisture barrier', 'Custom color matching'];
+    case 'windows':
+      return ['Double-pane ENERGY STAR windows', 'Triple-pane for maximum insulation', 'Bay, bow, and picture windows', 'Casement and awning styles', 'Basement egress windows', 'Custom sizes for older homes', 'Low-E glass with argon fill', 'Full-frame and insert replacements'];
+    case 'doors':
+      return ['Fiberglass entry doors (Therma-Tru, ProVia)', 'Steel security entry doors', 'Sliding patio doors', 'French doors', 'Storm doors with screens', 'Smart lock installation', 'Sidelight and transom options', 'ADA-compliant threshold options'];
+    case 'general-contractor':
+      return ['Complete exterior renovations', 'Siding, window, and door packages', 'Structural repairs and modifications', 'Permit management and inspections', 'Project coordination and scheduling', 'Interior remodeling projects', 'Deck and porch construction', 'Insurance claim assistance'];
+    default:
+      return ['Professional installation', 'Premium materials', 'Full project management', 'Code compliance', 'Warranty coverage', 'Free estimates', 'Licensed and insured', 'Satisfaction guaranteed'];
+  }
+}
