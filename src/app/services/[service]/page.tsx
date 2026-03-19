@@ -1,96 +1,89 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import { Hero, Testimonials, CTASection } from '@/components/sections';
-import { ContactForm } from '@/components/forms';
+import { HeroWithForm, ServicesSection, CTASection, WhyChooseUs, ReviewsHighlight } from '@/components/sections';
 import { JsonLd } from '@/components/seo';
 import { services, getServiceBySlug } from '@/lib/services';
-import { cities, getCitiesByCounty } from '@/lib/cities';
-import { getPostsByTag } from '@/lib/blog';
-import { SITE_NAME, PHONE, IMAGES, HIC_NUMBER } from '@/lib/constants';
+import { cities } from '@/lib/cities';
+import { SITE_NAME, PHONE, SITE_URL, PHONE_LINK, HIC_NUMBER } from '@/lib/constants';
+
+const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'), {
+  loading: () => <div className="py-24 bg-slate-900" />,
+});
+const VideoGallery = dynamic(() => import('@/components/sections/VideoGallery'), {
+  loading: () => <div className="py-24 bg-white" />,
+});
+const FAQ = dynamic(() => import('@/components/sections/FAQ'), {
+  loading: () => <div className="py-24 bg-white" />,
+});
 
 interface ServicePageProps {
   params: Promise<{ service: string }>;
 }
 
 export async function generateStaticParams() {
-  return services.map((service) => ({
-    service: service.slug,
-  }));
+  return services.map((service) => ({ service: service.slug }));
 }
 
-// SEO metadata by service type
 const serviceMetadata: Record<string, { title: string; description: string; keywords: string[] }> = {
   siding: {
-    title: '#1 Siding Contractor MA (2026) | 500+ Homes | 25-50yr Warranty',
-    description: `Top-rated siding contractor in Massachusetts ★5.0. Vinyl & James Hardie fiber cement. 500+ homes, 25-50yr warranties. Licensed HIC #${HIC_NUMBER}. Call ${PHONE} — FREE estimate!`,
-    keywords: [
-      'siding installation Massachusetts',
-      'vinyl siding contractor MA',
-      'James Hardie siding installer',
-      'fiber cement siding Boston',
-      'siding replacement Worcester',
-      'best siding company Massachusetts',
-      'insulated siding installation MA',
-      'siding contractor near me',
-      'siding cost Massachusetts',
-    ],
+    title: `Professional Siding Services Massachusetts | #1 Rated Siding Contractor | ${SITE_NAME}`,
+    description: `#1 siding contractor in Massachusetts ★5.0. Vinyl & James Hardie fiber cement. 500+ homes, 25-50yr warranties. Licensed HIC #${HIC_NUMBER}. Call ${PHONE} — FREE estimate!`,
+    keywords: ['siding installation Massachusetts', 'vinyl siding contractor MA', 'James Hardie siding installer', 'siding contractor near me'],
   },
   windows: {
-    title: 'Window Replacement MA (2026) | ENERGY STAR | Save 30% on Bills',
-    description: `ENERGY STAR window contractor in MA ★5.0. Double & triple-pane windows — cut energy bills by 30%. 500+ installs, lifetime warranty. Licensed HIC #${HIC_NUMBER}. Call ${PHONE} — FREE estimate!`,
-    keywords: [
-      'window replacement Massachusetts',
-      'energy efficient windows MA',
-      'window installation Boston',
-      'replacement windows Worcester',
-      'double pane windows Massachusetts',
-      'window contractor near me',
-      'ENERGY STAR windows MA',
-      'best window company Massachusetts',
-      'triple pane windows MA',
-    ],
+    title: `Professional Windows Services Massachusetts | #1 Rated Window Contractor | ${SITE_NAME}`,
+    description: `ENERGY STAR window contractor in MA ★5.0. Double & triple-pane windows — cut energy bills by 30%. Licensed HIC #${HIC_NUMBER}. Call ${PHONE} — FREE estimate!`,
+    keywords: ['window replacement Massachusetts', 'energy efficient windows MA', 'window installation Boston', 'ENERGY STAR windows MA'],
   },
   doors: {
-    title: 'Door Installation MA (2026) | Entry, Storm & Patio | 90%+ ROI',
-    description: `Premium door contractor in MA ★5.0. Fiberglass, steel & wood entry doors. Storm & patio doors — 90%+ ROI at resale. Licensed HIC #${HIC_NUMBER}. Call ${PHONE} — FREE estimate!`,
-    keywords: [
-      'door installation Massachusetts',
-      'entry door replacement MA',
-      'front door installation Boston',
-      'storm door installation Worcester',
-      'patio door replacement MA',
-      'door contractor near me',
-      'fiberglass door installer MA',
-      'best door company Massachusetts',
-    ],
+    title: `Professional Door Installation Massachusetts | #1 Rated Door Contractor | ${SITE_NAME}`,
+    description: `Premium door contractor in MA ★5.0. Fiberglass, steel & wood entry doors. Storm & patio doors — 90%+ ROI. Licensed HIC #${HIC_NUMBER}. Call ${PHONE} — FREE estimate!`,
+    keywords: ['door installation Massachusetts', 'entry door replacement MA', 'storm door installation', 'door contractor near me'],
   },
   'general-contractor': {
-    title: 'Licensed General Contractor MA (2026) | HIC #204634 | 500+ Projects',
-    description: `MA licensed general contractor ★5.0. Exterior renovations, remodeling & additions. 500+ projects, 5-year workmanship warranty. HIC #${HIC_NUMBER}. Call ${PHONE} — FREE estimate!`,
-    keywords: [
-      'general contractor Massachusetts',
-      'home renovation contractor MA',
-      'licensed contractor Boston',
-      'home remodeling Worcester',
-      'exterior renovation MA',
-      'contractor near me Massachusetts',
-      'home improvement contractor MA',
-      'best general contractor MA',
-    ],
+    title: `Licensed General Contractor Massachusetts | #1 Rated Contractor | ${SITE_NAME}`,
+    description: `MA licensed general contractor ★5.0. Exterior renovations, remodeling & additions. 500+ projects. HIC #${HIC_NUMBER}. Call ${PHONE} — FREE estimate!`,
+    keywords: ['general contractor Massachusetts', 'home renovation contractor MA', 'licensed contractor Boston'],
   },
+};
+
+const serviceFAQs: Record<string, { question: string; answer: string }[]> = {
+  siding: [
+    { question: 'How long does vinyl siding last in Massachusetts?', answer: 'Quality vinyl siding typically lasts 30-50 years in Massachusetts when properly installed. James Hardie fiber cement siding can last 50+ years. We use premium materials designed to withstand New England\'s harsh winters, humid summers, and coastal salt air.' },
+    { question: 'What type of siding is best for New England weather?', answer: 'For Massachusetts homes, we recommend insulated vinyl siding or James Hardie fiber cement. Both withstand temperature extremes (-20°F to 100°F), resist moisture damage, and won\'t crack or warp. Insulated siding also provides up to 20% energy savings.' },
+    { question: 'How much does new siding cost in Massachusetts?', answer: 'Siding costs vary by material: vinyl runs $6-12 per sq ft installed, while premium James Hardie fiber cement costs $9-15 per sq ft. A typical 2,000 sq ft home ranges from $12,000-30,000. We provide free, detailed written estimates with no hidden fees.' },
+    { question: 'Can you install siding over existing siding?', answer: 'In some cases, yes. However, we typically recommend full tear-off to inspect sheathing for moisture damage and ensure proper moisture barrier installation. This approach provides better long-term results and maintains manufacturer warranties.' },
+  ],
+  windows: [
+    { question: 'How much can I save on energy bills with new windows?', answer: 'ENERGY STAR certified windows can reduce heating and cooling costs by 12-33%. Most Massachusetts homeowners save $100-400 annually. Our double and triple-pane windows with Low-E coatings provide maximum insulation for New England winters.' },
+    { question: 'What\'s the difference between double and triple-pane windows?', answer: 'Double-pane windows have two glass layers with insulating argon gas between them. Triple-pane adds a third layer for 20-30% better insulation. Triple-pane costs about 10-15% more but offers superior energy efficiency and noise reduction.' },
+    { question: 'How long does window replacement take?', answer: 'Most window replacements take 1-3 days depending on the number of windows. A typical home with 10-15 windows takes 2 days. We work efficiently while ensuring proper installation, flashing, and weatherstripping.' },
+    { question: 'Are your windows ENERGY STAR certified?', answer: 'Yes! All our windows are ENERGY STAR certified for the Northern climate zone, meeting strict efficiency requirements for Massachusetts. Many qualify for Mass Save rebates and federal energy tax credits.' },
+  ],
+  doors: [
+    { question: 'What\'s the best entry door material for Massachusetts?', answer: 'For Massachusetts homes, we recommend fiberglass entry doors. They won\'t crack, warp, or rot like wood, provide excellent insulation (R-value up to 7.0), and resist New England\'s temperature swings. Steel doors offer maximum security but may dent.' },
+    { question: 'How much does a new entry door cost?', answer: 'Entry door costs range from $1,500-5,000+ installed depending on material and features. Basic fiberglass starts around $1,500, while premium Therma-Tru or ProVia doors with sidelights can reach $4,000-6,000. All our doors include professional installation.' },
+    { question: 'Do you install storm doors?', answer: 'Yes! Storm doors add an extra layer of protection and can reduce energy loss by 50%. We install retractable screen storm doors, full-view glass doors, and traditional models. Storm doors typically cost $400-1,200 installed.' },
+    { question: 'Can you install smart locks with new doors?', answer: 'Absolutely! We install smart locks, keypad locks, and multi-point locking systems with all door installations. Smart home integration options are available with Schlage, Yale, and August systems.' },
+  ],
+  'general-contractor': [
+    { question: 'What types of projects do you handle?', answer: 'We specialize in exterior renovations including complete siding replacements, window and door packages, deck construction, and structural repairs. We also handle interior projects like kitchen remodels, bathroom renovations, and basement finishing.' },
+    { question: 'Are you licensed for general contracting in Massachusetts?', answer: `Yes! Maia Construction holds Massachusetts Home Improvement Contractor license #${HIC_NUMBER}. We're fully licensed, bonded, and insured for all residential construction work throughout the state.` },
+    { question: 'How do you handle permits and inspections?', answer: 'We manage all permit applications and inspections as part of our service. Our team coordinates with local building departments, schedules required inspections, and ensures all work meets Massachusetts building codes.' },
+    { question: 'What warranty do you offer on general contracting work?', answer: 'All our work includes a 5-year workmanship warranty plus manufacturer warranties on materials (25-50 years). We use fixed-price contracts with detailed project timelines.' },
+  ],
 };
 
 export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
   const { service: serviceSlug } = await params;
   const service = getServiceBySlug(serviceSlug);
-
   if (!service) return {};
 
   const meta = serviceMetadata[serviceSlug] || {
-    title: `${service.name} Services Massachusetts`,
-    description: `Professional ${service.name.toLowerCase()} services in Massachusetts. ${service.shortDescription} Call ${PHONE} for a free estimate.`,
+    title: `${service.name} Services Massachusetts | ${SITE_NAME}`,
+    description: `Professional ${service.name.toLowerCase()} services in Massachusetts. Call ${PHONE} for a free estimate.`,
     keywords: [`${service.name.toLowerCase()} Massachusetts`],
   };
 
@@ -98,148 +91,18 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
     title: meta.title,
     description: meta.description,
     keywords: meta.keywords,
-    openGraph: {
-      title: meta.title,
-      description: meta.description,
-      type: 'website',
-    },
-    alternates: {
-      canonical: `https://maiaconstruction.com/services/${serviceSlug}`,
-    },
+    openGraph: { title: meta.title, description: meta.description, type: 'website' },
+    alternates: { canonical: `${SITE_URL}/services/${serviceSlug}` },
   };
-}
-
-// Service-specific FAQs
-const serviceFAQs: Record<string, { question: string; answer: string }[]> = {
-  siding: [
-    {
-      question: 'How long does vinyl siding last in Massachusetts?',
-      answer: 'Quality vinyl siding typically lasts 30-50 years in Massachusetts when properly installed. James Hardie fiber cement siding can last 50+ years. We use premium materials designed to withstand New England\'s harsh winters, humid summers, and coastal salt air.',
-    },
-    {
-      question: 'What type of siding is best for New England weather?',
-      answer: 'For Massachusetts homes, we recommend insulated vinyl siding or James Hardie fiber cement. Both withstand temperature extremes (-20°F to 100°F), resist moisture damage, and won\'t crack or warp. Insulated siding also provides up to 20% energy savings.',
-    },
-    {
-      question: 'How much does new siding cost in Massachusetts?',
-      answer: 'Siding costs vary by material: vinyl runs $6-12 per sq ft installed, while premium James Hardie fiber cement costs $9-15 per sq ft. A typical 2,000 sq ft home ranges from $12,000-30,000. We provide free, detailed written estimates with no hidden fees.',
-    },
-    {
-      question: 'Can you install siding over existing siding?',
-      answer: 'In some cases, yes. However, we typically recommend full tear-off to inspect sheathing for moisture damage and ensure proper moisture barrier installation. This approach provides better long-term results and maintains manufacturer warranties.',
-    },
-  ],
-  windows: [
-    {
-      question: 'How much can I save on energy bills with new windows?',
-      answer: 'ENERGY STAR certified windows can reduce heating and cooling costs by 12-33%. Most Massachusetts homeowners save $100-400 annually. Our double and triple-pane windows with Low-E coatings provide maximum insulation for New England winters.',
-    },
-    {
-      question: 'What\'s the difference between double and triple-pane windows?',
-      answer: 'Double-pane windows have two glass layers with insulating argon gas between them. Triple-pane adds a third layer for 20-30% better insulation. Triple-pane costs about 10-15% more but offers superior energy efficiency and noise reduction — ideal for Massachusetts winters.',
-    },
-    {
-      question: 'How long does window replacement take?',
-      answer: 'Most window replacements take 1-3 days depending on the number of windows. A typical home with 10-15 windows takes 2 days. We work efficiently while ensuring proper installation, flashing, and weatherstripping.',
-    },
-    {
-      question: 'Are your windows ENERGY STAR certified?',
-      answer: 'Yes! All our windows are ENERGY STAR certified for the Northern climate zone, meeting strict efficiency requirements for Massachusetts. Many of our windows qualify for Mass Save rebates and federal energy tax credits.',
-    },
-  ],
-  doors: [
-    {
-      question: 'What\'s the best entry door material for Massachusetts?',
-      answer: 'For Massachusetts homes, we recommend fiberglass entry doors. They won\'t crack, warp, or rot like wood, provide excellent insulation (R-value up to 7.0), and resist New England\'s temperature swings. Steel doors offer maximum security but may dent.',
-    },
-    {
-      question: 'How much does a new entry door cost?',
-      answer: 'Entry door costs range from $1,500-5,000+ installed depending on material and features. Basic fiberglass starts around $1,500, while premium Therma-Tru or ProVia doors with sidelights can reach $4,000-6,000. All our doors include professional installation.',
-    },
-    {
-      question: 'Do you install storm doors?',
-      answer: 'Yes! Storm doors add an extra layer of protection and can reduce energy loss by 50%. We install retractable screen storm doors, full-view glass doors, and traditional models. Storm doors typically cost $400-1,200 installed.',
-    },
-    {
-      question: 'Can you install smart locks with new doors?',
-      answer: 'Absolutely! We install smart locks, keypad locks, and multi-point locking systems with all door installations. Smart home integration options are available with Schlage, Yale, and August smart lock systems.',
-    },
-  ],
-  'general-contractor': [
-    {
-      question: 'What types of projects do you handle?',
-      answer: 'We specialize in exterior renovations including complete siding replacements, window and door packages, deck construction, and structural repairs. We also handle interior projects like kitchen remodels, bathroom renovations, and basement finishing.',
-    },
-    {
-      question: 'Are you licensed for general contracting in Massachusetts?',
-      answer: `Yes! Maia Construction holds Massachusetts Home Improvement Contractor license #${HIC_NUMBER}. We\'re fully licensed, bonded, and insured for all residential construction work throughout the state.`,
-    },
-    {
-      question: 'How do you handle permits and inspections?',
-      answer: 'We manage all permit applications and inspections as part of our service. Our team coordinates with local building departments, schedules required inspections, and ensures all work meets Massachusetts building codes.',
-    },
-    {
-      question: 'What warranty do you offer on general contracting work?',
-      answer: 'All our work includes a 5-year workmanship warranty plus manufacturer warranties on materials (25-50 years). We use fixed-price contracts with detailed project timelines, so you know exactly what to expect.',
-    },
-  ],
-};
-
-// Get gallery images based on service
-function getServiceGallery(serviceSlug: string): string[] {
-  switch (serviceSlug) {
-    case 'siding':
-      return [
-        '/images/before-after/siding-after-framingham-ma.webp',
-        '/images/before-after/siding-before-framingham-ma.webp',
-        '/images/before-after/exterior-after-worcester-ma.webp',
-        '/images/before-after/exterior-before-worcester-ma.webp',
-      ];
-    case 'windows':
-      return [
-        IMAGES.windows,
-        IMAGES.windows2,
-        IMAGES.windows3,
-        IMAGES.windows4,
-      ];
-    case 'doors':
-      return [
-        IMAGES.doors,
-        IMAGES.doors2,
-        IMAGES.doors3,
-        IMAGES.doors4,
-      ];
-    case 'general-contractor':
-      return [
-        IMAGES.generalContractor,
-        IMAGES.generalContractor2,
-        IMAGES.generalContractor3,
-        IMAGES.generalContractor4,
-      ];
-    default:
-      return [IMAGES.hero, IMAGES.hero, IMAGES.hero, IMAGES.hero];
-  }
 }
 
 export default async function ServicePage({ params }: ServicePageProps) {
   const { service: serviceSlug } = await params;
   const service = getServiceBySlug(serviceSlug);
+  if (!service) notFound();
 
-  if (!service) {
-    notFound();
-  }
-
-  const galleryImages = getServiceGallery(serviceSlug);
-  const counties = ['Middlesex', 'Worcester', 'Norfolk', 'Essex', 'Suffolk'];
-
-  // Get related blog posts
-  const serviceTagMap: Record<string, string> = {
-    siding: 'Siding',
-    windows: 'Windows',
-    doors: 'Doors',
-    'general-contractor': 'General Contractor',
-  };
-  const relatedPosts = getPostsByTag(serviceTagMap[serviceSlug] || '').slice(0, 3);
+  const nearbyCities = cities.slice(0, 6);
+  const faqs = serviceFAQs[serviceSlug] || [];
 
   const serviceSchema = {
     '@context': 'https://schema.org',
@@ -250,338 +113,206 @@ export default async function ServicePage({ params }: ServicePageProps) {
       '@type': 'HomeAndConstructionBusiness',
       name: SITE_NAME,
       telephone: PHONE,
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '5.0',
-        bestRating: '5',
-        worstRating: '1',
-        reviewCount: '47',
-      },
+      aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', bestRating: '5', worstRating: '1', reviewCount: '47' },
     },
-    areaServed: {
-      '@type': 'State',
-      name: 'Massachusetts',
-    },
+    areaServed: { '@type': 'State', name: 'Massachusetts' },
     serviceType: service.name,
   };
 
-  // FAQ Schema for SEO
-  const faqSchema = serviceFAQs[serviceSlug] ? {
+  const faqSchema = faqs.length > 0 ? {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: serviceFAQs[serviceSlug].map((faq) => ({
+    mainEntity: faqs.map((faq) => ({
       '@type': 'Question',
       name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
     })),
   } : null;
+
+  const howToSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: `How to Get ${service.name} in Massachusetts`,
+    description: `Step-by-step process for getting professional ${service.name.toLowerCase()} installed by ${SITE_NAME}.`,
+    estimatedCost: { '@type': 'MonetaryAmount', currency: 'USD', value: 'Free Estimate' },
+    step: [
+      { '@type': 'HowToStep', position: 1, name: 'Free Consultation', text: 'Contact us for a free in-home consultation and detailed estimate.' },
+      { '@type': 'HowToStep', position: 2, name: 'Material Selection', text: 'Choose from premium materials that fit your style and budget.' },
+      { '@type': 'HowToStep', position: 3, name: 'Professional Installation', text: 'Our certified team completes the installation with precision.' },
+      { '@type': 'HowToStep', position: 4, name: 'Final Inspection', text: 'We walk through the completed project to ensure your satisfaction.' },
+    ],
+  };
 
   return (
     <>
       <JsonLd data={serviceSchema} />
       {faqSchema && <JsonLd data={faqSchema} />}
+      <JsonLd data={howToSchema} />
 
-      <Hero
-        title={`Professional ${service.name} Services`}
-        subtitle={service.shortDescription}
-        badge={`${service.icon} ${service.name}`}
+      {/* Hero with Form - Same as Homepage */}
+      <HeroWithForm
+        badge={`${service.icon} ${service.name} • MA Licensed HIC #${HIC_NUMBER} • 5-Star Rated`}
+        title={
+          <>
+            Professional{' '}
+            <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 bg-clip-text text-transparent">
+              {service.name}
+            </span>{' '}
+            Services in Massachusetts
+          </>
+        }
+        subtitle={`${service.shortDescription} Licensed & insured contractor serving Marlborough and 75+ cities across Massachusetts.`}
         backgroundImage={service.image}
-        size="inner"
       />
 
-      {/* Service Details */}
-      <section className="py-24 bg-white">
+      {/* Why Choose Us */}
+      <WhyChooseUs />
+
+      {/* Service Details + Features */}
+      <section className="py-16 bg-gradient-to-b from-white to-slate-50">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Content */}
-            <div>
-              <h2 className="text-4xl font-bold text-slate-900 mb-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
+              <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Expert {service.name} Installation in Massachusetts
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mb-8" />
+              <p className="text-lg text-gray-700 mb-8">{service.fullDescription}</p>
 
-              <p className="text-lg text-gray-600 mb-8">{service.fullDescription}</p>
-
-              {/* Features */}
-              <div className="mb-8">
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">What We Offer</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {service.features.map((feature, index) => (
-                    <div key={index} className="flex items-start space-x-3">
-                      <svg className="w-6 h-6 text-amber-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span className="text-gray-700">{feature}</span>
-                    </div>
-                  ))}
-                </div>
+              {/* Features Grid */}
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">What We Offer</h3>
+              <div className="grid md:grid-cols-2 gap-4 mb-8">
+                {service.features.map((feature, index) => (
+                  <div key={index} className="flex items-start space-x-3 p-3 bg-slate-50 rounded-xl">
+                    <svg className="w-6 h-6 text-amber-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-700">{feature}</span>
+                  </div>
+                ))}
               </div>
 
               {/* Benefits */}
-              <div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">Benefits</h3>
-                <div className="flex flex-wrap gap-3">
-                  {service.benefits.map((benefit, index) => (
-                    <span
-                      key={index}
-                      className="px-4 py-2 bg-amber-50 border border-amber-200 rounded-full text-amber-700 text-sm font-medium"
-                    >
-                      {benefit}
-                    </span>
-                  ))}
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Benefits</h3>
+              <div className="flex flex-wrap gap-3 mb-8">
+                {service.benefits.map((benefit, index) => (
+                  <span key={index} className="px-4 py-2 bg-amber-50 border border-amber-200 rounded-full text-amber-700 text-sm font-medium">
+                    {benefit}
+                  </span>
+                ))}
+              </div>
+
+              {/* Stats */}
+              <div className="grid md:grid-cols-4 gap-4">
+                <div className="bg-amber-50 p-4 rounded-xl text-center">
+                  <p className="text-3xl font-bold text-amber-600">5.0★</p>
+                  <p className="text-sm text-gray-600">Google Rating</p>
+                </div>
+                <div className="bg-amber-50 p-4 rounded-xl text-center">
+                  <p className="text-3xl font-bold text-amber-600">500+</p>
+                  <p className="text-sm text-gray-600">Projects Done</p>
+                </div>
+                <div className="bg-amber-50 p-4 rounded-xl text-center">
+                  <p className="text-3xl font-bold text-amber-600">10+</p>
+                  <p className="text-sm text-gray-600">Years Experience</p>
+                </div>
+                <div className="bg-amber-50 p-4 rounded-xl text-center">
+                  <p className="text-3xl font-bold text-amber-600">75+</p>
+                  <p className="text-sm text-gray-600">Cities Served</p>
                 </div>
               </div>
-            </div>
-
-            {/* Form */}
-            <div className="lg:sticky lg:top-24">
-              <ContactForm service={service.slug} />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Gallery */}
-      <section className="py-24 bg-slate-50">
+      {/* Our Services Across MA */}
+      <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Our Work</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-6" />
-            <p className="text-xl text-gray-600">Examples of our {service.name.toLowerCase()} projects</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {galleryImages.map((img, index) => (
-              <div key={index} className="relative h-64 rounded-xl overflow-hidden shadow-lg group">
-                <Image
-                  src={img}
-                  alt={`${service.name} project ${index + 1} by Maia Construction in Massachusetts - licensed HIC #204634 contractor serving Marlborough, Framingham, Worcester MA`}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              </div>
+          <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">
+            {service.name} Across Massachusetts
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-8" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            {nearbyCities.map((city) => (
+              <Link
+                key={city.slug}
+                href={`/services/${service.slug}/${city.slug}`}
+                className="group p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all text-center"
+              >
+                <svg className="w-8 h-8 text-amber-500 mx-auto mb-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                </svg>
+                <h3 className="font-bold text-slate-900 group-hover:text-amber-500 transition-colors">
+                  {service.name} in {city.name}
+                </h3>
+                <p className="text-sm text-gray-500 mt-1">{city.distance} miles away</p>
+              </Link>
             ))}
           </div>
-
-          <div className="text-center mt-12">
-            <Link
-              href="/projects"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-amber-400 to-yellow-300 text-slate-900 rounded-full font-bold hover:shadow-xl hover:scale-105 transition-all"
-            >
-              View All Projects
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+          <div className="text-center mt-8">
+            <Link href="/massachusetts" className="inline-flex items-center text-amber-600 font-semibold hover:text-amber-700">
+              View All 75+ Cities →
             </Link>
           </div>
         </div>
       </section>
 
-      <Testimonials />
+      {/* Before & After */}
+      <BeforeAfter
+        title={`${service.name} Transformations`}
+        subtitle={`See the difference quality ${service.name.toLowerCase()} makes - drag to compare before and after`}
+      />
 
-      {/* Related Blog Posts */}
-      {relatedPosts.length > 0 && (
-        <section className="py-24 bg-slate-50">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-slate-900 mb-4">
-                {service.name} Guides & Tips
-              </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-6" />
-              <p className="text-xl text-gray-600">
-                Expert advice to help you make informed decisions
-              </p>
-            </div>
+      {/* Video Gallery */}
+      <VideoGallery
+        title={`${service.name} Projects in Action`}
+        subtitle={`Watch our team install ${service.name.toLowerCase()} across Massachusetts`}
+      />
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {relatedPosts.map((post) => (
-                <Link
-                  key={post.slug}
-                  href={`/blog/${post.slug}`}
-                  className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
-                >
-                  {post.image && (
-                    <div className="relative h-48 overflow-hidden">
-                      <Image
-                        src={post.image}
-                        alt={post.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  )}
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-amber-500 transition-colors line-clamp-2">
-                      {post.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm mt-2 line-clamp-2">
-                      {post.description}
-                    </p>
-                    <p className="text-amber-500 font-semibold text-sm mt-4 flex items-center">
-                      Read More
-                      <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </p>
-                  </div>
-                </Link>
-              ))}
-            </div>
+      {/* Reviews */}
+      <ReviewsHighlight />
 
-            <div className="text-center mt-12">
-              <Link
-                href="/blog"
-                className="inline-flex items-center text-amber-500 font-semibold hover:text-amber-600 transition-colors"
-              >
-                View All Articles
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Service-Specific FAQ Section */}
-      {serviceFAQs[serviceSlug] && (
+      {/* FAQ Section */}
+      {faqs.length > 0 && (
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-slate-900 mb-4">
-                {service.name} FAQs
+                Frequently Asked Questions
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-6" />
               <p className="text-xl text-gray-600">
-                Common questions about {service.name.toLowerCase()} installation in Massachusetts
+                Common questions about {service.name.toLowerCase()} in Massachusetts
               </p>
             </div>
-
             <div className="max-w-4xl mx-auto space-y-4">
-              {serviceFAQs[serviceSlug].map((faq, index) => (
-                <details
-                  key={index}
-                  className="bg-slate-50 rounded-xl overflow-hidden border border-slate-200 group"
-                >
+              {faqs.map((faq, index) => (
+                <details key={index} className="bg-slate-50 rounded-xl overflow-hidden border border-slate-200 group">
                   <summary className="px-6 py-5 cursor-pointer hover:bg-slate-100 transition-colors flex items-center justify-between">
-                    <h3 className="text-lg font-bold text-slate-900 pr-4">
-                      {faq.question}
-                    </h3>
-                    <svg
-                      className="w-5 h-5 text-amber-500 flex-shrink-0 transition-transform group-open:rotate-180"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
+                    <h3 className="text-lg font-bold text-slate-900 pr-4">{faq.question}</h3>
+                    <svg className="w-5 h-5 text-amber-500 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </summary>
-                  <p className="px-6 pb-5 text-gray-600 leading-relaxed">
-                    {faq.answer}
-                  </p>
+                  <p className="px-6 pb-5 text-gray-600 leading-relaxed">{faq.answer}</p>
                 </details>
               ))}
-            </div>
-
-            <div className="text-center mt-12">
-              <p className="text-gray-600 mb-4">Have more questions about {service.name.toLowerCase()}?</p>
-              <a
-                href={`tel:${PHONE.replace(/[^0-9]/g, '')}`}
-                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-amber-400 to-yellow-300 text-slate-900 rounded-full font-bold hover:shadow-lg transition-all"
-              >
-                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                </svg>
-                Call {PHONE} — Free Consultation
-              </a>
             </div>
           </div>
         </section>
       )}
 
-      {/* ALL Cities for this Service - By County */}
-      <section className="py-24 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">
-              {service.name} Services - All {cities.length}+ Cities
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-6" />
-            <p className="text-xl text-gray-600">
-              Professional {service.name.toLowerCase()} installation in every city we serve
-            </p>
-          </div>
+      {/* Other Services */}
+      <ServicesSection
+        title="Our Other Services"
+        subtitle="Complete exterior renovation solutions for your Massachusetts home"
+      />
 
-          {/* Cities by County */}
-          <div className="space-y-12">
-            {counties.map((county) => {
-              const countyCities = getCitiesByCounty(county);
-              if (countyCities.length === 0) return null;
-
-              return (
-                <div key={county}>
-                  <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-2xl font-bold text-slate-900">
-                      {county} County
-                    </h3>
-                    <span className="px-4 py-1 bg-amber-100 text-amber-700 rounded-full text-sm font-semibold">
-                      {countyCities.length} cities
-                    </span>
-                  </div>
-
-                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-                    {countyCities.map((city) => (
-                      <Link
-                        key={city.slug}
-                        href={`/services/${service.slug}/${city.slug}`}
-                        className="group p-3 bg-gradient-to-br from-slate-50 to-white rounded-lg border border-slate-200 hover:border-amber-400 hover:shadow-md transition-all text-center"
-                      >
-                        <div className="flex items-center justify-center space-x-2">
-                          <svg className="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                          </svg>
-                          <span className="font-medium text-slate-900 group-hover:text-amber-500 transition-colors text-sm">
-                            {city.name}
-                          </span>
-                        </div>
-                        <p className="text-xs text-gray-500 mt-1">{city.distance} mi</p>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Stats */}
-          <div className="mt-16 p-8 bg-slate-900 rounded-2xl">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <p className="text-4xl font-bold text-amber-400 mb-2">{cities.length}+</p>
-                <p className="text-white/80">Cities Served</p>
-              </div>
-              <div>
-                <p className="text-4xl font-bold text-amber-400 mb-2">5</p>
-                <p className="text-white/80">Counties Covered</p>
-              </div>
-              <div>
-                <p className="text-4xl font-bold text-amber-400 mb-2">Same Day</p>
-                <p className="text-white/80">Free Estimates</p>
-              </div>
-              <div>
-                <p className="text-4xl font-bold text-amber-400 mb-2">5.0</p>
-                <p className="text-white/80">Star Rating</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <CTASection />
+      {/* CTA */}
+      <CTASection
+        title="Get Your FREE Estimate Today"
+        subtitle={`Ready for professional ${service.name.toLowerCase()}? Call now or request a free quote — no obligation.`}
+      />
     </>
   );
 }

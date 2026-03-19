@@ -1,39 +1,19 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import { Hero, Testimonials, CityGrid, CTASection, WhyChooseUs } from '@/components/sections';
-import { ContactForm } from '@/components/forms';
+import { HeroWithForm, CTASection, WhyChooseUs, ReviewsHighlight } from '@/components/sections';
 import { JsonLd, Breadcrumbs } from '@/components/seo';
 import { services, getServiceBySlug } from '@/lib/services';
 import { cities, getCityBySlug, getNearbyCities } from '@/lib/cities';
-import { SITE_NAME, PHONE, ADDRESS, LOGO_URL, IMAGES } from '@/lib/constants';
+import { SITE_NAME, PHONE, SITE_URL, PHONE_LINK, HIC_NUMBER, IMAGES } from '@/lib/constants';
 
-// Get different images based on service type
-function getServiceImages(serviceSlug: string): string[] {
-  switch (serviceSlug) {
-    case 'siding':
-      return [
-        '/images/before-after/siding-after-framingham-ma.webp',
-        '/images/before-after/exterior-after-worcester-ma.webp',
-        '/images/before-after/siding-before-framingham-ma.webp',
-        '/images/before-after/exterior-before-worcester-ma.webp',
-      ];
-    case 'windows':
-      return [IMAGES.windows, IMAGES.windows2, IMAGES.windows3, IMAGES.windows4];
-    case 'doors':
-      return [IMAGES.doors, IMAGES.doors2, IMAGES.doors3, IMAGES.doors4];
-    case 'general-contractor':
-      return [
-        IMAGES.generalContractor,
-        IMAGES.generalContractor2,
-        IMAGES.generalContractor3,
-        IMAGES.generalContractor4,
-      ];
-    default:
-      return [IMAGES.hero, IMAGES.siding, IMAGES.windows, IMAGES.doors];
-  }
-}
+const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'), {
+  loading: () => <div className="py-24 bg-slate-900" />,
+});
+const VideoGallery = dynamic(() => import('@/components/sections/VideoGallery'), {
+  loading: () => <div className="py-24 bg-white" />,
+});
 
 interface ServiceCityPageProps {
   params: Promise<{ service: string; city: string }>;
@@ -41,16 +21,11 @@ interface ServiceCityPageProps {
 
 export async function generateStaticParams() {
   const params: { service: string; city: string }[] = [];
-
   for (const service of services) {
     for (const city of cities) {
-      params.push({
-        service: service.slug,
-        city: city.slug,
-      });
+      params.push({ service: service.slug, city: city.slug });
     }
   }
-
   return params;
 }
 
@@ -58,32 +33,22 @@ export async function generateMetadata({ params }: ServiceCityPageProps): Promis
   const { service: serviceSlug, city: citySlug } = await params;
   const service = getServiceBySlug(serviceSlug);
   const city = getCityBySlug(citySlug);
-
   if (!service || !city) return {};
 
-  const title = `${service.name} in ${city.name}, MA (2026) | 5.0★ Rated | FREE Estimate`;
-  const description = `#1 ${service.name.toLowerCase()} contractor in ${city.name}, Massachusetts ★5.0. 500+ projects in ${city.county} County. Licensed HIC #204634 & insured. Call ${PHONE} — FREE estimate today!`;
+  const title = `${service.name} Contractor ${city.name} MA | Expert ${service.name} | Call Now | ${SITE_NAME}`;
+  const description = `#1 ${service.name.toLowerCase()} contractor in ${city.name}, MA ★5.0. 500+ projects in ${city.county} County. Licensed HIC #${HIC_NUMBER} & insured. FREE estimates. Call ${PHONE}`;
 
   return {
     title,
     description,
     keywords: [
       `${service.name.toLowerCase()} ${city.name}`,
-      `${service.name.toLowerCase()} installation ${city.name} MA`,
-      `${service.name.toLowerCase()} contractor ${city.name}`,
+      `${service.name.toLowerCase()} contractor ${city.name} MA`,
+      `${service.name.toLowerCase()} installation ${city.name}`,
       `best ${service.name.toLowerCase()} ${city.name}`,
-      `${city.zip} ${service.name.toLowerCase()}`,
-      `${service.name.toLowerCase()} company ${city.name} MA`,
     ],
-    openGraph: {
-      title,
-      description,
-      images: [{ url: service.image }],
-    },
-    alternates: {
-      canonical: `https://maiaconstruction.com/services/${service.slug}/${city.slug}`,
-    },
-    // Noindex distant cities to avoid thin content penalty — focus authority on nearby areas
+    openGraph: { title, description, images: [{ url: service.image }] },
+    alternates: { canonical: `${SITE_URL}/services/${service.slug}/${city.slug}` },
     ...(city.distance > 50 ? { robots: { index: false, follow: true } } : {}),
   };
 }
@@ -92,10 +57,7 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
   const { service: serviceSlug, city: citySlug } = await params;
   const service = getServiceBySlug(serviceSlug);
   const city = getCityBySlug(citySlug);
-
-  if (!service || !city) {
-    notFound();
-  }
+  if (!service || !city) notFound();
 
   const nearbyCities = getNearbyCities(city.slug, 6);
 
@@ -103,107 +65,77 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
     '@context': 'https://schema.org',
     '@type': 'HomeAndConstructionBusiness',
     name: `${SITE_NAME} - ${city.name}`,
-    image: LOGO_URL,
     telephone: PHONE,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: city.name,
-      addressRegion: 'MA',
-      postalCode: city.zip,
-      addressCountry: 'US',
-    },
-    areaServed: {
-      '@type': 'City',
-      name: city.name,
-    },
+    address: { '@type': 'PostalAddress', addressLocality: city.name, addressRegion: 'MA', postalCode: city.zip, addressCountry: 'US' },
+    areaServed: { '@type': 'City', name: city.name },
     priceRange: '$$',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5.0',
-      bestRating: '5',
-      worstRating: '1',
-      reviewCount: '47',
-    },
-  };
-
-  const serviceSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: `${service.name} Services in ${city.name}`,
-    description: `Professional ${service.name.toLowerCase()} installation and repair in ${city.name}, Massachusetts.`,
-    provider: {
-      '@type': 'HomeAndConstructionBusiness',
-      name: SITE_NAME,
-      telephone: PHONE,
-    },
-    areaServed: {
-      '@type': 'City',
-      name: city.name,
-    },
-    serviceType: service.name,
+    aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', bestRating: '5', worstRating: '1', reviewCount: '47' },
   };
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://maiaconstruction.com' },
-      { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://maiaconstruction.com/services' },
-      { '@type': 'ListItem', position: 3, name: service.name, item: `https://maiaconstruction.com/services/${service.slug}` },
-      { '@type': 'ListItem', position: 4, name: city.name, item: `https://maiaconstruction.com/services/${service.slug}/${city.slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Massachusetts', item: `${SITE_URL}/massachusetts` },
+      { '@type': 'ListItem', position: 3, name: service.name, item: `${SITE_URL}/services/${service.slug}` },
+      { '@type': 'ListItem', position: 4, name: `${city.name}, MA`, item: `${SITE_URL}/services/${service.slug}/${city.slug}` },
+    ],
+  };
+
+  const faqItems = [
+    { q: `How much does ${service.name.toLowerCase()} cost in ${city.name}?`, a: `${service.name} costs in ${city.name} vary by project size and materials. Vinyl siding runs $6-12/sq ft, windows $300-1,200 each, and doors $1,500-5,000+. Contact us for a free, detailed estimate specific to your ${city.name} home.` },
+    { q: `Do you serve all neighborhoods in ${city.name}?`, a: `Yes! We serve all areas of ${city.name}, ${city.county} County, including ZIP code ${city.zip} and surrounding neighborhoods. We're just ${city.distance} miles from your location.` },
+    { q: `How quickly can you start in ${city.name}?`, a: `We typically provide free estimates within 24-48 hours for ${city.name} residents. Most projects begin within 1-2 weeks of contract signing, depending on season and material availability.` },
+    { q: `Are you licensed to work in ${city.name}, MA?`, a: `Absolutely. ${SITE_NAME} holds Massachusetts HIC #${HIC_NUMBER}. We're fully licensed, bonded, and insured for all residential ${service.name.toLowerCase()} work in ${city.county} County.` },
+    { q: `What warranty do you offer in ${city.name}?`, a: `All ${service.name.toLowerCase()} installations in ${city.name} include a 5-year workmanship warranty plus 25-50 year manufacturer warranties on materials. We stand behind every project.` },
+    { q: `Why choose ${SITE_NAME} for ${service.name.toLowerCase()} in ${city.name}?`, a: `We're rated 5.0 stars on Google with 47+ reviews, have completed 500+ projects, and are ${city.distance} miles from ${city.name}. Licensed HIC #${HIC_NUMBER}, certified installers, free estimates, and transparent pricing.` },
+  ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a },
+    })),
+  };
+
+  const howToSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: `How to Get ${service.name} in ${city.name}, MA`,
+    estimatedCost: { '@type': 'MonetaryAmount', currency: 'USD', value: 'Free Estimate' },
+    step: [
+      { '@type': 'HowToStep', position: 1, name: 'Free Consultation', text: `We visit your ${city.name} home to assess needs and provide a detailed quote.` },
+      { '@type': 'HowToStep', position: 2, name: 'Material Selection', text: 'Choose from premium materials that fit your style and budget.' },
+      { '@type': 'HowToStep', position: 3, name: 'Expert Installation', text: `Our certified team completes the ${service.name.toLowerCase()} installation with precision.` },
+      { '@type': 'HowToStep', position: 4, name: 'Final Walkthrough', text: 'We inspect everything and ensure your complete satisfaction.' },
     ],
   };
 
   return (
     <>
       <JsonLd data={localBusinessSchema} />
-      <JsonLd data={serviceSchema} />
       <JsonLd data={breadcrumbSchema} />
-      <JsonLd data={{
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: [
-          {
-            '@type': 'Question',
-            name: `Do you provide ${service.name.toLowerCase()} services in all of ${city.name}?`,
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: `Yes! We proudly serve all neighborhoods throughout ${city.name}, ${city.county} County, including ${city.zip} and surrounding zip codes. We're just ${city.distance} miles from your location.`,
-            },
-          },
-          {
-            '@type': 'Question',
-            name: `How quickly can you start a ${service.name.toLowerCase()} project in ${city.name}?`,
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: `We typically provide free estimates within 24-48 hours for ${city.name} residents. Project start times vary by season, but we always work with your schedule.`,
-            },
-          },
-          {
-            '@type': 'Question',
-            name: `Are you licensed and insured to work in ${city.name}?`,
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: `Absolutely. Maia Construction is fully licensed and insured to provide ${service.name.toLowerCase()} services throughout ${city.county} County, including ${city.name}.`,
-            },
-          },
-          {
-            '@type': 'Question',
-            name: `What warranty do you offer on ${service.name.toLowerCase()} work in ${city.name}?`,
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: `All our ${service.name.toLowerCase()} installations in ${city.name} come with comprehensive warranties on both materials and workmanship. We stand behind every project.`,
-            },
-          },
-        ],
-      }} />
+      <JsonLd data={faqSchema} />
+      <JsonLd data={howToSchema} />
 
-      <Hero
-        title={`${service.name} Installation in ${city.name}, Massachusetts`}
-        subtitle={`Professional ${service.name.toLowerCase()} services just ${city.distance} miles from our Marlborough office. Serving ${city.zip} and surrounding ${city.county} County areas.`}
-        badge={`${service.icon} ${city.name}, MA`}
+      {/* Hero with Form - Same layout as Homepage */}
+      <HeroWithForm
+        badge={`📍 ${city.name}, MA • ${service.icon} ${service.name} • 5-Star Rated`}
+        title={
+          <>
+            Expert{' '}
+            <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 bg-clip-text text-transparent">
+              {service.name}
+            </span>{' '}
+            in {city.name}, Massachusetts
+          </>
+        }
+        subtitle={`Professional ${service.name.toLowerCase()} installation in ${city.name}, ${city.county} County. Just ${city.distance} miles from our office. Licensed HIC #${HIC_NUMBER} & insured. FREE estimates.`}
         backgroundImage={service.image}
-        size="inner"
       />
 
       {/* Breadcrumbs */}
@@ -211,7 +143,7 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
         <div className="container mx-auto px-4">
           <Breadcrumbs
             items={[
-              { label: 'Services', href: '/services' },
+              { label: 'Massachusetts', href: '/massachusetts' },
               { label: service.name, href: `/services/${service.slug}` },
               { label: city.name },
             ]}
@@ -219,125 +151,58 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
         </div>
       </div>
 
-      {/* Main Content */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-3 gap-12">
-            {/* Main Content */}
-            <div className="lg:col-span-2">
-              <h2 className="text-4xl font-bold text-slate-900 mb-6">
-                Expert {service.name} Contractor in {city.name}
-              </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mb-8" />
+      {/* Why Choose Us */}
+      <WhyChooseUs cityName={city.name} />
 
-              <div className="prose prose-lg max-w-none mb-12">
-                <p>
-                  Looking for professional {service.name.toLowerCase()} services in {city.name}, Massachusetts?
-                  Maia Construction is your trusted local contractor, providing expert {service.name.toLowerCase()}{' '}
-                  installation, repair, and replacement throughout {city.county} County.
-                </p>
-                <p>
-                  {service.fullDescription}
-                </p>
-                <p>
-                  As {city.name} residents, you know the challenges that New England weather brings.
-                  Our {service.name.toLowerCase()} solutions are specifically designed to withstand harsh winters,
-                  humid summers, and everything in between. We use only premium materials from trusted
-                  manufacturers to ensure decades of protection for your home.
-                </p>
-              </div>
+      {/* Service Details */}
+      <section className="py-16 bg-gradient-to-b from-white to-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
+              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+                Your Trusted {service.name} Contractor in {city.name}
+              </h2>
+              <p className="text-lg text-gray-700 mb-4">
+                Looking for professional {service.name.toLowerCase()} in {city.name}, Massachusetts?
+                {SITE_NAME} is your trusted local contractor, providing expert {service.name.toLowerCase()} installation,
+                repair, and replacement throughout {city.county} County.
+              </p>
+              <p className="text-gray-600 mb-6">
+                {service.fullDescription} As {city.name} residents know, New England weather demands quality exterior
+                solutions. Our {service.name.toLowerCase()} products are specifically chosen to withstand harsh winters,
+                humid summers, and everything in between.
+              </p>
 
               {/* Features */}
-              <div className="mb-12">
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">
-                  Our {service.name} Services in {city.name}
-                </h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  {service.features.map((feature, index) => (
-                    <div key={index} className="flex items-start space-x-3 p-4 bg-slate-50 rounded-xl">
-                      <svg className="w-6 h-6 text-amber-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span className="text-gray-700">{feature}</span>
-                    </div>
-                  ))}
-                </div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">What We Offer in {city.name}</h3>
+              <div className="grid md:grid-cols-2 gap-4 mb-8">
+                {service.features.map((feature, index) => (
+                  <div key={index} className="flex items-start space-x-3 p-3 bg-slate-50 rounded-xl">
+                    <svg className="w-6 h-6 text-amber-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-700">{feature}</span>
+                  </div>
+                ))}
               </div>
 
-              {/* Benefits */}
-              <div className="mb-12">
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">
-                  Benefits for {city.name} Homeowners
-                </h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                  {service.benefits.map((benefit, index) => (
-                    <div key={index} className="flex items-start space-x-3">
-                      <div className="w-10 h-10 bg-amber-400/20 rounded-full flex items-center justify-center flex-shrink-0">
-                        <span className="text-amber-500 font-bold">{index + 1}</span>
-                      </div>
-                      <div>
-                        <p className="font-semibold text-slate-900">{benefit}</p>
-                      </div>
-                    </div>
-                  ))}
+              {/* Stats */}
+              <div className="grid md:grid-cols-4 gap-4">
+                <div className="bg-amber-50 p-4 rounded-xl text-center">
+                  <p className="text-3xl font-bold text-amber-600">5.0★</p>
+                  <p className="text-sm text-gray-600">Google Rating</p>
                 </div>
-              </div>
-
-              {/* Gallery */}
-              <div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">
-                  {service.name} Projects in {city.county} County
-                </h3>
-                <div className="grid grid-cols-2 gap-4">
-                  {getServiceImages(serviceSlug).slice(0, 4).map((img, index) => (
-                    <div key={index} className="relative h-48 rounded-xl overflow-hidden shadow-lg">
-                      <Image
-                        src={img}
-                        alt={`${service.name} installation project in ${city.name}, ${city.county} County Massachusetts - Maia Construction licensed contractor serving ${city.zip}`}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  ))}
+                <div className="bg-amber-50 p-4 rounded-xl text-center">
+                  <p className="text-3xl font-bold text-amber-600">500+</p>
+                  <p className="text-sm text-gray-600">Projects Done</p>
                 </div>
-              </div>
-            </div>
-
-            {/* Sidebar */}
-            <div className="lg:col-span-1">
-              <div className="sticky top-24 space-y-8">
-                <ContactForm service={service.slug} city={city.slug} />
-
-                {/* Quick Info */}
-                <div className="bg-slate-900 rounded-2xl p-6 text-white">
-                  <h3 className="text-xl font-bold mb-4">Quick Facts</h3>
-                  <ul className="space-y-3">
-                    <li className="flex items-center space-x-3">
-                      <svg className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                      </svg>
-                      <span>Distance: {city.distance} miles</span>
-                    </li>
-                    <li className="flex items-center space-x-3">
-                      <svg className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-                      </svg>
-                      <span>County: {city.county}</span>
-                    </li>
-                    <li className="flex items-center space-x-3">
-                      <svg className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                      </svg>
-                      <span>ZIP: {city.zip}</span>
-                    </li>
-                    <li className="flex items-center space-x-3">
-                      <svg className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                      </svg>
-                      <span>Same-day estimates</span>
-                    </li>
-                  </ul>
+                <div className="bg-amber-50 p-4 rounded-xl text-center">
+                  <p className="text-3xl font-bold text-amber-600">{city.distance}mi</p>
+                  <p className="text-sm text-gray-600">From {city.name}</p>
+                </div>
+                <div className="bg-amber-50 p-4 rounded-xl text-center">
+                  <p className="text-3xl font-bold text-amber-600">FREE</p>
+                  <p className="text-sm text-gray-600">Estimates</p>
                 </div>
               </div>
             </div>
@@ -345,149 +210,123 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
         </div>
       </section>
 
-      <WhyChooseUs cityName={city.name} />
+      {/* Before & After */}
+      <BeforeAfter
+        title={`${service.name} Transformations`}
+        subtitle={`See the quality of our ${service.name.toLowerCase()} work in ${city.county} County`}
+      />
 
-      <Testimonials cityName={city.name} />
+      {/* Video Gallery */}
+      <VideoGallery
+        title={`${service.name} Projects in Action`}
+        subtitle={`Watch our team install ${service.name.toLowerCase()} across Massachusetts`}
+      />
 
-      {/* Nearby Cities */}
+      {/* Reviews */}
+      <ReviewsHighlight />
+
+      {/* FAQ */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-900 mb-4">
-              {service.name} Services Near {city.name}
+              {service.name} FAQs — {city.name}, MA
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-6" />
           </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {nearbyCities.map((nearbyCity) => (
-              <Link
-                key={nearbyCity.slug}
-                href={`/services/${service.slug}/${nearbyCity.slug}`}
-                className="group p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200 hover:border-amber-400 hover:shadow-lg transition-all text-center"
-              >
-                <svg className="w-8 h-8 text-amber-500 mx-auto mb-3" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                </svg>
-                <h3 className="font-bold text-slate-900 group-hover:text-amber-500 transition-colors">
-                  {nearbyCity.name}
-                </h3>
-                <p className="text-sm text-gray-500">{nearbyCity.distance} miles</p>
-              </Link>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              href={`/services/${service.slug}`}
-              className="inline-flex items-center px-8 py-4 bg-slate-900 text-white rounded-full font-bold hover:bg-slate-800 transition-all"
-            >
-              View All {service.name} Locations
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-24 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">
-              {service.name} FAQs - {city.name}, MA
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto" />
-          </div>
-
-          <div className="max-w-3xl mx-auto space-y-6">
-            {[
-              {
-                q: `Do you provide ${service.name.toLowerCase()} services in all of ${city.name}?`,
-                a: `Yes! We proudly serve all neighborhoods throughout ${city.name}, ${city.county} County, including ${city.zip} and surrounding zip codes. We're just ${city.distance} miles from your location.`,
-              },
-              {
-                q: `How quickly can you start a ${service.name.toLowerCase()} project in ${city.name}?`,
-                a: `We typically provide free estimates within 24-48 hours for ${city.name} residents. Project start times vary by season, but we always work with your schedule.`,
-              },
-              {
-                q: `Are you licensed and insured to work in ${city.name}?`,
-                a: `Absolutely. Maia Construction is fully licensed and insured to provide ${service.name.toLowerCase()} services throughout ${city.county} County, including ${city.name}.`,
-              },
-              {
-                q: `What warranty do you offer on ${service.name.toLowerCase()} work in ${city.name}?`,
-                a: `All our ${service.name.toLowerCase()} installations in ${city.name} come with comprehensive warranties on both materials and workmanship. We stand behind every project.`,
-              },
-            ].map((faq, index) => (
-              <details key={index} className="bg-white p-6 rounded-xl shadow-md group">
-                <summary className="font-bold text-lg text-slate-900 cursor-pointer hover:text-amber-500 transition-colors flex items-center justify-between">
-                  {faq.q}
-                  <svg className="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="max-w-4xl mx-auto space-y-4">
+            {faqItems.map((faq, index) => (
+              <details key={index} className="bg-slate-50 rounded-xl overflow-hidden border border-slate-200 group">
+                <summary className="px-6 py-5 cursor-pointer hover:bg-slate-100 transition-colors flex items-center justify-between">
+                  <h3 className="text-lg font-bold text-slate-900 pr-4">{faq.q}</h3>
+                  <svg className="w-5 h-5 text-amber-500 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </summary>
-                <p className="mt-4 text-gray-600">{faq.a}</p>
+                <p className="px-6 pb-5 text-gray-600 leading-relaxed">{faq.a}</p>
               </details>
             ))}
           </div>
         </div>
       </section>
 
-      {/* AEO Block + Cross-linking */}
-      <section className="py-16 bg-white">
+      {/* Other Services in this City */}
+      <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="aeo-answer aeo-speakable bg-slate-50 p-8 rounded-2xl">
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">
-                {service.name} Contractor in {city.name}, MA
-              </h2>
-              <p className="text-gray-600 mb-4">
-                {SITE_NAME} is the #1 rated {service.name.toLowerCase()} contractor in {city.name}, Massachusetts.
-                With a 5.0-star Google rating, 500+ completed projects, and MA HIC #204634 license, we provide
-                professional {service.name.toLowerCase()} installation throughout {city.county} County.
-                Call {PHONE} for a free, no-obligation estimate.
-              </p>
-
-              {/* Cross-service backlinks */}
-              <h3 className="font-bold text-slate-900 mt-6 mb-3">Other Services in {city.name}</h3>
-              <div className="flex flex-wrap gap-2">
-                {services.filter(s => s.slug !== service.slug).map((otherService) => (
-                  <Link
-                    key={otherService.slug}
-                    href={`/services/${otherService.slug}/${city.slug}`}
-                    className="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm text-gray-600 hover:border-amber-400 hover:text-amber-600 transition-colors"
-                  >
-                    {otherService.icon} {otherService.name} in {city.name}
-                  </Link>
-                ))}
-              </div>
-
-              {/* Blog backlinks */}
-              <h3 className="font-bold text-slate-900 mt-6 mb-3">Helpful Resources</h3>
-              <div className="flex flex-wrap gap-2">
-                <Link href="/blog/how-to-choose-right-siding" className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-gray-600 hover:border-amber-400 hover:text-amber-600">
-                  Siding Guide
-                </Link>
-                <Link href="/blog/energy-efficient-windows-guide" className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-gray-600 hover:border-amber-400 hover:text-amber-600">
-                  Window Guide
-                </Link>
-                <Link href="/blog/window-replacement-cost-massachusetts" className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-gray-600 hover:border-amber-400 hover:text-amber-600">
-                  Cost Guide MA
-                </Link>
-                <Link href={`/cities/${city.slug}`} className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-gray-600 hover:border-amber-400 hover:text-amber-600">
-                  All Services in {city.name}
-                </Link>
-                <Link href="/about" className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-gray-600 hover:border-amber-400 hover:text-amber-600">
-                  About Us
-                </Link>
-              </div>
-            </div>
+          <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">
+            Other Services in {city.name}
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-8" />
+          <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+            {services.filter(s => s.slug !== service.slug).map((otherService) => (
+              <Link
+                key={otherService.slug}
+                href={`/services/${otherService.slug}/${city.slug}`}
+                className="group p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all text-center"
+              >
+                <span className="text-3xl">{otherService.icon}</span>
+                <h3 className="font-bold text-slate-900 group-hover:text-amber-500 transition-colors mt-3">
+                  {otherService.name}
+                </h3>
+                <p className="text-sm text-gray-500 mt-1">in {city.name}, MA</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      <CTASection cityName={city.name} />
+      {/* Nearby Cities */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">
+            {service.name} Near {city.name}
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-8" />
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-4xl mx-auto">
+            {nearbyCities.map((nearbyCity) => (
+              <Link
+                key={nearbyCity.slug}
+                href={`/services/${service.slug}/${nearbyCity.slug}`}
+                className="group p-4 bg-slate-50 rounded-xl border border-slate-200 hover:border-amber-400 hover:shadow-md transition-all text-center"
+              >
+                <svg className="w-6 h-6 text-amber-500 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                </svg>
+                <h3 className="font-bold text-sm text-slate-900 group-hover:text-amber-500 transition-colors">{nearbyCity.name}</h3>
+                <p className="text-xs text-gray-500">{nearbyCity.distance} mi</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Google Maps */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">
+            Service Area: {city.name}, MA
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-8" />
+          <div className="rounded-2xl overflow-hidden shadow-xl border border-slate-200 max-w-4xl mx-auto">
+            <iframe
+              src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodeURIComponent(city.name + ', MA')}&zoom=13`}
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              title={`${city.name} MA service area map`}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <CTASection
+        title={`Get Your FREE ${service.name} Estimate in ${city.name}`}
+        subtitle={`Ready for professional ${service.name.toLowerCase()}? Call now or request a free quote — no obligation.`}
+        cityName={city.name}
+      />
     </>
   );
 }
