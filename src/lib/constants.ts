@@ -16,6 +16,14 @@ export const ADDRESS = {
   lng: -71.5526,
 };
 
+// Service-specific photos
+export const SERVICE_PHOTOS: Record<string, string> = {
+  siding: 'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68bb92a147f24d34a4cb2441.jpeg',
+  windows: 'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68bb92a11ff6ea5ace0517d7.jpeg',
+  doors: 'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68bb918e47f24da26ecb147e.jpeg',
+  'general-contractor': 'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/6834e26266829d658f8eab6c.jpeg',
+};
+
 export const REAL_PHOTOS = [
   'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68bb92a147f24d34a4cb2441.jpeg',
   'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68bb94791ff6ea156705431b.jpeg',

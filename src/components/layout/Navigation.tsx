@@ -9,7 +9,6 @@ import { services } from '@/lib/services';
 const navItems = [
   { label: 'Home', href: '/' },
   { label: 'Services', href: '/services', hasDropdown: true },
-  { label: 'Cities We Serve', href: '/massachusetts' },
   { label: 'About', href: '/about' },
   { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },

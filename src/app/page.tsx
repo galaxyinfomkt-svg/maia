@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { HeroWithForm, CTASection, WhyChooseUs, ReviewsHighlight } from '@/components/sections';
 import { JsonLd, organizationSchema, websiteSchema } from '@/components/seo';
 import { services } from '@/lib/services';
-import { SITE_NAME, HIC_NUMBER, PHONE, SITE_URL, PHONE_LINK, SOCIAL_LINKS, ADDRESS, BUSINESS_HOURS, EMAIL, REAL_PHOTOS } from '@/lib/constants';
+import { SITE_NAME, HIC_NUMBER, PHONE, SITE_URL, PHONE_LINK, SOCIAL_LINKS, ADDRESS, BUSINESS_HOURS, EMAIL, REAL_PHOTOS, SERVICE_PHOTOS } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: `#1 Siding & Window Contractor MA (2026) | 500+ Projects | Free Estimate`,
@@ -101,7 +101,7 @@ export default function HomePage() {
               <Link key={service.slug} href={`/services/${service.slug}`}
                 className={`group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all ${index === 0 ? 'ring-2 ring-amber-400' : 'border border-slate-200'}`}>
                 <div className="relative h-52 overflow-hidden">
-                  <Image src={REAL_PHOTOS[index % REAL_PHOTOS.length]} alt={`${service.name} services in Massachusetts by ${SITE_NAME}`}
+                  <Image src={SERVICE_PHOTOS[service.slug] || REAL_PHOTOS[index % REAL_PHOTOS.length]} alt={`${service.name} services in Massachusetts by ${SITE_NAME}`}
                     fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                   {index === 0 && (
