@@ -1,12 +1,18 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import { HeroWithForm, ServicesSection, Testimonials, CTASection, WhyChooseUs } from '@/components/sections';
+import { HeroWithForm, ServicesSection, Testimonials, CTASection, WhyChooseUs, ReviewsHighlight } from '@/components/sections';
 import { ContactForm } from '@/components/forms';
 import { JsonLd, Breadcrumbs } from '@/components/seo';
 import { cities, getCityBySlug, getNearbyCities } from '@/lib/cities';
 import { services } from '@/lib/services';
+import { getCityProfile } from '@/lib/content-engine';
 import { SITE_NAME, PHONE, LOGO_URL, REAL_PHOTOS, HIC_NUMBER } from '@/lib/constants';
+
+const VideoGallery = dynamic(() => import('@/components/sections/VideoGallery'), {
+  loading: () => <div className="py-24 bg-white" />,
+});
 
 interface CityPageProps {
   params: Promise<{ slug: string }>;
@@ -187,8 +193,7 @@ export default async function CityPage({ params }: CityPageProps) {
                       href={`/services/${service.slug}/${city.slug}`}
                       className="group p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200 hover:border-amber-400 hover:shadow-xl transition-all"
                     >
-                      <div className="flex items-start space-x-4">
-                        <div className="text-4xl">{service.icon}</div>
+                      <div>
                         <div>
                           <h4 className="text-xl font-bold text-slate-900 group-hover:text-amber-500 transition-colors mb-2">
                             {service.name}
@@ -246,6 +251,82 @@ export default async function CityPage({ params }: CityPageProps) {
       </section>
 
       <WhyChooseUs cityName={city.name} />
+
+      {/* City Profile: Neighborhoods & Housing Types */}
+      {(() => {
+        const profile = getCityProfile(city);
+        return (
+          <section className="py-16 bg-white">
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-3xl font-bold text-slate-900 mb-6">
+                  About {city.name} Homes &amp; Neighborhoods
+                </h2>
+                <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mb-8" />
+                <p className="text-lg text-gray-600 mb-6">
+                  {city.name} features {profile.localFlavor}. Homes in this area average {profile.avgHomeAge} old,
+                  dating from the {profile.foundedEra} period. Our team has extensive experience working on the
+                  diverse housing stock found throughout {city.name} and {city.county} County.
+                </p>
+
+                <div className="mb-8">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                    {city.name} Neighborhoods We Serve
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {profile.neighborhoods.map((neighborhood, i) => (
+                      <span key={i} className="px-3 py-1.5 bg-amber-50 border border-amber-200 rounded-full text-amber-700 text-sm font-medium">
+                        {neighborhood}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mb-8">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                    {city.name} Housing Types We Work On
+                  </h3>
+                  <div className="grid md:grid-cols-2 gap-3">
+                    {profile.housingTypes.map((type, i) => (
+                      <div key={i} className="flex items-center space-x-2 p-3 bg-slate-50 rounded-lg">
+                        <svg className="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                        </svg>
+                        <span className="text-gray-700 text-sm font-medium">{type}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {profile.commonIssues.length > 0 && (
+                  <div>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                      Common Home Improvement Challenges in {city.name}
+                    </h3>
+                    <div className="space-y-3">
+                      {profile.commonIssues.map((issue, i) => (
+                        <div key={i} className="flex items-start space-x-3 p-3 bg-red-50 rounded-xl border border-red-100">
+                          <svg className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                          </svg>
+                          <span className="text-gray-700 text-sm">{issue}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
+
+      <VideoGallery
+        title={`Our Projects in ${city.name}`}
+        subtitle={`Watch our team transform homes in ${city.name} and across Massachusetts`}
+      />
+
+      <ReviewsHighlight />
 
       <Testimonials cityName={city.name} />
 

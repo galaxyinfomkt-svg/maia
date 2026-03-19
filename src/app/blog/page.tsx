@@ -106,22 +106,18 @@ export default function BlogPage() {
           </p>
           <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             <Link href="/services/siding" className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all text-center group">
-              <div className="text-4xl mb-3">🏠</div>
               <h3 className="font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Siding Installation</h3>
               <p className="text-sm text-gray-500 mt-2">Vinyl & James Hardie</p>
             </Link>
             <Link href="/services/windows" className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all text-center group">
-              <div className="text-4xl mb-3">🪟</div>
               <h3 className="font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Window Replacement</h3>
               <p className="text-sm text-gray-500 mt-2">ENERGY STAR certified</p>
             </Link>
             <Link href="/services/doors" className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all text-center group">
-              <div className="text-4xl mb-3">🚪</div>
               <h3 className="font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Door Installation</h3>
               <p className="text-sm text-gray-500 mt-2">Entry, patio & storm</p>
             </Link>
             <Link href="/services/general-contractor" className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all text-center group">
-              <div className="text-4xl mb-3">🔧</div>
               <h3 className="font-bold text-slate-900 group-hover:text-amber-600 transition-colors">General Contractor</h3>
               <p className="text-sm text-gray-500 mt-2">Full renovations</p>
             </Link>

@@ -76,8 +76,10 @@ export default function ServicesPage() {
                       className="object-cover"
                     />
                   </div>
-                  <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-amber-400 rounded-2xl flex items-center justify-center text-5xl shadow-lg">
-                    {service.icon}
+                  <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-amber-400 rounded-2xl flex items-center justify-center shadow-lg">
+                    <svg className="w-10 h-10 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
                   </div>
                 </div>
 
@@ -143,16 +145,15 @@ export default function ServicesPage() {
 
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { step: '1', title: 'Free Consultation', description: 'We visit your home to assess your needs and provide a detailed quote.', icon: '📋' },
-              { step: '2', title: 'Material Selection', description: 'Choose from premium materials that fit your style and budget.', icon: '🎨' },
-              { step: '3', title: 'Expert Installation', description: 'Our skilled team completes the work with precision and care.', icon: '🔧' },
-              { step: '4', title: 'Final Walkthrough', description: 'We ensure everything meets your expectations before completion.', icon: '✅' },
+              { step: '1', title: 'Free Consultation', description: 'We visit your home to assess your needs and provide a detailed quote.' },
+              { step: '2', title: 'Material Selection', description: 'Choose from premium materials that fit your style and budget.' },
+              { step: '3', title: 'Expert Installation', description: 'Our skilled team completes the work with precision and care.' },
+              { step: '4', title: 'Final Walkthrough', description: 'We ensure everything meets your expectations before completion.' },
             ].map((process, index) => (
               <div key={index} className="relative text-center">
                 <div className="w-20 h-20 bg-gradient-to-br from-amber-400 to-yellow-300 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl font-bold text-slate-900">
                   {process.step}
                 </div>
-                <div className="text-4xl mb-4">{process.icon}</div>
                 <h3 className="text-xl font-bold text-slate-900 mb-2">{process.title}</h3>
                 <p className="text-gray-600">{process.description}</p>
                 {index < 3 && (

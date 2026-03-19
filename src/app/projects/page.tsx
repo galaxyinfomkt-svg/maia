@@ -237,10 +237,10 @@ export default function ProjectsPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { name: 'Siding', slug: 'siding', icon: '🏠', image: IMAGES.siding },
-              { name: 'Windows', slug: 'windows', icon: '🪟', image: IMAGES.windows },
-              { name: 'Doors', slug: 'doors', icon: '🚪', image: IMAGES.doors },
-              { name: 'General Contractor', slug: 'general-contractor', icon: '🔨', image: IMAGES.generalContractor },
+              { name: 'Siding', slug: 'siding', image: IMAGES.siding },
+              { name: 'Windows', slug: 'windows', image: IMAGES.windows },
+              { name: 'Doors', slug: 'doors', image: IMAGES.doors },
+              { name: 'General Contractor', slug: 'general-contractor', image: IMAGES.generalContractor },
             ].map((service) => (
               <Link
                 key={service.slug}
@@ -255,7 +255,6 @@ export default function ProjectsPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <div className="text-4xl mb-2">{service.icon}</div>
                   <h3 className="text-xl font-bold text-white group-hover:text-amber-400 transition-colors">
                     {service.name}
                   </h3>

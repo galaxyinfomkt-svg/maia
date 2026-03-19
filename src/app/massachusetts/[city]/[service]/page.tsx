@@ -18,6 +18,7 @@ import { JsonLd, Breadcrumbs } from '@/components/seo';
 import { services, getServiceBySlug } from '@/lib/services';
 import { cities, getCityBySlug, getNearbyCities } from '@/lib/cities';
 import { SITE_NAME, SITE_URL, PHONE, PHONE_LINK, HIC_NUMBER, IMAGES, LOGO_URL } from '@/lib/constants';
+import { getRichParagraphs, getServiceChecklist } from '@/lib/content-engine';
 
 interface MACityServicePageProps {
   params: Promise<{ city: string; service: string }>;
@@ -128,6 +129,8 @@ export default async function MACityServicePage({ params }: MACityServicePagePro
   const galleryImages = getServiceImages(serviceSlug);
   const neighborhoods = getCityNeighborhoods(city.name);
   const housingTypes = getCityHousingTypes(city.name);
+  const richText = getRichParagraphs(serviceSlug, city);
+  const checklist = getServiceChecklist(serviceSlug);
 
   // Schemas - 6+ per page like RS
   const localBusinessSchema = {
@@ -259,7 +262,7 @@ export default async function MACityServicePage({ params }: MACityServicePagePro
           </>
         }
         subtitle={`Professional ${service.name.toLowerCase()} installation in ${city.name}. ${city.distance} miles from our office. Serving ${city.zip} and all of ${city.county} County. Licensed HIC #${HIC_NUMBER}. Call ${PHONE} for FREE estimate.`}
-        badge={`${service.icon} ${city.name}, MA • 5.0★ Rated • Licensed & Insured`}
+        badge={`${city.name}, MA • 5.0★ Rated • Licensed & Insured`}
         backgroundImage={service.image}
       />
 
@@ -313,6 +316,33 @@ export default async function MACityServicePage({ params }: MACityServicePagePro
                   last decades.
                 </p>
                 <p>{service.fullDescription}</p>
+                <p>{richText.expertIntro}</p>
+                <p>{richText.trustedContractor}</p>
+              </div>
+
+              {/* Rich Content: Comprehensive Services */}
+              <div className="mb-12">
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                  Comprehensive {service.name} Services in {city.name}, MA
+                </h3>
+                <div className="prose prose-lg max-w-none text-gray-600 mb-6">
+                  <p>{richText.comprehensiveServices}</p>
+                </div>
+                <h4 className="text-xl font-bold text-slate-900 mb-4">What We Offer</h4>
+                <div className="grid md:grid-cols-2 gap-3 mb-6">
+                  {checklist.map((item, i) => (
+                    <div key={i} className="flex items-center space-x-3 p-3 bg-white rounded-lg border border-slate-200">
+                      <svg className="w-5 h-5 text-amber-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span className="text-gray-700 text-sm">{item}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="bg-slate-900 p-8 rounded-2xl text-white">
+                  <h4 className="text-xl font-bold mb-4 text-amber-400">Why {city.name} Trusts {SITE_NAME}</h4>
+                  <p className="text-white/80 leading-relaxed">{richText.whyLocal}</p>
+                </div>
               </div>
 
               {/* Credentials Box */}
@@ -320,21 +350,27 @@ export default async function MACityServicePage({ params }: MACityServicePagePro
                 <h3 className="text-xl font-bold text-slate-900 mb-4">Your Trusted {city.name} Contractor</h3>
                 <div className="grid md:grid-cols-3 gap-4">
                   <div className="flex items-center gap-3">
-                    <span className="text-2xl">🏆</span>
+                    <svg className="w-8 h-8 text-amber-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                    </svg>
                     <div>
                       <p className="font-bold text-slate-900">5.0★ Rating</p>
                       <p className="text-sm text-gray-600">47+ Google Reviews</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="text-2xl">📋</span>
+                    <svg className="w-8 h-8 text-amber-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
                     <div>
                       <p className="font-bold text-slate-900">MA Licensed</p>
                       <p className="text-sm text-gray-600">HIC #{HIC_NUMBER}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="text-2xl">🛡️</span>
+                    <svg className="w-8 h-8 text-amber-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
                     <div>
                       <p className="font-bold text-slate-900">Fully Insured</p>
                       <p className="text-sm text-gray-600">Liability & Workers Comp</p>
@@ -551,8 +587,7 @@ export default async function MACityServicePage({ params }: MACityServicePagePro
                 href={`/massachusetts/${city.slug}/${otherService.slug}`}
                 className="group p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:border-amber-400 hover:shadow-lg transition-all text-center"
               >
-                <span className="text-4xl block mb-3">{otherService.icon}</span>
-                <h3 className="font-bold text-slate-900 group-hover:text-amber-500 transition-colors">
+                <h3 className="font-bold text-slate-900 group-hover:text-amber-500 transition-colors mt-3">
                   {otherService.name} in {city.name}
                 </h3>
                 <p className="text-sm text-gray-500 mt-2">{otherService.shortDescription}</p>

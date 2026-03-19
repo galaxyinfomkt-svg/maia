@@ -176,7 +176,6 @@ export default function MassachusettsPage() {
                       />
                     </div>
                     <div className="flex items-center gap-3 mb-3">
-                      <span className="text-3xl">{service.icon}</span>
                       <h3 className="text-2xl font-bold text-slate-900">{service.name}</h3>
                     </div>
                     <p className="text-gray-600 mb-4">{service.shortDescription}</p>
