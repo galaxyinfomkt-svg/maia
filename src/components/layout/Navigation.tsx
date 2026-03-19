@@ -65,7 +65,7 @@ export default function Navigation({ className, onItemClick, vertical = false, v
                       onClick={onItemClick}
                       className="flex items-center gap-3 px-4 py-2 text-gray-300 hover:text-amber-400 transition-colors"
                     >
-                      <span className="text-amber-400">→</span>
+                      <span className="text-amber-400">-</span>
                       <span className="text-sm">{service.name}</span>
                     </Link>
                   ))}
@@ -116,11 +116,7 @@ export default function Navigation({ className, onItemClick, vertical = false, v
                       onClick={() => { setDropdownOpen(false); onItemClick?.(); }}
                       className="flex items-center gap-3 px-5 py-3 hover:bg-white/10 transition-all group"
                     >
-                      <span className="w-9 h-9 bg-amber-400/15 rounded-lg flex items-center justify-center text-amber-400 group-hover:bg-amber-400 group-hover:text-slate-900 transition-all">
-                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-                        </svg>
-                      </span>
+                      <span className="w-9 h-9 bg-amber-400/15 rounded-lg flex items-center justify-center text-amber-400 group-hover:bg-amber-400 group-hover:text-slate-900 transition-all"><svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" /></svg></span>
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
                           <p className="font-semibold text-white text-sm group-hover:text-amber-400 transition-colors">{service.name}</p>

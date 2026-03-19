@@ -4,7 +4,7 @@ import { SITE_NAME, PHONE, PHONE_LINK, ADDRESS, BUSINESS_HOURS, SOCIAL_LINKS, HI
 import { services } from '@/lib/services';
 import { cities } from '@/lib/cities';
 
-// Only closest 75 cities for inline list (like RS)
+// Only nearby cities for the inline list (like RS uses ~75)
 const footerCities = cities.filter(c => c.distance <= 30).slice(0, 75);
 
 export default function Footer() {

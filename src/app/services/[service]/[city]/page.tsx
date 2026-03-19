@@ -6,7 +6,7 @@ import { HeroWithForm, CTASection, WhyChooseUs, ReviewsHighlight } from '@/compo
 import { JsonLd, Breadcrumbs } from '@/components/seo';
 import { services, getServiceBySlug } from '@/lib/services';
 import { cities, getCityBySlug, getNearbyCities } from '@/lib/cities';
-import { SITE_NAME, PHONE, SITE_URL, PHONE_LINK, HIC_NUMBER } from '@/lib/constants';
+import { SITE_NAME, PHONE, SITE_URL, PHONE_LINK, HIC_NUMBER, REAL_PHOTOS } from '@/lib/constants';
 import { getServiceContent, getUniqueFAQs, getUniqueMetaDescription, getUniqueTitle, getCityProfile } from '@/lib/content-engine';
 
 const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'), {
@@ -144,7 +144,7 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
           </>
         }
         subtitle={content.intro}
-        backgroundImage={service.image}
+        backgroundImage={REAL_PHOTOS[(city.slug.length + service.slug.length) % REAL_PHOTOS.length]}
       />
 
       {/* Breadcrumbs */}

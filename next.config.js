@@ -9,6 +9,7 @@ const nextConfig = {
       { protocol: "https", hostname: "images.leadconnectorhq.com" },
       { protocol: "https", hostname: "storage.googleapis.com" },
       { protocol: "https", hostname: "img.youtube.com" },
+      { protocol: "https", hostname: "assets.cdn.filesafe.space" },
     ],
   },
 

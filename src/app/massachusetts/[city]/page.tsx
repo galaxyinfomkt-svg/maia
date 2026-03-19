@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Hero, CTASection, WhyChooseUs } from '@/components/sections';
+import { HeroWithForm, CTASection, WhyChooseUs } from '@/components/sections';
 import { JsonLd, Breadcrumbs } from '@/components/seo';
 import { services } from '@/lib/services';
 import { cities, getCityBySlug, getNearbyCities } from '@/lib/cities';
-import { SITE_NAME, SITE_URL, PHONE, PHONE_LINK, HIC_NUMBER, LOGO_URL } from '@/lib/constants';
+import { SITE_NAME, SITE_URL, PHONE, PHONE_LINK, HIC_NUMBER, LOGO_URL, REAL_PHOTOS } from '@/lib/constants';
 
 interface MACityPageProps {
   params: Promise<{ city: string }>;
@@ -82,11 +82,11 @@ export default async function MACityPage({ params }: MACityPageProps) {
       <JsonLd data={localBusinessSchema} />
       <JsonLd data={breadcrumbSchema} />
 
-      <Hero
-        title={`Home Improvement Contractor in ${city.name}, MA`}
+      <HeroWithForm
+        title={<>Professional <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 bg-clip-text text-transparent">Home Improvement</span> Contractor in {city.name}, MA</>}
         subtitle={`Professional siding, windows, doors & general contracting in ${city.name}. ${city.distance} miles from our office. Serving all of ${city.county} County.`}
-        badge={`${city.name}, MA • 5.0★ • Licensed HIC #${HIC_NUMBER}`}
-        size="inner"
+        badge={`${city.name}, MA • 5.0 Stars • Licensed HIC #${HIC_NUMBER}`}
+        backgroundImage={REAL_PHOTOS[Math.abs(city.slug.length) % REAL_PHOTOS.length]}
       />
 
       <div className="bg-slate-50 border-b border-slate-200">
@@ -147,7 +147,6 @@ export default async function MACityPage({ params }: MACityPageProps) {
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
-                  <span className="absolute bottom-4 left-4 text-4xl">{service.icon}</span>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-slate-900 group-hover:text-amber-500 transition-colors mb-2">

@@ -16,9 +16,22 @@ export const ADDRESS = {
   lng: -71.5526,
 };
 
+export const REAL_PHOTOS = [
+  'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68bb92a147f24d34a4cb2441.jpeg',
+  'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68bb94791ff6ea156705431b.jpeg',
+  'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68bb947947f24d6531cb52a6.jpeg',
+  'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68bb9479b200283b40dccf5b.jpeg',
+  'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68bb92a147f24d8291cb2442.jpeg',
+  'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68bb918ec535bec22d71d549.jpeg',
+  'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68bb918e47f24da26ecb147e.jpeg',
+  'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68bb9169b20028c4b5dc9030.jpeg',
+  'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68a38d825313006ec55c2a52.jpeg',
+  'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/6834e26266829d658f8eab6c.jpeg',
+];
+
 export const IMAGES = {
   // Hero e imagens principais
-  hero: '/images/general-contractor/home-renovation-massachusetts-1.webp',
+  hero: 'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68bb92a147f24d34a4cb2441.jpeg',
   logo: '/images/logo-200.webp',
   logoLarge: '/images/logo-400.webp',
   logoHeader: '/images/logo-112.webp',
