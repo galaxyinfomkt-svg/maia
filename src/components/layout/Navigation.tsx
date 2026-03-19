@@ -105,31 +105,36 @@ export default function Navigation({ className, onItemClick, vertical = false, v
 
               {dropdownOpen && (
                 <div
-                  className="absolute top-full left-0 mt-1 w-72 bg-white rounded-xl shadow-2xl border border-slate-200 py-2 z-50"
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-slate-900 rounded-2xl shadow-2xl border border-white/10 py-3 z-50 backdrop-blur-xl"
                   onMouseEnter={() => setDropdownOpen(true)}
                   onMouseLeave={() => setDropdownOpen(false)}
                 >
-                  {services.map((service) => (
+                  {services.map((service, index) => (
                     <Link
                       key={service.slug}
                       href={`/services/${service.slug}`}
                       onClick={() => { setDropdownOpen(false); onItemClick?.(); }}
-                      className="flex items-center gap-3 px-4 py-3 hover:bg-amber-50 transition-colors group"
+                      className="flex items-center gap-3 px-5 py-3 hover:bg-white/10 transition-all group"
                     >
-                      <span className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center text-xl group-hover:bg-amber-400 group-hover:text-slate-900 transition-colors">
+                      <span className="w-9 h-9 bg-amber-400/15 rounded-lg flex items-center justify-center text-amber-400 group-hover:bg-amber-400 group-hover:text-slate-900 transition-all text-lg">
                         {service.icon}
                       </span>
-                      <div>
-                        <p className="font-semibold text-slate-900 text-sm group-hover:text-amber-600 transition-colors">{service.name}</p>
-                        <p className="text-xs text-gray-500 line-clamp-1">{service.shortDescription}</p>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2">
+                          <p className="font-semibold text-white text-sm group-hover:text-amber-400 transition-colors">{service.name}</p>
+                          {index === 0 && (
+                            <span className="text-[10px] font-bold bg-amber-400 text-slate-900 px-1.5 py-0.5 rounded">TOP</span>
+                          )}
+                        </div>
+                        <p className="text-[11px] text-gray-400 line-clamp-1">{service.shortDescription}</p>
                       </div>
                     </Link>
                   ))}
-                  <div className="border-t border-slate-100 mt-1 pt-1">
+                  <div className="border-t border-white/10 mt-2 pt-2 mx-3">
                     <Link
                       href="/services"
                       onClick={() => { setDropdownOpen(false); onItemClick?.(); }}
-                      className="flex items-center gap-2 px-4 py-3 text-amber-600 hover:bg-amber-50 transition-colors text-sm font-semibold"
+                      className="flex items-center justify-center gap-2 py-2 text-amber-400 hover:text-amber-300 transition-colors text-sm font-semibold"
                     >
                       View All Services
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
