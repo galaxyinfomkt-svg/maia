@@ -238,7 +238,7 @@ export default async function CityPage({ params }: CityPageProps) {
             {/* Sidebar */}
             <div className="lg:col-span-1">
               <div className="sticky top-24">
-                <ContactForm city={city.slug} />
+                <ContactForm />
               </div>
             </div>
           </div>
