@@ -354,13 +354,7 @@ export default function HomePage() {
       {/* FAQ Section */}
       <FAQ />
 
-      {/* Cities We Serve */}
-      <CityGrid
-        title="Serving 100+ Massachusetts Communities"
-        subtitle="From Boston to Worcester, Framingham to Springfield — we're your local exterior renovation experts"
-        cities={featuredCities}
-        limit={12}
-      />
+      {/* Cities removed from homepage - only in footer like RS */}
 
       {/* Blog Backlinks Section */}
       <section className="py-16 bg-slate-50">

@@ -236,58 +236,34 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Massachusetts Service Areas - Mega Links by County */}
-      <div className="border-t border-white/10 pt-12 pb-8">
+      {/* Service Areas - Inline city list like RS */}
+      <div className="border-t border-white/10 pt-8 pb-6">
         <div className="container mx-auto px-4">
-          <h3 className="text-lg font-bold text-amber-400 mb-6 text-center">
-            Massachusetts Service Areas — {cities.length}+ Cities
+          <h3 className="text-lg font-bold text-amber-400 mb-4 text-center flex items-center justify-center gap-2">
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+            </svg>
+            Service Areas – {cities.length}+ Cities Across Massachusetts
           </h3>
-          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {citiesByCounty.slice(0, 10).map(({ county, cities: countyCities }) => (
-              <div key={county}>
-                <h4 className="text-sm font-semibold text-white/80 mb-2">{county} County</h4>
-                <ul className="space-y-0.5">
-                  {countyCities.map((city) => (
-                    <li key={city.slug}>
-                      <Link
-                        href={`/massachusetts/${city.slug}`}
-                        className="text-gray-400 hover:text-amber-400 transition-colors text-xs"
-                      >
-                        {city.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          <p className="text-center text-gray-400 text-xs leading-relaxed max-w-5xl mx-auto">
+            {cities.map((city, index) => (
+              <span key={city.slug}>
+                <Link
+                  href={`/massachusetts/${city.slug}`}
+                  className="hover:text-amber-400 transition-colors"
+                >
+                  {city.name}
+                </Link>
+                {index < cities.length - 1 && <span className="mx-1">•</span>}
+              </span>
             ))}
-          </div>
-          {citiesByCounty.length > 10 && (
-            <div className="grid md:grid-cols-4 gap-6 mt-6">
-              {citiesByCounty.slice(10).map(({ county, cities: countyCities }) => (
-                <div key={county}>
-                  <h4 className="text-sm font-semibold text-white/80 mb-2">{county} County</h4>
-                  <ul className="space-y-0.5">
-                    {countyCities.map((city) => (
-                      <li key={city.slug}>
-                        <Link
-                          href={`/massachusetts/${city.slug}`}
-                          className="text-gray-400 hover:text-amber-400 transition-colors text-xs"
-                        >
-                          {city.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          )}
-          <div className="text-center mt-6">
+          </p>
+          <div className="text-center mt-4">
             <Link
               href="/massachusetts"
               className="text-amber-400 hover:text-amber-300 text-sm font-semibold"
             >
-              View All Massachusetts Service Areas →
+              Explore our Siding & Window Services →
             </Link>
           </div>
         </div>
