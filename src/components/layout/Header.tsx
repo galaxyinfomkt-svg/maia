@@ -24,47 +24,35 @@ export default function Header() {
     <>
       <header
         className={cn(
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+          'sticky top-0 left-0 right-0 z-50 transition-all duration-300',
           isScrolled
-            ? 'bg-white shadow-lg py-2'
-            : 'bg-white/95 backdrop-blur-md py-3'
+            ? 'bg-slate-900 shadow-lg py-2'
+            : 'bg-slate-900 py-3'
         )}
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center">
-              <div className="relative w-32 h-16 sm:w-40 sm:h-20 lg:w-48 lg:h-24">
+              <div className="relative w-28 h-14 sm:w-36 sm:h-16 lg:w-40 lg:h-18">
                 <Image
                   src={IMAGES.logoLarge}
                   alt={`${SITE_NAME} logo - Licensed siding, windows and doors contractor in Marlborough Massachusetts - HIC #204634 - serving 100+ MA cities`}
                   fill
-                  sizes="(max-width: 640px) 128px, (max-width: 1024px) 160px, 192px"
-                  className="object-contain"
+                  sizes="(max-width: 640px) 112px, (max-width: 1024px) 144px, 160px"
+                  className="object-contain brightness-0 invert"
                   priority
                 />
               </div>
             </Link>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Navigation - centered */}
             <div className="hidden lg:block">
-              <Navigation variant="light" />
+              <Navigation variant="dark" />
             </div>
 
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center space-x-3">
-              <a
-                href="https://g.page/r/CaC0u5sFaCEdEBM/review"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Leave a Google review"
-                className="flex items-center px-4 py-2 bg-amber-50 border border-amber-300 text-amber-700 rounded-full font-semibold text-sm hover:bg-amber-400 hover:text-slate-900 hover:border-amber-400 transition-all"
-              >
-                <svg className="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-                </svg>
-                Reviews
-              </a>
               <a
                 href={PHONE_LINK}
                 className="flex items-center px-6 py-2.5 bg-gradient-to-r from-amber-400 to-yellow-300 text-slate-900 rounded-full font-bold text-sm hover:shadow-lg hover:scale-105 transition-all"
@@ -78,7 +66,7 @@ export default function Header() {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden p-2 text-slate-700 hover:text-amber-500 transition-colors"
+              className="lg:hidden p-2 text-white hover:text-amber-400 transition-colors"
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open menu"
             >
