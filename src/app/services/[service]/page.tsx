@@ -44,8 +44,8 @@ const serviceMetadata: Record<string, { title: string; description: string; keyw
   },
   'general-contractor': {
     title: 'Licensed General Contractor MA (2026) | HIC #204634 | 500+ Projects',
-    description: `MA licensed general contractor ★5.0. Exterior renovations, remodeling & additions. 500+ projects. HIC #${HIC_NUMBER}. Call ${PHONE} — FREE estimate!`,
-    keywords: ['general contractor Massachusetts', 'home renovation contractor MA', 'licensed contractor Boston'],
+    description: `MA licensed general contractor ★5.0. Exterior renovations — siding, windows, doors & decks. 500+ projects. HIC #${HIC_NUMBER}. Call ${PHONE} — FREE estimate!`,
+    keywords: ['exterior general contractor Massachusetts', 'exterior renovation contractor MA', 'siding and window contractor Boston'],
   },
 };
 
@@ -69,7 +69,7 @@ const serviceFAQs: Record<string, { question: string; answer: string }[]> = {
     { question: 'Can you install smart locks with new doors?', answer: 'Absolutely! We install smart locks, keypad locks, and multi-point locking systems with all door installations. Smart home integration options are available with Schlage, Yale, and August systems.' },
   ],
   'general-contractor': [
-    { question: 'What types of projects do you handle?', answer: 'We specialize in exterior renovations including complete siding replacements, window and door packages, deck construction, and structural repairs. We also handle interior projects like kitchen remodels, bathroom renovations, and basement finishing.' },
+    { question: 'What types of projects do you handle?', answer: 'We specialize exclusively in exterior renovations — complete siding replacements, window and door packages, deck construction, trim work, and structural repairs. Our work is focused entirely on your home\'s exterior envelope.' },
     { question: 'Are you licensed for general contracting in Massachusetts?', answer: `Yes! Maia Construction holds Massachusetts Home Improvement Contractor license #${HIC_NUMBER}. We're fully licensed, bonded, and insured for all residential construction work throughout the state.` },
     { question: 'How do you handle permits and inspections?', answer: 'We manage all permit applications and inspections as part of our service. Our team coordinates with local building departments, schedules required inspections, and ensures all work meets Massachusetts building codes.' },
     { question: 'What warranty do you offer on general contracting work?', answer: 'All our work includes a 5-year workmanship warranty plus manufacturer warranties on materials (25-50 years). We use fixed-price contracts with detailed project timelines.' },

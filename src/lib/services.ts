@@ -100,20 +100,19 @@ Every door installation includes proper shimming, weatherstripping, and threshol
     name: 'General Contractor',
     slug: 'general-contractor',
     icon: '',
-    shortDescription: 'Full-service renovations managed by MA licensed professionals.',
+    shortDescription: 'Full-service exterior renovations managed by MA licensed professionals.',
     fullDescription: `From concept to completion, Maia Construction provides comprehensive general contracting services for Massachusetts homeowners. Our MA HIC licensed team manages every aspect of your renovation — permits, subcontractors, inspections, and quality control — so you can focus on your daily life.
 
-We specialize in exterior renovations that transform curb appeal and protect your investment. Complete siding replacements, window and door packages, deck construction, and structural repairs are our core expertise. We also handle interior projects including kitchen remodels, bathroom renovations, and basement finishing.
+We specialize exclusively in exterior renovations that transform curb appeal and protect your investment. Complete siding replacements, window and door packages, deck construction, trim work, and structural repairs are our core expertise. We focus exclusively on your home's exterior envelope — siding, windows, doors, decks, and the structural work that protects them.
 
 What sets us apart? Transparent fixed-price contracts, detailed project timelines, and a dedicated project manager who keeps you informed every step of the way. We coordinate all trades, pull all permits, and stand behind our work with a 5-year workmanship warranty.`,
     image: IMAGES.generalContractor,
     features: [
       'Complete exterior renovations',
-      'Kitchen & bathroom remodeling',
-      'Home additions & expansions',
+      'Siding, window & door packages',
       'Deck & patio construction',
-      'Basement finishing',
-      'Structural repairs & reinforcement',
+      'Trim, soffit & fascia work',
+      'Structural & framing repairs',
       'Permit acquisition & inspections',
       'Full project management',
     ],
