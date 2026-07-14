@@ -456,7 +456,7 @@ const blogContent: Record<string, React.ReactNode> = {
         to return on investment.
       </p>
 
-      <BlogImg src="/images/before-after/siding-before-framingham-ma.webp" alt="Home before exterior renovation in Massachusetts" caption="Before renovation — see how upgrading siding, windows, and doors transforms your home's value" />
+      <BlogImg src="/images/before-after/exterior-after-worcester-ma.webp" alt="Home after full exterior renovation in Massachusetts by Maia Construction" caption="A full exterior upgrade — new siding, windows, and doors transforms your home's value and curb appeal" />
 
       <h2>Understanding ROI in Home Improvement</h2>
       <p>
