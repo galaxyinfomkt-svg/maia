@@ -14,25 +14,49 @@ interface BeforeAfterProject {
 }
 
 const projects: BeforeAfterProject[] = [
-  // NOTE: the file names are historically mislabeled — the real same-house
-  // pairs are cross-referenced below. Each project MUST show one house
-  // (before + after). afterImage is also used as the card/thumbnail cover,
-  // so it must always be the finished ("after") photo, never a "before".
+  // Real Maia Construction projects. Each entry is ONE house (before + after).
+  // Two of the file names below are historical (pairs 1 & 2 keep their original
+  // paths); the images are the genuine same-house before/after shots. afterImage
+  // is also the card/thumbnail cover, so it is always the finished photo.
   {
     id: '1',
-    title: 'Vinyl Siding Transformation',
+    title: 'Full Vinyl Siding Replacement',
     location: 'Framingham, MA',
-    beforeImage: '/images/before-after/siding-before-framingham-ma.webp', // brown house — before
+    beforeImage: '/images/before-after/siding-before-framingham-ma.webp', // brown Cape — before
     afterImage: '/images/before-after/exterior-after-worcester-ma.webp',  // same house, navy — after
     service: 'Siding',
   },
   {
     id: '2',
-    title: 'Complete Exterior Renovation',
+    title: 'Cedar-to-Vinyl Siding Transformation',
     location: 'Worcester, MA',
-    beforeImage: '/images/before-after/siding-after-framingham-ma.webp',   // teal house — before
-    afterImage: '/images/before-after/exterior-before-worcester-ma.webp',  // same house, grey — after
-    service: 'General Contractor',
+    beforeImage: '/images/before-after/siding-after-framingham-ma.webp',   // teal Dutch Colonial — before
+    afterImage: '/images/before-after/exterior-before-worcester-ma.webp',  // same house, blue-gray — after
+    service: 'Siding',
+  },
+  {
+    id: '3',
+    title: 'Carriage House Fiber-Cement Siding',
+    location: 'Marlborough, MA',
+    beforeImage: '/images/before-after/siding-before-marlborough-ma.webp',
+    afterImage: '/images/before-after/siding-after-marlborough-ma.webp',
+    service: 'Siding',
+  },
+  {
+    id: '4',
+    title: 'Split-Level Siding Replacement',
+    location: 'Natick, MA',
+    beforeImage: '/images/before-after/siding-before-natick-ma.webp',
+    afterImage: '/images/before-after/siding-after-natick-ma.webp',
+    service: 'Siding',
+  },
+  {
+    id: '5',
+    title: 'Complete Exterior Siding',
+    location: 'Hudson, MA',
+    beforeImage: '/images/before-after/siding-before-hudson-ma.webp',
+    afterImage: '/images/before-after/siding-after-hudson-ma.webp',
+    service: 'Siding',
   },
 ];
 
