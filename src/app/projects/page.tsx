@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Hero, CTASection } from '@/components/sections';
 import { JsonLd } from '@/components/seo';
-import { SITE_NAME, IMAGES } from '@/lib/constants';
+import { SITE_NAME, SITE_URL, IMAGES } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: '500+ Projects Completed | Before & After Photos | MA Contractor',
@@ -137,6 +137,23 @@ const projects = [
 ];
 
 export default function ProjectsPage() {
+  // Approximate town-center coordinates for the Massachusetts service-area
+  // cities, used to geotag each project image via schema.org contentLocation.
+  const CITY_GEO: Record<string, [number, number]> = {
+    'Concord, MA': [42.4604, -71.3489],
+    'Framingham, MA': [42.2793, -71.4162],
+    'Grafton, MA': [42.2070, -71.6856],
+    'Hudson, MA': [42.3918, -71.5662],
+    'Lexington, MA': [42.4473, -71.2245],
+    'Marlborough, MA': [42.3459, -71.5523],
+    'Natick, MA': [42.2775, -71.3468],
+    'Northborough, MA': [42.3195, -71.6412],
+    'Shrewsbury, MA': [42.2959, -71.7128],
+    'Sudbury, MA': [42.3834, -71.4162],
+    'Westborough, MA': [42.2695, -71.6162],
+    'Worcester, MA': [42.2626, -71.8023],
+  };
+
   const projectsSchema = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -144,19 +161,33 @@ export default function ProjectsPage() {
     description: 'View our completed home improvement projects across Massachusetts.',
     mainEntity: {
       '@type': 'ItemList',
-      itemListElement: projects.map((project, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        item: {
-          '@type': 'CreativeWork',
-          name: project.title,
-          description: project.description,
-          locationCreated: {
-            '@type': 'Place',
-            name: project.location,
+      itemListElement: projects.map((project, index) => {
+        const geo = CITY_GEO[project.location];
+        const locality = project.location.replace(/,\s*MA$/, '');
+        return {
+          '@type': 'ListItem',
+          position: index + 1,
+          item: {
+            '@type': 'ImageObject',
+            name: project.title,
+            description: project.description,
+            contentUrl: project.image.startsWith('http') ? project.image : `${SITE_URL}${project.image}`,
+            creator: { '@type': 'Organization', name: SITE_NAME },
+            copyrightHolder: { '@type': 'Organization', name: SITE_NAME },
+            contentLocation: {
+              '@type': 'Place',
+              name: project.location,
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: locality,
+                addressRegion: 'MA',
+                addressCountry: 'US',
+              },
+              ...(geo ? { geo: { '@type': 'GeoCoordinates', latitude: geo[0], longitude: geo[1] } } : {}),
+            },
           },
-        },
-      })),
+        };
+      }),
     },
   };
 
