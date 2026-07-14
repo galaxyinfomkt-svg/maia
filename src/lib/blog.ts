@@ -12,7 +12,7 @@ export const blogPosts: BlogPostMeta[] = [
     description: 'A comprehensive guide to selecting the best siding material for New England weather conditions. Compare vinyl, fiber cement, and wood options.',
     date: '2026-01-10',
     author: 'Maia Construction',
-    image: '/images/before-after/siding-after-framingham-ma.webp',
+    image: '/images/before-after/exterior-before-worcester-ma.webp',
     tags: ['Siding', 'Home Improvement', 'Massachusetts'],
   },
   {
@@ -102,7 +102,7 @@ export const blogPosts: BlogPostMeta[] = [
     description: 'Choose the perfect siding color for your Massachusetts home. Color trends, timeless options, and tips for boosting curb appeal.',
     date: '2026-02-05',
     author: 'Maia Construction',
-    image: '/images/before-after/siding-after-framingham-ma.webp',
+    image: '/images/before-after/exterior-before-worcester-ma.webp',
     tags: ['Siding', 'Curb Appeal', 'Home Value'],
   },
   {
@@ -120,7 +120,7 @@ export const blogPosts: BlogPostMeta[] = [
     description: 'Tips for choosing a reliable siding contractor in Boston, Cambridge, Brookline, and surrounding areas. What to look for and red flags to avoid.',
     date: '2026-02-10',
     author: 'Maia Construction',
-    image: '/images/before-after/siding-after-framingham-ma.webp',
+    image: '/images/before-after/exterior-before-worcester-ma.webp',
     tags: ['Siding', 'Boston', 'Massachusetts', 'Tips'],
   },
   {

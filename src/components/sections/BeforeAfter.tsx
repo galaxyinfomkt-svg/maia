@@ -14,20 +14,24 @@ interface BeforeAfterProject {
 }
 
 const projects: BeforeAfterProject[] = [
+  // NOTE: the file names are historically mislabeled — the real same-house
+  // pairs are cross-referenced below. Each project MUST show one house
+  // (before + after). afterImage is also used as the card/thumbnail cover,
+  // so it must always be the finished ("after") photo, never a "before".
   {
     id: '1',
     title: 'Vinyl Siding Transformation',
     location: 'Framingham, MA',
-    beforeImage: '/images/before-after/siding-before-framingham-ma.webp',
-    afterImage: '/images/before-after/siding-after-framingham-ma.webp',
+    beforeImage: '/images/before-after/siding-before-framingham-ma.webp', // brown house — before
+    afterImage: '/images/before-after/exterior-after-worcester-ma.webp',  // same house, navy — after
     service: 'Siding',
   },
   {
     id: '2',
     title: 'Complete Exterior Renovation',
     location: 'Worcester, MA',
-    beforeImage: '/images/before-after/exterior-before-worcester-ma.webp',
-    afterImage: '/images/before-after/exterior-after-worcester-ma.webp',
+    beforeImage: '/images/before-after/siding-after-framingham-ma.webp',   // teal house — before
+    afterImage: '/images/before-after/exterior-before-worcester-ma.webp',  // same house, grey — after
     service: 'General Contractor',
   },
 ];

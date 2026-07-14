@@ -65,7 +65,7 @@ const blogContent: Record<string, React.ReactNode> = {
         humid summers, and everything in between while keeping your home beautiful and energy-efficient.
       </p>
 
-      <BlogImg src="/images/before-after/siding-after-framingham-ma.webp" alt="New siding installation on Massachusetts home by Maia Construction" caption="Freshly installed siding on a home in Framingham, MA — transforming curb appeal and weather protection" />
+      <BlogImg src="/images/before-after/exterior-before-worcester-ma.webp" alt="New siding installation on Massachusetts home by Maia Construction" caption="Freshly installed siding on a home in Framingham, MA — transforming curb appeal and weather protection" />
 
       <h2>Understanding Massachusetts Climate Challenges</h2>
       <p>
@@ -845,7 +845,7 @@ const blogContent: Record<string, React.ReactNode> = {
         the right color choice makes all the difference.
       </p>
 
-      <BlogImg src="/images/before-after/siding-after-framingham-ma.webp" alt="Beautiful siding color choice on New England colonial home" caption="The right siding color transforms your home — this Framingham colonial chose a timeless palette" />
+      <BlogImg src="/images/before-after/exterior-before-worcester-ma.webp" alt="Beautiful siding color choice on New England colonial home" caption="The right siding color transforms your home — this Framingham colonial chose a timeless palette" />
 
       <h2>Understanding New England Architectural Styles</h2>
       <p>
@@ -1012,7 +1012,7 @@ const blogContent: Record<string, React.ReactNode> = {
         <li><strong>Local reputation:</strong> Easier to verify references and see completed work</li>
       </ul>
 
-      <BlogImg src="/images/before-after/siding-after-framingham-ma.webp" alt="Professional siding installation by licensed contractor in Boston area" caption="Quality results from a licensed, insured siding contractor — Framingham, MA project" />
+      <BlogImg src="/images/before-after/exterior-before-worcester-ma.webp" alt="Professional siding installation by licensed contractor in Boston area" caption="Quality results from a licensed, insured siding contractor — Framingham, MA project" />
 
       <h2>What to Look for in a Siding Contractor</h2>
 

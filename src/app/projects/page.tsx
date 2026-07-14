@@ -18,7 +18,7 @@ const projects = [
     id: '1',
     title: 'Vinyl Siding Installation',
     location: 'Framingham, MA',
-    image: '/images/before-after/siding-after-framingham-ma.webp',
+    image: '/images/before-after/exterior-before-worcester-ma.webp',
     service: 'Siding',
     description: 'Complete vinyl siding replacement with insulation upgrade. This project dramatically improved the home\'s curb appeal and energy efficiency.',
   },

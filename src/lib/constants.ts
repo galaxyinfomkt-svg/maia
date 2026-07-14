@@ -46,9 +46,9 @@ export const IMAGES = {
   logoPng: '/images/logo-200.png',
 
   // Siding
-  siding: '/images/before-after/siding-after-framingham-ma.webp',
+  siding: '/images/before-after/exterior-before-worcester-ma.webp',
   sidingBefore: '/images/before-after/siding-before-framingham-ma.webp',
-  sidingAfter: '/images/before-after/siding-after-framingham-ma.webp',
+  sidingAfter: '/images/before-after/exterior-before-worcester-ma.webp',
 
   // Windows
   windows: '/images/windows/window-installation-massachusetts-1.webp',
