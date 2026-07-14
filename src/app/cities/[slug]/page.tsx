@@ -14,6 +14,10 @@ const VideoGallery = dynamic(() => import('@/components/sections/VideoGallery'),
   loading: () => <div className="py-24 bg-white" />,
 });
 
+const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'), {
+  loading: () => <div className="py-24 bg-slate-900" />,
+});
+
 interface CityPageProps {
   params: Promise<{ slug: string }>;
 }
@@ -320,6 +324,11 @@ export default async function CityPage({ params }: CityPageProps) {
           </section>
         );
       })()}
+
+      <BeforeAfter
+        title={`${city.name} Before & After Transformations`}
+        subtitle={`Real exterior transformations near ${city.name} — drag to compare before and after`}
+      />
 
       <VideoGallery
         title={`Our Projects in ${city.name}`}

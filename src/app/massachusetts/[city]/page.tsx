@@ -14,6 +14,10 @@ const VideoGallery = dynamic(() => import('@/components/sections/VideoGallery'),
   loading: () => <div className="py-24 bg-white" />,
 });
 
+const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'), {
+  loading: () => <div className="py-24 bg-slate-900" />,
+});
+
 interface MACityPageProps {
   params: Promise<{ city: string }>;
 }
@@ -231,6 +235,12 @@ export default async function MACityPage({ params }: MACityPageProps) {
           </div>
         </div>
       </section>
+
+      {/* Before & After */}
+      <BeforeAfter
+        title={`Before & After — ${city.name} Area`}
+        subtitle="Real exterior transformations across Massachusetts — drag to compare"
+      />
 
       {/* Video Gallery */}
       <VideoGallery title={`Our Projects in ${city.county} County`} subtitle={`Watch our team transform homes across Massachusetts`} />

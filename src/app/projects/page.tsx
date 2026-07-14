@@ -1,9 +1,14 @@
 import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Hero, CTASection } from '@/components/sections';
 import { JsonLd } from '@/components/seo';
 import { SITE_NAME, SITE_URL, IMAGES } from '@/lib/constants';
+
+const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'), {
+  loading: () => <div className="py-24 bg-slate-900" />,
+});
 
 export const metadata: Metadata = {
   title: '500+ Projects Completed | Before & After Photos | MA Contractor',
@@ -319,6 +324,11 @@ export default function ProjectsPage() {
           </div>
         </div>
       </section>
+
+      <BeforeAfter
+        title="Before & After Transformations"
+        subtitle="Drag the slider to see real Maia Construction projects, before and after"
+      />
 
       <CTASection
         title="Ready to Start Your Project?"

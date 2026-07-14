@@ -17,6 +17,10 @@ const VideoGallery = dynamic(() => import('@/components/sections/VideoGallery'),
   loading: () => <div className="py-24 bg-white" />,
 });
 
+const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'), {
+  loading: () => <div className="py-24 bg-slate-900" />,
+});
+
 const generalContractorSchema = {
   '@context': 'https://schema.org',
   '@type': 'GeneralContractor',
@@ -212,6 +216,12 @@ export default function HomePage() {
 
       {/* ========== SECTION 6: WHY CHOOSE US (like RS - 4 cards) ========== */}
       <WhyChooseUs />
+
+      {/* ========== SECTION 6b: BEFORE & AFTER TRANSFORMATIONS ========== */}
+      <BeforeAfter
+        title="Our Transformations"
+        subtitle="Real Massachusetts homes we've transformed — drag to compare before and after"
+      />
 
       {/* ========== SECTION 7: VIDEO GALLERY (like RS) ========== */}
       <VideoGallery
