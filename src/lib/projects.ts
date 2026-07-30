@@ -288,42 +288,53 @@ export const projects: Project[] = [
         caption: 'The gambrel before and after its new olive-green exterior.' },
     ],
   },
+];
 
-  // ---------------------------------------------------------------- library shots
-  // One stock-style photo each and no verifiable address, so no slug and no
-  // detail page. Kept so the grid still shows the full range of work, but they
-  // are the weakest entries here and are the first thing to replace as real
-  // job photography comes in.
-  { id: 'lib-windows-natick', title: 'Window Installation', location: 'Natick, MA', service: 'Windows',
-    image: IMAGES.windows,
-    description: 'Energy-efficient window replacement throughout the home. New double-pane windows with Low-E coating for maximum insulation.' },
-  { id: 'lib-windows-sudbury', title: 'Window Replacement', location: 'Sudbury, MA', service: 'Windows',
-    image: IMAGES.windows2,
-    description: 'Full house window replacement with modern vinyl frames and energy-efficient glass.' },
-  { id: 'lib-doors-marlborough', title: 'Entry Door Installation', location: 'Marlborough, MA', service: 'Doors',
-    image: IMAGES.doors,
-    description: 'Premium fiberglass entry door installation with sidelights. Enhanced security and curb appeal with a beautiful new entrance.' },
-  { id: 'lib-doors-hudson', title: 'Door Upgrade', location: 'Hudson, MA', service: 'Doors',
-    image: IMAGES.doors2,
-    description: 'Custom door installation with decorative glass and premium hardware.' },
-  { id: 'lib-gc-westborough', title: 'Home Renovation', location: 'Westborough, MA', service: 'General Contractor',
-    image: IMAGES.generalContractor,
-    description: 'Comprehensive home renovation including siding, windows, and doors. A complete exterior makeover.' },
-  { id: 'lib-gc-northborough', title: 'Exterior Remodel', location: 'Northborough, MA', service: 'General Contractor',
-    image: IMAGES.generalContractor2,
-    description: 'Complete exterior remodeling with new siding, trim work, and updated landscaping.' },
-  { id: 'lib-windows-shrewsbury', title: 'Window & Door Package', location: 'Shrewsbury, MA', service: 'Windows',
-    image: IMAGES.windows3,
-    description: 'Complete window and door replacement package. New energy-efficient windows throughout.' },
-  { id: 'lib-doors-grafton', title: 'Storm Door Installation', location: 'Grafton, MA', service: 'Doors',
-    image: IMAGES.doors3,
-    description: 'Quality storm door installation for enhanced protection and energy efficiency.' },
-  { id: 'lib-windows-concord', title: 'Bay Window Installation', location: 'Concord, MA', service: 'Windows',
-    image: IMAGES.windows4,
-    description: 'Beautiful bay window installation creating more natural light and space.' },
-  { id: 'lib-doors-lexington', title: 'Patio Door Installation', location: 'Lexington, MA', service: 'Doors',
-    image: IMAGES.doors4,
-    description: 'Sliding patio door installation with energy-efficient glass and smooth operation.' },
+/* Loose job photography that is not tied to a documented address.
+ *
+ * These were previously ten separate "projects" in ten different towns, which
+ * produced five near-identical door cards and four window cards saying the same
+ * thing, and asserted a town for each that nothing backs up. They are real Maia
+ * photos, so they stay — as a gallery, captioned by what they show rather than
+ * dressed up as distinct jobs. */
+export interface GalleryPhoto {
+  src: string;
+  alt: string;
+  caption: string;
+  service: ServiceName;
+}
+
+export const galleryPhotos: GalleryPhoto[] = [
+  { src: IMAGES.windows, service: 'Windows',
+    alt: 'Full-house Marvin window replacement on a blue-grey clapboard home with a board-and-batten gable and an arched window, by Maia Construction',
+    caption: 'Whole-house Marvin replacement, stickers still on.' },
+  { src: IMAGES.windows2, service: 'Windows',
+    alt: 'New white double-hung windows on a navy clapboard porch with a cedar tongue-and-groove ceiling, by Maia Construction',
+    caption: 'Double-hungs on a navy porch, cedar ceiling above.' },
+  { src: IMAGES.windows3, service: 'Windows',
+    alt: 'Bow window and French patio doors on the grey clapboard rear elevation of a Massachusetts home, by Maia Construction',
+    caption: 'Bow window and French doors on a rear elevation.' },
+  { src: IMAGES.windows4, service: 'Windows',
+    alt: 'Pella sliding door and windows being fitted into a new porch enclosure by Maia Construction',
+    caption: 'Pella slider and windows going into a new porch enclosure.' },
+  { src: IMAGES.doors, service: 'Doors',
+    alt: 'White entry door with divided-lite glass under a new gabled portico on grey vinyl siding, by Maia Construction',
+    caption: 'Entry door under a new gabled portico.' },
+  { src: IMAGES.doors2, service: 'Doors',
+    alt: 'Green panelled entry door with a metal-hooded portico against cedar shingle siding, by Maia Construction',
+    caption: 'Panelled entry door under a metal-hooded portico.' },
+  { src: IMAGES.doors3, service: 'Doors',
+    alt: 'White entry door under a curved wood-soffit portico on a cedar-shingled gable, by Maia Construction',
+    caption: 'Entry door under a curved wood-soffit portico.' },
+  { src: IMAGES.doors4, service: 'Doors',
+    alt: 'Navy entry door with divided-lite glass and white trim on a navy clapboard porch, by Maia Construction',
+    caption: 'Navy entry door with divided-lite glass.' },
+  { src: IMAGES.generalContractor, service: 'General Contractor',
+    alt: 'Sage-green clapboard rear elevation with a paver patio at dusk, by Maia Construction',
+    caption: 'Rear elevation and patio after a full exterior.' },
+  { src: IMAGES.generalContractor2, service: 'General Contractor',
+    alt: 'White board-and-batten new build with standing-seam metal roof accents, under construction by Maia Construction',
+    caption: 'Board-and-batten new build with standing-seam accents.' },
 ];
 
 /** Jobs with their own page — everything carrying real photography. */

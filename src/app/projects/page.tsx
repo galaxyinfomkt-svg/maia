@@ -5,25 +5,20 @@ import Link from 'next/link';
 import { Hero, CTASection } from '@/components/sections';
 import { JsonLd } from '@/components/seo';
 import { SITE_NAME, SITE_URL, IMAGES } from '@/lib/constants';
-import { projects } from '@/lib/projects';
+import { projects, galleryPhotos } from '@/lib/projects';
 import { CITY_GEO } from '@/lib/project-geo';
 
 const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'), {
   loading: () => <div className="py-24 bg-slate-900" />,
 });
 
-// Interleaves the identifiable jobs with the older library shots so the grid
-// reads as one varied portfolio rather than recent-work-then-filler, and so no
-// run of cards is all the same service. Anything not listed still renders,
-// appended in array order.
+// Leads with the widest transformation and puts the one door job second so the
+// first row isn't all siding. Anything not listed still renders, appended in
+// array order.
 const DISPLAY_ORDER = [
-  'atkinson-nh-siding', 'woburn-ma-siding-windows', 'lib-doors-marlborough',
-  'reading-ma-cedar', 'framingham-ma-siding', 'lib-windows-natick',
-  'norfolk-ma-doors', 'worcester-ma-siding', 'lib-gc-westborough',
-  'natick-ma-siding', 'lib-windows-sudbury', 'marlborough-ma-siding',
-  'lib-doors-hudson', 'hudson-ma-siding', 'lib-windows-shrewsbury',
-  'lib-gc-northborough', 'lib-windows-concord', 'lib-doors-grafton',
-  'lib-doors-lexington',
+  'atkinson-nh-siding', 'norfolk-ma-doors', 'reading-ma-cedar',
+  'framingham-ma-siding', 'woburn-ma-siding-windows', 'natick-ma-siding',
+  'worcester-ma-siding', 'marlborough-ma-siding', 'hudson-ma-siding',
 ];
 
 const orderedProjects = [
@@ -188,6 +183,40 @@ export default function ProjectsPage() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Loose job photography — real work, but not tied to a documented
+          address, so it is shown as a gallery rather than as separate projects. */}
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">More of Our Work</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-6" />
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Windows, doors and exteriors from jobs across our Massachusetts service area.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {galleryPhotos.map((photo) => (
+              <figure key={photo.src} className="group">
+                <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-md">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <span className="absolute top-2 left-2 px-2 py-0.5 bg-amber-400 text-slate-900 rounded-full text-[10px] font-bold">
+                    {photo.service}
+                  </span>
+                </div>
+                <figcaption className="mt-2 text-sm text-gray-600">{photo.caption}</figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
