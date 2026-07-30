@@ -60,6 +60,33 @@ const projects: BeforeAfterProject[] = [
     service: 'Doors',
     beforeLabel: 'DURING INSTALL',
   },
+  {
+    id: '11',
+    title: 'Housewrap to Finished Siding',
+    location: 'Atkinson, NH',
+    beforeImage: '/images/before-after/siding-before-atkinson-nh-4.webp',
+    afterImage: '/images/before-after/siding-after-atkinson-nh-4.webp',
+    service: 'Siding',
+    beforeLabel: 'HOUSEWRAP',
+  },
+  {
+    id: '12',
+    title: 'Wall Insulation to Finished Siding',
+    location: 'Atkinson, NH',
+    beforeImage: '/images/before-after/siding-before-atkinson-nh-5.webp',
+    afterImage: '/images/before-after/siding-after-atkinson-nh-5.webp',
+    service: 'Siding',
+    beforeLabel: 'INSULATION',
+  },
+  {
+    id: '13',
+    title: 'Custom PVC Arch Trim',
+    location: 'Woburn, MA',
+    beforeImage: '/images/before-after/trim-before-woburn-ma.webp',
+    afterImage: '/images/before-after/trim-after-woburn-ma.webp',
+    service: 'Siding',
+    beforeLabel: 'FABRICATION',
+  },
   // Real Maia Construction projects. Each entry is ONE house (before + after).
   // Two of the file names below are historical (pairs 1 & 2 keep their original
   // paths); the images are the genuine same-house before/after shots. afterImage
