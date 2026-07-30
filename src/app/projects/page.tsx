@@ -5,279 +5,25 @@ import Link from 'next/link';
 import { Hero, CTASection } from '@/components/sections';
 import { JsonLd } from '@/components/seo';
 import { SITE_NAME, SITE_URL, IMAGES } from '@/lib/constants';
+import { projects } from '@/lib/projects';
+import { CITY_GEO } from '@/lib/project-geo';
 
 const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'), {
   loading: () => <div className="py-24 bg-slate-900" />,
 });
 
-export const metadata: Metadata = {
-  title: '500+ Projects Completed | Before & After Photos | MA Contractor',
-  description: `See 500+ real before & after transformations — siding, windows & doors across Massachusetts. ★5.0 rated craftsmanship. View our portfolio and get inspired for your home!`,
-  alternates: {
-    canonical: 'https://maiaconstruction.com/projects',
-  },
-};
-
-const projects = [
-  {
-    id: '13',
-    title: 'Full Siding Replacement',
-    location: 'Atkinson, NH',
-    image: '/images/before-after/siding-after-atkinson-nh.webp',
-    service: 'Siding',
-    description: 'Whole-house siding replacement on a Cape in Atkinson, NH. Failing cedar shakes and mismatched vinyl came off down to the original plank sheathing, then went back on as EnergyShield continuous wall insulation, housewrap and blue-grey insulated vinyl siding with all-new trim and gutters.',
-  },
-  {
-    id: '14',
-    title: 'Palladian Window & Custom PVC Trim',
-    location: 'Woburn, MA',
-    image: '/images/before-after/siding-after-woburn-ma.webp',
-    service: 'Siding',
-    description: 'Siding and window project in Woburn, MA featuring a Palladian arch window. The curved PVC trim was cut and assembled on site to match the arch exactly, then wrapped with new clapboard-profile vinyl siding.',
-  },
-  {
-    id: '15',
-    title: 'Cedar Shingle Siding',
-    location: 'Reading, MA',
-    image: '/images/before-after/siding-after-reading-ma.webp',
-    service: 'Siding',
-    description: 'Hand-coursed western red cedar shingle siding on a gambrel-roofed addition in Reading, MA, installed over ZIP System sheathing with new white trim and corner boards.',
-  },
-  {
-    id: '16',
-    title: 'Sliding Patio Door Replacement',
-    location: 'Norfolk, MA',
-    image: '/images/before-after/door-after-norfolk-ma.webp',
-    service: 'Doors',
-    description: 'Kitchen patio slider replaced in a single day in Norfolk, MA — old unit out, new door set, shimmed, insulated and finished with full interior casing.',
-  },
-  {
-    id: '17',
-    title: 'Siding & Window Replacement',
-    location: 'Woburn, MA',
-    image: '/images/before-after/siding-woburn-ma-front.webp',
-    service: 'Siding',
-    description: 'Front elevation of a Woburn, MA ranch after new clapboard-profile vinyl siding, replacement windows and a bay window, all wrapped in fresh white trim.',
-  },
-  {
-    id: '18',
-    title: 'Bay Window & Siding',
-    location: 'Woburn, MA',
-    image: '/images/before-after/siding-woburn-ma-side.webp',
-    service: 'Windows',
-    description: 'Side elevation in Woburn, MA with a new bay window, wrapped trim and seamless gutters and downspouts running the full length of the house.',
-  },
-  {
-    id: '19',
-    title: 'Rear Elevation Siding',
-    location: 'Woburn, MA',
-    image: '/images/before-after/siding-woburn-ma-rear.webp',
-    service: 'Siding',
-    description: 'New siding meeting the original brick chimney on the rear of a Woburn, MA home, with a replacement picture window and the mini-split line set tidied in.',
-  },
-  {
-    id: '20',
-    title: 'Completed Siding & Windows',
-    location: 'Woburn, MA',
-    image: '/images/before-after/siding-woburn-ma-front-2.webp',
-    service: 'Siding',
-    description: 'Street view of a finished Woburn, MA siding and window project — the kind of curb appeal a full exterior replacement delivers.',
-  },
-  {
-    id: '21',
-    title: 'Cedar Shingle Addition',
-    location: 'Reading, MA',
-    image: '/images/before-after/cedar-siding-reading-ma-2.webp',
-    service: 'Siding',
-    description: 'Western red cedar shingle siding on a gambrel-roofed addition in Reading, MA, hand-coursed straight to the white corner boards.',
-  },
-  {
-    id: '22',
-    title: 'Cedar Shingles & New Addition',
-    location: 'Reading, MA',
-    image: '/images/before-after/cedar-siding-reading-ma-3.webp',
-    service: 'Siding',
-    description: 'New cedar shingle siding meeting the original grey clapboard, with a shingled entry portico and all-new white trim in Reading, MA.',
-  },
-  {
-    id: '23',
-    title: 'Cedar Shingle Front Elevation',
-    location: 'Reading, MA',
-    image: '/images/before-after/cedar-siding-reading-ma-4.webp',
-    service: 'Siding',
-    description: 'Front elevation of a Reading, MA addition clad in western red cedar with a shingled entry portico and new double-hung windows.',
-  },
-  {
-    id: '24',
-    title: 'Cedar Shingle Coursing Detail',
-    location: 'Reading, MA',
-    image: '/images/before-after/cedar-siding-reading-ma-detail.webp',
-    service: 'Siding',
-    description: 'Close detail of the hand-coursed western red cedar shingles and white window trim on a Reading, MA dormer.',
-  },
-  {
-    id: '25',
-    title: 'Whole-House Residing',
-    location: 'Atkinson, NH',
-    image: '/images/before-after/siding-atkinson-nh-front.webp',
-    service: 'Siding',
-    description: 'Finished front elevation in Atkinson, NH — blue-grey insulated vinyl siding, new white trim and a clean roofline after a whole-house residing.',
-  },
-  {
-    id: '26',
-    title: 'Custom PVC Arch Trim',
-    location: 'Woburn, MA',
-    image: '/images/before-after/trim-after-woburn-ma.webp',
-    service: 'Siding',
-    description: 'Palladian window addition in Woburn, MA finished with curved PVC trim cut and assembled on site to match the arch exactly.',
-  },
-  {
-    id: '27',
-    title: 'Fiberglass Entry Door',
-    location: 'Norfolk, MA',
-    image: '/images/before-after/door-norfolk-ma-entry.webp',
-    service: 'Doors',
-    description: 'Black fiberglass entry door with matching sidelights installed in Norfolk, MA, framed in crisp white trim against yellow clapboard.',
-  },
-  {
-    id: '28',
-    title: 'Entry Door with Sidelights',
-    location: 'Norfolk, MA',
-    image: '/images/before-after/door-norfolk-ma-foyer.webp',
-    service: 'Doors',
-    description: 'Interior view of a new Norfolk, MA entry door with frosted sidelights and full casing — finished inside and out.',
-  },
-  {
-    id: '1',
-    title: 'Full Vinyl Siding Replacement',
-    location: 'Framingham, MA',
-    image: '/images/before-after/exterior-after-worcester-ma.webp',
-    service: 'Siding',
-    description: 'Complete vinyl siding replacement on a Cape-style home — a striking navy-blue exterior that dramatically improved curb appeal and energy efficiency.',
-  },
-  {
-    id: '2',
-    title: 'Cedar-to-Vinyl Siding Transformation',
-    location: 'Worcester, MA',
-    image: '/images/before-after/exterior-before-worcester-ma.webp',
-    service: 'Siding',
-    description: 'Worn cedar shingles replaced with fresh blue-gray vinyl siding and a rebuilt front porch — an outdated home transformed into a modern showpiece.',
-  },
-  {
-    id: 'siding-marlborough',
-    title: 'Carriage House Fiber-Cement Siding',
-    location: 'Marlborough, MA',
-    image: '/images/before-after/siding-after-marlborough-ma.webp',
-    service: 'Siding',
-    description: 'HardiePlank fiber-cement siding on a new carriage house — durable, low-maintenance protection built for New England weather.',
-  },
-  {
-    id: 'siding-natick',
-    title: 'Split-Level Siding Replacement',
-    location: 'Natick, MA',
-    image: '/images/before-after/siding-after-natick-ma.webp',
-    service: 'Siding',
-    description: 'Full siding tear-off and replacement with new gray vinyl over the brick base — a clean, modern exterior with lasting curb appeal.',
-  },
-  {
-    id: 'siding-hudson',
-    title: 'Complete Exterior Siding',
-    location: 'Hudson, MA',
-    image: '/images/before-after/siding-after-hudson-ma.webp',
-    service: 'Siding',
-    description: 'Full exterior siding installation in olive-green vinyl on a gambrel-roof home — weather-tight, energy-efficient, and beautifully finished.',
-  },
-  {
-    id: '3',
-    title: 'Window Installation',
-    location: 'Natick, MA',
-    image: IMAGES.windows,
-    service: 'Windows',
-    description: 'Energy-efficient window replacement throughout the home. New double-pane windows with Low-E coating for maximum insulation.',
-  },
-  {
-    id: '4',
-    title: 'Window Replacement',
-    location: 'Sudbury, MA',
-    image: IMAGES.windows2,
-    service: 'Windows',
-    description: 'Full house window replacement with modern vinyl frames and energy-efficient glass.',
-  },
-  {
-    id: '5',
-    title: 'Entry Door Installation',
-    location: 'Marlborough, MA',
-    image: IMAGES.doors,
-    service: 'Doors',
-    description: 'Premium fiberglass entry door installation with sidelights. Enhanced security and curb appeal with a beautiful new entrance.',
-  },
-  {
-    id: '6',
-    title: 'Door Upgrade',
-    location: 'Hudson, MA',
-    image: IMAGES.doors2,
-    service: 'Doors',
-    description: 'Custom door installation with decorative glass and premium hardware.',
-  },
-  {
-    id: '7',
-    title: 'Home Renovation',
-    location: 'Westborough, MA',
-    image: IMAGES.generalContractor,
-    service: 'General Contractor',
-    description: 'Comprehensive home renovation including siding, windows, and doors. A complete exterior makeover.',
-  },
-  {
-    id: '8',
-    title: 'Exterior Remodel',
-    location: 'Northborough, MA',
-    image: IMAGES.generalContractor2,
-    service: 'General Contractor',
-    description: 'Complete exterior remodeling with new siding, trim work, and updated landscaping.',
-  },
-  {
-    id: '9',
-    title: 'Window & Door Package',
-    location: 'Shrewsbury, MA',
-    image: IMAGES.windows3,
-    service: 'Windows',
-    description: 'Complete window and door replacement package. New energy-efficient windows throughout.',
-  },
-  {
-    id: '10',
-    title: 'Storm Door Installation',
-    location: 'Grafton, MA',
-    image: IMAGES.doors3,
-    service: 'Doors',
-    description: 'Quality storm door installation for enhanced protection and energy efficiency.',
-  },
-  {
-    id: '11',
-    title: 'Bay Window Installation',
-    location: 'Concord, MA',
-    image: IMAGES.windows4,
-    service: 'Windows',
-    description: 'Beautiful bay window installation creating more natural light and space.',
-  },
-  {
-    id: '12',
-    title: 'Patio Door Installation',
-    location: 'Lexington, MA',
-    image: IMAGES.doors4,
-    service: 'Doors',
-    description: 'Sliding patio door installation with energy-efficient glass and smooth operation.',
-  },
-];
-
-// Display order for the grid. The identifiable job photos are interleaved with
-// the older library shots so the page reads as one varied portfolio rather than
-// recent-work-then-filler, and so no run of cards is all the same service.
-// Anything not listed here still gets rendered, appended in array order.
+// Interleaves the identifiable jobs with the older library shots so the grid
+// reads as one varied portfolio rather than recent-work-then-filler, and so no
+// run of cards is all the same service. Anything not listed still renders,
+// appended in array order.
 const DISPLAY_ORDER = [
-  '13', '18', '5', '21', '17', '3', '27', '1', '7', '22', '16',
-  '4', '25', '2', '6', '20', '23', '9', '28', 'siding-marlborough',
-  '8', '14', '19', '11', 'siding-natick', '24', '10', '26',
-  'siding-hudson', '12', '15',
+  'atkinson-nh-siding', 'woburn-ma-siding-windows', 'lib-doors-marlborough',
+  'reading-ma-cedar', 'framingham-ma-siding', 'lib-windows-natick',
+  'norfolk-ma-doors', 'worcester-ma-siding', 'lib-gc-westborough',
+  'natick-ma-siding', 'lib-windows-sudbury', 'marlborough-ma-siding',
+  'lib-doors-hudson', 'hudson-ma-siding', 'lib-windows-shrewsbury',
+  'lib-gc-northborough', 'lib-windows-concord', 'lib-doors-grafton',
+  'lib-doors-lexington',
 ];
 
 const orderedProjects = [
@@ -287,29 +33,15 @@ const orderedProjects = [
   ...projects.filter((p) => !DISPLAY_ORDER.includes(p.id)),
 ];
 
-export default function ProjectsPage() {
-  // Approximate town-center coordinates for the service-area cities, used to
-  // geotag each project image via schema.org contentLocation. Deliberately the
-  // town centre and not the customer's address — these are private homes.
-  const CITY_GEO: Record<string, [number, number]> = {
-    'Atkinson, NH': [42.8389, -71.15],
-    'Concord, MA': [42.4604, -71.3489],
-    'Framingham, MA': [42.2793, -71.4162],
-    'Grafton, MA': [42.2070, -71.6856],
-    'Hudson, MA': [42.3918, -71.5662],
-    'Lexington, MA': [42.4473, -71.2245],
-    'Marlborough, MA': [42.3459, -71.5523],
-    'Natick, MA': [42.2775, -71.3468],
-    'Norfolk, MA': [42.1194, -71.325],
-    'Northborough, MA': [42.3195, -71.6412],
-    'Reading, MA': [42.5256, -71.1097],
-    'Shrewsbury, MA': [42.2959, -71.7128],
-    'Sudbury, MA': [42.3834, -71.4162],
-    'Westborough, MA': [42.2695, -71.6162],
-    'Woburn, MA': [42.4792, -71.1528],
-    'Worcester, MA': [42.2626, -71.8023],
-  };
+export const metadata: Metadata = {
+  title: '500+ Projects Completed | Before & After Photos | MA Contractor',
+  description: `See 500+ real before & after transformations — siding, windows & doors across Massachusetts. ★5.0 rated craftsmanship. View our portfolio and get inspired for your home!`,
+  alternates: {
+    canonical: 'https://maiaconstruction.com/projects',
+  },
+};
 
+export default function ProjectsPage() {
   const projectsSchema = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -395,42 +127,67 @@ export default function ProjectsPage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {orderedProjects.map((project) => (
-              <div
-                key={project.id}
-                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
-              >
-                {/* Project Image */}
-                <div className="relative h-56">
-                  <Image
-                    src={project.image}
-                    alt={`${project.title} in ${project.location} - professional ${project.service.toLowerCase()} project by Maia Construction licensed Massachusetts contractor`}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  {/* Service Badge */}
-                  <div className="absolute top-3 left-3 px-3 py-1 bg-amber-400 text-slate-900 rounded-full text-xs font-bold shadow-lg">
-                    {project.service}
-                  </div>
-                </div>
+            {orderedProjects.map((project) => {
+              // Only jobs with real photography get a page; a card linking to one
+              // stock photo and two sentences would just be thin content.
+              const photoCount = (project.gallery?.length ?? 0) + (project.pairs?.length ?? 0) * 2;
+              const cardClass =
+                'group block bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300';
 
-                {/* Content */}
-                <div className="p-5">
-                  <h3 className="text-lg font-bold text-slate-900 mb-1 group-hover:text-amber-500 transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-amber-500 font-semibold text-sm mb-2 flex items-center">
-                    <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                    </svg>
-                    {project.location}
-                  </p>
-                  <p className="text-gray-600 text-sm line-clamp-2">
-                    {project.description}
-                  </p>
+              const content = (
+                <>
+                  {/* Project Image */}
+                  <div className="relative h-56">
+                    <Image
+                      src={project.image}
+                      alt={`${project.title} in ${project.location} - professional ${project.service.toLowerCase()} project by Maia Construction licensed Massachusetts contractor`}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    {/* Service Badge */}
+                    <div className="absolute top-3 left-3 px-3 py-1 bg-amber-400 text-slate-900 rounded-full text-xs font-bold shadow-lg">
+                      {project.service}
+                    </div>
+                    {photoCount > 1 && (
+                      <div className="absolute top-3 right-3 px-3 py-1 bg-slate-900/75 text-white rounded-full text-xs font-bold">
+                        {photoCount} photos
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-5">
+                    <h3 className="text-lg font-bold text-slate-900 mb-1 group-hover:text-amber-500 transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-amber-500 font-semibold text-sm mb-2 flex items-center">
+                      <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                      </svg>
+                      {project.location}
+                    </p>
+                    <p className="text-gray-600 text-sm line-clamp-2">
+                      {project.description}
+                    </p>
+                    {project.slug && (
+                      <p className="mt-3 text-sm font-bold text-slate-900 group-hover:text-amber-500 transition-colors">
+                        View project &rarr;
+                      </p>
+                    )}
+                  </div>
+                </>
+              );
+
+              return project.slug ? (
+                <Link key={project.id} href={`/projects/${project.slug}`} className={cardClass}>
+                  {content}
+                </Link>
+              ) : (
+                <div key={project.id} className={cardClass}>
+                  {content}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

@@ -1,0 +1,364 @@
+/* Single source of truth for the portfolio.
+ *
+ * One entry per JOB, not per photograph. The Woburn house alone produced six
+ * usable elevations and Reading five — listing each as its own "project" made
+ * the gallery look like a dozen jobs when it was three, so every photo from one
+ * address now lives in that project's gallery and detail page.
+ *
+ * Projects with `pairs` or a multi-photo `gallery` get their own page under
+ * /projects/<slug>. The single-photo library shots at the bottom deliberately
+ * do not — a page holding one stock-ish photo and two sentences is exactly the
+ * thin content this site is already trying to dig itself out of.
+ */
+
+import { IMAGES } from '@/lib/constants';
+
+export type ServiceName = 'Siding' | 'Windows' | 'Doors' | 'General Contractor';
+
+export interface ProjectPair {
+  before: string;
+  after: string;
+  /** Left-hand badge. Pairs that are mid-job rather than original condition
+   *  say so — labelling those "BEFORE" would misrepresent them. */
+  beforeLabel?: string;
+  caption: string;
+}
+
+export interface ProjectPhoto {
+  src: string;
+  alt: string;
+  caption: string;
+}
+
+export interface Project {
+  id: string;
+  /** Present only for jobs with enough material for their own page. */
+  slug?: string;
+  title: string;
+  location: string;
+  service: ServiceName;
+  /** Card cover — always a finished photo, never a "before". */
+  image: string;
+  /** Card blurb. */
+  description: string;
+  /** Detail-page prose. */
+  body?: string[];
+  pairs?: ProjectPair[];
+  gallery?: ProjectPhoto[];
+  /** Shown in the five-item slider rail outside /projects. */
+  featured?: boolean;
+}
+
+const BA = '/images/before-after';
+
+export const projects: Project[] = [
+  // ---------------------------------------------------------------- Atkinson, NH
+  {
+    id: 'atkinson-nh-siding',
+    slug: 'whole-house-siding-replacement-atkinson-nh',
+    title: 'Whole-House Siding Replacement',
+    location: 'Atkinson, NH',
+    service: 'Siding',
+    image: `${BA}/siding-after-atkinson-nh.webp`,
+    description:
+      'Failing cedar shakes and mismatched vinyl stripped to the original plank sheathing, then rebuilt with continuous wall insulation, housewrap and blue-grey insulated vinyl siding.',
+    featured: true,
+    body: [
+      'This Cape in Atkinson, New Hampshire had been patched more than once. The upper gables still wore the original cedar shakes, weathered orange and cupping away from the wall, while the additions below had been re-clad at different times in two shades of grey vinyl that never matched. The result read as three houses stitched together.',
+      'We stripped every wall back to the original plank sheathing rather than siding over what was there. That let us see the condition of the boards and flash the openings properly. Atlas EnergyShield continuous wall insulation went on over the sheathing, then DuPont Tyvek HomeWrap, and only then the new blue-grey insulated vinyl.',
+      'Every window and door was re-wrapped, new corner boards and frieze went on, and the gutters and downspouts were replaced to match. The house now reads as one building instead of three.',
+    ],
+    pairs: [
+      { before: `${BA}/siding-before-atkinson-nh.webp`, after: `${BA}/siding-after-atkinson-nh.webp`,
+        caption: 'Rear elevation — the orange cedar gable and two mismatched greys replaced with one insulated vinyl.' },
+      { before: `${BA}/siding-before-atkinson-nh-2.webp`, after: `${BA}/siding-after-atkinson-nh-2.webp`,
+        caption: 'Side elevation — new siding, corner boards and gutters carried right around.' },
+      { before: `${BA}/siding-before-atkinson-nh-3.webp`, after: `${BA}/siding-after-atkinson-nh-3.webp`,
+        caption: 'Entry side — dated shutters gone, every opening wrapped in new trim.' },
+      { before: `${BA}/siding-before-atkinson-nh-5.webp`, after: `${BA}/siding-after-atkinson-nh-5.webp`,
+        beforeLabel: 'INSULATION',
+        caption: 'Atlas EnergyShield continuous wall insulation over the sheathing, and the same wall finished.' },
+      { before: `${BA}/siding-before-atkinson-nh-4.webp`, after: `${BA}/siding-after-atkinson-nh-4.webp`,
+        beforeLabel: 'HOUSEWRAP',
+        caption: 'Tyvek HomeWrap before the first course goes on — the layer nobody sees once the job is done.' },
+    ],
+    gallery: [
+      { src: `${BA}/siding-atkinson-nh-front.webp`,
+        alt: 'Finished front elevation of a Cape in Atkinson, NH with blue-grey insulated vinyl siding and white trim',
+        caption: 'Finished front elevation, with a clean roofline and all-new white trim.' },
+    ],
+  },
+
+  // ---------------------------------------------------------------- Woburn, MA
+  {
+    id: 'woburn-ma-siding-windows',
+    slug: 'siding-windows-custom-pvc-trim-woburn-ma',
+    title: 'Siding, Windows & Custom PVC Trim',
+    location: 'Woburn, MA',
+    service: 'Siding',
+    image: `${BA}/siding-woburn-ma-front.webp`,
+    description:
+      'Full exterior on a Woburn ranch — new vinyl siding, replacement windows, a bay window, and curved PVC trim cut on site to fit a Palladian arch.',
+    body: [
+      'One house, four elevations and a window that no catalogue trim would fit. The Woburn ranch got new clapboard-profile vinyl siding throughout, replacement windows, and seamless gutters and downspouts running the full length of the building.',
+      'The rear addition carries a Palladian arch window. Curved PVC trim for an opening like that is not something you order — the radius has to match the window that is actually installed. We templated it on site, cut and assembled the arch in the driveway, and fitted it before the siding went on.',
+      'The wall behind it was built up the same way as the rest of the house: EnergyShield continuous wall insulation over the sheathing, then the trim, then the siding.',
+    ],
+    pairs: [
+      { before: `${BA}/siding-before-woburn-ma.webp`, after: `${BA}/siding-after-woburn-ma.webp`,
+        beforeLabel: 'MID-JOB',
+        caption: 'The gable with insulation on and the arch window set, next to the finished wall.' },
+      { before: `${BA}/trim-before-woburn-ma.webp`, after: `${BA}/trim-after-woburn-ma.webp`,
+        beforeLabel: 'FABRICATION',
+        caption: 'The arch trim being cut and assembled on site, and the same addition finished.' },
+    ],
+    gallery: [
+      { src: `${BA}/siding-woburn-ma-front.webp`,
+        alt: 'Front elevation of a Woburn, MA ranch with new vinyl siding, replacement windows and a bay window',
+        caption: 'Front elevation — new siding, replacement windows and a bay window in fresh white trim.' },
+      { src: `${BA}/siding-woburn-ma-front-2.webp`,
+        alt: 'Street view of a completed siding and window project in Woburn, MA',
+        caption: 'From the street, with the walkway and lamp post.' },
+      { src: `${BA}/siding-woburn-ma-side.webp`,
+        alt: 'Side elevation in Woburn, MA with a new bay window, wrapped trim and seamless gutters',
+        caption: 'Side elevation — bay window, wrapped trim, and gutters running the full length.' },
+      { src: `${BA}/siding-woburn-ma-rear.webp`,
+        alt: 'Rear elevation in Woburn, MA where new siding meets the original brick chimney',
+        caption: 'Rear — new siding cut in around the original brick chimney, mini-split line set tidied.' },
+    ],
+  },
+
+  // ---------------------------------------------------------------- Reading, MA
+  {
+    id: 'reading-ma-cedar',
+    slug: 'cedar-shingle-siding-reading-ma',
+    title: 'Cedar Shingle Siding',
+    location: 'Reading, MA',
+    service: 'Siding',
+    image: `${BA}/cedar-siding-reading-ma-2.webp`,
+    description:
+      'Hand-coursed western red cedar shingles on a gambrel-roofed addition, laid over ZIP System sheathing with new white trim and corner boards.',
+    body: [
+      'A gambrel-roofed addition in Reading, clad in western red cedar shingles. Cedar is laid by hand, one course at a time, and every course has to stay level and land correctly at the corner boards and around each window — there is nowhere to hide a drifting line.',
+      'The shingles went on over ZIP System sheathing, so the wall was already air- and water-sealed before the first course. New white trim, corner boards and a shingled entry portico finish it.',
+      'The cedar is left to weather naturally. It will move from this honey tone toward silver-grey over the next few seasons.',
+    ],
+    gallery: [
+      { src: `${BA}/cedar-siding-reading-ma-2.webp`,
+        alt: 'Western red cedar shingle siding on a gambrel-roofed addition in Reading, MA',
+        caption: 'The gambrel addition, coursed straight to the white corner boards.' },
+      { src: `${BA}/cedar-siding-reading-ma-3.webp`,
+        alt: 'New cedar shingle siding meeting the original grey clapboard on a Reading, MA home',
+        caption: 'Where the new cedar meets the original grey clapboard on the main house.' },
+      { src: `${BA}/cedar-siding-reading-ma-4.webp`,
+        alt: 'Front elevation of a Reading, MA addition clad in western red cedar with an entry portico',
+        caption: 'Front elevation, with the shingled entry portico and new double-hung windows.' },
+      { src: `${BA}/siding-after-reading-ma.webp`,
+        alt: 'Cedar shingle siding and white trim on a Reading, MA addition',
+        caption: 'The full facade once the staging came down.' },
+      { src: `${BA}/cedar-siding-reading-ma-detail.webp`,
+        alt: 'Close detail of hand-coursed western red cedar shingles and white window trim in Reading, MA',
+        caption: 'Coursing detail at a dormer — the part that only shows up close.' },
+    ],
+  },
+
+  // ---------------------------------------------------------------- Norfolk, MA
+  {
+    id: 'norfolk-ma-doors',
+    slug: 'entry-and-patio-door-installation-norfolk-ma',
+    title: 'Entry & Patio Door Installation',
+    location: 'Norfolk, MA',
+    service: 'Doors',
+    image: `${BA}/door-after-norfolk-ma.webp`,
+    description:
+      'Sliding patio door replaced in a single day and a fiberglass entry door with sidelights — each one set, insulated and finished with full casing.',
+    featured: true,
+    body: [
+      'Door replacement is judged on the finish. Getting the unit level, shimmed and foamed is the part that makes it work; the casing is the part the homeowner looks at every day. We do both, so nobody is left with a new door and a wall to patch.',
+      'The kitchen patio slider came out and went back in the same day — old unit out, new door set and insulated, interior casing on before we left.',
+      'The entry door is fiberglass with matching sidelights, black on the street side against the yellow clapboard and finished in white inside.',
+    ],
+    pairs: [
+      { before: `${BA}/door-before-norfolk-ma.webp`, after: `${BA}/door-after-norfolk-ma.webp`,
+        beforeLabel: 'DURING INSTALL',
+        caption: 'The slider set, shimmed and foamed, then the same opening with full casing on.' },
+    ],
+    gallery: [
+      { src: `${BA}/door-norfolk-ma-entry.webp`,
+        alt: 'Black fiberglass entry door with sidelights installed in Norfolk, MA against yellow clapboard',
+        caption: 'Fiberglass entry door with matching sidelights, in crisp white trim.' },
+      { src: `${BA}/door-norfolk-ma-foyer.webp`,
+        alt: 'Interior view of a new entry door with frosted sidelights and full casing in Norfolk, MA',
+        caption: 'The same opening from inside — frosted sidelights and full casing.' },
+    ],
+  },
+
+  // ---------------------------------------------------------------- legacy pairs
+  // Two of these file names are historical and do NOT match the town they show:
+  // exterior-after-worcester-ma is the AFTER of the Framingham house, and
+  // siding-after-framingham-ma is the BEFORE of the Worcester one.
+  {
+    id: 'framingham-ma-siding',
+    slug: 'full-vinyl-siding-replacement-framingham-ma',
+    title: 'Full Vinyl Siding Replacement',
+    location: 'Framingham, MA',
+    service: 'Siding',
+    image: `${BA}/exterior-after-worcester-ma.webp`,
+    description:
+      'Complete vinyl siding replacement on a Cape-style home — a striking navy-blue exterior that lifted both curb appeal and energy efficiency.',
+    featured: true,
+    body: [
+      'A Cape in Framingham taken from a tired brown exterior to navy-blue vinyl, with white trim picking out the dormers, the porch and every window.',
+      'The porch was rebuilt as part of the same job, so the new siding and the new structure were detailed together rather than one being worked around the other.',
+    ],
+    pairs: [
+      { before: `${BA}/siding-before-framingham-ma.webp`, after: `${BA}/exterior-after-worcester-ma.webp`,
+        caption: 'The same house before and after — brown Cape to navy-blue vinyl.' },
+    ],
+  },
+  {
+    id: 'worcester-ma-siding',
+    slug: 'cedar-to-vinyl-siding-transformation-worcester-ma',
+    title: 'Cedar-to-Vinyl Siding Transformation',
+    location: 'Worcester, MA',
+    service: 'Siding',
+    image: `${BA}/exterior-before-worcester-ma.webp`,
+    description:
+      'Worn cedar shingles replaced with blue-grey vinyl siding and a rebuilt front porch on a Dutch Colonial.',
+    featured: true,
+    body: [
+      'A Dutch Colonial in Worcester whose cedar shingles had reached the end of their life. They came off and blue-grey vinyl went on, with white trim on the gambrel, the porch columns and the window surrounds.',
+      'The front porch and its railings were rebuilt at the same time, which is what pulls the whole elevation together.',
+    ],
+    pairs: [
+      { before: `${BA}/siding-after-framingham-ma.webp`, after: `${BA}/exterior-before-worcester-ma.webp`,
+        caption: 'Teal Dutch Colonial before, blue-grey vinyl and a rebuilt porch after.' },
+    ],
+  },
+  {
+    id: 'marlborough-ma-siding',
+    slug: 'carriage-house-fiber-cement-siding-marlborough-ma',
+    title: 'Carriage House Fiber-Cement Siding',
+    location: 'Marlborough, MA',
+    service: 'Siding',
+    image: `${BA}/siding-after-marlborough-ma.webp`,
+    description:
+      'HardiePlank fiber-cement siding on a new carriage house — durable, low-maintenance protection built for New England weather.',
+    body: [
+      'A new carriage house in Marlborough clad in HardiePlank fiber-cement. Fiber-cement holds paint far longer than wood and does not move with the seasons the way vinyl can, which suits a building that has to match the main house for years.',
+    ],
+    pairs: [
+      { before: `${BA}/siding-before-marlborough-ma.webp`, after: `${BA}/siding-after-marlborough-ma.webp`,
+        caption: 'The carriage house before and after its fiber-cement cladding.' },
+    ],
+  },
+  {
+    id: 'natick-ma-siding',
+    slug: 'split-level-siding-replacement-natick-ma',
+    title: 'Split-Level Siding Replacement',
+    location: 'Natick, MA',
+    service: 'Siding',
+    image: `${BA}/siding-after-natick-ma.webp`,
+    description:
+      'Full siding tear-off and replacement in grey vinyl over the original brick base, with black shutters and white trim.',
+    featured: true,
+    body: [
+      'A split-level in Natick stripped and re-clad in grey vinyl, kept deliberately above the original brick base so the two materials read as a deliberate band rather than an accident.',
+      'Black shutters and white window trim give the elevation the contrast it was missing.',
+    ],
+    pairs: [
+      { before: `${BA}/siding-before-natick-ma.webp`, after: `${BA}/siding-after-natick-ma.webp`,
+        caption: 'Tear-off and replacement — grey vinyl over the brick base.' },
+    ],
+  },
+  {
+    id: 'hudson-ma-siding',
+    slug: 'complete-exterior-siding-hudson-ma',
+    title: 'Complete Exterior Siding',
+    location: 'Hudson, MA',
+    service: 'Siding',
+    image: `${BA}/siding-after-hudson-ma.webp`,
+    description:
+      'Full exterior siding installation in olive-green vinyl on a gambrel-roof home — weather-tight, energy-efficient and cleanly finished.',
+    body: [
+      'A gambrel-roof home in Hudson re-clad in olive-green vinyl, with white trim on the windows, the door hood and the rakes.',
+    ],
+    pairs: [
+      { before: `${BA}/siding-before-hudson-ma.webp`, after: `${BA}/siding-after-hudson-ma.webp`,
+        caption: 'The gambrel before and after its new olive-green exterior.' },
+    ],
+  },
+
+  // ---------------------------------------------------------------- library shots
+  // One stock-style photo each and no verifiable address, so no slug and no
+  // detail page. Kept so the grid still shows the full range of work, but they
+  // are the weakest entries here and are the first thing to replace as real
+  // job photography comes in.
+  { id: 'lib-windows-natick', title: 'Window Installation', location: 'Natick, MA', service: 'Windows',
+    image: IMAGES.windows,
+    description: 'Energy-efficient window replacement throughout the home. New double-pane windows with Low-E coating for maximum insulation.' },
+  { id: 'lib-windows-sudbury', title: 'Window Replacement', location: 'Sudbury, MA', service: 'Windows',
+    image: IMAGES.windows2,
+    description: 'Full house window replacement with modern vinyl frames and energy-efficient glass.' },
+  { id: 'lib-doors-marlborough', title: 'Entry Door Installation', location: 'Marlborough, MA', service: 'Doors',
+    image: IMAGES.doors,
+    description: 'Premium fiberglass entry door installation with sidelights. Enhanced security and curb appeal with a beautiful new entrance.' },
+  { id: 'lib-doors-hudson', title: 'Door Upgrade', location: 'Hudson, MA', service: 'Doors',
+    image: IMAGES.doors2,
+    description: 'Custom door installation with decorative glass and premium hardware.' },
+  { id: 'lib-gc-westborough', title: 'Home Renovation', location: 'Westborough, MA', service: 'General Contractor',
+    image: IMAGES.generalContractor,
+    description: 'Comprehensive home renovation including siding, windows, and doors. A complete exterior makeover.' },
+  { id: 'lib-gc-northborough', title: 'Exterior Remodel', location: 'Northborough, MA', service: 'General Contractor',
+    image: IMAGES.generalContractor2,
+    description: 'Complete exterior remodeling with new siding, trim work, and updated landscaping.' },
+  { id: 'lib-windows-shrewsbury', title: 'Window & Door Package', location: 'Shrewsbury, MA', service: 'Windows',
+    image: IMAGES.windows3,
+    description: 'Complete window and door replacement package. New energy-efficient windows throughout.' },
+  { id: 'lib-doors-grafton', title: 'Storm Door Installation', location: 'Grafton, MA', service: 'Doors',
+    image: IMAGES.doors3,
+    description: 'Quality storm door installation for enhanced protection and energy efficiency.' },
+  { id: 'lib-windows-concord', title: 'Bay Window Installation', location: 'Concord, MA', service: 'Windows',
+    image: IMAGES.windows4,
+    description: 'Beautiful bay window installation creating more natural light and space.' },
+  { id: 'lib-doors-lexington', title: 'Patio Door Installation', location: 'Lexington, MA', service: 'Doors',
+    image: IMAGES.doors4,
+    description: 'Sliding patio door installation with energy-efficient glass and smooth operation.' },
+];
+
+/** Jobs with their own page — everything carrying real photography. */
+export const detailedProjects = projects.filter((p) => p.slug);
+
+export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
+
+/** Pairs shown in the slider rail outside /projects. */
+export const featuredProjects = projects.filter((p) => p.featured && p.pairs?.length);
+
+export const allProjectPairs = projects.flatMap((p) =>
+  (p.pairs ?? []).map((pair, i) => ({ ...pair, project: p, key: `${p.id}-${i}` }))
+);
+
+export const featuredProjectPairs = featuredProjects.map((p) => ({
+  ...p.pairs![0],
+  project: p,
+  key: `${p.id}-0`,
+}));
+
+/** Every photo a project shows, cover first, de-duplicated. */
+export function projectPhotos(p: Project): ProjectPhoto[] {
+  const seen = new Set<string>();
+  const out: ProjectPhoto[] = [];
+  for (const g of p.gallery ?? []) {
+    if (seen.has(g.src)) continue;
+    seen.add(g.src);
+    out.push(g);
+  }
+  for (const pair of p.pairs ?? []) {
+    for (const src of [pair.after, pair.before]) {
+      if (seen.has(src)) continue;
+      seen.add(src);
+      out.push({ src, alt: `${p.title} in ${p.location} — Maia Construction`, caption: pair.caption });
+    }
+  }
+  return out;
+}

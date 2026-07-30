@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { cities } from '@/lib/cities';
 import { services } from '@/lib/services';
 import { getAllPosts, getAllTags } from '@/lib/blog';
+import { detailedProjects } from '@/lib/projects';
 
 const BASE_URL = 'https://maiaconstruction.com';
 
@@ -129,6 +130,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  // Portfolio. /projects was missing from the sitemap entirely, and each real
+  // job now has its own page. Only jobs carrying real photography have a slug,
+  // so nothing thin ends up here.
+  const projectPages: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/projects`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    ...detailedProjects.map((project) => ({
+      url: `${BASE_URL}/projects/${project.slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly' as const,
+      priority: 0.6,
+    })),
+  ];
+
   return [
     ...staticPages,
     ...servicePages,
@@ -137,6 +156,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...maHubPage,
     ...maCityPages,
     ...maCityServicePages,
+    ...projectPages,
     ...blogPages,
     ...tagPages,
   ];
