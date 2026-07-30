@@ -479,6 +479,7 @@ export default function ProjectsPage() {
       <BeforeAfter
         title="Before & After Transformations"
         subtitle="Drag the slider to see real Maia Construction projects, before and after"
+        showAll
       />
 
       <CTASection

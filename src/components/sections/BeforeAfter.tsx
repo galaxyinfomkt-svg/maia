@@ -133,15 +133,29 @@ const projects: BeforeAfterProject[] = [
   },
 ];
 
+// The homepage, city and service pages show only these five — the full list of
+// thirteen turns the "Recent Projects" rail into an endless scroll. Picked for
+// the widest visible change, one entry per town, and one door job so the rail
+// isn't all siding. /projects passes showAll and gets everything.
+const FEATURED_IDS = ['6', '2', '4', '1', '10'];
+
+const featured = FEATURED_IDS.map((id) => projects.find((p) => p.id === id)).filter(
+  (p): p is BeforeAfterProject => Boolean(p)
+);
+
 interface BeforeAfterProps {
   title?: string;
   subtitle?: string;
+  /** Show every project instead of the five featured ones. Used by /projects. */
+  showAll?: boolean;
 }
 
 export default function BeforeAfter({
   title = 'Our Transformations',
   subtitle = 'See the difference quality craftsmanship makes',
+  showAll = false,
 }: BeforeAfterProps) {
+  const visible = showAll || featured.length === 0 ? projects : featured;
   const [activeProject, setActiveProject] = useState(0);
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
@@ -159,7 +173,7 @@ export default function BeforeAfter({
     setSliderPosition((x / rect.width) * 100);
   };
 
-  const currentProject = projects[activeProject];
+  const currentProject = visible[activeProject];
 
   return (
     <section className="py-24 bg-slate-900">
@@ -256,7 +270,7 @@ export default function BeforeAfter({
           {/* Project Thumbnails */}
           <div className="space-y-4">
             <h3 className="text-xl font-bold text-white mb-4">Recent Projects</h3>
-            {projects.map((project, index) => (
+            {visible.map((project, index) => (
               <button
                 key={project.id}
                 onClick={() => {
