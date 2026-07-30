@@ -269,6 +269,24 @@ const projects = [
   },
 ];
 
+// Display order for the grid. The identifiable job photos are interleaved with
+// the older library shots so the page reads as one varied portfolio rather than
+// recent-work-then-filler, and so no run of cards is all the same service.
+// Anything not listed here still gets rendered, appended in array order.
+const DISPLAY_ORDER = [
+  '13', '18', '5', '21', '17', '3', '27', '1', '7', '22', '16',
+  '4', '25', '2', '6', '20', '23', '9', '28', 'siding-marlborough',
+  '8', '14', '19', '11', 'siding-natick', '24', '10', '26',
+  'siding-hudson', '12', '15',
+];
+
+const orderedProjects = [
+  ...DISPLAY_ORDER.map((id) => projects.find((p) => p.id === id)).filter(
+    (p): p is (typeof projects)[number] => Boolean(p)
+  ),
+  ...projects.filter((p) => !DISPLAY_ORDER.includes(p.id)),
+];
+
 export default function ProjectsPage() {
   // Approximate town-center coordinates for the service-area cities, used to
   // geotag each project image via schema.org contentLocation. Deliberately the
@@ -299,7 +317,7 @@ export default function ProjectsPage() {
     description: 'View our completed home improvement projects across Massachusetts.',
     mainEntity: {
       '@type': 'ItemList',
-      itemListElement: projects.map((project, index) => {
+      itemListElement: orderedProjects.map((project, index) => {
         const geo = CITY_GEO[project.location];
         const [locality, region = 'MA'] = project.location.split(',').map((part) => part.trim());
         return {
@@ -377,7 +395,7 @@ export default function ProjectsPage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {projects.map((project) => (
+            {orderedProjects.map((project) => (
               <div
                 key={project.id}
                 className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
