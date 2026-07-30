@@ -378,9 +378,15 @@ export const getProject = (slug: string) => projects.find((p) => p.slug === slug
 /** Pairs shown in the slider rail outside /projects. */
 export const featuredProjects = projects.filter((p) => p.featured && p.pairs?.length);
 
-export const allProjectPairs = projects.flatMap((p) =>
-  (p.pairs ?? []).map((pair, i) => ({ ...pair, project: p, key: `${p.id}-${i}` }))
-);
+/* One pair per job for the slider rail, never all of them.
+ *
+ * Atkinson has five pairs and Norfolk three; flattening every pair put fifteen
+ * rows in the rail and listed the same address five times over. The rail is a
+ * teaser — the remaining pairs live on the job's own page, which is what the
+ * "See the full project" link under the slider is for. */
+export const allProjectPairs = projects
+  .filter((p) => p.pairs?.length)
+  .map((p) => ({ ...p.pairs![0], project: p, key: `${p.id}-0` }));
 
 export const featuredProjectPairs = featuredProjects.map((p) => ({
   ...p.pairs![0],
