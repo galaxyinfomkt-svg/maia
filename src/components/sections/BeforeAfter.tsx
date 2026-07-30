@@ -11,9 +11,55 @@ interface BeforeAfterProject {
   beforeImage: string;
   afterImage: string;
   service: string;
+  /** Badge on the left-hand image. Some pairs are mid-job rather than
+   *  original condition, and calling those "BEFORE" would misrepresent them. */
+  beforeLabel?: string;
 }
 
 const projects: BeforeAfterProject[] = [
+  // Atkinson, NH — one house, three elevations of the same siding replacement.
+  {
+    id: '6',
+    title: 'Full Siding Replacement — Rear Elevation',
+    location: 'Atkinson, NH',
+    beforeImage: '/images/before-after/siding-before-atkinson-nh.webp',
+    afterImage: '/images/before-after/siding-after-atkinson-nh.webp',
+    service: 'Siding',
+  },
+  {
+    id: '7',
+    title: 'Full Siding Replacement — Side Elevation',
+    location: 'Atkinson, NH',
+    beforeImage: '/images/before-after/siding-before-atkinson-nh-2.webp',
+    afterImage: '/images/before-after/siding-after-atkinson-nh-2.webp',
+    service: 'Siding',
+  },
+  {
+    id: '8',
+    title: 'Full Siding Replacement — Entry Side',
+    location: 'Atkinson, NH',
+    beforeImage: '/images/before-after/siding-before-atkinson-nh-3.webp',
+    afterImage: '/images/before-after/siding-after-atkinson-nh-3.webp',
+    service: 'Siding',
+  },
+  {
+    id: '9',
+    title: 'Palladian Window & Custom PVC Trim',
+    location: 'Woburn, MA',
+    beforeImage: '/images/before-after/siding-before-woburn-ma.webp',
+    afterImage: '/images/before-after/siding-after-woburn-ma.webp',
+    service: 'Siding',
+    beforeLabel: 'MID-JOB',
+  },
+  {
+    id: '10',
+    title: 'Sliding Patio Door Replacement',
+    location: 'Norfolk, MA',
+    beforeImage: '/images/before-after/door-before-norfolk-ma.webp',
+    afterImage: '/images/before-after/door-after-norfolk-ma.webp',
+    service: 'Doors',
+    beforeLabel: 'DURING INSTALL',
+  },
   // Real Maia Construction projects. Each entry is ONE house (before + after).
   // Two of the file names below are historical (pairs 1 & 2 keep their original
   // paths); the images are the genuine same-house before/after shots. afterImage
@@ -135,14 +181,18 @@ export default function BeforeAfter({
               >
                 <Image
                   src={currentProject.beforeImage}
-                  alt={`${currentProject.title} in ${currentProject.location} - Before renovation, original condition`}
+                  alt={`${currentProject.title} in ${currentProject.location} - ${
+                    currentProject.beforeLabel
+                      ? `${currentProject.beforeLabel.toLowerCase()}, work underway`
+                      : 'Before renovation, original condition'
+                  }`}
                   fill
                   sizes="(max-width: 1024px) 100vw, 66vw"
                   className="object-cover"
                   priority
                 />
                 <div className="absolute top-4 left-4 px-4 py-2 bg-red-500 text-white rounded-full text-sm font-bold">
-                  BEFORE
+                  {currentProject.beforeLabel ?? 'BEFORE'}
                 </div>
               </div>
 

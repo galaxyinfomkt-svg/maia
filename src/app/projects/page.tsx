@@ -20,6 +20,38 @@ export const metadata: Metadata = {
 
 const projects = [
   {
+    id: '13',
+    title: 'Full Siding Replacement',
+    location: 'Atkinson, NH',
+    image: '/images/before-after/siding-after-atkinson-nh.webp',
+    service: 'Siding',
+    description: 'Whole-house siding replacement on a Cape in Atkinson, NH. Failing cedar shakes and mismatched vinyl came off down to the original plank sheathing, then went back on as EnergyShield continuous wall insulation, housewrap and blue-grey insulated vinyl siding with all-new trim and gutters.',
+  },
+  {
+    id: '14',
+    title: 'Palladian Window & Custom PVC Trim',
+    location: 'Woburn, MA',
+    image: '/images/before-after/siding-after-woburn-ma.webp',
+    service: 'Siding',
+    description: 'Siding and window project in Woburn, MA featuring a Palladian arch window. The curved PVC trim was cut and assembled on site to match the arch exactly, then wrapped with new clapboard-profile vinyl siding.',
+  },
+  {
+    id: '15',
+    title: 'Cedar Shingle Siding',
+    location: 'Reading, MA',
+    image: '/images/before-after/siding-after-reading-ma.webp',
+    service: 'Siding',
+    description: 'Hand-coursed western red cedar shingle siding on a gambrel-roofed addition in Reading, MA, installed over ZIP System sheathing with new white trim and corner boards.',
+  },
+  {
+    id: '16',
+    title: 'Sliding Patio Door Replacement',
+    location: 'Norfolk, MA',
+    image: '/images/before-after/door-after-norfolk-ma.webp',
+    service: 'Doors',
+    description: 'Kitchen patio slider replaced in a single day in Norfolk, MA — old unit out, new door set, shimmed, insulated and finished with full interior casing.',
+  },
+  {
     id: '1',
     title: 'Full Vinyl Siding Replacement',
     location: 'Framingham, MA',
@@ -142,9 +174,11 @@ const projects = [
 ];
 
 export default function ProjectsPage() {
-  // Approximate town-center coordinates for the Massachusetts service-area
-  // cities, used to geotag each project image via schema.org contentLocation.
+  // Approximate town-center coordinates for the service-area cities, used to
+  // geotag each project image via schema.org contentLocation. Deliberately the
+  // town centre and not the customer's address — these are private homes.
   const CITY_GEO: Record<string, [number, number]> = {
+    'Atkinson, NH': [42.8389, -71.15],
     'Concord, MA': [42.4604, -71.3489],
     'Framingham, MA': [42.2793, -71.4162],
     'Grafton, MA': [42.2070, -71.6856],
@@ -152,10 +186,13 @@ export default function ProjectsPage() {
     'Lexington, MA': [42.4473, -71.2245],
     'Marlborough, MA': [42.3459, -71.5523],
     'Natick, MA': [42.2775, -71.3468],
+    'Norfolk, MA': [42.1194, -71.325],
     'Northborough, MA': [42.3195, -71.6412],
+    'Reading, MA': [42.5256, -71.1097],
     'Shrewsbury, MA': [42.2959, -71.7128],
     'Sudbury, MA': [42.3834, -71.4162],
     'Westborough, MA': [42.2695, -71.6162],
+    'Woburn, MA': [42.4792, -71.1528],
     'Worcester, MA': [42.2626, -71.8023],
   };
 
@@ -168,7 +205,7 @@ export default function ProjectsPage() {
       '@type': 'ItemList',
       itemListElement: projects.map((project, index) => {
         const geo = CITY_GEO[project.location];
-        const locality = project.location.replace(/,\s*MA$/, '');
+        const [locality, region = 'MA'] = project.location.split(',').map((part) => part.trim());
         return {
           '@type': 'ListItem',
           position: index + 1,
@@ -185,7 +222,7 @@ export default function ProjectsPage() {
               address: {
                 '@type': 'PostalAddress',
                 addressLocality: locality,
-                addressRegion: 'MA',
+                addressRegion: region,
                 addressCountry: 'US',
               },
               ...(geo ? { geo: { '@type': 'GeoCoordinates', latitude: geo[0], longitude: geo[1] } } : {}),
