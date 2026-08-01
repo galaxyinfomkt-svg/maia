@@ -444,7 +444,7 @@ export function getUniqueFAQs(serviceSlug: string, city: City): { question: stri
     },
     {
       question: `Why choose ${SITE_NAME} for ${serviceName} in ${city.name}?`,
-      answer: `We're just ${city.distance} miles from ${city.name}, rated 5.0 stars on Google with 47+ reviews, and have completed 500+ projects across ${city.county} County. Our crews are our own employees — not random subcontractors. Licensed HIC #${HIC_NUMBER}, certified installers, ${content.warranty}.`,
+      answer: `We're just ${city.distance} miles from ${city.name}, rated 5.0 stars on Google with 19 reviews, and have completed 500+ projects across ${city.county} County. Our crews are our own employees — not random subcontractors. Licensed HIC #${HIC_NUMBER}, certified installers, ${content.warranty}.`,
     },
     {
       question: `What neighborhoods in ${city.name} do you serve?`,
@@ -465,7 +465,7 @@ export function getUniqueMetaDescription(serviceSlug: string, city: City): strin
     `#1 ${serviceName.toLowerCase()} contractor in ${city.name}, MA ★5.0. Specialists in ${profile.housingTypes[0].toLowerCase()}. ${city.distance}mi away. Licensed HIC #${HIC_NUMBER}. Call ${PHONE} — FREE estimate!`,
     `Expert ${serviceName.toLowerCase()} for ${city.name} homes. ${profile.commonIssues[0]}? We fix that. 500+ projects, 5-star rated. Licensed & insured. FREE estimates — call ${PHONE}`,
     `${city.name}'s trusted ${serviceName.toLowerCase()} contractor ★5.0. Serving ${profile.neighborhoods[0]}, ${profile.neighborhoods[1]} & all ${city.zip}. HIC #${HIC_NUMBER}. Call ${PHONE} today!`,
-    `Professional ${serviceName.toLowerCase()} in ${city.name}, ${city.county} County. Experts with ${profile.housingTypes[0].toLowerCase()}. 47+ 5-star reviews. FREE estimates — ${PHONE}`,
+    `Professional ${serviceName.toLowerCase()} in ${city.name}, ${city.county} County. Experts with ${profile.housingTypes[0].toLowerCase()}. 19 5-star reviews. FREE estimates — ${PHONE}`,
   ];
 
   return variants[hash];
@@ -503,7 +503,7 @@ export function getRichParagraphs(serviceSlug: string, city: City): { expertIntr
 
   const comprehensiveServices = `Our ${sn} services in ${city.name} are designed to address the specific needs of ${city.county} County homes. Massachusetts weather is demanding — temperatures swing from below zero in January to 95 degrees in July, with ice storms, nor'easters, and humidity in between. That's why we use only premium materials rated for the New England climate zone. Every installation includes proper moisture barriers, insulation integration, and weatherproofing details that protect your ${city.name} home for decades. We source materials from trusted manufacturers and back every project with comprehensive warranties. For ${city.name} homeowners, this means peace of mind knowing your investment is protected against whatever Massachusetts weather throws at it.`;
 
-  const whyLocal = `Being based in Marlborough, just ${city.distance} miles from ${city.name}, means we can respond quickly to consultations, start projects promptly, and be available for any follow-up needs. We've completed projects throughout ${city.name}'s neighborhoods including ${profile.neighborhoods.slice(0, 3).join(', ')}, and we understand the architectural styles, building codes, and homeowner expectations in ${city.county} County. Our 5.0-star Google rating from 47+ verified reviews reflects our commitment to every ${city.name} homeowner we serve. Licensed under MA HIC #${HIC_NUMBER}, fully insured, and certified by leading manufacturers — we're the contractor ${city.name} trusts.`;
+  const whyLocal = `Being based in Charlton, just ${city.distance} miles from ${city.name}, means we can respond quickly to consultations, start projects promptly, and be available for any follow-up needs. We've completed projects throughout ${city.name}'s neighborhoods including ${profile.neighborhoods.slice(0, 3).join(', ')}, and we understand the architectural styles, building codes, and homeowner expectations in ${city.county} County. Our 5.0-star Google rating from 19 verified reviews reflects our commitment to every ${city.name} homeowner we serve. Licensed under MA HIC #${HIC_NUMBER}, fully insured, and certified by leading manufacturers — we're the contractor ${city.name} trusts.`;
 
   return { expertIntro, trustedContractor, comprehensiveServices, whyLocal };
 }

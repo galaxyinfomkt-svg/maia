@@ -7,13 +7,13 @@ export const EMAIL_LINK = 'mailto:contact@maiaconstruction.com';
 export const HIC_NUMBER = '204634'; // MA Home Improvement Contractor License
 
 export const ADDRESS = {
-  street: '',
-  city: 'Marlborough',
+  street: '13 Stoneybrook Rd',
+  city: 'Charlton',
   state: 'MA',
-  zip: '01752',
-  full: 'Marlborough, MA 01752',
-  lat: 42.3459,
-  lng: -71.5526,
+  zip: '01507',
+  full: '13 Stoneybrook Rd, Charlton, MA 01507',
+  lat: 42.1348,
+  lng: -71.9698,
 };
 
 // Service-specific photos

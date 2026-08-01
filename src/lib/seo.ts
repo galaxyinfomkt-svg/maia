@@ -5,7 +5,7 @@ import { SITE_NAME, SITE_URL, PHONE, ADDRESS, LOGO_URL } from './constants';
 
 export function generateServiceMetadata(service: Service): Metadata {
   const title = `Professional ${service.name} Services Massachusetts | #1 Rated ${service.name} Contractor | Maia Construction`;
-  const description = `#1 ${service.name.toLowerCase()} contractor in Massachusetts ★5.0. 47+ reviews. ${service.shortDescription} Licensed HIC #204634 & insured. FREE estimates. Call ${PHONE}`;
+  const description = `#1 ${service.name.toLowerCase()} contractor in Massachusetts ★5.0. 19 reviews. ${service.shortDescription} Licensed HIC #204634 & insured. FREE estimates. Call ${PHONE}`;
 
   return {
     title,
@@ -111,7 +111,7 @@ export function generateLocalBusinessSchema(city?: City) {
       ratingValue: '5.0',
       bestRating: '5',
       worstRating: '1',
-      reviewCount: '47',
+      reviewCount: '19',
     },
     openingHoursSpecification: [
       {

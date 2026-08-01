@@ -59,7 +59,7 @@ export default async function MACityPage({ params }: MACityPageProps) {
     address: { '@type': 'PostalAddress', addressLocality: city.name, addressRegion: 'MA', postalCode: city.zip, addressCountry: 'US' },
     areaServed: { '@type': 'City', name: city.name },
     priceRange: '$$',
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', reviewCount: '47' },
+    aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', reviewCount: '19' },
   };
 
   const breadcrumbSchema = {
@@ -140,7 +140,7 @@ export default async function MACityPage({ params }: MACityPageProps) {
                 Our team of skilled professionals brings over a decade of combined experience to every project in {city.name}.
                 We don&apos;t cut corners, we don&apos;t use subcontractors, and we don&apos;t disappear after the job is done.
                 Every project is managed by our team from start to finish, ensuring consistent quality and communication throughout.
-                Being based in Marlborough, just {city.distance} miles from {city.name}, means we respond quickly and are always available.
+                Being based in Charlton, just {city.distance} miles from {city.name}, means we respond quickly and are always available.
               </p>
             </div>
           </div>
@@ -218,7 +218,7 @@ export default async function MACityPage({ params }: MACityPageProps) {
             <h2 className="text-3xl font-bold mb-6">Why {city.name} Chooses <span className="text-amber-400">{SITE_NAME}</span></h2>
             <p className="text-gray-300 leading-relaxed mb-8">
               {SITE_NAME} is the #1 rated home improvement contractor serving {city.name}, Massachusetts.
-              Based in Marlborough (just {city.distance} miles away), we provide expert{' '}
+              Based in Charlton (just {city.distance} miles away), we provide expert{' '}
               <Link href={`/services/siding/${city.slug}`} className="text-amber-400 hover:underline">siding</Link>,{' '}
               <Link href={`/services/windows/${city.slug}`} className="text-amber-400 hover:underline">window</Link>,{' '}
               <Link href={`/services/doors/${city.slug}`} className="text-amber-400 hover:underline">door</Link>, and{' '}

@@ -7,7 +7,7 @@ import { SITE_NAME, IMAGES, PHONE, ADDRESS, LOGO_URL, HIC_NUMBER, SITE_URL } fro
 
 export const metadata: Metadata = {
   title: `About ${SITE_NAME} | Since 2015 | 500+ Projects | 5.0★ Google Rating`,
-  description: `Meet Massachusetts' #1 rated home improvement team. Family-owned since 2015, 500+ projects, 100+ cities. Licensed HIC #${HIC_NUMBER} & insured. 47+ 5-star Google reviews. Call ${PHONE}`,
+  description: `Meet Massachusetts' #1 rated home improvement team. Family-owned since 2015, 500+ projects, 100+ cities. Licensed HIC #${HIC_NUMBER} & insured. 19 5-star Google reviews. Call ${PHONE}`,
   keywords: [
     'about Maia Construction',
     'Massachusetts contractor history',
@@ -222,7 +222,7 @@ export default function AboutPage() {
             </h2>
             <p className="text-lg text-gray-600 mb-4">
               {SITE_NAME} is a family-owned home improvement company founded in 2015 by Marcos, based in
-              Marlborough, Massachusetts. Licensed under MA HIC #{HIC_NUMBER} and fully insured, we have
+              Charlton, Massachusetts. Licensed under MA HIC #{HIC_NUMBER} and fully insured, we have
               completed over 500 projects across 100+ Massachusetts cities. Our services include{' '}
               <Link href="/services/siding" className="text-amber-600 hover:underline font-semibold">professional siding installation</Link>,{' '}
               <Link href="/services/windows" className="text-amber-600 hover:underline font-semibold">energy-efficient window replacement</Link>,{' '}
@@ -231,7 +231,7 @@ export default function AboutPage() {
             </p>
             <p className="text-gray-600 mb-6">
               We are certified installers for James Hardie, CertainTeed, and Alside, and all our window
-              installations meet ENERGY STAR standards. With a perfect 5.0-star Google rating and 47+ verified
+              installations meet ENERGY STAR standards. With a perfect 5.0-star Google rating and 19 verified
               reviews, we are committed to quality craftsmanship and customer satisfaction. Call{' '}
               <a href="tel:+15088599880" className="text-amber-600 font-semibold">{PHONE}</a>{' '}
               or <Link href="/contact" className="text-amber-600 hover:underline font-semibold">request a free estimate online</Link>.

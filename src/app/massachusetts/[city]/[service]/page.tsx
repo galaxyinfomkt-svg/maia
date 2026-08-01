@@ -156,7 +156,7 @@ export default async function MACityServicePage({ params }: MACityServicePagePro
       ratingValue: '5.0',
       bestRating: '5',
       worstRating: '1',
-      reviewCount: '47',
+      reviewCount: '19',
     },
     openingHoursSpecification: [
       {
@@ -229,7 +229,7 @@ export default async function MACityServicePage({ params }: MACityServicePagePro
     },
     {
       question: `Why should I choose ${SITE_NAME} for ${service.name.toLowerCase()} in ${city.name}?`,
-      answer: `${SITE_NAME} is rated 5.0 stars with 47+ verified Google reviews. We're locally based, MA licensed (HIC #${HIC_NUMBER}), and have completed 500+ projects. We offer transparent pricing with no hidden fees.`,
+      answer: `${SITE_NAME} is rated 5.0 stars with 19 verified Google reviews. We're locally based, MA licensed (HIC #${HIC_NUMBER}), and have completed 500+ projects. We offer transparent pricing with no hidden fees.`,
     },
   ];
 
@@ -285,7 +285,7 @@ export default async function MACityServicePage({ params }: MACityServicePagePro
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap items-center justify-center gap-6 text-white text-sm">
             <span className="flex items-center gap-2">
-              <span className="text-amber-400">★★★★★</span> 5.0 Google Rating (47+ Reviews)
+              <span className="text-amber-400">★★★★★</span> 5.0 Google Rating (19 Reviews)
             </span>
             <span className="w-px h-4 bg-white/20 hidden md:block" />
             <span>Licensed HIC #{HIC_NUMBER}</span>
@@ -355,7 +355,7 @@ export default async function MACityServicePage({ params }: MACityServicePagePro
                     </svg>
                     <div>
                       <p className="font-bold text-slate-900">5.0★ Rating</p>
-                      <p className="text-sm text-gray-600">47+ Google Reviews</p>
+                      <p className="text-sm text-gray-600">19 Google Reviews</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">

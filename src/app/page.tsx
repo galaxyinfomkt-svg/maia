@@ -9,7 +9,7 @@ import { SITE_NAME, HIC_NUMBER, PHONE, SITE_URL, PHONE_LINK, SOCIAL_LINKS, ADDRE
 
 export const metadata: Metadata = {
   title: `#1 Siding & Window Contractor MA (2026) | 500+ Projects | Free Estimate`,
-  description: `#1 siding & exterior contractor in Massachusetts. Expert siding, windows, doors installation. 47+ 5-star reviews. Licensed HIC #${HIC_NUMBER} & insured. FREE estimates. Call ${PHONE}`,
+  description: `#1 siding & exterior contractor in Massachusetts. Expert siding, windows, doors installation. 19 5-star reviews. Licensed HIC #${HIC_NUMBER} & insured. FREE estimates. Call ${PHONE}`,
   alternates: { canonical: SITE_URL },
 };
 
@@ -80,7 +80,7 @@ export default function HomePage() {
             </svg>
             <span className="text-amber-400">★★★★★</span>
             <span className="font-semibold">5.0</span>
-            <span className="text-gray-400">(47 reviews)</span>
+            <span className="text-gray-400">(19 reviews)</span>
             <a href={SOCIAL_LINKS.google} target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 font-semibold underline">
               See Our Reviews
             </a>
@@ -138,7 +138,7 @@ export default function HomePage() {
               </h2>
               <div className="space-y-5 text-gray-300 leading-relaxed">
                 <p>
-                  Founded by <strong className="text-amber-400">Marcos</strong>, {SITE_NAME} is a premier siding, window, and door contractor based in Marlborough, Massachusetts. With over a decade of hands-on experience in the construction industry, Marcos and his team have built a reputation for delivering exceptional craftsmanship, honest pricing, and reliable service to homeowners across the state.
+                  Founded by <strong className="text-amber-400">Marcos</strong>, {SITE_NAME} is a premier siding, window, and door contractor based in Charlton, Massachusetts. With over a decade of hands-on experience in the construction industry, Marcos and his team have built a reputation for delivering exceptional craftsmanship, honest pricing, and reliable service to homeowners across the state.
                 </p>
                 <p>
                   Under Marcos&apos;s leadership, our team specializes in <strong>exterior home improvement</strong> — the first line of defense for every Massachusetts home. From complete siding replacements to energy-efficient window upgrades, we ensure that every installation is precise, durable, and built to withstand New England&apos;s demanding climate for decades.
@@ -153,7 +153,7 @@ export default function HomePage() {
                   <p className="text-sm text-gray-400">Cities Served</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-3xl font-bold text-amber-400">47+</p>
+                  <p className="text-3xl font-bold text-amber-400">19</p>
                   <p className="text-sm text-gray-400">5-Star Reviews</p>
                 </div>
                 <div className="text-center">
@@ -290,7 +290,7 @@ export default function HomePage() {
                   </div>
                   <div className="bg-slate-50 p-3 rounded-lg text-center">
                     <p className="font-bold text-slate-900">5-Star</p>
-                    <p className="text-xs text-gray-500">47+ Reviews</p>
+                    <p className="text-xs text-gray-500">19 Reviews</p>
                   </div>
                   <div className="bg-slate-50 p-3 rounded-lg text-center">
                     <p className="font-bold text-slate-900">Free</p>

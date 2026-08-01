@@ -2,7 +2,7 @@ import { City } from '@/types';
 
 export const cities: City[] = [
   // Headquarters
-  { name: 'Marlborough', slug: 'marlborough', county: 'Middlesex', state: 'MA', zip: '01752', distance: 0, isHeadquarters: true, description: 'Our headquarters location serving the heart of Massachusetts.' },
+  { name: 'Marlborough', slug: 'marlborough', county: 'Middlesex', state: 'MA', zip: '01752', distance: 21 },
 
   // Middlesex County (15-20 min radius)
   { name: 'Framingham', slug: 'framingham', county: 'Middlesex', state: 'MA', zip: '01701', distance: 5 },
@@ -47,7 +47,7 @@ export const cities: City[] = [
   { name: 'Paxton', slug: 'paxton', county: 'Worcester', state: 'MA', zip: '01612', distance: 14 },
   { name: 'Leicester', slug: 'leicester', county: 'Worcester', state: 'MA', zip: '01524', distance: 16 },
   { name: 'Spencer', slug: 'spencer', county: 'Worcester', state: 'MA', zip: '01562', distance: 20 },
-  { name: 'Charlton', slug: 'charlton', county: 'Worcester', state: 'MA', zip: '01507', distance: 21 },
+  { name: 'Charlton', slug: 'charlton', county: 'Worcester', state: 'MA', zip: '01507', distance: 0, isHeadquarters: true, description: 'Our headquarters location in the heart of Worcester County.' },
   { name: 'Oxford', slug: 'oxford', county: 'Worcester', state: 'MA', zip: '01540', distance: 22 },
   { name: 'Webster', slug: 'webster', county: 'Worcester', state: 'MA', zip: '01570', distance: 24 },
   { name: 'Sutton', slug: 'sutton', county: 'Worcester', state: 'MA', zip: '01590', distance: 19 },

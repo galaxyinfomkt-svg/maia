@@ -113,7 +113,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       '@type': 'HomeAndConstructionBusiness',
       name: SITE_NAME,
       telephone: PHONE,
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', bestRating: '5', worstRating: '1', reviewCount: '47' },
+      aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', bestRating: '5', worstRating: '1', reviewCount: '19' },
     },
     areaServed: { '@type': 'State', name: 'Massachusetts' },
     serviceType: service.name,

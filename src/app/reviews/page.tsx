@@ -4,8 +4,8 @@ import { ReviewsHighlight } from '@/components/sections';
 import { SITE_NAME, PHONE, PHONE_LINK, SITE_URL, HIC_NUMBER } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: `Customer Reviews | 5.0★ Google Rating | 47+ Reviews | ${SITE_NAME}`,
-  description: `Read 47+ verified 5-star Google reviews from Massachusetts homeowners. See why ${SITE_NAME} is the #1 rated siding, window & door contractor in MA. Licensed HIC #${HIC_NUMBER}.`,
+  title: `Customer Reviews | 5.0★ Google Rating | 19 Reviews | ${SITE_NAME}`,
+  description: `Read 19 verified 5-star Google reviews from Massachusetts homeowners. See why ${SITE_NAME} is the #1 rated siding, window & door contractor in MA. Licensed HIC #${HIC_NUMBER}.`,
   alternates: { canonical: `${SITE_URL}/reviews` },
 };
 
@@ -25,7 +25,7 @@ export default function ReviewsPage() {
             </span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            47+ verified 5-star Google reviews from real customers across Middlesex, Worcester, Norfolk, and Essex counties.
+            19 verified 5-star Google reviews from real customers across Middlesex, Worcester, Norfolk, and Essex counties.
             Licensed HIC #{HIC_NUMBER}. Serving 75+ Massachusetts cities since 2015.
           </p>
           <div className="flex flex-wrap justify-center gap-6">
@@ -34,7 +34,7 @@ export default function ReviewsPage() {
               <p className="text-gray-400 text-sm">Google Rating</p>
             </div>
             <div className="text-center">
-              <p className="text-4xl font-bold text-amber-400">47+</p>
+              <p className="text-4xl font-bold text-amber-400">19</p>
               <p className="text-gray-400 text-sm">Verified Reviews</p>
             </div>
             <div className="text-center">

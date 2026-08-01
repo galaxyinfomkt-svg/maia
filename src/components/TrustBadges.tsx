@@ -33,7 +33,7 @@ export default function TrustBadges({ variant = 'light', size = 'md', showAll = 
         </svg>
       ),
       label: '5-Star Rated',
-      sublabel: '47+ Reviews',
+      sublabel: '19 Reviews',
     },
     {
       icon: (

@@ -90,7 +90,7 @@ export default async function CityPage({ params }: CityPageProps) {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5',
-      reviewCount: '47',
+      reviewCount: '19',
     },
   };
 
@@ -137,7 +137,7 @@ export default async function CityPage({ params }: CityPageProps) {
 
       <HeroWithForm
         title={<>Professional <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 bg-clip-text text-transparent">Construction Services</span> in {city.name}, MA</>}
-        subtitle={`Expert siding, door & windows installation just ${city.distance} miles from our Marlborough office. Serving ${city.zip} and surrounding areas in ${city.county} County.`}
+        subtitle={`Expert siding, door & windows installation just ${city.distance} miles from our Charlton office. Serving ${city.zip} and surrounding areas in ${city.county} County.`}
         badge={`${city.name}, MA • 5.0 Stars • Licensed HIC #${HIC_NUMBER}`}
         backgroundImage={REAL_PHOTOS[Math.abs(city.slug.length + 3) % REAL_PHOTOS.length]}
       />
@@ -172,7 +172,7 @@ export default async function CityPage({ params }: CityPageProps) {
                   to every project in {city.county} County.
                 </p>
                 <p>
-                  Located just {city.distance} miles from our headquarters in Marlborough, we provide
+                  Located just {city.distance} miles from our headquarters in Charlton, we provide
                   fast response times and personalized service to {city.name} residents. Whether you need
                   new siding to protect against harsh New England winters, energy-efficient windows to
                   reduce your heating bills, or a beautiful new entry door to enhance your curb appeal,

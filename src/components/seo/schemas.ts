@@ -65,7 +65,7 @@ export const organizationSchema = {
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '5.0',
-    reviewCount: '47',
+    reviewCount: '19',
     bestRating: '5',
     worstRating: '1',
   },
@@ -353,7 +353,7 @@ export function createLocalBusinessSchema(city: {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5.0',
-      reviewCount: '47',
+      reviewCount: '19',
     },
   };
 }
@@ -436,7 +436,7 @@ export function createProductSchema(product: {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5.0',
-      reviewCount: '47',
+      reviewCount: '19',
     },
   };
 }

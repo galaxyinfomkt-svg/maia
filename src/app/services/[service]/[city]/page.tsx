@@ -77,7 +77,7 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
     address: { '@type': 'PostalAddress', addressLocality: city.name, addressRegion: 'MA', postalCode: city.zip, addressCountry: 'US' },
     areaServed: { '@type': 'City', name: city.name },
     priceRange: '$$',
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', bestRating: '5', worstRating: '1', reviewCount: '47' },
+    aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', bestRating: '5', worstRating: '1', reviewCount: '19' },
   };
 
   const breadcrumbSchema = {

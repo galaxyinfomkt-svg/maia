@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     default: `Siding Contractor MA | Windows, Doors & Exterior | ${SITE_NAME}`,
     template: `%s | ${SITE_NAME}`,
   },
-  description: `#1 siding & exterior contractor in Massachusetts. Expert siding, windows, doors installation. 47+ 5-star reviews. Licensed HIC #${HIC_NUMBER} & insured. FREE estimates. Call ${PHONE}`,
+  description: `#1 siding & exterior contractor in Massachusetts. Expert siding, windows, doors installation. 19 5-star reviews. Licensed HIC #${HIC_NUMBER} & insured. FREE estimates. Call ${PHONE}`,
   icons: {
     icon: '/images/logo-200.png',
     shortcut: '/images/logo-200.png',

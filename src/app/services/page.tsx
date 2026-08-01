@@ -9,7 +9,7 @@ import { SITE_NAME, IMAGES, SITE_URL, HIC_NUMBER, PHONE } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: `Expert Home Exterior Services MA | #1 Rated Contractor | ${SITE_NAME}`,
-  description: `Professional siding, windows, doors & general contracting in Massachusetts. #1 rated with 47+ 5-star reviews. Licensed HIC #${HIC_NUMBER}. FREE estimates. Call ${PHONE}`,
+  description: `Professional siding, windows, doors & general contracting in Massachusetts. #1 rated with 19 5-star reviews. Licensed HIC #${HIC_NUMBER}. FREE estimates. Call ${PHONE}`,
   keywords: [
     'siding installation Massachusetts',
     'window replacement MA',
