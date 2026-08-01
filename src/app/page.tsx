@@ -308,7 +308,7 @@ export default function HomePage() {
             <div className="space-y-8">
               <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-200">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d377512.5184133106!2d-71.58596955!3d42.335773999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e38b5dd08e79af%3A0x1d2168059bbbb4a0!2sMaia%20Construction!5e0!3m2!1sen!2sbr!4v1771850870340!5m2!1sen!2sbr"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2956.63953798694!2d-71.9693511!3d42.1793914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e38b5dd08e79af%3A0x1d2168059bbbb4a0!2sMaia%20Construction!5e0!3m2!1sen!2sbr!4v1785546800349!5m2!1sen!2sbr"
                   width="100%"
                   height="400"
                   style={{ border: 0 }}
