@@ -16,7 +16,7 @@ const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'), {
 // first row isn't all siding. Anything not listed still renders, appended in
 // array order.
 const DISPLAY_ORDER = [
-  'atkinson-nh-siding', 'norfolk-ma-doors', 'reading-ma-cedar',
+  'atkinson-nh-siding', 'manchester-nh-siding', 'norfolk-ma-doors', 'reading-ma-cedar',
   'framingham-ma-siding', 'woburn-ma-siding-windows', 'natick-ma-siding',
   'worcester-ma-siding', 'marlborough-ma-siding', 'hudson-ma-siding',
 ];

@@ -10,6 +10,7 @@ export const CITY_GEO: Record<string, [number, number]> = {
   'Grafton, MA': [42.207, -71.6856],
   'Hudson, MA': [42.3918, -71.5662],
   'Lexington, MA': [42.4473, -71.2245],
+  'Manchester, NH': [42.9956, -71.4548],
   'Marlborough, MA': [42.3459, -71.5523],
   'Natick, MA': [42.2775, -71.3468],
   'Norfolk, MA': [42.1194, -71.325],
