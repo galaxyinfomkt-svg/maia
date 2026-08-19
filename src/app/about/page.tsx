@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 };
 
 const milestones = [
-  { year: '2015', title: 'Founded', description: 'Marcos founded Maia Construction with a vision for quality craftsmanship.' },
+  { year: '2015', title: 'Founded', description: 'Marcos Alves founded Maia Construction with a vision for quality craftsmanship.' },
   { year: '2017', title: 'Expanded Services', description: 'Added comprehensive window and door installation services.' },
   { year: '2020', title: '500+ Projects', description: 'Completed over 500 successful home improvement projects.' },
   { year: '2024', title: '100+ Cities', description: 'Now proudly serving over 100 communities across Massachusetts.' },
@@ -73,7 +73,7 @@ export default function AboutPage() {
               <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mb-8" />
               <div className="space-y-4 text-gray-600 text-lg">
                 <p>
-                  Founded by Marcos in 2015, Maia Construction began with a simple mission:
+                  Founded by Marcos Alves in 2015, Maia Construction began with a simple mission:
                   to provide Massachusetts homeowners with quality craftsmanship they can trust.
                 </p>
                 <p>
