@@ -7,7 +7,7 @@ import { getAllPosts, getAllTags } from '@/lib/blog';
 import { SITE_NAME, IMAGES } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: `Home Improvement Blog | Expert Tips & Cost Guides 2026 | ${SITE_NAME}`,
+  title: `Home Improvement Blog | Expert Tips & Cost Guides 2026`,
   description: `Expert home improvement guides from Massachusetts' #1 rated contractor. Siding costs, window savings, door ROI, energy tips. Updated for 2026. FREE knowledge from licensed professionals.`,
   keywords: [
     'home improvement tips Massachusetts',

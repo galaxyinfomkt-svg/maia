@@ -2,5 +2,21 @@
   "framework": "nextjs",
   "buildCommand": "npm run build",
   "installCommand": "npm install",
-  "outputDirectory": ".next"
+  "redirects": [
+    {
+      "source": "/massachusetts/:city/:service",
+      "destination": "/services/:service/:city/",
+      "permanent": true
+    },
+    {
+      "source": "/massachusetts/:city",
+      "destination": "/cities/:city/",
+      "permanent": true
+    },
+    {
+      "source": "/massachusetts",
+      "destination": "/cities/",
+      "permanent": true
+    }
+  ]
 }

@@ -4,8 +4,10 @@ import { SITE_NAME, PHONE, PHONE_LINK, ADDRESS, BUSINESS_HOURS, SOCIAL_LINKS, HI
 import { services } from '@/lib/services';
 import { cities } from '@/lib/cities';
 
-// Only nearby cities for the inline list (like RS uses ~75)
-const footerCities = cities.filter(c => c.distance <= 30).slice(0, 75);
+// A short core list. The full directory lives on /cities/, and every page
+// already carries its own contextual "nearby cities" block — repeating 75
+// names in the footer of every page duplicated ~150 words site-wide.
+const footerCities = cities.filter((c) => c.distance <= 15).slice(0, 12);
 
 export default function Footer() {
   return (
@@ -74,7 +76,7 @@ export default function Footer() {
               <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors text-sm">About Us</Link></li>
               <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors text-sm">Blog</Link></li>
               <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors text-sm">Contact</Link></li>
-              <li><Link href="/massachusetts" className="text-gray-400 hover:text-white transition-colors text-sm">Service Areas</Link></li>
+              <li><Link href="/cities" className="text-gray-400 hover:text-white transition-colors text-sm">Service Areas</Link></li>
               <li><Link href="/projects" className="text-gray-400 hover:text-white transition-colors text-sm">Our Projects</Link></li>
             </ul>
           </div>
@@ -126,13 +128,13 @@ export default function Footer() {
       <div className="border-t border-white/10 py-8">
         <div className="max-w-4xl mx-auto px-8 text-center">
           <h3 className="text-base font-bold text-amber-400 mb-4">
-            Service Areas – 75+ Cities Across Massachusetts
+            Closest to Our Charlton Shop
           </h3>
           <p className="text-gray-400 text-xs leading-loose">
             {footerCities.map((city, index) => (
               <span key={city.slug}>
                 <Link
-                  href={`/massachusetts/${city.slug}`}
+                  href={`/cities/${city.slug}/`}
                   className="hover:text-amber-400 transition-colors"
                 >
                   {city.name}
@@ -142,7 +144,7 @@ export default function Footer() {
             ))}
           </p>
           <div className="mt-4">
-            <Link href="/massachusetts" className="text-amber-400 hover:text-amber-300 text-sm font-semibold">
+            <Link href="/services" className="text-amber-400 hover:text-amber-300 text-sm font-semibold">
               Looking for professional exterior work?{' '}
               <span className="underline">Explore our Services</span>
             </Link>

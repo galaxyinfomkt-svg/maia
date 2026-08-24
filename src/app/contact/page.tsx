@@ -6,7 +6,7 @@ import { JsonLd } from '@/components/seo';
 import { SITE_NAME, PHONE, PHONE_LINK, ADDRESS, BUSINESS_HOURS, IMAGES, LOGO_URL, HIC_NUMBER } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: `FREE Estimate Today | Same-Day Response | ${PHONE} | ${SITE_NAME}`,
+  title: `FREE Estimate Today | Same-Day Response | ${PHONE}`,
   description: `Get your FREE home improvement estimate today — no obligation! #1 rated contractor MA with 19 5-star reviews. Siding, windows & doors. Licensed HIC #${HIC_NUMBER}. Call ${PHONE} now!`,
   keywords: [
     'free estimate contractor Massachusetts',

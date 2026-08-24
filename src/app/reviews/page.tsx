@@ -4,7 +4,7 @@ import { ReviewsHighlight } from '@/components/sections';
 import { SITE_NAME, PHONE, PHONE_LINK, SITE_URL, HIC_NUMBER } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: `Customer Reviews | 5.0★ Google Rating | 19 Reviews | ${SITE_NAME}`,
+  title: `Customer Reviews | 5.0★ Google Rating | 19 Reviews`,
   description: `Read 19 verified 5-star Google reviews from Massachusetts homeowners. See why ${SITE_NAME} is the #1 rated siding, window & door contractor in MA. Licensed HIC #${HIC_NUMBER}.`,
   alternates: { canonical: `${SITE_URL}/reviews` },
 };

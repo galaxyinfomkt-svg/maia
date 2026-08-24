@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import { Hero } from '@/components/sections';
 import { Breadcrumbs } from '@/components/seo';
 import { getAllTags, getPostsByTag } from '@/lib/blog';
-import { SITE_NAME } from '@/lib/constants';
+import { SITE_NAME, SITE_URL } from '@/lib/constants';
 
 interface TagPageProps {
   params: Promise<{ tag: string }>;
@@ -37,6 +37,13 @@ export async function generateMetadata({ params }: TagPageProps): Promise<Metada
     title: `${displayTag} Articles & Guides`,
     description: `Expert articles and guides about ${displayTag.toLowerCase()} for Massachusetts homeowners. Tips, comparisons, and advice from ${SITE_NAME}.`,
     keywords: [displayTag, 'Massachusetts', 'home improvement', 'guides', 'tips'],
+    alternates: {
+      canonical: `${SITE_URL}/blog/tag/${tag}/`,
+    },
+    // These pages are navigation between articles, not destinations. They were
+    // in the sitemap as thin aggregations of content that already ranks on the
+    // articles themselves.
+    robots: { index: false, follow: true },
   };
 }
 

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Hero } from '@/components/sections';
 import { JsonLd, Breadcrumbs } from '@/components/seo';
 import { getAllPosts, getPostBySlug, getRecentPosts } from '@/lib/blog';
-import { SITE_NAME, PHONE, PHONE_LINK } from '@/lib/constants';
+import { SITE_NAME, PHONE, PHONE_LINK, SITE_URL } from '@/lib/constants';
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -28,6 +28,9 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     title: post.title,
     description: post.description,
     keywords: post.tags,
+    alternates: {
+      canonical: `${SITE_URL}/blog/${post.slug}/`,
+    },
     openGraph: {
       type: 'article',
       title: post.title,
