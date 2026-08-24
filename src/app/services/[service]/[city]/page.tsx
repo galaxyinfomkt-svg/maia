@@ -22,8 +22,11 @@ interface ServiceCityPageProps {
 
 export async function generateStaticParams() {
   const params: { service: string; city: string }[] = [];
+  // Cities beyond 50 miles were built, linked and crawled only to be served
+  // with noindex. Not building them keeps the crawl budget on pages we
+  // actually want in the index.
   for (const service of services) {
-    for (const city of cities) {
+    for (const city of cities.filter((c) => c.distance <= 50)) {
       params.push({ service: service.slug, city: city.slug });
     }
   }
@@ -69,23 +72,12 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
   const richText = getRichParagraphs(serviceSlug, city);
   const checklist = getServiceChecklist(serviceSlug);
 
-  const localBusinessSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'HomeAndConstructionBusiness',
-    name: `${SITE_NAME} - ${service.name} in ${city.name}`,
-    telephone: PHONE,
-    address: { '@type': 'PostalAddress', addressLocality: city.name, addressRegion: 'MA', postalCode: city.zip, addressCountry: 'US' },
-    areaServed: { '@type': 'City', name: city.name },
-    priceRange: '$$',
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', bestRating: '5', worstRating: '1', reviewCount: '19' },
-  };
-
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-      { '@type': 'ListItem', position: 2, name: 'Massachusetts', item: `${SITE_URL}/massachusetts` },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE_URL}/services/` },
       { '@type': 'ListItem', position: 3, name: service.name, item: `${SITE_URL}/services/${service.slug}` },
       { '@type': 'ListItem', position: 4, name: `${city.name}, MA`, item: `${SITE_URL}/services/${service.slug}/${city.slug}` },
     ],
@@ -101,36 +93,35 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
     })),
   };
 
-  const howToSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'HowTo',
-    name: `How to Get ${service.name} in ${city.name}, MA`,
-    estimatedCost: { '@type': 'MonetaryAmount', currency: 'USD', value: 'Free Estimate' },
-    step: content.processSteps.map((step, i) => ({
-      '@type': 'HowToStep',
-      position: i + 1,
-      name: step.name,
-      text: step.description,
-    })),
-  };
-
+  // One business, in Charlton. This page describes an area we serve, not a
+  // branch — so the only business node is a reference to the real organization,
+  // not a LocalBusiness claiming a premises in this city with a copy of the
+  // rating attached (that pattern was on ~2,470 pages at once).
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: `${service.name} in ${city.name}, MA`,
     description: content.intro,
-    provider: { '@type': 'HomeAndConstructionBusiness', name: SITE_NAME, telephone: PHONE },
-    areaServed: { '@type': 'City', name: city.name },
+    provider: {
+      '@type': 'HomeAndConstructionBusiness',
+      '@id': `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      telephone: PHONE,
+    },
+    areaServed: {
+      '@type': 'City',
+      name: city.name,
+      containedInPlace: { '@type': 'State', name: 'Massachusetts' },
+    },
     serviceType: service.name,
-    offers: { '@type': 'Offer', price: content.costRange, priceCurrency: 'USD' },
+    // priceRange, not price: `price` must be a single value, and this is a band.
+    offers: { '@type': 'AggregateOffer', priceCurrency: 'USD', description: content.costRange },
   };
 
   return (
     <>
-      <JsonLd data={localBusinessSchema} />
       <JsonLd data={breadcrumbSchema} />
       <JsonLd data={faqSchema} />
-      <JsonLd data={howToSchema} />
       <JsonLd data={serviceSchema} />
 
       {/* Hero with Form */}
@@ -153,7 +144,7 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
       <div className="bg-slate-50 border-b border-slate-200">
         <div className="container mx-auto px-4">
           <Breadcrumbs items={[
-            { label: 'Massachusetts', href: '/massachusetts' },
+            { label: 'Services', href: '/services' },
             { label: service.name, href: `/services/${service.slug}` },
             { label: city.name },
           ]} />
@@ -440,17 +431,22 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
             Service Area: {city.name}, MA
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-8" />
-          <div className="rounded-2xl overflow-hidden shadow-xl border border-slate-200 max-w-4xl mx-auto">
-            <iframe
-              src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodeURIComponent(city.name + ', MA')}&zoom=13`}
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              title={`${city.name} MA service area map`}
-            />
-          </div>
+          {/* Rendered only when a real key is configured. This used to ship a
+              public sample key that is not ours — no quota, no referrer
+              restriction, and liable to stop working without warning. */}
+          {process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY && (
+            <div className="rounded-2xl overflow-hidden shadow-xl border border-slate-200 max-w-4xl mx-auto">
+              <iframe
+                src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY}&q=${encodeURIComponent(city.name + ', MA')}&zoom=13`}
+                width="100%"
+                height="400"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                title={`${city.name} MA service area map`}
+              />
+            </div>
+          )}
         </div>
       </section>
 

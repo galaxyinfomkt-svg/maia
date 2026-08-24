@@ -2,13 +2,13 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import { HeroWithForm, ServicesSection, Testimonials, CTASection, WhyChooseUs, ReviewsHighlight } from '@/components/sections';
+import { HeroWithForm, ServicesSection, CTASection, WhyChooseUs, ReviewsHighlight } from '@/components/sections';
 import { ContactForm } from '@/components/forms';
 import { JsonLd, Breadcrumbs } from '@/components/seo';
 import { cities, getCityBySlug, getNearbyCities } from '@/lib/cities';
 import { services } from '@/lib/services';
-import { getCityProfile } from '@/lib/content-engine';
-import { SITE_NAME, PHONE, LOGO_URL, REAL_PHOTOS, HIC_NUMBER } from '@/lib/constants';
+import { getCityProfile, getCityPageParagraphs, getCityPageFAQs } from '@/lib/content-engine';
+import { SITE_NAME, SITE_URL, PHONE, LOGO_URL, REAL_PHOTOS, HIC_NUMBER } from '@/lib/constants';
 
 const VideoGallery = dynamic(() => import('@/components/sections/VideoGallery'), {
   loading: () => <div className="py-24 bg-white" />,
@@ -23,7 +23,9 @@ interface CityPageProps {
 }
 
 export async function generateStaticParams() {
-  return cities.map((city) => ({ slug: city.slug }));
+  // Matches the sitemap and the noindex threshold: we do not build pages we
+  // then tell Google to ignore.
+  return cities.filter((c) => c.distance <= 50).map((city) => ({ slug: city.slug }));
 }
 
 export async function generateMetadata({ params }: CityPageProps): Promise<Metadata> {
@@ -69,53 +71,33 @@ export default async function CityPage({ params }: CityPageProps) {
 
   const nearbyCities = getNearbyCities(city.slug, 6);
 
+  // One business, in Charlton. This page describes an area we serve, so it
+  // emits a Service pointing at the real organization rather than a
+  // LocalBusiness claiming a premises in this city, and it carries no rating
+  // of its own — that belongs on the organization entity, once.
   const localBusinessSchema = {
     '@context': 'https://schema.org',
-    '@type': 'HomeAndConstructionBusiness',
-    name: `${SITE_NAME} - ${city.name}`,
+    '@type': 'Service',
+    name: `Siding, window and door installation in ${city.name}, MA`,
+    serviceType: 'Home exterior contracting',
     image: LOGO_URL,
-    telephone: PHONE,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: city.name,
-      addressRegion: 'MA',
-      postalCode: city.zip,
-      addressCountry: 'US',
+    provider: {
+      '@type': 'HomeAndConstructionBusiness',
+      '@id': `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      telephone: PHONE,
     },
     areaServed: {
       '@type': 'City',
       name: city.name,
-    },
-    priceRange: '$$',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5',
-      reviewCount: '19',
+      containedInPlace: { '@type': 'State', name: 'Massachusetts' },
     },
   };
 
-  const cityFaqs = [
-    {
-      q: `Do you serve all of ${city.name}, Massachusetts?`,
-      a: `Yes! We proudly serve all neighborhoods throughout ${city.name}, ${city.county} County, including ${city.zip} and surrounding zip codes. We're just ${city.distance} miles from your location.`,
-    },
-    {
-      q: `How quickly can you start a project in ${city.name}?`,
-      a: `We typically provide free estimates within 24-48 hours for ${city.name} residents. Project start times vary by season, but we always work with your schedule to find convenient dates.`,
-    },
-    {
-      q: `Are you licensed and insured to work in ${city.name}?`,
-      a: `Absolutely. Maia Construction is fully licensed and insured to provide siding, door, and window installation services throughout ${city.county} County, including ${city.name}.`,
-    },
-    {
-      q: `What makes your services different in ${city.name}?`,
-      a: `We understand ${city.name}'s specific climate challenges and architectural styles. Our materials and techniques are specifically chosen for optimal performance in ${city.county} County's weather conditions.`,
-    },
-    {
-      q: `Do you offer warranties on work done in ${city.name}?`,
-      a: `Yes! All our installations in ${city.name} come with comprehensive warranties on both materials and workmanship. We stand behind every project.`,
-    },
-  ];
+  // Five hand-written questions used to appear verbatim on all 247 city
+  // pages. The bank is larger than the page shows, and the selection is
+  // keyed to the city, so no two neighbouring pages ask the same five.
+  const cityFaqs = getCityPageFAQs(city);
 
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -166,23 +148,9 @@ export default async function CityPage({ params }: CityPageProps) {
               <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mb-8" />
 
               <div className="prose prose-lg max-w-none mb-12">
-                <p>
-                  {city.name} homeowners deserve the best when it comes to home improvement.
-                  At Maia Construction, we bring over a decade of experience and expert craftsmanship
-                  to every project in {city.county} County.
-                </p>
-                <p>
-                  Located just {city.distance} miles from our headquarters in Charlton, we provide
-                  fast response times and personalized service to {city.name} residents. Whether you need
-                  new siding to protect against harsh New England winters, energy-efficient windows to
-                  reduce your heating bills, or a beautiful new entry door to enhance your curb appeal,
-                  we have you covered.
-                </p>
-                <p>
-                  Our team understands the unique challenges that homes in {city.name} and {city.county} County
-                  face. From coastal humidity to winter snow loads, we select materials and installation
-                  techniques specifically suited to your local conditions.
-                </p>
+                {getCityPageParagraphs(city).map((para, idx) => (
+                  <p key={idx}>{para}</p>
+                ))}
               </div>
 
               {/* Services in City */}
@@ -336,8 +304,6 @@ export default async function CityPage({ params }: CityPageProps) {
       />
 
       <ReviewsHighlight />
-
-      <Testimonials cityName={city.name} />
 
       {/* Nearby Cities */}
       <section className="py-24 bg-white">

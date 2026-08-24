@@ -82,7 +82,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   if (!service) return {};
 
   const meta = serviceMetadata[serviceSlug] || {
-    title: `${service.name} Services Massachusetts | ${SITE_NAME}`,
+    title: `${service.name} Services in Massachusetts`,
     description: `Professional ${service.name.toLowerCase()} services in Massachusetts. Call ${PHONE} for a free estimate.`,
     keywords: [`${service.name.toLowerCase()} Massachusetts`],
   };
@@ -111,9 +111,12 @@ export default async function ServicePage({ params }: ServicePageProps) {
     description: service.fullDescription,
     provider: {
       '@type': 'HomeAndConstructionBusiness',
+      '@id': `${SITE_URL}/#organization`,
       name: SITE_NAME,
       telephone: PHONE,
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', bestRating: '5', worstRating: '1', reviewCount: '19' },
+      // The rating belongs to the organization entity, declared once on the
+      // homepage. Repeating it on every service page is the self-serving
+      // pattern Google discounts.
     },
     areaServed: { '@type': 'State', name: 'Massachusetts' },
     serviceType: service.name,
@@ -147,7 +150,6 @@ export default async function ServicePage({ params }: ServicePageProps) {
     <>
       <JsonLd data={serviceSchema} />
       {faqSchema && <JsonLd data={faqSchema} />}
-      <JsonLd data={howToSchema} />
 
       {/* Hero with Form - Same as Homepage */}
       <HeroWithForm
@@ -250,7 +252,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
             ))}
           </div>
           <div className="text-center mt-8">
-            <Link href="/massachusetts" className="inline-flex items-center text-amber-600 font-semibold hover:text-amber-700">
+            <Link href="/cities" className="inline-flex items-center text-amber-600 font-semibold hover:text-amber-700">
               View All 75+ Cities →
             </Link>
           </div>

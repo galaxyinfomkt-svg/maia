@@ -51,7 +51,6 @@ export default function HomePage() {
       <JsonLd data={organizationSchema} />
       <JsonLd data={websiteSchema} />
       <JsonLd data={generalContractorSchema} />
-      <JsonLd data={howToSchema} />
 
       {/* ========== SECTION 1: HERO WITH FORM ========== */}
       <HeroWithForm
