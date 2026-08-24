@@ -5,7 +5,7 @@ import { Header, Footer, TopBar } from '@/components/layout';
 import FloatingCTA from '@/components/FloatingCTA';
 import ChatWidget from '@/components/ChatWidget';
 import Analytics from '@/components/Analytics';
-import { SITE_NAME, SITE_URL, PHONE, ADDRESS, HIC_NUMBER, LOGO_URL } from '@/lib/constants';
+import { SITE_NAME, SITE_URL, PHONE, ADDRESS, HIC_NUMBER, LOGO_URL, OG_IMAGE, OG_IMAGE_WIDTH, OG_IMAGE_HEIGHT } from '@/lib/constants';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     'door installation contractor MA',
     'entry door replacement Boston',
     'home improvement Massachusetts',
-    'general contractor Marlborough MA',
+    'exterior contractor Charlton MA',
     'exterior renovation New England',
     'James Hardie siding installer MA',
   ],
@@ -50,18 +50,18 @@ export const metadata: Metadata = {
     description: 'Massachusetts top-rated exterior contractor ★5.0. Premium siding, ENERGY STAR windows & doors. 500+ projects, 25-50yr warranties. FREE estimates!',
     images: [
       {
-        url: LOGO_URL,
-        width: 400,
-        height: 400,
-        alt: `${SITE_NAME} - 5-Star Rated Massachusetts Home Exterior Contractor`,
+        url: OG_IMAGE,
+        width: OG_IMAGE_WIDTH,
+        height: OG_IMAGE_HEIGHT,
+        alt: `Completed siding replacement by ${SITE_NAME}, a licensed Massachusetts exterior contractor`,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${SITE_NAME} | 5-Star Siding & Window Contractor MA`,
-    description: '5.0-star rated siding, window & door contractor. Serving 100+ Massachusetts cities. Licensed & insured. Call for FREE estimate!',
-    images: [LOGO_URL],
+    title: `${SITE_NAME} | Siding, Windows & Doors in Massachusetts`,
+    description: 'Licensed Massachusetts exterior contractor (HIC #204634). Siding, windows and doors, installed by our own crews. Free written estimates.',
+    images: [OG_IMAGE],
   },
   robots: {
     index: true,

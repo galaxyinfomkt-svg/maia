@@ -48,7 +48,7 @@ export const IMAGES = {
   // Siding
   siding: '/images/before-after/exterior-before-worcester-ma.webp',
   sidingBefore: '/images/before-after/siding-before-framingham-ma.webp',
-  sidingAfter: '/images/before-after/exterior-before-worcester-ma.webp',
+  sidingAfter: '/images/before-after/exterior-after-worcester-ma.webp',
 
   // Windows
   windows: '/images/windows/window-installation-massachusetts-1.webp',
@@ -74,6 +74,13 @@ export const IMAGES = {
 };
 
 export const LOGO_URL = IMAGES.logoPng;
+
+// Social preview card. The logo is 200x200 — below what Facebook and X need
+// for a large card, and it was being declared as 400x400. This is a real
+// finished job, cropped to the 1200x630 both platforms actually want.
+export const OG_IMAGE = '/images/og-maia-construction.webp';
+export const OG_IMAGE_WIDTH = 1200;
+export const OG_IMAGE_HEIGHT = 630;
 
 export const SOCIAL_LINKS = {
   facebook: 'https://www.facebook.com/maiaconstruction/',

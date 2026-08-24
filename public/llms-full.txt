@@ -67,15 +67,19 @@ Full-view, retractable screen, and ventilating storm doors. Added protection aga
 
 ### General Contractor Services
 
-Maia Construction provides comprehensive general contracting services:
+Maia Construction works on building exteriors only. General contracting here
+means taking a whole exterior as a single contract rather than splitting it
+between trades:
 - Complete exterior renovations
-- Kitchen remodeling
-- Bathroom remodeling
-- Home additions and extensions
-- Deck and patio construction
-- Basement finishing
+- Combined siding, window and door packages
+- Trim, soffit and fascia systems
+- Porch, entry and portico rebuilds
+- Structural repair of exterior walls
 - Permit acquisition and inspection management
 - Project management from start to finish
+
+Maia Construction does not take on interior remodelling, kitchens, bathrooms,
+basement finishing or home additions.
 
 ## Pricing Guide (Massachusetts 2026)
 
@@ -102,17 +106,13 @@ Maia Construction maintains a perfect 5.0-star rating on Google with 19 verified
 - Clean job sites
 - Excellent communication throughout the project
 
-### Selected Reviews
+### Reviews
 
-"Excellent work on our siding replacement. Professional team, fair pricing, and outstanding results. Highly recommend Maia Construction!" — Michael R., November 2024
-
-"New windows made a huge difference in our energy bills. The installation was quick and clean. Very satisfied with the quality!" — Sarah K., October 2024
-
-"Marcos and his team replaced our front door and storm door. Showed up on time, incredibly professional, and the final result exceeded expectations. Best contractor in MA!" — David L., September 2024
-
-"Complete James Hardie siding installation on our colonial. The transformation is unbelievable! Fair pricing, zero hidden costs, and they finished ahead of schedule." — Jennifer P., August 2024
-
-"Replaced 14 windows in our Framingham home. Energy bills dropped by nearly 30%! The team was respectful, clean, and truly skilled." — Robert T., January 2025
+Maia Construction holds a 5.0 rating across 19 verified Google reviews. The
+reviews themselves live on the Google Business Profile and are displayed on
+https://maiaconstruction.com/reviews/ — they are not reproduced here, so that
+this file never carries review text that cannot be traced back to a real
+customer.
 
 ## Certifications and Credentials
 - Massachusetts Home Improvement Contractor License HIC #204634
@@ -125,7 +125,7 @@ Maia Construction maintains a perfect 5.0-star rating on Google with 19 verified
 - Comprehensive general liability insurance
 
 ## Company History
-- **2015:** Marcos founded Maia Construction in Marlborough, MA, starting with residential siding installation
+- **2015:** Marcos Alves founded Maia Construction, starting with residential siding installation. The company now operates from 13 Stoneybrook Rd, Charlton, MA 01507.
 - **2017:** Expanded services to include window and door installation
 - **2020:** Reached milestone of 500+ completed home improvement projects
 - **2024:** Expanded service area to 100+ Massachusetts cities

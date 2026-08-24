@@ -69,43 +69,6 @@ export const organizationSchema = {
     bestRating: '5',
     worstRating: '1',
   },
-  review: [
-    {
-      '@type': 'Review',
-      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      author: { '@type': 'Person', name: 'Michael R.' },
-      datePublished: '2024-11-15',
-      reviewBody: 'Excellent work on our siding replacement. Professional team, fair pricing, and outstanding results. Highly recommend Maia Construction!',
-    },
-    {
-      '@type': 'Review',
-      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      author: { '@type': 'Person', name: 'Sarah K.' },
-      datePublished: '2024-10-22',
-      reviewBody: 'New windows made a huge difference in our energy bills. The installation was quick and clean. Very satisfied with the quality!',
-    },
-    {
-      '@type': 'Review',
-      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      author: { '@type': 'Person', name: 'David L.' },
-      datePublished: '2024-09-18',
-      reviewBody: 'Marcos and his team replaced our front door and storm door. Showed up on time, incredibly professional, and the final result exceeded expectations. Best contractor in MA!',
-    },
-    {
-      '@type': 'Review',
-      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      author: { '@type': 'Person', name: 'Jennifer P.' },
-      datePublished: '2024-08-05',
-      reviewBody: 'Complete James Hardie siding installation on our colonial. The transformation is unbelievable! Fair pricing, zero hidden costs, and they finished ahead of schedule.',
-    },
-    {
-      '@type': 'Review',
-      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      author: { '@type': 'Person', name: 'Robert T.' },
-      datePublished: '2025-01-10',
-      reviewBody: 'Replaced 14 windows in our Framingham home. Energy bills dropped by nearly 30%! The team was respectful, clean, and truly skilled. Can not recommend enough.',
-    },
-  ],
 };
 
 // WebSite Schema for sitelinks search box and brand recognition
@@ -120,20 +83,6 @@ export const websiteSchema = {
     '@type': 'Organization',
     '@id': `${SITE_URL}/#organization`,
   },
-  potentialAction: [
-    {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${SITE_URL}/cities/{search_term_string}`,
-      },
-      'query-input': 'required name=search_term_string',
-    },
-    {
-      '@type': 'ReadAction',
-      target: `${SITE_URL}`,
-    },
-  ],
   inLanguage: 'en-US',
   about: {
     '@type': 'Thing',
@@ -321,20 +270,25 @@ export function createLocalBusinessSchema(city: {
   slug: string;
   service?: string;
 }) {
+  // There is one business, in Charlton. A city page describes an area we
+  // serve, not a branch — so this emits a Service whose provider is the real
+  // organization, rather than a LocalBusiness claiming a premises in every
+  // city on the site. The rating lives on the organization entity alone; it
+  // used to be repeated here across ~2,470 pages.
   return {
     '@context': 'https://schema.org',
-    '@type': 'HomeAndConstructionBusiness',
-    name: `${SITE_NAME} - ${city.name}`,
-    description: `Professional ${city.service || 'siding, windows, and doors'} services in ${city.name}, Massachusetts. Licensed contractor serving the ${city.name} area.`,
+    '@type': 'Service',
+    name: `${city.service || 'Siding, window and door'} services in ${city.name}, MA`,
+    description: `Professional ${city.service || 'siding, window and door'} installation for homes in ${city.name}, Massachusetts. Licensed Massachusetts contractor working out of Charlton.`,
     url: city.service
-      ? `${SITE_URL}/services/${city.service}/${city.slug}`
-      : `${SITE_URL}/cities/${city.slug}`,
-    telephone: PHONE,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: city.name,
-      addressRegion: 'MA',
-      addressCountry: 'US',
+      ? `${SITE_URL}/services/${city.service}/${city.slug}/`
+      : `${SITE_URL}/cities/${city.slug}/`,
+    serviceType: city.service || 'Home exterior contracting',
+    provider: {
+      '@type': 'HomeAndConstructionBusiness',
+      '@id': `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      telephone: PHONE,
     },
     areaServed: {
       '@type': 'City',
@@ -343,17 +297,6 @@ export function createLocalBusinessSchema(city: {
         '@type': 'State',
         name: 'Massachusetts',
       },
-    },
-    parentOrganization: {
-      '@type': 'Organization',
-      '@id': `${SITE_URL}/#organization`,
-      name: SITE_NAME,
-    },
-    priceRange: '$$',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5.0',
-      reviewCount: '19',
     },
   };
 }
@@ -433,10 +376,8 @@ export function createProductSchema(product: {
         name: SITE_NAME,
       },
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5.0',
-      reviewCount: '19',
-    },
+    // No aggregateRating here: the 19 Google reviews are about the company,
+    // not about an individual product, and repeating them per product is
+    // exactly the self-serving pattern Google discounts.
   };
 }
