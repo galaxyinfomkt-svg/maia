@@ -128,7 +128,7 @@ export default function MassachusettsPage() {
                     {countyCities.map((city) => (
                       <Link
                         key={city.slug}
-                        href={`/massachusetts/${city.slug}`}
+                        href={`/cities/${city.slug}/`}
                         className="group p-4 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200 hover:border-amber-400 hover:shadow-lg transition-all"
                       >
                         <div className="flex items-center space-x-2 mb-2">
@@ -199,7 +199,7 @@ export default function MassachusettsPage() {
                       {cities.map((city) => (
                         <Link
                           key={`${service.slug}-${city.slug}`}
-                          href={`/massachusetts/${city.slug}/${service.slug}`}
+                          href={`/services/${service.slug}/${city.slug}/`}
                           className="px-3 py-2 text-sm text-gray-600 hover:text-amber-500 hover:bg-amber-50 rounded-lg transition-all"
                         >
                           {city.name}
@@ -228,7 +228,7 @@ export default function MassachusettsPage() {
               .map((city) => (
                 <Link
                   key={city.slug}
-                  href={`/massachusetts/${city.slug}`}
+                  href={`/cities/${city.slug}/`}
                   className="text-gray-600 hover:text-amber-500 transition-colors"
                 >
                   {city.name}, MA

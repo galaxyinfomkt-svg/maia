@@ -542,7 +542,7 @@ export default async function MACityServicePage({ params }: MACityServicePagePro
             {services.filter(s => s.slug !== service.slug).map((otherService) => (
               <Link
                 key={otherService.slug}
-                href={`/massachusetts/${city.slug}/${otherService.slug}`}
+                href={`/services/${otherService.slug}/${city.slug}/`}
                 className="group p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:border-amber-400 hover:shadow-lg transition-all text-center"
               >
                 <h3 className="font-bold text-slate-900 group-hover:text-amber-500 transition-colors mt-3">
@@ -566,7 +566,7 @@ export default async function MACityServicePage({ params }: MACityServicePagePro
             {nearbyCities.map((nearbyCity) => (
               <Link
                 key={nearbyCity.slug}
-                href={`/massachusetts/${nearbyCity.slug}/${service.slug}`}
+                href={`/services/${service.slug}/${nearbyCity.slug}/`}
                 className="group p-6 bg-white rounded-xl border border-slate-200 hover:border-amber-400 hover:shadow-lg transition-all text-center"
               >
                 <svg className="w-8 h-8 text-amber-500 mx-auto mb-3" fill="currentColor" viewBox="0 0 20 20">

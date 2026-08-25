@@ -8,7 +8,7 @@ import { JsonLd, Breadcrumbs } from '@/components/seo';
 import { services } from '@/lib/services';
 import { cities, getCityBySlug, getNearbyCities } from '@/lib/cities';
 import { SITE_NAME, SITE_URL, PHONE, PHONE_LINK, HIC_NUMBER, LOGO_URL, REAL_PHOTOS, SERVICE_PHOTOS } from '@/lib/constants';
-import { getCityProfile } from '@/lib/content-engine';
+import { getCityProfile, getCityPageParagraphs } from '@/lib/content-engine';
 
 const VideoGallery = dynamic(() => import('@/components/sections/VideoGallery'), {
   loading: () => <div className="py-24 bg-white" />,
@@ -131,26 +131,13 @@ export default async function MACityPage({ params }: MACityPageProps) {
               Expert Home Improvement Services in {city.name}, MA
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mb-8" />
+            {/* Was three fixed paragraphs, identical on all 343 of these pages
+                (and rendering "40-80 years-old construction"). Now composed
+                per city by the content engine. */}
             <div className="prose prose-lg max-w-none text-gray-600 space-y-6">
-              <p>
-                {city.name} homeowners trust {SITE_NAME} for professional exterior home improvement services. Whether you&apos;re updating
-                the exterior of a {profile.housingTypes[0].toLowerCase()} or renovating a {profile.housingTypes[1].toLowerCase()},
-                quality installation is essential for protecting your home, improving energy efficiency, and maintaining property value.
-                Many homes in {city.name} feature {profile.avgHomeAge}-old construction that benefits significantly from modern
-                materials and installation techniques.
-              </p>
-              <p>
-                When it comes to home improvement in {city.name}, Massachusetts, choosing a local contractor makes all the difference.
-                {SITE_NAME} has been serving {city.name} residents and the greater {city.county} County area since 2015,
-                building a reputation for exceptional craftsmanship, honest pricing, and reliable service. We understand the specific
-                challenges that {city.name} homeowners face — from {profile.commonIssues[0]} to {profile.commonIssues[1]}.
-              </p>
-              <p>
-                Our team of skilled professionals brings over a decade of combined experience to every project in {city.name}.
-                We don&apos;t cut corners, we don&apos;t use subcontractors, and we don&apos;t disappear after the job is done.
-                Every project is managed by our team from start to finish, ensuring consistent quality and communication throughout.
-                Being based in Charlton, just {city.distance} miles from {city.name}, means we respond quickly and are always available.
-              </p>
+              {getCityPageParagraphs(city).map((para, idx) => (
+                <p key={idx}>{para}</p>
+              ))}
             </div>
           </div>
         </div>
@@ -264,7 +251,7 @@ export default async function MACityPage({ params }: MACityPageProps) {
           <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-12" />
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-4xl mx-auto">
             {nearbyCities.map((nearbyCity) => (
-              <Link key={nearbyCity.slug} href={`/massachusetts/${nearbyCity.slug}`}
+              <Link key={nearbyCity.slug} href={`/cities/${nearbyCity.slug}/`}
                 className="group p-4 bg-slate-50 rounded-xl border border-slate-200 hover:border-amber-400 hover:shadow-md transition-all text-center">
                 <svg className="w-6 h-6 text-amber-500 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" /></svg>
                 <h3 className="font-bold text-sm text-slate-900 group-hover:text-amber-500 transition-colors">{nearbyCity.name}</h3>
