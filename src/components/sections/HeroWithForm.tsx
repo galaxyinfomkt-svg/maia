@@ -30,7 +30,7 @@ export default function HeroWithForm({
       <div className="absolute inset-0">
         <Image
           src={backgroundImage}
-          alt="Professional siding and window installation services in Marlborough, Massachusetts - Maia Construction licensed contractor"
+          alt="Professional siding, window and door installation across Massachusetts by Maia Construction, a licensed contractor based in Charlton"
           fill
           sizes="100vw"
           className="object-cover"

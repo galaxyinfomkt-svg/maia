@@ -18,28 +18,28 @@ export const ADDRESS = {
 
 // Service-specific photos
 export const SERVICE_PHOTOS: Record<string, string> = {
-  siding: 'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68bb92a147f24d34a4cb2441.jpeg',
-  windows: 'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68bb92a11ff6ea5ace0517d7.jpeg',
-  doors: 'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68bb918e47f24da26ecb147e.jpeg',
-  'general-contractor': 'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/6834e26266829d658f8eab6c.jpeg',
+  siding: '/images/hero/hero-68bb92a147f24d34a4cb2441.webp',
+  windows: '/images/hero/hero-68bb92a11ff6ea5ace0517d7.webp',
+  doors: '/images/hero/hero-68bb918e47f24da26ecb147e.webp',
+  'general-contractor': '/images/hero/hero-6834e26266829d658f8eab6c.webp',
 };
 
 export const REAL_PHOTOS = [
-  'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68bb92a147f24d34a4cb2441.jpeg',
-  'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68bb94791ff6ea156705431b.jpeg',
-  'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68bb947947f24d6531cb52a6.jpeg',
-  'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68bb9479b200283b40dccf5b.jpeg',
-  'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68bb92a147f24d8291cb2442.jpeg',
-  'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68bb918ec535bec22d71d549.jpeg',
-  'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68bb918e47f24da26ecb147e.jpeg',
-  'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68bb9169b20028c4b5dc9030.jpeg',
-  'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68a38d825313006ec55c2a52.jpeg',
-  'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/6834e26266829d658f8eab6c.jpeg',
+  '/images/hero/hero-68bb92a147f24d34a4cb2441.webp',
+  '/images/hero/hero-68bb94791ff6ea156705431b.webp',
+  '/images/hero/hero-68bb947947f24d6531cb52a6.webp',
+  '/images/hero/hero-68bb9479b200283b40dccf5b.webp',
+  '/images/hero/hero-68bb92a147f24d8291cb2442.webp',
+  '/images/hero/hero-68bb918ec535bec22d71d549.webp',
+  '/images/hero/hero-68bb918e47f24da26ecb147e.webp',
+  '/images/hero/hero-68bb9169b20028c4b5dc9030.webp',
+  '/images/hero/hero-68a38d825313006ec55c2a52.webp',
+  '/images/hero/hero-6834e26266829d658f8eab6c.webp',
 ];
 
 export const IMAGES = {
   // Hero e imagens principais
-  hero: 'https://assets.cdn.filesafe.space/b8spY0hvhFRzHHxsdJlZ/media/68bb92a147f24d34a4cb2441.jpeg',
+  hero: '/images/hero/hero-68bb92a147f24d34a4cb2441.webp',
   logo: '/images/logo-200.webp',
   logoLarge: '/images/logo-400.webp',
   logoHeader: '/images/logo-112.webp',
