@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { heroSrcSet } from '@/lib/heroImages';
 import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui';
 import ContactForm from '@/components/forms/ContactForm';
@@ -26,16 +26,22 @@ export default function HeroWithForm({
         className
       )}
     >
-      {/* Background Image - full visibility, no blue tint */}
+      {/* Background image — the LCP element on every page that uses this hero.
+          A plain <img> rather than next/image because the project runs with
+          images.unoptimized, so next/image emits a single full-size source and
+          no srcset. A phone was downloading the 1080px file to paint it at
+          ~400px wide. The variants below are the same image at smaller sizes,
+          so the browser picks the smallest one that still covers the viewport
+          at full pixel density — the rendered result is identical. */}
       <div className="absolute inset-0">
-        <Image
+        <img
           src={backgroundImage}
-          alt="Professional siding, window and door installation across Massachusetts by Maia Construction, a licensed contractor based in Charlton"
-          fill
+          srcSet={heroSrcSet(backgroundImage)}
           sizes="100vw"
-          className="object-cover"
-          priority
-          quality={85}
+          alt="Professional siding, window and door installation across Massachusetts by Maia Construction, a licensed contractor based in Charlton"
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover"
         />
       </div>
 

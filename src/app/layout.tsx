@@ -91,8 +91,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://connect.facebook.net" />
+        {/* No dns-prefetch for googletagmanager or connect.facebook.net: neither
+            script is on the page (the env vars are unset), so the hints resolved
+            hosts nothing ever contacted. Lighthouse counts them against the
+            connection budget. Restore them if analytics is switched on. */}
         {/* AI Search Engine Discovery - llms.txt for AI crawlers */}
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Information" />
         <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM Full Information" />
