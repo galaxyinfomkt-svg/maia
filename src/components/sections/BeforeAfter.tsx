@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
+import { srcSetFor } from '@/lib/heroImages';
 import { cn } from '@/lib/utils';
 import { allProjectPairs, featuredProjectPairs } from '@/lib/projects';
 
@@ -68,12 +68,14 @@ export default function BeforeAfter({
             >
               {/* After Image (Background) */}
               <div className="absolute inset-0">
-                <Image
+                <img
                   src={currentProject.after}
-                  alt={`${currentProject.project.title} completed project in ${currentProject.project.location} - After renovation by Maia Construction`}
-                  fill
+                  srcSet={srcSetFor(currentProject.after)}
                   sizes="(max-width: 1024px) 100vw, 66vw"
-                  className="object-cover"
+                  alt={`${currentProject.project.title} completed project in ${currentProject.project.location} - After renovation by Maia Construction`}
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-0 h-full w-full object-cover"
                 />
                 <div className="absolute top-4 right-4 px-4 py-2 bg-green-500 text-white rounded-full text-sm font-bold">
                   AFTER
@@ -85,16 +87,18 @@ export default function BeforeAfter({
                 className="absolute inset-0 overflow-hidden"
                 style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
               >
-                <Image
+                <img
                   src={currentProject.before}
+                  srcSet={srcSetFor(currentProject.before)}
+                  sizes="(max-width: 1024px) 100vw, 66vw"
                   alt={`${currentProject.project.title} in ${currentProject.project.location} - ${
                     currentProject.beforeLabel
                       ? `${currentProject.beforeLabel.toLowerCase()}, work underway`
                       : 'Before renovation, original condition'
                   }`}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 66vw"
-                  className="object-cover"
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-0 h-full w-full object-cover"
                 />
                 <div className="absolute top-4 left-4 px-4 py-2 bg-red-500 text-white rounded-full text-sm font-bold">
                   {currentProject.beforeLabel ?? 'BEFORE'}
@@ -160,13 +164,17 @@ export default function BeforeAfter({
                 )}
               >
                 <div className="relative w-20 h-16 rounded-lg overflow-hidden flex-shrink-0">
-                  <Image
+                  {/* An 80px thumbnail was pulling the full 1200px photograph —
+                      311 KB to paint a postage stamp, once per project in the
+                      rail. The 200w variant is 10 KB. */}
+                  <img
                     src={project.after}
-                    alt={`${project.project.title} thumbnail - ${project.project.service} project in ${project.project.location}`}
-                    fill
+                    srcSet={srcSetFor(project.after)}
                     sizes="80px"
-                    className="object-cover"
+                    alt={`${project.project.title} thumbnail - ${project.project.service} project in ${project.project.location}`}
                     loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 h-full w-full object-cover"
                   />
                 </div>
                 <div>

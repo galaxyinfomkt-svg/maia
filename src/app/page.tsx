@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
+import { srcSetFor } from '@/lib/heroImages';
 import Link from 'next/link';
 import { HeroWithForm, CTASection, WhyChooseUs, ReviewsHighlight } from '@/components/sections';
 import { JsonLd, organizationSchema, websiteSchema } from '@/components/seo';
@@ -64,7 +65,7 @@ export default function HomePage() {
             Contractor in Massachusetts
           </>
         }
-        subtitle={`Expert siding installation, window replacement, door installation, and general contracting services. Licensed & insured contractor serving Marlborough and 75+ cities across Massachusetts.`}
+        subtitle={`Expert siding installation, window replacement, door installation, and general contracting services. Licensed and insured, working out of Charlton and serving 75+ cities across Massachusetts.`}
       />
 
       {/* ========== SECTION 2: GOOGLE REVIEWS BAR ========== */}
@@ -104,8 +105,18 @@ export default function HomePage() {
               <Link key={service.slug} href={`/services/${service.slug}`}
                 className={`group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all ${index === 0 ? 'ring-2 ring-amber-400' : 'border border-slate-200'}`}>
                 <div className="relative h-52 overflow-hidden">
-                  <Image src={SERVICE_PHOTOS[service.slug] || REAL_PHOTOS[index % REAL_PHOTOS.length]} alt={`${service.name} services in Massachusetts by ${SITE_NAME}`}
-                    fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  {/* Card art in a 52-unit-tall box was loading the same
+                      full-size photograph the hero uses — up to 253 KB each,
+                      four of them below the fold. */}
+                  <img
+                    src={SERVICE_PHOTOS[service.slug] || REAL_PHOTOS[index % REAL_PHOTOS.length]}
+                    srcSet={srcSetFor(SERVICE_PHOTOS[service.slug] || REAL_PHOTOS[index % REAL_PHOTOS.length])}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                    alt={`${service.name} services in Massachusetts by ${SITE_NAME}`}
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                   {index === 0 && (
                     <span className="absolute top-4 right-4 bg-amber-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full">Featured</span>
