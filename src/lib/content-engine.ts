@@ -303,6 +303,15 @@ function driveBand(distance: number): string {
   return 'a planned trip';
 }
 
+/** "a Worcester home" but "an Acton home" — 41 of the 343 cities start with a vowel. */
+function an(word: string): string {
+  return /^[AEIOUaeiou]/.test(word) ? 'an ' + word : 'a ' + word;
+}
+
+/** "40-80 years" -> "40-80-year-old", which is what the adjective form needs. */
+function ageAdjective(avgHomeAge: string): string {
+  return avgHomeAge.replace(/\s*years?\s*$/i, '') + '-year-old';
+}
 const exposureNotes: Record<Exposure, string[]> = {
   coastal: [
     'salt-laden air that strips coatings and pits fasteners years earlier than inland weather does',
@@ -849,13 +858,13 @@ function buildIntro(city: City, def: ServiceDef, profile: CityProfile, exposure:
   const openings = [
     `Most ${def.thing} work we do in ${city.name} starts the same way: a homeowner has noticed something they cannot quite diagnose.`,
     `${city.name} sits ${city.distance} miles from our shop in Charlton, which is close enough that we see the same patterns in its housing stock again and again.`,
-    `If you are weighing ${def.work} on a ${city.name} home, the housing stock here narrows the sensible options considerably.`,
+    `If you are weighing ${def.work} on ${an(city.name)} home, the housing stock here narrows the sensible options considerably.`,
     `We have worked on enough ${city.name} exteriors to know what tends to be waiting behind the old material.`,
     `The right approach to ${def.work} in ${city.name} depends less on brand choice than on what the wall behind it is doing.`,
   ];
   const context = [
     `Housing here runs to ${profile.housingTypes[0].toLowerCase()} and ${profile.housingTypes[1].toLowerCase()}, much of it ${profile.avgHomeAge} old.`,
-    `The stock dates from ${profile.foundedEra}, so ${profile.avgHomeAge}-old assemblies are the norm rather than the exception.`,
+    `The stock dates from ${profile.foundedEra}, so ${ageAdjective(profile.avgHomeAge)} assemblies are the norm rather than the exception.`,
     `${city.name} is ${profile.localFlavor}, and its ${profile.housingTypes[0].toLowerCase()} share a fairly predictable set of exterior problems.`,
     `Between ${profile.housingTypes[0].toLowerCase()} and ${profile.housingTypes[1].toLowerCase()}, most of what we open up here is ${profile.avgHomeAge} old.`,
   ];
@@ -944,7 +953,7 @@ export function getUniqueFAQs(serviceSlug: string, city: City): { question: stri
     {
       question: `How do you handle the site during the job?`,
       answer: pick([
-        `Landscaping gets covered, debris goes in a container rather than on your lawn, and we sweep for fasteners with a magnet at the end of each day. On a ${city.name} lot that is usually the difference between a tolerable two weeks and a miserable one.`,
+        `Landscaping gets covered, debris goes in a container rather than on your lawn, and we sweep for fasteners with a magnet at the end of each day. On ${an(city.name)} lot that is usually the difference between a tolerable two weeks and a miserable one.`,
         `Beds and walkways are covered before anything comes off the wall, there is a container on site from day one, and we magnet-sweep every evening. It matters more than people expect on a tight ${city.name} lot.`,
         `We protect the planting, keep the debris contained, and sweep for nails daily. You will still know there is a crew here, but you will be able to park and walk the garden.`,
       ], `${key}|faq-site`),
@@ -1008,7 +1017,7 @@ export function getRichParagraphs(
 
   const trustedOpen = [
     `The reason we push people toward a local contractor for ${def.work} is not loyalty to the idea — it is that the failures we get called out to fix are almost always detail failures, and details are what a crew working forty miles from home stops caring about at four in the afternoon.`,
-    `Choosing who does ${def.work} on a ${city.name} home matters more than choosing the material. Most of what fails early fails at a joint, a flashing lap or a fastener line, and none of those show up in a brochure.`,
+    `Choosing who does ${def.work} on ${an(city.name)} home matters more than choosing the material. Most of what fails early fails at a joint, a flashing lap or a fastener line, and none of those show up in a brochure.`,
     `We have been working across ${city.county} County since 2015, and the pattern is consistent: the jobs that come back are the ones where somebody rushed the parts nobody sees.`,
   ];
   const trustedMiddle = [
@@ -1032,7 +1041,7 @@ export function getRichParagraphs(
   const compOpen = [
     `What we actually do differently on ${def.work} comes down to a handful of things: ${solutionsList}.`,
     `The specification we work to in ${city.name} is not complicated — ${solutionsList}.`,
-    `Concretely, on a ${city.name} project that means ${solutionsList}.`,
+    `Concretely, on ${an(city.name)} project that means ${solutionsList}.`,
   ];
   const compClose = [
     `None of that is exotic. It is manufacturer specification, followed properly, which is a lower bar than the industry's reputation suggests and still the thing that decides how the wall looks in year twelve.`,
