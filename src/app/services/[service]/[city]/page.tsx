@@ -22,11 +22,8 @@ interface ServiceCityPageProps {
 
 export async function generateStaticParams() {
   const params: { service: string; city: string }[] = [];
-  // Cities beyond 50 miles were built, linked and crawled only to be served
-  // with noindex. Not building them keeps the crawl budget on pages we
-  // actually want in the index.
   for (const service of services) {
-    for (const city of cities.filter((c) => c.distance <= 50)) {
+    for (const city of cities) {
       params.push({ service: service.slug, city: city.slug });
     }
   }

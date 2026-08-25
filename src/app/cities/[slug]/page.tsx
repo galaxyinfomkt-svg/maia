@@ -23,9 +23,7 @@ interface CityPageProps {
 }
 
 export async function generateStaticParams() {
-  // Matches the sitemap and the noindex threshold: we do not build pages we
-  // then tell Google to ignore.
-  return cities.filter((c) => c.distance <= 50).map((city) => ({ slug: city.slug }));
+  return cities.map((city) => ({ slug: city.slug }));
 }
 
 export async function generateMetadata({ params }: CityPageProps): Promise<Metadata> {
