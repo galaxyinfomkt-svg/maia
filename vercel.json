@@ -4,8 +4,18 @@
   "installCommand": "npm install",
   "redirects": [
     {
+      "source": "/massachusetts/:city/:service/",
+      "destination": "/services/:service/:city/",
+      "permanent": true
+    },
+    {
       "source": "/massachusetts/:city/:service",
       "destination": "/services/:service/:city/",
+      "permanent": true
+    },
+    {
+      "source": "/massachusetts/:city/",
+      "destination": "/cities/:city/",
       "permanent": true
     },
     {
