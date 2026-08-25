@@ -10,3 +10,4 @@ export { default as VideoGallery } from './VideoGallery';
 export { default as ReviewWidget } from './ReviewWidget';
 export { default as ReviewsHighlight } from './ReviewsHighlight';
 export { default as FAQ } from './FAQ';
+export { default as RealReviews } from './RealReviews';

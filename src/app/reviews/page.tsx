@@ -1,7 +1,48 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ReviewsHighlight } from '@/components/sections';
+import { JsonLd } from '@/components/seo';
 import { SITE_NAME, PHONE, PHONE_LINK, SITE_URL, HIC_NUMBER } from '@/lib/constants';
+import {
+  reviews,
+  completeReviews,
+  REVIEW_COUNT,
+  AVERAGE_RATING,
+  GOOGLE_PROFILE_URL,
+} from '@/lib/reviews';
+
+/**
+ * Review markup lives here and only here — this is the one page that shows the
+ * reviews to the reader, which is what Google's policy requires. Only the
+ * reviews we hold in full are marked up; the truncated ones are displayed as
+ * excerpts but not asserted as reviewBody.
+ */
+const reviewsSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: `Customer reviews of ${SITE_NAME}`,
+  itemListElement: completeReviews.map((review, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    item: {
+      '@type': 'Review',
+      itemReviewed: {
+        '@type': 'HomeAndConstructionBusiness',
+        '@id': `${SITE_URL}/#organization`,
+        name: SITE_NAME,
+      },
+      author: { '@type': 'Person', name: review.author },
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: String(review.rating),
+        bestRating: '5',
+        worstRating: '1',
+      },
+      datePublished: review.date,
+      reviewBody: review.text,
+    },
+  })),
+};
 
 export const metadata: Metadata = {
   title: `Customer Reviews | 5.0★ Google Rating | 19 Reviews`,
@@ -12,6 +53,8 @@ export const metadata: Metadata = {
 export default function ReviewsPage() {
   return (
     <>
+      <JsonLd data={reviewsSchema} />
+
       {/* Hero */}
       <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
         <div className="container mx-auto px-4 text-center">
@@ -49,7 +92,77 @@ export default function ReviewsPage() {
         </div>
       </section>
 
-      {/* Real Google Reviews Widget */}
+      {/* The reviews themselves, as text in the HTML.
+          This page used to be 380 visible words: the widget below loads from a
+          third party after hydration, so on a static export Google indexed a
+          page with a heading, four numbers and nothing else. */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-6">
+              {reviews.map((review) => (
+                <article
+                  key={review.author + review.date}
+                  className="bg-slate-50 rounded-2xl p-6 border border-slate-200 flex flex-col"
+                >
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-amber-400 tracking-tight" aria-hidden="true">
+                      ★★★★★
+                    </span>
+                    <span className="sr-only">{review.rating} out of 5 stars</span>
+                    <time
+                      dateTime={review.date}
+                      className="text-slate-500 text-sm ml-auto tabular-nums"
+                    >
+                      {new Date(review.date).toLocaleDateString('en-US', {
+                        month: 'short',
+                        year: 'numeric',
+                      })}
+                    </time>
+                  </div>
+
+                  {review.text ? (
+                    <blockquote className="text-slate-700 leading-relaxed flex-1">
+                      “{review.text}
+                      {review.excerpt ? '…' : ''}”
+                    </blockquote>
+                  ) : (
+                    <p className="text-slate-500 italic flex-1">
+                      Five stars, left without a written review.
+                    </p>
+                  )}
+
+                  <footer className="mt-4 pt-4 border-t border-slate-200">
+                    <p className="font-semibold text-slate-900">{review.author}</p>
+                    {review.work && (
+                      <p className="text-slate-500 text-sm">{review.work}</p>
+                    )}
+                    {review.excerpt && (
+                      <a
+                        href={GOOGLE_PROFILE_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-amber-600 text-sm font-semibold hover:text-amber-700 inline-block mt-1"
+                      >
+                        Read the full review on Google →
+                      </a>
+                    )}
+                  </footer>
+                </article>
+              ))}
+            </div>
+
+            <p className="text-center text-slate-500 text-sm mt-10 max-w-2xl mx-auto">
+              All {REVIEW_COUNT} reviews are from our Google Business Profile and are
+              reproduced here as written. Where Google truncates a review in its own
+              listing, we show the opening and link to the full text rather than
+              paraphrasing it.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Live Google widget, as a second source */}
       <ReviewsHighlight />
 
       {/* CTA */}

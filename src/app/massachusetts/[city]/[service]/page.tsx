@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { HeroWithForm, CTASection, WhyChooseUs, ServicesSection, ReviewsHighlight } from '@/components/sections';
+import { HeroWithForm, CTASection, WhyChooseUs, ServicesSection, ReviewsHighlight, RealReviews } from '@/components/sections';
 import dynamic from 'next/dynamic';
 
 const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'), {
@@ -500,6 +500,8 @@ export default async function MACityServicePage({ params }: MACityServicePagePro
       />
 
       {/* Reviews */}
+      <RealReviews seed={`ma-${serviceSlug}-${city.slug}`} cityName={city.name} />
+
       <ReviewsHighlight />
 
       {/* FAQ Section */}

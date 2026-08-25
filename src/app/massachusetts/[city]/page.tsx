@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import Image from 'next/image';
-import { HeroWithForm, CTASection, WhyChooseUs, ReviewsHighlight } from '@/components/sections';
+import { HeroWithForm, CTASection, WhyChooseUs, ReviewsHighlight, RealReviews } from '@/components/sections';
 import { JsonLd, Breadcrumbs } from '@/components/seo';
 import { services } from '@/lib/services';
 import { cities, getCityBySlug, getNearbyCities } from '@/lib/cities';
@@ -242,6 +242,8 @@ export default async function MACityPage({ params }: MACityPageProps) {
       <VideoGallery title={`Our Projects in ${city.county} County`} subtitle={`Watch our team transform homes across Massachusetts`} />
 
       {/* Reviews */}
+      <RealReviews seed={`ma-city-${city.slug}`} cityName={city.name} />
+
       <ReviewsHighlight />
 
       {/* Nearby Cities */}

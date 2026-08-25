@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import { HeroWithForm, CTASection, WhyChooseUs, ReviewsHighlight } from '@/components/sections';
+import { HeroWithForm, CTASection, WhyChooseUs, ReviewsHighlight, RealReviews } from '@/components/sections';
 import { JsonLd, Breadcrumbs } from '@/components/seo';
 import { services, getServiceBySlug } from '@/lib/services';
 import { cities, getCityBySlug, getNearbyCities } from '@/lib/cities';
@@ -351,6 +351,8 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
       />
 
       {/* Reviews */}
+      <RealReviews seed={`${serviceSlug}-${city.slug}`} cityName={city.name} />
+
       <ReviewsHighlight />
 
       {/* FAQ - Unique per city+service */}

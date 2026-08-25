@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import { HeroWithForm, ServicesSection, CTASection, WhyChooseUs, ReviewsHighlight } from '@/components/sections';
+import { HeroWithForm, ServicesSection, CTASection, WhyChooseUs, ReviewsHighlight, RealReviews } from '@/components/sections';
 import { ContactForm } from '@/components/forms';
 import { JsonLd, Breadcrumbs } from '@/components/seo';
 import { cities, getCityBySlug, getNearbyCities } from '@/lib/cities';
@@ -300,6 +300,8 @@ export default async function CityPage({ params }: CityPageProps) {
         title={`Our Projects in ${city.name}`}
         subtitle={`Watch our team transform homes in ${city.name} and across Massachusetts`}
       />
+
+      <RealReviews seed={`city-${city.slug}`} cityName={city.name} />
 
       <ReviewsHighlight />
 
