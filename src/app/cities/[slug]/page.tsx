@@ -10,7 +10,7 @@ import { TOWN_DATA } from '@/lib/town-data';
 const DECADE_LABELS = ['Before 1940', '1940s', '1950s', '1960s', '1970s', '1980s', '1990s', '2000s', '2010s', '2020 or later'];
 import { services } from '@/lib/services';
 import { getCityContent, townComparison, SOURCES_NOTE } from '@/lib/local-content';
-import { SITE_NAME, SITE_URL, PHONE, REAL_PHOTOS } from '@/lib/constants';
+import { SITE_NAME, SITE_URL, PHONE, heroPhotoFor } from '@/lib/constants';
 import { AVERAGE_RATING, GOOGLE_REVIEW_COUNT, reviewsFor } from '@/lib/reviews';
 
 interface CityPageProps {
@@ -104,7 +104,7 @@ export default async function CityPage({ params }: CityPageProps) {
           </>
         }
         subtitle={local.heroSubtitle}
-        backgroundImage={REAL_PHOTOS[(city.slug.length + 3) % REAL_PHOTOS.length]}
+        backgroundImage={heroPhotoFor(`city/${city.slug}`)}
       />
 
       <div className="bg-slate-50 border-b border-slate-200">

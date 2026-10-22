@@ -9,7 +9,7 @@ import { cities, getCityBySlug } from '@/lib/cities';
 import { TOWN_DATA } from '@/lib/town-data';
 
 const DECADE_LABELS = ['Before 1940', '1940s', '1950s', '1960s', '1970s', '1980s', '1990s', '2000s', '2010s', '2020 or later'];
-import { SITE_NAME, PHONE, SITE_URL, REAL_PHOTOS } from '@/lib/constants';
+import { SITE_NAME, PHONE, SITE_URL, heroPhotoFor } from '@/lib/constants';
 import { GOOGLE_REVIEW_COUNT, AVERAGE_RATING, reviewsFor } from '@/lib/reviews';
 import { getServiceCityContent, SOURCES_NOTE } from '@/lib/local-content';
 
@@ -103,7 +103,7 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
           </>
         }
         subtitle={local.heroSubtitle}
-        backgroundImage={REAL_PHOTOS[(city.slug.length + service.slug.length) % REAL_PHOTOS.length]}
+        backgroundImage={heroPhotoFor(`${service.slug}/${city.slug}`)}
       />
 
       <div className="bg-slate-50 border-b border-slate-200">

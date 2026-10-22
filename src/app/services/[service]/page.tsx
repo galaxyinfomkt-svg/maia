@@ -6,7 +6,7 @@ import { HeroWithForm, ServicesSection, CTASection, RealReviews } from '@/compon
 import { JsonLd, Breadcrumbs } from '@/components/seo';
 import { services, getServiceBySlug } from '@/lib/services';
 import { cities } from '@/lib/cities';
-import { SITE_NAME, PHONE, SITE_URL, HIC_NUMBER } from '@/lib/constants';
+import { SITE_NAME, PHONE, SITE_URL, HIC_NUMBER , heroPhotoFor } from '@/lib/constants';
 import { AVERAGE_RATING, GOOGLE_REVIEW_COUNT } from '@/lib/reviews';
 
 const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'), {
@@ -113,7 +113,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
           </>
         }
         subtitle={`${service.shortDescription} Our own crew, from Charlton to 109 towns.`}
-        backgroundImage={service.image}
+        backgroundImage={heroPhotoFor(`service/${service.slug}`)}
       />
 
       <div className="bg-slate-50 border-b border-slate-200">
