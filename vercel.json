@@ -4,6 +4,4746 @@
   "installCommand": "npm install",
   "redirects": [
     {
+      "source": "/services/general-contractor/:city/",
+      "destination": "/services/siding-replacement/:city/",
+      "permanent": true
+    },
+    {
+      "source": "/services/general-contractor/:city",
+      "destination": "/services/siding-replacement/:city/",
+      "permanent": true
+    },
+    {
+      "source": "/services/general-contractor/",
+      "destination": "/services/siding-replacement/",
+      "permanent": true
+    },
+    {
+      "source": "/services/general-contractor",
+      "destination": "/services/siding-replacement/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/abington/",
+      "destination": "/cities/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/abington/",
+      "destination": "/services/:service/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/abington",
+      "destination": "/cities/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/abington",
+      "destination": "/services/:service/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/acushnet/",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/acushnet/",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/acushnet",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/acushnet",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/adams/",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/adams/",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/adams",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/adams",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/agawam/",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/agawam/",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/agawam",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/agawam",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/allston/",
+      "destination": "/cities/brookline/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/allston/",
+      "destination": "/services/:service/brookline/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/allston",
+      "destination": "/cities/brookline/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/allston",
+      "destination": "/services/:service/brookline/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/amesbury/",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/amesbury/",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/amesbury",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/amesbury",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/amherst/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/amherst/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/amherst",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/amherst",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/andover/",
+      "destination": "/cities/reading/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/andover/",
+      "destination": "/services/:service/reading/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/andover",
+      "destination": "/cities/reading/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/andover",
+      "destination": "/services/:service/reading/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/aquinnah/",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/aquinnah/",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/aquinnah",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/aquinnah",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/ashburnham/",
+      "destination": "/cities/fitchburg/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/ashburnham/",
+      "destination": "/services/:service/fitchburg/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/ashburnham",
+      "destination": "/cities/fitchburg/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/ashburnham",
+      "destination": "/services/:service/fitchburg/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/ashby/",
+      "destination": "/cities/fitchburg/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/ashby/",
+      "destination": "/services/:service/fitchburg/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/ashby",
+      "destination": "/cities/fitchburg/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/ashby",
+      "destination": "/services/:service/fitchburg/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/ashfield/",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/ashfield/",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/ashfield",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/ashfield",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/athol/",
+      "destination": "/cities/princeton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/athol/",
+      "destination": "/services/:service/princeton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/athol",
+      "destination": "/cities/princeton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/athol",
+      "destination": "/services/:service/princeton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/attleboro/",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/attleboro/",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/attleboro",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/attleboro",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/avon/",
+      "destination": "/cities/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/avon/",
+      "destination": "/services/:service/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/avon",
+      "destination": "/cities/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/avon",
+      "destination": "/services/:service/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/back-bay/",
+      "destination": "/cities/cambridge/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/back-bay/",
+      "destination": "/services/:service/cambridge/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/back-bay",
+      "destination": "/cities/cambridge/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/back-bay",
+      "destination": "/services/:service/cambridge/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/barnstable/",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/barnstable/",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/barnstable",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/barnstable",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/barre/",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/barre/",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/barre",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/barre",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/beacon-hill/",
+      "destination": "/cities/cambridge/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/beacon-hill/",
+      "destination": "/services/:service/cambridge/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/beacon-hill",
+      "destination": "/cities/cambridge/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/beacon-hill",
+      "destination": "/services/:service/cambridge/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/becket/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/becket/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/becket",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/becket",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/belchertown/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/belchertown/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/belchertown",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/belchertown",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/berkley/",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/berkley/",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/berkley",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/berkley",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/bernardston/",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/bernardston/",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/bernardston",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/bernardston",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/billerica/",
+      "destination": "/cities/carlisle/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/billerica/",
+      "destination": "/services/:service/carlisle/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/billerica",
+      "destination": "/cities/carlisle/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/billerica",
+      "destination": "/services/:service/carlisle/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/blandford/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/blandford/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/blandford",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/blandford",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/boston/",
+      "destination": "/cities/cambridge/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/boston/",
+      "destination": "/services/:service/cambridge/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/boston",
+      "destination": "/cities/cambridge/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/boston",
+      "destination": "/services/:service/cambridge/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/bourne/",
+      "destination": "/cities/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/bourne/",
+      "destination": "/services/:service/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/bourne",
+      "destination": "/cities/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/bourne",
+      "destination": "/services/:service/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/boxford/",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/boxford/",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/boxford",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/boxford",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/brewster/",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/brewster/",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/brewster",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/brewster",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/bridgewater/",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/bridgewater/",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/bridgewater",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/bridgewater",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/brighton/",
+      "destination": "/cities/brookline/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/brighton/",
+      "destination": "/services/:service/brookline/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/brighton",
+      "destination": "/cities/brookline/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/brighton",
+      "destination": "/services/:service/brookline/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/brimfield/",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/brimfield/",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/brimfield",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/brimfield",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/brockton/",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/brockton/",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/brockton",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/brockton",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/brookfield/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/brookfield/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/brookfield",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/brookfield",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/carver/",
+      "destination": "/cities/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/carver/",
+      "destination": "/services/:service/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/carver",
+      "destination": "/cities/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/carver",
+      "destination": "/services/:service/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/charlestown/",
+      "destination": "/cities/somerville/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/charlestown/",
+      "destination": "/services/:service/somerville/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/charlestown",
+      "destination": "/cities/somerville/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/charlestown",
+      "destination": "/services/:service/somerville/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/chatham/",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/chatham/",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/chatham",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/chatham",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/chelsea/",
+      "destination": "/cities/malden/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/chelsea/",
+      "destination": "/services/:service/malden/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/chelsea",
+      "destination": "/cities/malden/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/chelsea",
+      "destination": "/services/:service/malden/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/cheshire/",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/cheshire/",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/cheshire",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/cheshire",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/chester/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/chester/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/chester",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/chester",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/chesterfield/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/chesterfield/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/chesterfield",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/chesterfield",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/chicopee/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/chicopee/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/chicopee",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/chicopee",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/chilmark/",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/chilmark/",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/chilmark",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/chilmark",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/cohasset/",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/cohasset/",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/cohasset",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/cohasset",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/colrain/",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/colrain/",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/colrain",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/colrain",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/conway/",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/conway/",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/conway",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/conway",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/cummington/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/cummington/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/cummington",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/cummington",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/dalton/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/dalton/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/dalton",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/dalton",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/dartmouth/",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/dartmouth/",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/dartmouth",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/dartmouth",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/deerfield/",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/deerfield/",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/deerfield",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/deerfield",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/dennis/",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/dennis/",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/dennis",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/dennis",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/dighton/",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/dighton/",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/dighton",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/dighton",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/dorchester/",
+      "destination": "/cities/milton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/dorchester/",
+      "destination": "/services/:service/milton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/dorchester",
+      "destination": "/cities/milton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/dorchester",
+      "destination": "/services/:service/milton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/dracut/",
+      "destination": "/cities/chelmsford/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/dracut/",
+      "destination": "/services/:service/chelmsford/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/dracut",
+      "destination": "/cities/chelmsford/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/dracut",
+      "destination": "/services/:service/chelmsford/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/dunstable/",
+      "destination": "/cities/groton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/dunstable/",
+      "destination": "/services/:service/groton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/dunstable",
+      "destination": "/cities/groton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/dunstable",
+      "destination": "/services/:service/groton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/duxbury/",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/duxbury/",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/duxbury",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/duxbury",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/east-boston/",
+      "destination": "/cities/somerville/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/east-boston/",
+      "destination": "/services/:service/somerville/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/east-boston",
+      "destination": "/cities/somerville/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/east-boston",
+      "destination": "/services/:service/somerville/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/east-bridgewater/",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/east-bridgewater/",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/east-bridgewater",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/east-bridgewater",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/east-brookfield/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/east-brookfield/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/east-brookfield",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/east-brookfield",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/east-longmeadow/",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/east-longmeadow/",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/east-longmeadow",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/east-longmeadow",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/eastham/",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/eastham/",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/eastham",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/eastham",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/easthampton/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/easthampton/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/easthampton",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/easthampton",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/easton/",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/easton/",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/easton",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/easton",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/edgartown/",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/edgartown/",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/edgartown",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/edgartown",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/egremont/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/egremont/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/egremont",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/egremont",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/erving/",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/erving/",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/erving",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/erving",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/essex-town/",
+      "destination": "/cities/beverly/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/essex-town/",
+      "destination": "/services/:service/beverly/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/essex-town",
+      "destination": "/cities/beverly/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/essex-town",
+      "destination": "/services/:service/beverly/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/everett/",
+      "destination": "/cities/malden/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/everett/",
+      "destination": "/services/:service/malden/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/everett",
+      "destination": "/cities/malden/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/everett",
+      "destination": "/services/:service/malden/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/fairhaven/",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/fairhaven/",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/fairhaven",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/fairhaven",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/fall-river/",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/fall-river/",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/fall-river",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/fall-river",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/falmouth/",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/falmouth/",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/falmouth",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/falmouth",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/freetown/",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/freetown/",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/freetown",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/freetown",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/gardner/",
+      "destination": "/cities/fitchburg/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/gardner/",
+      "destination": "/services/:service/fitchburg/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/gardner",
+      "destination": "/cities/fitchburg/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/gardner",
+      "destination": "/services/:service/fitchburg/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/georgetown/",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/georgetown/",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/georgetown",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/georgetown",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/gill/",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/gill/",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/gill",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/gill",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/gloucester/",
+      "destination": "/cities/beverly/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/gloucester/",
+      "destination": "/services/:service/beverly/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/gloucester",
+      "destination": "/cities/beverly/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/gloucester",
+      "destination": "/services/:service/beverly/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/goshen/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/goshen/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/goshen",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/goshen",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/granby/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/granby/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/granby",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/granby",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/granville/",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/granville/",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/granville",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/granville",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/great-barrington/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/great-barrington/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/great-barrington",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/great-barrington",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/greenfield/",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/greenfield/",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/greenfield",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/greenfield",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/groveland/",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/groveland/",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/groveland",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/groveland",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/hadley/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/hadley/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/hadley",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/hadley",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/halifax/",
+      "destination": "/cities/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/halifax/",
+      "destination": "/services/:service/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/halifax",
+      "destination": "/cities/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/halifax",
+      "destination": "/services/:service/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/hamilton/",
+      "destination": "/cities/beverly/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/hamilton/",
+      "destination": "/services/:service/beverly/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/hamilton",
+      "destination": "/cities/beverly/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/hamilton",
+      "destination": "/services/:service/beverly/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/hampden-town/",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/hampden-town/",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/hampden-town",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/hampden-town",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/hanover/",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/hanover/",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/hanover",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/hanover",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/hanson/",
+      "destination": "/cities/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/hanson/",
+      "destination": "/services/:service/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/hanson",
+      "destination": "/cities/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/hanson",
+      "destination": "/services/:service/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/hardwick/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/hardwick/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/hardwick",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/hardwick",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/harwich/",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/harwich/",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/harwich",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/harwich",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/hatfield/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/hatfield/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/hatfield",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/hatfield",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/haverhill/",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/haverhill/",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/haverhill",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/haverhill",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/hingham/",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/hingham/",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/hingham",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/hingham",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/hinsdale/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/hinsdale/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/hinsdale",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/hinsdale",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/holbrook/",
+      "destination": "/cities/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/holbrook/",
+      "destination": "/services/:service/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/holbrook",
+      "destination": "/cities/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/holbrook",
+      "destination": "/services/:service/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/holland/",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/holland/",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/holland",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/holland",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/holyoke/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/holyoke/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/holyoke",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/holyoke",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/hubbardston/",
+      "destination": "/cities/princeton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/hubbardston/",
+      "destination": "/services/:service/princeton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/hubbardston",
+      "destination": "/cities/princeton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/hubbardston",
+      "destination": "/services/:service/princeton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/hull/",
+      "destination": "/cities/quincy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/hull/",
+      "destination": "/services/:service/quincy/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/hull",
+      "destination": "/cities/quincy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/hull",
+      "destination": "/services/:service/quincy/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/huntington/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/huntington/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/huntington",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/huntington",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/hyannis/",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/hyannis/",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/hyannis",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/hyannis",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/hyde-park/",
+      "destination": "/cities/dedham/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/hyde-park/",
+      "destination": "/services/:service/dedham/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/hyde-park",
+      "destination": "/cities/dedham/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/hyde-park",
+      "destination": "/services/:service/dedham/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/ipswich/",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/ipswich/",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/ipswich",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/ipswich",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/jamaica-plain/",
+      "destination": "/cities/brookline/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/jamaica-plain/",
+      "destination": "/services/:service/brookline/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/jamaica-plain",
+      "destination": "/cities/brookline/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/jamaica-plain",
+      "destination": "/services/:service/brookline/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/kingston/",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/kingston/",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/kingston",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/kingston",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/lakeville/",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/lakeville/",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/lakeville",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/lakeville",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/lanesborough/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/lanesborough/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/lanesborough",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/lanesborough",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/lawrence/",
+      "destination": "/cities/chelmsford/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/lawrence/",
+      "destination": "/services/:service/chelmsford/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/lawrence",
+      "destination": "/cities/chelmsford/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/lawrence",
+      "destination": "/services/:service/chelmsford/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/lee/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/lee/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/lee",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/lee",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/lenox/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/lenox/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/lenox",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/lenox",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/leverett/",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/leverett/",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/leverett",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/leverett",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/longmeadow/",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/longmeadow/",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/longmeadow",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/longmeadow",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/lowell/",
+      "destination": "/cities/chelmsford/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/lowell/",
+      "destination": "/services/:service/chelmsford/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/lowell",
+      "destination": "/cities/chelmsford/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/lowell",
+      "destination": "/services/:service/chelmsford/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/ludlow/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/ludlow/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/ludlow",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/ludlow",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/lynnfield/",
+      "destination": "/cities/wakefield/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/lynnfield/",
+      "destination": "/services/:service/wakefield/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/lynnfield",
+      "destination": "/cities/wakefield/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/lynnfield",
+      "destination": "/services/:service/wakefield/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/manchester-by-the-sea/",
+      "destination": "/cities/beverly/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/manchester-by-the-sea/",
+      "destination": "/services/:service/beverly/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/manchester-by-the-sea",
+      "destination": "/cities/beverly/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/manchester-by-the-sea",
+      "destination": "/services/:service/beverly/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/mansfield/",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/mansfield/",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/mansfield",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/mansfield",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/marblehead/",
+      "destination": "/cities/salem/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/marblehead/",
+      "destination": "/services/:service/salem/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/marblehead",
+      "destination": "/cities/salem/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/marblehead",
+      "destination": "/services/:service/salem/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/marion/",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/marion/",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/marion",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/marion",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/marshfield/",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/marshfield/",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/marshfield",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/marshfield",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/mashpee/",
+      "destination": "/cities/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/mashpee/",
+      "destination": "/services/:service/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/mashpee",
+      "destination": "/cities/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/mashpee",
+      "destination": "/services/:service/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/mattapan/",
+      "destination": "/cities/milton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/mattapan/",
+      "destination": "/services/:service/milton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/mattapan",
+      "destination": "/cities/milton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/mattapan",
+      "destination": "/services/:service/milton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/mattapoisett/",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/mattapoisett/",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/mattapoisett",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/mattapoisett",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/merrimac/",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/merrimac/",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/merrimac",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/merrimac",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/methuen/",
+      "destination": "/cities/chelmsford/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/methuen/",
+      "destination": "/services/:service/chelmsford/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/methuen",
+      "destination": "/cities/chelmsford/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/methuen",
+      "destination": "/services/:service/chelmsford/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/middleborough/",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/middleborough/",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/middleborough",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/middleborough",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/middleton/",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/middleton/",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/middleton",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/middleton",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/millville/",
+      "destination": "/cities/blackstone/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/millville/",
+      "destination": "/services/:service/blackstone/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/millville",
+      "destination": "/cities/blackstone/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/millville",
+      "destination": "/services/:service/blackstone/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/monson/",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/monson/",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/monson",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/monson",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/montague/",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/montague/",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/montague",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/montague",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/montgomery/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/montgomery/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/montgomery",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/montgomery",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/nahant/",
+      "destination": "/cities/lynn/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/nahant/",
+      "destination": "/services/:service/lynn/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/nahant",
+      "destination": "/cities/lynn/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/nahant",
+      "destination": "/services/:service/lynn/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/nantucket/",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/nantucket/",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/nantucket",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/nantucket",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/new-bedford/",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/new-bedford/",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/new-bedford",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/new-bedford",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/new-braintree/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/new-braintree/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/new-braintree",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/new-braintree",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/new-salem/",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/new-salem/",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/new-salem",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/new-salem",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/newbury/",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/newbury/",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/newbury",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/newbury",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/newburyport/",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/newburyport/",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/newburyport",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/newburyport",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/norfolk-town/",
+      "destination": "/cities/norfolk/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/norfolk-town/",
+      "destination": "/services/:service/norfolk/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/norfolk-town",
+      "destination": "/cities/norfolk/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/norfolk-town",
+      "destination": "/services/:service/norfolk/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/north-adams/",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/north-adams/",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/north-adams",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/north-adams",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/north-andover/",
+      "destination": "/cities/reading/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/north-andover/",
+      "destination": "/services/:service/reading/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/north-andover",
+      "destination": "/cities/reading/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/north-andover",
+      "destination": "/services/:service/reading/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/north-attleborough/",
+      "destination": "/cities/wrentham/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/north-attleborough/",
+      "destination": "/services/:service/wrentham/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/north-attleborough",
+      "destination": "/cities/wrentham/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/north-attleborough",
+      "destination": "/services/:service/wrentham/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/north-brookfield/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/north-brookfield/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/north-brookfield",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/north-brookfield",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/north-reading/",
+      "destination": "/cities/reading/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/north-reading/",
+      "destination": "/services/:service/reading/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/north-reading",
+      "destination": "/cities/reading/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/north-reading",
+      "destination": "/services/:service/reading/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/northampton/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/northampton/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/northampton",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/northampton",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/northfield/",
+      "destination": "/cities/princeton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/northfield/",
+      "destination": "/services/:service/princeton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/northfield",
+      "destination": "/cities/princeton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/northfield",
+      "destination": "/services/:service/princeton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/norton/",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/norton/",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/norton",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/norton",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/norwell/",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/norwell/",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/norwell",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/norwell",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/oak-bluffs/",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/oak-bluffs/",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/oak-bluffs",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/oak-bluffs",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/oakham/",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/oakham/",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/oakham",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/oakham",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/orange/",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/orange/",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/orange",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/orange",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/orleans/",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/orleans/",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/orleans",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/orleans",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/otis/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/otis/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/otis",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/otis",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/palmer/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/palmer/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/palmer",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/palmer",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/pelham/",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/pelham/",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/pelham",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/pelham",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/pembroke/",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/pembroke/",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/pembroke",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/pembroke",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/pepperell/",
+      "destination": "/cities/groton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/pepperell/",
+      "destination": "/services/:service/groton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/pepperell",
+      "destination": "/cities/groton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/pepperell",
+      "destination": "/services/:service/groton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/peru/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/peru/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/peru",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/peru",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/petersham/",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/petersham/",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/petersham",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/petersham",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/phillipston/",
+      "destination": "/cities/princeton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/phillipston/",
+      "destination": "/services/:service/princeton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/phillipston",
+      "destination": "/cities/princeton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/phillipston",
+      "destination": "/services/:service/princeton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/pittsfield/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/pittsfield/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/pittsfield",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/pittsfield",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/plainville/",
+      "destination": "/cities/wrentham/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/plainville/",
+      "destination": "/services/:service/wrentham/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/plainville",
+      "destination": "/cities/wrentham/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/plainville",
+      "destination": "/services/:service/wrentham/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/plymouth/",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/plymouth/",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/plymouth",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/plymouth",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/plympton/",
+      "destination": "/cities/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/plympton/",
+      "destination": "/services/:service/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/plympton",
+      "destination": "/cities/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/plympton",
+      "destination": "/services/:service/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/provincetown/",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/provincetown/",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/provincetown",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/provincetown",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/raynham/",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/raynham/",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/raynham",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/raynham",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/rehoboth/",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/rehoboth/",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/rehoboth",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/rehoboth",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/revere/",
+      "destination": "/cities/malden/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/revere/",
+      "destination": "/services/:service/malden/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/revere",
+      "destination": "/cities/malden/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/revere",
+      "destination": "/services/:service/malden/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/rochester/",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/rochester/",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/rochester",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/rochester",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/rockland/",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/rockland/",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/rockland",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/rockland",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/rockport/",
+      "destination": "/cities/beverly/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/rockport/",
+      "destination": "/services/:service/beverly/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/rockport",
+      "destination": "/cities/beverly/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/rockport",
+      "destination": "/services/:service/beverly/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/roslindale/",
+      "destination": "/cities/brookline/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/roslindale/",
+      "destination": "/services/:service/brookline/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/roslindale",
+      "destination": "/cities/brookline/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/roslindale",
+      "destination": "/services/:service/brookline/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/rowley/",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/rowley/",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/rowley",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/rowley",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/roxbury/",
+      "destination": "/cities/brookline/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/roxbury/",
+      "destination": "/services/:service/brookline/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/roxbury",
+      "destination": "/cities/brookline/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/roxbury",
+      "destination": "/services/:service/brookline/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/royalston/",
+      "destination": "/cities/fitchburg/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/royalston/",
+      "destination": "/services/:service/fitchburg/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/royalston",
+      "destination": "/cities/fitchburg/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/royalston",
+      "destination": "/services/:service/fitchburg/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/russell/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/russell/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/russell",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/russell",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/salisbury/",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/salisbury/",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/salisbury",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/salisbury",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/sandisfield/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/sandisfield/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/sandisfield",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/sandisfield",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/sandwich/",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/sandwich/",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/sandwich",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/sandwich",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/scituate/",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/scituate/",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/scituate",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/scituate",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/seekonk/",
+      "destination": "/cities/wrentham/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/seekonk/",
+      "destination": "/services/:service/wrentham/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/seekonk",
+      "destination": "/cities/wrentham/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/seekonk",
+      "destination": "/services/:service/wrentham/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/sheffield/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/sheffield/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/sheffield",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/sheffield",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/shelburne-falls/",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/shelburne-falls/",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/shelburne-falls",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/shelburne-falls",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/shutesbury/",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/shutesbury/",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/shutesbury",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/shutesbury",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/somerset/",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/somerset/",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/somerset",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/somerset",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/south-boston/",
+      "destination": "/cities/brookline/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/south-boston/",
+      "destination": "/services/:service/brookline/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/south-boston",
+      "destination": "/cities/brookline/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/south-boston",
+      "destination": "/services/:service/brookline/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/south-hadley/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/south-hadley/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/south-hadley",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/south-hadley",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/southampton/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/southampton/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/southampton",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/southampton",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/southbridge/",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/southbridge/",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/southbridge",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/southbridge",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/springfield/",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/springfield/",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/springfield",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/springfield",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/stockbridge/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/stockbridge/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/stockbridge",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/stockbridge",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/sturbridge/",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/sturbridge/",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/sturbridge",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/sturbridge",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/sunderland/",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/sunderland/",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/sunderland",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/sunderland",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/swampscott/",
+      "destination": "/cities/lynn/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/swampscott/",
+      "destination": "/services/:service/lynn/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/swampscott",
+      "destination": "/cities/lynn/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/swampscott",
+      "destination": "/services/:service/lynn/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/swansea/",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/swansea/",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/swansea",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/swansea",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/taunton/",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/taunton/",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/taunton",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/taunton",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/templeton/",
+      "destination": "/cities/princeton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/templeton/",
+      "destination": "/services/:service/princeton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/templeton",
+      "destination": "/cities/princeton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/templeton",
+      "destination": "/services/:service/princeton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/tewksbury/",
+      "destination": "/cities/chelmsford/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/tewksbury/",
+      "destination": "/services/:service/chelmsford/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/tewksbury",
+      "destination": "/cities/chelmsford/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/tewksbury",
+      "destination": "/services/:service/chelmsford/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/thompson/",
+      "destination": "/cities/paxton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/thompson/",
+      "destination": "/services/:service/paxton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/thompson",
+      "destination": "/cities/paxton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/thompson",
+      "destination": "/services/:service/paxton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/tolland/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/tolland/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/tolland",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/tolland",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/topsfield/",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/topsfield/",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/topsfield",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/topsfield",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/townsend/",
+      "destination": "/cities/lunenburg/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/townsend/",
+      "destination": "/services/:service/lunenburg/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/townsend",
+      "destination": "/cities/lunenburg/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/townsend",
+      "destination": "/services/:service/lunenburg/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/truro/",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/truro/",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/truro",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/truro",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/turners-falls/",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/turners-falls/",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/turners-falls",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/turners-falls",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/tyngsborough/",
+      "destination": "/cities/chelmsford/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/tyngsborough/",
+      "destination": "/services/:service/chelmsford/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/tyngsborough",
+      "destination": "/cities/chelmsford/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/tyngsborough",
+      "destination": "/services/:service/chelmsford/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/vineyard-haven/",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/vineyard-haven/",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/vineyard-haven",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/vineyard-haven",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/wales/",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/wales/",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/wales",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/wales",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/ware/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/ware/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/ware",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/ware",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/wareham/",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/wareham/",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/wareham",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/wareham",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/warren/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/warren/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/warren",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/warren",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/wellfleet/",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/wellfleet/",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/wellfleet",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/wellfleet",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/wendell/",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/wendell/",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/wendell",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/wendell",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/wenham/",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/wenham/",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/wenham",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/wenham",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/west-bridgewater/",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/west-bridgewater/",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/west-bridgewater",
+      "destination": "/cities/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/west-bridgewater",
+      "destination": "/services/:service/stoughton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/west-brookfield/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/west-brookfield/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/west-brookfield",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/west-brookfield",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/west-newbury/",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/west-newbury/",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/west-newbury",
+      "destination": "/cities/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/west-newbury",
+      "destination": "/services/:service/danvers/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/west-roxbury/",
+      "destination": "/cities/dedham/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/west-roxbury/",
+      "destination": "/services/:service/dedham/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/west-roxbury",
+      "destination": "/cities/dedham/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/west-roxbury",
+      "destination": "/services/:service/dedham/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/west-springfield/",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/west-springfield/",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/west-springfield",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/west-springfield",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/west-tisbury/",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/west-tisbury/",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/west-tisbury",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/west-tisbury",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/westfield/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/westfield/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/westfield",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/westfield",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/westhampton/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/westhampton/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/westhampton",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/westhampton",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/westminster/",
+      "destination": "/cities/fitchburg/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/westminster/",
+      "destination": "/services/:service/fitchburg/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/westminster",
+      "destination": "/cities/fitchburg/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/westminster",
+      "destination": "/services/:service/fitchburg/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/westport/",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/westport/",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/westport",
+      "destination": "/cities/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/westport",
+      "destination": "/services/:service/foxborough/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/westwood/",
+      "destination": "/cities/norwood/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/westwood/",
+      "destination": "/services/:service/norwood/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/westwood",
+      "destination": "/cities/norwood/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/westwood",
+      "destination": "/services/:service/norwood/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/whately/",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/whately/",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/whately",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/whately",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/whitinsville/",
+      "destination": "/cities/northbridge/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/whitinsville/",
+      "destination": "/services/:service/northbridge/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/whitinsville",
+      "destination": "/cities/northbridge/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/whitinsville",
+      "destination": "/services/:service/northbridge/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/whitman/",
+      "destination": "/cities/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/whitman/",
+      "destination": "/services/:service/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/whitman",
+      "destination": "/cities/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/whitman",
+      "destination": "/services/:service/randolph/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/wilbraham/",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/wilbraham/",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/wilbraham",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/wilbraham",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/williamsburg/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/williamsburg/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/williamsburg",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/williamsburg",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/williamstown/",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/williamstown/",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/williamstown",
+      "destination": "/cities/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/williamstown",
+      "destination": "/services/:service/rutland/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/wilmington/",
+      "destination": "/cities/burlington/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/wilmington/",
+      "destination": "/services/:service/burlington/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/wilmington",
+      "destination": "/cities/burlington/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/wilmington",
+      "destination": "/services/:service/burlington/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/winchendon/",
+      "destination": "/cities/fitchburg/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/winchendon/",
+      "destination": "/services/:service/fitchburg/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/winchendon",
+      "destination": "/cities/fitchburg/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/winchendon",
+      "destination": "/services/:service/fitchburg/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/winthrop/",
+      "destination": "/cities/malden/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/winthrop/",
+      "destination": "/services/:service/malden/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/winthrop",
+      "destination": "/cities/malden/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/winthrop",
+      "destination": "/services/:service/malden/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/woodstock-valley/",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/woodstock-valley/",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/woodstock-valley",
+      "destination": "/cities/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/woodstock-valley",
+      "destination": "/services/:service/charlton/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/worthington/",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/worthington/",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/worthington",
+      "destination": "/cities/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/worthington",
+      "destination": "/services/:service/spencer/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/yarmouth/",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/yarmouth/",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/cities/yarmouth",
+      "destination": "/cities/weymouth/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service/yarmouth",
+      "destination": "/services/:service/weymouth/",
+      "permanent": true
+    },
+    {
       "source": "/massachusetts/:city/:service/",
       "destination": "/services/:service/:city/",
       "permanent": true

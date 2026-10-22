@@ -1,4 +1,4 @@
-import { reviewsFor, GOOGLE_PROFILE_URL, REVIEW_COUNT, AVERAGE_RATING } from '@/lib/reviews';
+import { reviewsFor, GOOGLE_PROFILE_URL, GOOGLE_REVIEW_COUNT, AVERAGE_RATING } from '@/lib/reviews';
 import { SITE_NAME } from '@/lib/constants';
 
 interface RealReviewsProps {
@@ -30,7 +30,7 @@ export default function RealReviews({ seed, cityName }: RealReviewsProps) {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-5" />
           <p className="text-white/70">
-            {AVERAGE_RATING} across {REVIEW_COUNT} Google reviews
+            {AVERAGE_RATING} across {GOOGLE_REVIEW_COUNT} Google reviews
             {cityName ? ` — from homeowners near ${cityName} and across Massachusetts` : ''}.
           </p>
         </div>
@@ -70,7 +70,7 @@ export default function RealReviews({ seed, cityName }: RealReviewsProps) {
             rel="noopener noreferrer"
             className="text-amber-400 font-semibold hover:text-amber-300"
           >
-            Read all {REVIEW_COUNT} reviews on Google →
+            Read all {GOOGLE_REVIEW_COUNT} reviews on Google →
           </a>
         </p>
       </div>

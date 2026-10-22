@@ -7,7 +7,7 @@ import { SITE_NAME, PHONE, PHONE_LINK, ADDRESS, BUSINESS_HOURS, IMAGES, LOGO_URL
 
 export const metadata: Metadata = {
   title: `FREE Estimate Today | Same-Day Response | ${PHONE}`,
-  description: `Get your FREE home improvement estimate today — no obligation! #1 rated contractor MA with 19 5-star reviews. Siding, windows & doors. Licensed HIC #${HIC_NUMBER}. Call ${PHONE} now!`,
+  description: `Get your FREE home improvement estimate today — no obligation! 5.0 on Google from 21 reviews. Siding, windows & doors. Licensed HIC #${HIC_NUMBER}. Call ${PHONE} now!`,
   keywords: [
     'free estimate contractor Massachusetts',
     'free estimate siding MA',
@@ -214,7 +214,7 @@ export default function ContactPage() {
                   <li><Link href="/services/siding" className="text-sm text-gray-600 hover:text-amber-600">Siding Installation →</Link></li>
                   <li><Link href="/services/windows" className="text-sm text-gray-600 hover:text-amber-600">Window Replacement →</Link></li>
                   <li><Link href="/services/doors" className="text-sm text-gray-600 hover:text-amber-600">Door Installation →</Link></li>
-                  <li><Link href="/services/general-contractor" className="text-sm text-gray-600 hover:text-amber-600">General Contractor →</Link></li>
+                  <li><Link href="/services/siding-repair" className="text-sm text-gray-600 hover:text-amber-600">Siding Repair →</Link></li>
                 </ul>
               </div>
               <div className="bg-slate-50 p-6 rounded-xl">

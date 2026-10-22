@@ -21,7 +21,6 @@ export const SERVICE_PHOTOS: Record<string, string> = {
   siding: '/images/hero/hero-68bb92a147f24d34a4cb2441.webp',
   windows: '/images/hero/hero-68bb92a11ff6ea5ace0517d7.webp',
   doors: '/images/hero/hero-68bb918e47f24da26ecb147e.webp',
-  'general-contractor': '/images/hero/hero-6834e26266829d658f8eab6c.webp',
 };
 
 export const REAL_PHOTOS = [

@@ -4,10 +4,11 @@ import Link from 'next/link';
 import { Hero, CTASection } from '@/components/sections';
 import { JsonLd } from '@/components/seo';
 import { SITE_NAME, IMAGES, PHONE, ADDRESS, LOGO_URL, HIC_NUMBER, SITE_URL } from '@/lib/constants';
+import { GOOGLE_REVIEW_COUNT } from '@/lib/reviews';
 
 export const metadata: Metadata = {
   title: `About ${SITE_NAME} | Since 2015 | 500+ Projects | 5.0★ Google Rating`,
-  description: `Meet Massachusetts' #1 rated home improvement team. Family-owned since 2015, 500+ projects, 100+ cities. Licensed HIC #${HIC_NUMBER} & insured. 19 5-star Google reviews. Call ${PHONE}`,
+  description: `Meet the family-owned siding team behind Maia Construction: since 2015, 500+ projects, 109 towns. Licensed HIC #${HIC_NUMBER} & insured. 21 5-star Google reviews. Call ${PHONE}`,
   keywords: [
     'about Maia Construction',
     'Massachusetts contractor history',
@@ -24,7 +25,7 @@ const milestones = [
   { year: '2015', title: 'Founded', description: 'Marcos Alves founded Maia Construction with a vision for quality craftsmanship.' },
   { year: '2017', title: 'Expanded Services', description: 'Added comprehensive window and door installation services.' },
   { year: '2020', title: '500+ Projects', description: 'Completed over 500 successful home improvement projects.' },
-  { year: '2024', title: '100+ Cities', description: 'Now proudly serving over 100 communities across Massachusetts.' },
+  { year: '2024', title: '109 Towns', description: 'Now serving 109 towns across Middlesex, Worcester, Norfolk and Essex counties.' },
 ];
 
 export default function AboutPage() {
@@ -97,7 +98,7 @@ export default function AboutPage() {
               <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src={IMAGES.hero}
-                  alt="Maia Construction team completing a siding installation project in Marlborough Massachusetts - licensed contractor HIC #204634 serving 100+ MA cities"
+                  alt="Maia Construction team completing a siding installation project in Marlborough Massachusetts - licensed contractor HIC #204634 serving 109 Massachusetts towns"
                   fill
                   className="object-cover"
                 />
@@ -200,7 +201,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { number: '500+', label: 'Projects Completed' },
-              { number: '100+', label: 'Cities Served' },
+              { number: '109', label: 'Towns Served' },
               { number: '10+', label: 'Years Experience' },
               { number: '5.0', label: 'Star Rating' },
             ].map((stat, index) => (
@@ -223,15 +224,15 @@ export default function AboutPage() {
             <p className="text-lg text-gray-600 mb-4">
               {SITE_NAME} is a family-owned home improvement company founded in 2015 by Marcos, based in
               Charlton, Massachusetts. Licensed under MA HIC #{HIC_NUMBER} and fully insured, we have
-              completed over 500 projects across 100+ Massachusetts cities. Our services include{' '}
+              completed over 500 projects across Massachusetts. Our services include{' '}
               <Link href="/services/siding" className="text-amber-600 hover:underline font-semibold">professional siding installation</Link>,{' '}
               <Link href="/services/windows" className="text-amber-600 hover:underline font-semibold">energy-efficient window replacement</Link>,{' '}
               <Link href="/services/doors" className="text-amber-600 hover:underline font-semibold">premium door installation</Link>, and{' '}
-              <Link href="/services/general-contractor" className="text-amber-600 hover:underline font-semibold">general contracting</Link>.
+              <Link href="/services/exterior-trim" className="text-amber-600 hover:underline font-semibold">exterior trim</Link>.
             </p>
             <p className="text-gray-600 mb-6">
               We are certified installers for James Hardie, CertainTeed, and Alside, and all our window
-              installations meet ENERGY STAR standards. With a perfect 5.0-star Google rating and 19 verified
+              installations meet ENERGY STAR standards. With a 5.0-star Google rating from {GOOGLE_REVIEW_COUNT}
               reviews, we are committed to quality craftsmanship and customer satisfaction. Call{' '}
               <a href="tel:+15088599880" className="text-amber-600 font-semibold">{PHONE}</a>{' '}
               or <Link href="/contact" className="text-amber-600 hover:underline font-semibold">request a free estimate online</Link>.

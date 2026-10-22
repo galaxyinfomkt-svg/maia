@@ -7,6 +7,7 @@ import {
   reviews,
   completeReviews,
   REVIEW_COUNT,
+  GOOGLE_REVIEW_COUNT,
   AVERAGE_RATING,
   GOOGLE_PROFILE_URL,
 } from '@/lib/reviews';
@@ -45,8 +46,8 @@ const reviewsSchema = {
 };
 
 export const metadata: Metadata = {
-  title: `Customer Reviews | 5.0★ Google Rating | 19 Reviews`,
-  description: `Read 19 verified 5-star Google reviews from Massachusetts homeowners. See why ${SITE_NAME} is the #1 rated siding, window & door contractor in MA. Licensed HIC #${HIC_NUMBER}.`,
+  title: `Customer Reviews | 5.0 from 21 Google Reviews | Maia Construction`,
+  description: `Read the 5-star Google reviews Massachusetts homeowners have left for ${SITE_NAME}. Licensed HIC #${HIC_NUMBER}.`,
   alternates: { canonical: `${SITE_URL}/reviews` },
 };
 
@@ -68,8 +69,8 @@ export default function ReviewsPage() {
             </span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            19 verified 5-star Google reviews from real customers across Middlesex, Worcester, Norfolk, and Essex counties.
-            Licensed HIC #{HIC_NUMBER}. Serving 75+ Massachusetts cities since 2015.
+            {GOOGLE_REVIEW_COUNT} 5-star Google reviews from real customers across Middlesex, Worcester, Norfolk, and Essex counties.
+            Licensed HIC #{HIC_NUMBER}. Serving 109 Massachusetts towns since 2015.
           </p>
           <div className="flex flex-wrap justify-center gap-6">
             <div className="text-center">

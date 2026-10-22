@@ -78,7 +78,7 @@ export default function NotFound() {
 
         {/* SEO-friendly content */}
         <p className="text-white/60 text-sm mt-8">
-          {SITE_NAME} — Massachusetts Licensed Contractor serving 100+ cities
+          {SITE_NAME} — Massachusetts Licensed Contractor serving 109 towns
         </p>
       </div>
     </section>

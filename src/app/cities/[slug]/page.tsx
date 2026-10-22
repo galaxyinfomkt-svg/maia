@@ -1,22 +1,17 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import { HeroWithForm, ServicesSection, CTASection, WhyChooseUs, ReviewsHighlight, RealReviews } from '@/components/sections';
-import { ContactForm } from '@/components/forms';
+import Image from 'next/image';
+import { HeroWithForm, CTASection } from '@/components/sections';
 import { JsonLd, Breadcrumbs } from '@/components/seo';
-import { cities, getCityBySlug, getNearbyCities } from '@/lib/cities';
+import { cities, getCityBySlug } from '@/lib/cities';
+import { TOWN_DATA } from '@/lib/town-data';
+
+const DECADE_LABELS = ['Before 1940', '1940s', '1950s', '1960s', '1970s', '1980s', '1990s', '2000s', '2010s', '2020 or later'];
 import { services } from '@/lib/services';
-import { getCityProfile, getCityPageParagraphs, getCityPageFAQs } from '@/lib/content-engine';
-import { SITE_NAME, SITE_URL, PHONE, LOGO_URL, REAL_PHOTOS, HIC_NUMBER } from '@/lib/constants';
-
-const VideoGallery = dynamic(() => import('@/components/sections/VideoGallery'), {
-  loading: () => <div className="py-24 bg-white" />,
-});
-
-const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'), {
-  loading: () => <div className="py-24 bg-slate-900" />,
-});
+import { getCityContent, townComparison, SOURCES_NOTE } from '@/lib/local-content';
+import { SITE_NAME, SITE_URL, PHONE, REAL_PHOTOS } from '@/lib/constants';
+import { AVERAGE_RATING, GOOGLE_REVIEW_COUNT, reviewsFor } from '@/lib/reviews';
 
 interface CityPageProps {
   params: Promise<{ slug: string }>;
@@ -29,387 +24,280 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: CityPageProps): Promise<Metadata> {
   const { slug } = await params;
   const city = getCityBySlug(slug);
-
   if (!city) return {};
 
-  const title = `#1 Contractor in ${city.name}, MA (2026) | Siding, Windows & Doors | 5.0★`;
-  const description = `${city.name}'s top-rated contractor ★5.0. Expert siding, window & door installation. 500+ projects in ${city.county} County. Licensed HIC #204634. Call ${PHONE} — FREE estimate!`;
+  const { title, description } = getCityContent(city);
+  const url = `${SITE_URL}/cities/${city.slug}/`;
 
   return {
-    title,
+    title: { absolute: title },
     description,
-    keywords: [
-      `contractor ${city.name} MA`,
-      `siding installation ${city.name} MA`,
-      `window replacement ${city.name} MA`,
-      `door installation ${city.name} MA`,
-      `home improvement ${city.name} Massachusetts`,
-      `${city.zip} contractor`,
-      `best contractor ${city.name}`,
-    ],
-    openGraph: {
-      title,
-      description,
-    },
-    alternates: {
-      canonical: `https://maiaconstruction.com/cities/${city.slug}`,
-    },
-    // Noindex distant cities to avoid thin content penalty — focus authority on nearby areas
-    ...(city.distance > 50 ? { robots: { index: false, follow: true } } : {}),
+    openGraph: { title, description, url },
+    alternates: { canonical: url },
   };
 }
 
 export default async function CityPage({ params }: CityPageProps) {
   const { slug } = await params;
   const city = getCityBySlug(slug);
+  if (!city) notFound();
 
-  if (!city) {
-    notFound();
-  }
-
-  const nearbyCities = getNearbyCities(city.slug, 6);
+  const local = getCityContent(city);
+  const comparison = townComparison(city);
+  const [review] = reviewsFor(`city-${city.slug}`, 1);
+  const pageUrl = `${SITE_URL}/cities/${city.slug}/`;
 
   // One business, in Charlton. This page describes an area we serve, so it
-  // emits a Service pointing at the real organization rather than a
-  // LocalBusiness claiming a premises in this city, and it carries no rating
-  // of its own — that belongs on the organization entity, once.
-  const localBusinessSchema = {
+  // emits a Service pointing at the organization, with no rating of its own.
+  const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: `Siding, window and door installation in ${city.name}, MA`,
-    serviceType: 'Home exterior contracting',
-    image: LOGO_URL,
-    provider: {
-      '@type': 'HomeAndConstructionBusiness',
-      '@id': `${SITE_URL}/#organization`,
-      name: SITE_NAME,
-      telephone: PHONE,
-    },
+    '@id': `${pageUrl}#service`,
+    name: `Siding, trim, windows and doors in ${city.name}, MA`,
+    serviceType: 'Exterior siding contractor',
+    url: pageUrl,
+    provider: { '@type': 'HomeAndConstructionBusiness', '@id': `${SITE_URL}/#organization`, name: SITE_NAME, telephone: PHONE },
     areaServed: {
       '@type': 'City',
       name: city.name,
-      containedInPlace: { '@type': 'State', name: 'Massachusetts' },
+      address: { '@type': 'PostalAddress', addressLocality: city.name, addressRegion: 'MA', postalCode: city.zip, addressCountry: 'US' },
+      containedInPlace: { '@type': 'AdministrativeArea', name: `${city.county} County, Massachusetts` },
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: `Services in ${city.name}`,
+      itemListElement: services.map((s) => ({
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: `${s.name} in ${city.name}`, url: `${SITE_URL}/services/${s.slug}/${city.slug}/` },
+      })),
     },
   };
 
-  // Five hand-written questions used to appear verbatim on all 247 city
-  // pages. The bank is larger than the page shows, and the selection is
-  // keyed to the city, so no two neighbouring pages ask the same five.
-  const cityFaqs = getCityPageFAQs(city);
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Service Areas', item: `${SITE_URL}/cities/` },
+      { '@type': 'ListItem', position: 3, name: `${city.name}, MA`, item: pageUrl },
+    ],
+  };
 
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: cityFaqs.map((faq) => ({
-      '@type': 'Question',
-      name: faq.q,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.a,
-      },
-    })),
+    mainEntity: local.faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
   };
 
   return (
     <>
-      <JsonLd data={localBusinessSchema} />
+      <JsonLd data={serviceSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <JsonLd data={faqSchema} />
 
       <HeroWithForm
-        title={<>Professional <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 bg-clip-text text-transparent">Construction Services</span> in {city.name}, MA</>}
-        subtitle={`Expert siding, door & windows installation just ${city.distance} miles from our Charlton office. Serving ${city.zip} and surrounding areas in ${city.county} County.`}
-        badge={`${city.name}, MA • 5.0 Stars • Licensed HIC #${HIC_NUMBER}`}
-        backgroundImage={REAL_PHOTOS[Math.abs(city.slug.length + 3) % REAL_PHOTOS.length]}
+        badge={`${city.name}, MA · ${AVERAGE_RATING} on Google`}
+        title={
+          <>
+            Siding Contractor in{' '}
+            <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 bg-clip-text text-transparent">{city.name}, MA</span>
+          </>
+        }
+        subtitle={local.heroSubtitle}
+        backgroundImage={REAL_PHOTOS[(city.slug.length + 3) % REAL_PHOTOS.length]}
       />
 
-      {/* Breadcrumbs */}
       <div className="bg-slate-50 border-b border-slate-200">
         <div className="container mx-auto px-4">
-          <Breadcrumbs
-            items={[
-              { label: 'Cities', href: '/cities' },
-              { label: city.name },
-            ]}
-          />
+          <Breadcrumbs items={[{ label: 'Service Areas', href: '/cities' }, { label: city.name }]} />
         </div>
       </div>
 
-      {/* Main Content */}
-      <section className="py-24 bg-white">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-3 gap-12">
-            {/* Main Content */}
-            <div className="lg:col-span-2">
-              <h2 className="text-4xl font-bold text-slate-900 mb-6">
-                Why {city.name} Homeowners Choose Maia Construction
-              </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mb-8" />
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-slate-900 mb-6">Working in {city.name}</h2>
+            <div className="space-y-5 text-lg text-gray-700 leading-relaxed">
+              <p>{local.placement}</p>
+              <p>{local.climate}</p>
+              <p>{local.housing}</p>
+              <p>{local.neighbourSummary}</p>
+            </div>
+            <div className="mt-8 overflow-x-auto">
+              <table className="w-full min-w-[640px] text-left text-sm">
+                <thead>
+                  <tr className="border-b border-slate-300 text-slate-600">
+                    <th className="py-2 pr-4 font-semibold">Town</th>
+                    <th className="py-2 pr-4 font-semibold">From {city.name}</th>
+                    <th className="py-2 pr-4 font-semibold">County</th>
+                    <th className="py-2 pr-4 font-semibold">To the coast</th>
+                    <th className="py-2 pr-4 font-semibold">To our shop</th>
+                    <th className="py-2 pr-4 font-semibold">Typical home</th>
+                    <th className="py-2 font-semibold">Homes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {local.neighbourRows.map((r) => (
+                    <tr key={r.slug} className="border-b border-slate-200">
+                      <td className="py-2 pr-4">
+                        <Link href={`/cities/${r.slug}`} className="font-medium text-slate-900 hover:text-amber-700 hover:underline">{r.name}</Link>
+                      </td>
+                      <td className="py-2 pr-4 text-gray-700">{r.miles} mi {r.direction}</td>
+                      <td className="py-2 pr-4 text-gray-700">{r.county}</td>
+                      <td className="py-2 pr-4 text-gray-700">{r.coast} mi</td>
+                      <td className="py-2 pr-4 text-gray-700">{r.shop} mi</td>
+                      <td className="py-2 pr-4 text-gray-700">{r.year}</td>
+                      <td className="py-2 text-gray-700">{r.homes.toLocaleString('en-US')}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
 
-              <div className="prose prose-lg max-w-none mb-12">
-                {getCityPageParagraphs(city).map((para, idx) => (
-                  <p key={idx}>{para}</p>
+            <div className="mt-8 overflow-x-auto">
+              <table className="w-full min-w-[640px] text-left text-sm">
+                <caption className="text-left font-bold text-slate-900 mb-2">Homes in {city.name} against {city.county} County towns we serve and all 109</caption>
+                <thead>
+                  <tr className="border-b border-slate-300 text-slate-600">
+                    <th className="py-2 pr-4 font-semibold"> </th>
+                    <th className="py-2 pr-4 font-semibold">{city.name}</th>
+                    <th className="py-2 pr-4 font-semibold">{city.county} Co.</th>
+                    <th className="py-2 font-semibold">All 109</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparison.map((r) => (
+                    <tr key={r.label} className="border-b border-slate-200">
+                      <td className="py-2 pr-4 text-gray-600">{r.label}</td>
+                      <td className="py-2 pr-4 font-semibold text-slate-900">{r.town}</td>
+                      <td className="py-2 pr-4 text-gray-700">{r.county}</td>
+                      <td className="py-2 text-gray-700">{r.all}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="mt-8">
+              <h3 className="font-bold text-slate-900 mb-3">When {city.name}&apos;s homes were built</h3>
+              <ul className="space-y-1.5">
+                {TOWN_DATA[city.slug].decades.map((pct, i) => (
+                  <li key={DECADE_LABELS[i]} className="flex items-center gap-3 text-sm">
+                    <span className="w-24 shrink-0 text-gray-600">{DECADE_LABELS[i]}</span>
+                    <span className="h-3 rounded bg-amber-400" style={{ width: `${Math.max(pct, 1) * 2}%` }} aria-hidden="true" />
+                    <span className="font-semibold text-slate-900">{pct}%</span>
+                  </li>
                 ))}
-              </div>
-
-              {/* Services in City */}
-              <div className="mb-12">
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">
-                  Our Services in {city.name}
-                </h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                  {services.map((service) => (
-                    <Link
-                      key={service.id}
-                      href={`/services/${service.slug}/${city.slug}`}
-                      className="group p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200 hover:border-amber-400 hover:shadow-xl transition-all"
-                    >
-                      <div>
-                        <div>
-                          <h4 className="text-xl font-bold text-slate-900 group-hover:text-amber-500 transition-colors mb-2">
-                            {service.name}
-                          </h4>
-                          <p className="text-gray-600 text-sm mb-3">
-                            {service.shortDescription}
-                          </p>
-                          <span className="text-amber-500 font-semibold flex items-center text-sm">
-                            Learn More
-                            <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                          </span>
-                        </div>
-                      </div>
-                    </Link>
+              </ul>
+            </div>
+            <p className="mt-4 text-xs text-gray-500">{SOURCES_NOTE}</p>
+            {local.neighbourhoods.length > 0 && (
+              <div className="mt-8">
+                <h3 className="text-lg font-bold text-slate-900 mb-3">Parts of {city.name} we work in</h3>
+                <div className="flex flex-wrap gap-2">
+                  {local.neighbourhoods.map((n) => (
+                    <span key={n} className="px-3 py-1.5 bg-amber-50 border border-amber-200 rounded-full text-amber-800 text-sm font-medium">{n}</span>
                   ))}
                 </div>
               </div>
-
-              {/* Local Info */}
-              <div className="bg-slate-900 rounded-2xl p-8 text-white">
-                <h3 className="text-2xl font-bold mb-6">About {city.name}</h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <h4 className="font-semibold text-amber-400 mb-2">Location Details</h4>
-                    <ul className="space-y-2 text-white/80">
-                      <li>County: {city.county}</li>
-                      <li>State: Massachusetts</li>
-                      <li>ZIP Code: {city.zip}</li>
-                      <li>Distance from HQ: {city.distance} miles</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-amber-400 mb-2">Service Highlights</h4>
-                    <ul className="space-y-2 text-white/80">
-                      <li>Same-day estimates available</li>
-                      <li>Licensed & insured contractors</li>
-                      <li>Local expertise since 2015</li>
-                      <li>100% satisfaction guarantee</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Sidebar */}
-            <div className="lg:col-span-1">
-              <div className="sticky top-24">
-                <ContactForm />
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </section>
 
-      <WhyChooseUs cityName={city.name} />
-
-      {/* City Profile: Neighborhoods & Housing Types */}
-      {(() => {
-        const profile = getCityProfile(city);
-        return (
-          <section className="py-16 bg-white">
-            <div className="container mx-auto px-4">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                  About {city.name} Homes &amp; Neighborhoods
-                </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mb-8" />
-                <p className="text-lg text-gray-600 mb-6">
-                  {city.name} features {profile.localFlavor}. Homes in this area average {profile.avgHomeAge} old,
-                  dating from the {profile.foundedEra} period. Our team has extensive experience working on the
-                  diverse housing stock found throughout {city.name} and {city.county} County.
-                </p>
-
-                <div className="mb-8">
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                    {city.name} Neighborhoods We Serve
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {profile.neighborhoods.map((neighborhood, i) => (
-                      <span key={i} className="px-3 py-1.5 bg-amber-50 border border-amber-200 rounded-full text-amber-700 text-sm font-medium">
-                        {neighborhood}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="mb-8">
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                    {city.name} Housing Types We Work On
-                  </h3>
-                  <div className="grid md:grid-cols-2 gap-3">
-                    {profile.housingTypes.map((type, i) => (
-                      <div key={i} className="flex items-center space-x-2 p-3 bg-slate-50 rounded-lg">
-                        <svg className="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-                        </svg>
-                        <span className="text-gray-700 text-sm font-medium">{type}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {profile.commonIssues.length > 0 && (
-                  <div>
-                    <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                      Common Home Improvement Challenges in {city.name}
-                    </h3>
-                    <div className="space-y-3">
-                      {profile.commonIssues.map((issue, i) => (
-                        <div key={i} className="flex items-start space-x-3 p-3 bg-red-50 rounded-xl border border-red-100">
-                          <svg className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                          </svg>
-                          <span className="text-gray-700 text-sm">{issue}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          </section>
-        );
-      })()}
-
-      <BeforeAfter
-        title={`${city.name} Before & After Transformations`}
-        subtitle={`Real exterior transformations near ${city.name} — drag to compare before and after`}
-      />
-
-      <VideoGallery
-        title={`Our Projects in ${city.name}`}
-        subtitle={`Watch our team transform homes in ${city.name} and across Massachusetts`}
-      />
-
-      <RealReviews seed={`city-${city.slug}`} cityName={city.name} />
-
-      <ReviewsHighlight />
-
-      {/* Nearby Cities */}
-      <section className="py-24 bg-white">
+      {/* ── The nine service pages for this town ── */}
+      <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">
-              We Also Serve Communities Near {city.name}
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto" />
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {nearbyCities.map((nearbyCity) => (
-              <Link
-                key={nearbyCity.slug}
-                href={`/cities/${nearbyCity.slug}`}
-                className="group p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200 hover:border-amber-400 hover:shadow-lg transition-all text-center"
-              >
-                <svg className="w-8 h-8 text-amber-500 mx-auto mb-3" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                </svg>
-                <h3 className="font-bold text-slate-900 group-hover:text-amber-500 transition-colors">
-                  {nearbyCity.name}
-                </h3>
-                <p className="text-sm text-gray-500">{nearbyCity.distance} miles</p>
-              </Link>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              href="/cities"
-              className="inline-flex items-center px-8 py-4 bg-slate-900 text-white rounded-full font-bold hover:bg-slate-800 transition-all"
-            >
-              View All {cities.length}+ Cities We Serve
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-bold text-slate-900 mb-8">Our services in {city.name}</h2>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {services.map((s) => (
+                <Link key={s.slug} href={`/services/${s.slug}/${city.slug}`} className="group rounded-2xl bg-white p-6 border border-slate-200 hover:border-amber-400 hover:shadow-lg transition-all">
+                  <h3 className="font-bold text-slate-900 group-hover:text-amber-700">{s.name}</h3>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-24 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">
-              Frequently Asked Questions - {city.name}, MA
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto" />
-          </div>
-
-          <div className="max-w-3xl mx-auto space-y-6">
-            {cityFaqs.map((faq, index) => (
-              <details key={index} className="bg-white p-6 rounded-xl shadow-md group">
-                <summary className="font-bold text-lg text-slate-900 cursor-pointer hover:text-amber-500 transition-colors flex items-center justify-between">
-                  {faq.q}
-                  <svg className="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <p className="mt-4 text-gray-600">{faq.a}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* AEO Block + Blog Backlinks */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="aeo-answer aeo-speakable bg-slate-50 p-8 rounded-2xl">
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">
-                Home Improvement Contractor in {city.name}, Massachusetts
-              </h2>
-              <p className="text-gray-600 mb-4">
-                {SITE_NAME} is the top-rated home improvement contractor serving {city.name}, {city.county} County,
-                Massachusetts. With a 5.0-star Google rating and 500+ completed projects, we provide professional{' '}
-                <Link href={`/services/siding/${city.slug}`} className="text-amber-600 hover:underline">siding installation</Link>,{' '}
-                <Link href={`/services/windows/${city.slug}`} className="text-amber-600 hover:underline">window replacement</Link>,{' '}
-                <Link href={`/services/doors/${city.slug}`} className="text-amber-600 hover:underline">door installation</Link>, and{' '}
-                <Link href={`/services/general-contractor/${city.slug}`} className="text-amber-600 hover:underline">general contracting</Link>{' '}
-                services. Licensed MA HIC #204634. Call {PHONE} for a free estimate.
-              </p>
-              <div className="flex flex-wrap gap-2 mt-4">
-                <Link href="/blog/how-to-choose-right-siding" className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-gray-600 hover:border-amber-400 hover:text-amber-600">
-                  Siding Guide
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-bold text-slate-900 mb-8">Our finished jobs nearest to {city.name}</h2>
+            <div className="grid gap-6 md:grid-cols-3">
+              {local.jobs.map(({ project, miles, direction }) => (
+                <Link key={project.id} href={project.slug ? `/projects/${project.slug}` : '/projects'} className="block overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-xl transition-shadow">
+                  <div className="relative aspect-[4/3] bg-slate-200">
+                    <Image src={project.image} alt={`${project.title} in ${project.location}`} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
+                  </div>
+                  <div className="p-5">
+                    <p className="text-sm font-semibold text-amber-700">
+                      {project.location} · {miles <= 1 ? `in ${city.name}` : `${miles} mi ${direction}`}
+                    </p>
+                    <h3 className="mt-1 font-bold text-slate-900">{project.title}</h3>
+                  </div>
                 </Link>
-                <Link href="/blog/energy-efficient-windows-guide" className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-gray-600 hover:border-amber-400 hover:text-amber-600">
-                  Window Guide
-                </Link>
-                <Link href="/blog/window-replacement-cost-massachusetts" className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-gray-600 hover:border-amber-400 hover:text-amber-600">
-                  Cost Guide
-                </Link>
-                <Link href="/about" className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-gray-600 hover:border-amber-400 hover:text-amber-600">
-                  About Us
-                </Link>
+              ))}
+            </div>
+            <ul className="mt-6 space-y-1 text-gray-700">
+              {local.jobLines.map((line) => (
+                <li key={line}>{line}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 bg-slate-900 text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-amber-400 text-lg" aria-hidden="true">★★★★★</p>
+            <p className="mt-1 font-semibold">{AVERAGE_RATING} from {GOOGLE_REVIEW_COUNT} Google reviews</p>
+            {review && (
+              <blockquote className="mt-5 text-lg text-white/90 leading-relaxed">
+                “{review.text}”
+                <footer className="mt-2 text-sm text-white/60">{review.author}{review.work ? `, ${review.work}` : ''}</footer>
+              </blockquote>
+            )}
+            <Link href="/reviews" className="mt-5 inline-block font-semibold text-amber-400 hover:underline">Read all our reviews</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto grid gap-12 md:grid-cols-2">
+            <div>
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">Questions from {city.name}</h2>
+              <div className="space-y-3">
+                {local.faqs.map((f) => (
+                  <details key={f.q} className="bg-slate-50 rounded-xl border border-slate-200 group">
+                    <summary className="px-5 py-4 cursor-pointer font-bold text-slate-900">{f.q}</summary>
+                    <p className="px-5 pb-4 text-gray-700 leading-relaxed">{f.a}</p>
+                  </details>
+                ))}
               </div>
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">Towns next to {city.name}</h2>
+              <ul className="space-y-2">
+                {local.neighbours.map((n) => (
+                  <li key={n.slug}>
+                    <Link href={`/cities/${n.slug}`} className="flex items-center justify-between rounded-lg bg-slate-50 px-4 py-3 border border-slate-200 hover:border-amber-400">
+                      <span className="font-medium text-slate-800">{n.name}, MA</span>
+                      <span className="text-sm text-gray-500">{n.miles} mi</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <Link href="/cities" className="mt-5 inline-block text-sm font-semibold text-amber-700 hover:underline">All 109 towns we serve</Link>
             </div>
           </div>
         </div>
       </section>
 
-      <CTASection cityName={city.name} />
+      <CTASection title={`Free estimate in ${city.name}`} subtitle={`Call ${PHONE} or request a quote.`} cityName={city.name} compact />
     </>
   );
 }

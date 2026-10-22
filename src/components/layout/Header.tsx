@@ -34,12 +34,12 @@ export default function Header() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center">
-              <div className="relative w-28 h-14 sm:w-36 sm:h-16 lg:w-40 lg:h-18">
+              <div className="relative w-24 h-14 sm:w-28 sm:h-16 lg:w-32 lg:h-[76px]">
                 <Image
-                  src={IMAGES.logoLarge}
-                  alt={`${SITE_NAME} logo - Licensed siding, windows and doors contractor in Marlborough Massachusetts - HIC #204634 - serving 100+ MA cities`}
+                  src="/images/logo-header.webp"
+                  alt={`${SITE_NAME} logo - Licensed siding, windows and doors contractor in Marlborough Massachusetts - HIC #204634 - serving 109 Massachusetts towns`}
                   fill
-                  sizes="(max-width: 640px) 112px, (max-width: 1024px) 144px, 160px"
+                  sizes="(max-width: 640px) 96px, (max-width: 1024px) 112px, 128px"
                   className="object-contain"
                   priority
                 />

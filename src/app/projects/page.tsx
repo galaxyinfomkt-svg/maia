@@ -95,7 +95,7 @@ export default function ProjectsPage() {
               <p className="text-white/80">Projects Completed</p>
             </div>
             <div>
-              <p className="text-5xl font-bold text-amber-400 mb-2">100+</p>
+              <p className="text-5xl font-bold text-amber-400 mb-2">109</p>
               <p className="text-white/80">Cities Served</p>
             </div>
             <div>
@@ -237,7 +237,7 @@ export default function ProjectsPage() {
               { name: 'Siding', slug: 'siding', image: IMAGES.siding },
               { name: 'Windows', slug: 'windows', image: IMAGES.windows },
               { name: 'Doors', slug: 'doors', image: IMAGES.doors },
-              { name: 'General Contractor', slug: 'general-contractor', image: IMAGES.generalContractor },
+              { name: 'Exterior Trim', slug: 'exterior-trim', image: '/images/before-after/trim-after-woburn-ma.webp' },
             ].map((service) => (
               <Link
                 key={service.slug}

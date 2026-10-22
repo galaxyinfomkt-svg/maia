@@ -181,7 +181,14 @@ export const reviews: Review[] = [
   },
 ];
 
+/** Reviews whose text we hold on the site. */
 export const REVIEW_COUNT = reviews.length;
+/**
+ * The count Google shows on the Business Profile. It moves ahead of the texts
+ * above whenever a new review lands, so headline counts and the aggregate use
+ * this number. Checked against the profile on 2026-10-22: 5.0 from 21.
+ */
+export const GOOGLE_REVIEW_COUNT = 21;
 export const AVERAGE_RATING = '5.0';
 
 /** Reviews we hold in full — the only ones eligible for Review markup. */

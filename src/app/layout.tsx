@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     default: `Siding Contractor MA | Windows, Doors & Exterior | ${SITE_NAME}`,
     template: `%s | ${SITE_NAME}`,
   },
-  description: `#1 siding & exterior contractor in Massachusetts. Expert siding, windows, doors installation. 19 5-star reviews. Licensed HIC #${HIC_NUMBER} & insured. FREE estimates. Call ${PHONE}`,
+  description: `Siding contractor in Massachusetts: vinyl, fiber cement, cedar, clapboard, trim, windows and doors. 5.0 from 21 Google reviews. Licensed HIC #${HIC_NUMBER} & insured. FREE estimates. Call ${PHONE}`,
   icons: {
     icon: '/images/logo-200.png',
     shortcut: '/images/logo-200.png',
@@ -46,8 +46,8 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: `${SITE_NAME} | #1 MA Siding, Windows & Doors Contractor (2026)`,
-    description: 'Massachusetts top-rated exterior contractor ★5.0. Premium siding, ENERGY STAR windows & doors. 500+ projects, 25-50yr warranties. FREE estimates!',
+    title: `${SITE_NAME} | Siding Contractor in Massachusetts`,
+    description: 'Siding, trim, windows and doors across 109 Massachusetts towns. 500+ projects, 5.0 on Google, licensed HIC #204634.',
     images: [
       {
         url: OG_IMAGE,

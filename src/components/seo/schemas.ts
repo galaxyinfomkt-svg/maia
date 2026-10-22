@@ -1,4 +1,5 @@
 import { SITE_NAME, SITE_URL, PHONE, ADDRESS, LOGO_URL, SOCIAL_LINKS, HIC_NUMBER } from '@/lib/constants';
+import { GOOGLE_REVIEW_COUNT } from '@/lib/reviews';
 
 // Enhanced Organization Schema with all signals
 export const organizationSchema = {
@@ -65,7 +66,7 @@ export const organizationSchema = {
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '5.0',
-    reviewCount: '19',
+    reviewCount: String(GOOGLE_REVIEW_COUNT),
     bestRating: '5',
     worstRating: '1',
   },
@@ -376,7 +377,7 @@ export function createProductSchema(product: {
         name: SITE_NAME,
       },
     },
-    // No aggregateRating here: the 19 Google reviews are about the company,
+    // No aggregateRating here: the Google reviews are about the company,
     // not about an individual product, and repeating them per product is
     // exactly the self-serving pattern Google discounts.
   };
