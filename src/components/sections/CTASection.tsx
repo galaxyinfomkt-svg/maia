@@ -5,16 +5,18 @@ interface CTASectionProps {
   title?: string;
   subtitle?: string;
   cityName?: string;
+  /** Title, subtitle and the two buttons only — for pages that repeat at scale. */
+  compact?: boolean;
 }
 
 export default function CTASection({
   title = 'Ready to Transform Your Home?',
-  subtitle = "Join 500+ satisfied Massachusetts homeowners. Get your FREE, no-obligation estimate today — most quotes delivered within 24 hours!",
+  subtitle = "500+ projects across Massachusetts. Get a free, no-obligation written estimate.",
   cityName,
+  compact = false,
 }: CTASectionProps) {
-  const displayTitle = cityName
-    ? `Ready to Transform Your ${cityName} Home?`
-    : title;
+  // An explicit title always wins; the city fallback only fills a blank.
+  const displayTitle = title !== 'Ready to Transform Your Home?' || !cityName ? title : `Ready to Transform Your ${cityName} Home?`;
 
   return (
     <section className="py-24 bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900">
@@ -27,6 +29,7 @@ export default function CTASection({
         </p>
 
         {/* Trust indicators */}
+        {!compact && (
         <div className="flex flex-wrap justify-center gap-6 mb-10 text-white/80">
           <div className="flex items-center gap-2">
             <svg className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
@@ -44,9 +47,10 @@ export default function CTASection({
             <svg className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
             </svg>
-            <span className="text-sm">Same-Day Estimates</span>
+            <span className="text-sm">Free Estimates</span>
           </div>
         </div>
+        )}
 
         <div className="flex flex-wrap justify-center gap-4">
           <a
@@ -70,9 +74,9 @@ export default function CTASection({
           </Link>
         </div>
 
-        <p className="mt-6 text-white/60 text-sm">
-          No pressure, no obligation — just honest advice from local experts
-        </p>
+        {!compact && (
+          <p className="mt-6 text-white/60 text-sm">No pressure, no obligation. A written quote and an honest answer.</p>
+        )}
       </div>
     </section>
   );

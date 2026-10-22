@@ -18,8 +18,8 @@ function url(path = ''): string {
   return `${BASE_URL}/${clean}/`;
 }
 
-// Cities we actually cover. Anything beyond this is noindex and is not built.
-const PRIMARY_CITIES = cities.filter((city) => city.distance <= 50);
+// All 109 towns are indexable: every one has a page built from its own facts.
+const PRIMARY_CITIES = cities;
 
 /**
  * `lastMod` used to be `new Date()`, which stamped every URL with the build
@@ -28,6 +28,8 @@ const PRIMARY_CITIES = cities.filter((city) => city.distance <= 50);
  * These dates move only when the underlying content actually changes.
  */
 const CONTENT_REVISED = new Date('2026-08-24');
+/** The city and city × service pages were rebuilt on this date. */
+const LOCAL_REVISED = new Date('2026-10-22');
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
@@ -44,14 +46,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Money pages.
   const servicePages: MetadataRoute.Sitemap = services.map((service) => ({
     url: url(`services/${service.slug}`),
-    lastModified: CONTENT_REVISED,
+    lastModified: LOCAL_REVISED,
     changeFrequency: 'monthly',
     priority: 0.9,
   }));
 
   const cityPages: MetadataRoute.Sitemap = PRIMARY_CITIES.map((city) => ({
     url: url(`cities/${city.slug}`),
-    lastModified: CONTENT_REVISED,
+    lastModified: LOCAL_REVISED,
     changeFrequency: 'monthly',
     priority: city.distance <= 20 ? 0.7 : 0.5,
   }));
@@ -61,7 +63,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const city of PRIMARY_CITIES) {
       serviceCityPages.push({
         url: url(`services/${service.slug}/${city.slug}`),
-        lastModified: CONTENT_REVISED,
+        lastModified: LOCAL_REVISED,
         changeFrequency: 'monthly',
         priority: city.distance <= 20 ? 0.7 : 0.5,
       });

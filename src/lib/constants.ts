@@ -21,8 +21,23 @@ export const SERVICE_PHOTOS: Record<string, string> = {
   siding: '/images/hero/hero-68bb92a147f24d34a4cb2441.webp',
   windows: '/images/hero/hero-68bb92a11ff6ea5ace0517d7.webp',
   doors: '/images/hero/hero-68bb918e47f24da26ecb147e.webp',
-  'general-contractor': '/images/hero/hero-6834e26266829d658f8eab6c.webp',
 };
+
+/* Hero backgrounds: finished jobs only, whole house in frame, clear sky,
+   no dumpsters or open framing. Rotated across city and service pages. */
+export const HERO_PHOTOS = [
+  '/images/before-after/siding-woburn-ma-front.webp',
+  '/images/before-after/siding-after-manchester-nh.webp',
+  '/images/before-after/siding-after-woburn-ma.webp',
+  '/images/before-after/cedar-siding-reading-ma-4.webp',
+];
+
+/** Stable pick from HERO_PHOTOS for a page key, spread evenly across pages. */
+export function heroPhotoFor(key: string): string {
+  let h = 0;
+  for (let i = 0; i < key.length; i++) h = (Math.imul(h, 31) + key.charCodeAt(i)) >>> 0;
+  return HERO_PHOTOS[h % HERO_PHOTOS.length];
+}
 
 export const REAL_PHOTOS = [
   '/images/hero/hero-68bb92a147f24d34a4cb2441.webp',
@@ -39,7 +54,7 @@ export const REAL_PHOTOS = [
 
 export const IMAGES = {
   // Hero e imagens principais
-  hero: '/images/hero/hero-68bb92a147f24d34a4cb2441.webp',
+  hero: '/images/before-after/siding-woburn-ma-front.webp',
   logo: '/images/logo-200.webp',
   logoLarge: '/images/logo-400.webp',
   logoHeader: '/images/logo-112.webp',

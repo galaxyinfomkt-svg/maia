@@ -7,6 +7,8 @@ interface ServicesSectionProps {
   subtitle?: string;
   showAll?: boolean;
   citySlug?: string;
+  /** Leave one service out, e.g. the one whose page this is. */
+  exclude?: string;
 }
 
 export default function ServicesSection({
@@ -14,7 +16,11 @@ export default function ServicesSection({
   subtitle = 'Expert craftsmanship for every project',
   showAll = true,
   citySlug,
+  exclude,
 }: ServicesSectionProps) {
+  const list = services.filter((s) => s.slug !== exclude);
+  // 9 cards close as a 3×3 grid; 8 as two rows of four. No orphan card.
+  const cols = list.length % 3 === 0 ? 'lg:grid-cols-3' : 'lg:grid-cols-4';
   return (
     <section className="py-24 bg-gradient-to-b from-slate-50 to-white">
       <div className="container mx-auto px-4">
@@ -28,8 +34,8 @@ export default function ServicesSection({
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service) => (
+        <div className={`grid md:grid-cols-2 ${cols} gap-8`}>
+          {list.map((service) => (
             <ServiceCard
               key={service.id}
               service={service}

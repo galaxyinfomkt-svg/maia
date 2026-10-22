@@ -6,11 +6,12 @@ import Link from 'next/link';
 import { HeroWithForm, CTASection, WhyChooseUs, ReviewsHighlight } from '@/components/sections';
 import { JsonLd, organizationSchema, websiteSchema } from '@/components/seo';
 import { services } from '@/lib/services';
+import { GOOGLE_REVIEW_COUNT } from '@/lib/reviews';
 import { SITE_NAME, HIC_NUMBER, PHONE, SITE_URL, PHONE_LINK, SOCIAL_LINKS, ADDRESS, BUSINESS_HOURS, EMAIL, REAL_PHOTOS, SERVICE_PHOTOS } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: `#1 Siding & Window Contractor MA (2026) | 500+ Projects | Free Estimate`,
-  description: `#1 siding & exterior contractor in Massachusetts. Expert siding, windows, doors installation. 19 5-star reviews. Licensed HIC #${HIC_NUMBER} & insured. FREE estimates. Call ${PHONE}`,
+  title: `Siding Contractor in Massachusetts | Maia Construction`,
+  description: `Siding, trim, windows and doors from our Charlton shop to 109 towns. 500+ projects, 5.0 from 21 Google reviews. Licensed HIC #${HIC_NUMBER} & insured. FREE estimates. Call ${PHONE}`,
   alternates: { canonical: SITE_URL },
 };
 
@@ -55,7 +56,7 @@ export default function HomePage() {
 
       {/* ========== SECTION 1: HERO WITH FORM ========== */}
       <HeroWithForm
-        badge={`Serving 75+ MA Cities • 5-Star Rated • HIC #${HIC_NUMBER}`}
+        badge={`109 towns · 5.0 on Google · HIC #${HIC_NUMBER}`}
         title={
           <>
             Professional{' '}
@@ -65,7 +66,7 @@ export default function HomePage() {
             Contractor in Massachusetts
           </>
         }
-        subtitle={`Expert siding installation, window replacement, door installation, and general contracting services. Licensed and insured, working out of Charlton and serving 75+ cities across Massachusetts.`}
+        subtitle={`Siding, trim, windows and doors, installed by our own crew. Licensed and insured, working out of Charlton and serving 109 towns.`}
       />
 
       {/* ========== SECTION 2: GOOGLE REVIEWS BAR ========== */}
@@ -80,7 +81,7 @@ export default function HomePage() {
             </svg>
             <span className="text-amber-400">★★★★★</span>
             <span className="font-semibold">5.0</span>
-            <span className="text-gray-400">(19 reviews)</span>
+            <span className="text-gray-400">({GOOGLE_REVIEW_COUNT} reviews)</span>
             <a href={SOCIAL_LINKS.google} target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 font-semibold underline">
               See Our Reviews
             </a>
@@ -96,11 +97,11 @@ export default function HomePage() {
               Our <span className="text-amber-500">Services</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              From expert siding installation to energy-efficient windows and doors, we deliver quality craftsmanship on every project.
+              Everything on the outside of the house: every kind of siding, the trim that ties it together, and the windows and doors set into it.
             </p>
             <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mt-6" />
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <Link key={service.slug} href={`/services/${service.slug}`}
                 className={`group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all ${index === 0 ? 'ring-2 ring-amber-400' : 'border border-slate-200'}`}>
@@ -109,9 +110,9 @@ export default function HomePage() {
                       full-size photograph the hero uses — up to 253 KB each,
                       four of them below the fold. */}
                   <img
-                    src={SERVICE_PHOTOS[service.slug] || REAL_PHOTOS[index % REAL_PHOTOS.length]}
-                    srcSet={srcSetFor(SERVICE_PHOTOS[service.slug] || REAL_PHOTOS[index % REAL_PHOTOS.length])}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                    src={SERVICE_PHOTOS[service.slug] || service.image}
+                    srcSet={srcSetFor(SERVICE_PHOTOS[service.slug] || service.image)}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                     alt={`${service.name} services in Massachusetts by ${SITE_NAME}`}
                     loading="lazy"
                     decoding="async"
@@ -159,7 +160,7 @@ export default function HomePage() {
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
                 <div className="text-center">
-                  <p className="text-3xl font-bold text-amber-400">75+</p>
+                  <p className="text-3xl font-bold text-amber-400">109</p>
                   <p className="text-sm text-gray-400">Cities Served</p>
                 </div>
                 <div className="text-center">
@@ -300,7 +301,7 @@ export default function HomePage() {
                   </div>
                   <div className="bg-slate-50 p-3 rounded-lg text-center">
                     <p className="font-bold text-slate-900">5-Star</p>
-                    <p className="text-xs text-gray-500">19 Reviews</p>
+                    <p className="text-xs text-gray-500">{GOOGLE_REVIEW_COUNT} Reviews</p>
                   </div>
                   <div className="bg-slate-50 p-3 rounded-lg text-center">
                     <p className="font-bold text-slate-900">Free</p>

@@ -1,20 +1,17 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import { HeroWithForm, CTASection, WhyChooseUs, ReviewsHighlight, RealReviews } from '@/components/sections';
+import Image from 'next/image';
+import { HeroWithForm, CTASection } from '@/components/sections';
 import { JsonLd, Breadcrumbs } from '@/components/seo';
 import { services, getServiceBySlug } from '@/lib/services';
-import { cities, getCityBySlug, getNearbyCities } from '@/lib/cities';
-import { SITE_NAME, PHONE, SITE_URL, PHONE_LINK, HIC_NUMBER, REAL_PHOTOS } from '@/lib/constants';
-import { getServiceContent, getUniqueFAQs, getUniqueMetaDescription, getUniqueTitle, getCityProfile, getRichParagraphs, getServiceChecklist } from '@/lib/content-engine';
+import { cities, getCityBySlug } from '@/lib/cities';
+import { TOWN_DATA } from '@/lib/town-data';
 
-const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'), {
-  loading: () => <div className="py-24 bg-slate-900" />,
-});
-const VideoGallery = dynamic(() => import('@/components/sections/VideoGallery'), {
-  loading: () => <div className="py-24 bg-white" />,
-});
+const DECADE_LABELS = ['Before 1940', '1940s', '1950s', '1960s', '1970s', '1980s', '1990s', '2000s', '2010s', '2020 or later'];
+import { SITE_NAME, PHONE, SITE_URL, heroPhotoFor } from '@/lib/constants';
+import { GOOGLE_REVIEW_COUNT, AVERAGE_RATING, reviewsFor } from '@/lib/reviews';
+import { getServiceCityContent, SOURCES_NOTE } from '@/lib/local-content';
 
 interface ServiceCityPageProps {
   params: Promise<{ service: string; city: string }>;
@@ -36,23 +33,14 @@ export async function generateMetadata({ params }: ServiceCityPageProps): Promis
   const city = getCityBySlug(citySlug);
   if (!service || !city) return {};
 
-  const title = getUniqueTitle(serviceSlug, city);
-  const description = getUniqueMetaDescription(serviceSlug, city);
+  const { title, description } = getServiceCityContent(service, city);
+  const url = `${SITE_URL}/services/${service.slug}/${city.slug}/`;
 
   return {
-    title,
+    title: { absolute: title },
     description,
-    keywords: [
-      `${service.name.toLowerCase()} ${city.name}`,
-      `${service.name.toLowerCase()} contractor ${city.name} MA`,
-      `${service.name.toLowerCase()} installation ${city.name}`,
-      `best ${service.name.toLowerCase()} company ${city.name}`,
-      `${city.zip} ${service.name.toLowerCase()} contractor`,
-      `${service.name.toLowerCase()} ${city.county} County`,
-    ],
-    openGraph: { title, description, images: [{ url: service.image }] },
-    alternates: { canonical: `${SITE_URL}/services/${service.slug}/${city.slug}` },
-    ...(city.distance > 50 ? { robots: { index: false, follow: true } } : {}),
+    openGraph: { title, description, url, images: [{ url: service.image }] },
+    alternates: { canonical: url },
   };
 }
 
@@ -62,398 +50,287 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
   const city = getCityBySlug(citySlug);
   if (!service || !city) notFound();
 
-  const nearbyCities = getNearbyCities(city.slug, 6);
-  const content = getServiceContent(serviceSlug, city);
-  const faqs = getUniqueFAQs(serviceSlug, city);
-  const profile = getCityProfile(city);
-  const richText = getRichParagraphs(serviceSlug, city);
-  const checklist = getServiceChecklist(serviceSlug);
+  const local = getServiceCityContent(service, city);
+  const [review] = reviewsFor(`${service.slug}-${city.slug}`, 1);
+  const pageUrl = `${SITE_URL}/services/${service.slug}/${city.slug}/`;
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
       { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE_URL}/services/` },
-      { '@type': 'ListItem', position: 3, name: service.name, item: `${SITE_URL}/services/${service.slug}` },
-      { '@type': 'ListItem', position: 4, name: `${city.name}, MA`, item: `${SITE_URL}/services/${service.slug}/${city.slug}` },
+      { '@type': 'ListItem', position: 3, name: service.name, item: `${SITE_URL}/services/${service.slug}/` },
+      { '@type': 'ListItem', position: 4, name: `${city.name}, MA`, item: pageUrl },
     ],
   };
 
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((faq) => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-    })),
-  };
 
   // One business, in Charlton. This page describes an area we serve, not a
-  // branch — so the only business node is a reference to the real organization,
-  // not a LocalBusiness claiming a premises in this city with a copy of the
-  // rating attached (that pattern was on ~2,470 pages at once).
+  // branch, so the only business node is a reference to the organization.
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
+    '@id': `${pageUrl}#service`,
     name: `${service.name} in ${city.name}, MA`,
-    description: content.intro,
-    provider: {
-      '@type': 'HomeAndConstructionBusiness',
-      '@id': `${SITE_URL}/#organization`,
-      name: SITE_NAME,
-      telephone: PHONE,
-    },
+    description: local.placement,
+    serviceType: service.name,
+    url: pageUrl,
+    provider: { '@type': 'HomeAndConstructionBusiness', '@id': `${SITE_URL}/#organization`, name: SITE_NAME, telephone: PHONE },
     areaServed: {
       '@type': 'City',
       name: city.name,
-      containedInPlace: { '@type': 'State', name: 'Massachusetts' },
+      address: { '@type': 'PostalAddress', addressLocality: city.name, addressRegion: 'MA', postalCode: city.zip, addressCountry: 'US' },
+      containedInPlace: { '@type': 'AdministrativeArea', name: `${city.county} County, Massachusetts` },
     },
-    serviceType: service.name,
-    // priceRange, not price: `price` must be a single value, and this is a band.
-    offers: { '@type': 'AggregateOffer', priceCurrency: 'USD', description: content.costRange },
   };
+
+  const otherServices = services.filter((s) => s.slug !== service.slug);
 
   return (
     <>
       <JsonLd data={breadcrumbSchema} />
-      <JsonLd data={faqSchema} />
       <JsonLd data={serviceSchema} />
 
-      {/* Hero with Form */}
       <HeroWithForm
-        badge={`${city.name}, MA • ${service.name} • 5-Star Rated`}
+        badge={`${city.name}, MA · ${AVERAGE_RATING} on Google`}
         title={
           <>
-            Expert{' '}
             <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 bg-clip-text text-transparent">
               {service.name}
             </span>{' '}
-            in {city.name}, Massachusetts
+            in {city.name}, MA
           </>
         }
-        subtitle={content.intro}
-        backgroundImage={REAL_PHOTOS[(city.slug.length + service.slug.length) % REAL_PHOTOS.length]}
+        subtitle={local.heroSubtitle}
+        backgroundImage={heroPhotoFor(`${service.slug}/${city.slug}`)}
       />
 
-      {/* Breadcrumbs */}
       <div className="bg-slate-50 border-b border-slate-200">
         <div className="container mx-auto px-4">
-          <Breadcrumbs items={[
-            { label: 'Services', href: '/services' },
-            { label: service.name, href: `/services/${service.slug}` },
-            { label: city.name },
-          ]} />
+          <Breadcrumbs
+            items={[
+              { label: 'Services', href: '/services' },
+              { label: service.name, href: `/services/${service.slug}` },
+              { label: city.name },
+            ]}
+          />
         </div>
       </div>
 
-      {/* Why Choose Us */}
-      <WhyChooseUs cityName={city.name} />
-
-      {/* Rich Text Content — Expert Intro (like RS) */}
+      {/* ── The local picture: everything here is computed for this town ── */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
-              Expert {service.name} Services in {city.name}, MA
+              {service.name} in {city.name}: what we plan for
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mb-8" />
-            <div className="prose prose-lg max-w-none text-gray-600 space-y-6">
-              <p>{richText.expertIntro}</p>
-              <p>{richText.trustedContractor}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Comprehensive Services Section */}
-      <section className="py-16 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-slate-900 mb-6">
-              Comprehensive {service.name} Services in {city.name}, MA
-            </h3>
-            <div className="prose prose-lg max-w-none text-gray-600 mb-8">
-              <p>{richText.comprehensiveServices}</p>
-            </div>
-
-            {/* What We Offer Checklist */}
-            <h3 className="text-2xl font-bold text-slate-900 mb-4">What We Offer</h3>
-            <div className="grid md:grid-cols-2 gap-3 mb-8">
-              {checklist.map((item, i) => (
-                <div key={i} className="flex items-center space-x-3 p-3 bg-white rounded-lg border border-slate-200">
-                  <svg className="w-5 h-5 text-amber-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  <span className="text-gray-700 text-sm">{item}</span>
+            <p className="text-lg text-gray-700 leading-relaxed">{local.lead}</p>
+            <dl className="mt-8 grid gap-x-8 gap-y-3 sm:grid-cols-2">
+              {local.facts.map((f) => (
+                <div key={f.label} className="flex justify-between gap-4 border-b border-slate-200 pb-2">
+                  <dt className="text-gray-600">{f.label}</dt>
+                  <dd className="text-right font-semibold text-slate-900">{f.value}</dd>
                 </div>
               ))}
+            </dl>
+            <div className="mt-8 overflow-x-auto">
+              <table className="w-full min-w-[640px] text-left text-sm">
+                <thead>
+                  <tr className="border-b border-slate-300 text-slate-600">
+                    <th className="py-2 pr-4 font-semibold">Town</th>
+                    <th className="py-2 pr-4 font-semibold">From {city.name}</th>
+                    <th className="py-2 pr-4 font-semibold">County</th>
+                    <th className="py-2 pr-4 font-semibold">To the coast</th>
+                    <th className="py-2 pr-4 font-semibold">To our shop</th>
+                    <th className="py-2 pr-4 font-semibold">Typical home</th>
+                    <th className="py-2 font-semibold">Homes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {local.neighbourRows.map((r) => (
+                    <tr key={r.slug} className="border-b border-slate-200">
+                      <td className="py-2 pr-4">
+                        <Link href={`/services/${service.slug}/${r.slug}`} className="font-medium text-slate-900 hover:text-amber-700 hover:underline">{r.name}</Link>
+                      </td>
+                      <td className="py-2 pr-4 text-gray-700">{r.miles} mi {r.direction}</td>
+                      <td className="py-2 pr-4 text-gray-700">{r.county}</td>
+                      <td className="py-2 pr-4 text-gray-700">{r.coast} mi</td>
+                      <td className="py-2 pr-4 text-gray-700">{r.shop} mi</td>
+                      <td className="py-2 pr-4 text-gray-700">{r.year}</td>
+                      <td className="py-2 text-gray-700">{r.homes.toLocaleString('en-US')}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
 
-            {/* Expert Solutions Box */}
-            <div className="bg-slate-900 p-8 rounded-2xl text-white">
-              <h3 className="text-xl font-bold mb-4 text-amber-400">Why {city.name} Trusts {SITE_NAME}</h3>
-              <p className="text-white/80 leading-relaxed">{richText.whyLocal}</p>
+            <div className="mt-8 overflow-x-auto">
+              <table className="w-full min-w-[640px] text-left text-sm">
+                <caption className="text-left font-bold text-slate-900 mb-2">Homes in {city.name} against {city.county} County towns we serve and all 109</caption>
+                <thead>
+                  <tr className="border-b border-slate-300 text-slate-600">
+                    <th className="py-2 pr-4 font-semibold"> </th>
+                    <th className="py-2 pr-4 font-semibold">{city.name}</th>
+                    <th className="py-2 pr-4 font-semibold">{city.county} Co.</th>
+                    <th className="py-2 font-semibold">All 109</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {local.comparison.map((r) => (
+                    <tr key={r.label} className="border-b border-slate-200">
+                      <td className="py-2 pr-4 text-gray-600">{r.label}</td>
+                      <td className="py-2 pr-4 font-semibold text-slate-900">{r.town}</td>
+                      <td className="py-2 pr-4 text-gray-700">{r.county}</td>
+                      <td className="py-2 text-gray-700">{r.all}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
+
+            <div className="mt-8">
+              <h3 className="font-bold text-slate-900 mb-3">When {city.name}&apos;s homes were built</h3>
+              <ul className="space-y-1.5">
+                {TOWN_DATA[city.slug].decades.map((pct, i) => (
+                  <li key={DECADE_LABELS[i]} className="flex items-center gap-3 text-sm">
+                    <span className="w-24 shrink-0 text-gray-600">{DECADE_LABELS[i]}</span>
+                    <span className="h-3 rounded bg-amber-400" style={{ width: `${Math.max(pct, 1) * 2}%` }} aria-hidden="true" />
+                    <span className="font-semibold text-slate-900">{pct}%</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <p className="mt-4 text-xs text-gray-500">{SOURCES_NOTE}</p>
+            {local.neighbourhoods.length > 0 && (
+              <div className="mt-8">
+                <h3 className="text-lg font-bold text-slate-900 mb-3">Parts of {city.name} we work in</h3>
+                <div className="flex flex-wrap gap-2">
+                  {local.neighbourhoods.map((n) => (
+                    <span key={n} className="px-3 py-1.5 bg-amber-50 border border-amber-200 rounded-full text-amber-800 text-sm font-medium">
+                      {n}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
 
-      {/* Unique City+Service Content */}
-      <section className="py-16 bg-gradient-to-b from-white to-slate-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            {/* Common Challenges in This City */}
-            <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 mb-8">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                Common {service.name} Challenges in {city.name}
-              </h2>
-              <div className="space-y-4">
-                {content.challenges.map((challenge, i) => (
-                  <div key={i} className="flex items-start space-x-3 p-4 bg-red-50 rounded-xl border border-red-100">
-                    <svg className="w-6 h-6 text-red-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-gray-700">{challenge}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Our Solutions */}
-            <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 mb-8">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                Our {service.name} Solutions for {city.name} Homes
-              </h2>
-              <div className="space-y-4">
-                {content.solutions.map((solution, i) => (
-                  <div key={i} className="flex items-start space-x-3 p-4 bg-green-50 rounded-xl border border-green-100">
-                    <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-gray-700">{solution}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Neighborhoods We Serve */}
-            <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 mb-8">
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">
-                {city.name} Neighborhoods We Serve
-              </h2>
-              <p className="text-gray-600 mb-4">
-                We provide {service.name.toLowerCase()} services to every neighborhood in {city.name}, {city.county} County,
-                including ZIP code {city.zip}:
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {profile.neighborhoods.map((neighborhood, i) => (
-                  <span key={i} className="px-3 py-1.5 bg-amber-50 border border-amber-200 rounded-full text-amber-700 text-sm font-medium">
-                    {neighborhood}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Housing Types */}
-            <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 mb-8">
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">
-                {city.name} Housing Types We Work On
-              </h2>
-              <p className="text-gray-600 mb-4">
-                Our team has extensive experience with the housing stock found throughout {city.name},
-                with homes averaging {profile.avgHomeAge} old:
-              </p>
-              <div className="grid md:grid-cols-2 gap-3">
-                {profile.housingTypes.map((type, i) => (
-                  <div key={i} className="flex items-center space-x-2 p-3 bg-slate-50 rounded-lg">
-                    <svg className="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-                    </svg>
-                    <span className="text-gray-700 text-sm font-medium">{type}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Our Process */}
-            <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 mb-8">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                Our {service.name} Process in {city.name}
-              </h2>
-              <div className="space-y-6">
-                {content.processSteps.map((step, i) => (
-                  <div key={i} className="flex items-start space-x-4">
-                    <div className="w-10 h-10 bg-gradient-to-r from-amber-400 to-yellow-300 rounded-full flex items-center justify-center flex-shrink-0 text-slate-900 font-bold">
-                      {String(i + 1).padStart(2, '0')}
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-slate-900 mb-1">{step.name}</h3>
-                      <p className="text-gray-600">{step.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Cost, Timeline, Warranty Box */}
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-amber-50 p-6 rounded-2xl text-center border border-amber-200">
-                <p className="text-sm text-amber-700 font-semibold mb-2">Cost Range</p>
-                <p className="text-lg font-bold text-slate-900">{content.costRange}</p>
-              </div>
-              <div className="bg-amber-50 p-6 rounded-2xl text-center border border-amber-200">
-                <p className="text-sm text-amber-700 font-semibold mb-2">Timeline</p>
-                <p className="text-lg font-bold text-slate-900">{content.timeline}</p>
-              </div>
-              <div className="bg-amber-50 p-6 rounded-2xl text-center border border-amber-200">
-                <p className="text-sm text-amber-700 font-semibold mb-2">Warranty</p>
-                <p className="text-lg font-bold text-slate-900">{content.warranty}</p>
-              </div>
-            </div>
-
-            {/* Stats */}
-            <div className="bg-slate-900 p-8 rounded-2xl">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div>
-                  <p className="text-3xl font-bold text-amber-400">5.0★</p>
-                  <p className="text-white/80 text-sm">Google Rating</p>
-                </div>
-                <div>
-                  <p className="text-3xl font-bold text-amber-400">500+</p>
-                  <p className="text-white/80 text-sm">Projects Done</p>
-                </div>
-                <div>
-                  <p className="text-3xl font-bold text-amber-400">{city.distance}mi</p>
-                  <p className="text-white/80 text-sm">From {city.name}</p>
-                </div>
-                <div>
-                  <p className="text-3xl font-bold text-amber-400">FREE</p>
-                  <p className="text-white/80 text-sm">Estimates</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Before & After */}
-      <BeforeAfter
-        title={`${service.name} Transformations`}
-        subtitle={`See the quality of our ${service.name.toLowerCase()} work in ${city.county} County`}
-      />
-
-      {/* Video Gallery */}
-      <VideoGallery
-        title={`${service.name} Projects in Action`}
-        subtitle={`Watch our team install ${service.name.toLowerCase()} across Massachusetts`}
-      />
-
-      {/* Reviews */}
-      <RealReviews seed={`${serviceSlug}-${city.slug}`} cityName={city.name} />
-
-      <ReviewsHighlight />
-
-      {/* FAQ - Unique per city+service */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">
-              {service.name} FAQs — {city.name}, MA
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-6" />
-            <p className="text-gray-600">Common questions from {city.name} homeowners about {service.name.toLowerCase()}</p>
-          </div>
-          <div className="max-w-4xl mx-auto space-y-4">
-            {faqs.map((faq, index) => (
-              <details key={index} className="bg-slate-50 rounded-xl overflow-hidden border border-slate-200 group">
-                <summary className="px-6 py-5 cursor-pointer hover:bg-slate-100 transition-colors flex items-center justify-between">
-                  <h3 className="text-lg font-bold text-slate-900 pr-4">{faq.question}</h3>
-                  <svg className="w-5 h-5 text-amber-500 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <p className="px-6 pb-5 text-gray-600 leading-relaxed">{faq.answer}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Other Services in this City */}
+      {/* ── Our finished jobs nearest to this town ── */}
       <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">
-            Other Services in {city.name}
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-8" />
-          <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-            {services.filter(s => s.slug !== service.slug).map((otherService) => (
-              <Link key={otherService.slug} href={`/services/${otherService.slug}/${city.slug}`}
-                className="group p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all text-center">
-                <span className="text-3xl">{otherService.icon}</span>
-                <h3 className="font-bold text-slate-900 group-hover:text-amber-500 transition-colors mt-3">{otherService.name}</h3>
-                <p className="text-sm text-gray-500 mt-1">in {city.name}, MA</p>
-              </Link>
-            ))}
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Our work near {city.name}</h2>
+            <p className="text-lg text-gray-700 mb-8 max-w-3xl">{local.jobsIntro}</p>
+            <div className="grid gap-6 md:grid-cols-3">
+              {local.jobs.map(({ project, miles, direction }) => {
+                const card = (
+                  <>
+                    <div className="relative aspect-[4/3] bg-slate-200">
+                      <Image src={project.image} alt={`${project.title} in ${project.location}`} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
+                    </div>
+                    <div className="p-5">
+                      <p className="text-sm font-semibold text-amber-700">
+                        {project.location} · {miles <= 1 ? `in ${city.name}` : `${miles} mi ${direction}`}
+                      </p>
+                      <h3 className="mt-1 font-bold text-slate-900">{project.title}</h3>
+                    </div>
+                  </>
+                );
+                return project.slug ? (
+                  <Link key={project.id} href={`/projects/${project.slug}`} className="block overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-xl transition-shadow">
+                    {card}
+                  </Link>
+                ) : (
+                  <div key={project.id} className="overflow-hidden rounded-2xl bg-white shadow-md">
+                    {card}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Nearby Cities */}
+      {/* ── What the job includes: a summary. The full process, challenges and
+          answers live once on the service page, not repeated on 109 towns. ── */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">
-            {service.name} Near {city.name}
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-8" />
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-4xl mx-auto">
-            {nearbyCities.map((nearbyCity) => (
-              <Link key={nearbyCity.slug} href={`/services/${service.slug}/${nearbyCity.slug}`}
-                className="group p-4 bg-slate-50 rounded-xl border border-slate-200 hover:border-amber-400 hover:shadow-md transition-all text-center">
-                <svg className="w-6 h-6 text-amber-500 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                </svg>
-                <h3 className="font-bold text-sm text-slate-900 group-hover:text-amber-500 transition-colors">{nearbyCity.name}</h3>
-                <p className="text-xs text-gray-500">{nearbyCity.distance} mi</p>
-              </Link>
-            ))}
+          <div className="max-w-4xl mx-auto">
+            <p className="text-lg text-gray-800">
+              <span className="font-bold text-slate-900">Typical cost: </span>
+              {service.costRange}.
+            </p>
+            <Link href={`/services/${service.slug}`} className="mt-6 inline-flex font-semibold text-amber-700 hover:underline">
+              What is included, timeline and warranty →
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Google Maps */}
-      <section className="py-16 bg-slate-50">
+      {/* One real review and the rating, not a three-card block repeated on 981 pages. */}
+      <section className="py-12 bg-slate-900 text-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">
-            Service Area: {city.name}, MA
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-8" />
-          {/* Rendered only when a real key is configured. This used to ship a
-              public sample key that is not ours — no quota, no referrer
-              restriction, and liable to stop working without warning. */}
-          {process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY && (
-            <div className="rounded-2xl overflow-hidden shadow-xl border border-slate-200 max-w-4xl mx-auto">
-              <iframe
-                src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY}&q=${encodeURIComponent(city.name + ', MA')}&zoom=13`}
-                width="100%"
-                height="400"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                title={`${city.name} MA service area map`}
-              />
-            </div>
-          )}
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-amber-400 text-lg" aria-hidden="true">★★★★★</p>
+            <p className="mt-1 font-semibold">
+              {AVERAGE_RATING} from {GOOGLE_REVIEW_COUNT} Google reviews
+            </p>
+            {review && (
+              <blockquote className="mt-5 text-lg text-white/90 leading-relaxed">
+                “{review.text}”
+                <footer className="mt-2 text-sm text-white/60">{review.author}{review.work ? `, ${review.work}` : ''}</footer>
+              </blockquote>
+            )}
+            <Link href="/reviews" className="mt-5 inline-block font-semibold text-amber-400 hover:underline">Read all our reviews</Link>
+          </div>
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ── Internal links: other services here, this service next door ── */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto grid gap-12 md:grid-cols-2">
+            <div>
+              <h2 className="text-2xl font-bold text-slate-900 mb-5">More of our services in {city.name}</h2>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {otherServices.map((s) => (
+                  <li key={s.slug}>
+                    <Link href={`/services/${s.slug}/${city.slug}`} className="block rounded-lg bg-white px-4 py-3 font-medium text-slate-800 border border-slate-200 hover:border-amber-400">
+                      {s.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold text-slate-900 mb-3">{service.name} next door</h2>
+              <p className="text-gray-700 mb-5">{local.neighbourSummary}</p>
+              <ul className="space-y-2">
+                {local.neighbours.map((n) => (
+                  <li key={n.slug}>
+                    <Link href={`/services/${service.slug}/${n.slug}`} className="flex items-center justify-between rounded-lg bg-white px-4 py-3 border border-slate-200 hover:border-amber-400">
+                      <span className="font-medium text-slate-800">{service.name} in {n.name}</span>
+                      <span className="text-sm text-gray-500">{n.miles} mi</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <Link href={`/cities/${city.slug}`} className="mt-5 inline-block text-sm font-semibold text-amber-700 hover:underline">
+                All services in {city.name}
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <CTASection
-        title={`Get Your FREE ${service.name} Estimate in ${city.name}`}
-        subtitle={`Ready for professional ${service.name.toLowerCase()}? We're just ${city.distance} miles away. Call now or request a free quote — no obligation.`}
+        title={`Free ${service.name.toLowerCase()} estimate in ${city.name}`}
+        subtitle={`Call ${PHONE} or request a quote.`}
         cityName={city.name}
+        compact
       />
     </>
   );

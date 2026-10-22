@@ -127,7 +127,7 @@ export default function Footer() {
       <div className="border-t border-white/10 py-8">
         <div className="max-w-4xl mx-auto px-8 text-center">
           <h3 className="text-base font-bold text-amber-400 mb-4">
-            Service Areas – 75+ Cities Across Massachusetts
+            Service Areas: 109 Massachusetts Towns
           </h3>
           <p className="text-gray-400 text-xs leading-loose">
             {footerCities.map((city, index) => (

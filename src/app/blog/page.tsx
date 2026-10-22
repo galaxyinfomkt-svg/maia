@@ -8,7 +8,7 @@ import { SITE_NAME, IMAGES } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: `Home Improvement Blog | Expert Tips & Cost Guides 2026`,
-  description: `Expert home improvement guides from Massachusetts' #1 rated contractor. Siding costs, window savings, door ROI, energy tips. Updated for 2026. FREE knowledge from licensed professionals.`,
+  description: `Siding and exterior guides from a Massachusetts siding contractor. Siding costs, window savings, door ROI, energy tips. Updated for 2026. FREE knowledge from licensed professionals.`,
   keywords: [
     'home improvement tips Massachusetts',
     'siding guide New England',
@@ -117,9 +117,9 @@ export default function BlogPage() {
               <h3 className="font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Door Installation</h3>
               <p className="text-sm text-gray-500 mt-2">Entry, patio & storm</p>
             </Link>
-            <Link href="/services/general-contractor" className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all text-center group">
-              <h3 className="font-bold text-slate-900 group-hover:text-amber-600 transition-colors">General Contractor</h3>
-              <p className="text-sm text-gray-500 mt-2">Full renovations</p>
+            <Link href="/services/siding-replacement" className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all text-center group">
+              <h3 className="font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Siding Replacement</h3>
+              <p className="text-sm text-gray-500 mt-2">Whole-house tear-off</p>
             </Link>
           </div>
           <div className="text-center mt-8 space-x-4">

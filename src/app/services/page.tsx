@@ -8,8 +8,8 @@ import { cities } from '@/lib/cities';
 import { SITE_NAME, IMAGES, SITE_URL, HIC_NUMBER, PHONE } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: `Expert Home Exterior Services MA | #1 Rated Contractor`,
-  description: `Professional siding, windows, doors & general contracting in Massachusetts. #1 rated with 19 5-star reviews. Licensed HIC #${HIC_NUMBER}. FREE estimates. Call ${PHONE}`,
+  title: `Siding, Trim, Windows & Doors in Massachusetts | Maia Construction`,
+  description: `Vinyl, fiber cement, cedar and clapboard siding, siding replacement and repair, exterior trim, windows and doors. 5.0 from 21 Google reviews. Licensed HIC #${HIC_NUMBER}. FREE estimates. Call ${PHONE}`,
   keywords: [
     'siding installation Massachusetts',
     'window replacement MA',
@@ -178,7 +178,7 @@ export default function ServicesPage() {
               in <Link href="/services/siding" className="text-amber-600 hover:underline font-semibold">siding installation</Link> (vinyl and James Hardie fiber cement),{' '}
               <Link href="/services/windows" className="text-amber-600 hover:underline font-semibold">ENERGY STAR window replacement</Link>,{' '}
               <Link href="/services/doors" className="text-amber-600 hover:underline font-semibold">premium door installation</Link>, and{' '}
-              <Link href="/services/general-contractor" className="text-amber-600 hover:underline font-semibold">general contracting</Link>.
+              <Link href="/services/exterior-trim" className="text-amber-600 hover:underline font-semibold">exterior trim</Link>.
               Every project includes free estimates, transparent pricing, and 25-50 year manufacturer warranties.
             </p>
           </div>

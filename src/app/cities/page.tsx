@@ -8,8 +8,8 @@ import { JsonLd } from '@/components/seo';
 import { SITE_NAME } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Serving 100+ Massachusetts Cities (2026) | 5.0★ | Free Estimates',
-  description: `Find us near you! Serving 100+ MA cities — Boston, Worcester, Framingham, Natick, Marlborough & more. ★5.0 rated, same-day estimates across 5 counties. Call for FREE quote!`,
+  title: 'Service Areas: 109 Massachusetts Towns | Maia Construction',
+  description: `Find us near you! Serving 109 Massachusetts towns — Boston, Worcester, Framingham, Natick, Marlborough & more. ★5.0 rated, same-day estimates across 5 counties. Call for FREE quote!`,
   keywords: [
     'contractor near me Massachusetts',
     'siding installation Boston',
@@ -101,7 +101,7 @@ export default function CitiesPage() {
                     <div className="relative h-48 rounded-xl overflow-hidden mb-4">
                       <Image
                         src={service.image}
-                        alt={`${service.name} services available in 100+ Massachusetts cities - professional installation`}
+                        alt={`${service.name} services available in 109 Massachusetts towns - professional installation`}
                         fill
                         className="object-cover"
                       />
