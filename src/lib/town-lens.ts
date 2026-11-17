@@ -30,6 +30,9 @@ function fuelsRanked(e: TownExtra) {
     .sort((a, b) => b[1] - a[1])
     .map(([k, v]) => ({ key: k, label: FUEL_LABEL[k] ?? k, homes: v, pct: pc(v, e.census.heated) }));
 }
+/** Climate averages read better as whole numbers ("135 nights", not "134.9"). */
+const rnd = (c: TownExtra['climate']) =>
+  c ? { ...c, frostNights: Math.round(c.frostNights), iceDays: Math.round(c.iceDays), zeroNights: Math.round(c.zeroNights), precipIn: Math.round(c.precipIn) } : null;
 const shortUtility = (s: string | null) => (s ? s.replace(/\s*\(.*?\)\s*/g, '').trim() : '');
 
 export interface Lens {
@@ -51,7 +54,7 @@ function lhdLine(e: TownExtra, town: string, what: string): string | null {
   const d = e.mhc?.lhd ?? [];
   if (!d.length) return null;
   const names = d.length > 3 ? `${list(d.slice(0, 3))} and ${d.length - 3} more` : list(d);
-  return `${town} has ${d.length === 1 ? 'a local historic district' : `${d.length} local historic district areas`} on the state inventory (${names}). Inside them, changing ${what} that can be seen from a public way can need a certificate from the district commission under MGL c.40C before work starts.`;
+  return `${town} has ${d.length === 1 ? 'a local historic district' : `${d.length} local historic district areas`} on the state inventory (${names}). Inside ${d.length === 1 ? 'it' : 'them'}, changing ${what} that can be seen from a public way can need a certificate from the district commission under MGL c.40C before work starts.`;
 }
 
 function utilityLine(e: TownExtra, town: string, angle: 'windows' | 'doors'): string | null {
@@ -86,7 +89,7 @@ export function serviceLens(service: Service, city: City): Lens | null {
   const T = city.name;
   const h = t.housing;
   const u = e.census.units;
-  const cl = e.climate;
+  const cl = rnd(e.climate);
   const cmr = e.cmr;
   const m = e.mhc;
   const fuels = fuelsRanked(e);
@@ -178,43 +181,67 @@ export function serviceLens(service: Service, city: City): Lens | null {
   }
 }
 
-/* ── City dossier: the town's own record, in groups ── */
+/* ── City dossier: the town's own record, as label / value rows ── */
+type Row = [string, string];
 export interface Dossier {
-  homes: string[];
-  heritage: string[];
-  weather: string[];
-  energy: string[];
+  homes: Row[];
+  heritage: Row[];
+  weather: Row[];
+  energy: Row[];
 }
 
 export function townDossier(city: City): Dossier | null {
   const e = TOWN_EXTRA[city.slug];
   const t = TOWN_DATA[city.slug];
   if (!e || !t) return null;
-  const T = city.name;
   const u = e.census.units;
   const fuels = fuelsRanked(e).slice(0, 4);
   const m = e.mhc;
-  const cl = e.climate;
-  const homes = [
-    `${n(u.total)} homes: ${n(u.detached)} detached, ${n(u.attached)} attached, ${n(u.two)} in two-unit and ${n(u.threeFour)} in three- or four-unit buildings, ${n(u.fivePlus)} in buildings of five or more${u.mobile ? `, ${n(u.mobile)} mobile homes` : ''}.`,
-    `Typical year built ${t.housing.medianYear}; ${t.housing.owner}% owner-occupied${e.census.medianValue ? `; median owner-occupied value ${usd(e.census.medianValue)}` : ''}.`,
-    fuels.length ? `Heating: ${list(fuels.map((f) => `${f.label} ${f.pct}%`))} of ${n(e.census.heated)} occupied homes.` : '',
-  ].filter(Boolean);
-  const heritage = m
-    ? [
-        `${n(m.inventoried)} buildings and places on the Massachusetts Historical Commission inventory${m.oldest ? `, the oldest dated ${m.oldest}` : ''}; ${n(m.before1800)} dated before 1800, ${n(m.c19)} in the 1800s, ${n(m.early20)} from 1900–1949.`,
-        m.styles.length ? `Styles recorded most: ${list(m.styles.slice(0, 5).map(([s, c]) => `${s} ${c}`))}.` : '',
-        m.lhd.length ? `Local historic district areas (MGL c.40C): ${list(m.lhd.slice(0, 6))}${m.lhd.length > 6 ? ` and ${m.lhd.length - 6} more` : ''}.` : `No local historic district (MGL c.40C) appears for ${T} in the state inventory.`,
-        m.nr.length ? `National Register districts: ${list(m.nr.slice(0, 6))}${m.nr.length > 6 ? ` and ${m.nr.length - 6} more` : ''}${m.individualNR ? `; ${m.individualNR} individually listed properties` : ''}.` : m.individualNR ? `${m.individualNR} individually listed National Register properties.` : '',
-      ].filter(Boolean)
+  const cl = rnd(e.climate);
+  const more = (xs: string[], k: number) => (xs.length > k ? `${xs.slice(0, k).join('; ')}; +${xs.length - k}` : xs.join('; '));
+  const homes: Row[] = [
+    ['Homes (Census)', n(u.total)],
+    ['Detached / attached', `${n(u.detached)} / ${n(u.attached)}`],
+    ['2-unit / 3–4 unit / 5+ unit', `${n(u.two)} / ${n(u.threeFour)} / ${n(u.fivePlus)}`],
+    ['Typical year built', String(t.housing.medianYear)],
+    ['Owner-occupied', `${t.housing.owner}%`],
+    ...(e.census.medianValue ? ([['Median value (owner-occupied)', usd(e.census.medianValue)]] as Row[]) : []),
+    ...(fuels.length ? ([['Main heating fuels', fuels.map((f) => `${f.label} ${f.pct}%`).join(' · ')]] as Row[]) : []),
+  ];
+  const heritage: Row[] = m
+    ? ([
+        ['Inventoried (MHC)', n(m.inventoried)],
+        m.oldest ? ['Oldest dated entry', String(m.oldest)] : null,
+        ['Dated pre-1800 / 1800s / 1900–49', `${n(m.before1800)} / ${n(m.c19)} / ${n(m.early20)}`],
+        m.styles.length ? ['Most-recorded styles', m.styles.slice(0, 4).map(([s2, c]) => `${s2} ${c}`).join(' · ')] : null,
+        ['Local historic districts (c.40C)', m.lhd.length ? more(m.lhd, 4) : 'none listed'],
+        m.nr.length ? ['National Register districts', more(m.nr, 4)] : null,
+        m.individualNR ? ['Individually NR-listed', String(m.individualNR)] : null,
+      ].filter(Boolean) as Row[])
     : [];
-  const weather = [
-    cl ? `Town-centre averages for 1991–2020: ${cl.frostNights} nights at or below 32 °F (range ${cl.frostNightsMin}–${cl.frostNightsMax}), ${cl.iceDays} days that stay below freezing, ${cl.zeroNights} nights at or below 0 °F, ${cl.precipIn} in of precipitation.` : '',
-    e.cmr ? `Building-code loads (780 CMR Table 301.2(2)): ground snow ${e.cmr.pg} psf, minimum flat-roof snow ${e.cmr.pf} psf, ultimate design wind ${e.cmr.vult} mph.` : '',
-  ].filter(Boolean);
-  const energy = [
-    e.electric ? `Electricity: ${shortUtility(e.electric)}${e.mlp ? ' (municipal light plant)' : ''}. Natural gas: ${e.gas ? shortUtility(e.gas) : 'no gas utility listed by MassGIS'}.` : '',
-    codeLine(e, T) ?? '',
-  ].filter(Boolean);
+  const weather: Row[] = [
+    ...(cl
+      ? ([
+          ['Nights ≤ 32 °F a year', `${cl.frostNights} (${cl.frostNightsMin}–${cl.frostNightsMax})`],
+          ['Days below freezing', String(cl.iceDays)],
+          ['Nights ≤ 0 °F', String(cl.zeroNights)],
+          ['Precipitation', `${cl.precipIn} in`],
+        ] as Row[])
+      : []),
+    ...(e.cmr
+      ? ([
+          ['Ground / flat-roof snow load', `${e.cmr.pg} / ${e.cmr.pf} psf`],
+          ['Design wind speed (Vult)', `${e.cmr.vult} mph`],
+        ] as Row[])
+      : []),
+  ];
+  const c = e.energy;
+  const energy: Row[] = [
+    ...(e.electric ? ([['Electric utility', `${shortUtility(e.electric)}${e.mlp ? ' (municipal)' : ''}`]] as Row[]) : []),
+    ['Natural gas', e.gas ? shortUtility(e.gas) : 'none listed'],
+    ...(c
+      ? ([['Energy code', c.specialized ? `Specialized since ${fdate(c.specialized)}` : c.stretch ? `Stretch since ${fdate(c.stretch)}` : 'Base code']] as Row[])
+      : []),
+  ];
   return { homes, heritage, weather, energy };
 }

@@ -212,7 +212,7 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
       </section>
 
       {/* ── Internal links: other services here, this service next door ── */}
-      <section className="py-16 bg-slate-50">
+      <nav aria-label={`More pages for ${city.name}`} className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto grid gap-12 md:grid-cols-2">
             <div>
@@ -245,7 +245,7 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
             </div>
           </div>
         </div>
-      </section>
+      </nav>
 
       <CTASection
         title={`Free ${service.name.toLowerCase()} estimate in ${city.name}`}

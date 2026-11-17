@@ -124,16 +124,19 @@ export default async function CityPage({ params }: CityPageProps) {
                   ['On the historic record', dossier.heritage],
                   ['Weather and code loads', dossier.weather],
                   ['Utilities and energy code', dossier.energy],
-                ] as [string, string[]][])
+                ] as [string, [string, string][]][])
                   .filter(([, rows]) => rows.length > 0)
                   .map(([label, rows]) => (
                     <div key={label}>
                       <h3 className="font-bold text-slate-900 mb-2">{label}</h3>
-                      <ul className="space-y-2 text-gray-700 leading-relaxed">
-                        {rows.map((r) => (
-                          <li key={r}>{r}</li>
+                      <dl className="divide-y divide-slate-200 text-sm">
+                        {rows.map(([k, v]) => (
+                          <div key={k} className="flex justify-between gap-4 py-1.5">
+                            <dt className="text-gray-600">{k}</dt>
+                            <dd className="text-right font-semibold text-slate-900">{v}</dd>
+                          </div>
                         ))}
-                      </ul>
+                      </dl>
                     </div>
                   ))}
               </div>
@@ -167,7 +170,7 @@ export default async function CityPage({ params }: CityPageProps) {
       </section>
 
       {/* ── The nine service pages for this town ── */}
-      <section className="py-16 bg-slate-50">
+      <nav aria-label={`Our services in ${city.name}`} className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 mb-8">Our services in {city.name}</h2>
@@ -180,7 +183,7 @@ export default async function CityPage({ params }: CityPageProps) {
             </div>
           </div>
         </div>
-      </section>
+      </nav>
 
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -233,7 +236,7 @@ export default async function CityPage({ params }: CityPageProps) {
               )}
               {profile && <p className="mt-3 text-xs text-gray-500">Checked {profile.checked}.</p>}
             </div>
-            <div>
+            <nav aria-label={`Towns next to ${city.name}`}>
               <h2 className="text-2xl font-bold text-slate-900 mb-6">Towns next to {city.name}</h2>
               <ul className="space-y-2">
                 {local.neighbours.map((n) => (
@@ -246,7 +249,7 @@ export default async function CityPage({ params }: CityPageProps) {
                 ))}
               </ul>
               <Link href="/cities" className="mt-5 inline-block text-sm font-semibold text-amber-700 hover:underline">All 109 towns we serve</Link>
-            </div>
+            </nav>
           </div>
         </div>
       </section>
