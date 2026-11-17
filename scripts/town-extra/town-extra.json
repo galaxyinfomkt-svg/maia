@@ -1,0 +1,8984 @@
+{
+ "charlton": {
+  "name": "Charlton",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 5007.0,
+   "fuel": {
+    "gas": 174.0,
+    "bottled": 555.0,
+    "electric": 871.0,
+    "oil": 2926.0,
+    "coal": 0.0,
+    "wood": 226.0,
+    "solar": 0.0,
+    "other": 194.0,
+    "none": 61.0
+   },
+   "medianValue": 427500.0,
+   "units": {
+    "detached": 4286.0,
+    "attached": 96.0,
+    "two": 154.0,
+    "threeFour": 299.0,
+    "fivePlus": 351.0,
+    "mobile": 11.0,
+    "total": 5197.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": null,
+  "mhc": {
+   "inventoried": 171,
+   "datedBefore1800": 35,
+   "dated1800to1899": 59,
+   "dated1900to1949": 49,
+   "oldestYear": 1726,
+   "styles": [
+    [
+     "Federal",
+     25
+    ],
+    [
+     "Colonial Revival",
+     17
+    ],
+    [
+     "Greek Revival",
+     14
+    ],
+    [
+     "Victorian Eclectic",
+     10
+    ],
+    [
+     "Colonial",
+     9
+    ],
+    [
+     "Craftsman",
+     7
+    ]
+   ],
+   "individualNR": 2,
+   "lhdDistricts": [
+    "Northside Historic District Central",
+    "Northside Historic District East",
+    "Northside Historic District South"
+   ],
+   "nrDistricts": [
+    "Charlton Center Historic District",
+    "Northside Village Historic District"
+   ],
+   "areas": 7
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 134.9,
+   "iceDays": 37.5,
+   "precipIn": 49.1,
+   "zeroNights": 4.8,
+   "frostNightsMin": 113,
+   "frostNightsMax": 152
+  }
+ },
+ "oxford": {
+  "name": "Oxford",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 4977.0,
+   "fuel": {
+    "gas": 200.0,
+    "bottled": 439.0,
+    "electric": 1039.0,
+    "oil": 2862.0,
+    "coal": 0.0,
+    "wood": 137.0,
+    "solar": 80.0,
+    "other": 196.0,
+    "none": 24.0
+   },
+   "medianValue": 374900.0,
+   "units": {
+    "detached": 3702.0,
+    "attached": 241.0,
+    "two": 355.0,
+    "threeFour": 244.0,
+    "fivePlus": 585.0,
+    "mobile": 33.0,
+    "total": 5160.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 258,
+   "datedBefore1800": 22,
+   "dated1800to1899": 193,
+   "dated1900to1949": 39,
+   "oldestYear": 1713,
+   "styles": [
+    [
+     "Greek Revival",
+     73
+    ],
+    [
+     "Federal",
+     32
+    ],
+    [
+     "Victorian Eclectic",
+     18
+    ],
+    [
+     "Italianate",
+     18
+    ],
+    [
+     "Colonial Revival",
+     13
+    ],
+    [
+     "Bungalow",
+     6
+    ]
+   ],
+   "individualNR": 4,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Oxford Main Street Historic District"
+   ],
+   "areas": 14
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 143.7,
+   "iceDays": 32.0,
+   "precipIn": 49.0,
+   "zeroNights": 6.2,
+   "frostNightsMin": 117,
+   "frostNightsMax": 163
+  }
+ },
+ "dudley": {
+  "name": "Dudley",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 4375.0,
+   "fuel": {
+    "gas": 786.0,
+    "bottled": 180.0,
+    "electric": 860.0,
+    "oil": 2297.0,
+    "coal": 0.0,
+    "wood": 132.0,
+    "solar": 44.0,
+    "other": 76.0,
+    "none": 0.0
+   },
+   "medianValue": 392600.0,
+   "units": {
+    "detached": 3128.0,
+    "attached": 119.0,
+    "two": 369.0,
+    "threeFour": 574.0,
+    "fivePlus": 284.0,
+    "mobile": 0,
+    "total": 4474.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 472,
+   "datedBefore1800": 17,
+   "dated1800to1899": 296,
+   "dated1900to1949": 115,
+   "oldestYear": 1726,
+   "styles": [
+    [
+     "Greek Revival",
+     71
+    ],
+    [
+     "Victorian Eclectic",
+     64
+    ],
+    [
+     "Federal",
+     32
+    ],
+    [
+     "Colonial Revival",
+     29
+    ],
+    [
+     "Italianate",
+     12
+    ],
+    [
+     "Cape",
+     11
+    ]
+   ],
+   "individualNR": 3,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Black Tavern",
+    "Dudley Hill Historic District",
+    "Stevens Linen Works Historic District"
+   ],
+   "areas": 11
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 141.3,
+   "iceDays": 32.0,
+   "precipIn": 48.3,
+   "zeroNights": 5.5,
+   "frostNightsMin": 118,
+   "frostNightsMax": 156
+  }
+ },
+ "webster": {
+  "name": "Webster",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 7677.0,
+   "fuel": {
+    "gas": 2197.0,
+    "bottled": 279.0,
+    "electric": 2163.0,
+    "oil": 2758.0,
+    "coal": 0.0,
+    "wood": 122.0,
+    "solar": 0.0,
+    "other": 158.0,
+    "none": 0.0
+   },
+   "medianValue": 361500.0,
+   "units": {
+    "detached": 4329.0,
+    "attached": 265.0,
+    "two": 1068.0,
+    "threeFour": 1461.0,
+    "fivePlus": 1087.0,
+    "mobile": 19.0,
+    "total": 8229.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 370,
+   "datedBefore1800": 6,
+   "dated1800to1899": 237,
+   "dated1900to1949": 101,
+   "oldestYear": 1718,
+   "styles": [
+    [
+     "Greek Revival",
+     90
+    ],
+    [
+     "Colonial Revival",
+     37
+    ],
+    [
+     "Italianate",
+     22
+    ],
+    [
+     "Victorian Eclectic",
+     22
+    ],
+    [
+     "Federal",
+     20
+    ],
+    [
+     "Queen Anne",
+     20
+    ]
+   ],
+   "individualNR": 6,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Main Street Historic District",
+    "Webster Municipal Building",
+    "Webster Municipal Buildings Historic District"
+   ],
+   "areas": 21
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 143.2,
+   "iceDays": 30.3,
+   "precipIn": 48.1,
+   "zeroNights": 6.0,
+   "frostNightsMin": 119,
+   "frostNightsMax": 160
+  }
+ },
+ "auburn": {
+  "name": "Auburn",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 6829.0,
+   "fuel": {
+    "gas": 1124.0,
+    "bottled": 416.0,
+    "electric": 1160.0,
+    "oil": 3805.0,
+    "coal": 27.0,
+    "wood": 62.0,
+    "solar": 14.0,
+    "other": 148.0,
+    "none": 73.0
+   },
+   "medianValue": 400000.0,
+   "units": {
+    "detached": 5149.0,
+    "attached": 300.0,
+    "two": 238.0,
+    "threeFour": 409.0,
+    "fivePlus": 622.0,
+    "mobile": 311.0,
+    "total": 7029.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 207,
+   "datedBefore1800": 25,
+   "dated1800to1899": 156,
+   "dated1900to1949": 13,
+   "oldestYear": 1729,
+   "styles": [
+    [
+     "Victorian Eclectic",
+     40
+    ],
+    [
+     "Greek Revival",
+     19
+    ],
+    [
+     "Federal",
+     17
+    ],
+    [
+     "Altered beyond recognition",
+     9
+    ],
+    [
+     "Queen Anne",
+     8
+    ],
+    [
+     "Colonial Revival",
+     7
+    ]
+   ],
+   "individualNR": 3,
+   "lhdDistricts": [],
+   "nrDistricts": [],
+   "areas": 6
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 139.8,
+   "iceDays": 33.1,
+   "precipIn": 48.6,
+   "zeroNights": 5.5,
+   "frostNightsMin": 114,
+   "frostNightsMax": 164
+  }
+ },
+ "leicester": {
+  "name": "Leicester",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 4058.0,
+   "fuel": {
+    "gas": 259.0,
+    "bottled": 390.0,
+    "electric": 703.0,
+    "oil": 2377.0,
+    "coal": 0.0,
+    "wood": 203.0,
+    "solar": 0.0,
+    "other": 126.0,
+    "none": 0.0
+   },
+   "medianValue": 413100.0,
+   "units": {
+    "detached": 3632.0,
+    "attached": 147.0,
+    "two": 133.0,
+    "threeFour": 143.0,
+    "fivePlus": 241.0,
+    "mobile": 0,
+    "total": 4296.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "Eversource Energy (NSTAR Gas), National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 285,
+   "datedBefore1800": 12,
+   "dated1800to1899": 162,
+   "dated1900to1949": 55,
+   "oldestYear": 1719,
+   "styles": [
+    [
+     "Greek Revival",
+     83
+    ],
+    [
+     "Federal",
+     30
+    ],
+    [
+     "Colonial Revival",
+     23
+    ],
+    [
+     "Italianate",
+     16
+    ],
+    [
+     "Craftsman",
+     14
+    ],
+    [
+     "Queen Anne",
+     11
+    ]
+   ],
+   "individualNR": 3,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Washburn Square - Leicester Common"
+   ],
+   "areas": 4
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 124.4,
+   "iceDays": 43.8,
+   "precipIn": 49.4,
+   "zeroNights": 3.6,
+   "frostNightsMin": 100,
+   "frostNightsMax": 143
+  }
+ },
+ "spencer": {
+  "name": "Spencer",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 5201.0,
+   "fuel": {
+    "gas": 976.0,
+    "bottled": 355.0,
+    "electric": 1486.0,
+    "oil": 2110.0,
+    "coal": 0.0,
+    "wood": 113.0,
+    "solar": 12.0,
+    "other": 42.0,
+    "none": 107.0
+   },
+   "medianValue": 382000.0,
+   "units": {
+    "detached": 3345.0,
+    "attached": 111.0,
+    "two": 792.0,
+    "threeFour": 640.0,
+    "fivePlus": 798.0,
+    "mobile": 0,
+    "total": 5695.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 386,
+   "datedBefore1800": 20,
+   "dated1800to1899": 291,
+   "dated1900to1949": 42,
+   "oldestYear": 1742,
+   "styles": [
+    [
+     "Italianate",
+     78
+    ],
+    [
+     "Greek Revival",
+     67
+    ],
+    [
+     "Victorian Eclectic",
+     52
+    ],
+    [
+     "Queen Anne",
+     37
+    ],
+    [
+     "Second Empire",
+     17
+    ],
+    [
+     "Colonial Revival",
+     13
+    ]
+   ],
+   "individualNR": 7,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "East Main Street - Cherry Street Historic District",
+    "Spencer Town Center Historic District"
+   ],
+   "areas": 19
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 140.6,
+   "iceDays": 38.3,
+   "precipIn": 48.1,
+   "zeroNights": 5.9,
+   "frostNightsMin": 119,
+   "frostNightsMax": 160
+  }
+ },
+ "millbury": {
+  "name": "Millbury",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 5572.0,
+   "fuel": {
+    "gas": 1835.0,
+    "bottled": 342.0,
+    "electric": 929.0,
+    "oil": 2122.0,
+    "coal": 0.0,
+    "wood": 201.0,
+    "solar": 62.0,
+    "other": 81.0,
+    "none": 0.0
+   },
+   "medianValue": 450100.0,
+   "units": {
+    "detached": 3911.0,
+    "attached": 440.0,
+    "two": 601.0,
+    "threeFour": 416.0,
+    "fivePlus": 435.0,
+    "mobile": 16.0,
+    "total": 5819.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 484,
+   "datedBefore1800": 25,
+   "dated1800to1899": 191,
+   "dated1900to1949": 54,
+   "oldestYear": 1725,
+   "styles": [
+    [
+     "Greek Revival",
+     84
+    ],
+    [
+     "Federal",
+     50
+    ],
+    [
+     "Victorian Eclectic",
+     36
+    ],
+    [
+     "Colonial Revival",
+     31
+    ],
+    [
+     "Queen Anne",
+     20
+    ],
+    [
+     "Bungalow",
+     11
+    ]
+   ],
+   "individualNR": 3,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Blackstone Canal Historic District"
+   ],
+   "areas": 21
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 139.9,
+   "iceDays": 30.1,
+   "precipIn": 48.4,
+   "zeroNights": 5.4,
+   "frostNightsMin": 119,
+   "frostNightsMax": 162
+  }
+ },
+ "sutton": {
+  "name": "Sutton",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 3411.0,
+   "fuel": {
+    "gas": 370.0,
+    "bottled": 212.0,
+    "electric": 350.0,
+    "oil": 2230.0,
+    "coal": 0.0,
+    "wood": 202.0,
+    "solar": 0.0,
+    "other": 47.0,
+    "none": 0.0
+   },
+   "medianValue": 523100.0,
+   "units": {
+    "detached": 3017.0,
+    "attached": 253.0,
+    "two": 114.0,
+    "threeFour": 123.0,
+    "fivePlus": 93.0,
+    "mobile": 0,
+    "total": 3600.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 607,
+   "datedBefore1800": 67,
+   "dated1800to1899": 338,
+   "dated1900to1949": 98,
+   "oldestYear": 1719,
+   "styles": [
+    [
+     "Greek Revival",
+     72
+    ],
+    [
+     "Federal",
+     31
+    ],
+    [
+     "Victorian Eclectic",
+     27
+    ],
+    [
+     "Ranch",
+     22
+    ],
+    [
+     "Postwar Traditional",
+     20
+    ],
+    [
+     "Colonial Revival",
+     15
+    ]
+   ],
+   "individualNR": 1,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Blackstone Canal Historic District",
+    "Manchaug Village Historic District",
+    "Marble, Freegrace Farm Historic District",
+    "Sutton Center Historic District",
+    "West Sutton Historic District"
+   ],
+   "areas": 16
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 136.6,
+   "iceDays": 31.7,
+   "precipIn": 48.6,
+   "zeroNights": 4.9,
+   "frostNightsMin": 116,
+   "frostNightsMax": 157
+  }
+ },
+ "paxton": {
+  "name": "Paxton",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 1720.0,
+   "fuel": {
+    "gas": 72.0,
+    "bottled": 200.0,
+    "electric": 204.0,
+    "oil": 1173.0,
+    "coal": 15.0,
+    "wood": 27.0,
+    "solar": 0.0,
+    "other": 29.0,
+    "none": 0.0
+   },
+   "medianValue": 472300.0,
+   "units": {
+    "detached": 1560.0,
+    "attached": 50.0,
+    "two": 106.0,
+    "threeFour": 11.0,
+    "fivePlus": 26.0,
+    "mobile": 0,
+    "total": 1753.0
+   }
+  },
+  "electric": "Paxton Municipal Light Department",
+  "gas": null,
+  "mhc": {
+   "inventoried": 123,
+   "datedBefore1800": 36,
+   "dated1800to1899": 52,
+   "dated1900to1949": 11,
+   "oldestYear": 1720,
+   "styles": [
+    [
+     "Greek Revival",
+     32
+    ],
+    [
+     "Federal",
+     12
+    ],
+    [
+     "Colonial Revival",
+     6
+    ],
+    [
+     "Postwar Traditional",
+     6
+    ],
+    [
+     "Georgian",
+     4
+    ],
+    [
+     "Colonial",
+     2
+    ]
+   ],
+   "individualNR": 0,
+   "lhdDistricts": [
+    "Paxton Historic District"
+   ],
+   "nrDistricts": [
+    "Moore State Park Historic District"
+   ],
+   "areas": 4
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 125.4,
+   "iceDays": 48.2,
+   "precipIn": 50.4,
+   "zeroNights": 3.7,
+   "frostNightsMin": 102,
+   "frostNightsMax": 146
+  }
+ },
+ "worcester": {
+  "name": "Worcester",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 79501.0,
+   "fuel": {
+    "gas": 40718.0,
+    "bottled": 2884.0,
+    "electric": 22805.0,
+    "oil": 11115.0,
+    "coal": 59.0,
+    "wood": 450.0,
+    "solar": 213.0,
+    "other": 547.0,
+    "none": 710.0
+   },
+   "medianValue": 374400.0,
+   "units": {
+    "detached": 27107.0,
+    "attached": 4984.0,
+    "two": 7433.0,
+    "threeFour": 21346.0,
+    "fivePlus": 24573.0,
+    "mobile": 433.0,
+    "total": 85876.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 2808,
+   "datedBefore1800": 23,
+   "dated1800to1899": 1278,
+   "dated1900to1949": 1343,
+   "oldestYear": 1717,
+   "styles": [
+    [
+     "Colonial Revival",
+     472
+    ],
+    [
+     "Triple-decker",
+     437
+    ],
+    [
+     "Queen Anne",
+     368
+    ],
+    [
+     "Classical Revival",
+     211
+    ],
+    [
+     "Victorian Eclectic",
+     196
+    ],
+    [
+     "Second Empire",
+     133
+    ]
+   ],
+   "individualNR": 295,
+   "lhdDistricts": [
+    "Crown Hill Historic District",
+    "Elm Park Neighborhood Local Historic District",
+    "Elm Street Historic District",
+    "Lincoln Estate - Elm Park Historic District",
+    "Massachusetts Avenue Historic District",
+    "Montvale Historic District"
+   ],
+   "nrDistricts": [
+    "Beaver Street Historic District",
+    "Blackstone Canal Historic District",
+    "Boynton, The and Windsor, The",
+    "Castle Street Row",
+    "Clark University Historic District",
+    "Crystal Street Historic District",
+    "Dale and Ethan Allen Streets Historic District",
+    "Elm Street Historic District",
+    "Euclid Avenue - Montrose Street Historic District",
+    "Fay Street Historic District",
+    "Hammond Heights Historic District",
+    "Harding - Winter Street Manufacturing District"
+   ],
+   "areas": 157
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 137.7,
+   "iceDays": 33.3,
+   "precipIn": 48.2,
+   "zeroNights": 5.2,
+   "frostNightsMin": 115,
+   "frostNightsMax": 162
+  }
+ },
+ "douglas": {
+  "name": "Douglas",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 3320.0,
+   "fuel": {
+    "gas": 22.0,
+    "bottled": 588.0,
+    "electric": 302.0,
+    "oil": 1973.0,
+    "coal": 6.0,
+    "wood": 120.0,
+    "solar": 46.0,
+    "other": 243.0,
+    "none": 20.0
+   },
+   "medianValue": 470600.0,
+   "units": {
+    "detached": 2888.0,
+    "attached": 98.0,
+    "two": 102.0,
+    "threeFour": 151.0,
+    "fivePlus": 215.0,
+    "mobile": 23.0,
+    "total": 3497.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": null,
+  "mhc": {
+   "inventoried": 434,
+   "datedBefore1800": 28,
+   "dated1800to1899": 312,
+   "dated1900to1949": 80,
+   "oldestYear": 1740,
+   "styles": [
+    [
+     "Greek Revival",
+     97
+    ],
+    [
+     "Federal",
+     61
+    ],
+    [
+     "Victorian Eclectic",
+     56
+    ],
+    [
+     "Colonial Revival",
+     54
+    ],
+    [
+     "Colonial",
+     33
+    ],
+    [
+     "Italianate",
+     18
+    ]
+   ],
+   "individualNR": 1,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Hayward Mill Historic District",
+    "Old Douglas Center Historic District"
+   ],
+   "areas": 11
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 132.0,
+   "iceDays": 33.0,
+   "precipIn": 49.2,
+   "zeroNights": 3.6,
+   "frostNightsMin": 108,
+   "frostNightsMax": 150
+  }
+ },
+ "grafton": {
+  "name": "Grafton",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 7656.0,
+   "fuel": {
+    "gas": 3672.0,
+    "bottled": 160.0,
+    "electric": 1283.0,
+    "oil": 2303.0,
+    "coal": 0.0,
+    "wood": 192.0,
+    "solar": 6.0,
+    "other": 40.0,
+    "none": 0.0
+   },
+   "medianValue": 525300.0,
+   "units": {
+    "detached": 4962.0,
+    "attached": 1178.0,
+    "two": 457.0,
+    "threeFour": 299.0,
+    "fivePlus": 930.0,
+    "mobile": 0,
+    "total": 7826.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 1310,
+   "datedBefore1800": 38,
+   "dated1800to1899": 603,
+   "dated1900to1949": 378,
+   "oldestYear": 1664,
+   "styles": [
+    [
+     "Ranch",
+     185
+    ],
+    [
+     "Greek Revival",
+     161
+    ],
+    [
+     "Colonial Revival",
+     128
+    ],
+    [
+     "Queen Anne",
+     89
+    ],
+    [
+     "Federal",
+     77
+    ],
+    [
+     "Italianate",
+     52
+    ]
+   ],
+   "individualNR": 15,
+   "lhdDistricts": [
+    "Grafton Common Historic District"
+   ],
+   "nrDistricts": [
+    "Blackstone Canal Historic District",
+    "Farnumsville Historic District",
+    "Fisherville Historic District",
+    "Grafton Common Historic District"
+   ],
+   "areas": 95
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 136.1,
+   "iceDays": 30.0,
+   "precipIn": 48.7,
+   "zeroNights": 4.7,
+   "frostNightsMin": 114,
+   "frostNightsMax": 156
+  }
+ },
+ "holden": {
+  "name": "Holden",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 7158.0,
+   "fuel": {
+    "gas": 1355.0,
+    "bottled": 422.0,
+    "electric": 723.0,
+    "oil": 4342.0,
+    "coal": 0.0,
+    "wood": 216.0,
+    "solar": 0.0,
+    "other": 88.0,
+    "none": 12.0
+   },
+   "medianValue": 470700.0,
+   "units": {
+    "detached": 5863.0,
+    "attached": 294.0,
+    "two": 101.0,
+    "threeFour": 125.0,
+    "fivePlus": 793.0,
+    "mobile": 0,
+    "total": 7188.0
+   }
+  },
+  "electric": "Holden Municipal Light Department",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 379,
+   "datedBefore1800": 36,
+   "dated1800to1899": 199,
+   "dated1900to1949": 115,
+   "oldestYear": 1733,
+   "styles": [
+    [
+     "Greek Revival",
+     72
+    ],
+    [
+     "Victorian Eclectic",
+     54
+    ],
+    [
+     "Federal",
+     37
+    ],
+    [
+     "Colonial Revival",
+     37
+    ],
+    [
+     "Colonial",
+     30
+    ],
+    [
+     "Craftsman",
+     16
+    ]
+   ],
+   "individualNR": 7,
+   "lhdDistricts": [
+    "Boyden Road Historic District",
+    "Holden Center Historic District"
+   ],
+   "nrDistricts": [
+    "Eagleville Historic District",
+    "Holden Center Historic District"
+   ],
+   "areas": 10
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 131.2,
+   "iceDays": 42.0,
+   "precipIn": 49.8,
+   "zeroNights": 4.2,
+   "frostNightsMin": 111,
+   "frostNightsMax": 153
+  }
+ },
+ "northbridge": {
+  "name": "Northbridge",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 6710.0,
+   "fuel": {
+    "gas": 1944.0,
+    "bottled": 278.0,
+    "electric": 1063.0,
+    "oil": 3260.0,
+    "coal": 0.0,
+    "wood": 113.0,
+    "solar": 0.0,
+    "other": 52.0,
+    "none": 0.0
+   },
+   "medianValue": 448600.0,
+   "units": {
+    "detached": 4047.0,
+    "attached": 953.0,
+    "two": 706.0,
+    "threeFour": 507.0,
+    "fivePlus": 960.0,
+    "mobile": 0,
+    "total": 7173.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 452,
+   "datedBefore1800": 2,
+   "dated1800to1899": 204,
+   "dated1900to1949": 34,
+   "oldestYear": 1775,
+   "styles": [
+    [
+     "Greek Revival",
+     76
+    ],
+    [
+     "Queen Anne",
+     58
+    ],
+    [
+     "Colonial Revival",
+     12
+    ],
+    [
+     "Federal",
+     11
+    ],
+    [
+     "Italianate",
+     7
+    ],
+    [
+     "Stick Style",
+     7
+    ]
+   ],
+   "individualNR": 1,
+   "lhdDistricts": [
+    "Whitinsville - Downtown Crossroads Historic District"
+   ],
+   "nrDistricts": [
+    "Blackstone Canal Historic District",
+    "Linwood Historic District",
+    "Rockdale Common Housing District",
+    "Whitinsville Historic District"
+   ],
+   "areas": 16
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 136.9,
+   "iceDays": 28.7,
+   "precipIn": 48.6,
+   "zeroNights": 4.9,
+   "frostNightsMin": 119,
+   "frostNightsMax": 156
+  }
+ },
+ "rutland": {
+  "name": "Rutland",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 3185.0,
+   "fuel": {
+    "gas": 77.0,
+    "bottled": 408.0,
+    "electric": 298.0,
+    "oil": 2222.0,
+    "coal": 0.0,
+    "wood": 140.0,
+    "solar": 14.0,
+    "other": 26.0,
+    "none": 0.0
+   },
+   "medianValue": 462800.0,
+   "units": {
+    "detached": 2743.0,
+    "attached": 336.0,
+    "two": 88.0,
+    "threeFour": 57.0,
+    "fivePlus": 168.0,
+    "mobile": 0,
+    "total": 3392.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": null,
+  "mhc": {
+   "inventoried": 23,
+   "datedBefore1800": 4,
+   "dated1800to1899": 7,
+   "dated1900to1949": 9,
+   "oldestYear": 1717,
+   "styles": [
+    [
+     "Colonial Revival",
+     2
+    ],
+    [
+     "Federal",
+     2
+    ],
+    [
+     "Craftsman",
+     1
+    ],
+    [
+     "Bungalow",
+     1
+    ],
+    [
+     "Greek Revival",
+     1
+    ],
+    [
+     "Georgian",
+     1
+    ]
+   ],
+   "individualNR": 1,
+   "lhdDistricts": [],
+   "nrDistricts": [],
+   "areas": 3
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 143.4,
+   "iceDays": 44.7,
+   "precipIn": 49.1,
+   "zeroNights": 6.7,
+   "frostNightsMin": 125,
+   "frostNightsMax": 162
+  }
+ },
+ "shrewsbury": {
+  "name": "Shrewsbury",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 14708.0,
+   "fuel": {
+    "gas": 7147.0,
+    "bottled": 385.0,
+    "electric": 3459.0,
+    "oil": 3425.0,
+    "coal": 8.0,
+    "wood": 102.0,
+    "solar": 0.0,
+    "other": 79.0,
+    "none": 103.0
+   },
+   "medianValue": 592300.0,
+   "units": {
+    "detached": 10018.0,
+    "attached": 1213.0,
+    "two": 653.0,
+    "threeFour": 262.0,
+    "fivePlus": 3152.0,
+    "mobile": 86.0,
+    "total": 15393.0
+   }
+  },
+  "electric": "Shrewsbury Electric and Cable Operations",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 71,
+   "datedBefore1800": 13,
+   "dated1800to1899": 19,
+   "dated1900to1949": 35,
+   "oldestYear": 1720,
+   "styles": [
+    [
+     "Federal",
+     14
+    ],
+    [
+     "Bungalow",
+     7
+    ],
+    [
+     "Craftsman",
+     7
+    ],
+    [
+     "Colonial Revival",
+     6
+    ],
+    [
+     "Georgian",
+     2
+    ],
+    [
+     "Art Deco",
+     1
+    ]
+   ],
+   "individualNR": 4,
+   "lhdDistricts": [
+    "Shrewsbury Historic District"
+   ],
+   "nrDistricts": [
+    "Shrewsbury Historic District"
+   ],
+   "areas": 6
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 134.0,
+   "iceDays": 33.2,
+   "precipIn": 47.3,
+   "zeroNights": 4.6,
+   "frostNightsMin": 113,
+   "frostNightsMax": 154
+  }
+ },
+ "uxbridge": {
+  "name": "Uxbridge",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 5507.0,
+   "fuel": {
+    "gas": 1862.0,
+    "bottled": 304.0,
+    "electric": 639.0,
+    "oil": 2413.0,
+    "coal": 0.0,
+    "wood": 32.0,
+    "solar": 69.0,
+    "other": 188.0,
+    "none": 0.0
+   },
+   "medianValue": 441100.0,
+   "units": {
+    "detached": 3486.0,
+    "attached": 643.0,
+    "two": 457.0,
+    "threeFour": 533.0,
+    "fivePlus": 469.0,
+    "mobile": 0,
+    "total": 5588.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 322,
+   "datedBefore1800": 21,
+   "dated1800to1899": 229,
+   "dated1900to1949": 34,
+   "oldestYear": 1720,
+   "styles": [
+    [
+     "Federal",
+     48
+    ],
+    [
+     "Greek Revival",
+     47
+    ],
+    [
+     "Italianate",
+     19
+    ],
+    [
+     "Colonial Revival",
+     17
+    ],
+    [
+     "Victorian Eclectic",
+     12
+    ],
+    [
+     "Colonial",
+     10
+    ]
+   ],
+   "individualNR": 44,
+   "lhdDistricts": [
+    "Uxbridge Common and Center Historic District"
+   ],
+   "nrDistricts": [
+    "Blackstone Canal Historic District",
+    "Central Woolen Mills District",
+    "Rivulet Mill Complex",
+    "Rogerson's Village Historic District",
+    "Uxbridge Common District",
+    "Waucantuck Mill Complex",
+    "Wheelockville District"
+   ],
+   "areas": 17
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 136.0,
+   "iceDays": 24.3,
+   "precipIn": 49.7,
+   "zeroNights": 4.1,
+   "frostNightsMin": 118,
+   "frostNightsMax": 157
+  }
+ },
+ "upton": {
+  "name": "Upton",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 3003.0,
+   "fuel": {
+    "gas": 923.0,
+    "bottled": 85.0,
+    "electric": 287.0,
+    "oil": 1616.0,
+    "coal": 0.0,
+    "wood": 76.0,
+    "solar": 0.0,
+    "other": 16.0,
+    "none": 0.0
+   },
+   "medianValue": 576700.0,
+   "units": {
+    "detached": 2507.0,
+    "attached": 138.0,
+    "two": 142.0,
+    "threeFour": 114.0,
+    "fivePlus": 154.0,
+    "mobile": 0,
+    "total": 3055.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 401,
+   "datedBefore1800": 38,
+   "dated1800to1899": 255,
+   "dated1900to1949": 63,
+   "oldestYear": 1723,
+   "styles": [
+    [
+     "Greek Revival",
+     98
+    ],
+    [
+     "Federal",
+     28
+    ],
+    [
+     "Italianate",
+     25
+    ],
+    [
+     "Queen Anne",
+     25
+    ],
+    [
+     "Victorian Eclectic",
+     20
+    ],
+    [
+     "Postwar Traditional",
+     15
+    ]
+   ],
+   "individualNR": 7,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Upton Center Historic District",
+    "Upton State Forest - Civilian Conservation Corps"
+   ],
+   "areas": 9
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 135.5,
+   "iceDays": 27.4,
+   "precipIn": 49.2,
+   "zeroNights": 4.5,
+   "frostNightsMin": 118,
+   "frostNightsMax": 155
+  }
+ },
+ "west-boylston": {
+  "name": "West Boylston",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 2982.0,
+   "fuel": {
+    "gas": 1254.0,
+    "bottled": 192.0,
+    "electric": 401.0,
+    "oil": 1061.0,
+    "coal": 0.0,
+    "wood": 60.0,
+    "solar": 0.0,
+    "other": 14.0,
+    "none": 0.0
+   },
+   "medianValue": 440000.0,
+   "units": {
+    "detached": 2012.0,
+    "attached": 373.0,
+    "two": 134.0,
+    "threeFour": 121.0,
+    "fivePlus": 342.0,
+    "mobile": 0,
+    "total": 2982.0
+   }
+  },
+  "electric": "West Boylston Municipal Lighting Plant",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 216,
+   "datedBefore1800": 41,
+   "dated1800to1899": 120,
+   "dated1900to1949": 48,
+   "oldestYear": 1730,
+   "styles": [
+    [
+     "Greek Revival",
+     44
+    ],
+    [
+     "Victorian Eclectic",
+     19
+    ],
+    [
+     "Colonial Revival",
+     16
+    ],
+    [
+     "Federal",
+     14
+    ],
+    [
+     "Queen Anne",
+     9
+    ],
+    [
+     "Italianate",
+     8
+    ]
+   ],
+   "individualNR": 56,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Bigelow Tavern Historic District",
+    "Oakdale Village Historic District"
+   ],
+   "areas": 7
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 136.2,
+   "iceDays": 32.7,
+   "precipIn": 46.5,
+   "zeroNights": 5.1,
+   "frostNightsMin": 116,
+   "frostNightsMax": 159
+  }
+ },
+ "westborough": {
+  "name": "Westborough",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 7964.0,
+   "fuel": {
+    "gas": 3904.0,
+    "bottled": 215.0,
+    "electric": 2048.0,
+    "oil": 1601.0,
+    "coal": 0.0,
+    "wood": 97.0,
+    "solar": 0.0,
+    "other": 68.0,
+    "none": 31.0
+   },
+   "medianValue": 685300.0,
+   "units": {
+    "detached": 4200.0,
+    "attached": 591.0,
+    "two": 423.0,
+    "threeFour": 433.0,
+    "fivePlus": 2612.0,
+    "mobile": 83.0,
+    "total": 8342.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 721,
+   "datedBefore1800": 60,
+   "dated1800to1899": 496,
+   "dated1900to1949": 115,
+   "oldestYear": 1699,
+   "styles": [
+    [
+     "Italianate",
+     153
+    ],
+    [
+     "Greek Revival",
+     118
+    ],
+    [
+     "Federal",
+     63
+    ],
+    [
+     "Queen Anne",
+     51
+    ],
+    [
+     "Colonial Revival",
+     41
+    ],
+    [
+     "Second Empire",
+     40
+    ]
+   ],
+   "individualNR": 4,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Lyman School for Boys",
+    "Vintonville Historic District",
+    "West Main Street Historic District",
+    "Westborough State Hospital"
+   ],
+   "areas": 14
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 136.3,
+   "iceDays": 29.1,
+   "precipIn": 48.4,
+   "zeroNights": 4.6,
+   "frostNightsMin": 115,
+   "frostNightsMax": 156
+  }
+ },
+ "mendon": {
+  "name": "Mendon",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 2118.0,
+   "fuel": {
+    "gas": 104.0,
+    "bottled": 220.0,
+    "electric": 88.0,
+    "oil": 1560.0,
+    "coal": 0.0,
+    "wood": 13.0,
+    "solar": 0.0,
+    "other": 116.0,
+    "none": 17.0
+   },
+   "medianValue": 616000.0,
+   "units": {
+    "detached": 2056.0,
+    "attached": 97.0,
+    "two": 62.0,
+    "threeFour": 25.0,
+    "fivePlus": 0,
+    "mobile": 0,
+    "total": 2240.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "Eversource Energy (EGMA)",
+  "mhc": {
+   "inventoried": 287,
+   "datedBefore1800": 19,
+   "dated1800to1899": 155,
+   "dated1900to1949": 68,
+   "oldestYear": 1669,
+   "styles": [
+    [
+     "Greek Revival",
+     79
+    ],
+    [
+     "Federal",
+     38
+    ],
+    [
+     "Colonial Revival",
+     29
+    ],
+    [
+     "Craftsman",
+     20
+    ],
+    [
+     "Colonial",
+     18
+    ],
+    [
+     "Postwar Traditional",
+     16
+    ]
+   ],
+   "individualNR": 7,
+   "lhdDistricts": [
+    "Mendon Center Local Historic District",
+    "Washington Street Local Historic District"
+   ],
+   "nrDistricts": [
+    "Mendon Center Historic District",
+    "Mendon Center Local Historic District",
+    "North Avenue Rural Historic District"
+   ],
+   "areas": 6
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 137.3,
+   "iceDays": 24.6,
+   "precipIn": 49.8,
+   "zeroNights": 4.4,
+   "frostNightsMin": 122,
+   "frostNightsMax": 158
+  }
+ },
+ "northborough": {
+  "name": "Northborough",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 5929.0,
+   "fuel": {
+    "gas": 2095.0,
+    "bottled": 444.0,
+    "electric": 807.0,
+    "oil": 2459.0,
+    "coal": 0.0,
+    "wood": 52.0,
+    "solar": 11.0,
+    "other": 61.0,
+    "none": 0.0
+   },
+   "medianValue": 620000.0,
+   "units": {
+    "detached": 4566.0,
+    "attached": 489.0,
+    "two": 147.0,
+    "threeFour": 322.0,
+    "fivePlus": 584.0,
+    "mobile": 0,
+    "total": 6108.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 306,
+   "datedBefore1800": 40,
+   "dated1800to1899": 210,
+   "dated1900to1949": 41,
+   "oldestYear": 1711,
+   "styles": [
+    [
+     "Greek Revival",
+     67
+    ],
+    [
+     "Victorian Eclectic",
+     42
+    ],
+    [
+     "Federal",
+     27
+    ],
+    [
+     "Colonial Revival",
+     18
+    ],
+    [
+     "Queen Anne",
+     17
+    ],
+    [
+     "Georgian",
+     15
+    ]
+   ],
+   "individualNR": 2,
+   "lhdDistricts": [
+    "Meeting House Common Historic District"
+   ],
+   "nrDistricts": [
+    "Wachusett Aqueduct Linear District",
+    "Westborough State Hospital"
+   ],
+   "areas": 16
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 139.2,
+   "iceDays": 26.8,
+   "precipIn": 47.5,
+   "zeroNights": 5.2,
+   "frostNightsMin": 120,
+   "frostNightsMax": 160
+  }
+ },
+ "hopedale": {
+  "name": "Hopedale",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 2194.0,
+   "fuel": {
+    "gas": 367.0,
+    "bottled": 32.0,
+    "electric": 338.0,
+    "oil": 1430.0,
+    "coal": 0.0,
+    "wood": 11.0,
+    "solar": 16.0,
+    "other": 0.0,
+    "none": 0.0
+   },
+   "medianValue": 466100.0,
+   "units": {
+    "detached": 1283.0,
+    "attached": 602.0,
+    "two": 154.0,
+    "threeFour": 33.0,
+    "fivePlus": 264.0,
+    "mobile": 0,
+    "total": 2336.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 630,
+   "datedBefore1800": 1,
+   "dated1800to1899": 225,
+   "dated1900to1949": 331,
+   "oldestYear": 1791,
+   "styles": [
+    [
+     "Colonial Revival",
+     187
+    ],
+    [
+     "English Revival",
+     63
+    ],
+    [
+     "Victorian Eclectic",
+     60
+    ],
+    [
+     "Bungalow",
+     59
+    ],
+    [
+     "Greek Revival",
+     32
+    ],
+    [
+     "Postwar Traditional",
+     28
+    ]
+   ],
+   "individualNR": 3,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Bancroft Memorial Library",
+    "Hopedale Village Historic District"
+   ],
+   "areas": 13
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 137.3,
+   "iceDays": 24.6,
+   "precipIn": 49.8,
+   "zeroNights": 4.4,
+   "frostNightsMin": 122,
+   "frostNightsMax": 158
+  }
+ },
+ "princeton": {
+  "name": "Princeton",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 1330.0,
+   "fuel": {
+    "gas": 69.0,
+    "bottled": 107.0,
+    "electric": 40.0,
+    "oil": 943.0,
+    "coal": 8.0,
+    "wood": 140.0,
+    "solar": 0.0,
+    "other": 23.0,
+    "none": 0.0
+   },
+   "medianValue": 520500.0,
+   "units": {
+    "detached": 1325.0,
+    "attached": 0,
+    "two": 33.0,
+    "threeFour": 38.0,
+    "fivePlus": 21.0,
+    "mobile": 0,
+    "total": 1417.0
+   }
+  },
+  "electric": "Princeton Municipal Light Department",
+  "gas": null,
+  "mhc": {
+   "inventoried": 285,
+   "datedBefore1800": 32,
+   "dated1800to1899": 128,
+   "dated1900to1949": 56,
+   "oldestYear": 1748,
+   "styles": [
+    [
+     "Greek Revival",
+     43
+    ],
+    [
+     "Federal",
+     22
+    ],
+    [
+     "Colonial Revival",
+     16
+    ],
+    [
+     "Second Empire",
+     11
+    ],
+    [
+     "Ranch",
+     8
+    ],
+    [
+     "Victorian Eclectic",
+     8
+    ]
+   ],
+   "individualNR": 2,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "East Princeton Village Historic District",
+    "Four Corners - Goodnow Farm Historic District",
+    "Princeton Center Historic District",
+    "Russell Corner Historic District",
+    "West Village Historic District"
+   ],
+   "areas": 10
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 135.8,
+   "iceDays": 44.5,
+   "precipIn": 50.2,
+   "zeroNights": 5.1,
+   "frostNightsMin": 116,
+   "frostNightsMax": 157
+  }
+ },
+ "blackstone": {
+  "name": "Blackstone",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 3904.0,
+   "fuel": {
+    "gas": 1213.0,
+    "bottled": 79.0,
+    "electric": 381.0,
+    "oil": 2077.0,
+    "coal": 0.0,
+    "wood": 69.0,
+    "solar": 25.0,
+    "other": 60.0,
+    "none": 0.0
+   },
+   "medianValue": 404400.0,
+   "units": {
+    "detached": 2467.0,
+    "attached": 242.0,
+    "two": 583.0,
+    "threeFour": 259.0,
+    "fivePlus": 462.0,
+    "mobile": 0,
+    "total": 4013.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "Liberty Utilities",
+  "mhc": {
+   "inventoried": 479,
+   "datedBefore1800": 15,
+   "dated1800to1899": 339,
+   "dated1900to1949": 108,
+   "oldestYear": 1725,
+   "styles": [
+    [
+     "Greek Revival",
+     172
+    ],
+    [
+     "Colonial Revival",
+     69
+    ],
+    [
+     "Italianate",
+     37
+    ],
+    [
+     "Federal",
+     29
+    ],
+    [
+     "Victorian Eclectic",
+     26
+    ],
+    [
+     "Craftsman",
+     21
+    ]
+   ],
+   "individualNR": 4,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Blackstone Canal Historic District",
+    "Blackstone Manufacturing Company Historic District",
+    "East Blackstone Village Historic District",
+    "Farnum's Gate Historic District",
+    "Southwick - Daniels Farm"
+   ],
+   "areas": 27
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 126.5,
+   "iceDays": 24.5,
+   "precipIn": 51.3,
+   "zeroNights": 2.7,
+   "frostNightsMin": 103,
+   "frostNightsMax": 144
+  }
+ },
+ "boylston": {
+  "name": "Boylston",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 1966.0,
+   "fuel": {
+    "gas": 374.0,
+    "bottled": 119.0,
+    "electric": 220.0,
+    "oil": 1196.0,
+    "coal": 0.0,
+    "wood": 57.0,
+    "solar": 0.0,
+    "other": 0.0,
+    "none": 0.0
+   },
+   "medianValue": 578600.0,
+   "units": {
+    "detached": 1700.0,
+    "attached": 151.0,
+    "two": 58.0,
+    "threeFour": 30.0,
+    "fivePlus": 59.0,
+    "mobile": 0,
+    "total": 1998.0
+   }
+  },
+  "electric": "Boylston Municipal Light Department",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 66,
+   "datedBefore1800": 23,
+   "dated1800to1899": 22,
+   "dated1900to1949": 17,
+   "oldestYear": 1630,
+   "styles": [
+    [
+     "Federal",
+     15
+    ],
+    [
+     "Greek Revival",
+     7
+    ],
+    [
+     "Colonial Revival",
+     5
+    ],
+    [
+     "Bungalow",
+     4
+    ],
+    [
+     "Craftsman",
+     4
+    ],
+    [
+     "Georgian",
+     3
+    ]
+   ],
+   "individualNR": 1,
+   "lhdDistricts": [
+    "Boylston Historic District"
+   ],
+   "nrDistricts": [],
+   "areas": 2
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 136.3,
+   "iceDays": 30.5,
+   "precipIn": 47.0,
+   "zeroNights": 5.2,
+   "frostNightsMin": 114,
+   "frostNightsMax": 157
+  }
+ },
+ "milford": {
+  "name": "Milford",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 11234.0,
+   "fuel": {
+    "gas": 5403.0,
+    "bottled": 428.0,
+    "electric": 1409.0,
+    "oil": 3921.0,
+    "coal": 0.0,
+    "wood": 46.0,
+    "solar": 0.0,
+    "other": 27.0,
+    "none": 0.0
+   },
+   "medianValue": 476700.0,
+   "units": {
+    "detached": 6454.0,
+    "attached": 1005.0,
+    "two": 1161.0,
+    "threeFour": 1379.0,
+    "fivePlus": 1628.0,
+    "mobile": 0,
+    "total": 11627.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 548,
+   "datedBefore1800": 17,
+   "dated1800to1899": 401,
+   "dated1900to1949": 122,
+   "oldestYear": 1722,
+   "styles": [
+    [
+     "Greek Revival",
+     97
+    ],
+    [
+     "Victorian Eclectic",
+     60
+    ],
+    [
+     "Italianate",
+     58
+    ],
+    [
+     "Colonial Revival",
+     50
+    ],
+    [
+     "Queen Anne",
+     48
+    ],
+    [
+     "Second Empire",
+     27
+    ]
+   ],
+   "individualNR": 5,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Hopedale Village Historic District",
+    "Prospect Heights Historic District"
+   ],
+   "areas": 26
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 137.0,
+   "iceDays": 23.1,
+   "precipIn": 49.6,
+   "zeroNights": 4.2,
+   "frostNightsMin": 120,
+   "frostNightsMax": 158
+  }
+ },
+ "berlin": {
+  "name": "Berlin",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 1447.0,
+   "fuel": {
+    "gas": 402.0,
+    "bottled": 103.0,
+    "electric": 188.0,
+    "oil": 674.0,
+    "coal": 0.0,
+    "wood": 36.0,
+    "solar": 17.0,
+    "other": 27.0,
+    "none": 0.0
+   },
+   "medianValue": 616600.0,
+   "units": {
+    "detached": 787.0,
+    "attached": 300.0,
+    "two": 163.0,
+    "threeFour": 25.0,
+    "fivePlus": 215.0,
+    "mobile": 5.0,
+    "total": 1495.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 110,
+   "datedBefore1800": 21,
+   "dated1800to1899": 83,
+   "dated1900to1949": 4,
+   "oldestYear": 1740,
+   "styles": [
+    [
+     "Greek Revival",
+     42
+    ],
+    [
+     "Federal",
+     40
+    ],
+    [
+     "Italianate",
+     10
+    ],
+    [
+     "Victorian Eclectic",
+     10
+    ],
+    [
+     "Colonial",
+     10
+    ],
+    [
+     "Altered beyond recognition",
+     1
+    ]
+   ],
+   "individualNR": 2,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Wachusett Aqueduct Linear District"
+   ],
+   "areas": 6
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 135.7,
+   "iceDays": 29.1,
+   "precipIn": 47.5,
+   "zeroNights": 4.8,
+   "frostNightsMin": 113,
+   "frostNightsMax": 157
+  }
+ },
+ "clinton": {
+  "name": "Clinton",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 6758.0,
+   "fuel": {
+    "gas": 2803.0,
+    "bottled": 472.0,
+    "electric": 1510.0,
+    "oil": 1923.0,
+    "coal": 0.0,
+    "wood": 0.0,
+    "solar": 13.0,
+    "other": 37.0,
+    "none": 0.0
+   },
+   "medianValue": 387300.0,
+   "units": {
+    "detached": 2821.0,
+    "attached": 773.0,
+    "two": 602.0,
+    "threeFour": 1067.0,
+    "fivePlus": 1639.0,
+    "mobile": 75.0,
+    "total": 6977.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 349,
+   "datedBefore1800": 8,
+   "dated1800to1899": 211,
+   "dated1900to1949": 100,
+   "oldestYear": 1730,
+   "styles": [
+    [
+     "Italianate",
+     57
+    ],
+    [
+     "Victorian Eclectic",
+     25
+    ],
+    [
+     "Colonial Revival",
+     24
+    ],
+    [
+     "Second Empire",
+     22
+    ],
+    [
+     "Queen Anne",
+     19
+    ],
+    [
+     "Greek Revival",
+     16
+    ]
+   ],
+   "individualNR": 39,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Bigelow Carpet Company Woolen Mills",
+    "Bigelow Carpet Mill",
+    "Clinton Central Business District",
+    "Clinton Wire Cloth Company Historic District",
+    "Lancaster Mills",
+    "Wachusett Aqueduct Linear District",
+    "Wachusett Dam Historic District"
+   ],
+   "areas": 23
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 135.8,
+   "iceDays": 29.6,
+   "precipIn": 47.2,
+   "zeroNights": 4.9,
+   "frostNightsMin": 114,
+   "frostNightsMax": 157
+  }
+ },
+ "hopkinton": {
+  "name": "Hopkinton",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 6660.0,
+   "fuel": {
+    "gas": 3615.0,
+    "bottled": 261.0,
+    "electric": 498.0,
+    "oil": 2166.0,
+    "coal": 0.0,
+    "wood": 120.0,
+    "solar": 0.0,
+    "other": 0.0,
+    "none": 0.0
+   },
+   "medianValue": 802700.0,
+   "units": {
+    "detached": 4871.0,
+    "attached": 981.0,
+    "two": 132.0,
+    "threeFour": 175.0,
+    "fivePlus": 777.0,
+    "mobile": 0,
+    "total": 6936.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 635,
+   "datedBefore1800": 32,
+   "dated1800to1899": 512,
+   "dated1900to1949": 56,
+   "oldestYear": 1670,
+   "styles": [
+    [
+     "Greek Revival",
+     282
+    ],
+    [
+     "Italianate",
+     150
+    ],
+    [
+     "Federal",
+     54
+    ],
+    [
+     "Colonial Revival",
+     32
+    ],
+    [
+     "Colonial",
+     17
+    ],
+    [
+     "Georgian",
+     12
+    ]
+   ],
+   "individualNR": 1,
+   "lhdDistricts": [
+    "Hopkinton Center Historic District",
+    "Woodville Historic District"
+   ],
+   "nrDistricts": [],
+   "areas": 48
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 135.3,
+   "iceDays": 27.7,
+   "precipIn": 48.9,
+   "zeroNights": 4.3,
+   "frostNightsMin": 116,
+   "frostNightsMax": 155
+  }
+ },
+ "sterling": {
+  "name": "Sterling",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 3282.0,
+   "fuel": {
+    "gas": 136.0,
+    "bottled": 241.0,
+    "electric": 491.0,
+    "oil": 2171.0,
+    "coal": 0.0,
+    "wood": 179.0,
+    "solar": 0.0,
+    "other": 64.0,
+    "none": 0.0
+   },
+   "medianValue": 498800.0,
+   "units": {
+    "detached": 2702.0,
+    "attached": 278.0,
+    "two": 107.0,
+    "threeFour": 99.0,
+    "fivePlus": 123.0,
+    "mobile": 0,
+    "total": 3309.0
+   }
+  },
+  "electric": "Sterling Municipal Light Department",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 564,
+   "datedBefore1800": 69,
+   "dated1800to1899": 240,
+   "dated1900to1949": 154,
+   "oldestYear": 1700,
+   "styles": [
+    [
+     "Greek Revival",
+     82
+    ],
+    [
+     "Federal",
+     69
+    ],
+    [
+     "Colonial Revival",
+     31
+    ],
+    [
+     "Victorian Eclectic",
+     16
+    ],
+    [
+     "Colonial",
+     14
+    ],
+    [
+     "Italianate",
+     9
+    ]
+   ],
+   "individualNR": 4,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Sterling Center Historic District"
+   ],
+   "areas": 35
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 135.9,
+   "iceDays": 33.6,
+   "precipIn": 46.9,
+   "zeroNights": 5.1,
+   "frostNightsMin": 116,
+   "frostNightsMax": 160
+  }
+ },
+ "bellingham": {
+  "name": "Bellingham",
+  "county": "Norfolk",
+  "census": {
+   "heatedHomes": 6346.0,
+   "fuel": {
+    "gas": 2347.0,
+    "bottled": 289.0,
+    "electric": 846.0,
+    "oil": 2713.0,
+    "coal": 0.0,
+    "wood": 45.0,
+    "solar": 33.0,
+    "other": 58.0,
+    "none": 15.0
+   },
+   "medianValue": 450700.0,
+   "units": {
+    "detached": 4946.0,
+    "attached": 557.0,
+    "two": 296.0,
+    "threeFour": 204.0,
+    "fivePlus": 635.0,
+    "mobile": 53.0,
+    "total": 6691.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric), National Grid (Massachusetts Electric)",
+  "gas": "Eversource Energy (EGMA), Liberty Utilities",
+  "mhc": {
+   "inventoried": 124,
+   "datedBefore1800": 15,
+   "dated1800to1899": 73,
+   "dated1900to1949": 30,
+   "oldestYear": 1702,
+   "styles": [
+    [
+     "Colonial Revival",
+     23
+    ],
+    [
+     "Greek Revival",
+     17
+    ],
+    [
+     "Federal",
+     11
+    ],
+    [
+     "Queen Anne",
+     7
+    ],
+    [
+     "Italianate",
+     5
+    ],
+    [
+     "Victorian Eclectic",
+     3
+    ]
+   ],
+   "individualNR": 21,
+   "lhdDistricts": [],
+   "nrDistricts": [],
+   "areas": 4
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 132.5,
+   "iceDays": 23.1,
+   "precipIn": 50.1,
+   "zeroNights": 3.4,
+   "frostNightsMin": 117,
+   "frostNightsMax": 153
+  }
+ },
+ "marlborough": {
+  "name": "Marlborough",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 16665.0,
+   "fuel": {
+    "gas": 10174.0,
+    "bottled": 559.0,
+    "electric": 3682.0,
+    "oil": 1860.0,
+    "coal": 0.0,
+    "wood": 31.0,
+    "solar": 11.0,
+    "other": 174.0,
+    "none": 174.0
+   },
+   "medianValue": 513100.0,
+   "units": {
+    "detached": 7513.0,
+    "attached": 1271.0,
+    "two": 1620.0,
+    "threeFour": 1350.0,
+    "fivePlus": 4941.0,
+    "mobile": 552.0,
+    "total": 17247.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 1217,
+   "datedBefore1800": 55,
+   "dated1800to1899": 817,
+   "dated1900to1949": 292,
+   "oldestYear": 1657,
+   "styles": [
+    [
+     "Queen Anne",
+     179
+    ],
+    [
+     "Italianate",
+     126
+    ],
+    [
+     "Colonial Revival",
+     121
+    ],
+    [
+     "Victorian Eclectic",
+     89
+    ],
+    [
+     "Greek Revival",
+     84
+    ],
+    [
+     "Bungalow",
+     53
+    ]
+   ],
+   "individualNR": 52,
+   "lhdDistricts": [
+    "Monument Square Historic District"
+   ],
+   "nrDistricts": [
+    "Marlborough Center Historic District",
+    "Pleasant Street Historic District",
+    "Wachusett Aqueduct Linear District",
+    "West Main Street Historic District"
+   ],
+   "areas": 58
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 136.1,
+   "iceDays": 28.7,
+   "precipIn": 48.0,
+   "zeroNights": 4.6,
+   "frostNightsMin": 115,
+   "frostNightsMax": 155
+  }
+ },
+ "southborough": {
+  "name": "Southborough",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 3777.0,
+   "fuel": {
+    "gas": 1131.0,
+    "bottled": 332.0,
+    "electric": 272.0,
+    "oil": 1963.0,
+    "coal": 12.0,
+    "wood": 0.0,
+    "solar": 10.0,
+    "other": 44.0,
+    "none": 13.0
+   },
+   "medianValue": 821100.0,
+   "units": {
+    "detached": 3319.0,
+    "attached": 281.0,
+    "two": 103.0,
+    "threeFour": 69.0,
+    "fivePlus": 136.0,
+    "mobile": 0,
+    "total": 3908.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 770,
+   "datedBefore1800": 20,
+   "dated1800to1899": 391,
+   "dated1900to1949": 270,
+   "oldestYear": 1710,
+   "styles": [
+    [
+     "Greek Revival",
+     107
+    ],
+    [
+     "Colonial Revival",
+     90
+    ],
+    [
+     "Victorian Eclectic",
+     44
+    ],
+    [
+     "Postwar Traditional",
+     38
+    ],
+    [
+     "Cape",
+     38
+    ],
+    [
+     "Craftsman",
+     31
+    ]
+   ],
+   "individualNR": 4,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Southborough Center Historic District",
+    "Sudbury Dam Historic District",
+    "Wachusett Aqueduct Linear District",
+    "Weston Aqueduct Linear District"
+   ],
+   "areas": 33
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 137.0,
+   "iceDays": 27.2,
+   "precipIn": 48.3,
+   "zeroNights": 4.5,
+   "frostNightsMin": 117,
+   "frostNightsMax": 157
+  }
+ },
+ "ashland": {
+  "name": "Ashland",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 7643.0,
+   "fuel": {
+    "gas": 4935.0,
+    "bottled": 313.0,
+    "electric": 801.0,
+    "oil": 1520.0,
+    "coal": 0.0,
+    "wood": 52.0,
+    "solar": 0.0,
+    "other": 0.0,
+    "none": 22.0
+   },
+   "medianValue": 611700.0,
+   "units": {
+    "detached": 4500.0,
+    "attached": 1204.0,
+    "two": 212.0,
+    "threeFour": 847.0,
+    "fivePlus": 1331.0,
+    "mobile": 0,
+    "total": 8094.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 220,
+   "datedBefore1800": 15,
+   "dated1800to1899": 109,
+   "dated1900to1949": 70,
+   "oldestYear": 1740,
+   "styles": [
+    [
+     "Colonial Revival",
+     34
+    ],
+    [
+     "Greek Revival",
+     25
+    ],
+    [
+     "Victorian Eclectic",
+     21
+    ],
+    [
+     "Second Empire",
+     14
+    ],
+    [
+     "Altered beyond recognition",
+     11
+    ],
+    [
+     "Bungalow",
+     8
+    ]
+   ],
+   "individualNR": 3,
+   "lhdDistricts": [],
+   "nrDistricts": [],
+   "areas": 4
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 138.4,
+   "iceDays": 25.2,
+   "precipIn": 48.2,
+   "zeroNights": 4.6,
+   "frostNightsMin": 120,
+   "frostNightsMax": 158
+  }
+ },
+ "hudson": {
+  "name": "Hudson",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 8362.0,
+   "fuel": {
+    "gas": 5216.0,
+    "bottled": 231.0,
+    "electric": 1811.0,
+    "oil": 918.0,
+    "coal": 0.0,
+    "wood": 79.0,
+    "solar": 0.0,
+    "other": 95.0,
+    "none": 12.0
+   },
+   "medianValue": 496800.0,
+   "units": {
+    "detached": 4769.0,
+    "attached": 633.0,
+    "two": 487.0,
+    "threeFour": 749.0,
+    "fivePlus": 1912.0,
+    "mobile": 308.0,
+    "total": 8858.0
+   }
+  },
+  "electric": "Hudson Light and Power Department",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 386,
+   "datedBefore1800": 6,
+   "dated1800to1899": 167,
+   "dated1900to1949": 157,
+   "oldestYear": 1693,
+   "styles": [
+    [
+     "Queen Anne",
+     48
+    ],
+    [
+     "Victorian Eclectic",
+     33
+    ],
+    [
+     "Italianate",
+     20
+    ],
+    [
+     "Greek Revival",
+     17
+    ],
+    [
+     "Colonial Revival",
+     15
+    ],
+    [
+     "Federal",
+     11
+    ]
+   ],
+   "individualNR": 4,
+   "lhdDistricts": [
+    "Felton, Silas Historic District"
+   ],
+   "nrDistricts": [],
+   "areas": 7
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 136.7,
+   "iceDays": 28.7,
+   "precipIn": 47.6,
+   "zeroNights": 4.9,
+   "frostNightsMin": 115,
+   "frostNightsMax": 156
+  }
+ },
+ "lancaster": {
+  "name": "Lancaster",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 2960.0,
+   "fuel": {
+    "gas": 375.0,
+    "bottled": 471.0,
+    "electric": 275.0,
+    "oil": 1737.0,
+    "coal": 0.0,
+    "wood": 39.0,
+    "solar": 0.0,
+    "other": 63.0,
+    "none": 0.0
+   },
+   "medianValue": 519100.0,
+   "units": {
+    "detached": 2478.0,
+    "attached": 245.0,
+    "two": 81.0,
+    "threeFour": 138.0,
+    "fivePlus": 83.0,
+    "mobile": 0,
+    "total": 3025.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 516,
+   "datedBefore1800": 105,
+   "dated1800to1899": 295,
+   "dated1900to1949": 77,
+   "oldestYear": 1653,
+   "styles": [
+    [
+     "Federal",
+     46
+    ],
+    [
+     "Colonial Revival",
+     38
+    ],
+    [
+     "Greek Revival",
+     37
+    ],
+    [
+     "Victorian Eclectic",
+     25
+    ],
+    [
+     "Colonial",
+     13
+    ],
+    [
+     "Italianate",
+     9
+    ]
+   ],
+   "individualNR": 209,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Center Village Historic District",
+    "Eastwood Cemetery",
+    "Lancaster Industrial School for Girls",
+    "North Village Historic District",
+    "Shirley Shaker Village"
+   ],
+   "areas": 13
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 136.7,
+   "iceDays": 28.7,
+   "precipIn": 47.1,
+   "zeroNights": 5.1,
+   "frostNightsMin": 114,
+   "frostNightsMax": 159
+  }
+ },
+ "bolton": {
+  "name": "Bolton",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 1976.0,
+   "fuel": {
+    "gas": 38.0,
+    "bottled": 313.0,
+    "electric": 283.0,
+    "oil": 1285.0,
+    "coal": 0.0,
+    "wood": 48.0,
+    "solar": 0.0,
+    "other": 9.0,
+    "none": 0.0
+   },
+   "medianValue": 796000.0,
+   "units": {
+    "detached": 1909.0,
+    "attached": 67.0,
+    "two": 18.0,
+    "threeFour": 0,
+    "fivePlus": 90.0,
+    "mobile": 0,
+    "total": 2084.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 584,
+   "datedBefore1800": 53,
+   "dated1800to1899": 235,
+   "dated1900to1949": 144,
+   "oldestYear": 1700,
+   "styles": [
+    [
+     "Federal",
+     50
+    ],
+    [
+     "Greek Revival",
+     31
+    ],
+    [
+     "Cape",
+     29
+    ],
+    [
+     "Colonial Revival",
+     25
+    ],
+    [
+     "Postwar Traditional",
+     15
+    ],
+    [
+     "Colonial",
+     13
+    ]
+   ],
+   "individualNR": 51,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Bolton Center Historic District",
+    "East End Historic District",
+    "Eastwood Cemetery",
+    "Pan Burying Ground",
+    "Pan Historic District"
+   ],
+   "areas": 28
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 132.4,
+   "iceDays": 31.2,
+   "precipIn": 47.5,
+   "zeroNights": 4.5,
+   "frostNightsMin": 109,
+   "frostNightsMax": 154
+  }
+ },
+ "holliston": {
+  "name": "Holliston",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 5684.0,
+   "fuel": {
+    "gas": 3277.0,
+    "bottled": 144.0,
+    "electric": 666.0,
+    "oil": 1550.0,
+    "coal": 0.0,
+    "wood": 11.0,
+    "solar": 0.0,
+    "other": 21.0,
+    "none": 15.0
+   },
+   "medianValue": 650300.0,
+   "units": {
+    "detached": 4707.0,
+    "attached": 328.0,
+    "two": 90.0,
+    "threeFour": 287.0,
+    "fivePlus": 451.0,
+    "mobile": 21.0,
+    "total": 5884.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 353,
+   "datedBefore1800": 29,
+   "dated1800to1899": 245,
+   "dated1900to1949": 39,
+   "oldestYear": 1660,
+   "styles": [
+    [
+     "Greek Revival",
+     113
+    ],
+    [
+     "Federal",
+     47
+    ],
+    [
+     "Italianate",
+     31
+    ],
+    [
+     "Colonial Revival",
+     16
+    ],
+    [
+     "Victorian Eclectic",
+     11
+    ],
+    [
+     "Altered beyond recognition",
+     10
+    ]
+   ],
+   "individualNR": 16,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "East Holliston Historic District",
+    "Hollis, Thomas Historic District"
+   ],
+   "areas": 9
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 138.5,
+   "iceDays": 23.4,
+   "precipIn": 48.5,
+   "zeroNights": 4.2,
+   "frostNightsMin": 120,
+   "frostNightsMax": 161
+  }
+ },
+ "leominster": {
+  "name": "Leominster",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 18483.0,
+   "fuel": {
+    "gas": 6287.0,
+    "bottled": 409.0,
+    "electric": 4494.0,
+    "oil": 6729.0,
+    "coal": 0.0,
+    "wood": 262.0,
+    "solar": 5.0,
+    "other": 158.0,
+    "none": 139.0
+   },
+   "medianValue": 380400.0,
+   "units": {
+    "detached": 8983.0,
+    "attached": 956.0,
+    "two": 2003.0,
+    "threeFour": 1934.0,
+    "fivePlus": 5129.0,
+    "mobile": 250.0,
+    "total": 19255.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 344,
+   "datedBefore1800": 21,
+   "dated1800to1899": 206,
+   "dated1900to1949": 100,
+   "oldestYear": 1720,
+   "styles": [
+    [
+     "Victorian Eclectic",
+     54
+    ],
+    [
+     "Queen Anne",
+     50
+    ],
+    [
+     "Federal",
+     31
+    ],
+    [
+     "Italianate",
+     26
+    ],
+    [
+     "Greek Revival",
+     23
+    ],
+    [
+     "Second Empire",
+     23
+    ]
+   ],
+   "individualNR": 27,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Cluett Peabody and Company",
+    "Monument Square Historic District",
+    "Reed, W. S. Toy Company - Wachusett Shirt Company Historic District",
+    "Wachusett Shirt Company",
+    "Whitney, F. A. Carriage Company Complex District"
+   ],
+   "areas": 17
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 135.3,
+   "iceDays": 32.5,
+   "precipIn": 46.3,
+   "zeroNights": 4.9,
+   "frostNightsMin": 112,
+   "frostNightsMax": 161
+  }
+ },
+ "medway": {
+  "name": "Medway",
+  "county": "Norfolk",
+  "census": {
+   "heatedHomes": 4744.0,
+   "fuel": {
+    "gas": 2283.0,
+    "bottled": 140.0,
+    "electric": 479.0,
+    "oil": 1777.0,
+    "coal": 0.0,
+    "wood": 33.0,
+    "solar": 0.0,
+    "other": 32.0,
+    "none": 0.0
+   },
+   "medianValue": 617300.0,
+   "units": {
+    "detached": 3851.0,
+    "attached": 182.0,
+    "two": 162.0,
+    "threeFour": 180.0,
+    "fivePlus": 385.0,
+    "mobile": 8.0,
+    "total": 4768.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "Eversource Energy (EGMA)",
+  "mhc": {
+   "inventoried": 405,
+   "datedBefore1800": 32,
+   "dated1800to1899": 318,
+   "dated1900to1949": 43,
+   "oldestYear": 1730,
+   "styles": [
+    [
+     "Greek Revival",
+     85
+    ],
+    [
+     "Italianate",
+     75
+    ],
+    [
+     "Federal",
+     44
+    ],
+    [
+     "Colonial Revival",
+     18
+    ],
+    [
+     "Victorian Eclectic",
+     13
+    ],
+    [
+     "Queen Anne",
+     12
+    ]
+   ],
+   "individualNR": 0,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Evergreen Cemetery",
+    "Medway Village Historic District",
+    "Rabbit Hill Historic District"
+   ],
+   "areas": 22
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 136.6,
+   "iceDays": 21.9,
+   "precipIn": 49.6,
+   "zeroNights": 4.1,
+   "frostNightsMin": 120,
+   "frostNightsMax": 159
+  }
+ },
+ "framingham": {
+  "name": "Framingham",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 26803.0,
+   "fuel": {
+    "gas": 12270.0,
+    "bottled": 581.0,
+    "electric": 7677.0,
+    "oil": 5678.0,
+    "coal": 33.0,
+    "wood": 162.0,
+    "solar": 75.0,
+    "other": 273.0,
+    "none": 54.0
+   },
+   "medianValue": 627300.0,
+   "units": {
+    "detached": 14534.0,
+    "attached": 1369.0,
+    "two": 1154.0,
+    "threeFour": 2016.0,
+    "fivePlus": 8845.0,
+    "mobile": 0,
+    "total": 27918.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 953,
+   "datedBefore1800": 56,
+   "dated1800to1899": 457,
+   "dated1900to1949": 271,
+   "oldestYear": 1662,
+   "styles": [
+    [
+     "Colonial Revival",
+     121
+    ],
+    [
+     "Italianate",
+     80
+    ],
+    [
+     "Greek Revival",
+     78
+    ],
+    [
+     "Queen Anne",
+     69
+    ],
+    [
+     "Federal",
+     57
+    ],
+    [
+     "Classical Revival",
+     41
+    ]
+   ],
+   "individualNR": 16,
+   "lhdDistricts": [
+    "Brewer, Col. David House",
+    "Framingham Centre Common Historic District",
+    "H. H. Richardson Depot Historic District",
+    "Maynard, Jonathan Historic District"
+   ],
+   "nrDistricts": [
+    "Concord Square Historic District",
+    "Framingham Centre Common Historic District",
+    "Irving Square Historic District",
+    "Saxonville Historic District",
+    "Sudbury Aqueduct Linear District",
+    "Sudbury Dam Historic District",
+    "Weston Aqueduct Linear District"
+   ],
+   "areas": 44
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 137.1,
+   "iceDays": 25.0,
+   "precipIn": 47.5,
+   "zeroNights": 4.1,
+   "frostNightsMin": 117,
+   "frostNightsMax": 157
+  }
+ },
+ "franklin": {
+  "name": "Franklin",
+  "county": "Norfolk",
+  "census": {
+   "heatedHomes": 12370.0,
+   "fuel": {
+    "gas": 7435.0,
+    "bottled": 402.0,
+    "electric": 1981.0,
+    "oil": 2425.0,
+    "coal": 0.0,
+    "wood": 58.0,
+    "solar": 15.0,
+    "other": 11.0,
+    "none": 43.0
+   },
+   "medianValue": 611700.0,
+   "units": {
+    "detached": 8129.0,
+    "attached": 1287.0,
+    "two": 554.0,
+    "threeFour": 663.0,
+    "fivePlus": 2341.0,
+    "mobile": 27.0,
+    "total": 13011.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "Eversource Energy (EGMA)",
+  "mhc": {
+   "inventoried": 369,
+   "datedBefore1800": 21,
+   "dated1800to1899": 234,
+   "dated1900to1949": 100,
+   "oldestYear": 1710,
+   "styles": [
+    [
+     "Victorian Eclectic",
+     74
+    ],
+    [
+     "Italianate",
+     62
+    ],
+    [
+     "Colonial Revival",
+     38
+    ],
+    [
+     "Greek Revival",
+     34
+    ],
+    [
+     "Queen Anne",
+     26
+    ],
+    [
+     "Craftsman",
+     21
+    ]
+   ],
+   "individualNR": 2,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Dean Junior College Historic District",
+    "Franklin Common Historic District"
+   ],
+   "areas": 15
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 131.9,
+   "iceDays": 23.9,
+   "precipIn": 50.3,
+   "zeroNights": 3.5,
+   "frostNightsMin": 115,
+   "frostNightsMax": 152
+  }
+ },
+ "millis": {
+  "name": "Millis",
+  "county": "Norfolk",
+  "census": {
+   "heatedHomes": 3309.0,
+   "fuel": {
+    "gas": 1449.0,
+    "bottled": 152.0,
+    "electric": 387.0,
+    "oil": 1281.0,
+    "coal": 0.0,
+    "wood": 10.0,
+    "solar": 22.0,
+    "other": 8.0,
+    "none": 0.0
+   },
+   "medianValue": 603500.0,
+   "units": {
+    "detached": 2355.0,
+    "attached": 354.0,
+    "two": 87.0,
+    "threeFour": 402.0,
+    "fivePlus": 273.0,
+    "mobile": 0,
+    "total": 3471.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "Eversource Energy (EGMA)",
+  "mhc": {
+   "inventoried": 302,
+   "datedBefore1800": 35,
+   "dated1800to1899": 113,
+   "dated1900to1949": 113,
+   "oldestYear": 1600,
+   "styles": [
+    [
+     "Colonial Revival",
+     27
+    ],
+    [
+     "Greek Revival",
+     22
+    ],
+    [
+     "Georgian",
+     20
+    ],
+    [
+     "Victorian Eclectic",
+     18
+    ],
+    [
+     "Bungalow",
+     15
+    ],
+    [
+     "Italianate",
+     13
+    ]
+   ],
+   "individualNR": 33,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Millis Center Historic District"
+   ],
+   "areas": 4
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 136.5,
+   "iceDays": 21.2,
+   "precipIn": 48.8,
+   "zeroNights": 3.9,
+   "frostNightsMin": 120,
+   "frostNightsMax": 158
+  }
+ },
+ "fitchburg": {
+  "name": "Fitchburg",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 16659.0,
+   "fuel": {
+    "gas": 8392.0,
+    "bottled": 541.0,
+    "electric": 2961.0,
+    "oil": 4300.0,
+    "coal": 0.0,
+    "wood": 260.0,
+    "solar": 75.0,
+    "other": 88.0,
+    "none": 42.0
+   },
+   "medianValue": 336400.0,
+   "units": {
+    "detached": 7522.0,
+    "attached": 1126.0,
+    "two": 2314.0,
+    "threeFour": 3205.0,
+    "fivePlus": 3534.0,
+    "mobile": 43.0,
+    "total": 17744.0
+   }
+  },
+  "electric": "Unitil (Fitchburg Gas & Electric)",
+  "gas": "Unitil (Fitchburg Gas & Electric)",
+  "mhc": {
+   "inventoried": 836,
+   "datedBefore1800": 35,
+   "dated1800to1899": 493,
+   "dated1900to1949": 234,
+   "oldestYear": 1725,
+   "styles": [
+    [
+     "Queen Anne",
+     113
+    ],
+    [
+     "Greek Revival",
+     109
+    ],
+    [
+     "Colonial Revival",
+     75
+    ],
+    [
+     "Victorian Eclectic",
+     68
+    ],
+    [
+     "Italianate",
+     64
+    ],
+    [
+     "Federal",
+     52
+    ]
+   ],
+   "individualNR": 27,
+   "lhdDistricts": [
+    "Monument Park Historic District"
+   ],
+   "nrDistricts": [
+    "Academy Street Educational Historic District",
+    "Crocker Field Historic District",
+    "Monument Park Historic District",
+    "Moran Square Historic District"
+   ],
+   "areas": 28
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 140.3,
+   "iceDays": 35.0,
+   "precipIn": 46.1,
+   "zeroNights": 6.1,
+   "frostNightsMin": 120,
+   "frostNightsMax": 163
+  }
+ },
+ "harvard": {
+  "name": "Harvard",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 2073.0,
+   "fuel": {
+    "gas": 321.0,
+    "bottled": 207.0,
+    "electric": 234.0,
+    "oil": 1132.0,
+    "coal": 0.0,
+    "wood": 46.0,
+    "solar": 17.0,
+    "other": 86.0,
+    "none": 30.0
+   },
+   "medianValue": 833600.0,
+   "units": {
+    "detached": 1931.0,
+    "attached": 96.0,
+    "two": 0,
+    "threeFour": 61.0,
+    "fivePlus": 168.0,
+    "mobile": 0,
+    "total": 2256.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 411,
+   "datedBefore1800": 49,
+   "dated1800to1899": 134,
+   "dated1900to1949": 146,
+   "oldestYear": 1668,
+   "styles": [
+    [
+     "Colonial Revival",
+     87
+    ],
+    [
+     "Federal",
+     39
+    ],
+    [
+     "Greek Revival",
+     39
+    ],
+    [
+     "Colonial",
+     15
+    ],
+    [
+     "Victorian Eclectic",
+     14
+    ],
+    [
+     "Georgian",
+     13
+    ]
+   ],
+   "individualNR": 4,
+   "lhdDistricts": [
+    "Fort Devens Historic District",
+    "Harvard Common Historic District",
+    "Harvard Shaker Village Historic District"
+   ],
+   "nrDistricts": [
+    "Fort Devens Historic District",
+    "Fruitlands Museum Historic District",
+    "Harvard Center Historic District",
+    "Harvard Shaker Village Historic District"
+   ],
+   "areas": 17
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 133.2,
+   "iceDays": 31.0,
+   "precipIn": 47.4,
+   "zeroNights": 4.9,
+   "frostNightsMin": 110,
+   "frostNightsMax": 156
+  }
+ },
+ "sherborn": {
+  "name": "Sherborn",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 1532.0,
+   "fuel": {
+    "gas": 393.0,
+    "bottled": 60.0,
+    "electric": 131.0,
+    "oil": 910.0,
+    "coal": 0.0,
+    "wood": 28.0,
+    "solar": 0.0,
+    "other": 10.0,
+    "none": 0.0
+   },
+   "medianValue": 1026800.0,
+   "units": {
+    "detached": 1417.0,
+    "attached": 73.0,
+    "two": 10.0,
+    "threeFour": 46.0,
+    "fivePlus": 42.0,
+    "mobile": 0,
+    "total": 1588.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 389,
+   "datedBefore1800": 59,
+   "dated1800to1899": 140,
+   "dated1900to1949": 123,
+   "oldestYear": 1655,
+   "styles": [
+    [
+     "Greek Revival",
+     51
+    ],
+    [
+     "Colonial Revival",
+     38
+    ],
+    [
+     "Federal",
+     35
+    ],
+    [
+     "Victorian Eclectic",
+     26
+    ],
+    [
+     "Postwar Traditional",
+     23
+    ],
+    [
+     "Georgian",
+     20
+    ]
+   ],
+   "individualNR": 35,
+   "lhdDistricts": [
+    "Sherborn Center Local Historic District"
+   ],
+   "nrDistricts": [
+    "Edward's Plain - Dowse's Corner Historic District",
+    "Sherborn Center Historic District",
+    "Sudbury Aqueduct Linear District"
+   ],
+   "areas": 15
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 134.3,
+   "iceDays": 24.9,
+   "precipIn": 47.9,
+   "zeroNights": 3.7,
+   "frostNightsMin": 114,
+   "frostNightsMax": 155
+  }
+ },
+ "stow": {
+  "name": "Stow",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 2773.0,
+   "fuel": {
+    "gas": 610.0,
+    "bottled": 296.0,
+    "electric": 445.0,
+    "oil": 1376.0,
+    "coal": 0.0,
+    "wood": 19.0,
+    "solar": 0.0,
+    "other": 27.0,
+    "none": 0.0
+   },
+   "medianValue": 729600.0,
+   "units": {
+    "detached": 2248.0,
+    "attached": 144.0,
+    "two": 55.0,
+    "threeFour": 108.0,
+    "fivePlus": 265.0,
+    "mobile": 0,
+    "total": 2820.0
+   }
+  },
+  "electric": "Hudson Light and Power Department",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 412,
+   "datedBefore1800": 30,
+   "dated1800to1899": 153,
+   "dated1900to1949": 165,
+   "oldestYear": 1669,
+   "styles": [
+    [
+     "Greek Revival",
+     50
+    ],
+    [
+     "Federal",
+     47
+    ],
+    [
+     "Queen Anne",
+     25
+    ],
+    [
+     "Colonial Revival",
+     22
+    ],
+    [
+     "Altered beyond recognition",
+     18
+    ],
+    [
+     "Italianate",
+     17
+    ]
+   ],
+   "individualNR": 5,
+   "lhdDistricts": [],
+   "nrDistricts": [],
+   "areas": 6
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 136.3,
+   "iceDays": 29.0,
+   "precipIn": 48.6,
+   "zeroNights": 5.1,
+   "frostNightsMin": 114,
+   "frostNightsMax": 155
+  }
+ },
+ "natick": {
+  "name": "Natick",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 15287.0,
+   "fuel": {
+    "gas": 7470.0,
+    "bottled": 613.0,
+    "electric": 3603.0,
+    "oil": 3465.0,
+    "coal": 0.0,
+    "wood": 33.0,
+    "solar": 20.0,
+    "other": 20.0,
+    "none": 63.0
+   },
+   "medianValue": 821000.0,
+   "units": {
+    "detached": 9005.0,
+    "attached": 611.0,
+    "two": 981.0,
+    "threeFour": 725.0,
+    "fivePlus": 4455.0,
+    "mobile": 0,
+    "total": 15777.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "Eversource Energy (NSTAR Gas), National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 519,
+   "datedBefore1800": 29,
+   "dated1800to1899": 319,
+   "dated1900to1949": 96,
+   "oldestYear": 1700,
+   "styles": [
+    [
+     "Greek Revival",
+     61
+    ],
+    [
+     "Victorian Eclectic",
+     58
+    ],
+    [
+     "Colonial Revival",
+     51
+    ],
+    [
+     "Queen Anne",
+     49
+    ],
+    [
+     "Italianate",
+     42
+    ],
+    [
+     "Second Empire",
+     31
+    ]
+   ],
+   "individualNR": 8,
+   "lhdDistricts": [
+    "Clark Houses",
+    "Eliot, John Historic District",
+    "Wilson, Henry Historic District"
+   ],
+   "nrDistricts": [
+    "Cochituate Aqueduct Linear District",
+    "Eliot, John Historic District",
+    "Hunnewell Estates Historic District",
+    "Natick Center Historic District",
+    "Sudbury Aqueduct Linear District"
+   ],
+   "areas": 16
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 134.5,
+   "iceDays": 25.0,
+   "precipIn": 47.5,
+   "zeroNights": 3.7,
+   "frostNightsMin": 114,
+   "frostNightsMax": 155
+  }
+ },
+ "norfolk": {
+  "name": "Norfolk",
+  "county": "Norfolk",
+  "census": {
+   "heatedHomes": 3453.0,
+   "fuel": {
+    "gas": 648.0,
+    "bottled": 368.0,
+    "electric": 177.0,
+    "oil": 2177.0,
+    "coal": 0.0,
+    "wood": 22.0,
+    "solar": 11.0,
+    "other": 50.0,
+    "none": 0.0
+   },
+   "medianValue": 725200.0,
+   "units": {
+    "detached": 3231.0,
+    "attached": 198.0,
+    "two": 62.0,
+    "threeFour": 32.0,
+    "fivePlus": 34.0,
+    "mobile": 0,
+    "total": 3557.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "Eversource Energy (EGMA)",
+  "mhc": {
+   "inventoried": 319,
+   "datedBefore1800": 65,
+   "dated1800to1899": 136,
+   "dated1900to1949": 71,
+   "oldestYear": 1680,
+   "styles": [
+    [
+     "Victorian Eclectic",
+     26
+    ],
+    [
+     "Colonial Revival",
+     24
+    ],
+    [
+     "Greek Revival",
+     20
+    ],
+    [
+     "Federal",
+     11
+    ],
+    [
+     "Colonial",
+     9
+    ],
+    [
+     "Four-square",
+     5
+    ]
+   ],
+   "individualNR": 75,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Rockwood Road Historic District",
+    "Sullivan's Corner Historic District",
+    "Wrentham State School"
+   ],
+   "areas": 14
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 134.4,
+   "iceDays": 22.6,
+   "precipIn": 49.4,
+   "zeroNights": 3.7,
+   "frostNightsMin": 118,
+   "frostNightsMax": 155
+  }
+ },
+ "shirley": {
+  "name": "Shirley",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 2277.0,
+   "fuel": {
+    "gas": 487.0,
+    "bottled": 277.0,
+    "electric": 318.0,
+    "oil": 1122.0,
+    "coal": 0.0,
+    "wood": 33.0,
+    "solar": 0.0,
+    "other": 40.0,
+    "none": 0.0
+   },
+   "medianValue": 427600.0,
+   "units": {
+    "detached": 1651.0,
+    "attached": 266.0,
+    "two": 76.0,
+    "threeFour": 15.0,
+    "fivePlus": 356.0,
+    "mobile": 49.0,
+    "total": 2413.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 411,
+   "datedBefore1800": 39,
+   "dated1800to1899": 223,
+   "dated1900to1949": 101,
+   "oldestYear": 1720,
+   "styles": [
+    [
+     "Greek Revival",
+     57
+    ],
+    [
+     "Colonial Revival",
+     49
+    ],
+    [
+     "Italianate",
+     44
+    ],
+    [
+     "Federal",
+     44
+    ],
+    [
+     "Craftsman",
+     22
+    ],
+    [
+     "Georgian",
+     14
+    ]
+   ],
+   "individualNR": 1,
+   "lhdDistricts": [
+    "Shirley Center Local Historic District"
+   ],
+   "nrDistricts": [
+    "Shirley Center Historic District",
+    "Shirley Shaker Village",
+    "Shirley Village Historic District"
+   ],
+   "areas": 15
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 136.3,
+   "iceDays": 32.1,
+   "precipIn": 46.7,
+   "zeroNights": 5.1,
+   "frostNightsMin": 114,
+   "frostNightsMax": 159
+  }
+ },
+ "sudbury": {
+  "name": "Sudbury",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 6297.0,
+   "fuel": {
+    "gas": 3897.0,
+    "bottled": 416.0,
+    "electric": 527.0,
+    "oil": 1398.0,
+    "coal": 0.0,
+    "wood": 12.0,
+    "solar": 26.0,
+    "other": 10.0,
+    "none": 11.0
+   },
+   "medianValue": 988900.0,
+   "units": {
+    "detached": 5446.0,
+    "attached": 526.0,
+    "two": 25.0,
+    "threeFour": 71.0,
+    "fivePlus": 429.0,
+    "mobile": 0,
+    "total": 6497.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 524,
+   "datedBefore1800": 68,
+   "dated1800to1899": 197,
+   "dated1900to1949": 144,
+   "oldestYear": 1647,
+   "styles": [
+    [
+     "Colonial Revival",
+     61
+    ],
+    [
+     "Greek Revival",
+     55
+    ],
+    [
+     "Federal",
+     45
+    ],
+    [
+     "Italianate",
+     22
+    ],
+    [
+     "Postwar Traditional",
+     21
+    ],
+    [
+     "Bungalow",
+     21
+    ]
+   ],
+   "individualNR": 9,
+   "lhdDistricts": [
+    "George Pitts Tavern Historic District",
+    "Goodnow Library",
+    "King Philip Historic District",
+    "Old Sudbury Historic District",
+    "The Wayside Inn Local Historic District"
+   ],
+   "nrDistricts": [
+    "Sudbury Center Historic District",
+    "The Wayside Inn Historic District"
+   ],
+   "areas": 18
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 134.9,
+   "iceDays": 26.1,
+   "precipIn": 48.0,
+   "zeroNights": 4.3,
+   "frostNightsMin": 112,
+   "frostNightsMax": 153
+  }
+ },
+ "wrentham": {
+  "name": "Wrentham",
+  "county": "Norfolk",
+  "census": {
+   "heatedHomes": 4339.0,
+   "fuel": {
+    "gas": 1407.0,
+    "bottled": 188.0,
+    "electric": 613.0,
+    "oil": 2019.0,
+    "coal": 0.0,
+    "wood": 90.0,
+    "solar": 5.0,
+    "other": 17.0,
+    "none": 0.0
+   },
+   "medianValue": 654900.0,
+   "units": {
+    "detached": 3485.0,
+    "attached": 283.0,
+    "two": 252.0,
+    "threeFour": 108.0,
+    "fivePlus": 508.0,
+    "mobile": 0,
+    "total": 4636.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "Eversource Energy (EGMA), Liberty Utilities",
+  "mhc": {
+   "inventoried": 335,
+   "datedBefore1800": 42,
+   "dated1800to1899": 162,
+   "dated1900to1949": 89,
+   "oldestYear": 1600,
+   "styles": [
+    [
+     "Greek Revival",
+     77
+    ],
+    [
+     "Colonial Revival",
+     32
+    ],
+    [
+     "Federal",
+     28
+    ],
+    [
+     "Craftsman",
+     25
+    ],
+    [
+     "Italianate",
+     20
+    ],
+    [
+     "Victorian Eclectic",
+     20
+    ]
+   ],
+   "individualNR": 4,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Wrentham State School"
+   ],
+   "areas": 6
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 133.2,
+   "iceDays": 23.1,
+   "precipIn": 49.8,
+   "zeroNights": 3.6,
+   "frostNightsMin": 117,
+   "frostNightsMax": 152
+  }
+ },
+ "boxborough": {
+  "name": "Boxborough",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 2279.0,
+   "fuel": {
+    "gas": 542.0,
+    "bottled": 60.0,
+    "electric": 710.0,
+    "oil": 901.0,
+    "coal": 0.0,
+    "wood": 29.0,
+    "solar": 0.0,
+    "other": 37.0,
+    "none": 0.0
+   },
+   "medianValue": 706900.0,
+   "units": {
+    "detached": 1395.0,
+    "attached": 115.0,
+    "two": 16.0,
+    "threeFour": 0,
+    "fivePlus": 807.0,
+    "mobile": 0,
+    "total": 2353.0
+   }
+  },
+  "electric": "Littleton Electric Light & Water Department",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 165,
+   "datedBefore1800": 29,
+   "dated1800to1899": 42,
+   "dated1900to1949": 44,
+   "oldestYear": 1690,
+   "styles": [
+    [
+     "Colonial Revival",
+     17
+    ],
+    [
+     "Federal",
+     14
+    ],
+    [
+     "Postwar Traditional",
+     13
+    ],
+    [
+     "Ranch",
+     13
+    ],
+    [
+     "Victorian Eclectic",
+     12
+    ],
+    [
+     "Greek Revival",
+     12
+    ]
+   ],
+   "individualNR": 4,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Boxborough Old Town Center"
+   ],
+   "areas": 5
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 136.3,
+   "iceDays": 29.0,
+   "precipIn": 48.0,
+   "zeroNights": 4.9,
+   "frostNightsMin": 114,
+   "frostNightsMax": 156
+  }
+ },
+ "lunenburg": {
+  "name": "Lunenburg",
+  "county": "Worcester",
+  "census": {
+   "heatedHomes": 4744.0,
+   "fuel": {
+    "gas": 931.0,
+    "bottled": 525.0,
+    "electric": 488.0,
+    "oil": 2424.0,
+    "coal": 11.0,
+    "wood": 351.0,
+    "solar": 0.0,
+    "other": 0.0,
+    "none": 14.0
+   },
+   "medianValue": 463900.0,
+   "units": {
+    "detached": 3814.0,
+    "attached": 134.0,
+    "two": 141.0,
+    "threeFour": 299.0,
+    "fivePlus": 411.0,
+    "mobile": 77.0,
+    "total": 4876.0
+   }
+  },
+  "electric": "Unitil (Fitchburg Gas & Electric)",
+  "gas": "National Grid (Boston Gas), Unitil (Fitchburg Gas & Electric)",
+  "mhc": {
+   "inventoried": 133,
+   "datedBefore1800": 15,
+   "dated1800to1899": 54,
+   "dated1900to1949": 33,
+   "oldestYear": 1724,
+   "styles": [
+    [
+     "Greek Revival",
+     23
+    ],
+    [
+     "Federal",
+     12
+    ],
+    [
+     "Colonial Revival",
+     6
+    ],
+    [
+     "Cape",
+     5
+    ],
+    [
+     "Queen Anne",
+     4
+    ],
+    [
+     "Bungalow",
+     4
+    ]
+   ],
+   "individualNR": 0,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Lunenburg Historic District"
+   ],
+   "areas": 3
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 138.0,
+   "iceDays": 33.6,
+   "precipIn": 46.4,
+   "zeroNights": 5.7,
+   "frostNightsMin": 118,
+   "frostNightsMax": 163
+  }
+ },
+ "maynard": {
+  "name": "Maynard",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 4821.0,
+   "fuel": {
+    "gas": 2970.0,
+    "bottled": 104.0,
+    "electric": 665.0,
+    "oil": 920.0,
+    "coal": 0.0,
+    "wood": 144.0,
+    "solar": 0.0,
+    "other": 18.0,
+    "none": 0.0
+   },
+   "medianValue": 527400.0,
+   "units": {
+    "detached": 3053.0,
+    "attached": 451.0,
+    "two": 428.0,
+    "threeFour": 185.0,
+    "fivePlus": 828.0,
+    "mobile": 0,
+    "total": 4956.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 1069,
+   "datedBefore1800": 5,
+   "dated1800to1899": 270,
+   "dated1900to1949": 656,
+   "oldestYear": 1764,
+   "styles": [
+    [
+     "Colonial Revival",
+     267
+    ],
+    [
+     "Four-square",
+     72
+    ],
+    [
+     "Victorian Eclectic",
+     71
+    ],
+    [
+     "Italianate",
+     68
+    ],
+    [
+     "Bungalow",
+     46
+    ],
+    [
+     "Cape",
+     39
+    ]
+   ],
+   "individualNR": 11,
+   "lhdDistricts": [],
+   "nrDistricts": [],
+   "areas": 22
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 137.3,
+   "iceDays": 27.5,
+   "precipIn": 48.7,
+   "zeroNights": 4.8,
+   "frostNightsMin": 113,
+   "frostNightsMax": 154
+  }
+ },
+ "medfield": {
+  "name": "Medfield",
+  "county": "Norfolk",
+  "census": {
+   "heatedHomes": 4680.0,
+   "fuel": {
+    "gas": 2756.0,
+    "bottled": 228.0,
+    "electric": 489.0,
+    "oil": 1207.0,
+    "coal": 0.0,
+    "wood": 0.0,
+    "solar": 0.0,
+    "other": 0.0,
+    "none": 0.0
+   },
+   "medianValue": 911100.0,
+   "units": {
+    "detached": 3912.0,
+    "attached": 246.0,
+    "two": 177.0,
+    "threeFour": 70.0,
+    "fivePlus": 415.0,
+    "mobile": 0,
+    "total": 4820.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "Eversource Energy (EGMA)",
+  "mhc": {
+   "inventoried": 478,
+   "datedBefore1800": 69,
+   "dated1800to1899": 231,
+   "dated1900to1949": 138,
+   "oldestYear": 1650,
+   "styles": [
+    [
+     "Colonial Revival",
+     48
+    ],
+    [
+     "Queen Anne",
+     44
+    ],
+    [
+     "Greek Revival",
+     42
+    ],
+    [
+     "Federal",
+     27
+    ],
+    [
+     "Italianate",
+     21
+    ],
+    [
+     "Victorian Eclectic",
+     15
+    ]
+   ],
+   "individualNR": 62,
+   "lhdDistricts": [
+    "Clark - Kingsbury Farm Historic District",
+    "Medfield State Hospital",
+    "Medfield Town Center Historic District",
+    "Metcalf, John Historic District",
+    "Vine Lake Cemetery"
+   ],
+   "nrDistricts": [
+    "Medfield State Hospital"
+   ],
+   "areas": 11
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 129.1,
+   "iceDays": 25.2,
+   "precipIn": 48.9,
+   "zeroNights": 3.2,
+   "frostNightsMin": 109,
+   "frostNightsMax": 151
+  }
+ },
+ "ayer": {
+  "name": "Ayer",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 3654.0,
+   "fuel": {
+    "gas": 2120.0,
+    "bottled": 162.0,
+    "electric": 675.0,
+    "oil": 643.0,
+    "coal": 0.0,
+    "wood": 9.0,
+    "solar": 0.0,
+    "other": 45.0,
+    "none": 0.0
+   },
+   "medianValue": 463800.0,
+   "units": {
+    "detached": 1990.0,
+    "attached": 405.0,
+    "two": 368.0,
+    "threeFour": 409.0,
+    "fivePlus": 675.0,
+    "mobile": 44.0,
+    "total": 3891.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 345,
+   "datedBefore1800": 8,
+   "dated1800to1899": 114,
+   "dated1900to1949": 184,
+   "oldestYear": 1729,
+   "styles": [
+    [
+     "Colonial Revival",
+     62
+    ],
+    [
+     "Victorian Eclectic",
+     27
+    ],
+    [
+     "Italianate",
+     19
+    ],
+    [
+     "Greek Revival",
+     16
+    ],
+    [
+     "Craftsman",
+     13
+    ],
+    [
+     "Queen Anne",
+     9
+    ]
+   ],
+   "individualNR": 3,
+   "lhdDistricts": [
+    "Fort Devens Historic District"
+   ],
+   "nrDistricts": [
+    "Ayer Main Street Historic District",
+    "Fort Devens Historic District"
+   ],
+   "areas": 13
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 136.4,
+   "iceDays": 30.5,
+   "precipIn": 47.1,
+   "zeroNights": 5.0,
+   "frostNightsMin": 115,
+   "frostNightsMax": 158
+  }
+ },
+ "wayland": {
+  "name": "Wayland",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 5062.0,
+   "fuel": {
+    "gas": 3168.0,
+    "bottled": 82.0,
+    "electric": 602.0,
+    "oil": 1192.0,
+    "coal": 0.0,
+    "wood": 0.0,
+    "solar": 18.0,
+    "other": 0.0,
+    "none": 0.0
+   },
+   "medianValue": 978400.0,
+   "units": {
+    "detached": 4131.0,
+    "attached": 506.0,
+    "two": 170.0,
+    "threeFour": 71.0,
+    "fivePlus": 367.0,
+    "mobile": 0,
+    "total": 5245.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "Eversource Energy (NSTAR Gas), National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 267,
+   "datedBefore1800": 26,
+   "dated1800to1899": 169,
+   "dated1900to1949": 56,
+   "oldestYear": 1645,
+   "styles": [
+    [
+     "Colonial Revival",
+     47
+    ],
+    [
+     "Italianate",
+     37
+    ],
+    [
+     "Federal",
+     35
+    ],
+    [
+     "Greek Revival",
+     26
+    ],
+    [
+     "Colonial",
+     24
+    ],
+    [
+     "Victorian Eclectic",
+     22
+    ]
+   ],
+   "individualNR": 6,
+   "lhdDistricts": [
+    "Bow Road Historic District",
+    "First Parish Church, Carriage Shed and Parish House",
+    "Wayland Center Historic District"
+   ],
+   "nrDistricts": [
+    "Cochituate Aqueduct Linear District",
+    "First Parish Church, Carriage Shed and Parish House",
+    "Wayland Center Historic District",
+    "Weston Aqueduct Linear District"
+   ],
+   "areas": 11
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 132.1,
+   "iceDays": 26.6,
+   "precipIn": 47.7,
+   "zeroNights": 3.7,
+   "frostNightsMin": 107,
+   "frostNightsMax": 151
+  }
+ },
+ "dover": {
+  "name": "Dover",
+  "county": "Norfolk",
+  "census": {
+   "heatedHomes": 1917.0,
+   "fuel": {
+    "gas": 161.0,
+    "bottled": 181.0,
+    "electric": 141.0,
+    "oil": 1367.0,
+    "coal": 0.0,
+    "wood": 0.0,
+    "solar": 0.0,
+    "other": 67.0,
+    "none": 0.0
+   },
+   "medianValue": 1340300.0,
+   "units": {
+    "detached": 1914.0,
+    "attached": 47.0,
+    "two": 0,
+    "threeFour": 10.0,
+    "fivePlus": 27.0,
+    "mobile": 0,
+    "total": 1998.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "Eversource Energy (EGMA)",
+  "mhc": {
+   "inventoried": 160,
+   "datedBefore1800": 32,
+   "dated1800to1899": 55,
+   "dated1900to1949": 66,
+   "oldestYear": 1685,
+   "styles": [
+    [
+     "Colonial Revival",
+     33
+    ],
+    [
+     "Greek Revival",
+     17
+    ],
+    [
+     "Federal",
+     14
+    ],
+    [
+     "Colonial",
+     12
+    ],
+    [
+     "Victorian Eclectic",
+     8
+    ],
+    [
+     "Craftsman",
+     6
+    ]
+   ],
+   "individualNR": 12,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Elm Bank",
+    "Medfield State Hospital"
+   ],
+   "areas": 3
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 132.2,
+   "iceDays": 23.9,
+   "precipIn": 48.3,
+   "zeroNights": 3.3,
+   "frostNightsMin": 111,
+   "frostNightsMax": 154
+  }
+ },
+ "wellesley": {
+  "name": "Wellesley",
+  "county": "Norfolk",
+  "census": {
+   "heatedHomes": 9174.0,
+   "fuel": {
+    "gas": 6433.0,
+    "bottled": 137.0,
+    "electric": 1176.0,
+    "oil": 1373.0,
+    "coal": 0.0,
+    "wood": 0.0,
+    "solar": 13.0,
+    "other": 27.0,
+    "none": 15.0
+   },
+   "medianValue": 1582700.0,
+   "units": {
+    "detached": 7750.0,
+    "attached": 236.0,
+    "two": 210.0,
+    "threeFour": 199.0,
+    "fivePlus": 1005.0,
+    "mobile": 0,
+    "total": 9400.0
+   }
+  },
+  "electric": "Wellesley Municipal Light Plant",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 1205,
+   "datedBefore1800": 26,
+   "dated1800to1899": 444,
+   "dated1900to1949": 634,
+   "oldestYear": 1695,
+   "styles": [
+    [
+     "Colonial Revival",
+     493
+    ],
+    [
+     "Craftsman",
+     88
+    ],
+    [
+     "Queen Anne",
+     83
+    ],
+    [
+     "Victorian Eclectic",
+     76
+    ],
+    [
+     "English Revival",
+     62
+    ],
+    [
+     "Greek Revival",
+     49
+    ]
+   ],
+   "individualNR": 45,
+   "lhdDistricts": [
+    "Cottage Street Local Historic District"
+   ],
+   "nrDistricts": [
+    "Cochituate Aqueduct Linear District",
+    "Elm Bank",
+    "Fuller Brook Park",
+    "Hunnewell Estates Historic District",
+    "Sudbury Aqueduct Linear District"
+   ],
+   "areas": 49
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 131.0,
+   "iceDays": 24.8,
+   "precipIn": 47.8,
+   "zeroNights": 3.3,
+   "frostNightsMin": 107,
+   "frostNightsMax": 152
+  }
+ },
+ "acton": {
+  "name": "Acton",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 9409.0,
+   "fuel": {
+    "gas": 4896.0,
+    "bottled": 412.0,
+    "electric": 1816.0,
+    "oil": 2230.0,
+    "coal": 0.0,
+    "wood": 55.0,
+    "solar": 0.0,
+    "other": 0.0,
+    "none": 0.0
+   },
+   "medianValue": 807300.0,
+   "units": {
+    "detached": 6061.0,
+    "attached": 790.0,
+    "two": 248.0,
+    "threeFour": 178.0,
+    "fivePlus": 2254.0,
+    "mobile": 0,
+    "total": 9575.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 822,
+   "datedBefore1800": 73,
+   "dated1800to1899": 491,
+   "dated1900to1949": 182,
+   "oldestYear": 1650,
+   "styles": [
+    [
+     "Colonial Revival",
+     112
+    ],
+    [
+     "Greek Revival",
+     105
+    ],
+    [
+     "Italianate",
+     100
+    ],
+    [
+     "Queen Anne",
+     57
+    ],
+    [
+     "Victorian Eclectic",
+     46
+    ],
+    [
+     "Federal",
+     41
+    ]
+   ],
+   "individualNR": 107,
+   "lhdDistricts": [
+    "Acton Centre Historic District",
+    "South Acton Village Historic District",
+    "West Acton Village Historic District"
+   ],
+   "nrDistricts": [
+    "Acton Centre Historic District"
+   ],
+   "areas": 21
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 138.0,
+   "iceDays": 28.2,
+   "precipIn": 48.1,
+   "zeroNights": 4.9,
+   "frostNightsMin": 116,
+   "frostNightsMax": 156
+  }
+ },
+ "foxborough": {
+  "name": "Foxborough",
+  "county": "Norfolk",
+  "census": {
+   "heatedHomes": 7134.0,
+   "fuel": {
+    "gas": 4003.0,
+    "bottled": 393.0,
+    "electric": 1043.0,
+    "oil": 1490.0,
+    "coal": 0.0,
+    "wood": 36.0,
+    "solar": 0.0,
+    "other": 169.0,
+    "none": 0.0
+   },
+   "medianValue": 606300.0,
+   "units": {
+    "detached": 4512.0,
+    "attached": 314.0,
+    "two": 267.0,
+    "threeFour": 556.0,
+    "fivePlus": 1500.0,
+    "mobile": 245.0,
+    "total": 7394.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "Eversource Energy (EGMA)",
+  "mhc": {
+   "inventoried": 308,
+   "datedBefore1800": 17,
+   "dated1800to1899": 200,
+   "dated1900to1949": 71,
+   "oldestYear": 1680,
+   "styles": [
+    [
+     "Greek Revival",
+     49
+    ],
+    [
+     "Colonial Revival",
+     27
+    ],
+    [
+     "Victorian Eclectic",
+     22
+    ],
+    [
+     "Queen Anne",
+     21
+    ],
+    [
+     "Italianate",
+     19
+    ],
+    [
+     "Federal",
+     17
+    ]
+   ],
+   "individualNR": 7,
+   "lhdDistricts": [
+    "Baker Street Local Historic District"
+   ],
+   "nrDistricts": [
+    "Foxborough State Hospital"
+   ],
+   "areas": 9
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 126.8,
+   "iceDays": 25.6,
+   "precipIn": 50.3,
+   "zeroNights": 2.9,
+   "frostNightsMin": 107,
+   "frostNightsMax": 145
+  }
+ },
+ "littleton": {
+  "name": "Littleton",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 3804.0,
+   "fuel": {
+    "gas": 1638.0,
+    "bottled": 473.0,
+    "electric": 380.0,
+    "oil": 1184.0,
+    "coal": 0.0,
+    "wood": 87.0,
+    "solar": 19.0,
+    "other": 18.0,
+    "none": 5.0
+   },
+   "medianValue": 658300.0,
+   "units": {
+    "detached": 3330.0,
+    "attached": 121.0,
+    "two": 34.0,
+    "threeFour": 66.0,
+    "fivePlus": 344.0,
+    "mobile": 80.0,
+    "total": 3975.0
+   }
+  },
+  "electric": "Littleton Electric Light & Water Department",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 353,
+   "datedBefore1800": 43,
+   "dated1800to1899": 164,
+   "dated1900to1949": 100,
+   "oldestYear": 1676,
+   "styles": [
+    [
+     "Colonial Revival",
+     43
+    ],
+    [
+     "Victorian Eclectic",
+     39
+    ],
+    [
+     "Greek Revival",
+     38
+    ],
+    [
+     "Federal",
+     33
+    ],
+    [
+     "Italianate",
+     17
+    ],
+    [
+     "Colonial",
+     12
+    ]
+   ],
+   "individualNR": 20,
+   "lhdDistricts": [],
+   "nrDistricts": [],
+   "areas": 13
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 138.9,
+   "iceDays": 29.3,
+   "precipIn": 47.5,
+   "zeroNights": 5.0,
+   "frostNightsMin": 116,
+   "frostNightsMax": 159
+  }
+ },
+ "walpole": {
+  "name": "Walpole",
+  "county": "Norfolk",
+  "census": {
+   "heatedHomes": 9372.0,
+   "fuel": {
+    "gas": 5081.0,
+    "bottled": 279.0,
+    "electric": 1038.0,
+    "oil": 2932.0,
+    "coal": 0.0,
+    "wood": 0.0,
+    "solar": 0.0,
+    "other": 16.0,
+    "none": 26.0
+   },
+   "medianValue": 687100.0,
+   "units": {
+    "detached": 7072.0,
+    "attached": 817.0,
+    "two": 271.0,
+    "threeFour": 282.0,
+    "fivePlus": 1304.0,
+    "mobile": 55.0,
+    "total": 9801.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "Eversource Energy (EGMA)",
+  "mhc": {
+   "inventoried": 389,
+   "datedBefore1800": 34,
+   "dated1800to1899": 139,
+   "dated1900to1949": 160,
+   "oldestYear": 1685,
+   "styles": [
+    [
+     "Colonial Revival",
+     74
+    ],
+    [
+     "Victorian Eclectic",
+     43
+    ],
+    [
+     "Federal",
+     24
+    ],
+    [
+     "Greek Revival",
+     24
+    ],
+    [
+     "Postwar Traditional",
+     18
+    ],
+    [
+     "Italianate",
+     17
+    ]
+   ],
+   "individualNR": 3,
+   "lhdDistricts": [],
+   "nrDistricts": [],
+   "areas": 12
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 129.3,
+   "iceDays": 23.9,
+   "precipIn": 49.8,
+   "zeroNights": 3.1,
+   "frostNightsMin": 109,
+   "frostNightsMax": 147
+  }
+ },
+ "weston": {
+  "name": "Weston",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 3776.0,
+   "fuel": {
+    "gas": 2570.0,
+    "bottled": 47.0,
+    "electric": 394.0,
+    "oil": 741.0,
+    "coal": 0.0,
+    "wood": 0.0,
+    "solar": 0.0,
+    "other": 15.0,
+    "none": 9.0
+   },
+   "medianValue": 1694400.0,
+   "units": {
+    "detached": 3510.0,
+    "attached": 70.0,
+    "two": 69.0,
+    "threeFour": 31.0,
+    "fivePlus": 289.0,
+    "mobile": 0,
+    "total": 3969.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 1411,
+   "datedBefore1800": 63,
+   "dated1800to1899": 286,
+   "dated1900to1949": 697,
+   "oldestYear": 1650,
+   "styles": [
+    [
+     "Colonial Revival",
+     486
+    ],
+    [
+     "Contemporary",
+     134
+    ],
+    [
+     "Postwar Traditional",
+     79
+    ],
+    [
+     "Queen Anne",
+     69
+    ],
+    [
+     "Cape",
+     62
+    ],
+    [
+     "Ranch",
+     56
+    ]
+   ],
+   "individualNR": 7,
+   "lhdDistricts": [
+    "Crescent Street Historic District"
+   ],
+   "nrDistricts": [
+    "Boston Post Road Historic District",
+    "Case's Corner Historic District",
+    "Charles River Reservation Parkways",
+    "Crescent Street Historic District",
+    "Glen Road Historic District",
+    "Kendal Green Historic District",
+    "Silver Hill Historic District",
+    "Wellington Farm Historic District",
+    "Weston Aqueduct Linear District"
+   ],
+   "areas": 37
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 131.6,
+   "iceDays": 26.8,
+   "precipIn": 47.6,
+   "zeroNights": 3.5,
+   "frostNightsMin": 107,
+   "frostNightsMax": 152
+  }
+ },
+ "concord": {
+  "name": "Concord",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 6590.0,
+   "fuel": {
+    "gas": 3477.0,
+    "bottled": 305.0,
+    "electric": 887.0,
+    "oil": 1791.0,
+    "coal": 0.0,
+    "wood": 43.0,
+    "solar": 30.0,
+    "other": 28.0,
+    "none": 29.0
+   },
+   "medianValue": 1210000.0,
+   "units": {
+    "detached": 4792.0,
+    "attached": 336.0,
+    "two": 210.0,
+    "threeFour": 356.0,
+    "fivePlus": 1290.0,
+    "mobile": 0,
+    "total": 6984.0
+   }
+  },
+  "electric": "Concord Municipal Light Plant",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 1725,
+   "datedBefore1800": 119,
+   "dated1800to1899": 698,
+   "dated1900to1949": 711,
+   "oldestYear": 1635,
+   "styles": [
+    [
+     "Colonial Revival",
+     412
+    ],
+    [
+     "Italianate",
+     144
+    ],
+    [
+     "Queen Anne",
+     134
+    ],
+    [
+     "Greek Revival",
+     119
+    ],
+    [
+     "Victorian Eclectic",
+     80
+    ],
+    [
+     "Four-square",
+     67
+    ]
+   ],
+   "individualNR": 63,
+   "lhdDistricts": [
+    "American Mile Historic District",
+    "Barrett Farm Historic District",
+    "Church Street Historic District",
+    "Davis, Isaac Trail",
+    "Hubbard - French Historic District",
+    "Hubbardville Historic District",
+    "Main Street Historic District",
+    "North Bridge - Monument Square Historic District",
+    "Old Manse",
+    "Wayside, The"
+   ],
+   "nrDistricts": [
+    "Concord Monument Square - Lexington Road Historic District",
+    "Davis, Isaac Trail",
+    "Hubbard - French Historic District",
+    "Minute Man National Historical Park",
+    "Old Manse",
+    "Wayside, The"
+   ],
+   "areas": 136
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 132.9,
+   "iceDays": 28.3,
+   "precipIn": 48.2,
+   "zeroNights": 4.5,
+   "frostNightsMin": 111,
+   "frostNightsMax": 153
+  }
+ },
+ "groton": {
+  "name": "Groton",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 3705.0,
+   "fuel": {
+    "gas": 912.0,
+    "bottled": 386.0,
+    "electric": 260.0,
+    "oil": 1982.0,
+    "coal": 11.0,
+    "wood": 47.0,
+    "solar": 0.0,
+    "other": 107.0,
+    "none": 0.0
+   },
+   "medianValue": 743400.0,
+   "units": {
+    "detached": 3049.0,
+    "attached": 223.0,
+    "two": 196.0,
+    "threeFour": 77.0,
+    "fivePlus": 273.0,
+    "mobile": 0,
+    "total": 3818.0
+   }
+  },
+  "electric": "Groton Electric Light Department, National Grid (Massachusetts Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 591,
+   "datedBefore1800": 66,
+   "dated1800to1899": 304,
+   "dated1900to1949": 148,
+   "oldestYear": 1660,
+   "styles": [
+    [
+     "Victorian Eclectic",
+     93
+    ],
+    [
+     "Federal",
+     83
+    ],
+    [
+     "Greek Revival",
+     81
+    ],
+    [
+     "Colonial Revival",
+     55
+    ],
+    [
+     "Italianate",
+     14
+    ],
+    [
+     "Colonial",
+     13
+    ]
+   ],
+   "individualNR": 15,
+   "lhdDistricts": [
+    "Groton Historic District #1",
+    "Groton Historic District #2",
+    "Groton Historic District #3",
+    "Groton Inn"
+   ],
+   "nrDistricts": [],
+   "areas": 29
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 144.2,
+   "iceDays": 31.2,
+   "precipIn": 46.5,
+   "zeroNights": 6.4,
+   "frostNightsMin": 125,
+   "frostNightsMax": 166
+  }
+ },
+ "needham": {
+  "name": "Needham",
+  "county": "Norfolk",
+  "census": {
+   "heatedHomes": 11586.0,
+   "fuel": {
+    "gas": 6447.0,
+    "bottled": 338.0,
+    "electric": 1530.0,
+    "oil": 3195.0,
+    "coal": 0.0,
+    "wood": 0.0,
+    "solar": 0.0,
+    "other": 63.0,
+    "none": 13.0
+   },
+   "medianValue": 1188500.0,
+   "units": {
+    "detached": 8869.0,
+    "attached": 625.0,
+    "two": 317.0,
+    "threeFour": 110.0,
+    "fivePlus": 1995.0,
+    "mobile": 13.0,
+    "total": 11929.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 182,
+   "datedBefore1800": 16,
+   "dated1800to1899": 97,
+   "dated1900to1949": 32,
+   "oldestYear": 1707,
+   "styles": [
+    [
+     "Greek Revival",
+     25
+    ],
+    [
+     "Italianate",
+     15
+    ],
+    [
+     "Colonial Revival",
+     14
+    ],
+    [
+     "Queen Anne",
+     12
+    ],
+    [
+     "Federal",
+     9
+    ],
+    [
+     "Victorian Eclectic",
+     8
+    ]
+   ],
+   "individualNR": 12,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "McIntosh Corner Historic District",
+    "Needham Town Hall Historic District",
+    "Newton Upper Falls Historic District",
+    "Sudbury Aqueduct Linear District"
+   ],
+   "areas": 8
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 128.7,
+   "iceDays": 25.0,
+   "precipIn": 48.1,
+   "zeroNights": 3.2,
+   "frostNightsMin": 105,
+   "frostNightsMax": 149
+  }
+ },
+ "lincoln": {
+  "name": "Lincoln",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 2693.0,
+   "fuel": {
+    "gas": 1176.0,
+    "bottled": 74.0,
+    "electric": 716.0,
+    "oil": 652.0,
+    "coal": 0.0,
+    "wood": 17.0,
+    "solar": 0.0,
+    "other": 15.0,
+    "none": 43.0
+   },
+   "medianValue": 1208200.0,
+   "units": {
+    "detached": 1646.0,
+    "attached": 525.0,
+    "two": 51.0,
+    "threeFour": 354.0,
+    "fivePlus": 304.0,
+    "mobile": 0,
+    "total": 2880.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 659,
+   "datedBefore1800": 49,
+   "dated1800to1899": 102,
+   "dated1900to1949": 153,
+   "oldestYear": 1636,
+   "styles": [
+    [
+     "Contemporary",
+     249
+    ],
+    [
+     "Colonial Revival",
+     83
+    ],
+    [
+     "Greek Revival",
+     28
+    ],
+    [
+     "Federal",
+     26
+    ],
+    [
+     "Colonial",
+     23
+    ],
+    [
+     "Cape",
+     18
+    ]
+   ],
+   "individualNR": 8,
+   "lhdDistricts": [
+    "Brown's Wood Historic District",
+    "Cory - Brown - Hunt Historic District",
+    "Grange Complex - Codman Estate",
+    "Gropius House",
+    "King, William T. and Elizabeth Mauran House",
+    "Lincoln Historic District",
+    "Woods End Road Historic District"
+   ],
+   "nrDistricts": [
+    "Grange Complex - Codman Estate",
+    "Gropius House",
+    "Lincoln Center Historic District",
+    "Minute Man National Historical Park",
+    "Woods End Road Historic District"
+   ],
+   "areas": 41
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 131.7,
+   "iceDays": 27.4,
+   "precipIn": 47.8,
+   "zeroNights": 4.0,
+   "frostNightsMin": 108,
+   "frostNightsMax": 151
+  }
+ },
+ "norwood": {
+  "name": "Norwood",
+  "county": "Norfolk",
+  "census": {
+   "heatedHomes": 13259.0,
+   "fuel": {
+    "gas": 8215.0,
+    "bottled": 265.0,
+    "electric": 2292.0,
+    "oil": 2299.0,
+    "coal": 0.0,
+    "wood": 39.0,
+    "solar": 0.0,
+    "other": 69.0,
+    "none": 80.0
+   },
+   "medianValue": 651700.0,
+   "units": {
+    "detached": 6460.0,
+    "attached": 976.0,
+    "two": 1199.0,
+    "threeFour": 1461.0,
+    "fivePlus": 3710.0,
+    "mobile": 9.0,
+    "total": 13815.0
+   }
+  },
+  "electric": "Norwood Municipal Light Department",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 303,
+   "datedBefore1800": 9,
+   "dated1800to1899": 194,
+   "dated1900to1949": 90,
+   "oldestYear": 1680,
+   "styles": [
+    [
+     "Colonial Revival",
+     51
+    ],
+    [
+     "Italianate",
+     45
+    ],
+    [
+     "Victorian Eclectic",
+     30
+    ],
+    [
+     "Queen Anne",
+     27
+    ],
+    [
+     "Greek Revival",
+     20
+    ],
+    [
+     "Classical Revival",
+     13
+    ]
+   ],
+   "individualNR": 4,
+   "lhdDistricts": [],
+   "nrDistricts": [],
+   "areas": 13
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 128.6,
+   "iceDays": 25.0,
+   "precipIn": 49.4,
+   "zeroNights": 3.5,
+   "frostNightsMin": 105,
+   "frostNightsMax": 149
+  }
+ },
+ "newton": {
+  "name": "Newton",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 32194.0,
+   "fuel": {
+    "gas": 22758.0,
+    "bottled": 732.0,
+    "electric": 4311.0,
+    "oil": 4082.0,
+    "coal": 0.0,
+    "wood": 39.0,
+    "solar": 41.0,
+    "other": 93.0,
+    "none": 138.0
+   },
+   "medianValue": 1264900.0,
+   "units": {
+    "detached": 18620.0,
+    "attached": 2576.0,
+    "two": 5277.0,
+    "threeFour": 1703.0,
+    "fivePlus": 5783.0,
+    "mobile": 0,
+    "total": 33959.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 7333,
+   "datedBefore1800": 34,
+   "dated1800to1899": 3433,
+   "dated1900to1949": 2819,
+   "oldestYear": 1650,
+   "styles": [
+    [
+     "Colonial Revival",
+     1906
+    ],
+    [
+     "Queen Anne",
+     798
+    ],
+    [
+     "Postwar Traditional",
+     704
+    ],
+    [
+     "Ranch",
+     522
+    ],
+    [
+     "Italianate",
+     388
+    ],
+    [
+     "Shingle Style",
+     367
+    ]
+   ],
+   "individualNR": 155,
+   "lhdDistricts": [
+    "Auburndale Local Historic District",
+    "Chestnut Hill Historic District",
+    "Dupee Estate",
+    "Lasell Neighborhood Historic District",
+    "Newton Upper Falls Historic District",
+    "Newtonville Local Historic District"
+   ],
+   "nrDistricts": [
+    "Brae Burn Road Historic District",
+    "Charles River Reservation Parkways",
+    "Chestnut Hill Historic District",
+    "Cochituate Aqueduct Linear District",
+    "Commonwealth Avenue Historic District",
+    "Crystal Lake and Pleasant Street Historic District",
+    "Day Estate Historic District",
+    "Farlow Hill Historic District",
+    "Farlow and Kenrick Parks Historic District",
+    "Gray Cliff Historic District",
+    "Hammond Pond Parkway",
+    "Hyde Avenue Historic District"
+   ],
+   "areas": 168
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 126.5,
+   "iceDays": 25.9,
+   "precipIn": 47.9,
+   "zeroNights": 3.0,
+   "frostNightsMin": 102,
+   "frostNightsMax": 144
+  }
+ },
+ "sharon": {
+  "name": "Sharon",
+  "county": "Norfolk",
+  "census": {
+   "heatedHomes": 6393.0,
+   "fuel": {
+    "gas": 4308.0,
+    "bottled": 92.0,
+    "electric": 560.0,
+    "oil": 1332.0,
+    "coal": 0.0,
+    "wood": 50.0,
+    "solar": 51.0,
+    "other": 0.0,
+    "none": 0.0
+   },
+   "medianValue": 737100.0,
+   "units": {
+    "detached": 5468.0,
+    "attached": 194.0,
+    "two": 168.0,
+    "threeFour": 160.0,
+    "fivePlus": 622.0,
+    "mobile": 0,
+    "total": 6612.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "Eversource Energy (EGMA)",
+  "mhc": {
+   "inventoried": 484,
+   "datedBefore1800": 24,
+   "dated1800to1899": 147,
+   "dated1900to1949": 218,
+   "oldestYear": 1717,
+   "styles": [
+    [
+     "Colonial Revival",
+     110
+    ],
+    [
+     "Queen Anne",
+     48
+    ],
+    [
+     "Bungalow",
+     47
+    ],
+    [
+     "Craftsman",
+     32
+    ],
+    [
+     "Victorian Eclectic",
+     28
+    ],
+    [
+     "Greek Revival",
+     17
+    ]
+   ],
+   "individualNR": 3,
+   "lhdDistricts": [
+    "Historic District III",
+    "Sharon Historic District"
+   ],
+   "nrDistricts": [
+    "Borderland Historic District",
+    "Sharon Historic District"
+   ],
+   "areas": 8
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 124.4,
+   "iceDays": 25.3,
+   "precipIn": 50.1,
+   "zeroNights": 2.9,
+   "frostNightsMin": 104,
+   "frostNightsMax": 144
+  }
+ },
+ "waltham": {
+  "name": "Waltham",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 25498.0,
+   "fuel": {
+    "gas": 13624.0,
+    "bottled": 736.0,
+    "electric": 5993.0,
+    "oil": 4830.0,
+    "coal": 0.0,
+    "wood": 21.0,
+    "solar": 0.0,
+    "other": 93.0,
+    "none": 201.0
+   },
+   "medianValue": 748700.0,
+   "units": {
+    "detached": 9898.0,
+    "attached": 2328.0,
+    "two": 2921.0,
+    "threeFour": 3217.0,
+    "fivePlus": 8310.0,
+    "mobile": 42.0,
+    "total": 26728.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 907,
+   "datedBefore1800": 21,
+   "dated1800to1899": 548,
+   "dated1900to1949": 268,
+   "oldestYear": 1700,
+   "styles": [
+    [
+     "Colonial Revival",
+     147
+    ],
+    [
+     "Queen Anne",
+     93
+    ],
+    [
+     "Greek Revival",
+     80
+    ],
+    [
+     "Italianate",
+     80
+    ],
+    [
+     "Second Empire",
+     46
+    ],
+    [
+     "Federal",
+     33
+    ]
+   ],
+   "individualNR": 96,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "American Waltham Watch Company Historic District",
+    "Boston Manufacturing Company Historic District",
+    "Central Square Historic District",
+    "Charles Street Workers' Housing Historic District",
+    "East Main Street Historic District",
+    "Fernald, Walter E. State School",
+    "Lawton Place Historic District",
+    "Lyman Street Historic District",
+    "Metropolitan State Hospital",
+    "Moody Street Historic District",
+    "North Lexington Street Historic District",
+    "Piety Corner Historic District"
+   ],
+   "areas": 56
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 129.0,
+   "iceDays": 26.8,
+   "precipIn": 47.5,
+   "zeroNights": 3.2,
+   "frostNightsMin": 107,
+   "frostNightsMax": 150
+  }
+ },
+ "westford": {
+  "name": "Westford",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 8795.0,
+   "fuel": {
+    "gas": 6117.0,
+    "bottled": 349.0,
+    "electric": 810.0,
+    "oil": 1417.0,
+    "coal": 0.0,
+    "wood": 75.0,
+    "solar": 0.0,
+    "other": 19.0,
+    "none": 8.0
+   },
+   "medianValue": 748500.0,
+   "units": {
+    "detached": 7317.0,
+    "attached": 728.0,
+    "two": 161.0,
+    "threeFour": 74.0,
+    "fivePlus": 956.0,
+    "mobile": 5.0,
+    "total": 9241.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 726,
+   "datedBefore1800": 40,
+   "dated1800to1899": 302,
+   "dated1900to1949": 278,
+   "oldestYear": 1700,
+   "styles": [
+    [
+     "Victorian Eclectic",
+     166
+    ],
+    [
+     "Colonial Revival",
+     96
+    ],
+    [
+     "Cape",
+     34
+    ],
+    [
+     "Federal",
+     29
+    ],
+    [
+     "Greek Revival",
+     23
+    ],
+    [
+     "Bungalow",
+     19
+    ]
+   ],
+   "individualNR": 111,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Brookside Historic District",
+    "Forge Village Historic District",
+    "Graniteville Historic District",
+    "Parker Village Historic District",
+    "Westford Center Historic District"
+   ],
+   "areas": 15
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 143.6,
+   "iceDays": 29.8,
+   "precipIn": 47.5,
+   "zeroNights": 5.7,
+   "frostNightsMin": 123,
+   "frostNightsMax": 165
+  }
+ },
+ "canton": {
+  "name": "Canton",
+  "county": "Norfolk",
+  "census": {
+   "heatedHomes": 9630.0,
+   "fuel": {
+    "gas": 5754.0,
+    "bottled": 239.0,
+    "electric": 1859.0,
+    "oil": 1574.0,
+    "coal": 0.0,
+    "wood": 18.0,
+    "solar": 0.0,
+    "other": 61.0,
+    "none": 125.0
+   },
+   "medianValue": 710600.0,
+   "units": {
+    "detached": 5516.0,
+    "attached": 651.0,
+    "two": 401.0,
+    "threeFour": 178.0,
+    "fivePlus": 3110.0,
+    "mobile": 0,
+    "total": 9866.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "Eversource Energy (EGMA)",
+  "mhc": {
+   "inventoried": 421,
+   "datedBefore1800": 20,
+   "dated1800to1899": 284,
+   "dated1900to1949": 94,
+   "oldestYear": 1700,
+   "styles": [
+    [
+     "Italianate",
+     59
+    ],
+    [
+     "Colonial Revival",
+     45
+    ],
+    [
+     "Federal",
+     35
+    ],
+    [
+     "Greek Revival",
+     33
+    ],
+    [
+     "Queen Anne",
+     26
+    ],
+    [
+     "Victorian Eclectic",
+     17
+    ]
+   ],
+   "individualNR": 4,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Blue Hills Reservation Parkways",
+    "Canton Corner Historic District"
+   ],
+   "areas": 23
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 122.5,
+   "iceDays": 24.3,
+   "precipIn": 50.9,
+   "zeroNights": 2.6,
+   "frostNightsMin": 102,
+   "frostNightsMax": 141
+  }
+ },
+ "carlisle": {
+  "name": "Carlisle",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 1776.0,
+   "fuel": {
+    "gas": 585.0,
+    "bottled": 105.0,
+    "electric": 219.0,
+    "oil": 772.0,
+    "coal": 0.0,
+    "wood": 61.0,
+    "solar": 0.0,
+    "other": 7.0,
+    "none": 27.0
+   },
+   "medianValue": 1103900.0,
+   "units": {
+    "detached": 1682.0,
+    "attached": 13.0,
+    "two": 15.0,
+    "threeFour": 20.0,
+    "fivePlus": 75.0,
+    "mobile": 0,
+    "total": 1805.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 428,
+   "datedBefore1800": 60,
+   "dated1800to1899": 135,
+   "dated1900to1949": 140,
+   "oldestYear": 1685,
+   "styles": [
+    [
+     "Postwar Traditional",
+     44
+    ],
+    [
+     "Colonial Revival",
+     35
+    ],
+    [
+     "Greek Revival",
+     23
+    ],
+    [
+     "Cape",
+     23
+    ],
+    [
+     "Federal",
+     21
+    ],
+    [
+     "Colonial",
+     21
+    ]
+   ],
+   "individualNR": 2,
+   "lhdDistricts": [
+    "Carlisle Historic District"
+   ],
+   "nrDistricts": [],
+   "areas": 36
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 136.9,
+   "iceDays": 28.8,
+   "precipIn": 47.9,
+   "zeroNights": 4.6,
+   "frostNightsMin": 114,
+   "frostNightsMax": 155
+  }
+ },
+ "dedham": {
+  "name": "Dedham",
+  "county": "Norfolk",
+  "census": {
+   "heatedHomes": 10530.0,
+   "fuel": {
+    "gas": 7184.0,
+    "bottled": 257.0,
+    "electric": 1614.0,
+    "oil": 1390.0,
+    "coal": 29.0,
+    "wood": 30.0,
+    "solar": 0.0,
+    "other": 20.0,
+    "none": 6.0
+   },
+   "medianValue": 661800.0,
+   "units": {
+    "detached": 7075.0,
+    "attached": 578.0,
+    "two": 786.0,
+    "threeFour": 323.0,
+    "fivePlus": 2002.0,
+    "mobile": 64.0,
+    "total": 10828.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 732,
+   "datedBefore1800": 45,
+   "dated1800to1899": 350,
+   "dated1900to1949": 261,
+   "oldestYear": 1637,
+   "styles": [
+    [
+     "Colonial Revival",
+     179
+    ],
+    [
+     "Greek Revival",
+     106
+    ],
+    [
+     "Federal",
+     67
+    ],
+    [
+     "Italianate",
+     47
+    ],
+    [
+     "Queen Anne",
+     27
+    ],
+    [
+     "Craftsman",
+     22
+    ]
+   ],
+   "individualNR": 13,
+   "lhdDistricts": [
+    "Connecticut Corner Historic District",
+    "Federal Hill Historic District",
+    "Franklin Square - Court Street Historic District"
+   ],
+   "nrDistricts": [
+    "Dedham Village Historic District",
+    "Mother Brook Lower Mill Pond Historic District",
+    "Stony Brook Reservation Parkways"
+   ],
+   "areas": 32
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 125.3,
+   "iceDays": 23.9,
+   "precipIn": 49.9,
+   "zeroNights": 3.1,
+   "frostNightsMin": 103,
+   "frostNightsMax": 146
+  }
+ },
+ "bedford": {
+  "name": "Bedford",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 5869.0,
+   "fuel": {
+    "gas": 3534.0,
+    "bottled": 250.0,
+    "electric": 784.0,
+    "oil": 1288.0,
+    "coal": 0.0,
+    "wood": 0.0,
+    "solar": 0.0,
+    "other": 13.0,
+    "none": 0.0
+   },
+   "medianValue": 898500.0,
+   "units": {
+    "detached": 3810.0,
+    "attached": 652.0,
+    "two": 226.0,
+    "threeFour": 269.0,
+    "fivePlus": 1013.0,
+    "mobile": 0,
+    "total": 5970.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 686,
+   "datedBefore1800": 41,
+   "dated1800to1899": 235,
+   "dated1900to1949": 279,
+   "oldestYear": 1638,
+   "styles": [
+    [
+     "Colonial Revival",
+     174
+    ],
+    [
+     "Greek Revival",
+     53
+    ],
+    [
+     "Victorian Eclectic",
+     52
+    ],
+    [
+     "Postwar Traditional",
+     37
+    ],
+    [
+     "Federal",
+     33
+    ],
+    [
+     "Cape",
+     29
+    ]
+   ],
+   "individualNR": 74,
+   "lhdDistricts": [
+    "Bedford Historic District",
+    "Old Burying Ground"
+   ],
+   "nrDistricts": [
+    "Bedford Depot Park Historic District",
+    "Bedford Veterans Administration Hospital Historic",
+    "Historic Wilson Mill - Old Burlington Road",
+    "Old Bedford Center Historic District",
+    "Old Billerica Road Historic District",
+    "Old Burying Ground",
+    "Two Brothers Rocks - Dudley Road Historic District"
+   ],
+   "areas": 28
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 131.7,
+   "iceDays": 28.5,
+   "precipIn": 48.3,
+   "zeroNights": 4.3,
+   "frostNightsMin": 108,
+   "frostNightsMax": 152
+  }
+ },
+ "lexington": {
+  "name": "Lexington",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 12477.0,
+   "fuel": {
+    "gas": 6025.0,
+    "bottled": 724.0,
+    "electric": 1762.0,
+    "oil": 3868.0,
+    "coal": 0.0,
+    "wood": 8.0,
+    "solar": 25.0,
+    "other": 65.0,
+    "none": 0.0
+   },
+   "medianValue": 1203100.0,
+   "units": {
+    "detached": 9394.0,
+    "attached": 1138.0,
+    "two": 267.0,
+    "threeFour": 320.0,
+    "fivePlus": 1635.0,
+    "mobile": 0,
+    "total": 12754.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 2192,
+   "datedBefore1800": 51,
+   "dated1800to1899": 607,
+   "dated1900to1949": 964,
+   "oldestYear": 1636,
+   "styles": [
+    [
+     "Colonial Revival",
+     514
+    ],
+    [
+     "Contemporary",
+     390
+    ],
+    [
+     "Split-Level - Raised Ranch",
+     219
+    ],
+    [
+     "Queen Anne",
+     169
+    ],
+    [
+     "Craftsman",
+     133
+    ],
+    [
+     "Cape",
+     130
+    ]
+   ],
+   "individualNR": 22,
+   "lhdDistricts": [
+    "Battle Green Historic District",
+    "Buckman Tavern",
+    "East Village Historic District",
+    "Hancock - Clarke Historic District",
+    "Lexington Green",
+    "Lexington Green Historic District",
+    "Munroe Tavern Historic District",
+    "Sanderson House - Munroe Tavern"
+   ],
+   "nrDistricts": [
+    "Buckman Tavern",
+    "Lexington Green",
+    "Lexington Green Historic District",
+    "Metropolitan State Hospital",
+    "Minute Man National Historical Park",
+    "Peacock Farm Historic District",
+    "Sanderson House - Munroe Tavern",
+    "Six Moon Hill Historic District"
+   ],
+   "areas": 50
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 131.0,
+   "iceDays": 26.8,
+   "precipIn": 47.9,
+   "zeroNights": 3.8,
+   "frostNightsMin": 107,
+   "frostNightsMax": 150
+  }
+ },
+ "watertown": {
+  "name": "Watertown",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 16371.0,
+   "fuel": {
+    "gas": 10984.0,
+    "bottled": 576.0,
+    "electric": 2403.0,
+    "oil": 2068.0,
+    "coal": 67.0,
+    "wood": 53.0,
+    "solar": 19.0,
+    "other": 160.0,
+    "none": 41.0
+   },
+   "medianValue": 784600.0,
+   "units": {
+    "detached": 2960.0,
+    "attached": 1764.0,
+    "two": 5969.0,
+    "threeFour": 1366.0,
+    "fivePlus": 5147.0,
+    "mobile": 0,
+    "total": 17206.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 1375,
+   "datedBefore1800": 62,
+   "dated1800to1899": 555,
+   "dated1900to1949": 657,
+   "oldestYear": 1642,
+   "styles": [
+    [
+     "Colonial Revival",
+     237
+    ],
+    [
+     "Queen Anne",
+     124
+    ],
+    [
+     "Craftsman",
+     65
+    ],
+    [
+     "Victorian Eclectic",
+     55
+    ],
+    [
+     "Greek Revival",
+     48
+    ],
+    [
+     "Italianate",
+     38
+    ]
+   ],
+   "individualNR": 355,
+   "lhdDistricts": [
+    "Watertown Historic District"
+   ],
+   "nrDistricts": [
+    "Charles River Reservation Parkways",
+    "Watertown Arsenal Historic District"
+   ],
+   "areas": 28
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 118.3,
+   "iceDays": 26.0,
+   "precipIn": 48.1,
+   "zeroNights": 2.2,
+   "frostNightsMin": 95,
+   "frostNightsMax": 138
+  }
+ },
+ "belmont": {
+  "name": "Belmont",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 10412.0,
+   "fuel": {
+    "gas": 7240.0,
+    "bottled": 159.0,
+    "electric": 1052.0,
+    "oil": 1921.0,
+    "coal": 0.0,
+    "wood": 0.0,
+    "solar": 5.0,
+    "other": 30.0,
+    "none": 5.0
+   },
+   "medianValue": 1159000.0,
+   "units": {
+    "detached": 4936.0,
+    "attached": 650.0,
+    "two": 3228.0,
+    "threeFour": 942.0,
+    "fivePlus": 1125.0,
+    "mobile": 0,
+    "total": 10881.0
+   }
+  },
+  "electric": "Belmont Municipal Light Department",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 843,
+   "datedBefore1800": 8,
+   "dated1800to1899": 258,
+   "dated1900to1949": 315,
+   "oldestYear": 1654,
+   "styles": [
+    [
+     "Colonial Revival",
+     337
+    ],
+    [
+     "Craftsman",
+     124
+    ],
+    [
+     "English Revival",
+     91
+    ],
+    [
+     "Queen Anne",
+     84
+    ],
+    [
+     "Italianate",
+     43
+    ],
+    [
+     "Greek Revival",
+     39
+    ]
+   ],
+   "individualNR": 4,
+   "lhdDistricts": [
+    "Common Street Historic District",
+    "Pleasant Street Historic District",
+    "Richardson Farm Local Historic District"
+   ],
+   "nrDistricts": [
+    "McLean Hospital National Register District",
+    "Metropolitan State Hospital",
+    "Pleasant Street Historic District"
+   ],
+   "areas": 101
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 120.4,
+   "iceDays": 26.4,
+   "precipIn": 48.1,
+   "zeroNights": 2.5,
+   "frostNightsMin": 97,
+   "frostNightsMax": 138
+  }
+ },
+ "chelmsford": {
+  "name": "Chelmsford",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 13450.0,
+   "fuel": {
+    "gas": 10367.0,
+    "bottled": 304.0,
+    "electric": 1409.0,
+    "oil": 1062.0,
+    "coal": 0.0,
+    "wood": 37.0,
+    "solar": 20.0,
+    "other": 137.0,
+    "none": 114.0
+   },
+   "medianValue": 593700.0,
+   "units": {
+    "detached": 9302.0,
+    "attached": 1114.0,
+    "two": 376.0,
+    "threeFour": 219.0,
+    "fivePlus": 2652.0,
+    "mobile": 265.0,
+    "total": 13942.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 345,
+   "datedBefore1800": 34,
+   "dated1800to1899": 223,
+   "dated1900to1949": 50,
+   "oldestYear": 1664,
+   "styles": [
+    [
+     "Italianate",
+     39
+    ],
+    [
+     "Greek Revival",
+     35
+    ],
+    [
+     "Federal",
+     31
+    ],
+    [
+     "Colonial Revival",
+     26
+    ],
+    [
+     "Queen Anne",
+     22
+    ],
+    [
+     "Victorian Eclectic",
+     22
+    ]
+   ],
+   "individualNR": 7,
+   "lhdDistricts": [
+    "Chelmsford Center Historic District"
+   ],
+   "nrDistricts": [
+    "Chelmsford Center Historic District",
+    "Middlesex Canal",
+    "Middlesex Canal Historic and Archaeological District"
+   ],
+   "areas": 10
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 143.6,
+   "iceDays": 29.5,
+   "precipIn": 48.0,
+   "zeroNights": 5.2,
+   "frostNightsMin": 119,
+   "frostNightsMax": 161
+  }
+ },
+ "stoughton": {
+  "name": "Stoughton",
+  "county": "Norfolk",
+  "census": {
+   "heatedHomes": 11302.0,
+   "fuel": {
+    "gas": 6517.0,
+    "bottled": 252.0,
+    "electric": 1471.0,
+    "oil": 2763.0,
+    "coal": 39.0,
+    "wood": 30.0,
+    "solar": 63.0,
+    "other": 99.0,
+    "none": 68.0
+   },
+   "medianValue": 523800.0,
+   "units": {
+    "detached": 7339.0,
+    "attached": 931.0,
+    "two": 559.0,
+    "threeFour": 654.0,
+    "fivePlus": 2237.0,
+    "mobile": 22.0,
+    "total": 11742.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "Eversource Energy (EGMA)",
+  "mhc": {
+   "inventoried": 109,
+   "datedBefore1800": 18,
+   "dated1800to1899": 59,
+   "dated1900to1949": 20,
+   "oldestYear": 1732,
+   "styles": [
+    [
+     "Federal",
+     14
+    ],
+    [
+     "Colonial",
+     12
+    ],
+    [
+     "Greek Revival",
+     10
+    ],
+    [
+     "Queen Anne",
+     9
+    ],
+    [
+     "Classical Revival",
+     9
+    ],
+    [
+     "Italianate",
+     5
+    ]
+   ],
+   "individualNR": 2,
+   "lhdDistricts": [],
+   "nrDistricts": [],
+   "areas": 10
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 119.3,
+   "iceDays": 25.5,
+   "precipIn": 51.1,
+   "zeroNights": 2.2,
+   "frostNightsMin": 99,
+   "frostNightsMax": 134
+  }
+ },
+ "brookline": {
+  "name": "Brookline",
+  "county": "Norfolk",
+  "census": {
+   "heatedHomes": 27587.0,
+   "fuel": {
+    "gas": 16622.0,
+    "bottled": 726.0,
+    "electric": 7310.0,
+    "oil": 2468.0,
+    "coal": 16.0,
+    "wood": 16.0,
+    "solar": 21.0,
+    "other": 203.0,
+    "none": 205.0
+   },
+   "medianValue": 1246800.0,
+   "units": {
+    "detached": 5282.0,
+    "attached": 1505.0,
+    "two": 2892.0,
+    "threeFour": 4526.0,
+    "fivePlus": 14668.0,
+    "mobile": 0,
+    "total": 28873.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 3665,
+   "datedBefore1800": 15,
+   "dated1800to1899": 1253,
+   "dated1900to1949": 2061,
+   "oldestYear": 1650,
+   "styles": [
+    [
+     "Colonial Revival",
+     1090
+    ],
+    [
+     "Queen Anne",
+     370
+    ],
+    [
+     "English Revival",
+     259
+    ],
+    [
+     "Craftsman",
+     243
+    ],
+    [
+     "Shingle Style",
+     177
+    ],
+    [
+     "Classical Revival",
+     170
+    ]
+   ],
+   "individualNR": 110,
+   "lhdDistricts": [
+    "Chestnut Hill North Local Historic District",
+    "Cottage Farm Local Historic District",
+    "Crowninshield Local Historic District",
+    "Graffam - McKay Local Historic District",
+    "Graffam Development Historic District",
+    "Harvard Avenue, 76-96",
+    "Lawrence Local Historic District",
+    "Olmsted - Richardson Thematic Local Historic District",
+    "Olmsted, Frederick Law National Historic Site",
+    "Pill Hill Local Historic District",
+    "Wild, Dr. Charles E. House and Carriage Barn"
+   ],
+   "nrDistricts": [
+    "Anderson, Larz Park Historic District",
+    "Beacon Street Historic District",
+    "Beaconsfield Terraces Historic District",
+    "Brookline Reservoir of the Cochituate Aqueduct",
+    "Brookline Town Green Historic District",
+    "Brookline Village Commercial District",
+    "Chestnut Hill Historic District",
+    "Chestnut Hill North Local Historic District",
+    "Cochituate Aqueduct Linear District",
+    "Cottage Farm Historic District",
+    "Cypress - Emerson Historic District",
+    "Fisher Hill Historic District"
+   ],
+   "areas": 88
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 112.3,
+   "iceDays": 24.9,
+   "precipIn": 48.8,
+   "zeroNights": 1.9,
+   "frostNightsMin": 89,
+   "frostNightsMax": 130
+  }
+ },
+ "arlington": {
+  "name": "Arlington",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 20005.0,
+   "fuel": {
+    "gas": 11835.0,
+    "bottled": 586.0,
+    "electric": 3608.0,
+    "oil": 3646.0,
+    "coal": 0.0,
+    "wood": 49.0,
+    "solar": 33.0,
+    "other": 63.0,
+    "none": 185.0
+   },
+   "medianValue": 933800.0,
+   "units": {
+    "detached": 7856.0,
+    "attached": 1532.0,
+    "two": 4957.0,
+    "threeFour": 1151.0,
+    "fivePlus": 5170.0,
+    "mobile": 69.0,
+    "total": 20746.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 1222,
+   "datedBefore1800": 15,
+   "dated1800to1899": 595,
+   "dated1900to1949": 506,
+   "oldestYear": 1637,
+   "styles": [
+    [
+     "Colonial Revival",
+     307
+    ],
+    [
+     "Queen Anne",
+     128
+    ],
+    [
+     "Craftsman",
+     100
+    ],
+    [
+     "Victorian Eclectic",
+     98
+    ],
+    [
+     "Italianate",
+     83
+    ],
+    [
+     "Greek Revival",
+     82
+    ]
+   ],
+   "individualNR": 59,
+   "lhdDistricts": [
+    "Avon Place Historic District",
+    "Broadway Historic District",
+    "Central Street Historic District",
+    "Jason - Gray Historic District",
+    "Mount Gilboa - Crescent Hill Historic District",
+    "Pleasant Street Historic District",
+    "Russell Street Historic District"
+   ],
+   "nrDistricts": [
+    "Arlington Center Historic District",
+    "Kensington Park Historic District",
+    "Mystic Valley Parkway",
+    "Orvis Road Historic District",
+    "Peirce Farm Historic District"
+   ],
+   "areas": 57
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 120.4,
+   "iceDays": 26.4,
+   "precipIn": 48.1,
+   "zeroNights": 2.5,
+   "frostNightsMin": 97,
+   "frostNightsMax": 138
+  }
+ },
+ "burlington": {
+  "name": "Burlington",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 9974.0,
+   "fuel": {
+    "gas": 5199.0,
+    "bottled": 307.0,
+    "electric": 1174.0,
+    "oil": 3176.0,
+    "coal": 0.0,
+    "wood": 35.0,
+    "solar": 8.0,
+    "other": 30.0,
+    "none": 45.0
+   },
+   "medianValue": 740600.0,
+   "units": {
+    "detached": 7314.0,
+    "attached": 354.0,
+    "two": 256.0,
+    "threeFour": 116.0,
+    "fivePlus": 2331.0,
+    "mobile": 0,
+    "total": 10371.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 98,
+   "datedBefore1800": 21,
+   "dated1800to1899": 41,
+   "dated1900to1949": 20,
+   "oldestYear": 1640,
+   "styles": [
+    [
+     "Greek Revival",
+     21
+    ],
+    [
+     "Colonial Revival",
+     13
+    ],
+    [
+     "Italianate",
+     6
+    ],
+    [
+     "Federal",
+     6
+    ],
+    [
+     "Altered beyond recognition",
+     5
+    ],
+    [
+     "Georgian",
+     4
+    ]
+   ],
+   "individualNR": 4,
+   "lhdDistricts": [],
+   "nrDistricts": [],
+   "areas": 2
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 129.5,
+   "iceDays": 28.0,
+   "precipIn": 48.2,
+   "zeroNights": 3.8,
+   "frostNightsMin": 106,
+   "frostNightsMax": 150
+  }
+ },
+ "cambridge": {
+  "name": "Cambridge",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 49444.0,
+   "fuel": {
+    "gas": 31452.0,
+    "bottled": 1110.0,
+    "electric": 13765.0,
+    "oil": 1786.0,
+    "coal": 10.0,
+    "wood": 0.0,
+    "solar": 126.0,
+    "other": 289.0,
+    "none": 906.0
+   },
+   "medianValue": 1092100.0,
+   "units": {
+    "detached": 5416.0,
+    "attached": 3549.0,
+    "two": 6590.0,
+    "threeFour": 9347.0,
+    "fivePlus": 29910.0,
+    "mobile": 28.0,
+    "total": 54840.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "Eversource Energy (NSTAR Gas)",
+  "mhc": {
+   "inventoried": 1325,
+   "datedBefore1800": 37,
+   "dated1800to1899": 677,
+   "dated1900to1949": 385,
+   "oldestYear": 1630,
+   "styles": [
+    [
+     "Colonial Revival",
+     257
+    ],
+    [
+     "Greek Revival",
+     152
+    ],
+    [
+     "Queen Anne",
+     123
+    ],
+    [
+     "Second Empire",
+     122
+    ],
+    [
+     "Italianate",
+     99
+    ],
+    [
+     "Row House",
+     56
+    ]
+   ],
+   "individualNR": 191,
+   "lhdDistricts": [
+    "Berkeley Street Historic District",
+    "Cambridge Common Historic District",
+    "Christ Church",
+    "Elmwood (James Russell Lowell House)",
+    "Follen Street Historic District",
+    "Fort Washington Historic District",
+    "Harvard Yard Historic District",
+    "Longfellow House - Washington's Headquarters National Historic Site",
+    "Old Cambridge Historic District",
+    "Old Harvard Yard"
+   ],
+   "nrDistricts": [
+    "Alewife Brook Parkway",
+    "Ash Street Historic District",
+    "Avon Hill Historic District",
+    "Bennink - Douglas Cottages",
+    "Berkeley Street Historic District",
+    "Bigelow Street Historic District",
+    "Blake and Knowles Steam Pump Company",
+    "Cambridge Common Historic District",
+    "Central Square Historic District",
+    "Charles River Basin Historic District",
+    "Christ Church",
+    "City Hall Historic District"
+   ],
+   "areas": 59
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 108.6,
+   "iceDays": 25.3,
+   "precipIn": 48.4,
+   "zeroNights": 1.7,
+   "frostNightsMin": 84,
+   "frostNightsMax": 126
+  }
+ },
+ "milton": {
+  "name": "Milton",
+  "county": "Norfolk",
+  "census": {
+   "heatedHomes": 9094.0,
+   "fuel": {
+    "gas": 6077.0,
+    "bottled": 141.0,
+    "electric": 766.0,
+    "oil": 1997.0,
+    "coal": 19.0,
+    "wood": 7.0,
+    "solar": 50.0,
+    "other": 7.0,
+    "none": 30.0
+   },
+   "medianValue": 933200.0,
+   "units": {
+    "detached": 7042.0,
+    "attached": 463.0,
+    "two": 1070.0,
+    "threeFour": 81.0,
+    "fivePlus": 679.0,
+    "mobile": 0,
+    "total": 9335.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 4634,
+   "datedBefore1800": 70,
+   "dated1800to1899": 732,
+   "dated1900to1949": 2836,
+   "oldestYear": 1640,
+   "styles": [
+    [
+     "Colonial Revival",
+     1583
+    ],
+    [
+     "Garrison Colonial",
+     430
+    ],
+    [
+     "Postwar Traditional",
+     371
+    ],
+    [
+     "Craftsman",
+     306
+    ],
+    [
+     "Ranch",
+     196
+    ],
+    [
+     "Cape",
+     168
+    ]
+   ],
+   "individualNR": 52,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Blue Hills Parkway",
+    "Blue Hills Reservation Parkways",
+    "Brush Hill Historic District",
+    "Davenport Estate Historic District",
+    "Dorchester-Milton Lower Mills Industrial District",
+    "Eustis Estate Historic District",
+    "Forbes, Capt. R. B. House",
+    "Milton Centre Historic District",
+    "Milton Hill Historic District",
+    "Neponset Valley Parkway",
+    "Railway Village Historic District",
+    "Scott's Woods Historic District"
+   ],
+   "areas": 77
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 110.0,
+   "iceDays": 23.7,
+   "precipIn": 51.1,
+   "zeroNights": 1.9,
+   "frostNightsMin": 83,
+   "frostNightsMax": 126
+  }
+ },
+ "medford": {
+  "name": "Medford",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 24339.0,
+   "fuel": {
+    "gas": 15034.0,
+    "bottled": 528.0,
+    "electric": 4723.0,
+    "oil": 3543.0,
+    "coal": 0.0,
+    "wood": 0.0,
+    "solar": 67.0,
+    "other": 255.0,
+    "none": 189.0
+   },
+   "medianValue": 755500.0,
+   "units": {
+    "detached": 8648.0,
+    "attached": 1712.0,
+    "two": 6929.0,
+    "threeFour": 1832.0,
+    "fivePlus": 6388.0,
+    "mobile": 78.0,
+    "total": 25587.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 2153,
+   "datedBefore1800": 20,
+   "dated1800to1899": 876,
+   "dated1900to1949": 975,
+   "oldestYear": 1645,
+   "styles": [
+    [
+     "Colonial Revival",
+     323
+    ],
+    [
+     "Queen Anne",
+     289
+    ],
+    [
+     "Italianate",
+     152
+    ],
+    [
+     "Craftsman",
+     122
+    ],
+    [
+     "Greek Revival",
+     100
+    ],
+    [
+     "Altered beyond recognition",
+     81
+    ]
+   ],
+   "individualNR": 35,
+   "lhdDistricts": [
+    "Fletcher, Jonathan House",
+    "Hillside Avenue Historic District",
+    "Marm Simonds Hill Historic District"
+   ],
+   "nrDistricts": [
+    "Fells Connector Parkways",
+    "Hillside Avenue Historic District",
+    "Middlesex Canal Historic and Archaeological District",
+    "Middlesex Fells Reservation Parkways",
+    "Middlesex Fells Reservoirs Historic District",
+    "Mystic Valley Parkway",
+    "Old Ship Street Historic District",
+    "Revere Beach Parkway",
+    "Unitarian Universalist Church and Parsonage"
+   ],
+   "areas": 99
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 110.3,
+   "iceDays": 25.5,
+   "precipIn": 48.3,
+   "zeroNights": 1.9,
+   "frostNightsMin": 87,
+   "frostNightsMax": 127
+  }
+ },
+ "randolph": {
+  "name": "Randolph",
+  "county": "Norfolk",
+  "census": {
+   "heatedHomes": 12747.0,
+   "fuel": {
+    "gas": 7037.0,
+    "bottled": 487.0,
+    "electric": 2414.0,
+    "oil": 2714.0,
+    "coal": 0.0,
+    "wood": 48.0,
+    "solar": 0.0,
+    "other": 47.0,
+    "none": 0.0
+   },
+   "medianValue": 496400.0,
+   "units": {
+    "detached": 8233.0,
+    "attached": 1272.0,
+    "two": 801.0,
+    "threeFour": 251.0,
+    "fivePlus": 2481.0,
+    "mobile": 42.0,
+    "total": 13080.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "Eversource Energy (EGMA)",
+  "mhc": {
+   "inventoried": 754,
+   "datedBefore1800": 12,
+   "dated1800to1899": 326,
+   "dated1900to1949": 129,
+   "oldestYear": 1713,
+   "styles": [
+    [
+     "Contemporary",
+     253
+    ],
+    [
+     "Split-Level - Raised Ranch",
+     162
+    ],
+    [
+     "Ranch",
+     67
+    ],
+    [
+     "Colonial Revival",
+     58
+    ],
+    [
+     "Greek Revival",
+     54
+    ],
+    [
+     "Victorian Eclectic",
+     52
+    ]
+   ],
+   "individualNR": 7,
+   "lhdDistricts": [],
+   "nrDistricts": [],
+   "areas": 14
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 117.3,
+   "iceDays": 24.0,
+   "precipIn": 51.3,
+   "zeroNights": 2.1,
+   "frostNightsMin": 95,
+   "frostNightsMax": 132
+  }
+ },
+ "somerville": {
+  "name": "Somerville",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 35715.0,
+   "fuel": {
+    "gas": 24824.0,
+    "bottled": 1108.0,
+    "electric": 6905.0,
+    "oil": 2202.0,
+    "coal": 12.0,
+    "wood": 51.0,
+    "solar": 79.0,
+    "other": 180.0,
+    "none": 354.0
+   },
+   "medianValue": 911300.0,
+   "units": {
+    "detached": 3959.0,
+    "attached": 1608.0,
+    "two": 10654.0,
+    "threeFour": 10189.0,
+    "fivePlus": 11294.0,
+    "mobile": 50.0,
+    "total": 37756.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "Eversource Energy (NSTAR Gas), National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 1152,
+   "datedBefore1800": 8,
+   "dated1800to1899": 805,
+   "dated1900to1949": 297,
+   "oldestYear": 1704,
+   "styles": [
+    [
+     "Queen Anne",
+     168
+    ],
+    [
+     "Second Empire",
+     155
+    ],
+    [
+     "Italianate",
+     150
+    ],
+    [
+     "Colonial Revival",
+     137
+    ],
+    [
+     "Greek Revival",
+     64
+    ],
+    [
+     "Victorian Eclectic",
+     58
+    ]
+   ],
+   "individualNR": 82,
+   "lhdDistricts": [
+    "Aldersey - Summit Historic District",
+    "Bow Street Historic District",
+    "Campbell Park - Meacham Road Historic District",
+    "Central - Atherton - Spring - Summer Streets",
+    "Chester Street Historic District",
+    "Columbus Avenue - Warren Avenue Historic District",
+    "Dane Street Local Historic District",
+    "East Somerville Local Historic District",
+    "Everett Street Local Historic District",
+    "Flint Street Local Historic District",
+    "Florence - Myrtle Streets Local Historic District",
+    "Harvard Hill Historic District"
+   ],
+   "nrDistricts": [
+    "Alewife Brook Parkway",
+    "Bow Street Historic District",
+    "Central - Atherton - Spring - Summer Streets",
+    "Middlesex Canal Historic and Archaeological District",
+    "Mount Vernon Street Historic District",
+    "Mystic Valley Parkway",
+    "Spring Hill Historic District",
+    "Westwood Road Historic District"
+   ],
+   "areas": 80
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 99.4,
+   "iceDays": 24.1,
+   "precipIn": 48.5,
+   "zeroNights": 1.1,
+   "frostNightsMin": 71,
+   "frostNightsMax": 118
+  }
+ },
+ "winchester": {
+  "name": "Winchester",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 8340.0,
+   "fuel": {
+    "gas": 4822.0,
+    "bottled": 145.0,
+    "electric": 1238.0,
+    "oil": 2021.0,
+    "coal": 10.0,
+    "wood": 0.0,
+    "solar": 0.0,
+    "other": 89.0,
+    "none": 15.0
+   },
+   "medianValue": 1215200.0,
+   "units": {
+    "detached": 5875.0,
+    "attached": 727.0,
+    "two": 527.0,
+    "threeFour": 153.0,
+    "fivePlus": 1203.0,
+    "mobile": 36.0,
+    "total": 8521.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 1642,
+   "datedBefore1800": 5,
+   "dated1800to1899": 691,
+   "dated1900to1949": 728,
+   "oldestYear": 1640,
+   "styles": [
+    [
+     "Colonial Revival",
+     488
+    ],
+    [
+     "Queen Anne",
+     193
+    ],
+    [
+     "Craftsman",
+     147
+    ],
+    [
+     "Italianate",
+     86
+    ],
+    [
+     "Victorian Eclectic",
+     70
+    ],
+    [
+     "Garrison Colonial",
+     70
+    ]
+   ],
+   "individualNR": 59,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Everett Avenue - Sheffield Road Historic District",
+    "Firth - Glengarry Historic District",
+    "Middlesex Canal Historic and Archaeological District",
+    "Middlesex Fells Reservation Parkways",
+    "Mystic Valley Parkway",
+    "Wedgemere Historic District",
+    "Winchester Center Historic District"
+   ],
+   "areas": 57
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 118.1,
+   "iceDays": 26.5,
+   "precipIn": 48.6,
+   "zeroNights": 2.3,
+   "frostNightsMin": 96,
+   "frostNightsMax": 136
+  }
+ },
+ "woburn": {
+  "name": "Woburn",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 16432.0,
+   "fuel": {
+    "gas": 8316.0,
+    "bottled": 538.0,
+    "electric": 2723.0,
+    "oil": 4686.0,
+    "coal": 0.0,
+    "wood": 0.0,
+    "solar": 38.0,
+    "other": 118.0,
+    "none": 13.0
+   },
+   "medianValue": 673500.0,
+   "units": {
+    "detached": 7932.0,
+    "attached": 1552.0,
+    "two": 2212.0,
+    "threeFour": 1077.0,
+    "fivePlus": 4254.0,
+    "mobile": 18.0,
+    "total": 17045.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 841,
+   "datedBefore1800": 29,
+   "dated1800to1899": 492,
+   "dated1900to1949": 242,
+   "oldestYear": 1642,
+   "styles": [
+    [
+     "Colonial Revival",
+     99
+    ],
+    [
+     "Italianate",
+     93
+    ],
+    [
+     "Queen Anne",
+     90
+    ],
+    [
+     "Greek Revival",
+     68
+    ],
+    [
+     "Victorian Eclectic",
+     49
+    ],
+    [
+     "Craftsman",
+     34
+    ]
+   ],
+   "individualNR": 29,
+   "lhdDistricts": [
+    "Baldwin Homestead Historic District",
+    "Expanded Baldwin Homestead Historic District"
+   ],
+   "nrDistricts": [
+    "Baldwin Homestead Historic District",
+    "Middlesex Canal",
+    "Middlesex Canal Historic and Archaeological District"
+   ],
+   "areas": 11
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 124.0,
+   "iceDays": 27.4,
+   "precipIn": 48.9,
+   "zeroNights": 3.0,
+   "frostNightsMin": 101,
+   "frostNightsMax": 143
+  }
+ },
+ "braintree": {
+  "name": "Braintree",
+  "county": "Norfolk",
+  "census": {
+   "heatedHomes": 14432.0,
+   "fuel": {
+    "gas": 7393.0,
+    "bottled": 432.0,
+    "electric": 1893.0,
+    "oil": 4532.0,
+    "coal": 0.0,
+    "wood": 15.0,
+    "solar": 0.0,
+    "other": 47.0,
+    "none": 120.0
+   },
+   "medianValue": 656800.0,
+   "units": {
+    "detached": 9876.0,
+    "attached": 566.0,
+    "two": 794.0,
+    "threeFour": 588.0,
+    "fivePlus": 3339.0,
+    "mobile": 0,
+    "total": 15163.0
+   }
+  },
+  "electric": "Braintree Electric Light Department",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 744,
+   "datedBefore1800": 26,
+   "dated1800to1899": 313,
+   "dated1900to1949": 326,
+   "oldestYear": 1663,
+   "styles": [
+    [
+     "Colonial Revival",
+     162
+    ],
+    [
+     "Queen Anne",
+     71
+    ],
+    [
+     "Federal",
+     47
+    ],
+    [
+     "Craftsman",
+     47
+    ],
+    [
+     "Victorian Eclectic",
+     45
+    ],
+    [
+     "Greek Revival",
+     42
+    ]
+   ],
+   "individualNR": 3,
+   "lhdDistricts": [
+    "Braintree Town Center Historic District"
+   ],
+   "nrDistricts": [
+    "Blue Hills Reservation Parkways"
+   ],
+   "areas": 22
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 105.1,
+   "iceDays": 23.5,
+   "precipIn": 51.3,
+   "zeroNights": 1.3,
+   "frostNightsMin": 77,
+   "frostNightsMax": 124
+  }
+ },
+ "malden": {
+  "name": "Malden",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 26042.0,
+   "fuel": {
+    "gas": 16006.0,
+    "bottled": 856.0,
+    "electric": 6068.0,
+    "oil": 2553.0,
+    "coal": 138.0,
+    "wood": 11.0,
+    "solar": 39.0,
+    "other": 172.0,
+    "none": 199.0
+   },
+   "medianValue": 633500.0,
+   "units": {
+    "detached": 6622.0,
+    "attached": 2041.0,
+    "two": 5987.0,
+    "threeFour": 3380.0,
+    "fivePlus": 9657.0,
+    "mobile": 73.0,
+    "total": 27876.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 544,
+   "datedBefore1800": 6,
+   "dated1800to1899": 333,
+   "dated1900to1949": 157,
+   "oldestYear": 1649,
+   "styles": [
+    [
+     "Queen Anne",
+     86
+    ],
+    [
+     "Colonial Revival",
+     74
+    ],
+    [
+     "Italianate",
+     43
+    ],
+    [
+     "Classical Revival",
+     33
+    ],
+    [
+     "Victorian Eclectic",
+     29
+    ],
+    [
+     "Greek Revival",
+     23
+    ]
+   ],
+   "individualNR": 26,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Fells Connector Parkways",
+    "Fellsmere Park Parkways",
+    "Middlesex Fells Reservation Parkways",
+    "Middlesex Fells Reservoirs Historic District"
+   ],
+   "areas": 19
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 102.6,
+   "iceDays": 24.9,
+   "precipIn": 48.5,
+   "zeroNights": 1.5,
+   "frostNightsMin": 77,
+   "frostNightsMax": 120
+  }
+ },
+ "quincy": {
+  "name": "Quincy",
+  "county": "Norfolk",
+  "census": {
+   "heatedHomes": 45285.0,
+   "fuel": {
+    "gas": 24617.0,
+    "bottled": 1318.0,
+    "electric": 13409.0,
+    "oil": 5414.0,
+    "coal": 0.0,
+    "wood": 7.0,
+    "solar": 43.0,
+    "other": 129.0,
+    "none": 348.0
+   },
+   "medianValue": 618500.0,
+   "units": {
+    "detached": 15717.0,
+    "attached": 2415.0,
+    "two": 5170.0,
+    "threeFour": 5050.0,
+    "fivePlus": 19464.0,
+    "mobile": 221.0,
+    "total": 48072.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 1344,
+   "datedBefore1800": 19,
+   "dated1800to1899": 329,
+   "dated1900to1949": 826,
+   "oldestYear": 1600,
+   "styles": [
+    [
+     "Colonial Revival",
+     501
+    ],
+    [
+     "Queen Anne",
+     98
+    ],
+    [
+     "Four-square",
+     79
+    ],
+    [
+     "Craftsman",
+     58
+    ],
+    [
+     "Italianate",
+     50
+    ],
+    [
+     "Victorian Eclectic",
+     49
+    ]
+   ],
+   "individualNR": 99,
+   "lhdDistricts": [
+    "Adams Birthplace Historic District",
+    "Adams National Historic Site Complex",
+    "Quincy Center Local Historic District"
+   ],
+   "nrDistricts": [
+    "Adams National Historic Site Complex",
+    "Baxter Street Historic District",
+    "Blue Hills Reservation Parkways",
+    "Furnace Brook Parkway",
+    "Mount Wollaston Cemetery",
+    "Quincy Shore Drive"
+   ],
+   "areas": 42
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 96.6,
+   "iceDays": 22.8,
+   "precipIn": 50.6,
+   "zeroNights": 0.9,
+   "frostNightsMin": 71,
+   "frostNightsMax": 111
+  }
+ },
+ "stoneham": {
+  "name": "Stoneham",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 9749.0,
+   "fuel": {
+    "gas": 4320.0,
+    "bottled": 292.0,
+    "electric": 2057.0,
+    "oil": 2810.0,
+    "coal": 0.0,
+    "wood": 0.0,
+    "solar": 18.0,
+    "other": 107.0,
+    "none": 145.0
+   },
+   "medianValue": 671900.0,
+   "units": {
+    "detached": 5531.0,
+    "attached": 412.0,
+    "two": 785.0,
+    "threeFour": 413.0,
+    "fivePlus": 3055.0,
+    "mobile": 0,
+    "total": 10196.0
+   }
+  },
+  "electric": "Eversource Energy (NSTAR Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 235,
+   "datedBefore1800": 8,
+   "dated1800to1899": 172,
+   "dated1900to1949": 36,
+   "oldestYear": 1700,
+   "styles": [
+    [
+     "Italianate",
+     42
+    ],
+    [
+     "Greek Revival",
+     39
+    ],
+    [
+     "Queen Anne",
+     36
+    ],
+    [
+     "Second Empire",
+     17
+    ],
+    [
+     "Victorian Eclectic",
+     12
+    ],
+    [
+     "Colonial Revival",
+     12
+    ]
+   ],
+   "individualNR": 62,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Central Square Historic District",
+    "Middlesex Fells Reservation Parkways",
+    "Middlesex Fells Reservoirs Historic District",
+    "Nobility Hill Historic District"
+   ],
+   "areas": 9
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 117.2,
+   "iceDays": 26.5,
+   "precipIn": 48.8,
+   "zeroNights": 2.3,
+   "frostNightsMin": 97,
+   "frostNightsMax": 135
+  }
+ },
+ "melrose": {
+  "name": "Melrose",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 12401.0,
+   "fuel": {
+    "gas": 7832.0,
+    "bottled": 118.0,
+    "electric": 1755.0,
+    "oil": 2487.0,
+    "coal": 0.0,
+    "wood": 10.0,
+    "solar": 0.0,
+    "other": 93.0,
+    "none": 106.0
+   },
+   "medianValue": 822900.0,
+   "units": {
+    "detached": 6772.0,
+    "attached": 462.0,
+    "two": 1316.0,
+    "threeFour": 494.0,
+    "fivePlus": 3526.0,
+    "mobile": 151.0,
+    "total": 12771.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 681,
+   "datedBefore1800": 10,
+   "dated1800to1899": 528,
+   "dated1900to1949": 129,
+   "oldestYear": 1640,
+   "styles": [
+    [
+     "Queen Anne",
+     162
+    ],
+    [
+     "Victorian Eclectic",
+     104
+    ],
+    [
+     "Colonial Revival",
+     99
+    ],
+    [
+     "Italianate",
+     50
+    ],
+    [
+     "Second Empire",
+     48
+    ],
+    [
+     "Greek Revival",
+     28
+    ]
+   ],
+   "individualNR": 5,
+   "lhdDistricts": [
+    "Melrose Town Center Historic District"
+   ],
+   "nrDistricts": [
+    "Lynn Fells Parkway",
+    "Melrose Town Center Historic District",
+    "Middlesex Fells Reservation Parkways"
+   ],
+   "areas": 7
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 113.5,
+   "iceDays": 26.0,
+   "precipIn": 48.6,
+   "zeroNights": 2.1,
+   "frostNightsMin": 89,
+   "frostNightsMax": 130
+  }
+ },
+ "reading": {
+  "name": "Reading",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 9740.0,
+   "fuel": {
+    "gas": 4233.0,
+    "bottled": 420.0,
+    "electric": 931.0,
+    "oil": 4088.0,
+    "coal": 0.0,
+    "wood": 0.0,
+    "solar": 0.0,
+    "other": 0.0,
+    "none": 68.0
+   },
+   "medianValue": 809000.0,
+   "units": {
+    "detached": 7085.0,
+    "attached": 310.0,
+    "two": 377.0,
+    "threeFour": 323.0,
+    "fivePlus": 1856.0,
+    "mobile": 0,
+    "total": 9951.0
+   }
+  },
+  "electric": "Reading Municipal Light Department",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 419,
+   "datedBefore1800": 41,
+   "dated1800to1899": 209,
+   "dated1900to1949": 136,
+   "oldestYear": 1694,
+   "styles": [
+    [
+     "Greek Revival",
+     74
+    ],
+    [
+     "Colonial Revival",
+     69
+    ],
+    [
+     "Federal",
+     55
+    ],
+    [
+     "Queen Anne",
+     46
+    ],
+    [
+     "Craftsman",
+     37
+    ],
+    [
+     "Italianate",
+     31
+    ]
+   ],
+   "individualNR": 84,
+   "lhdDistricts": [
+    "Kemp Place",
+    "Summer Avenue Local Historic District",
+    "West Street Local Historic District"
+   ],
+   "nrDistricts": [
+    "Reading Common Historic District",
+    "Woburn Street Historic District"
+   ],
+   "areas": 7
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 121.9,
+   "iceDays": 27.1,
+   "precipIn": 48.6,
+   "zeroNights": 2.8,
+   "frostNightsMin": 98,
+   "frostNightsMax": 140
+  }
+ },
+ "wakefield": {
+  "name": "Wakefield",
+  "county": "Middlesex",
+  "census": {
+   "heatedHomes": 11270.0,
+   "fuel": {
+    "gas": 5462.0,
+    "bottled": 235.0,
+    "electric": 1681.0,
+    "oil": 3752.0,
+    "coal": 0.0,
+    "wood": 41.0,
+    "solar": 0.0,
+    "other": 34.0,
+    "none": 65.0
+   },
+   "medianValue": 723500.0,
+   "units": {
+    "detached": 6327.0,
+    "attached": 560.0,
+    "two": 1654.0,
+    "threeFour": 811.0,
+    "fivePlus": 2388.0,
+    "mobile": 10.0,
+    "total": 11750.0
+   }
+  },
+  "electric": "Wakefield Municipal Light Department",
+  "gas": "Wakefield Municipal Light Department, National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 407,
+   "datedBefore1800": 39,
+   "dated1800to1899": 242,
+   "dated1900to1949": 110,
+   "oldestYear": 1644,
+   "styles": [
+    [
+     "Greek Revival",
+     66
+    ],
+    [
+     "Federal",
+     52
+    ],
+    [
+     "Italianate",
+     51
+    ],
+    [
+     "Queen Anne",
+     50
+    ],
+    [
+     "Colonial Revival",
+     47
+    ],
+    [
+     "Craftsman",
+     30
+    ]
+   ],
+   "individualNR": 88,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Breakheart Reservation Parkways",
+    "Church - Lafayette Streets Historic District",
+    "Common Historic District",
+    "Wakefield Park Historic District",
+    "Wakefield Rattan Company",
+    "Yale Avenue Historic District"
+   ],
+   "areas": 8
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 117.2,
+   "iceDays": 26.5,
+   "precipIn": 48.8,
+   "zeroNights": 2.3,
+   "frostNightsMin": 97,
+   "frostNightsMax": 135
+  }
+ },
+ "weymouth": {
+  "name": "Weymouth",
+  "county": "Norfolk",
+  "census": {
+   "heatedHomes": 25759.0,
+   "fuel": {
+    "gas": 11730.0,
+    "bottled": 670.0,
+    "electric": 6197.0,
+    "oil": 6874.0,
+    "coal": 0.0,
+    "wood": 37.0,
+    "solar": 28.0,
+    "other": 85.0,
+    "none": 138.0
+   },
+   "medianValue": 552100.0,
+   "units": {
+    "detached": 14835.0,
+    "attached": 1276.0,
+    "two": 1010.0,
+    "threeFour": 802.0,
+    "fivePlus": 8733.0,
+    "mobile": 77.0,
+    "total": 26733.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 1190,
+   "datedBefore1800": 58,
+   "dated1800to1899": 672,
+   "dated1900to1949": 391,
+   "oldestYear": 1636,
+   "styles": [
+    [
+     "Greek Revival",
+     180
+    ],
+    [
+     "Colonial Revival",
+     132
+    ],
+    [
+     "Victorian Eclectic",
+     105
+    ],
+    [
+     "Italianate",
+     86
+    ],
+    [
+     "Bungalow",
+     69
+    ],
+    [
+     "Queen Anne",
+     43
+    ]
+   ],
+   "individualNR": 12,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Central Square Historic District",
+    "Front Street Historic District",
+    "Sea Street Historic District",
+    "Weymouth Civic District",
+    "Weymouth Meeting House District"
+   ],
+   "areas": 15
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 103.1,
+   "iceDays": 23.1,
+   "precipIn": 51.6,
+   "zeroNights": 1.0,
+   "frostNightsMin": 77,
+   "frostNightsMax": 122
+  }
+ },
+ "saugus": {
+  "name": "Saugus",
+  "county": "Essex",
+  "census": {
+   "heatedHomes": 10958.0,
+   "fuel": {
+    "gas": 6001.0,
+    "bottled": 231.0,
+    "electric": 2114.0,
+    "oil": 2427.0,
+    "coal": 0.0,
+    "wood": 88.0,
+    "solar": 0.0,
+    "other": 85.0,
+    "none": 12.0
+   },
+   "medianValue": 603400.0,
+   "units": {
+    "detached": 7476.0,
+    "attached": 510.0,
+    "two": 882.0,
+    "threeFour": 436.0,
+    "fivePlus": 2050.0,
+    "mobile": 48.0,
+    "total": 11402.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 317,
+   "datedBefore1800": 6,
+   "dated1800to1899": 132,
+   "dated1900to1949": 134,
+   "oldestYear": 1630,
+   "styles": [
+    [
+     "Victorian Eclectic",
+     33
+    ],
+    [
+     "Craftsman",
+     33
+    ],
+    [
+     "Greek Revival",
+     29
+    ],
+    [
+     "Italianate",
+     29
+    ],
+    [
+     "Colonial Revival",
+     28
+    ],
+    [
+     "Queen Anne",
+     22
+    ]
+   ],
+   "individualNR": 33,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Breakheart Reservation Parkways",
+    "Lynn Fells Parkway"
+   ],
+   "areas": 23
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 99.1,
+   "iceDays": 24.8,
+   "precipIn": 48.3,
+   "zeroNights": 1.1,
+   "frostNightsMin": 72,
+   "frostNightsMax": 116
+  }
+ },
+ "lynn": {
+  "name": "Lynn",
+  "county": "Essex",
+  "census": {
+   "heatedHomes": 36414.0,
+   "fuel": {
+    "gas": 20599.0,
+    "bottled": 892.0,
+    "electric": 7834.0,
+    "oil": 6348.0,
+    "coal": 0.0,
+    "wood": 94.0,
+    "solar": 95.0,
+    "other": 225.0,
+    "none": 327.0
+   },
+   "medianValue": 510100.0,
+   "units": {
+    "detached": 13280.0,
+    "attached": 1553.0,
+    "two": 5873.0,
+    "threeFour": 6453.0,
+    "fivePlus": 10728.0,
+    "mobile": 73.0,
+    "total": 37960.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 1237,
+   "datedBefore1800": 16,
+   "dated1800to1899": 664,
+   "dated1900to1949": 401,
+   "oldestYear": 1666,
+   "styles": [
+    [
+     "Colonial Revival",
+     205
+    ],
+    [
+     "Queen Anne",
+     113
+    ],
+    [
+     "Italianate",
+     91
+    ],
+    [
+     "Craftsman",
+     66
+    ],
+    [
+     "Greek Revival",
+     57
+    ],
+    [
+     "Second Empire",
+     55
+    ]
+   ],
+   "individualNR": 53,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Central Square Historic District",
+    "Diamond Historic District",
+    "High Rock Tower, High Rock Cottage, Daisy Cottage",
+    "Lynn Common Historic District",
+    "Lynn Woods Historic District",
+    "Munroe Street Historic District",
+    "Nahant Beach Boulevard"
+   ],
+   "areas": 28
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 95.8,
+   "iceDays": 23.8,
+   "precipIn": 47.8,
+   "zeroNights": 0.9,
+   "frostNightsMin": 68,
+   "frostNightsMax": 113
+  }
+ },
+ "peabody": {
+  "name": "Peabody",
+  "county": "Essex",
+  "census": {
+   "heatedHomes": 22390.0,
+   "fuel": {
+    "gas": 11333.0,
+    "bottled": 732.0,
+    "electric": 4370.0,
+    "oil": 5377.0,
+    "coal": 0.0,
+    "wood": 114.0,
+    "solar": 0.0,
+    "other": 201.0,
+    "none": 263.0
+   },
+   "medianValue": 596200.0,
+   "units": {
+    "detached": 11700.0,
+    "attached": 1120.0,
+    "two": 2055.0,
+    "threeFour": 1135.0,
+    "fivePlus": 6526.0,
+    "mobile": 545.0,
+    "total": 23081.0
+   }
+  },
+  "electric": "Peabody Municipal Light Plant",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 334,
+   "datedBefore1800": 21,
+   "dated1800to1899": 238,
+   "dated1900to1949": 65,
+   "oldestYear": 1644,
+   "styles": [
+    [
+     "Greek Revival",
+     67
+    ],
+    [
+     "Italianate",
+     50
+    ],
+    [
+     "Colonial Revival",
+     27
+    ],
+    [
+     "Federal",
+     23
+    ],
+    [
+     "Second Empire",
+     15
+    ],
+    [
+     "Colonial",
+     14
+    ]
+   ],
+   "individualNR": 16,
+   "lhdDistricts": [],
+   "nrDistricts": [
+    "Peabody Civic Center",
+    "Washington Street Historic District"
+   ],
+   "areas": 13
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 109.7,
+   "iceDays": 25.5,
+   "precipIn": 48.0,
+   "zeroNights": 1.7,
+   "frostNightsMin": 81,
+   "frostNightsMax": 127
+  }
+ },
+ "danvers": {
+  "name": "Danvers",
+  "county": "Essex",
+  "census": {
+   "heatedHomes": 11005.0,
+   "fuel": {
+    "gas": 5343.0,
+    "bottled": 274.0,
+    "electric": 1633.0,
+    "oil": 3504.0,
+    "coal": 0.0,
+    "wood": 39.0,
+    "solar": 0.0,
+    "other": 81.0,
+    "none": 131.0
+   },
+   "medianValue": 644200.0,
+   "units": {
+    "detached": 6643.0,
+    "attached": 698.0,
+    "two": 800.0,
+    "threeFour": 488.0,
+    "fivePlus": 2759.0,
+    "mobile": 133.0,
+    "total": 11536.0
+   }
+  },
+  "electric": "Danvers Electric Division",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 643,
+   "datedBefore1800": 57,
+   "dated1800to1899": 425,
+   "dated1900to1949": 78,
+   "oldestYear": 1650,
+   "styles": [
+    [
+     "Greek Revival",
+     153
+    ],
+    [
+     "Italianate",
+     81
+    ],
+    [
+     "Colonial Revival",
+     36
+    ],
+    [
+     "Federal",
+     33
+    ],
+    [
+     "Victorian Eclectic",
+     31
+    ],
+    [
+     "Colonial",
+     23
+    ]
+   ],
+   "individualNR": 35,
+   "lhdDistricts": [
+    "Glen Magna Estate",
+    "Holten House",
+    "Salem Village Historic District"
+   ],
+   "nrDistricts": [
+    "Glen Magna Estate",
+    "Holten House",
+    "Salem Village Historic District",
+    "State Lunatic Hospital at Danvers"
+   ],
+   "areas": 8
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 115.7,
+   "iceDays": 27.1,
+   "precipIn": 48.1,
+   "zeroNights": 2.2,
+   "frostNightsMin": 90,
+   "frostNightsMax": 133
+  }
+ },
+ "salem": {
+  "name": "Salem",
+  "county": "Essex",
+  "census": {
+   "heatedHomes": 20267.0,
+   "fuel": {
+    "gas": 11117.0,
+    "bottled": 238.0,
+    "electric": 5078.0,
+    "oil": 3384.0,
+    "coal": 0.0,
+    "wood": 35.0,
+    "solar": 0.0,
+    "other": 75.0,
+    "none": 340.0
+   },
+   "medianValue": 542800.0,
+   "units": {
+    "detached": 5145.0,
+    "attached": 1320.0,
+    "two": 3743.0,
+    "threeFour": 4417.0,
+    "fivePlus": 6862.0,
+    "mobile": 5.0,
+    "total": 21492.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 4251,
+   "datedBefore1800": 212,
+   "dated1800to1899": 2197,
+   "dated1900to1949": 1543,
+   "oldestYear": 1637,
+   "styles": [
+    [
+     "Colonial Revival",
+     698
+    ],
+    [
+     "Federal",
+     518
+    ],
+    [
+     "Victorian Eclectic",
+     500
+    ],
+    [
+     "Italianate",
+     428
+    ],
+    [
+     "Greek Revival",
+     401
+    ],
+    [
+     "Queen Anne",
+     295
+    ]
+   ],
+   "individualNR": 85,
+   "lhdDistricts": [
+    "Derby Street Local Historic District",
+    "House of Seven Gables Historic District",
+    "Lafayette Street Historic District",
+    "McIntire Historic District",
+    "Pickering House and Barn",
+    "Salem Common",
+    "Salem Maritime National Historic Site",
+    "The House of the Seven Gables Historic District",
+    "Washington Square Historic District"
+   ],
+   "nrDistricts": [
+    "Bakers Island Light Station",
+    "Bridge Street Neck Historic District",
+    "Charter Street Historic District",
+    "Chestnut Street Historic District",
+    "Chestnut Street Historic District Enlarged",
+    "Crombie Street Historic District",
+    "Derby Waterfront Historic District",
+    "Downtown Salem Historic District",
+    "Essex County Court Building Complex",
+    "Essex County Jailkeeper's House and Jail",
+    "Essex Institute Historic District",
+    "Federal Street Historic District"
+   ],
+   "areas": 175
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 103.1,
+   "iceDays": 24.3,
+   "precipIn": 47.8,
+   "zeroNights": 1.2,
+   "frostNightsMin": 72,
+   "frostNightsMax": 120
+  }
+ },
+ "beverly": {
+  "name": "Beverly",
+  "county": "Essex",
+  "census": {
+   "heatedHomes": 16980.0,
+   "fuel": {
+    "gas": 8538.0,
+    "bottled": 441.0,
+    "electric": 3454.0,
+    "oil": 4284.0,
+    "coal": 0.0,
+    "wood": 93.0,
+    "solar": 23.0,
+    "other": 103.0,
+    "none": 44.0
+   },
+   "medianValue": 650300.0,
+   "units": {
+    "detached": 8902.0,
+    "attached": 633.0,
+    "two": 1070.0,
+    "threeFour": 2202.0,
+    "fivePlus": 4815.0,
+    "mobile": 0,
+    "total": 17630.0
+   }
+  },
+  "electric": "National Grid (Massachusetts Electric)",
+  "gas": "National Grid (Boston Gas)",
+  "mhc": {
+   "inventoried": 1108,
+   "datedBefore1800": 133,
+   "dated1800to1899": 534,
+   "dated1900to1949": 344,
+   "oldestYear": 1636,
+   "styles": [
+    [
+     "Colonial Revival",
+     158
+    ],
+    [
+     "Queen Anne",
+     107
+    ],
+    [
+     "Greek Revival",
+     92
+    ],
+    [
+     "Colonial",
+     85
+    ],
+    [
+     "Federal",
+     78
+    ],
+    [
+     "Italianate",
+     73
+    ]
+   ],
+   "individualNR": 23,
+   "lhdDistricts": [
+    "Fish Flake Hill Historic District"
+   ],
+   "nrDistricts": [
+    "Beverly Center Historic District",
+    "Beverly Depot - Odell Park Historic District",
+    "Fish Flake Hill Historic District",
+    "Hospital Point Range Light",
+    "Lynch, David S. Memorial Park"
+   ],
+   "areas": 51
+  },
+  "climate": {
+   "years": 30,
+   "frostNights": 106.5,
+   "iceDays": 24.5,
+   "precipIn": 47.4,
+   "zeroNights": 1.5,
+   "frostNightsMin": 74,
+   "frostNightsMax": 126
+  }
+ }
+}

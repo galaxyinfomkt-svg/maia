@@ -30,6 +30,8 @@ const PRIMARY_CITIES = cities;
 const CONTENT_REVISED = new Date('2026-08-24');
 /** The city and city × service pages were rebuilt on this date. */
 const LOCAL_REVISED = new Date('2026-10-22');
+// 2026-11-17: town pages rebuilt from public records (src/lib/town-extra.ts, town-profiles.ts, town-lens.ts).
+const TOWN_REVISED = new Date('2026-11-17');
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
@@ -53,7 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const cityPages: MetadataRoute.Sitemap = PRIMARY_CITIES.map((city) => ({
     url: url(`cities/${city.slug}`),
-    lastModified: LOCAL_REVISED,
+    lastModified: TOWN_REVISED,
     changeFrequency: 'monthly',
     priority: city.distance <= 20 ? 0.7 : 0.5,
   }));
@@ -63,7 +65,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const city of PRIMARY_CITIES) {
       serviceCityPages.push({
         url: url(`services/${service.slug}/${city.slug}`),
-        lastModified: LOCAL_REVISED,
+        lastModified: TOWN_REVISED,
         changeFrequency: 'monthly',
         priority: city.distance <= 20 ? 0.7 : 0.5,
       });
