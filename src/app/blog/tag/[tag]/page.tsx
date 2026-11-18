@@ -6,6 +6,7 @@ import { Hero } from '@/components/sections';
 import { Breadcrumbs } from '@/components/seo';
 import { getAllTags, getPostsByTag } from '@/lib/blog';
 import { SITE_NAME, SITE_URL } from '@/lib/constants';
+import { ProjectsTeaser } from '@/components/projects';
 
 interface TagPageProps {
   params: Promise<{ tag: string }>;
@@ -164,6 +165,8 @@ export default async function TagPage({ params }: TagPageProps) {
           </div>
         </div>
       </section>
+      <ProjectsTeaser />
+
     </>
   );
 }

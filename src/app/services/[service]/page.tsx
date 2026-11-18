@@ -8,6 +8,7 @@ import { services, getServiceBySlug } from '@/lib/services';
 import { cities } from '@/lib/cities';
 import { SITE_NAME, PHONE, SITE_URL, HIC_NUMBER , heroPhotoFor } from '@/lib/constants';
 import { AVERAGE_RATING, GOOGLE_REVIEW_COUNT } from '@/lib/reviews';
+import { ProjectsTeaser } from '@/components/projects';
 
 const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'), {
   loading: () => <div className="py-24 bg-slate-900" />,
@@ -230,6 +231,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
           </div>
         </div>
       </section>
+
+      <ProjectsTeaser />
 
       <ServicesSection title="Our other services" subtitle="Everything on the outside of the house, from the siding to the trim." exclude={service.slug} />
 

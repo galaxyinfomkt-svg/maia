@@ -5,6 +5,7 @@ import { BlogCard } from '@/components/cards';
 import { JsonLd } from '@/components/seo';
 import { getAllPosts, getAllTags } from '@/lib/blog';
 import { SITE_NAME, IMAGES } from '@/lib/constants';
+import { ProjectsTeaser } from '@/components/projects';
 
 export const metadata: Metadata = {
   title: `Home Improvement Blog | Expert Tips & Cost Guides 2026`,
@@ -154,6 +155,8 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
+      <ProjectsTeaser />
+
     </>
   );
 }

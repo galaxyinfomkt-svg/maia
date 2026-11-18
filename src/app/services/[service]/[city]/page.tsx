@@ -178,6 +178,9 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
                 );
               })}
             </div>
+            <Link href="/projects" className="mt-8 inline-flex font-semibold text-amber-700 hover:underline">
+              See every job we have photographed →
+            </Link>
           </div>
         </div>
       </section>

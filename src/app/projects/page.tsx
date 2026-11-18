@@ -1,277 +1,592 @@
 import { Metadata } from 'next';
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Hero, CTASection } from '@/components/sections';
+import { CompareFigure, PhotoGallery, ProjectsExplorer } from '@/components/projects';
+import type { ExplorerItem, GalleryItem } from '@/components/projects';
 import { JsonLd } from '@/components/seo';
-import { SITE_NAME, SITE_URL, IMAGES } from '@/lib/constants';
-import { projects, galleryPhotos } from '@/lib/projects';
+import { cities } from '@/lib/cities';
+import { HIC_NUMBER, PHONE, PHONE_LINK, SITE_NAME, SITE_URL } from '@/lib/constants';
+import { editorial } from '@/lib/fonts';
 import { CITY_GEO } from '@/lib/project-geo';
+import {
+  allProjectPairs,
+  galleryPhotos,
+  portfolioStats,
+  projectPhotoCount,
+  projectTowns,
+  projects,
+} from '@/lib/projects';
+import { AVERAGE_RATING, GOOGLE_REVIEW_COUNT } from '@/lib/reviews';
+import { services } from '@/lib/services';
 
-const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'), {
-  loading: () => <div className="py-24 bg-slate-900" />,
-});
+/* /projects — the portfolio.
+ *
+ * Treated as the one page on this site that is selling craft rather than
+ * availability, so it has its own visual language: ink and bone instead of
+ * slate and white, an editorial serif for display type, hairline rules, paper
+ * grain, and photographs given room to be looked at. Everything on it is real
+ * Maia photography and every count is computed from the data, so the page
+ * cannot promise a number it does not show.
+ *
+ * Each card opens /projects/<slug> — that job's full folder: the before and
+ * afters, the write-up, the whole photo set, and the towns we serve around it. */
 
-// Leads with the widest transformation and puts the one door job second so the
-// first row isn't all siding. Anything not listed still renders, appended in
-// array order.
+// Leads with the widest transformation and puts the one door job third so the
+// first row is not all siding. Anything not listed still renders, appended.
 const DISPLAY_ORDER = [
-  'atkinson-nh-siding', 'manchester-nh-siding', 'norfolk-ma-doors', 'reading-ma-cedar',
-  'framingham-ma-siding', 'woburn-ma-siding-windows', 'natick-ma-siding',
-  'worcester-ma-siding', 'marlborough-ma-siding', 'hudson-ma-siding',
+  'atkinson-nh-siding', 'manchester-nh-siding', 'norfolk-ma-doors', 'woburn-ma-siding-windows',
+  'reading-ma-cedar', 'framingham-ma-siding', 'natick-ma-siding', 'worcester-ma-siding',
+  'marlborough-ma-siding', 'hudson-ma-siding',
 ];
 
-const orderedProjects = [
+const ordered = [
   ...DISPLAY_ORDER.map((id) => projects.find((p) => p.id === id)).filter(
     (p): p is (typeof projects)[number] => Boolean(p)
   ),
   ...projects.filter((p) => !DISPLAY_ORDER.includes(p.id)),
 ];
 
+const explorerItems: ExplorerItem[] = ordered
+  .filter((p) => p.slug)
+  .map((p) => {
+    const [town, state = 'MA'] = p.location.split(',').map((s) => s.trim());
+    return {
+      id: p.id,
+      slug: p.slug!,
+      title: p.title,
+      location: p.location,
+      town,
+      state,
+      service: p.service,
+      image: p.image,
+      description: p.description,
+      photos: projectPhotoCount(p),
+      pairs: p.pairs?.length ?? 0,
+    };
+  });
+
+/* The town index doubles as internal linking: where a portfolio town is one of
+ * the 109 we serve, its row links to that town's page. The two New Hampshire
+ * jobs have no town page here, and are shown without a link rather than
+ * pointed at something that does not exist. */
+const townRows = projectTowns.map((row) => ({
+  ...row,
+  citySlug:
+    row.state === 'MA'
+      ? cities.find((c) => c.name.toLowerCase() === row.town.toLowerCase())?.slug ?? null
+      : null,
+}));
+
+const galleryItems: GalleryItem[] = galleryPhotos.map((photo) => ({
+  src: photo.src,
+  alt: photo.alt,
+  caption: photo.caption,
+  tag: photo.service,
+}));
+
+// Three finished elevations for the opening collage, picked for frame and sky.
+const COLLAGE = [
+  {
+    src: '/images/before-after/siding-woburn-ma-front.webp',
+    alt: 'Finished vinyl siding, replacement windows and a bay window on a ranch in Woburn, MA by Maia Construction',
+  },
+  {
+    src: '/images/before-after/cedar-siding-reading-ma-4.webp',
+    alt: 'Western red cedar shingle siding on a gambrel addition in Reading, MA by Maia Construction',
+  },
+  {
+    src: '/images/before-after/siding-after-manchester-nh.webp',
+    alt: 'Grey vinyl siding and white trim on a two-family in Manchester, NH by Maia Construction',
+  },
+];
+
 export const metadata: Metadata = {
-  title: '500+ Projects Completed | Before & After Photos | MA Contractor',
-  description: `See 500+ real before & after transformations — siding, windows & doors across Massachusetts. ★5.0 rated craftsmanship. View our portfolio and get inspired for your home!`,
-  alternates: {
-    canonical: 'https://maiaconstruction.com/projects',
+  title: 'Project Portfolio | Before & After Photos | Siding, Windows & Doors',
+  description: `Walk through real Maia Construction jobs: ${portfolioStats.photos} photographs from ${portfolioStats.jobs} documented projects in ${portfolioStats.towns} towns — siding, windows, doors and custom trim, before and after. Licensed HIC #${HIC_NUMBER}.`,
+  alternates: { canonical: `${SITE_URL}/projects` },
+  openGraph: {
+    title: `The Work — ${SITE_NAME} Project Portfolio`,
+    description: `${portfolioStats.jobs} documented jobs, ${portfolioStats.photos} photographs, before and after.`,
+    url: `${SITE_URL}/projects`,
+    images: [{ url: `${SITE_URL}${COLLAGE[0].src}` }],
   },
 };
 
 export default function ProjectsPage() {
-  const projectsSchema = {
+  const collectionSchema = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: `${SITE_NAME} Projects Portfolio`,
-    description: 'View our completed home improvement projects across Massachusetts.',
+    name: `${SITE_NAME} Project Portfolio`,
+    url: `${SITE_URL}/projects`,
+    description:
+      'Documented siding, window, door and exterior trim projects by Maia Construction, with before and after photography from each address.',
     mainEntity: {
       '@type': 'ItemList',
-      itemListElement: orderedProjects.map((project, index) => {
-        const geo = CITY_GEO[project.location];
-        const [locality, region = 'MA'] = project.location.split(',').map((part) => part.trim());
-        return {
-          '@type': 'ListItem',
-          position: index + 1,
-          item: {
-            '@type': 'ImageObject',
-            name: project.title,
-            description: project.description,
-            contentUrl: project.image.startsWith('http') ? project.image : `${SITE_URL}${project.image}`,
-            creator: { '@type': 'Organization', name: SITE_NAME },
-            copyrightHolder: { '@type': 'Organization', name: SITE_NAME },
-            contentLocation: {
-              '@type': 'Place',
-              name: project.location,
-              address: {
-                '@type': 'PostalAddress',
-                addressLocality: locality,
-                addressRegion: region,
-                addressCountry: 'US',
-              },
-              ...(geo ? { geo: { '@type': 'GeoCoordinates', latitude: geo[0], longitude: geo[1] } } : {}),
+      numberOfItems: explorerItems.length,
+      itemListElement: ordered
+        .filter((p) => p.slug)
+        .map((project, index) => {
+          const geo = CITY_GEO[project.location];
+          const [locality, region = 'MA'] = project.location.split(',').map((s) => s.trim());
+          const place = {
+            '@type': 'Place',
+            name: project.location,
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: locality,
+              addressRegion: region,
+              addressCountry: 'US',
             },
-          },
-        };
-      }),
+            ...(geo
+              ? { geo: { '@type': 'GeoCoordinates', latitude: geo[0], longitude: geo[1] } }
+              : {}),
+          };
+          return {
+            '@type': 'ListItem',
+            position: index + 1,
+            item: {
+              '@type': 'CreativeWork',
+              name: `${project.title} — ${project.location}`,
+              description: project.description,
+              url: `${SITE_URL}/projects/${project.slug}`,
+              about: project.service,
+              locationCreated: place,
+              creator: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+              image: {
+                '@type': 'ImageObject',
+                contentUrl: `${SITE_URL}${project.image}`,
+                creator: { '@type': 'Organization', name: SITE_NAME },
+                copyrightHolder: { '@type': 'Organization', name: SITE_NAME },
+                contentLocation: place,
+              },
+            },
+          };
+        }),
     },
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Projects', item: `${SITE_URL}/projects` },
+    ],
+  };
+
   return (
-    <>
-      <JsonLd data={projectsSchema} />
+    <div className={`${editorial.variable} bg-bone`}>
+      <JsonLd data={collectionSchema} />
+      <JsonLd data={breadcrumbSchema} />
 
-      <Hero
-        title="Our Projects"
-        subtitle="See the quality of our work through our completed projects"
-        badge="Portfolio"
-        showCTA={false}
-        size="inner"
-      />
+      {/* ───────────────────────────── Opening ───────────────────────────── */}
+      <section className="grain relative overflow-hidden bg-ink pb-16 pt-28 lg:pb-24 lg:pt-36">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 opacity-[0.06]"
+          style={{
+            backgroundImage:
+              'linear-gradient(to right, #f3efe7 1px, transparent 1px), linear-gradient(to bottom, #f3efe7 1px, transparent 1px)',
+            backgroundSize: '110px 110px',
+          }}
+        />
 
-      {/* Stats */}
-      <section className="py-16 bg-slate-900">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <p className="text-5xl font-bold text-amber-400 mb-2">500+</p>
-              <p className="text-white/80">Projects Completed</p>
+        <div className="relative mx-auto grid max-w-[1400px] items-end gap-14 px-5 lg:grid-cols-[1.05fr_1fr] lg:gap-20 lg:px-10">
+          <div>
+            <nav
+              aria-label="Breadcrumb"
+              className="work-rise font-mono text-[10px] uppercase tracking-[0.3em] text-bone/40"
+            >
+              <Link href="/" className="transition-colors hover:text-amber-400">
+                {SITE_NAME}
+              </Link>
+              <span className="mx-3 text-bone/20">/</span>
+              <span className="text-bone/70">Portfolio</span>
+            </nav>
+
+            <h1
+              className="work-rise mt-8 font-editorial text-[clamp(3.5rem,11vw,8.5rem)] leading-[0.86] text-bone"
+              style={{ animationDelay: '80ms' }}
+            >
+              The Work
+            </h1>
+
+            <div
+              className="work-wipe mt-8 h-px w-full max-w-md bg-amber-400"
+              style={{ animationDelay: '260ms' }}
+            />
+
+            <p
+              className="work-rise mt-8 max-w-xl text-[17px] leading-relaxed text-bone/65 lg:text-[19px]"
+              style={{ animationDelay: '220ms' }}
+            >
+              Every house on this page is one of ours, photographed on site — the
+              wall stripped back, the trim cut in the driveway, the elevation
+              finished. Open a folder and you get that whole job: what it looked
+              like when we arrived, what we did, and what the street sees now.
+            </p>
+
+            <div
+              className="work-rise mt-10 flex flex-wrap items-center gap-4"
+              style={{ animationDelay: '300ms' }}
+            >
+              <a
+                href="#work"
+                className="group inline-flex items-center gap-3 bg-amber-400 px-8 py-4 text-[11px] font-semibold uppercase tracking-[0.26em] text-ink transition-colors hover:bg-bone"
+              >
+                Browse the folders
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                  aria-hidden="true"
+                  className="transition-transform duration-300 group-hover:translate-y-0.5"
+                >
+                  <path d="M6 1v10M1.5 6.5 6 11l4.5-4.5" strokeLinecap="round" />
+                </svg>
+              </a>
+              <a
+                href={PHONE_LINK}
+                className="inline-flex items-center gap-3 border border-bone/25 px-8 py-4 text-[11px] font-semibold uppercase tracking-[0.26em] text-bone transition-colors hover:border-bone hover:bg-bone hover:text-ink"
+              >
+                {PHONE}
+              </a>
             </div>
-            <div>
-              <p className="text-5xl font-bold text-amber-400 mb-2">109</p>
-              <p className="text-white/80">Cities Served</p>
-            </div>
-            <div>
-              <p className="text-5xl font-bold text-amber-400 mb-2">10+</p>
-              <p className="text-white/80">Years Experience</p>
-            </div>
-            <div>
-              <p className="text-5xl font-bold text-amber-400 mb-2">5.0</p>
-              <p className="text-white/80">Star Rating</p>
+          </div>
+
+          {/* Collage. Deliberately off-grid: the sheets overlap the way photo
+              prints do on a table, and the stack tilts on the long edge. */}
+          <div
+            className="work-rise relative mx-auto w-full max-w-xl lg:mx-0"
+            style={{ animationDelay: '380ms' }}
+          >
+            <div className="relative aspect-[4/5]">
+              <figure className="absolute left-0 top-0 h-[62%] w-[72%] -rotate-[2.2deg] border-[6px] border-bone shadow-[0_40px_90px_-40px_rgba(0,0,0,0.85)]">
+                <Image
+                  src={COLLAGE[0].src}
+                  alt={COLLAGE[0].alt}
+                  fill
+                  sizes="(max-width: 1024px) 70vw, 420px"
+                  priority
+                  className="object-cover"
+                />
+              </figure>
+              <figure className="absolute bottom-[8%] right-0 h-[52%] w-[58%] rotate-[1.6deg] border-[6px] border-bone shadow-[0_40px_90px_-40px_rgba(0,0,0,0.85)]">
+                <Image
+                  src={COLLAGE[1].src}
+                  alt={COLLAGE[1].alt}
+                  fill
+                  sizes="(max-width: 1024px) 55vw, 330px"
+                  className="object-cover"
+                />
+              </figure>
+              <figure className="absolute bottom-0 left-[6%] h-[34%] w-[40%] -rotate-[1deg] border-[6px] border-bone shadow-[0_30px_70px_-35px_rgba(0,0,0,0.9)]">
+                <Image
+                  src={COLLAGE[2].src}
+                  alt={COLLAGE[2].alt}
+                  fill
+                  sizes="(max-width: 1024px) 40vw, 240px"
+                  className="object-cover"
+                />
+              </figure>
             </div>
           </div>
         </div>
+
+        {/* Counted facts. Nothing here is rounded up: the first three are read
+            off the portfolio data at build time. */}
+        <div className="relative mx-auto mt-16 max-w-[1400px] px-5 lg:mt-24 lg:px-10">
+          <dl className="grid grid-cols-2 gap-px border-y border-ink-line bg-ink-line lg:grid-cols-4">
+            {[
+              [String(portfolioStats.jobs), 'Documented jobs'],
+              [String(portfolioStats.photos), 'Photographs on this site'],
+              [String(portfolioStats.towns), 'Towns photographed'],
+              [`${AVERAGE_RATING}★`, `${GOOGLE_REVIEW_COUNT} Google reviews`],
+            ].map(([value, label], i) => (
+              <div
+                key={label}
+                className="work-rise bg-ink px-6 py-8"
+                style={{ animationDelay: `${420 + i * 70}ms` }}
+              >
+                <dd className="font-editorial text-[44px] leading-none text-bone lg:text-[56px]">
+                  {value}
+                </dd>
+                <dt className="mt-3 font-mono text-[10px] uppercase tracking-[0.24em] text-bone/45">
+                  {label}
+                </dt>
+              </div>
+            ))}
+          </dl>
+          <p className="py-5 font-mono text-[10px] uppercase tracking-[0.26em] text-bone/35">
+            109 Massachusetts towns served · Licensed HIC #{HIC_NUMBER} and insured · Our own
+            crews, no subcontractors
+          </p>
+        </div>
       </section>
 
-      {/* Projects Grid */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Our Recent Work</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-6" />
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Every project tells a story of quality craftsmanship. See how we&apos;ve helped Massachusetts homeowners improve their homes.
-            </p>
-          </div>
+      {/* ───────────────────────── Folders (filterable) ───────────────────── */}
+      <ProjectsExplorer items={explorerItems} />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {orderedProjects.map((project) => {
-              // Only jobs with real photography get a page; a card linking to one
-              // stock photo and two sentences would just be thin content.
-              const photoCount = (project.gallery?.length ?? 0) + (project.pairs?.length ?? 0) * 2;
-              const cardClass =
-                'group block bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300';
+      {/* ───────────────────────────── By town ───────────────────────────── */}
+      <section className="border-y border-ink/10 bg-bone-deep py-20 lg:py-24">
+        <div className="mx-auto max-w-[1400px] px-5 lg:px-10">
+          <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
+            <div>
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-clay">Index</p>
+              <h2 className="mt-4 font-editorial text-[38px] leading-[1.05] text-ink lg:text-[50px]">
+                Where these jobs are
+              </h2>
+              <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-ink/60">
+                Photographed work, town by town. Each Massachusetts town here also
+                has its own page — the housing stock, the weather loads it has to
+                take and the code it is built to.
+              </p>
+              <Link
+                href="/cities"
+                className="group mt-7 inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.26em] text-ink"
+              >
+                All 109 towns we serve
+                <span className="relative block h-px w-9 bg-ink/30">
+                  <span className="absolute inset-y-0 left-0 w-0 bg-amber-500 transition-all duration-500 group-hover:w-full" />
+                </span>
+              </Link>
+            </div>
 
-              const content = (
-                <>
-                  {/* Project Image */}
-                  <div className="relative h-56">
-                    <Image
-                      src={project.image}
-                      alt={`${project.title} in ${project.location} - professional ${project.service.toLowerCase()} project by Maia Construction licensed Massachusetts contractor`}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    {/* Service Badge */}
-                    <div className="absolute top-3 left-3 px-3 py-1 bg-amber-400 text-slate-900 rounded-full text-xs font-bold shadow-lg">
-                      {project.service}
-                    </div>
-                    {photoCount > 1 && (
-                      <div className="absolute top-3 right-3 px-3 py-1 bg-slate-900/75 text-white rounded-full text-xs font-bold">
-                        {photoCount} photos
+            <ul className="border-t border-ink/15">
+              {townRows.map((row) => {
+                const inner = (
+                  <>
+                    <span className="font-editorial text-[26px] leading-none text-ink lg:text-[30px]">
+                      {row.town}
+                      <span className="ml-2 font-mono text-[11px] tracking-[0.2em] text-ink/35">
+                        {row.state}
+                      </span>
+                    </span>
+                    <span className="flex items-center gap-6 font-mono text-[10px] uppercase tracking-[0.2em] text-ink/45">
+                      <span>{row.jobs === 1 ? '1 job' : `${row.jobs} jobs`}</span>
+                      <span>{row.photos} photos</span>
+                      {row.citySlug && (
+                        <span className="text-ink/25 transition-colors group-hover:text-amber-600">
+                          Town page →
+                        </span>
+                      )}
+                    </span>
+                  </>
+                );
+                return (
+                  <li key={row.location} className="border-b border-ink/15">
+                    {row.citySlug ? (
+                      <Link
+                        href={`/cities/${row.citySlug}`}
+                        className="group flex flex-wrap items-center justify-between gap-3 py-5 transition-colors hover:bg-bone/70"
+                      >
+                        {inner}
+                      </Link>
+                    ) : (
+                      <div className="flex flex-wrap items-center justify-between gap-3 py-5">
+                        {inner}
                       </div>
                     )}
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-5">
-                    <h3 className="text-lg font-bold text-slate-900 mb-1 group-hover:text-amber-500 transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-amber-500 font-semibold text-sm mb-2 flex items-center">
-                      <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                      </svg>
-                      {project.location}
-                    </p>
-                    <p className="text-gray-600 text-sm line-clamp-2">
-                      {project.description}
-                    </p>
-                    {project.slug && (
-                      <p className="mt-3 text-sm font-bold text-slate-900 group-hover:text-amber-500 transition-colors">
-                        View project &rarr;
-                      </p>
-                    )}
-                  </div>
-                </>
-              );
-
-              return project.slug ? (
-                <Link key={project.id} href={`/projects/${project.slug}`} className={cardClass}>
-                  {content}
-                </Link>
-              ) : (
-                <div key={project.id} className={cardClass}>
-                  {content}
-                </div>
-              );
-            })}
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </div>
       </section>
 
-      {/* Loose job photography — real work, but not tied to a documented
-          address, so it is shown as a gallery rather than as separate projects. */}
-      <section className="py-20 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">More of Our Work</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-6" />
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Windows, doors and exteriors from jobs across our Massachusetts service area.
+      {/* ───────────────────────── Before and after ───────────────────────── */}
+      <section className="bg-bone py-20 lg:py-28">
+        <div className="mx-auto max-w-[1400px] px-5 lg:px-10">
+          <div className="max-w-2xl">
+            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-clay">
+              Drag it yourself
+            </p>
+            <h2 className="mt-4 font-editorial text-[38px] leading-[1.05] text-ink lg:text-[54px]">
+              Before, and after
+            </h2>
+            <p className="mt-5 text-[16px] leading-relaxed text-ink/60">
+              One pair per job, shot from the same spot. Pull the handle across to
+              see what was there when we arrived. The rest of each job&apos;s
+              photographs are in its folder.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {galleryPhotos.map((photo) => (
-              <figure key={photo.src} className="group">
-                <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-md">
-                  <Image
-                    src={photo.src}
-                    alt={photo.alt}
-                    fill
-                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <span className="absolute top-2 left-2 px-2 py-0.5 bg-amber-400 text-slate-900 rounded-full text-[10px] font-bold">
-                    {photo.service}
-                  </span>
-                </div>
-                <figcaption className="mt-2 text-sm text-gray-600">{photo.caption}</figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-24 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Our Services</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-6" />
-            <p className="text-xl text-gray-600">
-              Professional installation services for every home improvement need
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { name: 'Siding', slug: 'siding', image: IMAGES.siding },
-              { name: 'Windows', slug: 'windows', image: IMAGES.windows },
-              { name: 'Doors', slug: 'doors', image: IMAGES.doors },
-              { name: 'Exterior Trim', slug: 'exterior-trim', image: '/images/before-after/trim-after-woburn-ma.webp' },
-            ].map((service) => (
-              <Link
-                key={service.slug}
-                href={`/services/${service.slug}`}
-                className="group relative h-64 rounded-2xl overflow-hidden shadow-lg"
+          <div className="mt-14 space-y-20 lg:mt-20 lg:space-y-28">
+            {allProjectPairs.map((pair, i) => (
+              <div
+                key={pair.key}
+                className={`grid gap-8 lg:gap-14 ${
+                  i % 2 === 1 ? 'lg:grid-cols-[320px_1fr]' : 'lg:grid-cols-[1fr_320px]'
+                }`}
               >
-                <Image
-                  src={service.image}
-                  alt={`${service.name} installation services in Marlborough Massachusetts - Maia Construction professional ${service.name.toLowerCase()} contractor serving 100+ MA cities`}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-xl font-bold text-white group-hover:text-amber-400 transition-colors">
-                    {service.name}
-                  </h3>
+                <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
+                  <CompareFigure
+                    before={pair.before}
+                    after={pair.after}
+                    beforeLabel={pair.beforeLabel ?? 'Before'}
+                    alt={`${pair.project.title} in ${pair.project.location}`}
+                    caption={pair.caption}
+                  />
                 </div>
-              </Link>
+
+                <div className={`flex flex-col justify-end ${i % 2 === 1 ? 'lg:order-1' : ''}`}>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.26em] text-clay">
+                    {String(i + 1).padStart(2, '0')} · {pair.project.service}
+                  </p>
+                  <h3 className="mt-3 font-editorial text-[30px] leading-[1.08] text-ink lg:text-[36px]">
+                    {pair.project.title}
+                  </h3>
+                  <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.2em] text-ink/45">
+                    {pair.project.location}
+                  </p>
+                  {pair.project.slug && (
+                    <Link
+                      href={`/projects/${pair.project.slug}`}
+                      className="group mt-6 inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.26em] text-ink"
+                    >
+                      Open this folder
+                      <span className="relative block h-px w-9 bg-ink/30">
+                        <span className="absolute inset-y-0 left-0 w-0 bg-amber-500 transition-all duration-500 group-hover:w-full" />
+                      </span>
+                    </Link>
+                  )}
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <BeforeAfter
-        title="Before & After Transformations"
-        subtitle="Drag the slider to see real Maia Construction projects, before and after"
-        showAll
-      />
+      {/* ───────────────────── Loose job photography ──────────────────────── */}
+      <section className="grain relative bg-ink py-20 lg:py-28">
+        <div className="relative mx-auto max-w-[1400px] px-5 lg:px-10">
+          <div className="flex flex-col gap-6 border-b border-ink-line pb-10 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-2xl">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-amber-400">
+                Odds and ends
+              </p>
+              <h2 className="mt-4 font-editorial text-[36px] leading-[1.05] text-bone lg:text-[50px]">
+                Windows, doors and details
+              </h2>
+              <p className="mt-5 text-[16px] leading-relaxed text-bone/55">
+                Real jobs we photographed without documenting the whole address.
+                They are not dressed up as separate projects — they are here,
+                captioned by what they show. Click any one to look closely.
+              </p>
+            </div>
+            <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-bone/35">
+              {galleryItems.length} photographs
+            </p>
+          </div>
 
-      <CTASection
-        title="Ready to Start Your Project?"
-        subtitle="Contact us today for a free estimate on your home improvement project."
-      />
-    </>
+          <div className="mt-10">
+            <PhotoGallery photos={galleryItems} columns={5} />
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────── Trades index ─────────────────────────── */}
+      <section className="bg-bone py-20 lg:py-24">
+        <div className="mx-auto max-w-[1400px] px-5 lg:px-10">
+          <div className="flex flex-col gap-4 border-b border-ink/15 pb-8 lg:flex-row lg:items-end lg:justify-between">
+            <h2 className="font-editorial text-[34px] leading-[1.05] text-ink lg:text-[46px]">
+              What we were hired to do
+            </h2>
+            <Link
+              href="/services"
+              className="group inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.26em] text-ink"
+            >
+              All nine services
+              <span className="relative block h-px w-9 bg-ink/30">
+                <span className="absolute inset-y-0 left-0 w-0 bg-amber-500 transition-all duration-500 group-hover:w-full" />
+              </span>
+            </Link>
+          </div>
+
+          <ul className="grid gap-x-10 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((service, i) => (
+              <li key={service.slug} className="border-b border-ink/12">
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="group flex items-baseline gap-5 py-6"
+                >
+                  <span className="font-mono text-[10px] tracking-[0.2em] text-ink/30">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <span className="flex-1">
+                    <span className="block font-editorial text-[24px] leading-tight text-ink transition-colors group-hover:text-amber-700">
+                      {service.name}
+                    </span>
+                    <span className="mt-1 block text-[13.5px] leading-snug text-ink/50">
+                      {service.shortDescription}
+                    </span>
+                  </span>
+                  <span className="text-ink/30 transition-all duration-300 group-hover:translate-x-1 group-hover:text-amber-600">
+                    →
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ───────────────────────────── Closing ───────────────────────────── */}
+      <section className="grain relative overflow-hidden bg-ink py-20 lg:py-28">
+        <div className="relative mx-auto max-w-[1400px] px-5 lg:px-10">
+          <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-end">
+            <div>
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-amber-400">
+                Your house next
+              </p>
+              <h2 className="mt-5 max-w-2xl font-editorial text-[42px] leading-[1.02] text-bone lg:text-[64px]">
+                We will walk your exterior and put the price in writing.
+              </h2>
+              <p className="mt-6 max-w-xl text-[16px] leading-relaxed text-bone/60">
+                Free estimate, anywhere in our 109 Massachusetts towns. One
+                document with the full scope, the material spec and an agreed rate
+                for anything we find behind the old wall — so nothing is
+                renegotiated halfway through.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-3">
+              <a
+                href={PHONE_LINK}
+                className="flex items-center justify-between gap-6 bg-amber-400 px-7 py-6 text-ink transition-colors hover:bg-bone"
+              >
+                <span>
+                  <span className="block font-mono text-[10px] uppercase tracking-[0.26em] text-ink/60">
+                    Call the shop
+                  </span>
+                  <span className="mt-1 block font-editorial text-[30px] leading-none">
+                    {PHONE}
+                  </span>
+                </span>
+                <span className="text-xl">→</span>
+              </a>
+              <Link
+                href="/contact"
+                className="flex items-center justify-between gap-6 border border-bone/25 px-7 py-6 text-bone transition-colors hover:border-bone hover:bg-bone hover:text-ink"
+              >
+                <span>
+                  <span className="block font-mono text-[10px] uppercase tracking-[0.26em] opacity-60">
+                    Rather type it
+                  </span>
+                  <span className="mt-1 block font-editorial text-[30px] leading-none">
+                    Request an estimate
+                  </span>
+                </span>
+                <span className="text-xl">→</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }

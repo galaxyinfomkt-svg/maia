@@ -8,6 +8,7 @@ import { getAllPosts, getPostBySlug, getRecentPosts } from '@/lib/blog';
 import { getMdBody } from '@/lib/blog-md';
 import { Markdown } from '@/components/blog/Markdown';
 import { SITE_NAME, PHONE, PHONE_LINK, SITE_URL } from '@/lib/constants';
+import { ProjectsTeaser } from '@/components/projects';
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -1715,6 +1716,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         </div>
       </article>
+      <ProjectsTeaser />
+
     </>
   );
 }

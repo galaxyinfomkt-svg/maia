@@ -6,6 +6,7 @@ import { JsonLd } from '@/components/seo';
 import { services } from '@/lib/services';
 import { cities } from '@/lib/cities';
 import { SITE_NAME, IMAGES, SITE_URL, HIC_NUMBER, PHONE } from '@/lib/constants';
+import { ProjectsTeaser } from '@/components/projects';
 
 export const metadata: Metadata = {
   title: `Siding, Trim, Windows & Doors in Massachusetts | Maia Construction`,
@@ -239,6 +240,8 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      <ProjectsTeaser />
 
       <CTASection />
     </>

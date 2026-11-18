@@ -14,6 +14,7 @@ import { townDossier } from '@/lib/town-lens';
 import { TOWN_PROFILES } from '@/lib/town-profiles';
 import { SITE_NAME, SITE_URL, PHONE, heroPhotoFor } from '@/lib/constants';
 import { AVERAGE_RATING, GOOGLE_REVIEW_COUNT } from '@/lib/reviews';
+import { projectPhotoCount } from '@/lib/projects';
 
 interface CityPageProps {
   params: Promise<{ slug: string }>;
@@ -200,10 +201,14 @@ export default async function CityPage({ params }: CityPageProps) {
                       {project.location} · {miles <= 1 ? `in ${city.name}` : `${miles} mi ${direction}`}
                     </p>
                     <h3 className="mt-1 font-bold text-slate-900">{project.title}</h3>
+                    <p className="mt-1 text-sm text-gray-500">{projectPhotoCount(project)} photos, before and after →</p>
                   </div>
                 </Link>
               ))}
             </div>
+            <Link href="/projects" className="mt-8 inline-flex font-semibold text-amber-700 hover:underline">
+              Browse the whole portfolio, job by job →
+            </Link>
           </div>
         </div>
       </section>

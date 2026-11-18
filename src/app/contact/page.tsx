@@ -4,6 +4,7 @@ import { Hero } from '@/components/sections';
 import { ContactForm } from '@/components/forms';
 import { JsonLd } from '@/components/seo';
 import { SITE_NAME, PHONE, PHONE_LINK, ADDRESS, BUSINESS_HOURS, IMAGES, LOGO_URL, HIC_NUMBER } from '@/lib/constants';
+import { ProjectsTeaser } from '@/components/projects';
 
 export const metadata: Metadata = {
   title: `FREE Estimate Today | Same-Day Response | ${PHONE}`,
@@ -239,6 +240,8 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+      <ProjectsTeaser />
+
     </>
   );
 }

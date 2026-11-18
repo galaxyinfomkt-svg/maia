@@ -8,6 +8,7 @@ import { JsonLd, organizationSchema, websiteSchema } from '@/components/seo';
 import { services } from '@/lib/services';
 import { GOOGLE_REVIEW_COUNT } from '@/lib/reviews';
 import { SITE_NAME, HIC_NUMBER, PHONE, SITE_URL, PHONE_LINK, SOCIAL_LINKS, ADDRESS, BUSINESS_HOURS, EMAIL, REAL_PHOTOS, SERVICE_PHOTOS } from '@/lib/constants';
+import { ProjectsTeaser } from '@/components/projects';
 
 export const metadata: Metadata = {
   title: `Siding Contractor in Massachusetts | Maia Construction`,
@@ -335,6 +336,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <ProjectsTeaser heading="Jobs we have photographed" intro="Open any one of them and you get the whole job: what the wall looked like when we arrived, what we did, and every photograph we took on site." />
 
       {/* ========== SECTION 10: GOLD CTA BANNER (like RS) ========== */}
       <section className="py-8 bg-gradient-to-r from-amber-400 to-yellow-300">

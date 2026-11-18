@@ -6,6 +6,7 @@ import { cities, getCitiesByCounty } from '@/lib/cities';
 import { services } from '@/lib/services';
 import { JsonLd } from '@/components/seo';
 import { SITE_NAME } from '@/lib/constants';
+import { ProjectsTeaser } from '@/components/projects';
 
 export const metadata: Metadata = {
   title: 'Massachusetts Service Areas | 109 Towns',
@@ -237,6 +238,8 @@ export default function MassachusettsPage() {
           </div>
         </div>
       </section>
+
+      <ProjectsTeaser />
 
       <CTASection
         title="Don't See Your City?"

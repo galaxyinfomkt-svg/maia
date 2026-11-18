@@ -454,3 +454,50 @@ export function projectPhotos(p: Project): ProjectPhoto[] {
   }
   return out;
 }
+
+/* ───────────────────────────────────────── portfolio index helpers ───────── */
+
+/** How many photographs a card can honestly promise. */
+export function projectPhotoCount(p: Project): number {
+  return projectPhotos(p).length;
+}
+
+/** Jobs with their own page, newest-looking first is meaningless here, so the
+ *  order is the one /projects curates. Towns are derived, never hand-listed,
+ *  so adding a job to the array above puts its town in the filter for free. */
+export const projectServices: ServiceName[] = (() => {
+  const order: ServiceName[] = ['Siding', 'Windows', 'Doors', 'General Contractor'];
+  return order.filter((s) => projects.some((p) => p.service === s));
+})();
+
+export interface TownIndexRow {
+  /** "Woburn, MA" */
+  location: string;
+  /** "Woburn" */
+  town: string;
+  /** "MA" */
+  state: string;
+  jobs: number;
+  photos: number;
+}
+
+export const projectTowns: TownIndexRow[] = (() => {
+  const rows = new Map<string, TownIndexRow>();
+  for (const p of projects) {
+    const [town, state = 'MA'] = p.location.split(',').map((s) => s.trim());
+    const row = rows.get(p.location) ?? { location: p.location, town, state, jobs: 0, photos: 0 };
+    row.jobs += 1;
+    row.photos += projectPhotoCount(p);
+    rows.set(p.location, row);
+  }
+  return [...rows.values()].sort((a, b) => a.town.localeCompare(b.town));
+})();
+
+/** Totals printed on /projects. Counted from the data, so they cannot drift
+ *  from what the page actually shows. */
+export const portfolioStats = {
+  jobs: projects.length,
+  pages: detailedProjects.length,
+  towns: projectTowns.length,
+  photos: projects.reduce((n, p) => n + projectPhotoCount(p), 0) + galleryPhotos.length,
+};
