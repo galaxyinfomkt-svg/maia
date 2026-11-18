@@ -9,12 +9,13 @@ import { cities } from '@/lib/cities';
 import { HIC_NUMBER, PHONE, PHONE_LINK, SITE_NAME, SITE_URL } from '@/lib/constants';
 import { editorial } from '@/lib/fonts';
 import { directionToProjectTown, milesToProjectTown } from '@/lib/geo';
-import { CITY_GEO } from '@/lib/project-geo';
 import {
   detailedProjects,
   getProject,
+  locationParts,
   projectPhotoCount,
   projectPhotos,
+  projectPlace,
   type Project,
   type ServiceName,
 } from '@/lib/projects';
@@ -88,8 +89,10 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
   const project = getProject(params.slug);
   if (!project) notFound();
 
-  const [locality, region = 'MA'] = project.location.split(',').map((s) => s.trim());
-  const geo = CITY_GEO[project.location];
+  // Jobs still waiting on a confirmed town carry just the state; everything
+  // below reads the location through locationParts so neither the page nor the
+  // schema invents one.
+  const { town, label: where } = locationParts(project.location);
   const photos = projectPhotos(project);
   const pairs = project.pairs ?? [];
   const nearby = townsNear(project);
@@ -106,17 +109,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
     caption: photo.caption,
   }));
 
-  const place = {
-    '@type': 'Place',
-    name: project.location,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: locality,
-      addressRegion: region,
-      addressCountry: 'US',
-    },
-    ...(geo ? { geo: { '@type': 'GeoCoordinates', latitude: geo[0], longitude: geo[1] } } : {}),
-  };
+  const place = projectPlace(project.location);
 
   const schema = {
     '@context': 'https://schema.org',
@@ -185,7 +178,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
               Portfolio
             </Link>
             <span className="mx-3 text-bone/20">/</span>
-            <span className="text-bone/75">{locality}</span>
+            <span className="text-bone/75">{town ?? where}</span>
           </nav>
 
           <p
@@ -194,9 +187,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
           >
             {project.service}
             <span className="mx-3 text-bone/25">/</span>
-            <span className="text-bone/70">
-              {locality}, {region}
-            </span>
+            <span className="text-bone/70">{where}</span>
           </p>
 
           <h1
@@ -216,7 +207,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
             style={{ animationDelay: '240ms' }}
           >
             {[
-              ['Town', project.location],
+              [town ? 'Town' : 'Where', where],
               ['Trade', project.service],
               ['Photographs', String(photos.length)],
               ...(pairs.length > 0
@@ -264,7 +255,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                 <dl className="mt-5 space-y-4 text-[13.5px]">
                   <div className="flex justify-between gap-4 border-b border-ink/10 pb-3">
                     <dt className="text-ink/50">Where</dt>
-                    <dd className="text-right font-semibold text-ink">{project.location}</dd>
+                    <dd className="text-right font-semibold text-ink">{where}</dd>
                   </div>
                   <div className="flex justify-between gap-4 border-b border-ink/10 pb-3">
                     <dt className="text-ink/50">Trade</dt>
@@ -372,10 +363,10 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                   Around this job
                 </p>
                 <h2 className="mt-4 font-editorial text-[34px] leading-[1.05] text-bone lg:text-[46px]">
-                  Towns we serve nearest to {locality}
+                  Towns we serve nearest to {town}
                 </h2>
                 <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-bone/55">
-                  Distances are straight-line miles from {locality}. Each town has
+                  Distances are straight-line miles from {town}. Each town has
                   its own page: the housing stock, the weather loads the exterior
                   has to take, and what {project.service.toLowerCase()} normally
                   means there.
@@ -471,7 +462,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                 Your house next
               </p>
               <h2 className="mt-5 max-w-2xl font-editorial text-[40px] leading-[1.02] text-ink lg:text-[60px]">
-                Want a result like this in {locality}?
+                Want a result like this {town ? `in ${town}` : 'on your house'}?
               </h2>
               <p className="mt-6 max-w-xl text-[16px] leading-relaxed text-ink/60">
                 Tell us about your home and we will come out, walk the exterior

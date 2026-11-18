@@ -7,12 +7,13 @@ import { JsonLd } from '@/components/seo';
 import { cities } from '@/lib/cities';
 import { HIC_NUMBER, PHONE, PHONE_LINK, SITE_NAME, SITE_URL } from '@/lib/constants';
 import { editorial } from '@/lib/fonts';
-import { CITY_GEO } from '@/lib/project-geo';
 import {
   allProjectPairs,
   galleryPhotos,
+  locationParts,
   portfolioStats,
   projectPhotoCount,
+  projectPlace,
   projectTowns,
   projects,
 } from '@/lib/projects';
@@ -34,9 +35,10 @@ import { services } from '@/lib/services';
 // Leads with the widest transformation and puts the one door job third so the
 // first row is not all siding. Anything not listed still renders, appended.
 const DISPLAY_ORDER = [
-  'atkinson-nh-siding', 'manchester-nh-siding', 'norfolk-ma-doors', 'woburn-ma-siding-windows',
-  'reading-ma-cedar', 'framingham-ma-siding', 'natick-ma-siding', 'worcester-ma-siding',
-  'marlborough-ma-siding', 'hudson-ma-siding',
+  'ma-cape-siding-harvey-windows', 'ma-ranch-sage-siding', 'atkinson-nh-siding',
+  'norfolk-ma-doors', 'ma-colonial-blue-siding', 'manchester-nh-siding',
+  'woburn-ma-siding-windows', 'reading-ma-cedar', 'framingham-ma-siding',
+  'natick-ma-siding', 'worcester-ma-siding', 'marlborough-ma-siding', 'hudson-ma-siding',
 ];
 
 const ordered = [
@@ -48,22 +50,18 @@ const ordered = [
 
 const explorerItems: ExplorerItem[] = ordered
   .filter((p) => p.slug)
-  .map((p) => {
-    const [town, state = 'MA'] = p.location.split(',').map((s) => s.trim());
-    return {
-      id: p.id,
-      slug: p.slug!,
-      title: p.title,
-      location: p.location,
-      town,
-      state,
-      service: p.service,
-      image: p.image,
-      description: p.description,
-      photos: projectPhotoCount(p),
-      pairs: p.pairs?.length ?? 0,
-    };
-  });
+  .map((p) => ({
+    id: p.id,
+    slug: p.slug!,
+    title: p.title,
+    location: p.location,
+    where: locationParts(p.location).label,
+    service: p.service,
+    image: p.image,
+    description: p.description,
+    photos: projectPhotoCount(p),
+    pairs: p.pairs?.length ?? 0,
+  }));
 
 /* The town index doubles as internal linking: where a portfolio town is one of
  * the 109 we serve, its row links to that town's page. The two New Hampshire
@@ -76,6 +74,10 @@ const townRows = projectTowns.map((row) => ({
       ? cities.find((c) => c.name.toLowerCase() === row.town.toLowerCase())?.slug ?? null
       : null,
 }));
+
+/* Rows whose town is still unconfirmed say so, rather than sitting in an index
+ * of towns pretending to be one. */
+const PENDING_TOWN = 'Town to be confirmed';
 
 const galleryItems: GalleryItem[] = galleryPhotos.map((photo) => ({
   src: photo.src,
@@ -126,21 +128,7 @@ export default function ProjectsPage() {
       itemListElement: ordered
         .filter((p) => p.slug)
         .map((project, index) => {
-          const geo = CITY_GEO[project.location];
-          const [locality, region = 'MA'] = project.location.split(',').map((s) => s.trim());
-          const place = {
-            '@type': 'Place',
-            name: project.location,
-            address: {
-              '@type': 'PostalAddress',
-              addressLocality: locality,
-              addressRegion: region,
-              addressCountry: 'US',
-            },
-            ...(geo
-              ? { geo: { '@type': 'GeoCoordinates', latitude: geo[0], longitude: geo[1] } }
-              : {}),
-          };
+          const place = projectPlace(project.location);
           return {
             '@type': 'ListItem',
             position: index + 1,
@@ -362,7 +350,7 @@ export default function ProjectsPage() {
                     <span className="font-editorial text-[26px] leading-none text-ink lg:text-[30px]">
                       {row.town}
                       <span className="ml-2 font-mono text-[11px] tracking-[0.2em] text-ink/35">
-                        {row.state}
+                        {row.state || PENDING_TOWN}
                       </span>
                     </span>
                     <span className="flex items-center gap-6 font-mono text-[10px] uppercase tracking-[0.2em] text-ink/45">

@@ -16,8 +16,9 @@ export interface ExplorerItem {
   slug: string;
   title: string;
   location: string;
-  town: string;
-  state: string;
+  /** Printed on the card: "Woburn, MA", or just the state while the town of a
+   *  job is still being confirmed with the client. */
+  where: string;
   service: string;
   image: string;
   description: string;
@@ -189,7 +190,7 @@ export default function ProjectsExplorer({ items }: ProjectsExplorerProps) {
 
                   <div className="p-6 lg:p-7">
                     <p className="font-mono text-[10px] uppercase tracking-[0.26em] text-clay">
-                      {item.town}, {item.state}
+                      {item.where}
                       <span className="mx-2 text-ink/20">/</span>
                       {item.service}
                     </p>
