@@ -75,10 +75,6 @@ const townRows = projectTowns.map((row) => ({
       : null,
 }));
 
-/* Rows whose town is still unconfirmed say so, rather than sitting in an index
- * of towns pretending to be one. */
-const PENDING_TOWN = 'Town to be confirmed';
-
 const galleryItems: GalleryItem[] = galleryPhotos.map((photo) => ({
   src: photo.src,
   alt: photo.alt,
@@ -350,7 +346,7 @@ export default function ProjectsPage() {
                     <span className="font-editorial text-[26px] leading-none text-ink lg:text-[30px]">
                       {row.town}
                       <span className="ml-2 font-mono text-[11px] tracking-[0.2em] text-ink/35">
-                        {row.state || PENDING_TOWN}
+                        {row.state}
                       </span>
                     </span>
                     <span className="flex items-center gap-6 font-mono text-[10px] uppercase tracking-[0.2em] text-ink/45">
