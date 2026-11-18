@@ -11,6 +11,7 @@ import {
   AVERAGE_RATING,
   GOOGLE_PROFILE_URL,
 } from '@/lib/reviews';
+import { ProjectsTeaser } from '@/components/projects';
 
 /**
  * Review markup lives here and only here — this is the one page that shows the
@@ -165,6 +166,8 @@ export default function ReviewsPage() {
 
       {/* Live Google widget, as a second source */}
       <ReviewsHighlight />
+
+      <ProjectsTeaser />
 
       {/* CTA */}
       <section className="py-8 bg-gradient-to-r from-amber-400 to-yellow-300">

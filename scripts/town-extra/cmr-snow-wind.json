@@ -1,0 +1,1757 @@
+{
+"Abington": {
+"pg": 35,
+"pf": 30,
+"vult": 123
+},
+"Acton": {
+"pg": 50,
+"pf": 35,
+"vult": 117
+},
+"Acushnet": {
+"pg": 30,
+"pf": 30,
+"vult": 129
+},
+"Adams": {
+"pg": 60,
+"pf": 40,
+"vult": 111
+},
+"Agawam": {
+"pg": 35,
+"pf": 35,
+"vult": 115
+},
+"Alford": {
+"pg": 40,
+"pf": 40,
+"vult": 112
+},
+"Amesbury": {
+"pg": 50,
+"pf": 30,
+"vult": 116
+},
+"Amherst": {
+"pg": 40,
+"pf": 35,
+"vult": 114
+},
+"Andover": {
+"pg": 50,
+"pf": 30,
+"vult": 117
+},
+"Aquinnah": {
+"pg": 25,
+"pf": 25,
+"vult": 134
+},
+"Arlington": {
+"pg": 40,
+"pf": 30,
+"vult": 119
+},
+"Ashburnham": {
+"pg": 60,
+"pf": 35,
+"vult": 114
+},
+"Ashby": {
+"pg": 60,
+"pf": 35,
+"vult": 114
+},
+"Ashfield": {
+"pg": 50,
+"pf": 40,
+"vult": 112
+},
+"Ashland": {
+"pg": 40,
+"pf": 35,
+"vult": 119
+},
+"Athol": {
+"pg": 60,
+"pf": 35,
+"vult": 113
+},
+"Attleboro": {
+"pg": 35,
+"pf": 30,
+"vult": 124
+},
+"Auburn": {
+"pg": 50,
+"pf": 35,
+"vult": 118
+},
+"Avon": {
+"pg": 35,
+"pf": 35,
+"vult": 123
+},
+"Ayer": {
+"pg": 50,
+"pf": 35,
+"vult": 116
+},
+"Barnstable": {
+"pg": 30,
+"pf": 25,
+"vult": 130
+},
+"Barre": {
+"pg": 50,
+"pf": 35,
+"vult": 115
+},
+"Becket": {
+"pg": 60,
+"pf": 40,
+"vult": 113
+},
+"Bedford": {
+"pg": 50,
+"pf": 30,
+"vult": 118
+},
+"Belchertown": {
+"pg": 40,
+"pf": 35,
+"vult": 115
+},
+"Bellingham": {
+"pg": 40,
+"pf": 35,
+"vult": 121
+},
+"Belmont": {
+"pg": 40,
+"pf": 30,
+"vult": 119
+},
+"Berkley": {
+"pg": 30,
+"pf": 30,
+"vult": 126
+},
+"Berlin": {
+"pg": 50,
+"pf": 35,
+"vult": 117
+},
+"Bernardston": {
+"pg": 60,
+"pf": 35,
+"vult": 112
+},
+"Beverly": {
+"pg": 50,
+"pf": 30,
+"vult": 119
+},
+"Billerica": {
+"pg": 50,
+"pf": 30,
+"vult": 117
+},
+"Blackstone": {
+"pg": 40,
+"pf": 35,
+"vult": 121
+},
+"Blandford": {
+"pg": 50,
+"pf": 40,
+"vult": 114
+},
+"Bolton": {
+"pg": 50,
+"pf": 35,
+"vult": 117
+},
+"Boston": {
+"pg": 40,
+"pf": 30,
+"vult": 120
+},
+"Bourne": {
+"pg": 30,
+"pf": 25,
+"vult": 129
+},
+"Boxborough": {
+"pg": 50,
+"pf": 35,
+"vult": 117
+},
+"Boxford": {
+"pg": 50,
+"pf": 30,
+"vult": 117
+},
+"Boylston": {
+"pg": 50,
+"pf": 35,
+"vult": 117
+},
+"Braintree": {
+"pg": 35,
+"pf": 30,
+"vult": 122
+},
+"Brewster": {
+"pg": 25,
+"pf": 25,
+"vult": 130
+},
+"Bridgewater": {
+"pg": 30,
+"pf": 30,
+"vult": 125
+},
+"Brimfield": {
+"pg": 40,
+"pf": 35,
+"vult": 117
+},
+"Brockton": {
+"pg": 35,
+"pf": 30,
+"vult": 123
+},
+"Brookfield": {
+"pg": 50,
+"pf": 35,
+"vult": 117
+},
+"Brookline": {
+"pg": 40,
+"pf": 30,
+"vult": 120
+},
+"Buckland": {
+"pg": 60,
+"pf": 40,
+"vult": 112
+},
+"Burlington": {
+"pg": 50,
+"pf": 30,
+"vult": 118
+},
+"Cambridge": {
+"pg": 40,
+"pf": 30,
+"vult": 120
+},
+"Canton": {
+"pg": 40,
+"pf": 35,
+"vult": 122
+},
+"Carlisle": {
+"pg": 50,
+"pf": 30,
+"vult": 117
+},
+"Carver": {
+"pg": 30,
+"pf": 30,
+"vult": 127
+},
+"Charlemont": {
+"pg": 60,
+"pf": 40,
+"vult": 112
+},
+"Charlton": {
+"pg": 50,
+"pf": 35,
+"vult": 118
+},
+"Chatham": {
+"pg": 25,
+"pf": 25,
+"vult": 132
+},
+"Chelmsford": {
+"pg": 50,
+"pf": 30,
+"vult": 117
+},
+"Chelsea": {
+"pg": 40,
+"pf": 30,
+"vult": 120
+},
+"Cheshire": {
+"pg": 60,
+"pf": 40,
+"vult": 112
+},
+"Chester": {
+"pg": 60,
+"pf": 40,
+"vult": 113
+},
+"Chesterfield": {
+"pg": 50,
+"pf": 40,
+"vult": 113
+},
+"Chicopee": {
+"pg": 35,
+"pf": 35,
+"vult": 115
+},
+"Chilmark": {
+"pg": 25,
+"pf": 25,
+"vult": 134
+},
+"Clarksburg": {
+"pg": 60,
+"pf": 40,
+"vult": 111
+},
+"Clinton": {
+"pg": 50,
+"pf": 35,
+"vult": 117
+},
+"Cohasset": {
+"pg": 35,
+"pf": 30,
+"vult": 122
+},
+"Colrain": {
+"pg": 60,
+"pf": 40,
+"vult": 112
+},
+"Concord": {
+"pg": 50,
+"pf": 35,
+"vult": 118
+},
+"Conway": {
+"pg": 50,
+"pf": 40,
+"vult": 113
+},
+"Cummington": {
+"pg": 60,
+"pf": 40,
+"vult": 113
+},
+"Dalton": {
+"pg": 60,
+"pf": 40,
+"vult": 112
+},
+"Danvers": {
+"pg": 50,
+"pf": 30,
+"vult": 118
+},
+"Dartmouth": {
+"pg": 30,
+"pf": 30,
+"vult": 129
+},
+"Dedham": {
+"pg": 40,
+"pf": 35,
+"vult": 120
+},
+"Deerfield": {
+"pg": 50,
+"pf": 35,
+"vult": 113
+},
+"Dennis": {
+"pg": 30,
+"pf": 25,
+"vult": 130
+},
+"Dighton": {
+"pg": 30,
+"pf": 30,
+"vult": 126
+},
+"Douglas": {
+"pg": 40,
+"pf": 35,
+"vult": 120
+},
+"Dover": {
+"pg": 40,
+"pf": 35,
+"vult": 120
+},
+"Dracut": {
+"pg": 50,
+"pf": 30,
+"vult": 116
+},
+"Dudley": {
+"pg": 50,
+"pf": 35,
+"vult": 119
+},
+"Dunstable": {
+"pg": 50,
+"pf": 35,
+"vult": 115
+},
+"Duxbury": {
+"pg": 30,
+"pf": 30,
+"vult": 125
+},
+"E. Bridgewater": {
+"pg": 35,
+"pf": 30,
+"vult": 124
+},
+"E. Brookfield": {
+"pg": 50,
+"pf": 35,
+"vult": 117
+},
+"E. Longmeadow": {
+"pg": 35,
+"pf": 35,
+"vult": 116
+},
+"Eastham": {
+"pg": 25,
+"pf": 25,
+"vult": 130
+},
+"Easthampton": {
+"pg": 40,
+"pf": 35,
+"vult": 114
+},
+"Easton": {
+"pg": 35,
+"pf": 30,
+"vult": 123
+},
+"Edgartown": {
+"pg": 25,
+"pf": 25,
+"vult": 134
+},
+"Egremont": {
+"pg": 40,
+"pf": 40,
+"vult": 112
+},
+"Erving": {
+"pg": 50,
+"pf": 35,
+"vult": 113
+},
+"Essex": {
+"pg": 50,
+"pf": 30,
+"vult": 118
+},
+"Everett": {
+"pg": 40,
+"pf": 30,
+"vult": 119
+},
+"Fairhaven": {
+"pg": 30,
+"pf": 30,
+"vult": 130
+},
+"Fall River": {
+"pg": 30,
+"pf": 30,
+"vult": 128
+},
+"Falmouth": {
+"pg": 30,
+"pf": 25,
+"vult": 131
+},
+"Fitchburg": {
+"pg": 60,
+"pf": 35,
+"vult": 115
+},
+"Florida": {
+"pg": 60,
+"pf": 40,
+"vult": 111
+},
+"Foxborough": {
+"pg": 35,
+"pf": 35,
+"vult": 122
+},
+"Framingham": {
+"pg": 40,
+"pf": 35,
+"vult": 119
+},
+"Franklin": {
+"pg": 40,
+"pf": 35,
+"vult": 121
+},
+"Freetown": {
+"pg": 30,
+"pf": 30,
+"vult": 127
+},
+"Gardner": {
+"pg": 60,
+"pf": 35,
+"vult": 114
+},
+"Georgetown": {
+"pg": 50,
+"pf": 30,
+"vult": 117
+},
+"Gill": {
+"pg": 50,
+"pf": 35,
+"vult": 113
+},
+"Gloucester": {
+"pg": 50,
+"pf": 30,
+"vult": 119
+},
+"Goshen": {
+"pg": 50,
+"pf": 40,
+"vult": 113
+},
+"Gosnold": {
+"pg": 30,
+"pf": 25,
+"vult": 132
+},
+"Grafton": {
+"pg": 50,
+"pf": 35,
+"vult": 119
+},
+"Granby": {
+"pg": 35,
+"pf": 35,
+"vult": 114
+},
+"Granville": {
+"pg": 50,
+"pf": 40,
+"vult": 114
+},
+"Great Barrington": {
+"pg": 50,
+"pf": 40,
+"vult": 113
+},
+"Greenfield": {
+"pg": 50,
+"pf": 35,
+"vult": 113
+},
+"Groton": {
+"pg": 60,
+"pf": 35,
+"vult": 116
+},
+"Groveland": {
+"pg": 50,
+"pf": 30,
+"vult": 116
+},
+"Hadley": {
+"pg": 40,
+"pf": 35,
+"vult": 114
+},
+"Halifax": {
+"pg": 30,
+"pf": 30,
+"vult": 125
+},
+"Hamilton": {
+"pg": 50,
+"pf": 30,
+"vult": 118
+},
+"Hampden": {
+"pg": 35,
+"pf": 35,
+"vult": 116
+},
+"Hancock": {
+"pg": 50,
+"pf": 40,
+"vult": 111
+},
+"Hanover": {
+"pg": 35,
+"pf": 30,
+"vult": 124
+},
+"Hanson": {
+"pg": 35,
+"pf": 30,
+"vult": 124
+},
+"Hardwick": {
+"pg": 50,
+"pf": 35,
+"vult": 115
+},
+"Harvard": {
+"pg": 50,
+"pf": 35,
+"vult": 116
+},
+"Harwich": {
+"pg": 25,
+"pf": 25,
+"vult": 131
+},
+"Hatfield": {
+"pg": 40,
+"pf": 35,
+"vult": 114
+},
+"Haverhill": {
+"pg": 50,
+"pf": 30,
+"vult": 116
+},
+"Hawley": {
+"pg": 60,
+"pf": 40,
+"vult": 112
+},
+"Heath": {
+"pg": 60,
+"pf": 40,
+"vult": 112
+},
+"Hingham": {
+"pg": 35,
+"pf": 30,
+"vult": 122
+},
+"Hinsdale": {
+"pg": 60,
+"pf": 40,
+"vult": 112
+},
+"Holbrook": {
+"pg": 35,
+"pf": 30,
+"vult": 123
+},
+"Holden": {
+"pg": 50,
+"pf": 35,
+"vult": 116
+},
+"Holland": {
+"pg": 40,
+"pf": 35,
+"vult": 117
+},
+"Holliston": {
+"pg": 40,
+"pf": 35,
+"vult": 120
+},
+"Holyoke": {
+"pg": 35,
+"pf": 35,
+"vult": 114
+},
+"Hopedale": {
+"pg": 40,
+"pf": 35,
+"vult": 120
+},
+"Hopkinton": {
+"pg": 40,
+"pf": 35,
+"vult": 119
+},
+"Hubbardston": {
+"pg": 50,
+"pf": 35,
+"vult": 115
+},
+"Hudson": {
+"pg": 50,
+"pf": 35,
+"vult": 117
+},
+"Hull": {
+"pg": 35,
+"pf": 30,
+"vult": 122
+},
+"Huntington": {
+"pg": 50,
+"pf": 40,
+"vult": 114
+},
+"Ipswich": {
+"pg": 50,
+"pf": 30,
+"vult": 118
+},
+"Kingston": {
+"pg": 30,
+"pf": 30,
+"vult": 126
+},
+"Lakeville": {
+"pg": 30,
+"pf": 30,
+"vult": 127
+},
+"Lancaster": {
+"pg": 50,
+"pf": 35,
+"vult": 116
+},
+"Lanesborough": {
+"pg": 50,
+"pf": 40,
+"vult": 111
+},
+"Lawrence": {
+"pg": 50,
+"pf": 30,
+"vult": 116
+},
+"Lee": {
+"pg": 50,
+"pf": 40,
+"vult": 112
+},
+"Leicester": {
+"pg": 50,
+"pf": 35,
+"vult": 117
+},
+"Lenox": {
+"pg": 50,
+"pf": 40,
+"vult": 112
+},
+"Leominster": {
+"pg": 60,
+"pf": 35,
+"vult": 115
+},
+"Leverett": {
+"pg": 40,
+"pf": 35,
+"vult": 114
+},
+"Lexington": {
+"pg": 40,
+"pf": 30,
+"vult": 118
+},
+"Leyden": {
+"pg": 60,
+"pf": 40,
+"vult": 112
+},
+"Lincoln": {
+"pg": 40,
+"pf": 35,
+"vult": 118
+},
+"Littleton": {
+"pg": 50,
+"pf": 35,
+"vult": 117
+},
+"Longmeadow": {
+"pg": 35,
+"pf": 35,
+"vult": 116
+},
+"Lowell": {
+"pg": 50,
+"pf": 30,
+"vult": 116
+},
+"Ludlow": {
+"pg": 35,
+"pf": 35,
+"vult": 115
+},
+"Lunenburg": {
+"pg": 60,
+"pf": 35,
+"vult": 115
+},
+"Lynn": {
+"pg": 40,
+"pf": 30,
+"vult": 119
+},
+"Lynnfield": {
+"pg": 50,
+"pf": 30,
+"vult": 118
+},
+"Malden": {
+"pg": 40,
+"pf": 30,
+"vult": 119
+},
+"Manchester": {
+"pg": 50,
+"pf": 30,
+"vult": 119
+},
+"Mansfield": {
+"pg": 35,
+"pf": 30,
+"vult": 123
+},
+"Marblehead": {
+"pg": 40,
+"pf": 30,
+"vult": 119
+},
+"Marion": {
+"pg": 30,
+"pf": 30,
+"vult": 129
+},
+"Marlborough": {
+"pg": 50,
+"pf": 35,
+"vult": 118
+},
+"Marshfield": {
+"pg": 35,
+"pf": 30,
+"vult": 125
+},
+"Mashpee": {
+"pg": 30,
+"pf": 25,
+"vult": 130
+},
+"Mattapoisett": {
+"pg": 30,
+"pf": 30,
+"vult": 130
+},
+"Maynard": {
+"pg": 50,
+"pf": 35,
+"vult": 118
+},
+"Medfield": {
+"pg": 40,
+"pf": 35,
+"vult": 120
+},
+"Medford": {
+"pg": 40,
+"pf": 30,
+"vult": 119
+},
+"Medway": {
+"pg": 40,
+"pf": 35,
+"vult": 120
+},
+"Melrose": {
+"pg": 40,
+"pf": 30,
+"vult": 119
+},
+"Mendon": {
+"pg": 40,
+"pf": 35,
+"vult": 120
+},
+"Merrimac": {
+"pg": 50,
+"pf": 30,
+"vult": 116
+},
+"Methuen": {
+"pg": 50,
+"pf": 30,
+"vult": 116
+},
+"Middleborough": {
+"pg": 30,
+"pf": 30,
+"vult": 126
+},
+"Middlefield": {
+"pg": 60,
+"pf": 40,
+"vult": 113
+},
+"Middleton": {
+"pg": 50,
+"pf": 30,
+"vult": 118
+},
+"Milford": {
+"pg": 40,
+"pf": 35,
+"vult": 120
+},
+"Millbury": {
+"pg": 50,
+"pf": 35,
+"vult": 118
+},
+"Millis": {
+"pg": 40,
+"pf": 35,
+"vult": 120
+},
+"Millville": {
+"pg": 40,
+"pf": 35,
+"vult": 121
+},
+"Milton": {
+"pg": 40,
+"pf": 30,
+"vult": 121
+},
+"Monroe": {
+"pg": 60,
+"pf": 40,
+"vult": 111
+},
+"Monson": {
+"pg": 40,
+"pf": 35,
+"vult": 116
+},
+"Montague": {
+"pg": 50,
+"pf": 35,
+"vult": 113
+},
+"Monterey": {
+"pg": 50,
+"pf": 40,
+"vult": 113
+},
+"Montgomery": {
+"pg": 40,
+"pf": 40,
+"vult": 114
+},
+"Mount Washington": {
+"pg": 40,
+"pf": 40,
+"vult": 113
+},
+"Nahant": {
+"pg": 40,
+"pf": 30,
+"vult": 120
+},
+"Nantucket": {
+"pg": 25,
+"pf": 25,
+"vult": 137
+},
+"Natick": {
+"pg": 40,
+"pf": 35,
+"vult": 119
+},
+"Needham": {
+"pg": 40,
+"pf": 35,
+"vult": 120
+},
+"New Ashford": {
+"pg": 50,
+"pf": 40,
+"vult": 111
+},
+"New Bedford": {
+"pg": 30,
+"pf": 30,
+"vult": 129
+},
+"New Braintree": {
+"pg": 50,
+"pf": 35,
+"vult": 115
+},
+"New Marlborough": {
+"pg": 50,
+"pf": 40,
+"vult": 113
+},
+"New Salem": {
+"pg": 50,
+"pf": 35,
+"vult": 114
+},
+"Newbury": {
+"pg": 50,
+"pf": 30,
+"vult": 116
+},
+"Newburyport": {
+"pg": 50,
+"pf": 30,
+"vult": 116
+},
+"Newton": {
+"pg": 40,
+"pf": 30,
+"vult": 119
+},
+"Norfolk": {
+"pg": 40,
+"pf": 35,
+"vult": 121
+},
+"North Adams": {
+"pg": 60,
+"pf": 40,
+"vult": 111
+},
+"North Andover": {
+"pg": 50,
+"pf": 30,
+"vult": 116
+},
+"North Attleborough": {
+"pg": 35,
+"pf": 30,
+"vult": 123
+},
+"North Brookfield": {
+"pg": 50,
+"pf": 35,
+"vult": 116
+},
+"North Reading": {
+"pg": 50,
+"pf": 30,
+"vult": 118
+},
+"Northampton": {
+"pg": 40,
+"pf": 35,
+"vult": 114
+},
+"Northborough": {
+"pg": 50,
+"pf": 35,
+"vult": 118
+},
+"Northbridge": {
+"pg": 40,
+"pf": 35,
+"vult": 119
+},
+"Northfield": {
+"pg": 60,
+"pf": 35,
+"vult": 112
+},
+"Norton": {
+"pg": 35,
+"pf": 30,
+"vult": 124
+},
+"Norwell": {
+"pg": 35,
+"pf": 30,
+"vult": 123
+},
+"Norwood": {
+"pg": 40,
+"pf": 35,
+"vult": 121
+},
+"Oak Bluffs": {
+"pg": 25,
+"pf": 25,
+"vult": 133
+},
+"Oakham": {
+"pg": 50,
+"pf": 35,
+"vult": 116
+},
+"Orange": {
+"pg": 60,
+"pf": 35,
+"vult": 113
+},
+"Orleans": {
+"pg": 25,
+"pf": 25,
+"vult": 130
+},
+"Otis": {
+"pg": 50,
+"pf": 40,
+"vult": 113
+},
+"Oxford": {
+"pg": 50,
+"pf": 35,
+"vult": 119
+},
+"Palmer": {
+"pg": 40,
+"pf": 35,
+"vult": 116
+},
+"Paxton": {
+"pg": 50,
+"pf": 35,
+"vult": 116
+},
+"Peabody": {
+"pg": 50,
+"pf": 30,
+"vult": 119
+},
+"Pelham": {
+"pg": 40,
+"pf": 35,
+"vult": 114
+},
+"Pembroke": {
+"pg": 30,
+"pf": 30,
+"vult": 124
+},
+"Pepperell": {
+"pg": 60,
+"pf": 35,
+"vult": 115
+},
+"Peru": {
+"pg": 60,
+"pf": 40,
+"vult": 112
+},
+"Petersham": {
+"pg": 50,
+"pf": 35,
+"vult": 114
+},
+"Phillipston": {
+"pg": 60,
+"pf": 35,
+"vult": 114
+},
+"Pittsfield": {
+"pg": 50,
+"pf": 40,
+"vult": 112
+},
+"Plainfield": {
+"pg": 60,
+"pf": 40,
+"vult": 112
+},
+"Plainville": {
+"pg": 40,
+"pf": 35,
+"vult": 123
+},
+"Plymouth": {
+"pg": 30,
+"pf": 30,
+"vult": 127
+},
+"Plympton": {
+"pg": 30,
+"pf": 30,
+"vult": 126
+},
+"Princeton": {
+"pg": 50,
+"pf": 35,
+"vult": 116
+},
+"Provincetown": {
+"pg": 25,
+"pf": 25,
+"vult": 127
+},
+"Quincy": {
+"pg": 40,
+"pf": 30,
+"vult": 121
+},
+"Randolph": {
+"pg": 35,
+"pf": 30,
+"vult": 122
+},
+"Raynham": {
+"pg": 35,
+"pf": 30,
+"vult": 125
+},
+"Reading": {
+"pg": 50,
+"pf": 30,
+"vult": 118
+},
+"Rehoboth": {
+"pg": 35,
+"pf": 30,
+"vult": 125
+},
+"Revere": {
+"pg": 40,
+"pf": 30,
+"vult": 119
+},
+"Richmond": {
+"pg": 50,
+"pf": 40,
+"vult": 112
+},
+"Rochester": {
+"pg": 30,
+"pf": 30,
+"vult": 129
+},
+"Rockland": {
+"pg": 35,
+"pf": 30,
+"vult": 123
+},
+"Rockport": {
+"pg": 50,
+"pf": 30,
+"vult": 119
+},
+"Rowe": {
+"pg": 60,
+"pf": 40,
+"vult": 111
+},
+"Rowley": {
+"pg": 50,
+"pf": 30,
+"vult": 117
+},
+"Royalston": {
+"pg": 60,
+"pf": 35,
+"vult": 113
+},
+"Russell": {
+"pg": 40,
+"pf": 40,
+"vult": 114
+},
+"Rutland": {
+"pg": 50,
+"pf": 35,
+"vult": 116
+},
+"Salem": {
+"pg": 50,
+"pf": 30,
+"vult": 119
+},
+"Salisbury": {
+"pg": 50,
+"pf": 30,
+"vult": 116
+},
+"Sandisfield": {
+"pg": 50,
+"pf": 40,
+"vult": 114
+},
+"Sandwich": {
+"pg": 30,
+"pf": 25,
+"vult": 129
+},
+"Saugus": {
+"pg": 40,
+"pf": 30,
+"vult": 119
+},
+"Savoy": {
+"pg": 60,
+"pf": 40,
+"vult": 112
+},
+"Scituate": {
+"pg": 35,
+"pf": 30,
+"vult": 123
+},
+"Seekonk": {
+"pg": 35,
+"pf": 30,
+"vult": 125
+},
+"Sharon": {
+"pg": 35,
+"pf": 35,
+"vult": 122
+},
+"Sheffield": {
+"pg": 40,
+"pf": 40,
+"vult": 113
+},
+"Shelburne": {
+"pg": 50,
+"pf": 40,
+"vult": 112
+},
+"Sherborn": {
+"pg": 40,
+"pf": 35,
+"vult": 120
+},
+"Shirley": {
+"pg": 60,
+"pf": 35,
+"vult": 116
+},
+"Shrewsbury": {
+"pg": 50,
+"pf": 35,
+"vult": 118
+},
+"Shutesbury": {
+"pg": 40,
+"pf": 35,
+"vult": 114
+},
+"Somerset": {
+"pg": 30,
+"pf": 30,
+"vult": 127
+},
+"Somerville": {
+"pg": 40,
+"pf": 30,
+"vult": 119
+},
+"South Hadley": {
+"pg": 35,
+"pf": 35,
+"vult": 114
+},
+"Southampton": {
+"pg": 40,
+"pf": 35,
+"vult": 114
+},
+"Southborough": {
+"pg": 40,
+"pf": 35,
+"vult": 119
+},
+"Southbridge": {
+"pg": 40,
+"pf": 35,
+"vult": 118
+},
+"Southwick": {
+"pg": 40,
+"pf": 35,
+"vult": 115
+},
+"Spencer": {
+"pg": 50,
+"pf": 35,
+"vult": 117
+},
+"Springfield": {
+"pg": 35,
+"pf": 35,
+"vult": 115
+},
+"Sterling": {
+"pg": 50,
+"pf": 35,
+"vult": 116
+},
+"Stockbridge": {
+"pg": 50,
+"pf": 40,
+"vult": 112
+},
+"Stoneham": {
+"pg": 40,
+"pf": 30,
+"vult": 119
+},
+"Stoughton": {
+"pg": 35,
+"pf": 35,
+"vult": 122
+},
+"Stow": {
+"pg": 50,
+"pf": 35,
+"vult": 117
+},
+"Sturbridge": {
+"pg": 40,
+"pf": 35,
+"vult": 118
+},
+"Sudbury": {
+"pg": 40,
+"pf": 30,
+"vult": 118
+},
+"Sunderland": {
+"pg": 40,
+"pf": 35,
+"vult": 113
+},
+"Sutton": {
+"pg": 50,
+"pf": 35,
+"vult": 119
+},
+"Swampscott": {
+"pg": 40,
+"pf": 30,
+"vult": 119
+},
+"Swansea": {
+"pg": 30,
+"pf": 30,
+"vult": 127
+},
+"Taunton": {
+"pg": 35,
+"pf": 30,
+"vult": 125
+},
+"Templeton": {
+"pg": 60,
+"pf": 35,
+"vult": 114
+},
+"Tewksbury": {
+"pg": 50,
+"pf": 30,
+"vult": 117
+},
+"Tisbury": {
+"pg": 25,
+"pf": 25,
+"vult": 133
+},
+"Tolland": {
+"pg": 50,
+"pf": 40,
+"vult": 114
+},
+"Topsfield": {
+"pg": 50,
+"pf": 30,
+"vult": 118
+},
+"Townsend": {
+"pg": 60,
+"pf": 35,
+"vult": 115
+},
+"Truro": {
+"pg": 25,
+"pf": 25,
+"vult": 128
+},
+"Tyngsborough": {
+"pg": 50,
+"pf": 30,
+"vult": 116
+},
+"Tyringham": {
+"pg": 50,
+"pf": 40,
+"vult": 113
+},
+"Upton": {
+"pg": 40,
+"pf": 35,
+"vult": 119
+},
+"Uxbridge": {
+"pg": 40,
+"pf": 35,
+"vult": 120
+},
+"Wakefield": {
+"pg": 50,
+"pf": 30,
+"vult": 118
+},
+"Wales": {
+"pg": 40,
+"pf": 35,
+"vult": 117
+},
+"Walpole": {
+"pg": 40,
+"pf": 35,
+"vult": 121
+},
+"Waltham": {
+"pg": 40,
+"pf": 30,
+"vult": 119
+},
+"Ware": {
+"pg": 40,
+"pf": 35,
+"vult": 115
+},
+"Wareham": {
+"pg": 30,
+"pf": 30,
+"vult": 129
+},
+"Warren": {
+"pg": 40,
+"pf": 35,
+"vult": 116
+},
+"Warwick": {
+"pg": 60,
+"pf": 35,
+"vult": 113
+},
+"Washington": {
+"pg": 60,
+"pf": 40,
+"vult": 112
+},
+"Watertown": {
+"pg": 40,
+"pf": 30,
+"vult": 119
+},
+"Wayland": {
+"pg": 40,
+"pf": 35,
+"vult": 119
+},
+"Webster": {
+"pg": 50,
+"pf": 35,
+"vult": 119
+},
+"Wellesley": {
+"pg": 40,
+"pf": 35,
+"vult": 119
+},
+"Wellfleet": {
+"pg": 25,
+"pf": 25,
+"vult": 129
+},
+"Wendell": {
+"pg": 50,
+"pf": 35,
+"vult": 113
+},
+"Wenham": {
+"pg": 50,
+"pf": 30,
+"vult": 118
+},
+"W. Boylston": {
+"pg": 50,
+"pf": 35,
+"vult": 117
+},
+"W. Bridgewater": {
+"pg": 35,
+"pf": 30,
+"vult": 124
+},
+"W. Brookfield": {
+"pg": 40,
+"pf": 35,
+"vult": 116
+},
+"W. Newbury": {
+"pg": 50,
+"pf": 30,
+"vult": 116
+},
+"W. Springfield": {
+"pg": 35,
+"pf": 35,
+"vult": 115
+},
+"W. Stockbridge": {
+"pg": 40,
+"pf": 40,
+"vult": 112
+},
+"W. Tisbury": {
+"pg": 25,
+"pf": 25,
+"vult": 133
+},
+"Westborough": {
+"pg": 50,
+"pf": 35,
+"vult": 118
+},
+"Westfield": {
+"pg": 40,
+"pf": 35,
+"vult": 114
+},
+"Westford": {
+"pg": 50,
+"pf": 35,
+"vult": 116
+},
+"Westhampton": {
+"pg": 50,
+"pf": 40,
+"vult": 114
+},
+"Westminster": {
+"pg": 60,
+"pf": 35,
+"vult": 115
+},
+"Weston": {
+"pg": 40,
+"pf": 35,
+"vult": 119
+},
+"Westport": {
+"pg": 30,
+"pf": 30,
+"vult": 128
+},
+"Westwood": {
+"pg": 40,
+"pf": 35,
+"vult": 121
+},
+"Weymouth": {
+"pg": 35,
+"pf": 30,
+"vult": 122
+},
+"Whately": {
+"pg": 50,
+"pf": 35,
+"vult": 113
+},
+"Whitman": {
+"pg": 35,
+"pf": 30,
+"vult": 124
+},
+"Wilbraham": {
+"pg": 35,
+"pf": 35,
+"vult": 115
+},
+"Williamsburg": {
+"pg": 50,
+"pf": 40,
+"vult": 113
+},
+"Williamstown": {
+"pg": 50,
+"pf": 40,
+"vult": 111
+},
+"Wilmington": {
+"pg": 50,
+"pf": 30,
+"vult": 118
+},
+"Winchendon": {
+"pg": 60,
+"pf": 35,
+"vult": 113
+},
+"Winchester": {
+"pg": 40,
+"pf": 30,
+"vult": 119
+},
+"Windsor": {
+"pg": 60,
+"pf": 40,
+"vult": 112
+},
+"Winthrop": {
+"pg": 40,
+"pf": 30,
+"vult": 120
+},
+"Woburn": {
+"pg": 50,
+"pf": 30,
+"vult": 118
+},
+"Worcester": {
+"pg": 50,
+"pf": 35,
+"vult": 117
+},
+"Worthington": {
+"pg": 60,
+"pf": 40,
+"vult": 113
+},
+"Wrentham": {
+"pg": 40,
+"pf": 35,
+"vult": 122
+},
+"Yarmouth": {
+"pg": 30,
+"pf": 25,
+"vult": 131
+}
+}

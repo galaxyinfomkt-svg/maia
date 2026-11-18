@@ -6,12 +6,10 @@ import { HeroWithForm, CTASection } from '@/components/sections';
 import { JsonLd, Breadcrumbs } from '@/components/seo';
 import { services, getServiceBySlug } from '@/lib/services';
 import { cities, getCityBySlug } from '@/lib/cities';
-import { TOWN_DATA } from '@/lib/town-data';
-
-const DECADE_LABELS = ['Before 1940', '1940s', '1950s', '1960s', '1970s', '1980s', '1990s', '2000s', '2010s', '2020 or later'];
 import { SITE_NAME, PHONE, SITE_URL, heroPhotoFor } from '@/lib/constants';
-import { GOOGLE_REVIEW_COUNT, AVERAGE_RATING, reviewsFor } from '@/lib/reviews';
-import { getServiceCityContent, SOURCES_NOTE } from '@/lib/local-content';
+import { GOOGLE_REVIEW_COUNT, AVERAGE_RATING } from '@/lib/reviews';
+import { serviceLens } from '@/lib/town-lens';
+import { getServiceCityContent, nearestJobs } from '@/lib/local-content';
 
 interface ServiceCityPageProps {
   params: Promise<{ service: string; city: string }>;
@@ -51,7 +49,14 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
   if (!service || !city) notFound();
 
   const local = getServiceCityContent(service, city);
-  const [review] = reviewsFor(`${service.slug}-${city.slug}`, 1);
+  const lens = serviceLens(service, city);
+  // The single most relevant finished job: the nearest one of THIS service if we have any, else the nearest job.
+  const job = nearestJobs(city.slug, service.slug, 20).find((j) => j.sameService) ?? local.jobs[0];
+  const jobText = job
+    ? job.miles <= 1
+      ? `We have photographed ${job.sameService ? `a ${service.shortName} job` : 'a finished job'} right here in ${city.name}: ${job.project.title}.`
+      : `${job.sameService ? `Our closest photographed ${service.shortName} job` : 'Our closest photographed job'} to ${city.name} is ${job.project.title} in ${job.project.location}, ${job.miles} miles ${job.direction}.`
+    : '';
   const pageUrl = `${SITE_URL}/services/${service.slug}/${city.slug}/`;
 
   const breadcrumbSchema = {
@@ -118,114 +123,37 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
         </div>
       </div>
 
-      {/* ── The local picture: everything here is computed for this town ── */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">
-              {service.name} in {city.name}: what we plan for
-            </h2>
-            <p className="text-lg text-gray-700 leading-relaxed">{local.lead}</p>
-            <dl className="mt-8 grid gap-x-8 gap-y-3 sm:grid-cols-2">
-              {local.facts.map((f) => (
-                <div key={f.label} className="flex justify-between gap-4 border-b border-slate-200 pb-2">
-                  <dt className="text-gray-600">{f.label}</dt>
-                  <dd className="text-right font-semibold text-slate-900">{f.value}</dd>
-                </div>
-              ))}
-            </dl>
-            <div className="mt-8 overflow-x-auto">
-              <table className="w-full min-w-[640px] text-left text-sm">
-                <thead>
-                  <tr className="border-b border-slate-300 text-slate-600">
-                    <th className="py-2 pr-4 font-semibold">Town</th>
-                    <th className="py-2 pr-4 font-semibold">From {city.name}</th>
-                    <th className="py-2 pr-4 font-semibold">County</th>
-                    <th className="py-2 pr-4 font-semibold">To the coast</th>
-                    <th className="py-2 pr-4 font-semibold">To our shop</th>
-                    <th className="py-2 pr-4 font-semibold">Typical home</th>
-                    <th className="py-2 font-semibold">Homes</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {local.neighbourRows.map((r) => (
-                    <tr key={r.slug} className="border-b border-slate-200">
-                      <td className="py-2 pr-4">
-                        <Link href={`/services/${service.slug}/${r.slug}`} className="font-medium text-slate-900 hover:text-amber-700 hover:underline">{r.name}</Link>
-                      </td>
-                      <td className="py-2 pr-4 text-gray-700">{r.miles} mi {r.direction}</td>
-                      <td className="py-2 pr-4 text-gray-700">{r.county}</td>
-                      <td className="py-2 pr-4 text-gray-700">{r.coast} mi</td>
-                      <td className="py-2 pr-4 text-gray-700">{r.shop} mi</td>
-                      <td className="py-2 pr-4 text-gray-700">{r.year}</td>
-                      <td className="py-2 text-gray-700">{r.homes.toLocaleString('en-US')}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <div className="mt-8 overflow-x-auto">
-              <table className="w-full min-w-[640px] text-left text-sm">
-                <caption className="text-left font-bold text-slate-900 mb-2">Homes in {city.name} against {city.county} County towns we serve and all 109</caption>
-                <thead>
-                  <tr className="border-b border-slate-300 text-slate-600">
-                    <th className="py-2 pr-4 font-semibold"> </th>
-                    <th className="py-2 pr-4 font-semibold">{city.name}</th>
-                    <th className="py-2 pr-4 font-semibold">{city.county} Co.</th>
-                    <th className="py-2 font-semibold">All 109</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {local.comparison.map((r) => (
-                    <tr key={r.label} className="border-b border-slate-200">
-                      <td className="py-2 pr-4 text-gray-600">{r.label}</td>
-                      <td className="py-2 pr-4 font-semibold text-slate-900">{r.town}</td>
-                      <td className="py-2 pr-4 text-gray-700">{r.county}</td>
-                      <td className="py-2 text-gray-700">{r.all}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <div className="mt-8">
-              <h3 className="font-bold text-slate-900 mb-3">When {city.name}&apos;s homes were built</h3>
-              <ul className="space-y-1.5">
-                {TOWN_DATA[city.slug].decades.map((pct, i) => (
-                  <li key={DECADE_LABELS[i]} className="flex items-center gap-3 text-sm">
-                    <span className="w-24 shrink-0 text-gray-600">{DECADE_LABELS[i]}</span>
-                    <span className="h-3 rounded bg-amber-400" style={{ width: `${Math.max(pct, 1) * 2}%` }} aria-hidden="true" />
-                    <span className="font-semibold text-slate-900">{pct}%</span>
+      {/* ── Only the facts about this town that change THIS job (src/lib/town-lens.ts) ── */}
+      {lens && (
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl font-bold text-slate-900 mb-6">{lens.heading}</h2>
+              <ul className="space-y-4 text-lg text-gray-700 leading-relaxed">
+                {lens.points.map((pt) => (
+                  <li key={pt} className="flex gap-3">
+                    <span className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-amber-500" aria-hidden="true" />
+                    <span>{pt}</span>
                   </li>
                 ))}
               </ul>
+              <p className="mt-6 text-xs text-gray-500">Sources: {lens.sources}</p>
+              <Link href={`/cities/${city.slug}`} className="mt-4 inline-block font-semibold text-amber-700 hover:underline">
+                {city.name}&apos;s full record: homes, history, weather and energy code →
+              </Link>
             </div>
-            <p className="mt-4 text-xs text-gray-500">{SOURCES_NOTE}</p>
-            {local.neighbourhoods.length > 0 && (
-              <div className="mt-8">
-                <h3 className="text-lg font-bold text-slate-900 mb-3">Parts of {city.name} we work in</h3>
-                <div className="flex flex-wrap gap-2">
-                  {local.neighbourhoods.map((n) => (
-                    <span key={n} className="px-3 py-1.5 bg-amber-50 border border-amber-200 rounded-full text-amber-800 text-sm font-medium">
-                      {n}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ── Our finished jobs nearest to this town ── */}
       <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">Our work near {city.name}</h2>
-            <p className="text-lg text-gray-700 mb-8 max-w-3xl">{local.jobsIntro}</p>
-            <div className="grid gap-6 md:grid-cols-3">
-              {local.jobs.map(({ project, miles, direction }) => {
+            <p className="text-lg text-gray-700 mb-8 max-w-3xl">{jobText}</p>
+            <div className="grid gap-6 md:grid-cols-2">
+              {(job ? [job] : []).map(({ project, miles, direction }) => {
                 const card = (
                   <>
                     <div className="relative aspect-[4/3] bg-slate-200">
@@ -250,6 +178,9 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
                 );
               })}
             </div>
+            <Link href="/projects" className="mt-8 inline-flex font-semibold text-amber-700 hover:underline">
+              See every job we have photographed →
+            </Link>
           </div>
         </div>
       </section>
@@ -270,7 +201,7 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
         </div>
       </section>
 
-      {/* One real review and the rating, not a three-card block repeated on 981 pages. */}
+      {/* The rating only: a sampled quote repeated across hundreds of pages added nothing local. */}
       <section className="py-12 bg-slate-900 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
@@ -278,19 +209,13 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
             <p className="mt-1 font-semibold">
               {AVERAGE_RATING} from {GOOGLE_REVIEW_COUNT} Google reviews
             </p>
-            {review && (
-              <blockquote className="mt-5 text-lg text-white/90 leading-relaxed">
-                “{review.text}”
-                <footer className="mt-2 text-sm text-white/60">{review.author}{review.work ? `, ${review.work}` : ''}</footer>
-              </blockquote>
-            )}
             <Link href="/reviews" className="mt-5 inline-block font-semibold text-amber-400 hover:underline">Read all our reviews</Link>
           </div>
         </div>
       </section>
 
       {/* ── Internal links: other services here, this service next door ── */}
-      <section className="py-16 bg-slate-50">
+      <nav aria-label={`More pages for ${city.name}`} className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto grid gap-12 md:grid-cols-2">
             <div>
@@ -307,7 +232,6 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
             </div>
             <div>
               <h2 className="text-2xl font-bold text-slate-900 mb-3">{service.name} next door</h2>
-              <p className="text-gray-700 mb-5">{local.neighbourSummary}</p>
               <ul className="space-y-2">
                 {local.neighbours.map((n) => (
                   <li key={n.slug}>
@@ -324,7 +248,7 @@ export default async function ServiceCityPage({ params }: ServiceCityPageProps) 
             </div>
           </div>
         </div>
-      </section>
+      </nav>
 
       <CTASection
         title={`Free ${service.name.toLowerCase()} estimate in ${city.name}`}

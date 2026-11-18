@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { BlogPostMeta } from '@/types';
+import { mdPosts } from './blog-md';
 
 const BLOG_DIR = path.join(process.cwd(), 'src/content/blog');
 
@@ -160,6 +161,9 @@ export const blogPosts: BlogPostMeta[] = [
     tags: ['Home Maintenance', 'Tips', 'Massachusetts'],
   },
 ];
+
+// Markdown articles (src/content/blog-md) join the list; a slug defined in both keeps the JSX one.
+for (const p of mdPosts) if (!blogPosts.some((b) => b.slug === p.slug)) blogPosts.push(p);
 
 export function getAllPosts(): BlogPostMeta[] {
   return blogPosts.sort(

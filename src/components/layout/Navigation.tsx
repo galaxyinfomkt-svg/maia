@@ -6,9 +6,16 @@ import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { services } from '@/lib/services';
 
+/* Projects sits right after the services dropdown.
+ *
+ * It was only ever linked from the footer, which meant the portfolio - the
+ * strongest thing this site owns - was invisible on all 1,100-odd pages unless
+ * someone scrolled to the bottom. In the header it is one click from every
+ * page, including the 109 town pages and the 981 service-by-town pages. */
 const navItems = [
   { label: 'Home', href: '/' },
   { label: 'Services', href: '/services', hasDropdown: true },
+  { label: 'Projects', href: '/projects' },
   { label: 'About', href: '/about' },
   { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },

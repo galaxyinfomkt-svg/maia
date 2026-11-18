@@ -12,6 +12,7 @@
  */
 
 import { IMAGES } from '@/lib/constants';
+import { CITY_GEO } from '@/lib/project-geo';
 
 export type ServiceName = 'Siding' | 'Windows' | 'Doors' | 'General Contractor';
 
@@ -52,6 +53,123 @@ export interface Project {
 const BA = '/images/before-after';
 
 export const projects: Project[] = [
+  /* ------------------------------------------- 2026: three jobs, photographed end to end
+   *
+   * The town of each of these three is still with the client: she sent the
+   * photographs and, separately, four captions that do not line up with them
+   * one to one. Until she confirms which job is which town, `location` is the
+   * state and nothing more — a contractor's portfolio does not get to guess at
+   * an address. Everything else below is read straight off the photographs. */
+  {
+    id: 'ma-cape-siding-harvey-windows',
+    slug: 'cape-siding-harvey-windows-new-gutters',
+    title: 'New Siding, Harvey Windows, Two Doors and Gutters',
+    location: 'Massachusetts',
+    service: 'Siding',
+    image: `${BA}/cape-siding-after-front.webp`,
+    description:
+      'A cape taken back to the studs and rebuilt: new siding and PVC trim, all-new Harvey windows cased in wood inside, two new doors and a new gutter system.',
+    featured: true,
+    body: [
+      'The old white siding on this cape had chalked and streaked, the trim had gone soft and the front wall had been patched more than once. We did not side over it. The front came off down to the studs, so every opening could be re-flashed and the wall could be looked at properly before anything new went back on.',
+      'Every window in the house is a new Harvey unit. Outside they are cased in PVC, which does not rot and never needs painting; inside they were cased and silled in wood, which is the part the homeowner looks at from the sofa every evening.',
+      'Two doors were replaced and the house got a new gutter system, so the water coming off that roof lands where it should instead of down the new wall.',
+    ],
+    pairs: [
+      { before: `${BA}/cape-siding-before-front.webp`, after: `${BA}/cape-siding-after-front.webp`,
+        caption: 'Front elevation — streaked white siding and a worn cross-buck door, then new siding, a new entry door and new windows.' },
+      { before: `${BA}/cape-siding-before-side.webp`, after: `${BA}/cape-siding-after-side.webp`,
+        caption: 'Gambrel side — the wall carrying the meter and the service mast, re-clad and re-trimmed around every opening.' },
+      { before: `${BA}/cape-siding-before-garage-side.webp`, after: `${BA}/cape-siding-after-garage-side.webp`,
+        caption: 'The other side, before and after.' },
+    ],
+    gallery: [
+      { src: `${BA}/cape-siding-wall-open.webp`,
+        alt: 'Front wall of a Massachusetts cape stripped to the studs and insulation before new siding by Maia Construction',
+        caption: 'The front wall opened up. You cannot flash an opening you cannot see.' },
+      { src: `${BA}/cape-siding-wall-open-2.webp`,
+        alt: 'Stripped front elevation of a cape with the dormer exposed before re-siding, Massachusetts',
+        caption: 'The same wall from the street, dormer and all.' },
+      { src: `${BA}/cape-siding-entry-during.webp`,
+        alt: 'Old entry door and bay window on a stripped wall mid-job, Massachusetts',
+        caption: 'The old door and the old front windows, waiting their turn.' },
+      { src: `${BA}/cape-siding-materials.webp`,
+        alt: 'Composite siding and AZEK PVC trim stock on site with a window casing assembled on the bench',
+        caption: 'Siding and PVC trim stock on site, and a casing being made up on the bench.' },
+      { src: `${BA}/cape-siding-after-side-2.webp`,
+        alt: 'Finished side elevation of a Massachusetts cape with new siding and white trim by Maia Construction',
+        caption: 'The finished side, with the trim carried around the corner.' },
+      { src: `${BA}/cape-harvey-window-1.webp`,
+        alt: 'New Harvey slider window cased and silled in wood inside a Massachusetts home',
+        caption: 'A new Harvey slider, cased and silled in wood.' },
+      { src: `${BA}/cape-harvey-window-2.webp`,
+        alt: 'Harvey replacement window with grilles and new wood casing, interior view',
+        caption: 'Grilles between the glass, so there is nothing to dust.' },
+      { src: `${BA}/cape-harvey-window-3.webp`,
+        alt: 'New Harvey double-hung window with wood casing on an upper floor, Massachusetts',
+        caption: 'Upstairs, the same detail: new unit, new casing, new stool.' },
+      { src: `${BA}/cape-harvey-window-4.webp`,
+        alt: 'Harvey window installed with wood casing and a wood stool, interior view',
+        caption: 'Stickers still on, which is how you know it is the same week.' },
+      { src: `${BA}/cape-harvey-window-5.webp`,
+        alt: 'Interior view of a new Harvey window and wood casing in a Massachusetts home',
+        caption: 'The last of the openings, finished inside.' },
+    ],
+  },
+  {
+    id: 'ma-ranch-sage-siding',
+    slug: 'sage-vinyl-siding-ranch-attached-garage',
+    title: 'Sage Siding and White Trim on a Ranch',
+    location: 'Massachusetts',
+    service: 'Siding',
+    image: `${BA}/sage-siding-after-front.webp`,
+    description:
+      'A tired cream ranch and its attached garage re-clad in sage vinyl, with white trim on every window, a new garage door and a red front door.',
+    featured: true,
+    body: [
+      'Cream siding, black shutters and a dark storm door: this ranch read as every other house on the road. The new siding is sage, the trim is white and the shutters did not come back — which is what gives the elevation its contrast now.',
+      'The attached garage was treated as part of the house rather than an afterthought, so the courses line through from the main wall to the garage gable and the trim matches on both.',
+    ],
+    pairs: [
+      { before: `${BA}/sage-siding-before-front.webp`, after: `${BA}/sage-siding-after-front.webp`,
+        caption: 'Front — cream siding and black shutters, then sage with white trim, a new garage door and a red front door.' },
+      { before: `${BA}/sage-siding-before-garage.webp`, after: `${BA}/sage-siding-after-garage.webp`,
+        caption: 'Garage end, before and after.' },
+      { before: `${BA}/sage-siding-before-porch.webp`, after: `${BA}/sage-siding-after-porch.webp`,
+        caption: 'The far side of the house, before and after.' },
+    ],
+  },
+  {
+    id: 'ma-colonial-blue-siding',
+    slug: 'blue-vinyl-siding-colonial-and-garage',
+    title: 'Blue Vinyl Siding on a Colonial and Its Garage',
+    location: 'Massachusetts',
+    service: 'Siding',
+    image: `${BA}/blue-siding-after-front.webp`,
+    description:
+      'A colonial and its detached two-bay garage stripped, wrapped and re-clad in blue vinyl with white trim on every opening and a new entry door.',
+    body: [
+      'Both buildings came back to the sheathing and went out under a full house wrap before a single course of siding went on. The wrap is the part nobody sees and the part that decides whether the wall dries.',
+      'The house is blue vinyl with white trim on every opening and a new white entry door. The garage building was sided to match, so the two read as one property instead of a house and a shed.',
+    ],
+    pairs: [
+      { before: `${BA}/blue-siding-wrap.webp`, after: `${BA}/blue-siding-after-front.webp`,
+        beforeLabel: 'MID-JOB',
+        caption: 'Front elevation wrapped and taped, then finished in blue vinyl with white trim and a new door.' },
+      { before: `${BA}/blue-siding-wrap-side.webp`, after: `${BA}/blue-siding-after-side.webp`,
+        beforeLabel: 'MID-JOB',
+        caption: 'The same corner at the wrap stage and finished.' },
+    ],
+    gallery: [
+      { src: `${BA}/blue-siding-garage-building.webp`,
+        alt: 'Detached two-bay garage building sided in blue vinyl to match the house, Massachusetts',
+        caption: 'The garage building, sided to match down to the trim.' },
+      { src: `${BA}/blue-siding-entry-door.webp`,
+        alt: 'New white entry door with white trim on blue vinyl siding, Massachusetts',
+        caption: 'New entry door, cased in white against the blue.' },
+    ],
+  },
+
   // ---------------------------------------------------------------- Atkinson, NH
   {
     id: 'atkinson-nh-siding',
@@ -454,3 +572,95 @@ export function projectPhotos(p: Project): ProjectPhoto[] {
   }
   return out;
 }
+
+/* ───────────────────────────────────────── portfolio index helpers ───────── */
+
+/** How many photographs a card can honestly promise. */
+export function projectPhotoCount(p: Project): number {
+  return projectPhotos(p).length;
+}
+
+/** Jobs with their own page, newest-looking first is meaningless here, so the
+ *  order is the one /projects curates. Towns are derived, never hand-listed,
+ *  so adding a job to the array above puts its town in the filter for free. */
+export const projectServices: ServiceName[] = (() => {
+  const order: ServiceName[] = ['Siding', 'Windows', 'Doors', 'General Contractor'];
+  return order.filter((s) => projects.some((p) => p.service === s));
+})();
+
+/* ------------------------------------------------------------- where a job is
+ *
+ * Most jobs carry "Town, ST". A job whose town the client has not confirmed
+ * yet carries just "Massachusetts": the portfolio then shows the state and
+ * claims no town, rather than publishing a guess at somebody's address. Swap
+ * the string for "Town, MA" and the cards, the index, the schema and the
+ * nearby-town links all follow on their own. */
+export interface LocationParts {
+  /** null while the town is unconfirmed. */
+  town: string | null;
+  state: string;
+  /** What to print: "Woburn, MA" or "Massachusetts". */
+  label: string;
+}
+
+export function locationParts(location: string): LocationParts {
+  const [first, second] = location.split(',').map((part) => part.trim());
+  if (second) return { town: first, state: second, label: location };
+  return { town: null, state: first === 'Massachusetts' ? 'MA' : first, label: first };
+}
+
+/** schema.org Place for a job, with coordinates where the town is known. */
+export function projectPlace(location: string) {
+  const { town, state } = locationParts(location);
+  const geo = CITY_GEO[location];
+  return {
+    '@type': 'Place',
+    name: location,
+    address: {
+      '@type': 'PostalAddress',
+      ...(town ? { addressLocality: town } : {}),
+      addressRegion: state,
+      addressCountry: 'US',
+    },
+    ...(geo ? { geo: { '@type': 'GeoCoordinates', latitude: geo[0], longitude: geo[1] } } : {}),
+  };
+}
+
+export interface TownIndexRow {
+  /** "Woburn, MA" */
+  location: string;
+  /** "Woburn" */
+  town: string;
+  /** "MA" */
+  state: string;
+  jobs: number;
+  photos: number;
+}
+
+export const projectTowns: TownIndexRow[] = (() => {
+  const rows = new Map<string, TownIndexRow>();
+  for (const p of projects) {
+    const { town, state, label } = locationParts(p.location);
+    const row =
+      rows.get(p.location) ??
+      { location: p.location, town: town ?? label, state: town ? state : '', jobs: 0, photos: 0 };
+    row.jobs += 1;
+    row.photos += projectPhotoCount(p);
+    rows.set(p.location, row);
+  }
+  // Jobs still waiting on a town sort to the bottom of the index.
+  return [...rows.values()].sort(
+    (a, b) => Number(!a.state) - Number(!b.state) || a.town.localeCompare(b.town)
+  );
+})();
+
+/** Totals printed on /projects. Counted from the data, so they cannot drift
+ *  from what the page actually shows. */
+export const portfolioStats = {
+  jobs: projects.length,
+  pages: detailedProjects.length,
+  // Only towns we can name. Jobs still waiting on a confirmed town are counted
+  // in `jobs` and nowhere else, so the headline figure stays true.
+  towns: projectTowns.filter((row) => row.state).length,
+  photos: projects.reduce((n, p) => n + projectPhotoCount(p), 0) + galleryPhotos.length,
+};

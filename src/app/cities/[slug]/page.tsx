@@ -9,9 +9,12 @@ import { TOWN_DATA } from '@/lib/town-data';
 
 const DECADE_LABELS = ['Before 1940', '1940s', '1950s', '1960s', '1970s', '1980s', '1990s', '2000s', '2010s', '2020 or later'];
 import { services } from '@/lib/services';
-import { getCityContent, townComparison, SOURCES_NOTE } from '@/lib/local-content';
+import { getCityContent } from '@/lib/local-content';
+import { townDossier } from '@/lib/town-lens';
+import { TOWN_PROFILES } from '@/lib/town-profiles';
 import { SITE_NAME, SITE_URL, PHONE, heroPhotoFor } from '@/lib/constants';
-import { AVERAGE_RATING, GOOGLE_REVIEW_COUNT, reviewsFor } from '@/lib/reviews';
+import { AVERAGE_RATING, GOOGLE_REVIEW_COUNT } from '@/lib/reviews';
+import { projectPhotoCount } from '@/lib/projects';
 
 interface CityPageProps {
   params: Promise<{ slug: string }>;
@@ -43,8 +46,8 @@ export default async function CityPage({ params }: CityPageProps) {
   if (!city) notFound();
 
   const local = getCityContent(city);
-  const comparison = townComparison(city);
-  const [review] = reviewsFor(`city-${city.slug}`, 1);
+  const profile = TOWN_PROFILES[city.slug];
+  const dossier = townDossier(city);
   const pageUrl = `${SITE_URL}/cities/${city.slug}/`;
 
   // One business, in Charlton. This page describes an area we serve, so it
@@ -83,17 +86,11 @@ export default async function CityPage({ params }: CityPageProps) {
     ],
   };
 
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: local.faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
-  };
 
   return (
     <>
       <JsonLd data={serviceSchema} />
       <JsonLd data={breadcrumbSchema} />
-      <JsonLd data={faqSchema} />
 
       <HeroWithForm
         badge={`${city.name}, MA · ${AVERAGE_RATING} on Google`}
@@ -119,64 +116,32 @@ export default async function CityPage({ params }: CityPageProps) {
             <h2 className="text-3xl font-bold text-slate-900 mb-6">Working in {city.name}</h2>
             <div className="space-y-5 text-lg text-gray-700 leading-relaxed">
               <p>{local.placement}</p>
-              <p>{local.climate}</p>
-              <p>{local.housing}</p>
-              <p>{local.neighbourSummary}</p>
+              {profile && <p>{profile.paragraph}</p>}
             </div>
-            <div className="mt-8 overflow-x-auto">
-              <table className="w-full min-w-[640px] text-left text-sm">
-                <thead>
-                  <tr className="border-b border-slate-300 text-slate-600">
-                    <th className="py-2 pr-4 font-semibold">Town</th>
-                    <th className="py-2 pr-4 font-semibold">From {city.name}</th>
-                    <th className="py-2 pr-4 font-semibold">County</th>
-                    <th className="py-2 pr-4 font-semibold">To the coast</th>
-                    <th className="py-2 pr-4 font-semibold">To our shop</th>
-                    <th className="py-2 pr-4 font-semibold">Typical home</th>
-                    <th className="py-2 font-semibold">Homes</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {local.neighbourRows.map((r) => (
-                    <tr key={r.slug} className="border-b border-slate-200">
-                      <td className="py-2 pr-4">
-                        <Link href={`/cities/${r.slug}`} className="font-medium text-slate-900 hover:text-amber-700 hover:underline">{r.name}</Link>
-                      </td>
-                      <td className="py-2 pr-4 text-gray-700">{r.miles} mi {r.direction}</td>
-                      <td className="py-2 pr-4 text-gray-700">{r.county}</td>
-                      <td className="py-2 pr-4 text-gray-700">{r.coast} mi</td>
-                      <td className="py-2 pr-4 text-gray-700">{r.shop} mi</td>
-                      <td className="py-2 pr-4 text-gray-700">{r.year}</td>
-                      <td className="py-2 text-gray-700">{r.homes.toLocaleString('en-US')}</td>
-                    </tr>
+            {dossier && (
+              <div className="mt-10 grid gap-8 sm:grid-cols-2">
+                {([
+                  ['The homes', dossier.homes],
+                  ['On the historic record', dossier.heritage],
+                  ['Weather and code loads', dossier.weather],
+                  ['Utilities and energy code', dossier.energy],
+                ] as [string, [string, string][]][])
+                  .filter(([, rows]) => rows.length > 0)
+                  .map(([label, rows]) => (
+                    <div key={label}>
+                      <h3 className="font-bold text-slate-900 mb-2">{label}</h3>
+                      <dl className="divide-y divide-slate-200 text-sm">
+                        {rows.map(([k, v]) => (
+                          <div key={k} className="flex justify-between gap-4 py-1.5">
+                            <dt className="text-gray-600">{k}</dt>
+                            <dd className="text-right font-semibold text-slate-900">{v}</dd>
+                          </div>
+                        ))}
+                      </dl>
+                    </div>
                   ))}
-                </tbody>
-              </table>
-            </div>
-
-            <div className="mt-8 overflow-x-auto">
-              <table className="w-full min-w-[640px] text-left text-sm">
-                <caption className="text-left font-bold text-slate-900 mb-2">Homes in {city.name} against {city.county} County towns we serve and all 109</caption>
-                <thead>
-                  <tr className="border-b border-slate-300 text-slate-600">
-                    <th className="py-2 pr-4 font-semibold"> </th>
-                    <th className="py-2 pr-4 font-semibold">{city.name}</th>
-                    <th className="py-2 pr-4 font-semibold">{city.county} Co.</th>
-                    <th className="py-2 font-semibold">All 109</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparison.map((r) => (
-                    <tr key={r.label} className="border-b border-slate-200">
-                      <td className="py-2 pr-4 text-gray-600">{r.label}</td>
-                      <td className="py-2 pr-4 font-semibold text-slate-900">{r.town}</td>
-                      <td className="py-2 pr-4 text-gray-700">{r.county}</td>
-                      <td className="py-2 text-gray-700">{r.all}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+              </div>
+            )}
 
             <div className="mt-8">
               <h3 className="font-bold text-slate-900 mb-3">When {city.name}&apos;s homes were built</h3>
@@ -190,7 +155,7 @@ export default async function CityPage({ params }: CityPageProps) {
                 ))}
               </ul>
             </div>
-            <p className="mt-4 text-xs text-gray-500">{SOURCES_NOTE}</p>
+            <p className="mt-4 text-xs text-gray-500">Sources: US Census ACS 2020–24; Massachusetts Historical Commission inventory (MACRIS) via MassGIS; NOAA RCC-ACIS (PRISM, 1991–2020); 780 CMR 10th ed.; MassGIS utility layers; DOER energy-code list (Nov. 2026); OpenStreetMap; USGS.</p>
             {local.neighbourhoods.length > 0 && (
               <div className="mt-8">
                 <h3 className="text-lg font-bold text-slate-900 mb-3">Parts of {city.name} we work in</h3>
@@ -206,7 +171,7 @@ export default async function CityPage({ params }: CityPageProps) {
       </section>
 
       {/* ── The nine service pages for this town ── */}
-      <section className="py-16 bg-slate-50">
+      <nav aria-label={`Our services in ${city.name}`} className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 mb-8">Our services in {city.name}</h2>
@@ -219,7 +184,7 @@ export default async function CityPage({ params }: CityPageProps) {
             </div>
           </div>
         </div>
-      </section>
+      </nav>
 
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -236,15 +201,14 @@ export default async function CityPage({ params }: CityPageProps) {
                       {project.location} · {miles <= 1 ? `in ${city.name}` : `${miles} mi ${direction}`}
                     </p>
                     <h3 className="mt-1 font-bold text-slate-900">{project.title}</h3>
+                    <p className="mt-1 text-sm text-gray-500">{projectPhotoCount(project)} photos, before and after →</p>
                   </div>
                 </Link>
               ))}
             </div>
-            <ul className="mt-6 space-y-1 text-gray-700">
-              {local.jobLines.map((line) => (
-                <li key={line}>{line}</li>
-              ))}
-            </ul>
+            <Link href="/projects" className="mt-8 inline-flex font-semibold text-amber-700 hover:underline">
+              Browse the whole portfolio, job by job →
+            </Link>
           </div>
         </div>
       </section>
@@ -254,12 +218,6 @@ export default async function CityPage({ params }: CityPageProps) {
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-amber-400 text-lg" aria-hidden="true">★★★★★</p>
             <p className="mt-1 font-semibold">{AVERAGE_RATING} from {GOOGLE_REVIEW_COUNT} Google reviews</p>
-            {review && (
-              <blockquote className="mt-5 text-lg text-white/90 leading-relaxed">
-                “{review.text}”
-                <footer className="mt-2 text-sm text-white/60">{review.author}{review.work ? `, ${review.work}` : ''}</footer>
-              </blockquote>
-            )}
             <Link href="/reviews" className="mt-5 inline-block font-semibold text-amber-400 hover:underline">Read all our reviews</Link>
           </div>
         </div>
@@ -269,17 +227,21 @@ export default async function CityPage({ params }: CityPageProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto grid gap-12 md:grid-cols-2">
             <div>
-              <h2 className="text-2xl font-bold text-slate-900 mb-6">Questions from {city.name}</h2>
-              <div className="space-y-3">
-                {local.faqs.map((f) => (
-                  <details key={f.q} className="bg-slate-50 rounded-xl border border-slate-200 group">
-                    <summary className="px-5 py-4 cursor-pointer font-bold text-slate-900">{f.q}</summary>
-                    <p className="px-5 pb-4 text-gray-700 leading-relaxed">{f.a}</p>
-                  </details>
-                ))}
-              </div>
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">Where this page&apos;s history comes from</h2>
+              {profile && profile.sources.length > 0 ? (
+                <ul className="space-y-2 text-sm text-gray-700 break-words">
+                  {profile.sources.map((u) => (
+                    <li key={u}>
+                      <a href={u} rel="nofollow noopener" target="_blank" className="text-amber-700 hover:underline">{u.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}</a>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-gray-700">Public records listed under the fact sheet above.</p>
+              )}
+              {profile && <p className="mt-3 text-xs text-gray-500">Checked {profile.checked}.</p>}
             </div>
-            <div>
+            <nav aria-label={`Towns next to ${city.name}`}>
               <h2 className="text-2xl font-bold text-slate-900 mb-6">Towns next to {city.name}</h2>
               <ul className="space-y-2">
                 {local.neighbours.map((n) => (
@@ -292,7 +254,7 @@ export default async function CityPage({ params }: CityPageProps) {
                 ))}
               </ul>
               <Link href="/cities" className="mt-5 inline-block text-sm font-semibold text-amber-700 hover:underline">All 109 towns we serve</Link>
-            </div>
+            </nav>
           </div>
         </div>
       </section>

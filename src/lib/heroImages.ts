@@ -97,6 +97,203 @@ export const responsiveImages: Record<string, ResponsiveImage> = {
       900
     ]
   },
+  "/images/before-after/blue-siding-after-front.webp": {
+    "w": 1024,
+    "h": 768,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
+  "/images/before-after/blue-siding-after-side.webp": {
+    "w": 1024,
+    "h": 768,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
+  "/images/before-after/blue-siding-entry-door.webp": {
+    "w": 768,
+    "h": 1024,
+    "variants": [
+      200,
+      600
+    ]
+  },
+  "/images/before-after/blue-siding-garage-building.webp": {
+    "w": 1024,
+    "h": 768,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
+  "/images/before-after/blue-siding-wrap-side.webp": {
+    "w": 1024,
+    "h": 768,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
+  "/images/before-after/blue-siding-wrap.webp": {
+    "w": 1024,
+    "h": 768,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
+  "/images/before-after/cape-harvey-window-1.webp": {
+    "w": 1400,
+    "h": 1050,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
+  "/images/before-after/cape-harvey-window-2.webp": {
+    "w": 1400,
+    "h": 1050,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
+  "/images/before-after/cape-harvey-window-3.webp": {
+    "w": 1200,
+    "h": 1600,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
+  "/images/before-after/cape-harvey-window-4.webp": {
+    "w": 1400,
+    "h": 1050,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
+  "/images/before-after/cape-harvey-window-5.webp": {
+    "w": 1400,
+    "h": 1050,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
+  "/images/before-after/cape-siding-after-front.webp": {
+    "w": 1400,
+    "h": 1050,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
+  "/images/before-after/cape-siding-after-garage-side.webp": {
+    "w": 1400,
+    "h": 1050,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
+  "/images/before-after/cape-siding-after-side-2.webp": {
+    "w": 1400,
+    "h": 1050,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
+  "/images/before-after/cape-siding-after-side.webp": {
+    "w": 1400,
+    "h": 1050,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
+  "/images/before-after/cape-siding-before-front.webp": {
+    "w": 1400,
+    "h": 1050,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
+  "/images/before-after/cape-siding-before-garage-side.webp": {
+    "w": 1400,
+    "h": 1050,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
+  "/images/before-after/cape-siding-before-side.webp": {
+    "w": 1400,
+    "h": 1050,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
+  "/images/before-after/cape-siding-entry-during.webp": {
+    "w": 1400,
+    "h": 1050,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
+  "/images/before-after/cape-siding-materials.webp": {
+    "w": 1200,
+    "h": 1600,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
+  "/images/before-after/cape-siding-wall-open-2.webp": {
+    "w": 1400,
+    "h": 1050,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
+  "/images/before-after/cape-siding-wall-open.webp": {
+    "w": 1400,
+    "h": 1050,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
   "/images/before-after/cedar-siding-reading-ma-2.webp": {
     "w": 1200,
     "h": 900,
@@ -232,6 +429,60 @@ export const responsiveImages: Record<string, ResponsiveImage> = {
     ]
   },
   "/images/before-after/exterior-before-worcester-ma.webp": {
+    "w": 1200,
+    "h": 900,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
+  "/images/before-after/sage-siding-after-front.webp": {
+    "w": 1200,
+    "h": 900,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
+  "/images/before-after/sage-siding-after-garage.webp": {
+    "w": 1200,
+    "h": 900,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
+  "/images/before-after/sage-siding-after-porch.webp": {
+    "w": 1200,
+    "h": 900,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
+  "/images/before-after/sage-siding-before-front.webp": {
+    "w": 1200,
+    "h": 900,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
+  "/images/before-after/sage-siding-before-garage.webp": {
+    "w": 1200,
+    "h": 900,
+    "variants": [
+      200,
+      600,
+      900
+    ]
+  },
+  "/images/before-after/sage-siding-before-porch.webp": {
     "w": 1200,
     "h": 900,
     "variants": [

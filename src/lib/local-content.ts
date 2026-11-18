@@ -416,8 +416,8 @@ export function getServiceCityContent(service: Service, city: City): ServiceCity
   const nearestSame = jobs.find((j) => j.sameService);
 
   const heroSubtitle = isHome
-    ? `${service.name} for ${city.name} homes, from the shop on Stoneybrook Road. Licensed, insured, our own crew.`
-    : `${service.name} for ${city.name} homes, ${g.milesFromHQ} miles ${g.direction} of our Charlton shop. Licensed, insured, our own crew.`;
+    ? `${service.name} for ${city.name} homes, from the shop on Stoneybrook Road.`
+    : `${service.name} for ${city.name} homes, ${g.milesFromHQ} miles ${g.direction} of our Charlton shop.`;
 
   const placement = isHome
     ? `${city.name} is where our shop is: 13 Stoneybrook Road, ${city.zip}. A ${service.shortName} job here is on our own doorstep, ${g.milesFromCoast} miles from the coast, in ${g.county} County.`

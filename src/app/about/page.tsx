@@ -5,6 +5,7 @@ import { Hero, CTASection } from '@/components/sections';
 import { JsonLd } from '@/components/seo';
 import { SITE_NAME, IMAGES, PHONE, ADDRESS, LOGO_URL, HIC_NUMBER, SITE_URL } from '@/lib/constants';
 import { GOOGLE_REVIEW_COUNT } from '@/lib/reviews';
+import { ProjectsTeaser } from '@/components/projects';
 
 export const metadata: Metadata = {
   title: `About ${SITE_NAME} | Since 2015 | 500+ Projects | 5.0★ Google Rating`,
@@ -254,6 +255,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <ProjectsTeaser />
 
       <CTASection
         title="Ready to Work With Us?"

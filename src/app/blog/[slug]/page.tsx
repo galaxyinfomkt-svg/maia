@@ -5,7 +5,10 @@ import Link from 'next/link';
 import { Hero } from '@/components/sections';
 import { JsonLd, Breadcrumbs } from '@/components/seo';
 import { getAllPosts, getPostBySlug, getRecentPosts } from '@/lib/blog';
+import { getMdBody } from '@/lib/blog-md';
+import { Markdown } from '@/components/blog/Markdown';
 import { SITE_NAME, PHONE, PHONE_LINK, SITE_URL } from '@/lib/constants';
+import { ProjectsTeaser } from '@/components/projects';
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -1503,7 +1506,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   const recentPosts = getRecentPosts(3).filter((p) => p.slug !== slug);
-  const content = blogContent[slug] || <p>Content coming soon...</p>;
+  const md = getMdBody(slug);
+  const content = blogContent[slug] || (md ? <Markdown src={md} /> : <p>Content coming soon...</p>);
 
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -1712,6 +1716,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         </div>
       </article>
+      <ProjectsTeaser />
+
     </>
   );
 }
